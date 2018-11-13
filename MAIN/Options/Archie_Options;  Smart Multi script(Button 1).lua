@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Smart Multi script(Button 1)
    * Author:      Archie
-   * Version:     1.2.1
+   * Version:     1.2.2
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
