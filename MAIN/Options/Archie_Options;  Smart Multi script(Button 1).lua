@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Smart Multi script(Button 1)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -12,7 +12,9 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75(Rmm/forum) 
    * Gave idea:   Supa75(Rmm/forum) 
-   * Changelog:   + initialе / v.1.0.0 [12.11.18]
+                  +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
+   * Changelog:   +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
+   *              + initialе / v.1.0 [12.11.18]
 --=====================================================================================
 SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and above)
 СИСТЕМНЫЕ ТРЕБОВАНИЯ:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (и выше)
@@ -39,7 +41,7 @@ SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and
     local Modifiers = reaper.JS_Mouse_GetState(28);
 
     if Modifiers ~= 28 then; 
-        local TooltipWind = reaper.GetExtState(scr_nam.."ArchieMultiScript工具提示窗口"..but, "scr_nam..MultiScript工具提示窗口"..but);
+        local TooltipWind = reaper.GetExtState(scr_nam.."ArchieMultiScript工具提示窗口"..but, scr_nam.."MultiScript工具提示窗口"..but);
         if TooltipWind == "" then;
 
             local MessageBox = reaper.ShowMessageBox(
