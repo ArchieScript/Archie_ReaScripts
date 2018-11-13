@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="891e8045dcff4a2a550f1c592184213ea3278f41">
+<index version="1" commit="891e8045dcff4a2a550f1c592184213ea3278f41" name="Archie-ReaScripts">
   <category name="MAIN/Envelope">
     <reapack name="Archie_Env;  Restore saved points'by time'(slot 1) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
       <metadata>
@@ -644,4 +644,61 @@
       </version>
     </reapack>
   </category>
+  <metadata>
+    <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Archie_ReaScripts Repository.\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs24 \u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160? {\field{\*\fldinst{HYPERLINK "https://reapack.com/repos"}}{\fldrslt{\ul
+{\i {\b ReaPack}}
+}}}
+ {\field{\*\fldinst{HYPERLINK "https://github.com/ArchieScript/Archie_ReaScripts"}}{\fldrslt{\ul
+\u160?|\u160?
+}}}
+ {\field{\*\fldinst{HYPERLINK "https://forum.cockos.com/showthread.php?t=212819"}}{\fldrslt{\ul
+{\i {\b Discussion, error messages}}.
+}}}
+ {\field{\*\fldinst{HYPERLINK "https://github.com/ArchieScript/Archie_ReaScripts"}}{\fldrslt{\ul
+\u160?|\u160?
+}}}
+ {\field{\*\fldinst{HYPERLINK "https://money.yandex.ru/to/410018003906628"}}{\fldrslt{\ul
+{\i {\b Donate}}
+}}}
+\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li1080 \fi-360 \bullet \tx360\tab \b \fs24 {\i {\b Download:}} >>>\par}
+{\pard \ql \f0 \sa0 \li1440 \fi-360 \endash \tx360\tab {\field{\*\fldinst{HYPERLINK "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MAIN"}}{\fldrslt{\ul
+{\i Main}
+}}}
+ \u160? \u8212- \u160? {\i All scripts from main section}\par}
+{\pard \ql \f0 \sa0 \li1440 \fi-360 \endash \tx360\tab {\field{\*\fldinst{HYPERLINK "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MIDI%20Editor"}}{\fldrslt{\ul
+{\i MIDI Editor}
+}}}
+ \u160? \u8212- \u160? {\i All scripts from MIDI Editor section}\par}
+{\pard \ql \f0 \sa0 \li1440 \fi-360 \endash \tx360\tab {\field{\*\fldinst{HYPERLINK "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MIDI%20Inline%20Editor"}}{\fldrslt{\ul
+{\i MIDI Inline Editor}
+}}}
+ \u8212- {\i All scripts from MIDI Inline Editor section}\par}
+{\pard \ql \f0 \sa0 \li1800 \fi-360 \bullet \tx360\tab {\field{\*\fldinst{HYPERLINK "https://github.com/ArchieScript/Archie_ReaScripts/archive/master.zip"}}{\fldrslt{\ul
+{\i {\b All Scripts}}
+}}}
+ \u160? \u8212- \u160? {\i Download all Scripts}\sa180\sa180\sa180\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 Installation\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Copy and paste this URL in Extensions > ReaPack > Import a repository:\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \f1 https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml\par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 {\field{\*\fldinst{HYPERLINK "https://www.reaper.fm"}}{\fldrslt{\ul
+{\i Reaper.ru}
+}}}
+\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 \par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?\u160?{\field{\*\fldinst{HYPERLINK "https://github.com/ArchieScript/Archie_ReaScripts"}}{\fldrslt{\ul
+{\i Archie_ReaScripts.}
+}}}
+\par}
+}
+]]></description>
+  </metadata>
 </index>
