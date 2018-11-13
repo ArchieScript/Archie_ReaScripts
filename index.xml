@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="0472f8cda7370b5337a95d560e2bfff5fbb9de8d" name="Archie-ReaScripts">
+<index version="1" commit="4444ab29b12c26b8999d6e57afe7a4303961350f" name="Archie-ReaScripts">
   <category name="MAIN/Envelope">
     <reapack name="Archie_Env;  Restore saved points'by time'(slot 1) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
       <metadata>
@@ -359,6 +359,11 @@
       <version name="1.01" author="Archie" time="2018-11-13T12:11:28Z">
         <changelog><![CDATA[+ initialе / v.1.0.0 [12.11.18]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0472f8cda7370b5337a95d560e2bfff5fbb9de8d/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2018-11-13T13:26:30Z">
+        <changelog><![CDATA[+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
++ initialе / v.1.0 [12.11.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4444ab29b12c26b8999d6e57afe7a4303961350f/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
