@@ -12,8 +12,8 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75(Rmm/forum) 
    * Gave idea:   Supa75(Rmm/forum) 
-                  +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
-   * Changelog:   +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
+   * Changelog:   +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
+   *              +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
    *              + initialе / v.1.0 [12.11.18]
 --=====================================================================================
 SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and above)
