@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="c5c33210649c709e11bb6e1938c4e9da230d5072" name="Archie-ReaScripts">
+<index version="1" commit="d8a6fed6293aa5fc478cd24bf5981348e819ac1d" name="Archie-ReaScripts">
   <category name="MAIN/Envelope">
     <reapack name="Archie_Env;  Restore saved points'by time'(slot 1) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
       <metadata>
@@ -154,6 +154,16 @@
     </reapack>
   </category>
   <category name="MAIN/Item">
+    <reapack name="Archie_Item  Remove all items, envelopes from project (including master track).lua" type="script" desc="Remove all items, envelopes from project (including master track)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-13T20:21:53Z">
+        <changelog><![CDATA[+ initialе / v.1.0 [14.11.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d8a6fed6293aa5fc478cd24bf5981348e819ac1d/MAIN/Item/Archie_Item%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  By frame move item,under mouse cursor.move cursor the to offset(mousewheel).lua" type="script" desc="by frame move item &lt;&gt;,under mouse cursor,move cursor the to offset">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
