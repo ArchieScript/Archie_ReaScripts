@@ -2,12 +2,12 @@
    * Category:    Options
    * Description: Smart Multi script(Button 1)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
    *              Для отображения справки, введите в первое поле слово 'help'
-   * GIF:         ---
+   * GIF:         http://clck.ru/EhYZ9
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75(Rmm/forum) 
