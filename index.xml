@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d8a6fed6293aa5fc478cd24bf5981348e819ac1d" name="Archie-ReaScripts">
+<index version="1" commit="a3aba3e4578ebcb824120d4be0c7f1cec6e88244" name="Archie-ReaScripts">
   <category name="MAIN/Envelope">
     <reapack name="Archie_Env;  Restore saved points'by time'(slot 1) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
       <metadata>
@@ -123,6 +123,14 @@
 +! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
 + initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2018-11-14T07:22:09Z">
+        <changelog><![CDATA[+! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
++! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
++! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
++! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
++ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3aba3e4578ebcb824120d4be0c7f1cec6e88244/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Grid;  Swing grid minus one percent(arrange).lua" type="script" desc="Swing grid minus one percent(arrange)">
