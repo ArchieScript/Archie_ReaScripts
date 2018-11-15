@@ -2,7 +2,7 @@
    * Category:    Functions
    * Description: A_Function_lua
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain] .
