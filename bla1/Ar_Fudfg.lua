@@ -1,6 +1,6 @@
 --[[
    * Category:    Functions
-   * Description: Ar_Function
+   * Description: Ar_Fudfg
    * Author:      Archie
    * Version:     1.02
    * AboutScript: Functions for use with some scripts Archie
