@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a3aba3e4578ebcb824120d4be0c7f1cec6e88244" name="Archie-ReaScripts">
+<index version="1" commit="d05eefc2a937b631b1828fde968d19c6223bb8d6" name="Archie-ReaScripts">
+  <category name="Function">
+    <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
+      <version name="1.0" author="Archie" time="2018-11-15T06:35:27Z">
+        <changelog><![CDATA[+ Test]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/fb2369d4f4c3e937694c9e6abcde0b9b80985146/Function/Arc_Function_lua.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="MAIN/Envelope">
     <reapack name="Archie_Env;  Restore saved points'by time'(slot 1) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
       <metadata>
