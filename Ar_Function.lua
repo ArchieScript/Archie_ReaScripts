@@ -1,8 +1,8 @@
 --[[
    * Category:    Functions
-   * Description: Ar_Function_lua
+   * Description: Ar_Function
    * Author:      Archie
-   * Version:     1.0 1
+   * Version:     1.02
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Changelog:   + Test
