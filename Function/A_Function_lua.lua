@@ -1,6 +1,6 @@
 --[[
    * Category:    Functions
-   * Description: Arc_Function_lua
+   * Description: A_Function_lua
    * Author:      Archie
    * Version:     1.0
    * AboutScript: Functions for use with some scripts Archie
