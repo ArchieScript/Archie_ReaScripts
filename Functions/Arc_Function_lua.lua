@@ -2,12 +2,14 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.2
+   * Version:     1.0.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
-   * Changelog:   + GetMediaItemInfo_Value(item,parmname)/[D_END] 
+   
+   * Changelog:   + no_undo()
+   *              + GetMediaItemInfo_Value(item,parmname)/[D_END] 
    *              + Get_Format_ProjectGrid(divisionIn)
    *              + Action(id);
    *              + CountTrackSelectedMediaItems(track);
@@ -29,6 +31,17 @@
 
 
 
+    --------------no_undo()--------------
+    --no_undo()
+    function Arc_Module.No_Undo()end; 
+    function Arc_Module.no_undo()
+        reaper.defer(Arc_Module.No_Undo)
+    end
+    --Что бы в ундо не прописывалось "ReaScript:Run"
+    --==============================================
+
+
+   
     --------------GetMediaItemInfo_Value-----------------------
     function Arc_Module.GetMediaItemInfo_Value(item, parmname)
         if parmname == "END" or parmname == "D_END" then return

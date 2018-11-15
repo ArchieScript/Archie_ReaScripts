@@ -2,7 +2,7 @@
    * Category:    Grid
    * Description: Free movement of item(s) when snap to grid is on
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.2.1
    * AboutScript: Free movement of item(s) when snap to grid is enabled
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Свободное перемещение элементов при включенной привязке к сетке
@@ -16,11 +16,11 @@
    *              +! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
    *              +! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
    *              +! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
-   *              + initialе / v.1.0
+   *              +  initialе / v.1.0
 --=====================================================================================
-SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and above)
-СИСТЕМНЫЕ ТРЕБОВАНИЯ:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (и выше)
---================================================================================]]
+SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-ReaTeam Extensions\ (and above)
+СИСТЕМНЫЕ ТРЕБОВАНИЯ: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |репозиторий-ReaTeam Extensions\(и выше)
+--========================================================================================================]]
 
 
 
