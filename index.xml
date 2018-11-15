@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="2d13b4391023d8b59604e4cc5ae0d3b56c508487" name="Archie-ReaScripts">
-  <category name="Function">
+<index version="1" commit="be8b478651e87336f9945c49a890a1f8c0c8ccaf" name="Archie-ReaScripts">
+  <category name="Functions">
     <reapack name="A_Function_lua.lua" type="script" desc="A_Function_lua">
-      <version name="1.0" author="Archie" time="2018-11-15T06:45:26Z">
+      <version name="1.02" author="Archie" time="2018-11-15T06:50:04Z">
         <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/93d483c14d574be12470f634c63ee992d502dac9/Function/A_Function_lua.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2018-11-15T06:47:31Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/2d13b4391023d8b59604e4cc5ae0d3b56c508487/Function/A_Function_lua.lua</source>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/be8b478651e87336f9945c49a890a1f8c0c8ccaf/Functions/A_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
