@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="71e31c7fb1a112973e88da15d579e6279ee24b94" name="Archie-ReaScripts">
+<index version="1" commit="1b8b99bae313fe1b390aa95f7be672d695355cc0" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
         <changelog><![CDATA[+ Action(id)]]></changelog>
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/71e31c7fb1a112973e88da15d579e6279ee24b94/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="1.0.1" author="Archie" time="2018-11-15T11:17:23Z">
+        <changelog><![CDATA[+ Get_Format_ProjectGrid(divisionIn)
++ Action(id);
++ CountTrackSelectedMediaItems(track);
++ GetTrackSelectedMediaItems(track,idx);]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/1b8b99bae313fe1b390aa95f7be672d695355cc0/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
