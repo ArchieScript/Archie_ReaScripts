@@ -5,7 +5,7 @@
    * Version:     1.06
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
-   * Provides:    [nomain].
+   * Provides:    [nomain] .
    * Changelog:   + Test
 --======================]]
 
