@@ -3,7 +3,7 @@
 
 
 - To run the scripts, download the file.  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  and unzip the folder with the resources of the Reaper/script
-- *Для работы скриптов, скачайте файл  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  и распакуйте в папку с ресурсами рипера/скрипт*
+>- *Для работы скриптов, скачайте файл  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  и распакуйте в папку с ресурсами рипера/скрипт*
 -----
 
 >- #### ***Download:*** >>>
