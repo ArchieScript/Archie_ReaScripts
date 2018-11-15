@@ -1,13 +1,14 @@
 --[[
    * Category:    Function
-   * Description: A_Function_lua
+   * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
-   * Changelog:   + Test
---======================]]
+   * ---------------------
+   * Changelog:   + Action(id)
+--==========================]]
 
 
 
@@ -22,10 +23,16 @@
 	local Arc_Module = {}
     --===================
 
-
-
---   * provides:    [nomain].
-
+	
+    ------------------------------------
+	local function Arc_Module.Action(id)
+        reaper.Main_OnCommand(reaper.NamedCommandLookup(id),0)
+    end
+    --========================================================
+	
+	
+	
+	
 
     --===============
     return Arc_Module
