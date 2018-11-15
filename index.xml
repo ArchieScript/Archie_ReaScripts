@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a809e515d46e1860136b2f630b6786c3aa61999f" name="Archie-ReaScripts">
+<index version="1" commit="d4e1c375d56eacb5c706a869184b4eafd029e703" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -20,6 +20,9 @@
 + CountTrackSelectedMediaItems(track);
 + GetTrackSelectedMediaItems(track,idx);]]></changelog>
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/a809e515d46e1860136b2f630b6786c3aa61999f/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="1.0.3" author="Archie" time="2018-11-15T20:00:20Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/d4e1c375d56eacb5c706a869184b4eafd029e703/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -155,6 +158,14 @@
 + initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3aba3e4578ebcb824120d4be0c7f1cec6e88244/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
       </version>
+      <version name="1.2.1" author="Archie" time="2018-11-15T20:00:20Z">
+        <changelog><![CDATA[+! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
++! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
++! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
++! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
++  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d4e1c375d56eacb5c706a869184b4eafd029e703/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Grid;  Swing grid minus one percent(arrange).lua" type="script" desc="Swing grid minus one percent(arrange)">
       <metadata>
@@ -221,6 +232,16 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20a%20track%20with%20name%20n.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Move selected items to each other.lua" type="script" desc="Move selected items to each other">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-15T20:00:20Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d4e1c375d56eacb5c706a869184b4eafd029e703/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected items outside regions(time selection).lua" type="script" desc="Remove selected items outside regions(time selection)">
