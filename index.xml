@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="31492f14b4b2d7aad536fb5c8ebb8334c74cd371" name="Archie-ReaScripts">
+<index version="1" commit="eef290da8c0c1947ab84954e5e253fd5cd7fc517" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="A_Function_lua — копия.lua" type="script" desc="A_Function_lua">
       <version name="1.08" author="Archie" time="2018-11-15T08:35:28Z">
@@ -7,19 +7,23 @@
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/31492f14b4b2d7aad536fb5c8ebb8334c74cd371/Functions/A_Function_lua%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.lua</source>
       </version>
     </reapack>
-    <reapack name="NOA_Function_lua.lua" type="script" desc="A_Function_lua">
+    <reapack name="NOA_Function_lua.lua" type="script" desc="NOA_Function_lua">
       <metadata>
         <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
 
-{\pard \ql \f0 \sa180 \li0 \fi0 Functions for use with some scripts Archie BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 Functions for use with some scripts Archie \\n BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA\par}
 }
 ]]></description>
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-15T08:35:28Z">
         <changelog><![CDATA[+ Test]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/31492f14b4b2d7aad536fb5c8ebb8334c74cd371/Functions/NOA_Function_lua.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2018-11-15T08:39:59Z">
+        <changelog><![CDATA[+ Test]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/eef290da8c0c1947ab84954e5e253fd5cd7fc517/Functions/NOA_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
