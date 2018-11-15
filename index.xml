@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="0c2aa7688a81add92d7897b22822b45b31d6ff5c" name="Archie-ReaScripts">
+<index version="1" commit="31492f14b4b2d7aad536fb5c8ebb8334c74cd371" name="Archie-ReaScripts">
   <category name="Functions">
-    <reapack name="A_Function_lua.lua" type="script" desc="A_Function_lua">
-      <version name="1.02" author="Archie" time="2018-11-15T06:50:04Z">
+    <reapack name="A_Function_lua — копия.lua" type="script" desc="A_Function_lua">
+      <version name="1.08" author="Archie" time="2018-11-15T08:35:28Z">
         <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/be8b478651e87336f9945c49a890a1f8c0c8ccaf/Functions/A_Function_lua.lua</source>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/31492f14b4b2d7aad536fb5c8ebb8334c74cd371/Functions/A_Function_lua%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.lua</source>
       </version>
-      <version name="1.03" author="Archie" time="2018-11-15T06:52:33Z">
+    </reapack>
+    <reapack name="NOA_Function_lua.lua" type="script" desc="A_Function_lua">
+      <metadata>
+        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 Courier;}}
+{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
+\widowctrl\hyphauto
+
+{\pard \ql \f0 \sa180 \li0 \fi0 Functions for use with some scripts Archie BLA BLA BLA BLA BLA BLA BLA BLA BLA BLA\par}
+}
+]]></description>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-15T08:35:28Z">
         <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/205acf3dedf63da0e6006bdfe0e922def74231dc/Functions/A_Function_lua.lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2018-11-15T06:59:25Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/90c162a78fe2a35d08d31dd3e811c933167cf7e9/Functions/A_Function_lua.lua</source>
-      </version>
-      <version name="1.05" author="Archie" time="2018-11-15T07:54:45Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ea2981f9ca3196b02a9c9f452f0d9ec899cb5850/Functions/A_Function_lua.lua</source>
-      </version>
-      <version name="1.06" author="Archie" time="2018-11-15T08:14:08Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/c74c492e7e78078567fd8c25e93df42e7a6f06d1/Functions/A_Function_lua.lua</source>
-      </version>
-      <version name="1.07" author="Archie" time="2018-11-15T08:16:29Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/b1f041a680b132a21741ed295c839b70d4ab995e/Functions/A_Function_lua.lua</source>
-      </version>
-      <version name="1.08" author="Archie" time="2018-11-15T08:25:02Z">
-        <changelog><![CDATA[+ Test]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/0c2aa7688a81add92d7897b22822b45b31d6ff5c/Functions/A_Function_lua.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/31492f14b4b2d7aad536fb5c8ebb8334c74cd371/Functions/NOA_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
