@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d4e1c375d56eacb5c706a869184b4eafd029e703" name="Archie-ReaScripts">
+<index version="1" commit="3422cfdb6e82aca57f7dc2c1ac663e452d509b31" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -681,6 +681,16 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MIDI%20Editor/Archie_MidiEditor;%20%20Close%20Midi%20Editor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Delete note(s) nearest to edit cursor.lua" type="script" desc="Delete note(s) nearest to edit cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-18T11:40:40Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/3422cfdb6e82aca57f7dc2c1ac663e452d509b31/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Open a floating instrument, appropriate MIDI editor.lua" type="script" desc="Open a floating instrument, appropriate MIDI editor">
