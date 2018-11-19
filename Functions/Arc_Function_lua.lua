@@ -2,18 +2,20 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.3
+   * Version:     1.0.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + no_undo()
+   * Changelog:   + CloseAllFxInAllTracks(chain, float)--true,false
+   *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
+   *              + no_undo()
    *              + GetMediaItemInfo_Value(item,parmname)/[D_END] 
    *              + Get_Format_ProjectGrid(divisionIn)
-   *              + Action(id);
-   *              + CountTrackSelectedMediaItems(track);
-   *              + GetTrackSelectedMediaItems(track,idx);
+   *              + Action(id)
+   *              + CountTrackSelectedMediaItems(track)
+   *              + GetTrackSelectedMediaItems(track,idx)
 --======================================================]]
 
 
@@ -28,6 +30,46 @@
     --===================
     local Arc_Module = {}
     --===================
+
+
+
+    ----------------- CloseAllFxInAllTracks ---------------------
+    function Arc_Module.CloseAllFxInAllTracks(chain, float)--true,false
+        local CountTr = reaper.CountTracks(0)
+        if CountTr == 0 then 
+            reaper.ReaScriptError("No Tracks in project") 
+            Arc_Module.no_undo() return
+        end
+        for i = 1, CountTr do
+            local Track = reaper.GetTrack(0,i-1)
+            local CountFx = reaper.TrackFX_GetCount(Track)
+            for i2 = 1, CountFx do
+                if chain == 1 or chain == true then 
+                    reaper.TrackFX_Show(Track,i2-1,0)
+                end
+                if float == 1 or float == true then 
+                    reaper.TrackFX_Show(Track,i2-1,2)
+                end 
+            end
+        end
+    end
+    -- Закрыть Все Fx На Всех Дорожках
+    --============================================
+
+
+
+    --------------- Несовместимо с верхним докером ------------------
+    function Arc_Module.CloseToolbarByNumber(ToolbarNumber--[[1-16]])
+        local CloseToolbar_T = {[0]=41651,41679,41680,41681,41682,41683,41684,41685,
+                               41686,41936,41937,41938,41939,41940,41941,41942,41943}
+        local state = reaper.GetToggleCommandState(CloseToolbar_T[ToolbarNumber]) 
+        if state == 1 then
+            reaper.Main_OnCommand(CloseToolbar_T[ToolbarNumber],0)
+        end
+    end
+    -- Закрыть Панель Инструментов По Номеру
+    -- Несовместимо с верхним докером (top)
+    --==============================================
 
 
 
@@ -75,9 +117,12 @@
 
 
 
-    -------------Action-----------
-    function Arc_Module.Action(id)
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(id),0)
+    -------------Action------------
+    function Arc_Module.Action(...)
+       local Table = {...}
+       for i = 1, #Table do
+         reaper.Main_OnCommand(reaper.NamedCommandLookup(Table[i]),0)
+       end
     end
     -- Выполняет действие, относящееся к разделу основное действие. 
     --=============================================================
