@@ -1,5 +1,5 @@
 --[[
-   * Category:    Track
+   * Category:    FX
    * Description: Add Fx by Name in selected tracks (a description of settings inside script)
    * Author:      Archie
    * Version:     1.0
