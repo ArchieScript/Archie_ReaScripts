@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9448af57b0ba5399adb30170fc40a32b8ad00053" name="Archie-ReaScripts">
+<index version="1" commit="68938e95ff30028b54167b5e1b222beb1e8c543b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -68,6 +68,16 @@
     </reapack>
   </category>
   <category name="MAIN/FX">
+    <reapack name="Archie_FX;  Add Fx by Name in selected tracks (a description of settings inside script).lua" type="script" desc="Add Fx by Name in selected tracks (a description of settings inside script)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-20T07:14:34Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/68938e95ff30028b54167b5e1b222beb1e8c543b/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_FX;  Close all VSTi in Selected tracks.lua" type="script" desc="Close all VSTi in Selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -463,16 +473,6 @@
     </reapack>
   </category>
   <category name="MAIN/Track">
-    <reapack name="Archie_Track;  Add Fx by Name in selected tracks (a description of settings inside script).lua" type="script" desc="Add Fx by Name in selected tracks (a description of settings inside script)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2018-11-19T19:00:21Z">
-        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9448af57b0ba5399adb30170fc40a32b8ad00053/MAIN/Track/Archie_Track;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script).lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE.lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
