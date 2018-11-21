@@ -2,13 +2,14 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.4
+   * Version:     1.0.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + CloseAllFxInAllTracks(chain, float)--true,false
+   * Changelog:   + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
+   *              + CloseAllFxInAllTracks(chain, float)--true,false
    *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
    *              + no_undo()
    *              + GetMediaItemInfo_Value(item,parmname)/[D_END] 
@@ -30,6 +31,19 @@
     --===================
     local Arc_Module = {}
     --===================
+
+
+
+    --------------SetShow_HideTrackMCP----------------------------
+    function Arc_Module.SetShow_HideTrackMCP(Track,show_hide--[[0;1]]);
+        local _,str = reaper.GetTrackStateChunk(Track,"",true);
+        local SHOWINMIX = str:match('SHOWINMIX %d+');
+        local str = string.gsub(str,SHOWINMIX, "SHOWINMIX"..' '..show_hide);
+        reaper.SetTrackStateChunk(Track, str, true);
+    end;
+    -- Show Hide Track in Mixer (MCP)
+    -- Показать Скрыть дорожку в микшере (MCP)
+    --========================================
 
 
 
