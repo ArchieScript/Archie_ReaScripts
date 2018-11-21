@@ -37,7 +37,7 @@ SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and
 
 
     local but = "Button 1"
-    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)")) 
+    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"))
     local Modifiers = reaper.JS_Mouse_GetState(28);
 
     if Modifiers ~= 28 then; 
