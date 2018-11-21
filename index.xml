@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="68938e95ff30028b54167b5e1b222beb1e8c543b" name="Archie-ReaScripts">
+<index version="1" commit="a09a3e8d9a50246f1f7b00d3ded02e948e444608" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -26,6 +26,9 @@
       </version>
       <version name="1.0.4" author="Archie" time="2018-11-19T19:00:21Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/9448af57b0ba5399adb30170fc40a32b8ad00053/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="1.0.5" author="Archie" time="2018-11-21T18:26:45Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/76fe527b321f1464af8badb9ef3930e38550a19e/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -674,6 +677,188 @@
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[Переделан скролл / Redesigned scroll / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20%E2%86%93Move%20selected%20tracks%20in%20down%20on%20one%20.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/View">
+    <reapack name="Archie_View;  Layout Default on selected tracks MCP.lua" type="script" desc="Layout Default on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Default%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Default on selected tracks TCP.lua" type="script" desc="Layout Default on selected tracks TCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Default%20on%20selected%20tracks%20TCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Large on selected tracks MCP.lua" type="script" desc="Layout Large on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Large%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Large sidebar on selected tracks MCP.lua" type="script" desc="Layout Large sidebar on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Large%20sidebar%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Session mixer on selected tracks MCP.lua" type="script" desc="Layout Session mixer on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Session%20mixer%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Small full meter on selected tracks MCP.lua" type="script" desc="Layout Small full meter on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Small%20full%20meter%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Small on selected tracks MCP.lua" type="script" desc="Layout Small on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Small%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Small sidebar on selected tracks MCP.lua" type="script" desc="Layout Small sidebar on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Small%20sidebar%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Standard expanding, popup fader on selected tracks TCP.lua" type="script" desc="Layout Standard expanding, popup fader on selected tracks TCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Standard%20expanding,%20popup%20fader%20on%20selected%20tracks%20TCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Standard on selected tracks MCP.lua" type="script" desc="Layout Standard on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Standard%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Standard sidebar on selected tracks MCP.lua" type="script" desc="Layout Standard sidebar on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Standard%20sidebar%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Strip full controls on selected tracks MCP.lua" type="script" desc="Layout Strip full controls on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Strip%20full%20controls%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Strip just the track name on selected tracks MCP.lua" type="script" desc="Layout Strip just the track name on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Strip%20just%20the%20track%20name%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Strip live recording on selected tracks MCP.lua" type="script" desc="Layout Strip live recording on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Strip%20live%20recording%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Strip meter bridge on selected tracks MCP.lua" type="script" desc="Layout Strip meter bridge on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Strip%20meter%20bridge%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Layout Strip on selected tracks MCP.lua" type="script" desc="Layout Strip on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Layout%20Strip%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Toggle Layout 'Small - Small sidebar' on selected tracks MCP.lua" type="script" desc="Toggle Layout 'Small - Small sidebar' on selected tracks MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Toggle%20Layout%20'Small%20-%20Small%20sidebar'%20on%20selected%20tracks%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Toggle Layout 'Standard expanding-Standard exp.,popup fader' on sel.tr.TCP.lua" type="script" desc="Toggle Layout 'Standard expanding-Standard exp.,popup fader' on sel.tr.TCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Toggle%20Layout%20'Standard%20expanding-Standard%20exp.,popup%20fader'%20on%20sel.tr.TCP.lua</source>
       </version>
     </reapack>
   </category>
