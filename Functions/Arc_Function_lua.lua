@@ -8,7 +8,7 @@
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + CloseAllFxInAllItemsAndAllTake(open_close--[[0;1]]);
+   * Changelog:   + CloseAllFxInAllItemsAndAllTake(open_close--[=[0;1]=]);
    *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
    *              + CloseAllFxInAllTracks(chain, float)--true,false
    *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
