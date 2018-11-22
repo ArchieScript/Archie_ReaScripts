@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.6
+   * Version:     1.0.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -46,18 +46,23 @@
 
 
 
-    -----------------CloseAllFxInAllItemsAndAllTake-------------------------
-    function Arc_Module.CloseAllFxInAllItemsAndAllTake(open_close--[[0;1]]);
-        local CountSelTr = reaper.CountSelectedMediaItems(0);
-        if CountSelTr == 0 then Arc_Module.no_undo() return -1 end;
-        for j = CountSelTr-1,0,-1 do;
-            local SelItem = reaper.GetSelectedMediaItem(0,j);
-            local CountTake = reaper.CountTakes(SelItem);
+    -----------------CloseAllFxInAllItemsAndAllTake----true;false;---------------
+    function Arc_Module.CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
+        local CountItem = reaper.CountMediaItems(0);
+        if CountItem == 0 then Arc_Module.no_undo() return -1 end;
+        for j = CountItem-1,0,-1 do;
+            local Item = reaper.GetMediaItem(0,j);
+            local CountTake = reaper.CountTakes(Item);
             for i = CountTake-1,0,-1 do;
-                local Take = reaper.GetMediaItemTake(SelItem,i);
+                local Take = reaper.GetMediaItemTake(Item,i);
                 local CountTakeFX = reaper.TakeFX_GetCount(Take);
                 for ij = CountTakeFX-1,0,-1 do;
-                    reaper.TakeFX_SetOpen(Take,ij,open_close);
+                   if chain == 1 or chain == true then;
+                       reaper.TakeFX_Show(Take,ij,0);
+                   end;
+                   if float == 1 or float == true then;
+                       reaper.TakeFX_Show(Take,ij,2);
+                   end;
                 end;
             end;
         end;
@@ -65,7 +70,7 @@
     end;
     -- Закрыть Все Fx Во Всех Элементах  И Во всех тейках
     -- Close All Fx In All Elements And In All Takes
-    --========================================================
+    --===================================================
 
 
 
