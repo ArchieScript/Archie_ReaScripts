@@ -2,13 +2,14 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.5
+   * Version:     1.0.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
+   * Changelog:   + CloseAllFxInAllItemsAndAllTake(open_close--[[0;1]]);
+   *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
    *              + CloseAllFxInAllTracks(chain, float)--true,false
    *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
    *              + no_undo()
@@ -31,6 +32,40 @@
     --===================
     local Arc_Module = {}
     --===================
+
+
+
+    --------------no_undo()--------------
+    --no_undo()
+    function Arc_Module.No_Undo()end; 
+    function Arc_Module.no_undo()
+        reaper.defer(Arc_Module.No_Undo)
+    end
+    --Что бы в ундо не прописывалось "ReaScript:Run"
+    --==============================================
+
+
+
+    -----------------CloseAllFxInAllItemsAndAllTake-------------------------
+    function Arc_Module.CloseAllFxInAllItemsAndAllTake(open_close--[[0;1]]);
+        local CountSelTr = reaper.CountSelectedMediaItems(0);
+        if CountSelTr == 0 then Arc_Module.no_undo() return -1 end;
+        for j = CountSelTr-1,0,-1 do;
+            local SelItem = reaper.GetSelectedMediaItem(0,j);
+            local CountTake = reaper.CountTakes(SelItem);
+            for i = CountTake-1,0,-1 do;
+                local Take = reaper.GetMediaItemTake(SelItem,i);
+                local CountTakeFX = reaper.TakeFX_GetCount(Take);
+                for ij = CountTakeFX-1,0,-1 do;
+                    reaper.TakeFX_SetOpen(Take,ij,open_close);
+                end;
+            end;
+        end;
+        return true
+    end;
+    -- Закрыть Все Fx Во Всех Элементах  И Во всех тейках
+    -- Close All Fx In All Elements And In All Takes
+    --========================================================
 
 
 
@@ -83,17 +118,6 @@
     end
     -- Закрыть Панель Инструментов По Номеру
     -- Несовместимо с верхним докером (top)
-    --==============================================
-
-
-
-    --------------no_undo()--------------
-    --no_undo()
-    function Arc_Module.No_Undo()end; 
-    function Arc_Module.no_undo()
-        reaper.defer(Arc_Module.No_Undo)
-    end
-    --Что бы в ундо не прописывалось "ReaScript:Run"
     --==============================================
 
 
