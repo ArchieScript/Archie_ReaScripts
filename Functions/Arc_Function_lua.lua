@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.7
+   * Version:     1.0.8
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -16,6 +16,7 @@
    *              + GetMediaItemInfo_Value(item,parmname)/[D_END] 
    *              + Get_Format_ProjectGrid(divisionIn)
    *              + Action(id)
+   *              + invert_number(X)
    *              + CountTrackSelectedMediaItems(track)
    *              + GetTrackSelectedMediaItems(track,idx)
 --======================================================]]
@@ -169,6 +170,16 @@
     end
     -- Выполняет действие, относящееся к разделу основное действие. 
     --=============================================================
+
+
+
+    --------invert_number--------
+    function Arc_Module.invert_number(X)
+        local X = X - X * 2 
+        return X
+    end
+	-- инвертировать число
+    -----------------------------
 
 
 
