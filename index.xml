@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="e0c65bb68f4b60557fdf2b9cc3016617cbec68a8" name="Archie-ReaScripts">
+<index version="1" commit="03fb7ba6b05aa5a4fe437f7901ba47f10815d222" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -666,6 +666,16 @@
 + GIF     / v.1.01 
 + initialе / v.1.0 ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-22T20:06:25Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/03fb7ba6b05aa5a4fe437f7901ba47f10815d222/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one .lua" type="script" desc="Move selected tracks in up on one">
