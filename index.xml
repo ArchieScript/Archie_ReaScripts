@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="03fb7ba6b05aa5a4fe437f7901ba47f10815d222" name="Archie-ReaScripts">
+<index version="1" commit="5ef0324b4ab1a649a5e9e68c825563e94674f93e" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -88,6 +88,12 @@
       <version name="1.0" author="Archie" time="2018-11-20T07:14:34Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/68938e95ff30028b54167b5e1b222beb1e8c543b/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2018-11-23T10:57:51Z">
+        <changelog><![CDATA[+! Fixed incomplete closing of previous fx / v.1.01[23112018]
++! Исправлена неполное закрытие предыдущих fx / v.1.01[23112018]
++  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ef0324b4ab1a649a5e9e68c825563e94674f93e/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Close all VSTi in Selected tracks.lua" type="script" desc="Close all VSTi in Selected tracks">
