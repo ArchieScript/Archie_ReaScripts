@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Add Fx by Name in selected tracks (a description of settings inside script)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Add Fx by Name in selected track(s)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Добавить Fx по имени в выбранные трек(и)
@@ -12,7 +12,9 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Maestro Sound(Rmm/forum)
-   * Changelog:   +  initialе / v.1.0
+   * Changelog:   +! Fixed incomplete closing of previous fx / v.1.01[23112018]
+   *              +! Исправлена неполное закрытие предыдущих fx / v.1.01[23112018]
+   *              +  initialе / v.1.0
 --===========================================================
 SYSTEM REQUIREMENTS: / СИСТЕМНЫЕ ТРЕБОВАНИЯ: 
     Reaper v.5.961 -------- \http://www.reaper.fm/download.php -------\(and above \ и выше)\
@@ -213,6 +215,7 @@ SYSTEM REQUIREMENTS: / СИСТЕМНЫЕ ТРЕБОВАНИЯ:
         if CloseAllPreviousFx == 1 then float = true chain = false end
         if CloseAllPreviousFx == 2 then float = true chain = true  end
         Arc.CloseAllFxInAllTracks(chain, float) 
+        Arc.CloseAllFxInAllItemsAndAllTake(chain, float);
     end
 
 
