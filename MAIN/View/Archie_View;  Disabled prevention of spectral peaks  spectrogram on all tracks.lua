@@ -1,10 +1,10 @@
 --[[
    * Category:    View
-   * Description: Toggle prevention of spectral peaks / spectrogram on all tracks
+   * Description: Disabled prevention of spectral peaks / spectrogram on all tracks
    * Author:      Archie
    * Version:     1.0
-   * AboutScript: Toggle prevention of spectral peaks / spectrogram on all tracks
-   * О скрипте:   Переключение предотвращения спектральных пиков / спектрограмм на всех дорожках
+   * AboutScript: Disabled prevention of spectral peaks / spectrogram on all tracks
+   * О скрипте:   Отключить предотвращения спектральных пиков / спектрограмм на всех дорожках
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
@@ -52,10 +52,10 @@ SYSTEM REQUIREMENTS: / СИСТЕМНЫЕ ТРЕБОВАНИЯ:
     package.path = package.path..";"..ScriptPath.."/?.lua"-------------------------------------
     Arc = require "Arc_Function_lua"-----------------------------------------------------------
     --========================================================================================= 
-
-
-
-
+    
+    
+    
+    
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then Arc.no_undo() return end;
 
@@ -63,29 +63,12 @@ SYSTEM REQUIREMENTS: / СИСТЕМНЫЕ ТРЕБОВАНИЯ:
     reaper.PreventUIRefresh(1)
     reaper.Undo_BeginBlock()
 
-
-    local Perf, Undo = 4;
-    for i = 1,CountTrack do;
-        local Track = reaper.GetTrack(0,i-1);
-        local _,str = reaper.GetTrackStateChunk(Track,"",false);
-        local str2 = str:match('PERF (%d+)');
-        if str2 == "4" then Perf = 0 end;
-    end
-
-
-    if Perf == 0 then;
-        Undo = "Disabled prevention of spectral peaks / spectrogram on all tracks"
-    else
-        Undo = "Enabled prevention of spectral peaks / spectrogram on all tracks"
-    end;
-
-
     for i = 1,CountTrack do
         local Track = reaper.GetTrack(0,i-1)
         local _,str = reaper.GetTrackStateChunk(Track,"",false);
-        local str2 = str:gsub('PERF %d+', "PERF".." "..Perf)
+        local str2 = str:gsub('PERF %d+', "PERF".." "..0)
         reaper.SetTrackStateChunk(Track, str2, false)
     end
 
-    reaper.Undo_EndBlock(Undo,-1)
+    reaper.Undo_EndBlock("Disabled prevention of spectral peaks / spectrogram on all tracks",-1)
     reaper.PreventUIRefresh(-1)

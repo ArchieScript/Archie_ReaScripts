@@ -11,7 +11,7 @@
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   + initialе / v.1.0
---===========================================================
+--=========================================================== 
 SYSTEM REQUIREMENTS: / СИСТЕМНЫЕ ТРЕБОВАНИЯ: 
     Reaper v.5.962 -------- \http://www.reaper.fm/download.php -------\(and above \ и выше)\
     SWS v.2.9.7 ------------ \ http://www.sws-extension.org/index.php -\(and above \ и выше)\
