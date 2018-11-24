@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5ef0324b4ab1a649a5e9e68c825563e94674f93e" name="Archie-ReaScripts">
+<index version="1" commit="0595385a353e72f9c44540273114d889ea35c990" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -38,6 +38,9 @@
       </version>
       <version name="1.0.8" author="Archie" time="2018-11-22T19:53:30Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/e0c65bb68f4b60557fdf2b9cc3016617cbec68a8/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="1.0.9" author="Archie" time="2018-11-24T18:27:34Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/bc17fa6261bc57027aa8e9ceeacae0b7da889844/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -706,6 +709,46 @@
     </reapack>
   </category>
   <category name="MAIN/View">
+    <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-24T19:54:33Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0595385a353e72f9c44540273114d889ea35c990/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-23T20:17:30Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/63419f549913fe0826f68115d52314209a553351/MAIN/View/Archie_View;%20%20Disabled%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Enable prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Enable prevention of spectral peaks / spectrogram on all tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-23T20:04:12Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/23ad0ddbd52738d3798b5720e6ea9cc8307716f8/MAIN/View/Archie_View;%20%20Enable%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Enable spectral peaks on selected tracks.lua" type="script" desc="Enable spectral peaks on selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-23T20:04:12Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/23ad0ddbd52738d3798b5720e6ea9cc8307716f8/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_View;  Layout Default on selected tracks MCP.lua" type="script" desc="Layout Default on selected tracks MCP">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -884,6 +927,16 @@
       <version name="1.0" author="Archie" time="2018-11-21T18:38:43Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a255f0b4769e37aa28ba304e35d9b6321d421a/MAIN/View/Archie_View;%20%20Toggle%20Layout%20'Standard%20expanding-Standard%20exp.,popup%20fader'%20on%20sel.tr.TCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Toggle prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Toggle prevention of spectral peaks / spectrogram on all tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-11-23T20:04:12Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/23ad0ddbd52738d3798b5720e6ea9cc8307716f8/MAIN/View/Archie_View;%20%20Toggle%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
       </version>
     </reapack>
   </category>
