@@ -2,13 +2,15 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.0.8
+   * Version:     1.0.9
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
+   * Changelog:   + GetPreventSpectralPeaksInTrack(Track)
+   *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[[Perf = true;false]]
+   *              + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
    *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
    *              + CloseAllFxInAllTracks(chain, float)--true,false
    *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
@@ -44,6 +46,31 @@
     end
     --Что бы в ундо не прописывалось "ReaScript:Run"
     --==============================================
+
+
+
+    ----------------GetPreventSpectralPeaksInTrack------------
+    function Arc_Module.GetPreventSpectralPeaksInTrack(Track)
+        local _,str = reaper.GetTrackStateChunk(Track,"",false);
+        local Perf = str:match('PERF (%d+)');
+        if Perf == "4" then return true end
+        return false
+    end
+    -- ПОЛУЧИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
+    -----------------------------------------------------
+
+
+
+    ------SetPreventSpectralPeaksInTrack------[[Perf = true;false]]
+    function Arc_Module.SetPreventSpectralPeaksInTrack(Track,Perf);
+        if Perf == true then Perf = 4 end;
+        if Perf == false then Perf = 0 end;
+        local _,str = reaper.GetTrackStateChunk(Track,"",false);
+        local str2 = str:gsub('PERF %d+',"PERF".." "..Perf);
+        reaper.SetTrackStateChunk(Track,str2,false);
+    end;
+    -- УСТАНОВИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
+    -------------------------------------------------------
 
 
 
