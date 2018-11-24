@@ -9,7 +9,7 @@
    * ---------------------
    
    * Changelog:   + GetPreventSpectralPeaksInTrack(Track)
-   *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[[Perf = true;false]]
+   *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
    *              + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
    *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
    *              + CloseAllFxInAllTracks(chain, float)--true,false
