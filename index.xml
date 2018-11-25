@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="8c3f96b0d05baa7a0a006f40fbc4220c12409171" name="Archie-ReaScripts">
+<index version="1" commit="c689bdb3cdf12dfb460e177655cbc6ad9140731f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -84,24 +84,24 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Envelope/Archie_Env;%20%20Select%20all%20automation%20items%20in%20selected%20envelope%20track.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Env; Show track envelope last touched FX parameter(add point in start of time selection).lua" type="script" desc="Show track envelope last touched FX parameter(add point in start of time selection)">
+    <reapack name="Archie_Env;  Show track envelope last touched FX parameter(add point in start of time selection).lua" type="script" desc="Show track envelope last touched FX parameter(add point in start of time selection)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-25T14:10:53Z">
+      <version name="1.0" author="Archie" time="2018-11-25T15:02:41Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8c3f96b0d05baa7a0a006f40fbc4220c12409171/MAIN/Envelope/Archie_Env;%20Show%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c689bdb3cdf12dfb460e177655cbc6ad9140731f/MAIN/Envelope/Archie_Env;%20%20Show%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Env; Show-hide track envelope last touched FX parameter(add point in start of time selection).lua" type="script" desc="Show-hide track envelope last touched FX parameter(add point in start of time selection)">
+    <reapack name="Archie_Env;  Show-hide track envelope last touched FX parameter(add point in start of time selection).lua" type="script" desc="Show-hide track envelope last touched FX parameter(add point in start of time selection)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-25T14:10:53Z">
+      <version name="1.0" author="Archie" time="2018-11-25T15:02:41Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8c3f96b0d05baa7a0a006f40fbc4220c12409171/MAIN/Envelope/Archie_Env;%20Show-hide%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c689bdb3cdf12dfb460e177655cbc6ad9140731f/MAIN/Envelope/Archie_Env;%20%20Show-hide%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection).lua</source>
       </version>
     </reapack>
   </category>
