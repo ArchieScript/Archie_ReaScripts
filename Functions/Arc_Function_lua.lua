@@ -2,13 +2,15 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.0
+   * Version:     1.1.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + GetPreventSpectralPeaksInTrack(Track)
+   * Changelog:   + SaveSelTracksGuidSlot(Slot);
+   *              + RestoreSelTracksGuidSlot(Slot,reset);
+   *              + GetPreventSpectralPeaksInTrack(Track)
    *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
    *              + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
    *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
@@ -38,18 +40,54 @@
 
 
 
-    --------------no_undo()--------------
+    --------------no_undo()-------------------------------------------------------------
     --no_undo()
     function Arc_Module.No_Undo()end; 
     function Arc_Module.no_undo()
         reaper.defer(Arc_Module.No_Undo)
     end
     --Что бы в ундо не прописывалось "ReaScript:Run"
-    --==============================================
+    --==================================================================================
 
 
 
-    ----------------GetPreventSpectralPeaksInTrack------------
+    -------SaveSelTracksGuidSlot--------------------------------------------------------
+    ------RestoreSelTracksGuidSlot------------------------------------------------------
+    function Arc_Module.SaveSelTracksGuidSlot(Slot);
+        local t = {};
+        _G[Slot] = t;
+        for i = 1, reaper.CountSelectedTracks(0) do;
+            local sel_tracks = reaper.GetSelectedTrack(0,i-1);
+            t[i] = reaper.GetTrackGUID(sel_tracks);
+        end;
+    end;
+    ---
+    function Arc_Module.RestoreSelTracksGuidSlot(Slot,reset);
+       local tr = reaper.GetTrack(0,0);
+       reaper.SetOnlyTrackSelected(tr);
+       reaper.SetTrackSelected(tr, 0);
+       ---
+       local t = _G[Slot];
+       for i = 1, #t do;
+           local track = reaper.BR_GetMediaTrackByGUID(0,t[i]);
+           if track then;
+               reaper.SetTrackSelected(track,1);
+           end;
+       end;
+       if reset == 1 or reset == true then;
+           _G[Slot] = nil;
+       end;
+    end;
+    -- SaveSelTracksGuidSlot("Slot_1")
+    -- RestoreSelTracksGuidSlot("Slot_1",true)
+    -- SaveSelTracksGuidSlot("Slot_2")
+    -- RestoreSelTracksGuidSlot("Slot_2",false)
+    -- RestoreSelTracksGuidSlot("Slot_2",true)
+    --==================================================================================
+
+
+
+    ----------------GetPreventSpectralPeaksInTrack--------------------------------------
     function Arc_Module.GetPreventSpectralPeaksInTrack(Track)
         local _,str = reaper.GetTrackStateChunk(Track,"",false);
         local Perf = str:match('PERF (%d+)');
@@ -57,11 +95,11 @@
         return false
     end
     -- ПОЛУЧИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
-    -----------------------------------------------------
+    --==================================================================================
 
 
 
-    ------SetPreventSpectralPeaksInTrack------[[Perf = true;false]]
+    ------SetPreventSpectralPeaksInTrack------[[Perf = true;false]]---------------------
     function Arc_Module.SetPreventSpectralPeaksInTrack(Track,Perf);
         if Perf == true then Perf = 4 end;
         if Perf == false then Perf = 0 end;
@@ -70,11 +108,11 @@
         reaper.SetTrackStateChunk(Track,str2,false);
     end;
     -- УСТАНОВИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
-    -------------------------------------------------------
+    --==================================================================================
 
 
 
-    -----------------CloseAllFxInAllItemsAndAllTake----true;false;---------------
+    -----------------CloseAllFxInAllItemsAndAllTake----true;false;----------------------
     function Arc_Module.CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
         local CountItem = reaper.CountMediaItems(0);
         if CountItem == 0 then Arc_Module.no_undo() return -1 end;
@@ -98,11 +136,11 @@
     end;
     -- Закрыть Все Fx Во Всех Элементах  И Во всех тейках
     -- Close All Fx In All Elements And In All Takes
-    --===================================================
+    --==================================================================================
 
 
 
-    --------------SetShow_HideTrackMCP----------------------------
+    --------------SetShow_HideTrackMCP--------------------------------------------------
     function Arc_Module.SetShow_HideTrackMCP(Track,show_hide--[[0;1]]);
         local _,str = reaper.GetTrackStateChunk(Track,"",true);
         local SHOWINMIX = str:match('SHOWINMIX %d+');
@@ -111,11 +149,11 @@
     end;
     -- Show Hide Track in Mixer (MCP)
     -- Показать Скрыть дорожку в микшере (MCP)
-    --========================================
+    --==================================================================================
 
 
 
-    ----------------- CloseAllFxInAllTracks ---------------------
+    ----------------- CloseAllFxInAllTracks --------------------------------------------
     function Arc_Module.CloseAllFxInAllTracks(chain, float)--true,false
         local CountTr = reaper.CountTracks(0)
         if CountTr == 0 then 
@@ -136,11 +174,11 @@
         end
     end
     -- Закрыть Все Fx На Всех Дорожках
-    --============================================
+    --==================================================================================
 
 
 
-    --------------- Несовместимо с верхним докером ------------------
+    --------------- Несовместимо с верхним докером -------------------------------------
     function Arc_Module.CloseToolbarByNumber(ToolbarNumber--[[1-16]])
         local CloseToolbar_T = {[0]=41651,41679,41680,41681,41682,41683,41684,41685,
                                41686,41936,41937,41938,41939,41940,41941,41942,41943}
@@ -151,11 +189,11 @@
     end
     -- Закрыть Панель Инструментов По Номеру
     -- Несовместимо с верхним докером (top)
-    --==============================================
+    --==================================================================================
 
 
    
-    --------------GetMediaItemInfo_Value-----------------------
+    --------------GetMediaItemInfo_Value------------------------------------------------
     function Arc_Module.GetMediaItemInfo_Value(item, parmname)
         if parmname == "END" or parmname == "D_END" then return
             reaper.GetMediaItemInfo_Value(item,"D_POSITION")+
@@ -164,11 +202,11 @@
             return reaper.GetMediaItemInfo_Value(item,parmname) 
         end
     end 
-    --=========================================================
+    --==================================================================================
 
 
 
-    -----------Get_Format_ProjectGrid----------
+    -----------Get_Format_ProjectGrid---------------------------------------------------
     function Get_Format_ProjectGrid(divisionIn)
         local grid_div
         if divisionIn < 1 then
@@ -184,11 +222,11 @@
         return grid_div
     end
     -- Форматирует значение сетки проекта в удобочитаемую форму
-    --=========================================================
+    --==================================================================================
 
 
 
-    -------------Action------------
+    -------------Action-----------------------------------------------------------------
     function Arc_Module.Action(...)
        local Table = {...}
        for i = 1, #Table do
@@ -196,21 +234,21 @@
        end
     end
     -- Выполняет действие, относящееся к разделу основное действие. 
-    --=============================================================
+    --==================================================================================
 
 
 
-    --------invert_number--------
+    --------invert_number---------------------------------------------------------------
     function Arc_Module.invert_number(X)
         local X = X - X * 2 
         return X
     end
 	-- инвертировать число
-    -----------------------------
+    --==================================================================================
 
 
 
-    ----------------CountTrackSelectedMediaItems----------------
+    ----------------CountTrackSelectedMediaItems----------------------------------------
     function Arc_Module.CountTrackSelectedMediaItems(track);
         local CountTrItems = reaper.CountTrackMediaItems(track);
         local count = 0;
@@ -222,11 +260,11 @@
         return count;
     end;
     --Количество в треке Выбранных Элементов
-    --==========================================================
+    --==================================================================================
 
 
 
-    ---------------GetTrackSelectedMediaItems----------------
+    ---------------GetTrackSelectedMediaItems-------------------------------------------
     function Arc_Module.GetTrackSelectedMediaItems(track,idx);
         local CountTrItems = reaper.CountTrackMediaItems(track);
         local count = -1;
@@ -238,7 +276,7 @@
         end;
     end;
     -- Получить в треке Выбранный Элемент
-    --============================================
+    --==================================================================================
 
 
 
