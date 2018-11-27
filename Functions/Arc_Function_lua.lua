@@ -2,13 +2,14 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.1
+   * Version:     1.1.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
-   * Changelog:   + SaveSelTracksGuidSlot(Slot);
+   * Changelog:   + RemoveStretchMarkersSavingTreatedWave_Render(Take);
+   *              + SaveSelTracksGuidSlot(Slot);
    *              + RestoreSelTracksGuidSlot(Slot,reset);
    *              + GetPreventSpectralPeaksInTrack(Track)
    *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
@@ -47,6 +48,89 @@
         reaper.defer(Arc_Module.No_Undo)
     end
     --Что бы в ундо не прописывалось "ReaScript:Run"
+    --==================================================================================
+
+
+
+    --------------RemoveStretchMarkersSavingTreatedWave_Render--------------------------
+    function Arc_Module.RemoveStretchMarkersSavingTreatedWave_Render(Take);
+        if not Take then reaper.ReaScriptError("bad argument #1 to"..
+            "'RemoveStretchMarkersSavingTreatedWave_Render' (Take expected)")
+            return
+        end;
+        if not reaper.TakeIsMIDI(Take) then;
+            if reaper.GetTakeNumStretchMarkers(Take) > 0 then;
+                reaper.PreventUIRefresh(1);
+                reaper.Undo_BeginBlock2(0);
+                ---
+                local FX_Enabled,Guid = {},{};
+                for i = 1, reaper.CountSelectedMediaItems(0) do;
+                    local sel_item = reaper.GetSelectedMediaItem(0,i-1);
+                    Guid[i] = reaper.BR_GetMediaItemGUID(sel_item);
+                end;
+                reaper.SelectAllMediaItems(0,0);
+                local item = reaper.GetMediaItemTake_Item(Take);
+                reaper.SetMediaItemSelected(item,1);
+                ---
+                local active,visible,armed,inLane,laneHeight,defaultShape,minValue,
+                      maxValue,centerValue,typeS,faderScaling,EnvelopePresent = {};  
+                local CountTakeEnv = reaper.CountTakeEnvelopes(Take);
+                if CountTakeEnv > 0 then;
+                    EnvelopePresent = "Active"
+                    for i = 1,CountTakeEnv do;
+                        local EnvTake = reaper.GetTakeEnvelope(Take,i-1);
+                        local EnvAlloc = reaper.BR_EnvAlloc(EnvTake,false);
+                        active[i],visible,armed,inLane,laneHeight,defaultShape,minValue,
+                        maxValue,centerValue,typeS,faderScaling = reaper.BR_EnvGetProperties(EnvAlloc);
+                        reaper.BR_EnvSetProperties(EnvAlloc,false--[[active]],
+                                                   visible,armed,inLane,laneHeight,defaultShape,faderScaling);
+                        reaper.BR_EnvFree(EnvAlloc,true);
+                    end;
+                end;
+                ---
+                local CountFx = reaper.TakeFX_GetCount(Take)
+                for i = 1,CountFx do
+                    FX_Enabled[i] = reaper.TakeFX_GetEnabled(Take,i-1)
+                    reaper.TakeFX_SetEnabled(Take,i-1,0)
+                end
+                reaper.Main_OnCommand(41999,0)--Render items to new take
+                local Take_X = reaper.GetActiveTake(item)
+                
+                local NumStrMar = reaper.GetTakeNumStretchMarkers(Take)
+                reaper.DeleteTakeStretchMarkers(Take, 0, NumStrMar)
+                
+                local Take_X_Source = reaper.GetMediaItemTake_Source(Take_X)
+                local Filenamebuf = reaper.GetMediaSourceFileName(Take_X_Source,"")
+                reaper.BR_SetTakeSourceFromFile(Take,Filenamebuf,true)  
+                reaper.Main_OnCommand(40129,0)--Delete active take from items
+                reaper.SetActiveTake(Take)
+                for i = 1, #FX_Enabled do
+                    reaper.TakeFX_SetEnabled(Take,i-1,FX_Enabled[i])
+                end
+                ---
+                if EnvelopePresent then;
+                    for i = 1,CountTakeEnv do;
+                        local EnvTake = reaper.GetTakeEnvelope(Take,i-1);
+                        local EnvAlloc = reaper.BR_EnvAlloc(EnvTake,false);
+                        reaper.BR_EnvSetProperties(EnvAlloc,active[i],visible,
+                           armed,inLane,laneHeight,defaultShape,faderScaling);
+                        reaper.BR_EnvFree(EnvAlloc,true);
+                    end;
+                end;
+                ---
+                reaper.SelectAllMediaItems(0,0);
+                for i = 0, #Guid do; 
+                    local item = reaper.BR_GetMediaItemByGUID(0,Guid[i]);
+                    if item then;
+                        reaper.SetMediaItemSelected(item,1);
+                    end;
+                end;
+                reaper.Undo_EndBlock2(0,"RemoveStretchMarkersSavingTreatedWave",-1);
+                reaper.PreventUIRefresh(-1);
+            end;
+        end;
+        reaper.UpdateArrange();
+    end;   -- Удалить Маркеры Растяжки, Сохраняя Обработанную Волну (Render)
     --==================================================================================
 
 
