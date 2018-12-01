@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.4
+   * Version:     1.1.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -43,28 +43,27 @@
 
 
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------
-    function Arc_Module.VersionArc_Function_lua(version);
-        local ver_fun = "1.1.4"   --НЕ ЗАБУДЬ ОБНОВИТЬ
+    function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);
+        local ver_fun = "1.1.5"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
         local v = ver_fun:gsub("%D", "");
-        if v <  version:gsub("%D", "") then 
-           local filePath = select(2,reaper.get_action_context())
-           reaper.ClearConsole()
-           reaper.ShowConsoleMsg('Eng:\n'..
-           --[[----------------]]'   The file "Arc_Function_lua" is not relevant, Obsolete.\n'..
-           --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..
-           --[[----------------]]'   ( https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
-           --[[----------------]]'   ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua )\n'..
-           --[[----------------]]'   And replace it along the way\n'..'   '..filePath..'\n'..
-           --[[----------------]]'   -------------------------------------------------------------------------------------'..
-           --[[----------------]]'---------------------------------------------------------------------------------------'..
-           --[[----------------]]'------------------------------------------------------------------------------\nRus:\n'..
-           --[[----------------]]'   Файл "Arc_Function_lua" не актуален,Устарел.\n'.. 
-           --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'.. 
-           --[[----------------]]'   ( https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
-           --[[----------------]]'   ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua )\n'..
-           --[[----------------]]'   И замените его по пути\n'..'   '..filePath)
-        end------------------------------------------------------------------------------
-    end    --Сообщить об устаревшей версии-----------------------------------------------
+        if v < version:gsub("%D", "") then 
+            reaper.ClearConsole()
+            reaper.ShowConsoleMsg('Eng:\n'..
+            --[[----------------]]'   The file "Arc_Function_lua" is not relevant, Obsolete.\n'..
+            --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..
+            --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
+            --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..
+            --[[----------------]]'   And replace it along the way\n'..'   '..ScriptPath..'\\'..ScriptName..'\n'..
+            --[[----------------]]'   --------------------------------------------------------------------------------'..
+            --[[----------------]]'-----------------------------------------------------------------------------------'..
+            --[[----------------]]'--------------------------------------------------------------------------\nRus:\n'..
+            --[[----------------]]'   Файл "Arc_Function_lua" не актуален,Устарел.\n'.. 
+            --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'.. 
+            --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
+            --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..
+            --[[----------------]]'   И замените его по пути\n'..'   '..ScriptPath..'\\'..ScriptName)
+        end -----------------------------------------------------------------------------------------
+    end    ---Сообщить об устаревшей версии----------------------------------------------------
     --====End===============End===============End===============End===============End====
 
 
