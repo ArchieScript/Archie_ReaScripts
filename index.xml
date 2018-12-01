@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="0d785c7254f2841dbefa0d6919a1c5a8a4511207" name="Archie-ReaScripts">
+<index version="1" commit="66b9126f6cac79bd228baeebe7458fdafd8d6eba" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -480,6 +480,39 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Markers/Archie_Markers;%20%20Save%20template%20regions%20in%20slot%20X.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers;  Split selected items at stretch markers and remove markers, no save processed wave.lua" type="script" desc="Split selected items at stretch markers and remove markers, no save processed wave">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-01T19:00:58Z">
+        <changelog><![CDATA[+ initialе / v.1.0 [011218]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/66b9126f6cac79bd228baeebe7458fdafd8d6eba/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20no%20save%20processed%20wave.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers;  Split selected items at stretch markers and remove markers, save processed wave(Render).lua" type="script" desc="Split selected items at stretch markers and remove markers, save processed wave(Render)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-01T19:00:58Z">
+        <changelog><![CDATA[+ initialе / v.1.0 [011218]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/66b9126f6cac79bd228baeebe7458fdafd8d6eba/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20save%20processed%20wave(Render).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers;  Split selected items at stretch markers.lua" type="script" desc="Split selected items at stretch markers">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-01T19:00:58Z">
+        <changelog><![CDATA[+ initialе / v.1.0 [011218]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/66b9126f6cac79bd228baeebe7458fdafd8d6eba/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers.lua</source>
       </version>
     </reapack>
   </category>
