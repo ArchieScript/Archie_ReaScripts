@@ -2,15 +2,15 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.3
+   * Version:     1.1.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
    * Changelog:   
-   *              + nido_undo()
-   *              + Action()
+   *              + no_undo()
+   *              + Action();
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
    *              + RestoreSelTracksGuidSlot(Slot,reset);
@@ -42,11 +42,39 @@
 
 
 
+    -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------
+    function Arc_Module.VersionArc_Function_lua(version);
+        local ver_fun = "1.1.4"   --НЕ ЗАБУДЬ ОБНОВИТЬ
+        local v = ver_fun:gsub("%D", "");
+        if v <  version:gsub("%D", "") then 
+           local filePath = select(2,reaper.get_action_context())
+           reaper.ClearConsole()
+           reaper.ShowConsoleMsg('Eng:\n'..
+           --[[----------------]]'   The file "Arc_Function_lua" is not relevant, Obsolete.\n'..
+           --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..
+           --[[----------------]]'   ( https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
+           --[[----------------]]'   ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua )\n'..
+           --[[----------------]]'   And replace it along the way\n'..'   '..filePath..'\n'..
+           --[[----------------]]'   -------------------------------------------------------------------------------------'..
+           --[[----------------]]'---------------------------------------------------------------------------------------'..
+           --[[----------------]]'------------------------------------------------------------------------------\nRus:\n'..
+           --[[----------------]]'   Файл "Arc_Function_lua" не актуален,Устарел.\n'.. 
+           --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'.. 
+           --[[----------------]]'   ( https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..
+           --[[----------------]]'   ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua )\n'..
+           --[[----------------]]'   И замените его по пути\n'..'   '..filePath)
+        end------------------------------------------------------------------------------
+    end    --Сообщить об устаревшей версии-----------------------------------------------
+    --====End===============End===============End===============End===============End====
+
+
+
+
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
     --------------no_undo()--------------------------------------------------------------
     --no_undo()
     function Arc_Module.No_Undo()end; 
-    function Arc_Module.no_undo()
+    function Arc_Module.no_undo()--<<<
         reaper.defer(Arc_Module.No_Undo)
     end
     --Что бы в ундо не прописывалось "ReaScript:Run"
@@ -64,6 +92,7 @@
     -- Выполняет действие, относящееся к разделу основное действие. 
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 
 
 
@@ -275,6 +304,7 @@
 
 
 
+
     -------SaveSelTracksGuidSlot---------------------------------------------------------
     ------RestoreSelTracksGuidSlot-------------------------------------------------------
     function Arc_Module.SaveSelTracksGuidSlot(Slot);
@@ -311,6 +341,7 @@
 
 
 
+
     ----------------GetPreventSpectralPeaksInTrack---------------------------------------
     function Arc_Module.GetPreventSpectralPeaksInTrack(Track)
         local _,str = reaper.GetTrackStateChunk(Track,"",false);
@@ -320,6 +351,7 @@
     end
     -- ПОЛУЧИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
     --====End===============End===============End===============End===============End====
+
 
 
 
@@ -333,6 +365,7 @@
     end;
     -- УСТАНОВИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
     --====End===============End===============End===============End===============End====
+
 
 
 
@@ -364,6 +397,7 @@
 
 
 
+
     --------------SetShow_HideTrackMCP---------------------------------------------------
     function Arc_Module.SetShow_HideTrackMCP(Track,show_hide--[[0;1]]);
         local _,str = reaper.GetTrackStateChunk(Track,"",true);
@@ -374,6 +408,7 @@
     -- Show Hide Track in Mixer (MCP)
     -- Показать Скрыть дорожку в микшере (MCP)
     --====End===============End===============End===============End===============End====
+
 
 
 
@@ -402,6 +437,7 @@
 
 
 
+
     --------------- Несовместимо с верхним докером --------------------------------------
     function Arc_Module.CloseToolbarByNumber(ToolbarNumber--[[1-16]])
         local CloseToolbar_T = {[0]=41651,41679,41680,41681,41682,41683,41684,41685,
@@ -416,6 +452,7 @@
     --====End===============End===============End===============End===============End====
 
 
+
    
     --------------GetMediaItemInfo_Value-------------------------------------------------
     function Arc_Module.GetMediaItemInfo_Value(item, parmname)
@@ -427,6 +464,7 @@
         end
     end 
     --====End===============End===============End===============End===============End====
+
 
 
 
@@ -450,13 +488,15 @@
 
 
 
+
     --------invert_number----------------------------------------------------------------
     function Arc_Module.invert_number(X)
         local X = X - X * 2 
         return X
     end
-	-- инвертировать число
+  -- инвертировать число
     --====End===============End===============End===============End===============End====
+
 
 
 
@@ -476,6 +516,7 @@
 
 
 
+
     ---------------GetTrackSelectedMediaItems--------------------------------------------
     function Arc_Module.GetTrackSelectedMediaItems(track,idx);
         local CountTrItems = reaper.CountTrackMediaItems(track);
@@ -489,6 +530,7 @@
     end;
     -- Получить в треке Выбранный Элемент
     --====End===============End===============End===============End===============End====
+
 
 
 
