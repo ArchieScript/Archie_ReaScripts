@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.5
+   * Version:     1.1.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -41,10 +41,10 @@
     --===================
 
 
-
+    ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);
-        local ver_fun = "1.1.5"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
+        local ver_fun = "1.1.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
         local v = ver_fun:gsub("%D", "");
         if v < version:gsub("%D", "") then 
             reaper.ClearConsole()
