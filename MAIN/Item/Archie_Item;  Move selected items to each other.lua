@@ -2,21 +2,28 @@
    * Category:    Item
    * Description: Move selected items to each other
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Move the selected items to each other (from first selected in track)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Перемещение выбранных элементов друг к другу (от первого выбранного в треке)
    *              ОБРАТИТЕ ВНИМАНИЕ НА НАСТРОЙКИ НИЖЕ
    * GIF:         http://clck.ru/EiSgF
    * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    HDVulcan [Rmm/forum]
    * Gave idea:   HDVulcan [Rmm/forum]
-   * Changelog:   +  initialе / v.1.0
---===========================================================================
-SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 | (and above)
-СИСТЕМНЫЕ ТРЕБОВАНИЯ: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 | (и выше)
---==========================================================================]]
+   * Changelog:   + Fix bug with undo / v.1.01 [04122018]
+   *              + initialе / v.1.0
+--============================================================================================|
+----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   + Reaper v.5.962 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
+   + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
+   - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
+   + Arc_Function_lua v.1.1.6 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
+   - reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
+                                                                 http://clck.ru/Eo5Lw |и выше)|
+--===========================================================================================]]
 
 
 
@@ -70,7 +77,7 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 | (and above)
           for i3=0,h do;f3=Enu(Path..s..f1..s..f2,i3)if f3 then T[#T+1]=Path..s..f1..s..f2..s..f3;
             for i4=0,h do;f4 = Enu(Path..s..f1..s..f2..s..f3,i4)if f4 then T[#T+1]=Path..s..f1..s..f2..s..f3..s..f4;
               for i5=0,h do;f5=Enu(Path..s..f1..s..f2..s..f3..s..f4,i5)if f5 then T[#T+1]=Path..s..f1..s..f2..s..f3..s..f4..s..f5;
-              ----------
+              ------------------------
               end;if not f5 then break end;end;
             end;if not f4 then break end;end;
           end;if not f3 then break end;end;
@@ -79,20 +86,19 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 | (and above)
     end;
     ---
     local function GetModule(Path,file);
-      local FolPath,mod,Way = GetSubdirectoriesUpToLevelFive(Path);
-      for i=0,#FolPath do;if not FolPath[i]then FolPath[i]=select(2,reaper.get_action_context()):match("(.+)[\\]")end;
-        for i2 = 0,math.huge do; local f = reaper.EnumerateFiles(FolPath[i],i2);
-          if f == file then mod=true Way=FolPath[i]break end;if not f then break end;
-        end; if mod then return mod,Way end;
-      end----------------------------------
-    end------------------------------------
-    ---------------------------------------
-    local found_mod,ScriptPath,Arc = GetModule(reaper.GetResourcePath(),"Arc_Function_lua.lua")
-    if not found_mod then reaper.ReaScriptError("Missing 'Arc_Function_lua' file,"-------------
-                            .." install ReaPack to install this file.") return end
-    package.path = package.path..";"..ScriptPath.."/?.lua"------------------------
-    Arc = require "Arc_Function_lua"----------------------
-    --==============================
+    local FolPath,mod,Way = GetSubdirectoriesUpToLevelFive(Path);
+    FolPath[-1]=Path..'/Scripts/Archie-ReaScripts/Functions';FolPath[0]=select(2,reaper.get_action_context()):match("(.+)[\\]")
+    for i=-1,#FolPath do;for i2 = 0,math.huge do; local f = reaper.EnumerateFiles(FolPath[i],i2);
+    if f == file then mod=true Way=FolPath[i]break end;if not f then break end;end; if mod then return mod,Way end;end;end;
+    -----------------------------------------------------------------------------------------------------------------------
+    local found_mod,ScriptPath,Arc = GetModule(reaper.GetResourcePath():gsub('%\\','/'),"Arc_Function_lua.lua")------------
+    if not found_mod then reaper.ClearConsole()reaper.ShowConsoleMsg('Missing file "Arc_Function_lua",\nDownload from'..---
+    'repository Archie-ReaScript and put in resources of Reaper.\nОтсутствует файл "Arc_Function_lua",\nСкачайте из '..----
+    'репозитория Archie-ReaScript и поместите в ресурсы Reaper') return end------------------------------------------------
+    package.path = package.path..";"..ScriptPath.."/?.lua"-----------------------------------------------------------------
+    Arc = require "Arc_Function_lua"---------------------------------------------------------------------------------------
+    Arc.VersionArc_Function_lua("1.1.6",ScriptPath,"")---------------------------------------------------------------------
+    --=====================================================================================================================
 
 
 
@@ -138,4 +144,4 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 | (and above)
     end;  
 
     reaper.UpdateArrange(); 
-    reaper.Undo_EndBlock("Move selected items to each other",-1);
+    reaper.Undo_EndBlock("Move selected items to each other",4);
