@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="471905b83d99e398191167d8229d355c4b248704" name="Archie-ReaScripts">
+<index version="1" commit="cdd1877e3b0cdacaabe073f76d405e9a566f03c0" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -217,6 +217,7 @@
     <reapack name="Archie_Grid;  Free movement of item(s) when snap to grid is on.lua" type="script" desc="Free movement of item(s) when snap to grid is on">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
@@ -240,6 +241,15 @@
 +! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
 +  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d4e1c375d56eacb5c706a869184b4eafd029e703/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2018-12-04T11:17:57Z">
+        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
++  added a list of the system requirements: / v.1.03 [04122018]
++! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
++! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
++! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
++  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdd1877e3b0cdacaabe073f76d405e9a566f03c0/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Grid;  Swing grid minus one percent(arrange).lua" type="script" desc="Swing grid minus one percent(arrange)">
@@ -526,6 +536,7 @@
     <reapack name="Archie_Options;  Smart Multi script(Button 1).lua" type="script" desc="Smart Multi script(Button 1)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:56:03Z">
@@ -553,6 +564,13 @@
 + initialе / v.1.0 [12.11.18]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c5c33210649c709e11bb6e1938c4e9da230d5072/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2018-12-04T11:17:57Z">
+        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
++  added a list of the system requirements: / v.1.03 [04122018]
++! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
++  initialе / v.1.0 [12.11.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdd1877e3b0cdacaabe073f76d405e9a566f03c0/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Options;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
       <metadata>
@@ -577,6 +595,7 @@
     <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE.lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.02" author="Archie" time="2018-11-13T11:55:51Z">
@@ -585,6 +604,15 @@
 + GIF     / v.1.01 
 + initialе / v.1.0 ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Appends%20to%20name%20of%20selected%20track%20_ARCHIVE.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2018-12-04T11:17:57Z">
+        <changelog><![CDATA[+ добавлена регулируемая настройка при недописывание в конце / v.1.03[04122218]
++ added adjustable setting when overwriting at the end / v.1.03[04122218]
++! fixed bug with non-selection / v.1.02
++! исправлена ошибка с невыделением / v.1.02
++ GIF     / v.1.01 
++ initialе / v.1.0 ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdd1877e3b0cdacaabe073f76d405e9a566f03c0/MAIN/Track/Archie_Track;%20%20Appends%20to%20name%20of%20selected%20track%20_ARCHIVE.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Copy selected track name.lua" type="script" desc="Copy selected track name">
@@ -755,6 +783,13 @@
 + GIF     / v.1.01 
 + initialе / v.1.0 ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2018-12-04T11:17:57Z">
+        <changelog><![CDATA[+ Ничего / Nothing / v.1.03[04122018]
++! исправлена ошибка с невыделением / v.1.02
++ GIF     / v.1.01 
++ initialе / v.1.0 ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdd1877e3b0cdacaabe073f76d405e9a566f03c0/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
