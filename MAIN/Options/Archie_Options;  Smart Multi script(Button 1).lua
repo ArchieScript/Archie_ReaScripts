@@ -2,23 +2,32 @@
    * Category:    Options
    * Description: Smart Multi script(Button 1)
    * Author:      Archie
-   * Version:     1.2.2
+   * Version:     1.03
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
    *              Для отображения справки, введите в первое поле слово 'help'
    * GIF:         http://clck.ru/EhYZ9
    * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75(Rmm/forum) 
    * Gave idea:   Supa75(Rmm/forum) 
-   * Changelog:   +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
+   * Changelog:   +  добавлен список системные требования: / v.1.03 [04122018]
+   *              +  added a list of the system requirements: / v.1.03 [04122018]
+    *             +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
    *              +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-   *              + initialе / v.1.0 [12.11.18]
---=====================================================================================
-SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and above)
-СИСТЕМНЫЕ ТРЕБОВАНИЯ:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (и выше)
---================================================================================]]
+   *              +  initialе / v.1.0 [12.11.18]
+=====================================================================================|
+----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   + Reaper v.5.962 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
+   + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
+   - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
+   - Arc_Function_lua v.1.1.6 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
+   + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
+                                                                 http://clck.ru/Eo5Lw |и выше)|
+   + Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
+--===========================================================================================]]
 
 
 
@@ -37,7 +46,7 @@ SYSTEM  REQUIREMENTS:   Reaper v.5.96  |   SWS v.2.9.7  |   ReaPack v1.2.2  (and
 
 
     local but = "Button 1"
-    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"))
+    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)")) 
     local Modifiers = reaper.JS_Mouse_GetState(28);
 
     if Modifiers ~= 28 then; 

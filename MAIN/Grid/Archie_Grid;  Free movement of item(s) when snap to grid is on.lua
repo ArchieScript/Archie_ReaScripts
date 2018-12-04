@@ -2,25 +2,34 @@
    * Category:    Grid
    * Description: Free movement of item(s) when snap to grid is on
    * Author:      Archie
-   * Version:     1.2.1
+   * Version:     1.03
    * AboutScript: Free movement of item(s) when snap to grid is enabled
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Свободное перемещение элементов при включенной привязке к сетке
    *              ОБРАТИТЕ ВНИМАНИЕ НА НАСТРОЙКИ НИЖЕ
    * GIF:         http://clck.ru/EgA56
    * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---
    * Gave idea:   Alex Menco(Rmm/forum) 
-   * Changelog:   +! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
+   * Changelog:   +  добавлен список системные требования: / v.1.03 [04122018]
+   *              +  added a list of the system requirements: / v.1.03 [04122018]
+    *             +! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
    *              +! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
    *              +! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
    *              +! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
    *              +  initialе / v.1.0
---=====================================================================================
-SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-ReaTeam Extensions\ (and above)
-СИСТЕМНЫЕ ТРЕБОВАНИЯ: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |репозиторий-ReaTeam Extensions\(и выше)
---========================================================================================================]]
+--============================================================================================|
+----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   + Reaper v.5.962 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
+   + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
+   - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
+   - Arc_Function_lua v.1.1.6 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
+   + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
+                                                                 http://clck.ru/Eo5Lw |и выше)|
+   + Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
+--===========================================================================================]]
 
 
 
@@ -40,7 +49,7 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-Rea
                                             -----------------------------------
                      -- = 0 | THE ITEM WILL NOT STICK TO THE EDIT CURSOR.
                      -- = 1 | THE ITEM WILL STICK TO THE EDIT CURSOR.
-                     -----------------------------------------------------
+                     --==============================================
             
                      
     --=========/ ПРИВЯЗКА К ВЫБОРУ ВРЕМЕНИ / SNAP TO TIME SELECTION /==========--
@@ -51,7 +60,7 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-Rea
                                          ---------------------------
                   -- = 0 | THE ITEM WILL STICK TO THE TIME SELECTION. 
                   -- = 1 | THE ITEM WILL NOT  STICK TO THE TIME SELECTION. 
-                  --------------------------------------------------------
+                  --======================================================
 
 
     --==================/ ПРИВЯЗКА К ЭЛЕМЕНТУ / SNAP TO ITEM /===================--
@@ -66,7 +75,7 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-Rea
                   -- = 1 | THE ITEM WILL ONLY ADHERE TO THE INITIAL POSITIONS OF THE ITEM 
                   -- = 2 | THE ITEM WILL ONLY ADHERE TO THE END POSITIONS OF THE ITEM 
                   -- = 3 | THE ITEM WILL STICK TO THE START AND END POSITIONS OF THE ITEM  
-                  -----------------------------------------------------------------------
+                  --=====================================================================
 
 
     local StartEnd = 2
@@ -79,8 +88,7 @@ SYSTEM  REQUIREMENTS: Reaper v.5.96 |SWS v.2.9.7 |ReaPack v1.2.2 |repository-Rea
          -- = 1 | THE ELEMENTS TO BE MOVED WILL STICK ONLY TO THE END POSITION.
          -- = 2 | IF THE MOUSE IS IN THE FIRST (LEFT) HALF OF THE ELEMENT, THEN THE ELEMENTS WILL STICK TO THE STARTING POSITION.
          --       IF THE MOUSE IS IN THE SECOND (RIGHT) HALF OF THE ELEMENT, THEN THE ELEMENTS WILL STICK TO THE FINAL POSITION.
-         -----------------------------------------------------------------------------------------------------------------------
-
+         --====================================================================================================================
 
 
 
