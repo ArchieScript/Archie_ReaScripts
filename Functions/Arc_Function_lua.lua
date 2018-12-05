@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.1
+   * Version:     2.0.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,10 +11,12 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
-   *              + SaveSoloMuteStateAllTracksSlot(Slot);
-   *              + RestoreSoloMuteStateAllTracksSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
-   *              + SaveMuteStateAllItemsSlot(Slot)
-   *              + RestoreMuteStateAllItemsSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
+   *              + Save_Selected_Items_GuidSlot(Slot);
+   *              + Restore_Selected_Items_GuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
+   *              + SaveSoloMuteStateAllTracksGuidSlot(Slot);
+   *              + RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
+   *              + SaveMuteStateAllItemsGuidSlot(Slot)
+   *              + RestoreMuteStateAllItemsGuidSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
    *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
@@ -52,7 +54,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.1"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.2"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -106,9 +108,46 @@
 
 
 
+    -----------Save_Selected_Items_Slot()------------------------------------------------
+    -------------------------------------Restore_Selected_Items_Slot()-------------------
+    function Arc_Module.Save_Selected_Items_GuidSlot(Slot);
+        local CountSelItem = reaper.CountSelectedMediaItems(0);
+        if CountSelItem == 0 then return false end;
+        local t = {};
+        _G["SaveSelItem_"..Slot] = t;
+        for i = 1, CountSelItem do;
+            local sel_item = reaper.GetSelectedMediaItem(0,i-1);
+            t[i] = reaper.BR_GetMediaItemGUID(sel_item);
+        end;
+        return true;
+    end;
+    ------------------------------------------------------
+    function Arc_Module.Restore_Selected_Items_GuidSlot(Slot,clean);
+        t = _G["SaveSelItem_"..Slot];
+        if t then;
+            reaper.SelectAllMediaItems(0,0);
+            for i = 1, #t do;
+                local item = reaper.BR_GetMediaItemByGUID(0,t[i]);
+                if item then;
+                    reaper.SetMediaItemSelected(item,1);
+                end;
+            end;
+            if clean == true or clean == 1 then;
+                _G["SaveSelItem_"..Slot] = nil;
+                t = nil;
+            end;
+            reaper.UpdateArrange();
+        end;
+    end;
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
     -------SaveSoloMuteStateAllTracksSlot()----------------------------------------------
     --------------------------------------RestoreSoloMuteStateAllTracksSlot()------------
-    function Arc_Module.SaveSoloMuteStateAllTracksSlot(Slot);
+    function Arc_Module.SaveSoloMuteStateAllTracksGuidSlot(Slot);
         local CountTracks = reaper.CountTracks(0);
         if CountTracks == 0 then return false end;
         local t = {};_G['SavSolMutTrSlot_'..Slot] = t;
@@ -118,9 +157,10 @@
             reaper.GetMediaTrackInfo_Value(track,'B_MUTE')..'}{'..
             reaper.GetMediaTrackInfo_Value(track,'I_SOLO')..'}';
         end;
+        return true;
     end;
     -----------------------------------------------------------------
-    function Arc_Module.RestoreSoloMuteStateAllTracksSlot(Slot,clean);
+    function Arc_Module.RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);
         local t = _G['SavSolMutTrSlot_'..Slot];
         if t then;
             for i = 1, #t do;
@@ -146,34 +186,35 @@
 
     --------------SaveMuteStateAllItemsSlot----------------------------------------------
     -----------------------------------------RestoreMuteStateAllItemsSlot----------------
-    function Arc_Module.SaveMuteStateAllItemsSlot(Slot)
-        local CountItem = reaper.CountMediaItems(0)
-        if CountItem == 0 then return false end
-            local GuidAndMute = {}
-            _G["Save_GuidAndMuteSlot_"..Slot] = GuidAndMute 
-            for i = 1, CountItem do
-                local Item = reaper.GetMediaItem(0,i-1)
-                GuidAndMute[i] = reaper.BR_GetMediaItemGUID(Item)..' '..
-                                 reaper.GetMediaItemInfo_Value(Item,"B_MUTE")
-            end 
-    end
+    function Arc_Module.SaveMuteStateAllItemsGuidSlot(Slot);
+        local CountItem = reaper.CountMediaItems(0);
+        if CountItem == 0 then return false end;
+        local GuidAndMute = {};
+        _G["Save_GuidAndMuteSlot_"..Slot] = GuidAndMute;
+        for i = 1, CountItem do;
+            local Item = reaper.GetMediaItem(0,i-1);
+            GuidAndMute[i] = reaper.BR_GetMediaItemGUID(Item)..' '..
+                             reaper.GetMediaItemInfo_Value(Item,"B_MUTE");
+        end ;
+        return true;
+    end;
     -- Save Mute State All Items, Slots
     -- Сохранить Состояние Отключения Звука На Всех Элементах Слоты
     -------------------------------------------------------------------------
-    function Arc_Module.RestoreMuteStateAllItemsSlot(Slot, clean)
-        local T = _G["Save_GuidAndMuteSlot_"..Slot]
-        if T then
-            for i = 1, #T do
-                local Item = reaper.BR_GetMediaItemByGUID(0,T[i]:match("{.+}"))
-                if Item then
-                    reaper.SetMediaItemInfo_Value(Item,"B_MUTE",T[i]:gsub("{.+}",""))
-                end
-            end
-            if clean == true or clean == 1 then
-                T = nil
-                _G["Save_GuidAndMuteSlot_"..Slot] = nil
-            end
-            reaper.UpdateArrange()
+    function Arc_Module.RestoreMuteStateAllItemsGuidSlot(Slot, clean);
+        local T = _G["Save_GuidAndMuteSlot_"..Slot];
+        if T then;
+            for i = 1, #T do;
+                local Item = reaper.BR_GetMediaItemByGUID(0,T[i]:match("{.+}"));
+                if Item then;
+                    reaper.SetMediaItemInfo_Value(Item,"B_MUTE",T[i]:gsub("{.+}",""));
+                end;
+            end;
+            if clean == true or clean == 1 then;
+                T = nil;
+                _G["Save_GuidAndMuteSlot_"..Slot] = nil;
+            end;
+            reaper.UpdateArrange();
         end
     end
     -- Restore Mute State All Items, Slots
@@ -424,29 +465,34 @@
     -------SaveSelTracksGuidSlot---------------------------------------------------------
     ------RestoreSelTracksGuidSlot-------------------------------------------------------
     function Arc_Module.SaveSelTracksGuidSlot(Slot);
+        local CountSelTrack = reaper.CountSelectedTracks(0);
+        if CountSelTrack == 0 then return false;
         local t = {};
         _G['SaveSelTr_'..Slot] = t;
         for i = 1, reaper.CountSelectedTracks(0) do;
             local sel_tracks = reaper.GetSelectedTrack(0,i-1);
             t[i] = reaper.GetTrackGUID(sel_tracks);
         end;
+        return true;
     end;
-    ---
+    ---------------------------------------------------------
     function Arc_Module.RestoreSelTracksGuidSlot(Slot,clean);
        local tr = reaper.GetTrack(0,0);
        reaper.SetOnlyTrackSelected(tr);
        reaper.SetTrackSelected(tr, 0);
        ---
        local t = _G['SaveSelTr_'..Slot];
-       for i = 1, #t do;
-           local track = reaper.BR_GetMediaTrackByGUID(0,t[i]);
-           if track then;
-               reaper.SetTrackSelected(track,1);
+       if t then;
+           for i = 1, #t do;
+               local track = reaper.BR_GetMediaTrackByGUID(0,t[i]);
+               if track then;
+                   reaper.SetTrackSelected(track,1);
+               end;
            end;
-       end;
-       if clean == 1 or clean == true then;
-           _G['SaveSelTr_'..Slot] = nil;
-		   t = nil;
+           if clean == 1 or clean == true then;
+               _G['SaveSelTr_'..Slot] = nil;
+               t = nil;
+           end;
        end;
     end;
     -- SaveSelTracksGuidSlot("Slot_1")
