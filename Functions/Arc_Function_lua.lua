@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.8
+   * Version:     1.1.9
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,8 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + SaveSoloMuteStateAllTracksSlot(Slot);
+   *              + RestoreSoloMuteStateAllTracksSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + SaveMuteStateAllItemsSlot(Slot)
    *              + RestoreMuteStateAllItemsSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
    *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
@@ -47,7 +49,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);
-        local ver_fun = "1.1.8"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
+        local ver_fun = "1.1.9"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
         local v = ver_fun:gsub("%D", "");
         if v < version:gsub("%D", "") then 
             reaper.ClearConsole()
@@ -95,6 +97,43 @@
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+
+
+
+
+    -------SaveSoloMuteStateAllTracksSlot()----------------------------------------------
+    --------------------------------------RestoreSoloMuteStateAllTracksSlot()------------
+    function Arc_Module.SaveSoloMuteStateAllTracksSlot(Slot);
+        local CountTracks = reaper.CountTracks(0);
+        if CountTracks == 0 then return false end;
+        local t = {};_G['SavSolMutTrSlot_'..Slot] = t;
+        for i = 1, CountTracks do;
+            local track = reaper.GetTrack(0, i - 1);
+            t[i] = reaper.GetTrackGUID(track)..'{'..
+            reaper.GetMediaTrackInfo_Value(track,'B_MUTE')..'}{'..
+            reaper.GetMediaTrackInfo_Value(track,'I_SOLO')..'}';
+        end;
+    end;
+    -----------------------------------------------------------------
+    function Arc_Module.RestoreSoloMuteStateAllTracksSlot(Slot,clean);
+        local t = _G['SavSolMutTrSlot_'..Slot];
+        if t then;
+            for i = 1, #t do;
+                local guin,mute,solo = string.match (t[i],'({.+}){(.+)}{(.+)}');
+                local track = reaper.BR_GetMediaTrackByGUID(0,guin);
+                reaper.SetMediaTrackInfo_Value(track, 'B_MUTE', mute);
+                reaper.SetMediaTrackInfo_Value(track, 'I_SOLO', solo);
+            end;
+            if clean == 1 or clean == true then;
+                _G['SavSolMutTrSlot_'..Slot] = nil;
+                t = nil;
+            end;
+        end;    
+    end;
+    -- Save Restore Solo Mute State All Tracks, Slots
+    -- Сохранить Восстановить Соло Mute Состояние Всех Дорожек, Слоты
+    -- clean = true или 1 - зачистить сохраненную информацию за собой
+    --====End===============End===============End===============End===============End==== 
 
 
 
