@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     1.1.6
+   * Version:     1.1.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,7 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
    *              + RestoreSelTracksGuidSlot(Slot,reset);
@@ -44,7 +45,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);
-        local ver_fun = "1.1.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
+        local ver_fun = "1.1.7"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<
         local v = ver_fun:gsub("%D", "");
         if v < version:gsub("%D", "") then 
             reaper.ClearConsole()
@@ -92,6 +93,32 @@
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+
+
+
+    ----------------GetPositionOfFirstItemAndEndOfLast-----------------------------------
+    function Arc_Module.GetPositionOfFirstItemAndEndOfLast();
+        local CountSelItem = reaper.CountSelectedMediaItems(0);
+        if CountSelItem == 0 then return false, false end;
+        local Fir = 99^99;
+        local End = 0;
+        for i = 1, CountSelItem do;
+            local SelIt = reaper.GetSelectedMediaItem(0,i-1);
+            local Posit = reaper.GetMediaItemInfo_Value(SelIt,"D_POSITION");
+            local Lengt = reaper.GetMediaItemInfo_Value(SelIt,"D_LENGTH");
+            if Posit < Fir then;
+                Fir = Posit;
+            end;
+            if Posit + Lengt > End then;
+                End = Posit + Lengt;
+            end;
+        end;
+        return Fir,End;
+    end;
+    -- Get Position Of First Item And End Of Last
+    -- Получить Позицию Первого Элемента И Конец Последнего     
+    -- PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
+    --====End===============End===============End===============End===============End====
 
 
 
