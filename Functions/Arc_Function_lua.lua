@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.0
+   * Version:     2.0.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -18,7 +18,7 @@
    *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
-   *              + RestoreSelTracksGuidSlot(Slot,reset);
+   *              + RestoreSelTracksGuidSlot(Slot,clean);
    *              + GetPreventSpectralPeaksInTrack(Track)
    *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
    *              + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
@@ -52,7 +52,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.0"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.1"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -425,27 +425,28 @@
     ------RestoreSelTracksGuidSlot-------------------------------------------------------
     function Arc_Module.SaveSelTracksGuidSlot(Slot);
         local t = {};
-        _G[Slot] = t;
+        _G['SaveSelTr_'..Slot] = t;
         for i = 1, reaper.CountSelectedTracks(0) do;
             local sel_tracks = reaper.GetSelectedTrack(0,i-1);
             t[i] = reaper.GetTrackGUID(sel_tracks);
         end;
     end;
     ---
-    function Arc_Module.RestoreSelTracksGuidSlot(Slot,reset);
+    function Arc_Module.RestoreSelTracksGuidSlot(Slot,clean);
        local tr = reaper.GetTrack(0,0);
        reaper.SetOnlyTrackSelected(tr);
        reaper.SetTrackSelected(tr, 0);
        ---
-       local t = _G[Slot];
+       local t = _G['SaveSelTr_'..Slot];
        for i = 1, #t do;
            local track = reaper.BR_GetMediaTrackByGUID(0,t[i]);
            if track then;
                reaper.SetTrackSelected(track,1);
            end;
        end;
-       if reset == 1 or reset == true then;
-           _G[Slot] = nil;
+       if clean == 1 or clean == true then;
+           _G['SaveSelTr_'..Slot] = nil;
+		   t = nil;
        end;
     end;
     -- SaveSelTracksGuidSlot("Slot_1")
