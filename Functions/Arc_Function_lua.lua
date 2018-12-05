@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.2
+   * Version:     2.0.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -54,7 +54,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.2"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.3"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -466,7 +466,7 @@
     ------RestoreSelTracksGuidSlot-------------------------------------------------------
     function Arc_Module.SaveSelTracksGuidSlot(Slot);
         local CountSelTrack = reaper.CountSelectedTracks(0);
-        if CountSelTrack == 0 then return false;
+        if CountSelTrack == 0 then return false end;
         local t = {};
         _G['SaveSelTr_'..Slot] = t;
         for i = 1, reaper.CountSelectedTracks(0) do;
