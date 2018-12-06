@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.3
+   * Version:     2.0.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -17,7 +17,7 @@
    *              + RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + SaveMuteStateAllItemsGuidSlot(Slot)
    *              + RestoreMuteStateAllItemsGuidSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
-   *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
+   *              + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast()
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
    *              + RestoreSelTracksGuidSlot(Slot,clean);
@@ -36,12 +36,6 @@
 
 
 
-    --======================================================================================
-    --///////////  FUNCTIONS  \\\\\\\\\\\\  FUNCTIONS  ////////////  FUNCTIONS  \\\\\\\\\\\\
-    --======================================================================================
-
-
-
 
     --===================
     local Arc_Module = {}
@@ -54,7 +48,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.3"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.4"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -78,6 +72,11 @@
     --########################################################################################################################
     --########################################################################################################################
 
+
+
+    --======================================================================================
+    --///////////  FUNCTIONS  \\\\\\\\\\\\  FUNCTIONS  ////////////  FUNCTIONS  \\\\\\\\\\\\
+    --======================================================================================
 
 
 
@@ -227,7 +226,7 @@
 
 
     ----------------GetPositionOfFirstItemAndEndOfLast-----------------------------------
-    function Arc_Module.GetPositionOfFirstItemAndEndOfLast();
+    function Arc_Module.GetPositionOfFirstSelectedItemAndEndOfLast();
         local CountSelItem = reaper.CountSelectedMediaItems(0);
         if CountSelItem == 0 then return false, false end;
         local Fir = 99^99;
@@ -245,9 +244,9 @@
         end;
         return Fir,End;
     end;
-    -- Get Position Of First Item And End Of Last
-    -- Получить Позицию Первого Элемента И Конец Последнего     
-    -- PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
+    -- Get Position Of First Selected Item And End Of Last
+    -- Получить Позицию Первого Выделенного Элемента И Конец Последнего     
+    -- PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast()
     --====End===============End===============End===============End===============End====
 
 
