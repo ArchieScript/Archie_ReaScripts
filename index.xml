@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="740fb85b9d04b4841fa0efa777b17ed2ff244b51" name="Archie-ReaScripts">
+<index version="1" commit="62e7f1eeece5ba4604da50bd9ced68b37581ee85" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -86,6 +86,9 @@
       </version>
       <version name="2.0.4" author="Archie" time="2018-12-06T19:46:25Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/740fb85b9d04b4841fa0efa777b17ed2ff244b51/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.0.5" author="Archie" time="2018-12-08T13:16:36Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -785,6 +788,50 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Removes%208%20characters%20from%20the%20end%20of%20the%20selected%20track%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Render project in time selection on a separate created track (Pre master).lua" type="script" desc="Render project in time selection on a separate created track (Pre master)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-08T13:16:36Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Render selected tracks on one separate track (delete originals)(Pre master).lua" type="script" desc="Render selected tracks on one separate track (delete originals)(Pre master)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-08T13:16:36Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(delete%20originals)(Pre%20master).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Render selected tracks on one separate track (mute originals)(Pre master) .lua" type="script" desc="Render selected tracks on one separate track(mute originals)(Pre master)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-08T13:16:36Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(mute%20originals)(Pre%20master)%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Render selected tracks on one separate track (Pre master).lua" type="script" desc="Render selected tracks on one separate track (Pre master)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-08T13:16:36Z">
+        <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(Pre%20master).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input).lua" type="script" desc="Select a track by name(abbreviated input)">
