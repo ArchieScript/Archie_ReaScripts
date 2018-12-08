@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="62e7f1eeece5ba4604da50bd9ced68b37581ee85" name="Archie-ReaScripts">
+<index version="1" commit="b7432496a8e516a5a4768dc8e1471016f0062808" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -811,6 +811,11 @@
         <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(delete%20originals)(Pre%20master).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2018-12-08T14:29:15Z">
+        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
++ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b7432496a8e516a5a4768dc8e1471016f0062808/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(delete%20originals)(Pre%20master).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Render selected tracks on one separate track (mute originals)(Pre master) .lua" type="script" desc="Render selected tracks on one separate track(mute originals)(Pre master)">
       <metadata>
@@ -822,6 +827,11 @@
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(mute%20originals)(Pre%20master)%20.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2018-12-08T14:29:15Z">
+        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
++ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b7432496a8e516a5a4768dc8e1471016f0062808/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(mute%20originals)(Pre%20master)%20.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Render selected tracks on one separate track (Pre master).lua" type="script" desc="Render selected tracks on one separate track (Pre master)">
       <metadata>
@@ -832,6 +842,11 @@
       <version name="1.0" author="Archie" time="2018-12-08T13:16:36Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/62e7f1eeece5ba4604da50bd9ced68b37581ee85/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(Pre%20master).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2018-12-08T14:29:15Z">
+        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
++ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b7432496a8e516a5a4768dc8e1471016f0062808/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(Pre%20master).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input).lua" type="script" desc="Select a track by name(abbreviated input)">
