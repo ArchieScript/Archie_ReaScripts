@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.4
+   * Version:     2.0.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -17,6 +17,7 @@
    *              + RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + SaveMuteStateAllItemsGuidSlot(Slot)
    *              + RestoreMuteStateAllItemsGuidSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
+   *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
    *              + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast()
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
@@ -48,7 +49,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.4"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.5"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -226,6 +227,34 @@
 
 
     ----------------GetPositionOfFirstItemAndEndOfLast-----------------------------------
+    function Arc_Module.GetPositionOfFirstItemAndEndOfLast();
+        local CountItem = reaper.CountMediaItems(0);
+        if CountItem == 0 then return false, false end;
+        local Fir = 99^99;
+        local End = 0;
+        for i = 1, CountItem do;
+            local It = reaper.GetMediaItem(0,i-1);
+            local Posit = reaper.GetMediaItemInfo_Value(It,"D_POSITION");
+            local Lengt = reaper.GetMediaItemInfo_Value(It,"D_LENGTH");
+            if Posit < Fir then;
+                Fir = Posit;
+            end;
+            if Posit + Lengt > End then;
+                End = Posit + Lengt;
+            end;
+        end;
+        return Fir,End;
+    end;
+    -- Get Position Of First Item And End Of Last
+    -- Получить Позицию Первого Элемента И Конец Последнего     
+    -- PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+    ----------------GetPositionOfFirstSelectedItemAndEndOfLast---------------------------
     function Arc_Module.GetPositionOfFirstSelectedItemAndEndOfLast();
         local CountSelItem = reaper.CountSelectedMediaItems(0);
         if CountSelItem == 0 then return false, false end;
