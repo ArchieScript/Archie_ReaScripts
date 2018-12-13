@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.5
+   * Version:     2.0.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,7 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + SetMediaItemLeftTrim2(position,item)
    *              + Save_Selected_Items_GuidSlot(Slot);
    *              + Restore_Selected_Items_GuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + SaveSoloMuteStateAllTracksGuidSlot(Slot);
@@ -49,7 +50,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.5"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -104,6 +105,26 @@
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+
+
+
+    ------------SetMediaItemLeftTrim2----------------------------------------------------
+    function Arc_Module.SetMediaItemLeftTrim2(position,item)
+        reaper.PreventUIRefresh(3864598);
+        local sel_item = {};
+        for i = 1, reaper.CountSelectedMediaItems(0) do;
+            sel_item[i] = reaper.GetSelectedMediaItem(0,i-1);
+        end;
+        reaper.SelectAllMediaItems(0,0);
+        reaper.SetMediaItemSelected(item,1);
+        reaper.ApplyNudge(0,1,1,0,position,0,0);
+        reaper.SetMediaItemSelected(item,0);
+        for _, item in ipairs(sel_item) do;
+            reaper.SetMediaItemSelected(item,1);
+        end;
+        reaper.PreventUIRefresh(-3864598);
+    end -- Удлинить укоротить Медиа Элемент Слева
+    --====End===============End===============End===============End===============End====
 
 
 
