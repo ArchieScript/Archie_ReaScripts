@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="28f7f65eb93edf5ef3b15664fc5d51d00a1fb11e" name="Archie-ReaScripts">
+<index version="1" commit="777cddb1d8a6633d8433385932fa9135b15ceba8" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -363,6 +363,28 @@
         <changelog><![CDATA[+ Fix bug with undo / v.1.01 [04122018]
 + initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/471905b83d99e398191167d8229d355c4b248704/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Pitch down one semitone all midi items(all midi take).lua" type="script" desc="Pitch down one semitone all midi items(all midi take)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-22T17:26:43Z">
+        <changelog><![CDATA[+ initialе / v.1.0[23122018]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/777cddb1d8a6633d8433385932fa9135b15ceba8/MAIN/Item/Archie_Item;%20%20Pitch%20down%20one%20semitone%20all%20midi%20items(all%20midi%20take).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Pitch up one semitone all midi items(all midi take) .lua" type="script" desc="Pitch up one semitone all midi items(all midi take)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-22T17:26:43Z">
+        <changelog><![CDATA[+ initialе / v.1.0[23122018]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/777cddb1d8a6633d8433385932fa9135b15ceba8/MAIN/Item/Archie_Item;%20%20Pitch%20up%20one%20semitone%20all%20midi%20items(all%20midi%20take)%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected items outside regions(time selection).lua" type="script" desc="Remove selected items outside regions(time selection)">
