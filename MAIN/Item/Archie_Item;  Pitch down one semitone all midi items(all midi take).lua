@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Pitch down one semitone all midi items(all midi take)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Pitch down one semitone all midi items(all midi take) 
    * О скрипте:   Шаг вниз один полутон все миди элементы (все миди тейки)
    * GIF:         ---
@@ -10,8 +10,9 @@
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Ga_rY(Rmm/forum) 
-   * Gave idea:   Ga_rY(Rmm/forum) 
-   * Changelog:   + initialе / v.1.0[23122018]
+   * Gave idea:   Ga_rY(Rmm/forum)
+   * Changelog:   !+ fix bug / v.1.01[23122018]
+   *              + initialе / v.1.0 [23122018]
 --============================================================================================|
 ----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
    + Reaper v.5.963 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
@@ -41,8 +42,6 @@
     local CountItem = reaper.CountMediaItems(0);
     if CountItem == 0 then no_undo() return end;
 
-    
-    local Undo_BegBlock;
     
     for i = 1,CountItem do;
         local item = reaper.GetMediaItem(0,i-1);
