@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.6
+   * Version:     2.0.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,7 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + HelpWindowWhenReRunning(BottonText,but,reset);
    *              + SetMediaItemLeftTrim2(position,item)
    *              + Save_Selected_Items_GuidSlot(Slot);
    *              + Restore_Selected_Items_GuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
@@ -50,7 +51,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.0.7"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -108,6 +109,54 @@
 
 
 
+    --------------- .HelpWindowWhenReRunning(BottonText,but,reset); --------------------------
+    function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);-- (BottonText = 1 или 2)
+        local ScriptName = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"));
+        local TooltipWind = reaper.GetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but);
+        if TooltipWind == "" then;
+            ----------------------
+            if BottonText  == 2 then;
+                BottonText = "'NEW INSTANCE'" elseif BottonText  == 1 then;
+                BottonText = "'TERMINATE INSTANCES'"else BottonText = "- ??? Error"; 
+            end;
+            ------------------------------------------------------------------------
+            local MessageBox = reaper.ShowMessageBox(
+            "Rus.\n"..
+            "* Важно:\n"..
+            "*   При отключении скрипта появится окно (Reascript task control):\n"..
+            "*   Для коректной работы скрипта ставим галку\n"..
+            "*   (Remember my answer for this script)\n"..
+            "*   Нажимаем: "..BottonText.."\n"..
+            "--------------------------------------------------------------------------------------------\n"..
+            "Eng.\n"..
+            "* Importantly:\n"..
+            "*   When you disable script window will appear (Reascript task control):\n"..
+            "*   For correct work of the script put the check\n"..
+            "*   (Remember my answer for this script)\n"..
+            "*   Click: "..BottonText.."\n"..
+            "--------------------------------------------------------------------------------------------\n\n"..
+            "DO NOT SHOW THIS WINDOW - OK\n"..
+            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК",
+            "help.",1);
+            ---------------------------------------
+            if MessageBox == 1 then;
+                reaper.SetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but,MessageBox,true);
+            end;
+        end;
+        if reset == true then;
+            reaper.DeleteExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but,true);
+        end;
+        return ScriptName;
+    end;
+    -- Окно Справки При Повторном Запуске Скрипта
+    -- Help Window When Re Running Script 
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+
     ------------SetMediaItemLeftTrim2----------------------------------------------------
     function Arc_Module.SetMediaItemLeftTrim2(position,item)
         reaper.PreventUIRefresh(3864598);
@@ -125,6 +174,7 @@
         reaper.PreventUIRefresh(-3864598);
     end -- Удлинить укоротить Медиа Элемент Слева
     --====End===============End===============End===============End===============End====
+
 
 
 
