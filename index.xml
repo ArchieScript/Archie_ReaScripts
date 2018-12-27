@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="72386fd590b00d3c817ab29d47b551dda7c2b7ca" name="Archie-ReaScripts">
+<index version="1" commit="0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -316,6 +316,712 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Grid/Archie_Grid;%20%20Swing%20off%20and%20reset(arrange).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Group">
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 01.lua" type="script" desc="Toggle Mute Unmute all tracks in group 01">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2001.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 02.lua" type="script" desc="Toggle Mute Unmute all tracks in group 02">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2002.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 03.lua" type="script" desc="Toggle Mute Unmute all tracks in group 03">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2003.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 04.lua" type="script" desc="Toggle Mute Unmute all tracks in group 04">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2004.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 05.lua" type="script" desc="Toggle Mute Unmute all tracks in group 05">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2005.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 06.lua" type="script" desc="Toggle Mute Unmute all tracks in group 06">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2006.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 07.lua" type="script" desc="Toggle Mute Unmute all tracks in group 07">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2007.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 08.lua" type="script" desc="Toggle Mute Unmute all tracks in group 08">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2008.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 09.lua" type="script" desc="Toggle Mute Unmute all tracks in group 09">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2009.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 10.lua" type="script" desc="Toggle Mute Unmute all tracks in group 10">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2010.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 11.lua" type="script" desc="Toggle Mute Unmute all tracks in group 11">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2011.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 12.lua" type="script" desc="Toggle Mute Unmute all tracks in group 12">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2012.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 13.lua" type="script" desc="Toggle Mute Unmute all tracks in group 13">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2013.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 14.lua" type="script" desc="Toggle Mute Unmute all tracks in group 14">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2014.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 15.lua" type="script" desc="Toggle Mute Unmute all tracks in group 15">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2015.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 16.lua" type="script" desc="Toggle Mute Unmute all tracks in group 16">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2016.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 17.lua" type="script" desc="Toggle Mute Unmute all tracks in group 17">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2017.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 18.lua" type="script" desc="Toggle Mute Unmute all tracks in group 18">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2018.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 19.lua" type="script" desc="Toggle Mute Unmute all tracks in group 19">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2019.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 20.lua" type="script" desc="Toggle Mute Unmute all tracks in group 20">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2020.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 21.lua" type="script" desc="Toggle Mute Unmute all tracks in group 21">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2021.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 22.lua" type="script" desc="Toggle Mute Unmute all tracks in group 22">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2022.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 23.lua" type="script" desc="Toggle Mute Unmute all tracks in group 23">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2023.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 24.lua" type="script" desc="Toggle Mute Unmute all tracks in group 24">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2024.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 25.lua" type="script" desc="Toggle Mute Unmute all tracks in group 25">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2025.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 26.lua" type="script" desc="Toggle Mute Unmute all tracks in group 26">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2026.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 27.lua" type="script" desc="Toggle Mute Unmute all tracks in group 27">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2027.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 28.lua" type="script" desc="Toggle Mute Unmute all tracks in group 28">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2028.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 29.lua" type="script" desc="Toggle Mute Unmute all tracks in group 29">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2029.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 30.lua" type="script" desc="Toggle Mute Unmute all tracks in group 30">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2030.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 31.lua" type="script" desc="Toggle Mute Unmute all tracks in group 31">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2031.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Mute Unmute all tracks in group 32.lua" type="script" desc="Toggle Mute Unmute all tracks in group 32">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%2032.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 01.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 01">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2001.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 02.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 02">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2002.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 03.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 03">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2003.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 04.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 04">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2004.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 05.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 05">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2005.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 06.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 06">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2006.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 07.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 07">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2007.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 08.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 08">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2008.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 09.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 09">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2009.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 10.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 10">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2010.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 11.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 11">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2011.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 12.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 12">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2012.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 13.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 13">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2013.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 14.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 14">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2014.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 15.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 15">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2015.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 16.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 16">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2016.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 17.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 17">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2017.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 18.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 18">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2018.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 19.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 19">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2019.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 20.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 20">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2020.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 21.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 21">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2021.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 22.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 22">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2022.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 23.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 23">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2023.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 24.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 24">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2024.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 25.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 25">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2025.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 26.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 26">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2026.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 27.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 27">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2027.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 28.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 28">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2028.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 29.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 29">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2029.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 30.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 30">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2030.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 31.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 31">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2031.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group 32.lua" type="script" desc="Toggle Solo Unsolo all tracks in group 32">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-27T11:08:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%2032.lua</source>
       </version>
     </reapack>
   </category>
