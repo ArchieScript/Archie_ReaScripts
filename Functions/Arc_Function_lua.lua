@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.0.9
+   * Version:     2.1.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -54,7 +54,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.0.9"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.0"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -284,13 +284,19 @@
         -- Restore Play Rate ----------------------------------------------------
         reaper.SetMediaItemInfo_Value(item,"D_LENGTH",item_len / PlayRate_Reset);
         reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",PlayRate_Reset);
-        --------------------------------------------------------------------
+        -------------------------------------------------------------------------------------------
+        table.insert(NumberSamplesAllChan,NumberSamplesAllChan[#NumberSamplesAllChan]+numchannels);
+        table.insert(NumberSamplesOneChan,NumberSamplesOneChan[#NumberSamplesOneChan]+1);
+        table.insert(Sample_min,Sample_min[#Sample_min]);
+        table.insert(Sample_max,Sample_max[#Sample_max]);
+        TimeSample[1]=item_pos;table.insert(TimeSample,item_pos+Item_len_Reset);
+        ------------------------------------------------------------------------
         return CountSamples_AllChannels,CountSamples_OneChannel,NumberSamplesAllChan,
-               NumberSamplesOneChan,Sample_min,Sample_max,TimeSample;---------------
-    end;----------------------------------------------------------------------------
+               NumberSamplesOneChan,Sample_min,Sample_max,TimeSample;----------------
+    end;-----------------------------------------------------------------------------
     -- ПОЛУЧИТЬ У ОБРАЗЦА НОМЕР ЗНАЧЕНИЕ ПОЗИЦИЮ
     -- Get Sample Number Position Value
-    --====End===============End===============End===============End===============End====
+    --====End===============End===============End===============End===============End==== 
 
 
 
