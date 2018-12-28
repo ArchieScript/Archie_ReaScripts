@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="0d17345109eb2551d8f3a4b25f8c2b1f6dfaf868" name="Archie-ReaScripts">
+<index version="1" commit="10de77ea2856fdf592473f4fc83118bb32b9e9bc" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1258,6 +1258,17 @@
       <version name="1.0" author="Archie" time="2018-12-13T17:39:39Z">
         <changelog><![CDATA[+ initialе / v.1.0[14122018]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/28f7f65eb93edf5ef3b15664fc5d51d00a1fb11e/MAIN/Item/Archie_Item;%20%20Trim%20Extend%20selected%20of%20items%20to%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Ungroup item under mouse cursor.lua" type="script" desc="Ungroup item under mouse cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-28T11:44:20Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [28.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10de77ea2856fdf592473f4fc83118bb32b9e9bc/MAIN/Item/Archie_Item;%20%20Ungroup%20item%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  ↑Move selected items up one track.lua" type="script" desc="Move selected items up one track">
