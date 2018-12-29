@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7be9f4b2d75af8678ff3156719d3111cf4b38ae3" name="Archie-ReaScripts">
+<index version="1" commit="0535d73934a3415fb08024d482dbe7c4a23ce10c" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1703,6 +1703,17 @@
       <version name="1.0" author="Archie" time="2018-11-22T20:06:25Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/03fb7ba6b05aa5a4fe437f7901ba47f10815d222/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixelrevert to average values .lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2018-12-29T19:48:32Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0535d73934a3415fb08024d482dbe7c4a23ce10c/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixelrevert%20to%20average%20values%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one .lua" type="script" desc="Move selected tracks in up on one">
