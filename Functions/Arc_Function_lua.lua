@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.0
+   * Version:     2.1.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,8 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + ValueFromMaxRepsIn_Table(array, min_max); 
+   *              + randomOfVal(...)
    *              + SetToggleButtonOnOff(numb); 0 or 1
    *              + HelpWindowWhenReRunning(BottonText,but,reset);
    *              + DeleteMediaItem(item);
@@ -54,7 +56,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.0"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.1"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -123,6 +125,74 @@
 
 
 
+
+
+
+
+    --------------- ValueFromMaxRepsIn_Table(array, min_max);  --------------------------
+    function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); 
+        if not min_max then min_max = "MAX" end;
+        -- создаем статистику
+          t = {};
+        for i = 1, #array do;
+            local ti = array[i];
+            if not t[ti] then t[ti] = 0 end;
+            t[ti] = t[ti] + 1;
+        end;
+        -- находим к-во максимальных вхождений
+        local max = 0;
+        local value;
+        for key, val in pairs(t) do;
+            if val > 1 then;
+                if val > max then;
+                    value = key;
+                    max = val;
+                elseif val == max then;
+                    if val > 1 then;
+                        if min_max == "MAX" then;
+                            value = math.max(key ,value);
+                        elseif min_max == "MIN" then;
+                            value = math.min(key ,value);
+                        elseif min_max == "RANDOM" then;
+                            rand_T = {key,value};
+                            random = math.random(#rand_T); 
+                            value = rand_T[random];
+                        end;
+                    end;   
+                end;
+            else;
+                if not value then
+                value = false
+                end
+            end;
+        end;
+        return(value);
+    end;
+    -- Вернет значение из максимальных повторений в таблице.
+    -- array = таблица
+    -- min_max = "MIN" , "MAX" , "RANDOM"
+    -- пример:
+    -- t1{1,2,3,4,5,6,7}; вернет false - повторений нет
+    -- t2{1,2,3,3,4,5,6}; вернет 3; min_max необязателен
+    -- t3{1,1,2,2,3,4,5}; вернет 1; если min_max = "MIN", 2 если min_max = "MAX",случайное число 1 или 2 если min_max = "RANDOM"
+    -- t4{1,1,2,2,5,5,5}; вернет 5; min_max необязателен
+    -- t5{1,2,5,5,1,1,5}; вернет 1 или 5 взависимости от min_max (читать t3)
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+    ------------------------ randomOfVal(...) -------------------------------------------
+    function Arc_Module.randomOfVal(...)
+        local t = {...};
+        local random = math.random(#t); 
+        return t[random]
+    end
+    -- Вернет случайное из значений
+    -- пример: Val = randomOfVal("one","two",1,2)
+    -- Вывод: "one" или "two" или 1 или 2
+    --====End===============End===============End===============End===============End====
 
 
 
