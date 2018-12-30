@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Toggle height selected tracks in 24 pixel/revert to average values
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Toggle height selected tracks in 24 pixel/revert to average values
    * О скрипте:   Переключить высоту выбранных треков в 24 пикселя / вернуться к средним значениям
    * GIF:         ---
@@ -11,6 +11,7 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    borisuperful (RMM Forum)
    * Gave idea:   borisuperful (RMM Forum)
+   *              +  Nothing / v.1.02 [30.12.18]
    * Changelog:   +  Added lock "lock track height" / v.1.01 [30.12.18]
    *              +  initialе / v.1.0 [30.12.18]
 ==============================================================================================
@@ -49,36 +50,37 @@
     --======================================================================================
 
 
-    -- Если среди выделенных треков есть хоть один большего размера чем 24 пикселя, 
-    --                       то выделенные треки уменьшатся в значения 24 пикселя.
-    -- Если все выделенные треки 24 пикселя, то увеличатся к "среднему значению"*    ​
-    -- * КАК УВЕЛИЧИВАЮТСЯ:
-    -- Если все невыделенные треки одного размера и больше 24 пикселей, 
-    --        то выделенные треки станут такого же размера как и невыделенные.
-    -- Если все невыделенные треки одного размера и 24 пикселя, то выделенные треки станут 81 пиксель.
-    -- Если все невыделенные треки разного размера "все разного", то выделенные треки станут 81 пиксель.
-    -- Если невыделенные треки разного размера, но дублируются,​
-    -- например:
-    -- Пять невыделенных треков 30 пикселей, Пять невыделенных треков 40 пикселей,Пять невыделенных треков 50 пикселей, 
-    --                                  то тут выделенные треки возьмут размер самого большого трека, 50 пикселей.
-    -- А если десять невыделенных треков например 25 пикселей, Пять невыделенных треков 40 пикселей,Пять невыделенных
-    --  треков 50 пикселей, то тут уже выделенные треки возьмут размер наибольшего количества треков, то есть 25 пикселей.
-        ------------------------------------------------------------------------------------------------------------------
-    -- If among the selected tracks there is at least one larger than 24 pixels,
-    -- then the selected tracks will decrease to 24 pixels.
-    -- If all selected tracks are 24 pixels, they will increase to the "average value" *
-    -- * HOW TO INCREASE:
-    -- If all unselected tracks are the same size and more than 24 pixels,
-    -- then the selected tracks will become the same size as the unselected ones.
-    -- If all unselected tracks are the same size and 24 pixels, then the selected tracks will be 81 pixels.
-    -- If all unselected tracks of different sizes "all different", then the selected tracks will be 81 pixels.
-    -- If unselected tracks are of different sizes, but duplicated,
-    --- for example:
-    -- Five unselected tracks 30 pixels, Five unselected tracks 40 pixels, Five unselected tracks 50 pixels,
-    -- then the selected tracks will take the size of the largest track, 50 pixels.
-    -- And if ten unselected tracks, for example, 25 pixels, Five unselected tracks, 40 pixels, Five unallocated
-    -- tracks of 50 pixels, then the already selected tracks will take the size of the largest number of tracks, that is, 25 pixels.
-    --------------------------------------------------------------------------------------------------------------------------------
+    --[[
+    Если среди выделенных треков есть хоть один большего размера чем 24 пикселя, 
+                          то выделенные треки уменьшатся в значения 24 пикселя.
+    Если все выделенные треки 24 пикселя, то увеличатся к "среднему значению"*    ​
+    * КАК УВЕЛИЧИВАЮТСЯ:
+    Если все невыделенные треки одного размера и больше 24 пикселей, 
+           то выделенные треки станут такого же размера как и невыделенные.
+    Если все невыделенные треки одного размера и 24 пикселя, то выделенные треки станут 81 пиксель.
+    Если все невыделенные треки разного размера "все разного", то выделенные треки станут 81 пиксель.
+    Если невыделенные треки разного размера, но дублируются,​
+    например:
+    Пять невыделенных треков 30 пикселей, Пять невыделенных треков 40 пикселей,Пять невыделенных треков 50 пикселей, 
+                                     то тут выделенные треки возьмут размер самого большого трека, 50 пикселей.
+    А если десять невыделенных треков например 25 пикселей, Пять невыделенных треков 40 пикселей,Пять невыделенных
+    треков 50 пикселей, то тут уже выделенные треки возьмут размер наибольшего количества треков, то есть 25 пикселей.
+    ------------------------------------------------------------------------------------------------------------------
+    If among the selected tracks there is at least one larger than 24 pixels,
+    then the selected tracks will decrease to 24 pixels.
+    If all selected tracks are 24 pixels, they will increase to the "average value" *
+    * HOW TO INCREASE:
+    If all unselected tracks are the same size and more than 24 pixels,
+    then the selected tracks will become the same size as the unselected ones.
+    If all unselected tracks are the same size and 24 pixels, then the selected tracks will be 81 pixels.
+    If all unselected tracks of different sizes "all different", then the selected tracks will be 81 pixels.
+    If unselected tracks are of different sizes, but duplicated,
+    for example:
+    Five unselected tracks 30 pixels, Five unselected tracks 40 pixels, Five unselected tracks 50 pixels,
+    then the selected tracks will take the size of the largest track, 50 pixels.
+    And if ten unselected tracks, for example, 25 pixels, Five unselected tracks, 40 pixels, Five unallocated
+    tracks of 50 pixels, then the already selected tracks will take the size of the largest number of tracks, that is, 25 pixels.
+    ===========================================================================================================================]]
 
 
 
@@ -153,7 +155,7 @@
             end;
         end;
     else;
-          Height_T = {};
+        local Height_T = {};
         local CountTrack = reaper.CountTracks(0);
         for i = 1, CountTrack do;
             local Track = reaper.GetTrack(0,i-1);
