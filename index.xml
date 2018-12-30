@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="439b9c68efd1fc8852785d1e66ce424cf38a42e7" name="Archie-ReaScripts">
+<index version="1" commit="f5ac794d6277e5a62daa8ff0784a40cfa0d3372f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1720,6 +1720,12 @@
         <changelog><![CDATA[+  Added lock "lock track height" / v.1.01 [30.12.18]
 +  initialе / v.1.0 [30.12.18]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/439b9c68efd1fc8852785d1e66ce424cf38a42e7/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values%20.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2018-12-30T10:17:13Z">
+        <changelog><![CDATA[+  Nothing / v.1.03 [30.12.18]
++  Added lock "lock track height" / v.1.01 [30.12.18]
++  initialе / v.1.0 [30.12.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f5ac794d6277e5a62daa8ff0784a40cfa0d3372f/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one .lua" type="script" desc="Move selected tracks in up on one">
