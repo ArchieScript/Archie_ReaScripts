@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Toggle height selected tracks in 24 pixel/revert to average values
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Toggle height selected tracks in 24 pixel/revert to average values
    * О скрипте:   Переключить высоту выбранных треков в 24 пикселя / вернуться к средним значениям
    * GIF:         ---
@@ -11,8 +11,8 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    borisuperful (RMM Forum)
    * Gave idea:   borisuperful (RMM Forum)
-   *              +  Nothing / v.1.02 [30.12.18]
-   * Changelog:   +  Added lock "lock track height" / v.1.01 [30.12.18]
+   * Changelog:   +  Nothing / v.1.03 [30.12.18]
+   *              +  Added lock "lock track height" / v.1.01 [30.12.18]
    *              +  initialе / v.1.0 [30.12.18]
 ==============================================================================================
 ----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
