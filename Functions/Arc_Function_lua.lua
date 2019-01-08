@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.3
+   * Version:     2.1.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -56,7 +56,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.3"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.4"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -274,20 +274,21 @@
 
 
 
-    -------- GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem); ---------
-    function Arc_Module.GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
-    
-        SkipNumberOfSamplesPerChannel = math.floor(SkipNumberOfSamplesPerChannel+0.5);
-        if not tonumber(SkipNumberOfSamplesPerChannel) then SkipNumberOfSamplesPerChannel = 0 end;
+    -------- GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,true,true,true); ---------
+    function Arc_Module.GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem,FeelVolumeOfTake,FeelVolumeOfEnvelopeItem);
+
         if not take or reaper.TakeIsMIDI(take)then return false,false,false,false,false,false,false end;
+        ------------------------------------------------------------------------------------------  
+        if not tonumber(SkipNumberOfSamplesPerChannel) then SkipNumberOfSamplesPerChannel = 0 end;
+        SkipNumberOfSamplesPerChannel = math.floor(SkipNumberOfSamplesPerChannel+0.5);
+        ------------------------------------------------
         local item = reaper.GetMediaItemTake_Item(take);
-        -----
-        -- Reset Play Rate ----------------------------------------------------------
-        local PlayRate_Reset =  reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
-        local Item_len_Reset = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
-        reaper.SetMediaItemInfo_Value(item,"D_LENGTH",Item_len_Reset * PlayRate_Reset);
+        -- Reset Play Rate -------------------------------------------------------------
+        local PlayRate_Original =  reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
+        local Item_len_Original = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
+        reaper.SetMediaItemInfo_Value(item,"D_LENGTH",Item_len_Original * PlayRate_Original);
         reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",1);
-        --------------------------------------------------------
+        -------------------------------------------------------
         local item_pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
         local item_len = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
         local accessor = reaper.CreateTakeAudioAccessor(take);
@@ -296,8 +297,8 @@
         local numchannels = reaper.GetMediaSourceNumChannels(source);
         local item_len_idx = math.ceil(item_len);
         -----------------------------------------
-        local CountSamples_OneChannel  = math.floor(item_len*samplerate+1);
-        local CountSamples_AllChannels = math.floor(item_len*samplerate+1)*numchannels;
+        local CountSamples_OneChannel  = math.floor(item_len*samplerate+2);
+        local CountSamples_AllChannels = math.floor(item_len*samplerate+2)*numchannels;
         -------------------------------------------------------------------------------
         local NumberSamplesOneChan  = {};
         local NumberSamplesAllChan  = {};
@@ -320,7 +321,11 @@
             local ContinueCounting = (i1-1) * samplerate; -- Продолжить Подсчет
             -------------------------------------------------------------------
             for i2 = 1, samplerate*numchannels,numchannels*(SkipNumberOfSamplesPerChannel+1) do;
-    
+
+                --- / Sample Point Number / --------------------------------
+                local SamplePointNumb = (i2-1)/numchannels+ContinueCounting;
+                ------------------------------------------------------------
+
                 -- / min max sample from all channels /------------
                 local Sample_min_all_channels = 9^99;
                 local Sample_max_all_channels = 0;
@@ -329,44 +334,75 @@
                     Sample_min_all_channels = math.min(Sample,Sample_min_all_channels);
                     Sample_max_all_channels = math.max(Sample,Sample_max_all_channels);
                 end;
-                -----
+
+                ---/ Feel volume of take - Чувствительность к громкости тейка /---
+                if FeelVolumeOfTake == true then;
+                    Sample_min_all_channels = Sample_min_all_channels*reaper.GetMediaItemTakeInfo_Value(take, "D_VOL");
+                    Sample_max_all_channels = Sample_max_all_channels*reaper.GetMediaItemTakeInfo_Value(take, "D_VOL");
+                end;
+
                 ---/ Feel volume of item - Чувствительность к громкости элемента /---
                 if FeelVolumeOfItem == true then;
                     Sample_min_all_channels = Sample_min_all_channels*reaper.GetMediaItemInfo_Value(item, "D_VOL");
                     Sample_max_all_channels = Sample_max_all_channels*reaper.GetMediaItemInfo_Value(item, "D_VOL");
                 end;
-                -----
+
+                --- / Feel Volume Of Envelope Item /------------
+                if FeelVolumeOfEnvelopeItem == true then;
+                    local Envelope = reaper.GetTakeEnvelopeByName(take,"Volume");
+                    if Envelope then;
+                       local retval,value,_,_,_ = reaper.Envelope_Evaluate(Envelope,SamplePointNumb/samplerate,samplerate,0);
+                       if retval > 0 then;
+                           Sample_min_all_channels = Sample_min_all_channels * value;
+                           Sample_max_all_channels = Sample_max_all_channels * value;
+                       end;
+                    end;
+                end; 
+
+                -- / min max sample from all channels /------------
                 Sample_min[#Sample_min+1] = Sample_min_all_channels;
                 Sample_max[#Sample_max+1] = Sample_max_all_channels;
                 ----------------------------------------------------
+
+                --- Sample Number - One / All Channels ---------------------------------
                 NumberSamplesAllChan[#NumberSamplesAllChan+1] = (i2 + ContinueCounting);
-                NumberSamplesOneChan[#NumberSamplesOneChan+1] = math.floor(((i2 + ContinueCounting)/numchannels)+0.5);
-                ------------------------------------------------------------------------------------------------------
-                TimeSample[#TimeSample+1] = ((i2-1)/numchannels+ContinueCounting)/samplerate/PlayRate_Reset + item_pos
-                ------------------------------------------------------------------------------------------------------
-                if #TimeSample*(SkipNumberOfSamplesPerChannel+1) >= CountSamples_OneChannel then breakX = 1 break end;
+                if numchannels > 2 then multi = 1 else multi = 0 end;
+                NumberSamplesOneChan[#NumberSamplesOneChan+1] = math.floor(((i2 + ContinueCounting)/numchannels)+0.5)+multi;
+                ------------------------------------------------------------------------------------------------------------
+
+                --- GetTime ------------------------------------------------------------------------
+                TimeSample[#TimeSample+1] = SamplePointNumb/samplerate/PlayRate_Original + item_pos;
+                                
+                --- End Of Element, To Complete Cycle ---------------------------------------------
+               if TimeSample[#TimeSample] > Item_len_Original + item_pos then breakX = 1 break end;
+               ------------------------------------------------------------------------------------
             end;
             buffer.clear();
             if breakX == 1 then break end;
         end
         reaper.DestroyAudioAccessor(accessor);
-        -----
-        -- Restore Play Rate ----------------------------------------------------
-        reaper.SetMediaItemInfo_Value(item,"D_LENGTH",item_len / PlayRate_Reset);
-        reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",PlayRate_Reset);
-        -------------------------------------------------------------------------------------------
-        table.insert(NumberSamplesAllChan,NumberSamplesAllChan[#NumberSamplesAllChan]+numchannels);
-        table.insert(NumberSamplesOneChan,NumberSamplesOneChan[#NumberSamplesOneChan]+1);
-        table.insert(Sample_min,Sample_min[#Sample_min]);
-        table.insert(Sample_max,Sample_max[#Sample_max]);
-        TimeSample[1]=item_pos;table.insert(TimeSample,item_pos+Item_len_Reset);
-        ------------------------------------------------------------------------
+        ---
+        -- Restore Play Rate -------------------------------------------------------
+        reaper.SetMediaItemInfo_Value(item,"D_LENGTH",item_len / PlayRate_Original);
+        reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",PlayRate_Original);
+        -----------------------------------------------------------------------
+        TimeSample[1] = item_pos; 
+        TimeSample[#TimeSample] = item_pos + Item_len_Original;
+        -----------------------------------------------------------------------------
         return CountSamples_AllChannels,CountSamples_OneChannel,NumberSamplesAllChan,
                NumberSamplesOneChan,Sample_min,Sample_max,TimeSample;----------------
-    end;-----------------------------------------------------------------------------
-    -- ПОЛУЧИТЬ У ОБРАЗЦА НОМЕР ЗНАЧЕНИЕ ПОЗИЦИЮ
+    end;----------------------------------------
     -- Get Sample Number Position Value
-    --====End===============End===============End===============End===============End==== 
+    -- ПОЛУЧИТЬ У ОБРАЗЦА НОМЕР ЗНАЧЕНИЕ ПОЗИЦИЮ.
+    -- samples_skip = сколько сэмплов пропустить в секунду (обычно
+    --       плэйрейт делим на сто - получится 100 точек в секунду) 
+    -- FeelVolumeOfItem = false - не реагировать на громкость элемента 
+    -- FeelVolumeOfItem = true - реагировать на громкость элемента
+    -- FeelVolumeOfTake = false - не реагировать на громкость тейка
+    -- FeelVolumeOfTake = true - реагировать на громкость тейка
+    -- FeelVolumeOfEnvelopeItem = false - не реагировать на автоматизацию громкости элемента 
+    -- FeelVolumeOfEnvelopeItem = true - реагировать на автоматизацию громкости элемента 
+    --====End===============End===============End===============End===============End====
 
 
 
