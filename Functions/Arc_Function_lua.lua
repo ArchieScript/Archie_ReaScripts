@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.5
+   * Version:     2.1.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,7 @@
    * Changelog:   
    *              + no_undo()
    *              + Action();
+   *              + Path,Name = GetPathAndNameSourceMediaFile_Take(take);
    *              + ValueFromMaxRepsIn_Table(array, min_max); 
    *              + randomOfVal(...)
    *              + SetToggleButtonOnOff(numb); 0 or 1
@@ -56,7 +57,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.5"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -129,7 +130,43 @@
 
 
 
-    --------------- ValueFromMaxRepsIn_Table(array, min_max);  --------------------------
+
+    --216---------- GetPathAndNameSourceMediaFile_Take(take); ---------------------------
+    function Arc_Module.GetPathAndNameSourceMediaFile_Take(take);
+        local guidStringTAKE = reaper.BR_GetMediaItemTakeGUID(take);
+        local item = reaper.GetMediaItemTake_Item(take);
+        local retval, str = reaper.GetItemStateChunk(item,"",false);
+        local T = {};
+        for ChunkTake in string.gmatch(str, '.->') do;
+            T[#T+1] = ChunkTake;
+        end;
+        for i = 1, #T do;
+            for guid,pach in string.gmatch(T[i],'[^IGUID]GUID ({.-}).-FILE (".-")') do;
+                if guid == guidStringTAKE and pach then;
+                    local Path,Name = string.match (pach, "(.+)[\\](.+)");
+                    Path =string.gsub(Path,'"',"");
+                    Name =string.gsub(Name,'"',"");
+                    return Path,Name;
+                end;
+                guid,pach = nil,nil;
+            end;
+        end;
+        return false,false;
+    end;
+    -- ПОЛУЧИТЬ ПУТЬ И ИМЯ ИСХОДНОГО МЕДИАФАЙЛА ФАЙЛА У ТЕЙКА
+    -- В отличии от "reaper.GetMediaSourceFileName(source,filenamebuf)" 
+    --                     не ломается на реверсных файлах и видит .png
+    -- Если тейк содержит миди, то вернет false
+    -- GET THE PATH AND NAME OF THE SOURCE MEDIA FILE FROM THE TAKE
+    -- Path,Name = Arc.GetPathAndNameSourceMediaFile_Take(take);
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+
+    --215---------- ValueFromMaxRepsIn_Table(array, min_max);  --------------------------
     function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); 
         if not min_max then min_max = "MAX" end;
         -- создаем статистику
