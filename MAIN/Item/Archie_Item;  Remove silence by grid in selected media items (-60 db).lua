@@ -1,19 +1,21 @@
 --[[
    * Category:    Item
-   * Description: Cut silence from selected items to created track under item
+   * Description: Remove silence by grid in selected media items (-60 db)
    * Author:      Archie
    * Version:     1.0
-   * AboutScript: Cut silence from selected items to created track under item
-   * О скрипте:   Вырезать тишину из выбранных элементов в созданную дорожку под элементом
+   * AboutScript: Remove silence by grid in selected media items (-60 db)
+   * О скрипте:   Удалить тишину по сетке в выбранных элементах мультимедиа (-60 дБ)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Вадим Мошев(RMM)
-   * Gave idea:   Вадим Мошев(RMM)
-   * Changelog:   +  initialе / v.1.0 [09.01.2019]
-==============================================================================================
-----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   * Customer:    --- (---)
+   * Gave idea:   --- (---)
+   * Changelog:   +  initialе / v.1.0 [16.01.2019]
+
+   ===========================================================================================\
+   -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   ===========================================================================================|
    + Reaper v.5.963 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
    + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
    - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
@@ -31,7 +33,8 @@
     --======================================================================================
 
 
-    local Thresh_dB = -80;
+
+    local Thresh_dB = -60;
                          -- | ПОРОГ НИЖЕ КОТОРОГО БУДЕТ УДАЛЯТЬСЯ ТИШИНА
                          -- | THRESHOLD BELOW WHICH SILENCE WILL BE REMOVED
                          --------------------------------------------------
@@ -94,12 +97,11 @@
     local ValInDB = 10^(Thresh_dB/20);
     ----------------------------------
 
-    local zeroPeak,item_Sp_Left,item_Sp,leftCheck,rightEdge,rightCheck,Numb,Undo;
+    local zeroPeak,item_Sp_Left,item_Sp,leftCheck,rightEdge,rightCheck,Undo;
 
     for i = CountSelItem-1,0,-1 do;
         local Selitem = reaper.GetSelectedMediaItem(0,i); 
         local Track = reaper.GetMediaItem_Track(Selitem);
-        local trNumb = reaper.GetMediaTrackInfo_Value(Track,"IP_TRACKNUMBER");
         -------------------------------------------
         local take = reaper.GetActiveTake(Selitem);
         local source = reaper.GetMediaItemTake_Source(take);
@@ -129,7 +131,16 @@
 
                     if PosRight == #TimeSample then rightCheck = PosRight else rightCheck = PosRight-Attack_Rel end;
                     if i == 1 then leftCheck = i else leftCheck = i+1+Attack_Rel end;
-
+                    -- grid -------------------
+                    ---------------------------
+                    if PosRight ~= #TimeSample then;  
+                        TimeSample[rightCheck] = reaper.BR_GetPrevGridDivision(TimeSample[rightCheck]);
+                    end;
+                    if i ~= 1 then;  
+                        TimeSample[leftCheck] = reaper.BR_GetNextGridDivision(TimeSample[leftCheck]);
+                    end;
+                    ---------------------------
+                    ---------------------------
                     if TimeSample[rightCheck] > TimeSample[leftCheck] then;
 
                         if i == 1 then;
@@ -144,17 +155,10 @@
                         else;
                             item_Sp = reaper.SplitMediaItem(item_Sp_Left,TimeSample[PosRight-Attack_Rel]);
                         end;
-                        ---------------------
-                        if item_Sp_Left then;
-                            if trNumb ~= Numb then;
-                                reaper.InsertTrackAtIndex(trNumb,false);
-                            end;
-                        end;
-                        Numb = trNumb;
-                        local track = reaper.GetTrack(0,Numb);
-                        reaper.GetSetMediaTrackInfo_String(track,"P_NAME","Silence",1);
-                        reaper.MoveMediaItemToTrack(item_Sp_Left,track);
-                      
+                        ----
+                        ----------------------------------
+                        Arc.DeleteMediaItem(item_Sp_Left);
+
                         if not Undo then;
                             reaper.Undo_BeginBlock();
                             Undo = "Active";
@@ -170,10 +174,9 @@
     end;
 
     if Undo then;
-        reaper.Undo_EndBlock("Cut silence from selected items to created track under item",-1);
+        reaper.Undo_EndBlock("Remove silence by grid in selected media items (-60 db)",-1);
     else;
         Arc.no_undo();
     end;
-    
-    
+
     reaper.UpdateArrange();
