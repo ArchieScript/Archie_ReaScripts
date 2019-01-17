@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="b4b2778dbd5dde7fb32f2a9b5a72f45fa7d7848f" name="Archie-ReaScripts">
+<index version="1" commit="9996e376a4765437ce3266735110290697e3da80" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -122,6 +122,9 @@
       </version>
       <version name="2.1.6" author="Archie" time="2019-01-13T17:25:15Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/b4b2778dbd5dde7fb32f2a9b5a72f45fa7d7848f/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.1.7" author="Archie" time="2019-01-17T09:23:23Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/e5e93a60205b7fa05772d6bbb2ab2198ab3a7df6/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -1057,6 +1060,138 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d8a6fed6293aa5fc478cd24bf5981348e819ac1d/MAIN/Item/Archie_Item%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder  restore original size(only Audio).lua" type="script" desc="Switch item source file to next in folder restore original size(only Audio)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Audio).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder  restore original size(only Video).lua" type="script" desc="Switch item source file to next in folder restore original size(only Video)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Video).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder (only Audio).lua" type="script" desc="Switch item source file to next in folder (only Audio)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Audio).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder (only Video).lua" type="script" desc="Switch item source file to next in folder (only Video))">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Video).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder restore original size.lua" type="script" desc="Switch item source file to next in folder restore original size">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20restore%20original%20size.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder (only Audio).lua" type="script" desc="Switch item source file to previous in folder (only Audio)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Audio).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder (only Video).lua" type="script" desc="Switch item source file to previous in folder (only Video)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Video).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder restore original size (only Audio).lua" type="script" desc="Switch item source file to previous in folder restore original size (only Audio)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie-" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Audio).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder restore original size (only Video).lua" type="script" desc="Switch item source file to previous in folder restore original size (only Video)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Video).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder restore original size.lua" type="script" desc="Switch item source file to previous in folder restore original size">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Switch item source file to previous in folder.lua" type="script" desc="Switch item source file to previous in folder">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  By frame move item,under mouse cursor.move cursor the to offset(mousewheel).lua" type="script" desc="by frame move item &lt;&gt;,under mouse cursor,move cursor the to offset">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1066,15 +1201,37 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20By%20frame%20move%20item,under%20mouse%20cursor.move%20cursor%20the%20to%20offset(mousewheel).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Cut silence from selected items to created track under item.lua" type="script" desc="Cut silence from selected items to created track under item">
+    <reapack name="Archie_Item;  Cut silence by grid from selected items to created track under item(-80 db).lua" type="script" desc="Cut silence by grid from selected items to created track under item">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-01-09T14:22:37Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [09.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d5d1b60e1308376d1136f6cf96043408706bebba/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item.lua</source>
+      <version name="1.01" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  lock second run / v.1.01 [15.01.2019];]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20grid%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Cut silence by measure from selected items to created track under item(-80 db).lua" type="script" desc="Cut silence by measure from selected items to created track under item">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.01" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  lock second run / v.1.01 [15.01.2019];]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20measure%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Cut silence from selected items to created track under item (-80 db).lua" type="script" desc="Cut silence from selected items to created track under item">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.01" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  lock second run / v.1.01 [15.01.2019];]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item%20(-80%20db).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
@@ -1184,6 +1341,61 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Remove%20selected%20items%20outside%20regions(time%20selection).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove silence by grid in selected media items (-60 db).lua" type="script" desc="Remove silence by grid in selected media items (-60 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-60%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove silence by grid in selected media items (-80 db).lua" type="script" desc="Remove silence by grid in selected media items (-80 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-80%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove silence by measure in selected media items (-60 db).lua" type="script" desc="Remove silence by measure in selected media items (-60 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-60%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove silence by measure in selected media items (-80 db).lua" type="script" desc="Remove silence by measure in selected media items (-80 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-80%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove silence in selected media items (-60 db).lua" type="script" desc="Remove silence in selected media items (-60 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-16T16:29:27Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [10.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-60%20db).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence in selected media items (-80 db).lua" type="script" desc="Remove silence in selected media items (-80 db)">
@@ -1463,6 +1675,74 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Options/Archie_Options;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Take">
+    <reapack name="Archie_Take;  Copy color item active take.lua" type="script" desc="Copy color item active take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Copy%20color%20item%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Copy Name item active take.lua" type="script" desc="Copy Name item active take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Copy%20Name%20item%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Paste color to selected item active take.lua" type="script" desc="Paste color to selected item active take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Paste%20color%20to%20selected%20item%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Paste color to selected item all take.lua" type="script" desc="Paste color to selected item all take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Paste%20color%20to%20selected%20item%20all%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Paste Name to selected items active take.lua" type="script" desc="Paste Name to selected items active take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Paste%20Name%20to%20selected%20items%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Reset color default in all take in selected items .lua" type="script" desc="Reset color default in all take in selected items">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Reset%20color%20default%20in%20all%20take%20in%20selected%20items%20.lua</source>
       </version>
     </reapack>
   </category>
