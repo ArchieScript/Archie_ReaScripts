@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.6
+   * Version:     2.1.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -57,7 +57,7 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.6"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.7"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then                                                                               --###
             reaper.ClearConsole()                                                                                        --###
@@ -1004,15 +1004,31 @@
 
 
    
-    --------------GetMediaItemInfo_Value-------------------------------------------------
-    function Arc_Module.GetMediaItemInfo_Value(item, parmname)
+    --217---------GetMediaItemInfo_Value-------------------------------------------------
+    function Arc_Module.GetMediaItemInfo_Value(item, parmname);
         if parmname == "END" or parmname == "D_END" then return
             reaper.GetMediaItemInfo_Value(item,"D_POSITION")+
-            reaper.GetMediaItemInfo_Value(item,"D_LENGTH")
-        else
-            return reaper.GetMediaItemInfo_Value(item,parmname) 
-        end
-    end 
+            reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
+        else;
+            return reaper.GetMediaItemInfo_Value(item,parmname);
+        end;
+    end;
+	-- D_END :Получить конечную позицию элемента от начала проекта в секундах
+    --====End===============End===============End===============End===============End====
+
+
+
+
+    --217---------SetMediaItemInfo_Value-------------------------------------------------
+    function Arc_Module.SetMediaItemInfo_Value(item, parmname,val);
+        if parmname == "END" or parmname == "D_END" then;
+            local pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION"); 
+            return reaper.SetMediaItemInfo_Value(item,"D_LENGTH",val-pos);
+        else;
+            return reaper.SetMediaItemInfo_Value(item,parmname,val);
+        end;
+    end;
+    -- D_END :Установить конечную позицию элемента от начала проекта в секундах
     --====End===============End===============End===============End===============End====
 
 
