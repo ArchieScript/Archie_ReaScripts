@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9996e376a4765437ce3266735110290697e3da80" name="Archie-ReaScripts">
+<index version="1" commit="04a188f785f3b707cece8e3128b8ed936b686710" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1699,6 +1699,17 @@
       <version name="1.0" author="Archie" time="2019-01-17T15:00:39Z">
         <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9996e376a4765437ce3266735110290697e3da80/MAIN/Take/Archie_Take;%20%20Copy%20Name%20item%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Delete name in selected items in active take.lua" type="script" desc="Delete name in selected items in active take">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-17T15:51:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/04a188f785f3b707cece8e3128b8ed936b686710/MAIN/Take/Archie_Take;%20%20Delete%20name%20in%20selected%20items%20in%20active%20take.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take;  Paste color to selected item active take.lua" type="script" desc="Paste color to selected item active take">
