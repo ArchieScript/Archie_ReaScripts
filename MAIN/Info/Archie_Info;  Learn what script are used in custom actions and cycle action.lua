@@ -2,7 +2,7 @@
    * Category:    Info
    * Description: Learn what script are used in custom actions and cycle action
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Learn what script are used in custom actions and cycle action
    * О скрипте:   Узнайте, какие сценарии используются в настраиваемых действиях и цикл действиях
    * GIF:         ---
@@ -45,7 +45,7 @@
         local file = io.open(Path,'r');
         if not file then no_undo() return end;
         local text = file:read('a');file:close();
-        return text:match(id:match('[^_](%S+)')..'%s"Custom:(.-)"');  
+        return text:match(id:match('[^_](%S+)')..'%s"Custom:%s(.-)"');  
     end;
 
 
@@ -53,7 +53,7 @@
         local kb_ini = reaper.GetResourcePath()..'/reaper-kb.ini';
         local file = io.open(kb_ini,'r');
         if not file then no_undo() return end;
-        local line_T,TableCast,TabCastom = {},{},{};
+        local line_T,TableCast,TabCastom,Nil = {},{},{};
         for var in file:lines() do;
             table.insert(line_T,var);
         end;
@@ -73,7 +73,7 @@
                             if not double then;
                                 table.insert(TableCast,NameByID);
                                 if #TabCastom+1 < 10 then Nil = "00" elseif #TabCastom+1 >= 10 and #TabCastom+1 < 100 then Nil = "0" else Nil = ""end;
-                                table.insert(TabCastom,Nil..#TabCastom+1 .." -"..NameByID);
+                                table.insert(TabCastom,Nil..#TabCastom+1 .." - "..NameByID);
                             end;
                         end;
                     end;
@@ -90,7 +90,7 @@
         if not file then no_undo() return end;
         local text = file:read('a');
         file:close();
-        local TableCicle,TableCycle = {},{};
+        local TableCicle,TableCycle,Nil = {},{};
         ----------------------------------
         for S in string.gmatch (text, "[^|]+") do;
             if string.sub(S,0,1) == "_" then
@@ -105,7 +105,7 @@
                     if not double then;
                         table.insert(TableCicle,NameByID);
                         if #TableCycle+1 < 10 then Nil = "00" elseif #TableCycle+1 >= 10 and #TableCycle+1 < 100 then Nil = "0" else Nil = ""end;
-                        table.insert(TableCycle,Nil..#TableCycle+1 .." -"..NameByID);
+                        table.insert(TableCycle,Nil..#TableCycle+1 .." - "..NameByID);
                     end;
                 end;
             end;
@@ -116,28 +116,28 @@
 
     local Castom = GetScriptNameByCastom();
     local Cycle = GetScriptNameByCycle();
-    local header = "[Archie_UsedScriptsInActions:]\n"..
-              "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n"..
-             "Скрипты использующиеся в пользовательских действиях и в цикл действиях:\n"..
-             "Scripts used in custom actions and cycle actions:\n"..
-              "‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾\n\n\n"
-    table.insert(Castom,1,header.."CASTOM ACTION:  ".. #Castom.." - Scripts\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
-    table.insert(Cycle,1,"\n\n\nCYCLE ACTION:  "..#Cycle.." - Scripts\n‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾");
+    local header = "[Archie_UsedScriptsInActions:]\n\n"..
+                   "Скрипты использующиеся в пользовательских действиях и в цикл действиях:\n"..
+                   "Scripts used in custom actions and cycle actions:\n\n\n";   
+    table.insert(Castom,1,header.."CASTOM ACTION: ".. #Castom.."-Scripts\n");
+    table.insert(Cycle,1,"\n\n\nCYCLE ACTION: "..#Cycle.."-Scripts\n");
     local CastList = table.concat(Castom,"\n"); 
     local CyclList = table.concat(Cycle,"\n");
     ----------------------
-    -- reaper.ClearConsole(); 
-    -- reaper.ShowConsoleMsg(CastList..CyclList);
-    ---------------------------------------------
     local path = reaper.GetResourcePath()..'/Archie_UsedScriptsInActions.ini';
-    ini = io.open(path,'w');
+    local ini = io.open(path,'w');
     ini:write(CastList..CyclList);
     ini:close();
 
-    local OS = reaper.GetOS();
+    local OS,cmd = reaper.GetOS();
     if OS == "OSX32" or OS == "OSX64" then;
-        os.execute('open "" '..path);
+        cmd = os.execute('open "" '..path);
     else;
-        os.execute('start "" '..path);
+        cmd = os.execute('start "" '..path);
     end;
+    if not cmd then;
+        reaper.ClearConsole(); 
+        reaper.ShowConsoleMsg(CastList..CyclList);
+    end;
+    
     no_undo();
