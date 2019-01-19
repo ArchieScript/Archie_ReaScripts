@@ -2,46 +2,47 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.7
+   * Version:     2.1.8
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ---------------------
    
    * Changelog:   
-   *              + no_undo()
+   *              + no_undo();
    *              + Action();
+   *              + If_Equals(EqualsToThat,...);
    *              + Path,Name = GetPathAndNameSourceMediaFile_Take(take);
    *              + ValueFromMaxRepsIn_Table(array, min_max); 
-   *              + randomOfVal(...)
+   *              + randomOfVal(...);
    *              + SetToggleButtonOnOff(numb); 0 or 1
    *              + HelpWindowWhenReRunning(BottonText,but,reset);
    *              + DeleteMediaItem(item);
    *              + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
-   *              + SetMediaItemLeftTrim2(position,item)
+   *              + SetMediaItemLeftTrim2(position,item);
    *              + Save_Selected_Items_GuidSlot(Slot);
    *              + Restore_Selected_Items_GuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + SaveSoloMuteStateAllTracksGuidSlot(Slot);
    *              + RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
-   *              + SaveMuteStateAllItemsGuidSlot(Slot)
-   *              + RestoreMuteStateAllItemsGuidSlot(Slot,clean)--clean = true или 1 - чтобы зачистить
-   *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
-   *              + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast()
+   *              + SaveMuteStateAllItemsGuidSlot(Slot);
+   *              + RestoreMuteStateAllItemsGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
+   *              + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast();
+   *              + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast();
    *              + RemoveStretchMarkersSavingTreatedWave_Render(Take);
    *              + SaveSelTracksGuidSlot(Slot);
    *              + RestoreSelTracksGuidSlot(Slot,clean);
-   *              + GetPreventSpectralPeaksInTrack(Track)
+   *              + GetPreventSpectralPeaksInTrack(Track);
    *              + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
    *              + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
    *              + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
-   *              + CloseAllFxInAllTracks(chain, float)--true,false
-   *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=])--некорректно работает с top
-   *              + GetMediaItemInfo_Value(item,parmname)/[D_END] 
-   *              + Get_Format_ProjectGrid(divisionIn)
-   *              + invert_number(X)
-   *              + CountTrackSelectedMediaItems(track)
-   *              + GetTrackSelectedMediaItems(track,idx)
---======================================================]]
+   *              + CloseAllFxInAllTracks(chain, float);--true,false
+   *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=]);--некорректно работает с top
+   *              + GetMediaItemInfo_Value(item,parmname);/[D_END] 
+   *              + Get_Format_ProjectGrid(divisionIn);
+   *              + invert_number(X);
+   *              + CountTrackSelectedMediaItems(track);
+   *              + GetTrackSelectedMediaItems(track,idx);
+--=======================================================]]
 
 
 
@@ -57,10 +58,10 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.7"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = "2.1.8"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
-        if v < version:gsub("%D", "") then                                                                               --###
-            reaper.ClearConsole()                                                                                        --###
+        if v < version:gsub("%D", "") then;                                                                              --###
+            reaper.ClearConsole();                                                                                        --###
             reaper.ShowConsoleMsg('Eng:\n'..                                                                             --###
             --[[----------------]]'   The file "Arc_Function_lua" is not relevant, Obsolete.\n'..                        --###
             --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..                               --###
@@ -74,7 +75,7 @@
             --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'..                                 --###
             --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..            --###
             --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..        --###
-            --[[----------------]]'   И замените его по пути\n'..'   '..ScriptPath..'\\'..ScriptName)                    --###
+            --[[----------------]]'   И замените его по пути\n'..'   '..ScriptPath..'\\'..ScriptName);                    --###
         end -----------------------------------------------------------------------------------------                    --###
     end    ---Сообщить об устаревшей версии----------------------------------------------------                          --###
     --====End===============End===============End===============End===============End====                                --###
@@ -125,6 +126,19 @@
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
 
+
+
+
+
+    ---218----------- If_Equals(EqualsToThat,...);---------------------------------------
+    function Arc_Module.If_Equals(EqualsToThat,...);
+        for _,v in ipairs {...} do;
+            if v == EqualsToThat then return true end;
+        end;
+        return false;
+    end;
+    -- сократить условие
+    --====End===============End===============End===============End===============End====
 
 
 
@@ -1013,7 +1027,7 @@
             return reaper.GetMediaItemInfo_Value(item,parmname);
         end;
     end;
-	-- D_END :Получить конечную позицию элемента от начала проекта в секундах
+  -- D_END :Получить конечную позицию элемента от начала проекта в секундах
     --====End===============End===============End===============End===============End====
 
 
