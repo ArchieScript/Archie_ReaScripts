@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5711185f51dbc4d935a43aa1bafe696436a656a8" name="Archie-ReaScripts">
+<index version="1" commit="18142cf6753c19af80c4221ca4bface75532d03a" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1070,49 +1070,6 @@
     </reapack>
   </category>
   <category name="MAIN/Item">
-    <reapack name="Archie_Item  Delete selected items (time selection).lua" type="script" desc="Delete selected items (time selection)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20(time%20selection).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item  Delete selected items in time selection .lua" type="script" desc="Delete selected items in time selection">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20in%20time%20selection%20.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item  Delete selected items in time selection' if any (smart delete).lua" type="script" desc="Delete selected items in time selection' if any(smart delete)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20in%20time%20selection'%20if%20any%20(smart%20delete).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item  Remove all items, envelopes from project (including master track).lua" type="script" desc="Remove all items, envelopes from project (including master track)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T20:21:53Z">
-        <changelog><![CDATA[+ initialе / v.1.0 [14.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d8a6fed6293aa5fc478cd24bf5981348e819ac1d/MAIN/Item/Archie_Item%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Item;  By frame move item,under mouse cursor.move cursor the to offset(mousewheel).lua" type="script" desc="by frame move item &lt;&gt;,under mouse cursor,move cursor the to offset">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1153,6 +1110,39 @@
       <version name="1.01" author="Archie" time="2019-01-16T16:29:27Z">
         <changelog><![CDATA[+  lock second run / v.1.01 [15.01.2019];]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/733e4b62cc8436c4fd469bc2e661a1aaf76dc0b0/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item%20(-80%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Delete selected items (time selection).lua" type="script" desc="Delete selected items (time selection)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:26:55Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20(time%20selection).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Delete selected items in time selection .lua" type="script" desc="Delete selected items in time selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:26:55Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20in%20time%20selection%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Delete selected items in time selection' if any (smart delete).lua" type="script" desc="Delete selected items in time selection' if any(smart delete)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:26:55Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20in%20time%20selection'%20if%20any%20(smart%20delete).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
@@ -1253,6 +1243,16 @@
         <changelog><![CDATA[!+ fix bug / v.1.01[23122018]
 + initialе / v.1.0 [23122018]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/05b60ef2a3701f4937791cb64562c316563d9bd4/MAIN/Item/Archie_Item;%20%20Pitch%20up%20one%20semitone%20all%20midi%20items(all%20midi%20take)%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove all items, envelopes from project (including master track).lua" type="script" desc="Remove all items, envelopes from project (including master track)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:26:55Z">
+        <changelog><![CDATA[+ initialе / v.1.0 [14.11.18]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected items outside regions(time selection).lua" type="script" desc="Remove selected items outside regions(time selection)">
@@ -1413,6 +1413,16 @@
       <version name="1.06" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor%20(select%20right)'Smart.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor'Smart.lua" type="script" desc="Split (selected) item(s) under mouse cursor'Smart.">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.06" author="Archie" time="2019-01-20T15:26:55Z">
+        <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor'Smart.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Stretch time and reduce the selected item(s) by 2 times.lua" type="script" desc="Stretch time and reduce the selected item(s) by 2 times">
@@ -1597,16 +1607,6 @@
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20%E2%86%93Move%20selected%20items%20down%20one%20track.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item; Split (selected) item(s) under mouse cursor'Smart.lua" type="script" desc="Split (selected) item(s) under mouse cursor'Smart.">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.06" author="Archie" time="2018-11-13T11:55:51Z">
-        <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20Split%20(selected)%20item(s)%20under%20mouse%20cursor'Smart.lua</source>
       </version>
     </reapack>
   </category>
