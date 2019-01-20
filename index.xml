@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7eab5b5dfd664cb6d845a0fc9710c63896adf760" name="Archie-ReaScripts">
+<index version="1" commit="5711185f51dbc4d935a43aa1bafe696436a656a8" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1070,6 +1070,39 @@
     </reapack>
   </category>
   <category name="MAIN/Item">
+    <reapack name="Archie_Item  Delete selected items (time selection).lua" type="script" desc="Delete selected items (time selection)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20(time%20selection).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Delete selected items in time selection .lua" type="script" desc="Delete selected items in time selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20in%20time%20selection%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item  Delete selected items in time selection' if any (smart delete).lua" type="script" desc="Delete selected items in time selection' if any(smart delete)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-20T15:19:19Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5711185f51dbc4d935a43aa1bafe696436a656a8/MAIN/Item/Archie_Item%20%20Delete%20selected%20items%20in%20time%20selection'%20if%20any%20(smart%20delete).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item  Remove all items, envelopes from project (including master track).lua" type="script" desc="Remove all items, envelopes from project (including master track)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
