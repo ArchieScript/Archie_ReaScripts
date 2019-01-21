@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="18142cf6753c19af80c4221ca4bface75532d03a" name="Archie-ReaScripts">
+<index version="1" commit="04342343e90469cc35f60e806b940f6d9e7ddbc4" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1728,6 +1728,19 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Options/Archie_Options;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Playback">
+    <reapack name="Archie_Playback;  Toggle stop playback at the end of time selection.lua" type="script" desc="Toggle stop playback at the end of time selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-21T20:23:21Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [22.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/04342343e90469cc35f60e806b940f6d9e7ddbc4/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20the%20end%20of%20time%20selection.lua</source>
       </version>
     </reapack>
   </category>
