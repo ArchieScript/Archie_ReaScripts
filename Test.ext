@@ -2,4 +2,4 @@
 @Author:      Archie
 @Version:     1.0
 @Changelog:   +  initialå / v.1.0 [-.-.-]
-@Provides:    [darwin64] Test .dll https://github.com/ArchieScript/Archie_ReaScripts/v$version/$path
+@Provides:    https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test%20.dll
