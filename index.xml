@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="b40025ff5206fb874fb92c67f5d3c3bc443b3715" name="Archie-ReaScripts">
+<index version="1" commit="1f4696c024c8de77068871831a304ac86902a63e" name="Archie-ReaScripts">
+  <category name="Extentions">
+    <reapack name="Test.ext" type="extension" desc="TEST">
+      <version name="1.0" author="Archie" time="2019-01-22T15:44:14Z">
+        <changelog><![CDATA[+  initial� / v.1.0 [-.-.-]]]></changelog>
+        <source platform="win32" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.dll</source>
+        <source platform="win64" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.dll</source>
+      </version>
+    </reapack>
+  </category>
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
