@@ -1,5 +1,11 @@
-@Description: TEST
-@Author:      Archie
-@Version:     1.0
-@Changelog:   +  initialå / v.1.0 [-.-.-]
-@Provides:    https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test%20.dll
+@Description TEST
+@Author      Archie
+@Version     1.0
+@Provides
+   [win32]     Test.dll     https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.dll
+   [win64]     Test.dll     https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.dll
+@Changelog   +  initialå / v.1.0 [-.-.-]
+
+    
+
+
