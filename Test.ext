@@ -1,0 +1,11 @@
+@Description TEST
+@Author      Archie
+@Version     1.05
+@Provides
+   [win32]     Test.dll     https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.lua
+   [win64]     Test.dll     https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Test.lua
+@Changelog   +  initiale / v.1.0 [-.-.-]
+
+    
+
+
