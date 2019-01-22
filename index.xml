@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9c4e968a7615b31c6b7f5060e673378b53a3b18f" name="Archie-ReaScripts">
+<index version="1" commit="6c1ecf39f70314fe1fe49bdf580e0c2c66d44c33" name="Archie-ReaScripts">
   <category name="Extentions">
     <reapack name="Test.ext" type="extension" desc="TEST">
       <version name="1.0" author="Archie" time="2019-01-22T15:44:14Z">
@@ -13,6 +13,11 @@
         <source platform="win64" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Extentions/Test.dll</source>
       </version>
       <version name="1.02" author="Archie" time="2019-01-22T15:55:30Z">
+        <changelog><![CDATA[+  initiale / v.1.0 [-.-.-]]]></changelog>
+        <source platform="win32" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Extentions/Test.dll</source>
+        <source platform="win64" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Extentions/Test.dll</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-01-22T16:03:09Z">
         <changelog><![CDATA[+  initiale / v.1.0 [-.-.-]]]></changelog>
         <source platform="win32" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Extentions/Test.dll</source>
         <source platform="win64" file="Test.dll">https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Extentions/Test.dll</source>
