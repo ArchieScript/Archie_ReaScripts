@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="04342343e90469cc35f60e806b940f6d9e7ddbc4" name="Archie-ReaScripts">
+<index version="1" commit="b40025ff5206fb874fb92c67f5d3c3bc443b3715" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1732,15 +1732,15 @@
     </reapack>
   </category>
   <category name="MAIN/Playback">
-    <reapack name="Archie_Playback;  Toggle stop playback at the end of time selection.lua" type="script" desc="Toggle stop playback at the end of time selection">
+    <reapack name="Archie_Playback;  Toggle stop playback at end of time selection.lua" type="script" desc="Toggle stop playback at the end of time selection">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-01-21T20:23:21Z">
+      <version name="1.0" author="Archie" time="2019-01-22T08:36:23Z">
         <changelog><![CDATA[+  initialе / v.1.0 [22.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/04342343e90469cc35f60e806b940f6d9e7ddbc4/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20the%20end%20of%20time%20selection.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b40025ff5206fb874fb92c67f5d3c3bc443b3715/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20end%20of%20time%20selection.lua</source>
       </version>
     </reapack>
   </category>
