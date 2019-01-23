@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.8
+   * Version:     2.1.9
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -12,6 +12,7 @@
    *              + no_undo();
    *              + Action();
    *              + If_Equals(EqualsToThat,...);
+   *              + SetCollapseFolderMCP(track,clickable,is_show);
    *              + Path,Name = GetPathAndNameSourceMediaFile_Take(take);
    *              + ValueFromMaxRepsIn_Table(array, min_max); 
    *              + randomOfVal(...);
@@ -47,9 +48,10 @@
 
 
 
-    --===================
-    local Arc_Module = {}
-    --===================
+    --========================
+    local Arc_Module = {};--==
+    local VersionMod = "2.1.9"
+    --========================
 
 
 
@@ -58,16 +60,16 @@
     ------------- http://НЕ_ЗАБУДЬ_ОБНОВИТЬ ---------------------------------------------                                --###
     -------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------НЕ ЗАБУДЬ ОБНОВИТЬ--------                                --###
     function Arc_Module.VersionArc_Function_lua(version,ScriptPath,ScriptName);                                          --###
-        local ver_fun = "2.1.8"  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<<                                                           --###
+        local ver_fun = VersionMod  --<<<--НЕ ЗАБУДЬ ОБНОВИТЬ <<< "VersionMod" <<<                                       --###
         local v = ver_fun:gsub("%D", "");                                                                                --###
         if v < version:gsub("%D", "") then;                                                                              --###
-            reaper.ClearConsole();                                                                                        --###
+            reaper.ClearConsole();                                                                                       --###
             reaper.ShowConsoleMsg('Eng:\n'..                                                                             --###
             --[[----------------]]'   The file "Arc_Function_lua" is not relevant, Obsolete.\n'..                        --###
             --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..                               --###
             --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..            --###
             --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..        --###
-            --[[----------------]]'   And replace it along the way\n'..'   '..ScriptPath..'\\'..ScriptName..'\n'..       --###
+            --[[----------------]]'   And put it along the way\n'..'   '..ScriptPath..'\\'..ScriptName..'\n'..           --###
             --[[----------------]]'   --------------------------------------------------------------------------------'..--###
             --[[----------------]]'-----------------------------------------------------------------------------------'..--###
             --[[----------------]]'--------------------------------------------------------------------------\nRus:\n'.. --###
@@ -75,8 +77,8 @@
             --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'..                                 --###
             --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..            --###
             --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..        --###
-            --[[----------------]]'   И замените его по пути\n'..'   '..ScriptPath..'\\'..ScriptName);                    --###
-        end -----------------------------------------------------------------------------------------                    --###
+            --[[----------------]]'   И положите его по пути\n'..'   '..ScriptPath..'\\'..ScriptName);return false       --###
+        end return true -----------------------------------------------------------------------------                    --###
     end    ---Сообщить об устаревшей версии----------------------------------------------------                          --###
     --====End===============End===============End===============End===============End====                                --###
     --########################################################################################################################
@@ -139,6 +141,30 @@
     end;
     -- сократить условие
     --====End===============End===============End===============End===============End====
+
+
+
+
+
+
+    --219---------- SetCollapseFolderMCP(track,clickable,is_show); ----------------------
+    function Arc_Module.SetCollapseFolderMCP(track,clickable,is_show);
+        if clickable == 0 or clickable == 1 then;
+            if clickable == 0 then clickable = 1 else clickable = 0 end;
+            if reaper.GetToggleCommandState(41154)== clickable then reaper.Main_OnCommand(41154,-1)end;
+        end;
+        local _,tr_chunk = reaper.GetTrackStateChunk(track,'',true);
+        local BUSCOMP_var1 = tr_chunk:match('BUSCOMP (%d+)');
+        if is_show ~= 1 then is_show = 0 end;
+        local tr_chunk_out = tr_chunk:gsub('BUSCOMP '..BUSCOMP_var1..' %d+', 'BUSCOMP '..BUSCOMP_var1..' '..is_show);
+        reaper.SetTrackStateChunk(track, tr_chunk_out,true);
+    end;
+    -- Collapsed / Uncollapsed Track MCP
+    -- Свернуть / Развернуть Трек в Mикшере
+    -- clickable = 0 кликабельный значок для папок скрыть:
+    -- clickable = 1 кликабельный значок для папок показать:  иначе = -1;
+    -- is_show = 1 - скрыть; is_show = 0 показать:
+    --====End===============End===============End===============End===============End==== 
 
 
 
