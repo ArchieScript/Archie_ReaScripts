@@ -45,6 +45,13 @@
 
 
 
+    if not reaper.JS_Mouse_GetState then reaper.MB(
+    'There is no file "reaper_js_ReaScriptAPI.dll" \nInstall repository "ReaTeam Extensions"\n\n'..
+    'Отсутствует файл "reaper_js_ReaScriptAPI.dll" \nУстановите репозиторий "ReaTeam Extensions"'
+    ,"Error",0) return end;
+    -----------------------
+
+
     local but = "Button 1"
     local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)")) 
     local Modifiers = reaper.JS_Mouse_GetState(28);

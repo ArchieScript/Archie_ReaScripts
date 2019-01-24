@@ -26,5 +26,5 @@
 
 
     local command_id = reaper.NamedCommandLookup("_S&M_SHOW_NOTES_VIEW")
-    reaper.Main_OnCommand(command_id,0)
+    reaper.Main_OnCommand(command_id,-1)
     no_undo()
