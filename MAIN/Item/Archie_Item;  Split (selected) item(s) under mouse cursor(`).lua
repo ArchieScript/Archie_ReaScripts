@@ -1,8 +1,8 @@
 --[[
    * Category:    Item
-   * Description: Split (selected) item(s) under mouse cursor'Smart.
+   * Description: Split (selected) item(s) under mouse cursor
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: Split selected item(s) under mouse cursor and all selected items 
                             in this position or item under mouse cursor
                             PLEASE NOTE THE SETTINGS BELOW
