@@ -1,7 +1,6 @@
 --[[
    * Category:    Track
    * Description: Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor
-   
    * Author:      Archie
    * Version:     1.0
    * AboutScript: Switch the height of track A-B;Collapse Uncollapse Folder under mouse cursor
