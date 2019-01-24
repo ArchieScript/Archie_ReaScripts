@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="e8e76fbe0fb7332c6f6e8051645fa203af80d797" name="Archie-ReaScripts">
+<index version="1" commit="e4dff9a7c247660fba84aa912e107a983bd9f98c" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1368,7 +1368,7 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Show%20all%20visible%20envelopes%20in%20selected%20items.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)'Smart.">
+    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
@@ -1377,8 +1377,12 @@
         <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor%20(select%20left)(%60).lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2019-01-24T14:02:34Z">
+        <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e4dff9a7c247660fba84aa912e107a983bd9f98c/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor%20(select%20left)(%60).lua</source>
+      </version>
     </reapack>
-    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select right)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select right)'Smart.">
+    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select right)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select right)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
@@ -1387,8 +1391,12 @@
         <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor%20(select%20right)(%60).lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2019-01-24T14:02:34Z">
+        <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e4dff9a7c247660fba84aa912e107a983bd9f98c/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor%20(select%20right)(%60).lua</source>
+      </version>
     </reapack>
-    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor'Smart.">
+    <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
@@ -1396,6 +1404,10 @@
       <version name="1.06" author="Archie" time="2019-01-24T13:32:36Z">
         <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor(%60).lua</source>
+      </version>
+      <version name="1.07" author="Archie" time="2019-01-24T14:02:34Z">
+        <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e4dff9a7c247660fba84aa912e107a983bd9f98c/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Stretch time and reduce the selected item(s) by 2 times.lua" type="script" desc="Stretch time and reduce the selected item(s) by 2 times">
