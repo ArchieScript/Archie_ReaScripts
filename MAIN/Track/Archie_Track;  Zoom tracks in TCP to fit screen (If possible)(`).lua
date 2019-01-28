@@ -28,6 +28,20 @@
 
 
 
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --====================================================================================== 
+
+
+
+    local ScrollTop = 1
+                 -- = 0 | Отключить прокрутку вверх
+                 -- = 1 | Включить прокрутку вверх
+                          ------------------------
+                 -- = 0 | Disable scroll up
+                 -- = 1 | Enable scroll up
+                 -------------------------
+
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -43,35 +57,63 @@
     if not Arc.VersionArc_Function_lua("2.1.8",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
     --==================================▲=▲=▲=================================================================================================================
 
- 
+
 
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then Arc.no_undo() return end;
 
     reaper.PreventUIRefresh(1);
 
-    local TrackT = {};
-    
+
+    local HeightPlus, TrackT, DepthFold, DepthChild = 0,{};
+
     for i = 1, CountTrack do;
         local Track = reaper.GetTrack(0,i-1);
         local showTCP = reaper.GetMediaTrackInfo_Value(Track,"B_SHOWINTCP");
-        if showTCP == 1 then;
-            table.insert(TrackT,Track);
+        ----
+        if DepthFold then;
+            DepthChild = reaper.GetTrackDepth(Track); 
+            if DepthChild <= DepthFold then;
+                DepthFold = nil;
+            else;
+                if showTCP == 1 then;
+                    local Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                    HeightPlus = HeightPlus + Height;
+                end;
+            end;
+        end;
+
+        if not DepthFold then;
+            if showTCP == 1 then;
+                table.insert(TrackT,Track);
+            end;
+        end;
+        if not DepthFold then;
+            local Fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
+            if Fold == 1 then;
+                local FoldCom = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERCOMPACT");
+                if FoldCom > 0 then;
+                    DepthFold = reaper.GetTrackDepth(Track);  
+                end;
+            end;
         end;
     end;
 
 
     local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,true);
-    local heightAll = math.floor(((scr_y-210)/#TrackT)+0.5);
+    local heightAll = math.floor(((scr_y-HeightPlus-210)/#TrackT)+0.5);
 
     for i = 1, #TrackT do;
         reaper.SetMediaTrackInfo_Value(TrackT[i],"I_HEIGHTOVERRIDE",heightAll);
     end
-    
+
     reaper.TrackList_AdjustWindows(false);
-    
-    reaper.CSurf_OnScroll(0,-1000);
-    reaper.CSurf_OnScroll(0, 1 );
-    reaper.CSurf_OnScroll(0, -1);
-   
-    reaper.PreventUIRefresh(-1);  
+
+    if ScrollTop == 1 then;
+        reaper.CSurf_OnScroll(0,-1000);
+        reaper.CSurf_OnScroll(0, 1   );
+        reaper.CSurf_OnScroll(0, -1  );
+    end;
+
+    reaper.PreventUIRefresh(-1);
+    Arc.no_undo();
