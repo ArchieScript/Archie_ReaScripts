@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d6e4e68db6b8c1bc74b61aa1db2d6a3b04a2cd5a" name="Archie-ReaScripts">
+<index version="1" commit="445da1186d5a7d762207093cda09e9d50166d778" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2353,15 +2353,15 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e8e76fbe0fb7332c6f6e8051645fa203af80d797/MAIN/Track/Archie_Track;%20%20Toggle%20Track%20height%20A-B%20Collapse%20Uncollapse%20Folder%20under%20mouse%20cursor(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
+    <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-01-28T10:21:24Z">
+      <version name="1.0" author="Archie" time="2019-01-28T11:55:30Z">
         <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d6e4e68db6b8c1bc74b61aa1db2d6a3b04a2cd5a/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/445da1186d5a7d762207093cda09e9d50166d778/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one(`).lua" type="script" desc="Move selected tracks in up on one">
