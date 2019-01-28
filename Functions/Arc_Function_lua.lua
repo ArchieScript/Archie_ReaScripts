@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.0
+   * Version:     2.2.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -51,7 +51,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.0"
+    local VersionMod = "2.2.1"
     --========================
 
 
@@ -297,7 +297,7 @@
         if TooltipWind == "" then;
             MessageBox = reaper.ShowMessageBox(Text.."\n"..
             "--------------------------------------------------------------------------------------------\n\n"..
-            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n\n"..
+            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n"..
             "DO NOT SHOW THIS WINDOW - OK",Header,1);
             if MessageBox == 1 then;
                 reaper.SetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but,ScriptName.."Archie_HelpWindow"..but,MessageBox,true);
