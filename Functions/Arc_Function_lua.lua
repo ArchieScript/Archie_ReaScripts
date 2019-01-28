@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.1.9
+   * Version:     2.2.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -17,6 +17,7 @@
    *              + ValueFromMaxRepsIn_Table(array, min_max); 
    *              + randomOfVal(...);
    *              + SetToggleButtonOnOff(numb); 0 or 1
+   *              + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
    *              + HelpWindowWhenReRunning(BottonText,but,reset);
    *              + DeleteMediaItem(item);
    *              + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
@@ -50,7 +51,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.1.9"
+    local VersionMod = "2.2.0"
     --========================
 
 
@@ -283,6 +284,36 @@
     end;
     -- УСТАНОВИТЬ ПЕРЕКЛЮЧАТЕЛЬ ВКЛ ВЫКЛ (ПОДСВЕТКА КНОПКИ)
     -- Set Toggle Button On Off
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+    --220------- HelpWindow_WithOptionNotToShow(Text,Header,but,reset); -----------------
+    function Arc_Module.HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
+        local ScriptName,MessageBox = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"));
+        local TooltipWind = reaper.GetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but, ScriptName.."Archie_HelpWindow"..but);
+        if TooltipWind == "" then;
+            MessageBox = reaper.ShowMessageBox(Text.."\n"..
+            "--------------------------------------------------------------------------------------------\n\n"..
+            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n\n"..
+            "DO NOT SHOW THIS WINDOW - OK",Header,1);
+            if MessageBox == 1 then;
+                reaper.SetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but,ScriptName.."Archie_HelpWindow"..but,MessageBox,true);
+            end;
+        end;
+        if reset == true then;
+            reaper.DeleteExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but, ScriptName.."Archie_HelpWindow"..but,true);
+        end;
+        if MessageBox == 2 then MessageBox = 0 end;
+        return MessageBox or -1;
+    end;
+    -- ОКНО СПРАВКИ С ОПЦИЕЙ НЕ ПОКАЗЫВАТЬ;
+    -- HELP WINDOW WITH OPTION NOT TO SHOW;
+    --  but = хоть что strung;
+    --  reset = true только для сброса, а так всегда false;
+    -- returns: ok 1; cancel 0; otherwise -1
     --====End===============End===============End===============End===============End====
 
 
