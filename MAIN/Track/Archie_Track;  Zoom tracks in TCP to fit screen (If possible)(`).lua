@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (If possible)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Zoom tracks in TCP to fit screen (If possible)
    * О скрипте:   Увеличение треков в TCP по размеру экрана (если возможно)
    * GIF:         ---
