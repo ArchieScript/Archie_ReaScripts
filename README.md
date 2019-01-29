@@ -40,6 +40,6 @@ https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
 
 - Also, for some scripts, the reaper_js_ReaScriptAPI file is required to install it — install the ReaTeam Extensions repository or [*download*](https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI) the ReaTeam Extensions repository and put it in the folder with the ripper resources /UserPlugins
 
-    - *Так же для работы некоторых скриптов требуется файл reaper_js_ReaScriptAPI, что бы его установить - установите репозиторий "ReaTeam Extensions" или скачайте [***файл***](https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI) с репозитория и положите в папку с ресурсами рипера/UserPlugins
+    - *Так же для работы некоторых скриптов требуется файл reaper_js_ReaScriptAPI, что бы его установить - установите репозиторий "ReaTeam Extensions" или скачайте [*файл*](https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI) с репозитория и положите в папку с ресурсами рипера/UserPlugins*
  
 -----
