@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Switch item source file to next in folder restore original size(only Audio)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Switch item source file to next in folder restore original size(only Audio)
    * О скрипте:   Переключить исходный файл элемента на следующий в 
                         папке восстановить исходный размер (только аудио)
@@ -13,7 +13,10 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---(---)
    * Gave idea:   ---(---)
-   * Changelog:   +  initialе / v.1.0 [16.01.2019]
+   * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19] 
+   *              +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
+   
+   *              +  initialе / v.1.0 [16.01.2019]
    
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -63,11 +66,11 @@
 
 
     --============================ FUNCTION MODULE FUNCTION ================================ FUNCTION MODULE FUNCTION ========================================
-    local Fun,scr,dir,MB,Arc,Load=reaper.GetResourcePath()..'\\Scripts\\Archie-ReaScripts\\Functions',select(2,reaper.get_action_context()):match("(.+)[\\]"),
+    local Fun,scr,dir,MB,Arc,Load = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions',select(2,reaper.get_action_context()):match("(.+)[\\/]"),
     reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
     if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
     'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
-    if not Arc.VersionArc_Function_lua("2.1.8",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
+    if not Arc.VersionArc_Function_lua("2.2.2",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
     --==================================▲=▲=▲=================================================================================================================
 
 
@@ -90,7 +93,7 @@
         if not Midi_take then;
             local Path,Name = Arc.GetPathAndNameSourceMediaFile_Take(take);
             if Path and Name then;
-                local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."\\"..Name);
+                local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."/"..Name);
                 local WavMidVideo = reaper.GetMediaSourceType(PCM_Source,"");
                 if WavMidVideo == Audio or WavMidVideo == Video then;
 
@@ -118,12 +121,12 @@
                                 end;
                                 local ExpansionFile = string.match(Name:reverse(),".-%.");
                                 if ExpansionFile then;
-                                    local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."\\"..Name);
+                                    local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."/"..Name);
                                     local WavMidVideo = reaper.GetMediaSourceType(PCM_Source,"");
                                     if WavMidVideo == Audio or WavMidVideo == Video then;
                                         local Channels = reaper.GetMediaSourceNumChannels(PCM_Source);
                                         if Channels > 0 then;
-                                            reaper.BR_SetTakeSourceFromFile(take, Path.."\\"..Name ,true);
+                                            reaper.BR_SetTakeSourceFromFile(take, Path.."/"..Name ,true);
                                             reaper.GetSetMediaItemTakeInfo_String(take,"P_NAME",Name,1);
                                             local retval, lengthIsQN = reaper.GetMediaSourceLength(PCM_Source);
                                             reaper.SetMediaItemLength(item,retval,true)

@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.2
+   * Version:     2.2.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -51,7 +51,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.1"
+    local VersionMod = "2.2.3"
     --========================
 
 

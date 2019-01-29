@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Smart Multi script(Button 16)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -13,9 +13,12 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75(Rmm/forum) 
    * Gave idea:   Supa75(Rmm/forum) 
-   * Changelog:   +  добавлен список системные требования: / v.1.03 [04122018]
+   * Changelog:   +  Fixed paths for Mac/ v.1.04 [29.01.19] 
+   *              +  Исправлены пути для Mac/ v.1.04 [29.01.19]  
+
+   *              +  добавлен список системные требования: / v.1.03 [04122018]
    *              +  added a list of the system requirements: / v.1.03 [04122018]
-    *             +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
+   *              +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
    *              +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
    *              +  initialе / v.1.0 [12.11.18]
 =====================================================================================|
@@ -53,7 +56,7 @@
 
 
     local but = "Button 16"
-    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)")) 
+    local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)")) 
     local Modifiers = reaper.JS_Mouse_GetState(28);
 
     if Modifiers ~= 28 then; 
