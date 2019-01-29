@@ -3816,6 +3816,30 @@
 {\i Archie_ReaScripts.}
 }}}
 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 info\par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Pay attention to the name of the script, if at the end there is a quotation mark in parentheses {\b (`)}, then this means that the script contains any editing settings that you can correct for your needs or a description of the script.\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\i \u1054?\u1073?\u1088?\u1072?\u1090?\u1080?\u1090?\u1077? \u1074?\u1085?\u1080?\u1084?\u1072?\u1085?\u1080?\u1077? \u1085?\u1072? \u1085?\u1072?\u1079?\u1074?\u1072?\u1085?\u1080?\u1077? \u1089?\u1082?\u1088?\u1080?\u1087?\u1090?\u1072?, \u1077?\u1089?\u1083?\u1080? \u1074? \u1082?\u1086?\u1085?\u1094?\u1077? \u1089?\u1090?\u1086?\u1080?\u1090? \u1082?\u1072?\u1074?\u1099?\u1095?\u1082?\u1072? \u1074? \u1089?\u1082?\u1086?\u1073?\u1082?\u1072?\u1093? {\b (`)} \u1090?\u1086? \u1101?\u1090?\u1086? \u1086?\u1079?\u1085?\u1072?\u1095?\u1072?\u1077?\u1090?, \u1095?\u1090?\u1086? \u1074? \u1089?\u1082?\u1088?\u1080?\u1087?\u1090?\u1077? \u1087?\u1088?\u1080?\u1089?\u1091?\u1090?\u1089?\u1090?\u1074?\u1091?\u1102?\u1090? \u1082?\u1072?\u1082?\u1080?\u1077? \u1083?\u1080?\u1073?\u1086? \u1085?\u1072?\u1089?\u1090?\u1088?\u1086?\u1081?\u1082?\u1080? \u1076?\u1083?\u1103? \u1088?\u1077?\u1076?\u1072?\u1082?\u1090?\u1080?\u1088?\u1086?\u1074?\u1072?\u1085?\u1080?\u1103?, \u1082?\u1086?\u1090?\u1086?\u1088?\u1099?\u1077? \u1074?\u1099? \u1084?\u1086?\u1078?\u1077?\u1090?\u1077? \u1087?\u1086?\u1076?\u1087?\u1088?\u1072?\u1074?\u1080?\u1090?\u1100? \u1087?\u1086?\u1076? \u1089?\u1074?\u1086?\u1080? \u1085?\u1091?\u1078?\u1076?\u1099? \u1080?\u1083?\u1080? \u1086?\u1087?\u1080?\u1089?\u1072?\u1085?\u1080?\u1077? \u1089?\u1082?\u1088?\u1080?\u1087?\u1090?\u1072?.}\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 \par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab To run the scripts, download the file. {\field{\*\fldinst{HYPERLINK "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua"}}{\fldrslt{\ul
+{\i {\b Arc_Function_lua}}
+}}}
+ and unzip the folder with the resources of the Reaper/Scripts/Archie-ReaScripts/Functions\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\i \u1044?\u1083?\u1103? \u1088?\u1072?\u1073?\u1086?\u1090?\u1099? \u1089?\u1082?\u1088?\u1080?\u1087?\u1090?\u1086?\u1074?, \u1089?\u1082?\u1072?\u1095?\u1072?\u1081?\u1090?\u1077? \u1092?\u1072?\u1081?\u1083? {\field{\*\fldinst{HYPERLINK "https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua"}}{\fldrslt{\ul
+{\i {\b Arc_Function_lua}}
+}}}
+ \u1080? \u1088?\u1072?\u1089?\u1087?\u1072?\u1082?\u1091?\u1081?\u1090?\u1077? \u1074? \u1087?\u1072?\u1087?\u1082?\u1091? \u1089? \u1088?\u1077?\u1089?\u1091?\u1088?\u1089?\u1072?\u1084?\u1080? \u1088?\u1080?\u1087?\u1077?\u1088?\u1072?/Scripts/Archie-ReaScripts/Functions}\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 \par}
+{\pard \ql \f0 \sa180 \li360 \fi-360 \bullet \tx360\tab Also, for some scripts, the reaper_js_ReaScriptAPI file is required to install it \u8212- install the ReaTeam Extensions repository or {\field{\*\fldinst{HYPERLINK "https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI"}}{\fldrslt{\ul
+{\i download}
+}}}
+ the ReaTeam Extensions repository and put it in the folder with the ripper resources /UserPlugins\par}
+{\pard \ql \f0 \sa0 \li720 \fi-360 \endash \tx360\tab {\i \u1058?\u1072?\u1082? \u1078?\u1077? \u1076?\u1083?\u1103? \u1088?\u1072?\u1073?\u1086?\u1090?\u1099? \u1085?\u1077?\u1082?\u1086?\u1090?\u1086?\u1088?\u1099?\u1093? \u1089?\u1082?\u1088?\u1080?\u1087?\u1090?\u1086?\u1074? \u1090?\u1088?\u1077?\u1073?\u1091?\u1077?\u1090?\u1089?\u1103? \u1092?\u1072?\u1081?\u1083? reaper_js_ReaScriptAPI, \u1095?\u1090?\u1086? \u1073?\u1099? \u1077?\u1075?\u1086? \u1091?\u1089?\u1090?\u1072?\u1085?\u1086?\u1074?\u1080?\u1090?\u1100? - \u1091?\u1089?\u1090?\u1072?\u1085?\u1086?\u1074?\u1080?\u1090?\u1077? \u1088?\u1077?\u1087?\u1086?\u1079?\u1080?\u1090?\u1086?\u1088?\u1080?\u1081? "ReaTeam Extensions" \u1080?\u1083?\u1080? \u1089?\u1082?\u1072?\u1095?\u1072?\u1081?\u1090?\u1077? {\field{\*\fldinst{HYPERLINK "https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI"}}{\fldrslt{\ul
+{\i \u1092?\u1072?\u1081?\u1083?}
+}}}
+ \u1089? \u1088?\u1077?\u1087?\u1086?\u1079?\u1080?\u1090?\u1086?\u1088?\u1080?\u1103? \u1080? \u1087?\u1086?\u1083?\u1086?\u1078?\u1080?\u1090?\u1077? \u1074? \u1087?\u1072?\u1087?\u1082?\u1091? \u1089? \u1088?\u1077?\u1089?\u1091?\u1088?\u1089?\u1072?\u1084?\u1080? \u1088?\u1080?\u1087?\u1077?\u1088?\u1072?/UserPlugins}\sa180\sa180\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 \b \fs32 \par}
+{\pard \qc \f0 \sa180 \li0 \fi0 \emdash\emdash\emdash\emdash\emdash\par}
 }
 ]]></description>
   </metadata>
