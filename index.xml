@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9b68ae3a4cdfbea2a5959f50cbb87d9e17b9e605" name="Archie-ReaScripts">
+<index version="1" commit="56e592f4168797ba43bfea6eb4402534d889ad9c" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2369,6 +2369,10 @@
       <version name="1.01" author="Archie" time="2019-01-28T12:09:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f9d4f8f47ac339da7bae0648162c9b22b32ad139/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-01-29T08:46:16Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/56e592f4168797ba43bfea6eb4402534d889ad9c/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one(`).lua" type="script" desc="Move selected tracks in up on one">
