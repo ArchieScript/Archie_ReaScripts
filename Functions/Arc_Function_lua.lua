@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.1
+   * Version:     2.2.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -70,7 +70,7 @@
             --[[----------------]]'   Download the Arc_Function_lua file at this URL.\n'..                               --###
             --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..            --###
             --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..        --###
-            --[[----------------]]'   And put it along the way\n'..'   '..ScriptPath..'\\'..ScriptName..'\n'..           --###
+            --[[----------------]]'   And put it along the way\n'..'   '..ScriptPath..'/'..ScriptName..'\n'..            --###
             --[[----------------]]'   --------------------------------------------------------------------------------'..--###
             --[[----------------]]'-----------------------------------------------------------------------------------'..--###
             --[[----------------]]'--------------------------------------------------------------------------\nRus:\n'.. --###
@@ -78,7 +78,7 @@
             --[[----------------]]'   Скачайте файл "Arc_Function_lua" по этому URL\n'..                                 --###
             --[[----------------]]'   https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'..            --###
             --[[----------------]]'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n'..        --###
-            --[[----------------]]'   И положите его по пути\n'..'   '..ScriptPath..'\\'..ScriptName);return false       --###
+            --[[----------------]]'   И положите его по пути\n'..'   '..ScriptPath..'/'..ScriptName);return false        --###
         end return true -----------------------------------------------------------------------------                    --###
     end    ---Сообщить об устаревшей версии----------------------------------------------------                          --###
     --====End===============End===============End===============End===============End====                                --###
@@ -184,7 +184,7 @@
         for i = 1, #T do;
             for guid,pach in string.gmatch(T[i],'[^IGUID]GUID ({.-}).-FILE (".-")') do;
                 if guid == guidStringTAKE and pach then;
-                    local Path,Name = string.match (pach, "(.+)[\\](.+)");
+                    local Path,Name = string.match (pach, "(.+)[\\/](.+)");
                     Path =string.gsub(Path,'"',"");
                     Name =string.gsub(Name,'"',"");
                     return Path,Name;
@@ -292,7 +292,7 @@
 
     --220------- HelpWindow_WithOptionNotToShow(Text,Header,but,reset); -----------------
     function Arc_Module.HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
-        local ScriptName,MessageBox = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"));
+        local ScriptName,MessageBox = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)"));
         local TooltipWind = reaper.GetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but, ScriptName.."Archie_HelpWindow"..but);
         if TooltipWind == "" then;
             MessageBox = reaper.ShowMessageBox(Text.."\n"..
@@ -322,7 +322,7 @@
 
     --------------- HelpWindowWhenReRunning(BottonText,but,reset); --------------------------
     function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);-- (BottonText = 1 или 2)
-        local ScriptName = select(2,select(2,reaper.get_action_context()):match("(.+)[\\](.+)"));
+        local ScriptName = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)"));
         local TooltipWind = reaper.GetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but);
         if TooltipWind == "" then;
             ----------------------
