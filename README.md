@@ -31,4 +31,8 @@ https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
 - Pay attention to the name of the script, if at the end there is a quotation mark in parentheses (`), then this means that the script contains any editing settings that you can correct for your needs or a description of the script.
 
     - *Обратите внимание на название скрипта, если в конце стоит кавычка в скобках (`) то это означает, что в скрипте присутствуют какие либо настройки для редактирования, которые вы можете подправить под свои нужды или описание скрипта.*
+    
+    
+- To run the scripts, download the file.  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  and unzip the folder with the resources of the Reaper/script
+    - *Для работы скриптов, скачайте файл  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  и распакуйте в папку с ресурсами рипера/скрипт*
 -----
