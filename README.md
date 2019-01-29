@@ -27,7 +27,7 @@ https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
 
 
 -----
-#info
+# info
 - Pay attention to the name of the script, if at the end there is a quotation mark in parentheses (`), then this means that the script contains any editing settings that you can correct for your needs or a description of the script.
     - *Обратите внимание на название скрипта, если в конце стоит кавычка в скобках (`) то это означает, что в скрипте присутствуют какие либо настройки для редактирования, которые вы можете подправить под свои нужды или описание скрипта.*
 -----
