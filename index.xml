@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="58c60accd30e1bfc8b29ecfa9d9bdec7e93d133a" name="Archie-ReaScripts">
+<index version="1" commit="9cea98478ac21bcc4723b3f7a910c82e2385edbd" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2755,6 +2755,52 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Take/Archie_Take;%20%20Reset%20color%20default%20in%20all%20take%20in%20selected%20items%20.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Time selection">
+    <reapack name="Archie_Time selection;  Nudge left edge left to nearest grid.lua" type="script" desc="Nudge left edge left to nearest grid">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-30T14:01:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9cea98478ac21bcc4723b3f7a910c82e2385edbd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Nudge%20left%20edge%20left%20to%20nearest%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Time selection;  Nudge left edge right to nearest grid.lua" type="script" desc="Nudge left edge right to nearest grid">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-30T14:01:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9cea98478ac21bcc4723b3f7a910c82e2385edbd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Nudge%20left%20edge%20right%20to%20nearest%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Time selection;  Nudge right edge left to nearest grid.lua" type="script" desc="Nudge right edge left to nearest grid">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-30T14:01:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9cea98478ac21bcc4723b3f7a910c82e2385edbd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Nudge%20right%20edge%20left%20to%20nearest%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Time selection;  Nudge right edge right to nearest grid.lua" type="script" desc="Nudge right edge right to nearest grid">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-01-30T14:01:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9cea98478ac21bcc4723b3f7a910c82e2385edbd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Nudge%20right%20edge%20right%20to%20nearest%20grid.lua</source>
       </version>
     </reapack>
   </category>
