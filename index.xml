@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="20f45f0e50b97e212083a371d80906e1a3060306" name="Archie-ReaScripts">
+<index version="1" commit="e074a10946807f8bc37c7412dfb4cef4db9d1581" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3153,6 +3153,11 @@
         <changelog><![CDATA[+ Fixed paths for Mac / v.1.04 [29.01.2019]
 + Исправлены пути для Mac / v.1.04 [29.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2019-01-30T08:12:15Z">
+        <changelog><![CDATA[+ Fixed a bug that threatened the system / v.1.05 [30.01.2019]
++ Исправлена ошибка грозившая систему / v.1.05 [30.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e074a10946807f8bc37c7412dfb4cef4db9d1581/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
