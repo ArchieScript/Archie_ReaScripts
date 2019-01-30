@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Auto enable spectral peaks on selected tracks
    * О скрипте:   Автоматическое включение спектральных пиков на выбранных дорожках
    * GIF:         ---
@@ -11,14 +11,15 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
-   * Changelog:   + Fixed paths for Mac / v.1.04 [29.01.2019]
+   * Changelog:   + Fixed a bug that threatened the system / v.1.05 [30.01.2019]
+   *              + Исправлена ошибка грозившая систему / v.1.05 [30.01.2019]
+
+   *              + Fixed paths for Mac / v.1.04 [29.01.2019]
    *              + Исправлены пути для Mac / v.1.04 [29.01.2019]
-   
-                  + Fixed working with child tracks / v.1.03 [28.01.2019]
+   *              + Fixed working with child tracks / v.1.03 [28.01.2019]
    *              + Fixed bug when scanning peak cache files / v.1.03 [28.01.2019]
    *              + Исправлена работа с дочерними треками / v.1.03 [28.01.2019]
    *              + Исправлена ошибка при сканировании пиковых файлов кэша / v.1.03 [28.01.2019]
-
    *              + initialе / v.1.0
    
    ===========================================================================================\
@@ -174,15 +175,16 @@
         reaper.PreventUIRefresh(-1);
     end;
 
-
+    local sel1,sel2,ProjectChange_2;
     local function loop();
 
         local Spectral = reaper.GetToggleCommandState(42073);
         if Spectral == 0 then Arc.no_undo() return end;
-        
-        local ProjectChange_1 =  reaper.GetProjectStateChangeCount(0);
+
+        local ProjectChange_1 = reaper.GetProjectStateChangeCount(0);
         if ProjectChange_1 ~= ProjectChange_2 then;
-            local sel1,sel2,ProjectChange_2 = "";
+
+            sel1 = "";
             if not sel2 then sel2 = "" end;
 
             local CountTrack = reaper.CountTracks(0);
@@ -196,7 +198,7 @@
                 Run();
             end;
             sel2 = sel1; 
-        ProjectChange_2 = ProjectChange_1;
+            ProjectChange_2 = ProjectChange_1;
         end;
 
         reaper.defer(loop);
