@@ -2,23 +2,28 @@
    * Category:    View
    * Description: Enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Enable spectral peaks only on selected tracks
+   *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK 
+   *                  TO RESET ALL PEAK CACHE FILES
    * О скрипте:   Включить спектральные пики только на выбранных дорожках
+   *                ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + SHIFT + CLICK 
+   *                 ЧТОБЫ СБРОСИТЬ ВСЕ ПИКОВЫЕ ФАЙЛЫ КЭША
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
-   * Changelog:   + Fixed paths for Mac / v.1.04 [29.01.2019]
+   * Changelog:   + Cleaned re-scan of the files when you reopen the project / v.1.05 [30.01.2019]
+   *              + Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.05 [30.01.2019]
+
+   *              + Fixed paths for Mac / v.1.04 [29.01.2019]
    *              + Исправлены пути для Mac / v.1.04 [29.01.2019]
-   
    *              + Fixed working with child tracks / v.1.03 [28.01.2019]
    *              + Fixed bug when scanning peak cache files / v.1.03 [28.01.2019]
    *              + Исправлена работа с дочерними треками / v.1.03 [28.01.2019]
    *              + Исправлена ошибка при сканировании пиковых файлов кэша / v.1.03 [28.01.2019]
-
    *              + initialе / v.1.0
 
    ===========================================================================================\
@@ -56,8 +61,8 @@
     if not reaper.JS_Mouse_GetState then reaper.MB(
     'There is no file "reaper_js_ReaScriptAPI.dll" \nInstall repository "ReaTeam Extensions"\n\n'..
     'Отсутствует файл "reaper_js_ReaScriptAPI.dll" \nУстановите репозиторий "ReaTeam Extensions"'
-    ,"Error",0) return end;
-    -----------------------
+    ,"Error",0) Arc.no_undo() return end;
+    -------------------------------------
 
     local RemovePeak = 40097;
     local SpectrPeak = 42073;
@@ -70,7 +75,7 @@
 
     if reaper.JS_Mouse_GetState(12) == 12 then; -- Ctrl + Shift
         if reaper.GetToggleCommandState(SpectrPeak) == 1 then Arc.Action(SpectrPeak)end;
-        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",false);
+        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",true);---
         Arc.Action(RebuilPeak);
         for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
@@ -109,7 +114,7 @@
 
     local Spectral = reaper.GetToggleCommandState(SpectrPeak);
     if Spectral == 0 then;
-        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",false);
+        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",true);---
     end;
 
     local Peak = reaper.HasExtState("SelTrSpectPeak39674867","key_SpectPeak39674867");
@@ -121,7 +126,7 @@
             Arc.SetPreventSpectralPeaksInTrack(Track,false);
         end;
         Arc.Action(RemovePeak,RebuilPeak);
-        reaper.SetExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",1,false);
+        reaper.SetExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",1,true);---
         local WindHWND = reaper.JS_Window_Find("Building Peaks",false);
         if WindHWND then;
             local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,0);
@@ -176,6 +181,9 @@
     reaper.DeleteExtState("OsCclockHelpSpect","HelpSpect",false);
     reaper.PreventUIRefresh(-1);
 
+    --#3----------Stop > Auto enable spectral peaks on selected tracks.lua ------------------------------------------
+    reaper.DeleteExtState("StopScriptAutoSpectralPeaks_EnableSpectralPeaks","key_StopScriptAutoSpectralPeaks",false);
+    -----------------------------------------------------------------------------------------------------------------
     if Undo then
         reaper.Undo_EndBlock("Enable spectral peaks on selected tracks",-1);
     else;
