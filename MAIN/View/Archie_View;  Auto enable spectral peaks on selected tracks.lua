@@ -2,31 +2,36 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: Auto enable spectral peaks on selected tracks
-   *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK 
+   *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
    * О скрипте:   Автоматическое включение спектральных пиков на выбранных дорожках
-   *                ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + SHIFT + CLICK 
-   *                 ЧТОБЫ СБРОСИТЬ ВСЕ ПИКОВЫЕ ФАЙЛЫ КЭША  
+   *                ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + SHIFT + CLICK
+   *                 ЧТОБЫ СБРОСИТЬ ВСЕ ПИКОВЫЕ ФАЙЛЫ КЭША
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
-   * Changelog:   + Cleaned re-scan of the files when you reopen the project / v.1.06 [30.01.2019]
-   *              + Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.06 [30.01.2019]
+   * Changelog:   
+   *              !+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.07 [01.02.2019]
+   *              !+ Fixed not scanning spectral peaks in new projects / v.1.07 [01.02.2019]
+   *              !+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.07 [01.02.2019]
+   *              !+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.07 [01.02.2019]
 
-   *              + Fixed a bug that threatened the system / v.1.05 [30.01.2019]
-   *              + Исправлена ошибка грузившая систему / v.1.05 [30.01.2019]
-   *              + Fixed paths for Mac / v.1.04 [29.01.2019]
-   *              + Исправлены пути для Mac / v.1.04 [29.01.2019]
-   *              + Fixed working with child tracks / v.1.03 [28.01.2019]
-   *              + Fixed bug when scanning peak cache files / v.1.03 [28.01.2019]
-   *              + Исправлена работа с дочерними треками / v.1.03 [28.01.2019]
-   *              + Исправлена ошибка при сканировании пиковых файлов кэша / v.1.03 [28.01.2019]
-   *              + initialе / v.1.0
+   *              !+ Cleaned re-scan of the files when you reopen the project / v.1.06 [30.01.2019]
+   *              !+ Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.06 [30.01.2019]
+   *              !+ Fixed a bug that threatened the system / v.1.05 [30.01.2019]
+   *              !+ Исправлена ошибка грузившая систему / v.1.05 [30.01.2019]
+   *              !+ Fixed paths for Mac / v.1.04 [29.01.2019]
+   *              !+ Исправлены пути для Mac / v.1.04 [29.01.2019]
+   *              !+ Fixed working with child tracks / v.1.03 [28.01.2019]
+   *              !+ Fixed bug when scanning peak cache files / v.1.03 [28.01.2019]
+   *              !+ Исправлена работа с дочерними треками / v.1.03 [28.01.2019]
+   *              !+ Исправлена ошибка при сканировании пиковых файлов кэша / v.1.03 [28.01.2019]
+   *              ++ initialе / v.1.0
    
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -66,25 +71,48 @@
     ,"Error",0) Arc.no_undo() return end;
     -------------------------------------
 
+
     local RemovePeak = 40097;
     local SpectrPeak = 42073;
     local RebuilPeak = 40048;
+
+
+     -----------------------------------------------------------------------------------------------------
+     -- Option / Preferences / Media
+           -- ON | Always generate spectral peak information (default is only when spectral peaks enabled)
+           -- ON | Automatically rebuild peaks if necessary when enabling spectral peaks
+     local showpeaks = reaper.SNM_GetIntConfigVar("showpeaks",0);
+     if showpeaks ~= 67 and showpeaks ~= 1123 then;
+         if reaper.GetToggleCommandState(42073)== 1 then;
+             reaper.SNM_SetIntConfigVar("showpeaks",1123);
+         else;
+             reaper.SNM_SetIntConfigVar("showpeaks",67);
+         end;
+     end;  -- Default ini "showpeaks = 3"
+    -----------------------------------------------------------------------------------------------------
 
 
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then Arc.no_undo() return end;
 
 
+    local Proj = reaper.GetProjectPath("").."/"..reaper.GetProjectName(0,""); 
+
+
     if reaper.JS_Mouse_GetState(12) == 12 then; -- Ctrl + Shift
+        ---Reset-----------------------------------------------
         if reaper.GetToggleCommandState(SpectrPeak) == 1 then Arc.Action(SpectrPeak)end;
-        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",true);---
+        reaper.DeleteExtState(Proj.."SelTrSpectPeak39674867",Proj.."key_SpectPeak39674867",true);---
         Arc.Action(RebuilPeak);
+        reaper.JS_Window_Enable(reaper.JS_Window_Find("Building Peaks",false),false);
         for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
             Arc.SetPreventSpectralPeaksInTrack(Track,false);
         end;
         Arc.no_undo() return;
+        ---------------------
     else;
+        ---Help-----------------------------
         local Clock = math.ceil(os.clock());
         local ClockES = reaper.HasExtState("Auto_OsCclockHelpSpect","Auto_HelpSpect");
         if ClockES then;
@@ -94,7 +122,7 @@
             end;
         end;
         if not ClockES then;
-            Arc.HelpWindowWhenReRunning(1,1689458,false);
+            Arc.HelpWindowWhenReRunning(1,1689458,false);--reset true
             local HelpWindow = Arc.HelpWindow_WithOptionNotToShow(
                                "Rus:\n"..
                                "    Запустите скрипт сочетанием клавиш Ctrl + Shift + Click чтобы\n"..
@@ -107,39 +135,56 @@
                                "    Run the script with Ctrl + Shift + Click to\n"..
                                "    Reset all peak cache files\n"..
                                "    Reset Prevention of all spectral peaks\n"..
-                               "    Turn off spectral peaks\n","Help.",469812,false);--reset
+                               "    Turn off spectral peaks\n","Help.",469812,false);--reset true
             if HelpWindow > -1 then;
                 reaper.SetExtState("Auto_OsCclockHelpSpect","Auto_HelpSpect",Clock,false);
             end;
         end;
+        -----------------------------------------------------------------------
     end;
 
 
+    --[[
     local Spectral = reaper.GetToggleCommandState(SpectrPeak);
     if Spectral == 0 then;
-        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",true);---
+        reaper.DeleteExtState(Proj.."SelTrSpectPeak39674867",Proj.."key_SpectPeak39674867",true);---
     end;
+    --]]
 
-    local Peak = reaper.HasExtState("SelTrSpectPeak39674867","key_SpectPeak39674867");
+
+    ----------------------------------------------------------------------------------
+    local Peak = reaper.HasExtState(Proj.."SelTrSpectPeak39674867",Proj.."key_SpectPeak39674867");
     if not Peak then;
         reaper.PreventUIRefresh(1);
+        local Spectral = reaper.GetToggleCommandState(SpectrPeak);
         if Spectral == 0 then Arc.Action(SpectrPeak) end;
         for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
             Arc.SetPreventSpectralPeaksInTrack(Track,false);
         end;
         Arc.Action(RemovePeak,RebuilPeak);
-        reaper.SetExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",1,true);---
-        local WindHWND = reaper.JS_Window_Find("Building Peaks",false);
-        if WindHWND then;
-            local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,0);
-            local scr_x = scr_x/2-183;
-            local scr_y = scr_y/2+70;
-            reaper.JS_Window_SetPosition(WindHWND,scr_x,scr_y,372,95);
-            reaper.JS_Window_SetTitle(WindHWND,"Archie: Building Peaks");
-            reaper.JS_Window_Enable(WindHWND,false);
-        end;
+        reaper.SetExtState(Proj.."SelTrSpectPeak39674867",Proj.."key_SpectPeak39674867",1,true);---
+    end;  
+    --------------------------------------------------------------------
+
+
+    ----------------------------------------------------------
+    local Spectral = reaper.GetToggleCommandState(SpectrPeak);
+    if Spectral == 0 then Arc.Action(SpectrPeak) end;
+    -------------------------------------------------
+
+
+    ---------------------------------------------------------------
+    local WindHWND = reaper.JS_Window_Find("Building Peaks",false);
+    if WindHWND then;
+        local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,0);
+        local scr_x = scr_x/2-183;
+        local scr_y = scr_y/2+70;
+        reaper.JS_Window_SetPosition(WindHWND,scr_x,scr_y,372,95);
+        reaper.JS_Window_SetTitle(WindHWND,"Archie: Building Peaks");
+        reaper.JS_Window_Enable(WindHWND,false);
     end;
+    --------------------------------------------
 
 
     local WindHWND = reaper.JS_Window_Find("Building Peaks",false);
@@ -152,6 +197,9 @@
     ----
 
 
+
+
+    -------------------------------
     local function Run()
         reaper.PreventUIRefresh(1);
         local Depth,Child;
@@ -180,8 +228,12 @@
         end;
         reaper.PreventUIRefresh(-1);
     end;
+    --------------------------------
 
 
+
+
+    --------------------------------
     local sel1,sel2,ProjectChange_2;
     local function loop();
 
@@ -207,14 +259,18 @@
             sel2 = sel1; 
             ProjectChange_2 = ProjectChange_1;
         end;
-        --#3------Stop < Archie_View;  Enable spectral peaks on selected tracks.lua-------------------------------------
+        
+        --#3------Stop < Archie_View;  Enable spectral peaks on selected tracks.lua------------------------------------------
         local Stop = reaper.HasExtState("StopScriptAutoSpectralPeaks_EnableSpectralPeaks","key_StopScriptAutoSpectralPeaks");
         if not Stop then 
             Arc.no_undo() return;
         end;
-        -------------------------
+        ---------------------------------------------------------------------------------------------------------------------
         reaper.defer(loop);
     end;
+    ----------------------
+
+
 
 
     --#3------Stop < Archie_View;  Enable spectral peaks on selected tracks.lua-------------------------------------
@@ -222,20 +278,25 @@
     ----------------------------------------------------------------------------------------------------------------
 
 
+
+    ----------------------
     local function Exit();
         --[[
-        reaper.DeleteExtState("SelTrSpectPeak39674867","key_SpectPeak39674867",true);---
+        reaper.DeleteExtState(Proj.."SelTrSpectPeak39674867",Proj.."key_SpectPeak39674867",true);---
         if reaper.GetToggleCommandState(SpectrPeak) == 1 then Arc.Action(SpectrPeak)end;
         for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
             Arc.SetPreventSpectralPeaksInTrack(Track,false);
         end;
         --]]
-        
         Arc.SetToggleButtonOnOff(0);
     end;
+    --------------------------------
+
+
 
     reaper.DeleteExtState("Auto_OsCclockHelpSpect","Auto_HelpSpect",false);
     Arc.SetToggleButtonOnOff(1);
     loop();
     reaper.atexit(Exit);
+    --------------------
