@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9cea98478ac21bcc4723b3f7a910c82e2385edbd" name="Archie-ReaScripts">
+<index version="1" commit="a32ab206880ae19b390854704990f739d668fa45" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3210,6 +3210,13 @@
 + Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.06 [30.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/58c60accd30e1bfc8b29ecfa9d9bdec7e93d133a/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2019-01-31T17:44:34Z">
+        <changelog><![CDATA[!+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.07 [01.02.2019]
+!+ Fixed not scanning spectral peaks in new projects / v.1.07 [01.02.2019]
+!+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.07 [01.02.2019]
+!+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.07 [01.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a32ab206880ae19b390854704990f739d668fa45/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
       <metadata>
@@ -3291,6 +3298,13 @@
         <changelog><![CDATA[+ Cleaned re-scan of the files when you reopen the project / v.1.05 [30.01.2019]
 + Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.05 [30.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/58c60accd30e1bfc8b29ecfa9d9bdec7e93d133a/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.06" author="Archie" time="2019-01-31T17:44:34Z">
+        <changelog><![CDATA[!+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.06 [01.02.2019]
+!+ Fixed not scanning spectral peaks in new projects / v.1.06 [01.02.2019]
+!+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.06 [01.02.2019]
+!+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.06 [01.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a32ab206880ae19b390854704990f739d668fa45/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Layout Default on selected tracks MCP.lua" type="script" desc="Layout Default on selected tracks MCP">
