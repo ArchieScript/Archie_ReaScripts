@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.08
    * AboutScript: Enable spectral peaks only on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK 
    *                  TO RESET ALL PEAK CACHE FILES
@@ -16,11 +16,13 @@
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   
+   *              !+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
+   *              !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]
+
    *              !+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.06 [01.02.2019]
    *              !+ Fixed not scanning spectral peaks in new projects / v.1.06 [01.02.2019]
    *              !+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.06 [01.02.2019]
    *              !+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.06 [01.02.2019]
-
    *              !+ Cleaned re-scan of the files when you reopen the project / v.1.05 [30.01.2019]
    *              !+ Убрано повторное сканирование файлов при повторном открытии проекта  / v.1.05 [30.01.2019]
    *              !+ Fixed paths for Mac / v.1.04 [29.01.2019]
@@ -70,9 +72,17 @@
     -------------------------------------
 
 
-    local SpectrPeak = 42073;
     local RemovePeak = 40097;
+    local SpectrPeak = 42073;
     local RebuilPeak = 40048;
+    local ScalePeaks = 42306;
+    local RectifPeak = 42307;
+
+
+    -- #108 -----------------------------------------------
+    ActionScale = reaper.GetToggleCommandState(ScalePeaks);
+    ActionRecti = reaper.GetToggleCommandState(RectifPeak);
+    -------------------------------------------------------
 
 
      -----------------------------------------------------------------------------------------------------
@@ -88,6 +98,17 @@
          end;
      end;  -- Default ini "showpeaks = 3"
     ----------------------------------------------------------------------------------------------------- 
+
+
+    -- #108 -----------------
+    if ActionScale == 1 then;
+        Arc.Action(ScalePeaks);
+    end;
+
+    if ActionRecti == 1 then;
+        Arc.Action(RectifPeak);
+    end;
+    ---------------------------
 
 
     local CountTrack = reaper.CountTracks(0);
