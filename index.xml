@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a32ab206880ae19b390854704990f739d668fa45" name="Archie-ReaScripts">
+<index version="1" commit="94e39ffc69745c4c38b5b811642bb4f4e9cfc030" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3128,6 +3128,11 @@
 +  Описание внутри]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2019-02-03T11:53:05Z">
+        <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
++ Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20c60bc11cf6d7020900cbb8cb9731cf8e2f96b2/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
@@ -3146,6 +3151,11 @@
       <version name="1.02" author="Archie" time="2019-01-29T08:46:16Z">
         <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/56e592f4168797ba43bfea6eb4402534d889ad9c/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-02-03T11:53:12Z">
+        <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
++ Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2627ed76677e9eab2958453df65fd0d2090eb477/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  ↑Move selected tracks in up on one(`).lua" type="script" desc="Move selected tracks in up on one">
@@ -3216,6 +3226,11 @@
 !+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.07 [01.02.2019]
 !+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.07 [01.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a32ab206880ae19b390854704990f739d668fa45/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2019-02-03T11:53:24Z">
+        <changelog><![CDATA[!+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
+!+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/94e39ffc69745c4c38b5b811642bb4f4e9cfc030/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
@@ -3305,6 +3320,11 @@
 !+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.06 [01.02.2019]
 !+ Исправлено не сканирование спектральных пиков в новых проектах / v.1.06 [01.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a32ab206880ae19b390854704990f739d668fa45/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2019-02-03T11:53:24Z">
+        <changelog><![CDATA[!+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
+!+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/94e39ffc69745c4c38b5b811642bb4f4e9cfc030/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Layout Default on selected tracks MCP.lua" type="script" desc="Layout Default on selected tracks MCP">
