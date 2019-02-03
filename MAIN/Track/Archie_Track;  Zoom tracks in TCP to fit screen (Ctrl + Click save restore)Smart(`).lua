@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.03
    * AboutScript: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * О скрипте:   Масштабировать треки в TCP по размеру экрана (Ctrl + клик сохранить восстановить)умный
    * GIF:         ---
@@ -11,9 +11,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    AlexLazer(RMM)$
    * Gave idea:   AlexLazer(RMM)
-   * Changelog:   +  initialе / v.1.0 [29.01.2019]
-   *              +  Description inside
-   *              +  Описание внутри
+   * Changelog:   
+   *              + Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
+   *              + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]
+
+   *              +  initialе / v.1.0 [29.01.2019]
    
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -50,8 +52,18 @@
     -- IF THE STATUS OF THE SCRIPT ON (LIST BUTTON) IT MEANS THAT THE SCRIPT IS PRESENT TO SAVE, TO RESTORE THE -- SAVED SIZE, JUST RUN THE SCRIPT BY PRESSING CTRL + CLICK,
     -- TO RESAVE, RUN THE SCRIPT BY PRESSING CTRL +SHIFT + CLICK.
     -------------------------------------------------------------
-    
-    
+
+
+
+    local shrink = 0
+                 -- | Отрегулируйте отступ снизу как вам удобно 
+                 -- | shrink = 0 / shrink = 10 / shrink = 20 и т.д.
+                          -----------------------------------------
+                 -- | Adjust the padding at the bottom as you like
+                 -- | shrink = 0 / shrink = 10 / shrink = 20 etc.
+                 ------------------------------------------------
+
+
 
     local ScrollTop = 1
                  -- = 0 | Отключить прокрутку вверх
@@ -129,7 +141,8 @@
         end;
 
         local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,true);
-        local heightAll = math.floor(((scr_y-HeightPlus-210)/#TrackT)+0.5);
+        --local heightAll = math.floor(((scr_y-HeightPlus-210)/#TrackT)+0.5);
+        local heightAll = math.floor(((scr_y-HeightPlus-210-(shrink or 0))/#TrackT)+0.5);
 
         for i = 1, #TrackT do;
             reaper.SetMediaTrackInfo_Value(TrackT[i],"I_HEIGHTOVERRIDE",heightAll);
