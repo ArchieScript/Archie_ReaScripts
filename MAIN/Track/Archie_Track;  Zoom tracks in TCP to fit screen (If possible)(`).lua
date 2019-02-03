@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (If possible)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Zoom tracks in TCP to fit screen (If possible)
    * О скрипте:   Увеличение треков в TCP по размеру экрана (если возможно)
    * GIF:         ---
@@ -11,7 +11,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
-   * Changelog:   +  initialе / v.1.0 [28.01.2019]
+   * Changelog:   
+   *              + Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
+   *              + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]
+   
+   *              + initialе / v.1.0 [28.01.2019]
    
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -31,6 +35,16 @@
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
+
+
+
+    local shrink = 0
+                 -- | Отрегулируйте отступ снизу как вам удобно 
+                 -- | shrink = 0 / shrink = 10 / shrink = 20 и т.д.
+                          -----------------------------------------
+                 -- | Adjust the padding at the bottom as you like
+                 -- | shrink = 0 / shrink = 10 / shrink = 20 etc.
+                 ------------------------------------------------
 
 
 
@@ -102,7 +116,8 @@
 
 
     local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,true);
-    local heightAll = math.floor(((scr_y-HeightPlus-210)/#TrackT)+0.5);
+    --local heightAll = math.floor(((scr_y-HeightPlus-210)/#TrackT)+0.5);
+    local heightAll = math.floor(((scr_y-HeightPlus-210-(shrink or 0))/#TrackT)+0.5);
 
     for i = 1, #TrackT do;
         reaper.SetMediaTrackInfo_Value(TrackT[i],"I_HEIGHTOVERRIDE",heightAll);
