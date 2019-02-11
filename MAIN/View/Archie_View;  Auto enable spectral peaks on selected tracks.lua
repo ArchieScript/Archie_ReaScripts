@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Auto enable spectral peaks on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -16,9 +16,11 @@
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   
+   *              !+ Fixed issues with subfolders / v.1.09 [11.02.19]
+   *              !+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]
+  
    *              !+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
    *              !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]
-   
    *              !+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.07 [01.02.2019]
    *              !+ Fixed not scanning spectral peaks in new projects / v.1.07 [01.02.2019]
    *              !+ Исправлен сброс пиков при отключении экшена переключение спектральных пиков / v.1.07 [01.02.2019]
@@ -81,10 +83,10 @@
     local RectifPeak = 42307;
 
 
-    -- #108 -----------------------------------------------
-    ActionScale = reaper.GetToggleCommandState(ScalePeaks);
-    ActionRecti = reaper.GetToggleCommandState(RectifPeak);
-    -------------------------------------------------------
+    -- #108 -----------------------------------------------------
+    local ActionScale = reaper.GetToggleCommandState(ScalePeaks);
+    local ActionRecti = reaper.GetToggleCommandState(RectifPeak);
+    -------------------------------------------------------------
     
 
      -----------------------------------------------------------------------------------------------------
@@ -224,15 +226,15 @@
     local function Run()
         reaper.PreventUIRefresh(1);
         local Depth,Child;
-        for i = CountTrack-1,0,-1 do;
+        for i = reaper.CountTracks(0)-1,0,-1 do;
             local Track = reaper.GetTrack(0,i);
             local sel = reaper.IsTrackSelected(Track);
             if Child then;
                 local fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
                 if fold == 1 then;
+                    sel = true;
                     Depth = reaper.GetTrackDepth(Track);
                     if Depth == 0 then;
-                        sel = true;
                         Child = nil;
                     end;
                 end;
@@ -242,9 +244,15 @@
                 if Depth > 0 then;
                     Child = true;
                 end;
-                Arc.SetPreventSpectralPeaksInTrack(Track,false);
+                local PrevSpectPeak = Arc.GetPreventSpectralPeaksInTrack(Track);
+                if PrevSpectPeak then;
+                    Arc.SetPreventSpectralPeaksInTrack(Track,false);
+                end;
             else;
-                Arc.SetPreventSpectralPeaksInTrack(Track,true);
+                local PrevSpectPeak = Arc.GetPreventSpectralPeaksInTrack(Track);
+                if not PrevSpectPeak then;
+                    Arc.SetPreventSpectralPeaksInTrack(Track,true);
+                end;
             end;
         end;
         reaper.PreventUIRefresh(-1);

@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Render project in time selection on a separate created track (Pre master)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Render project in time selection on a separate created track (Pre master)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Рендер проекта в выборе времени на отдельный созданный трек (перед мастер треком)
@@ -13,10 +13,13 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Dimilyan (Rmm/forum)
    * Gave idea:   Dimilyan (Rmm/forum)
-   * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19] 
-   *              +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-
-   *              + initialе / v.1.0
+   * Changelog:   
+   *              !+ Fixed volume issues / v.1.03 [11.02.19] 
+   *              !+ Исправлены проблемы с громкостью / v.1.03 [11.02.19] 
+   
+   *              !+ Fixed paths for Mac/ v.1.02 [29.01.19] 
+   *              !+ Исправлены пути для Mac/ v.1.02 [29.01.19]  
+   *              ++ initialе / v.1.0
 
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -136,7 +139,6 @@
     end;
     ---
 
-
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
 
@@ -157,18 +159,24 @@
     local Track = reaper.GetTrack(0,0);
     reaper.SetMediaTrackInfo_Value(Track,'I_FOLDERDEPTH',1);
     reaper.GetSetMediaTrackInfo_String(Track,"P_NAME","-RenderProjPreMaster-",1);
+    local Vol = reaper.GetMediaTrackInfo_Value(Track,"D_VOL");
+    reaper.SetMediaTrackInfo_Value(Track,"D_VOL",1);
+    reaper.SetMediaTrackInfo_Value(Track,"D_PAN",0);
 
+    
 
     Arc.SaveSelTracksGuidSlot(1);
     reaper.SetOnlyTrackSelected(Track);
     Arc.Action(41716);
     -- Render selected area of tracks to stereo post-fader stem tracks (and mute originals)
 
+
     reaper.SetMediaTrackInfo_Value(Track,'I_FOLDERDEPTH',0);
     reaper.DeleteTrack(Track);
 
 
     local Track = reaper.GetTrack(0,0);
+    reaper.SetMediaTrackInfo_Value(Track,"D_VOL",Vol);
     local item = reaper.GetTrackMediaItem(Track,0);
     local Take = reaper.GetActiveTake(item); 
     reaper.GetSetMediaItemTakeInfo_String(Take,"P_NAME","-RenderProjectPreMaster-",1);
