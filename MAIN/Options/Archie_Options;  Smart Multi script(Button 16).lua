@@ -7,7 +7,7 @@
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
    *              Для отображения справки, введите в первое поле слово 'help'
-   * GIF:         https://archiescript.github.io/ReaScriptSiteGif/html/SmartMultiScript.html
+   * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/SmartMultiScript.html
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628

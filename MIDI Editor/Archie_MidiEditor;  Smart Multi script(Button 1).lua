@@ -1,8 +1,8 @@
 --[[
-   * Category:    Options
-   * Description: Smart Multi script(Button 15)
+   * Category:    MidiEditor
+   * Description: Smart Multi script(Button 1)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.0
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -11,26 +11,21 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Supa75(Rmm/forum) 
-   * Gave idea:   Supa75(Rmm/forum) 
-   * Changelog:   +  Fixed paths for Mac/ v.1.04 [29.01.19] 
-   *              +  Исправлены пути для Mac/ v.1.04 [29.01.19]  
+   * Customer:    Maestro Sound(Rmm/forum) 
+   * Gave idea:   Maestro Sound(Rmm/forum) 
+   * Changelog:   
+   *              +  initialе / v.1.0 [11.02.19]
+   ===========================================================================================|
 
-   *              +  добавлен список системные требования: / v.1.03 [04122018]
-   *              +  added a list of the system requirements: / v.1.03 [04122018]
-   *              +! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
-   *              +! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-   *              +  initialе / v.1.0 [12.11.18]
-=====================================================================================|
-----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
    + Reaper v.5.962 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
    + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
    - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
    - Arc_Function_lua v.1.1.6 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
    + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
                                                                  http://clck.ru/Eo5Lw |и выше)|
-   + Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
---===========================================================================================]]
+   ? Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
+   ==========================================================================================]]
 
 
 
@@ -55,7 +50,11 @@
     -----------------------
 
 
-    local but = "Button 15"
+    local MidiEditor = reaper.MIDIEditor_GetActive()
+    if not MidiEditor then no_undo() return end 
+
+
+    local but = "Button 1"
     local scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)")) 
     local Modifiers = reaper.JS_Mouse_GetState(28);
 
@@ -171,43 +170,43 @@
 
 
     if Modifiers == 12 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Ctrl_Shift),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Ctrl_Shift));
         do no_undo()return end;
     end;
 
 
 
     if Modifiers == 20 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Ctrl_Alt),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Ctrl_Alt));
         do no_undo()return end;
     end;
 
 
     if Modifiers == 24 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Alt_Shift),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Alt_Shift));
         do no_undo()return end;
     end;
 
 
     if Modifiers == 4 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Ctrl),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Ctrl));
         do no_undo()return end;
     end;
 
 
     if Modifiers == 8 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Shift),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Shift));
         do no_undo()return end;
     end;
 
 
     if Modifiers == 16 then; 
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Alt),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Alt));
         do no_undo()return end;
     end;
 
 
     if Modifiers == 0 then;
-        reaper.Main_OnCommand(reaper.NamedCommandLookup(Click),0);
+        reaper.MIDIEditor_OnCommand(MidiEditor,reaper.NamedCommandLookup(Click));
         do no_undo()return end;
     end;
