@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="94e39ffc69745c4c38b5b811642bb4f4e9cfc030" name="Archie-ReaScripts">
+<index version="1" commit="fd63d1158ef5eed63b4d2754475118584e204d1f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2984,6 +2984,11 @@
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2019-02-11T11:48:30Z">
+        <changelog><![CDATA[!+ Fixed volume issues / v.1.03 [11.02.19] 
+!+ Исправлены проблемы с громкостью / v.1.03 [11.02.19] ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fd63d1158ef5eed63b4d2754475118584e204d1f/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Render selected tracks on one separate track (delete originals)(Pre master)(`).lua" type="script" desc="Render selected tracks on one separate track (delete originals)(Pre master)">
       <metadata>
@@ -3232,6 +3237,11 @@
 !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/94e39ffc69745c4c38b5b811642bb4f4e9cfc030/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
+      <version name="1.09" author="Archie" time="2019-02-11T11:48:30Z">
+        <changelog><![CDATA[!+ Fixed issues with subfolders / v.1.09 [11.02.19]
+!+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fd63d1158ef5eed63b4d2754475118584e204d1f/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
       <metadata>
@@ -3325,6 +3335,11 @@
         <changelog><![CDATA[!+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
 !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/94e39ffc69745c4c38b5b811642bb4f4e9cfc030/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.09" author="Archie" time="2019-02-11T11:48:30Z">
+        <changelog><![CDATA[!+ Fixed issues with subfolders / v.1.09 [11.02.19]
+!+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fd63d1158ef5eed63b4d2754475118584e204d1f/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Layout Default on selected tracks MCP.lua" type="script" desc="Layout Default on selected tracks MCP">
