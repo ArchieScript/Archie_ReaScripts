@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="fd63d1158ef5eed63b4d2754475118584e204d1f" name="Archie-ReaScripts">
+<index version="1" commit="baf6babdcc12f62455171a47fe4dd97c3e1a0a0d" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3826,6 +3826,94 @@
       <version name="1.0" author="Archie" time="2018-11-25T15:30:29Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2664a6d6722dccdfe70a92690e0c6ecb796a9772/MIDI%20Editor/Archie_MidiEditor;%20%20Open-close%20Notes%20window.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 1).lua" type="script" desc="Smart Multi script(Button 1)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%201).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 2).lua" type="script" desc="Smart Multi script(Button 2)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%202).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 3).lua" type="script" desc="Smart Multi script(Button 3)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%203).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 4).lua" type="script" desc="Smart Multi script(Button 4)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%204).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 5).lua" type="script" desc="Smart Multi script(Button 5)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%205).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 6).lua" type="script" desc="Smart Multi script(Button 6)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%206).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 7).lua" type="script" desc="Smart Multi script(Button 7)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%207).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 8).lua" type="script" desc="Smart Multi script(Button 8)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%208).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Swing grid disable and reset(MIDI editor)(`).lua" type="script" desc="swing grid disable and reset(MIDI editor)">
