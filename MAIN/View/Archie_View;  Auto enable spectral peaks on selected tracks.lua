@@ -2,23 +2,23 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.09
+   * Version:     1.10
    * AboutScript: Auto enable spectral peaks on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
    * О скрипте:   Автоматическое включение спектральных пиков на выбранных дорожках
    *                ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + SHIFT + CLICK
    *                 ЧТОБЫ СБРОСИТЬ ВСЕ ПИКОВЫЕ ФАЙЛЫ КЭША
-   * GIF:         ---
+   * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/AutoEnableSpectralPeaksSelTr.html
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   
+   
    *              !+ Fixed issues with subfolders / v.1.09 [11.02.19]
    *              !+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]
-  
    *              !+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
    *              !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]
    *              !+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.07 [01.02.2019]
