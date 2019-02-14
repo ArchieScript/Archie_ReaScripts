@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.3
+   * Version:     2.2.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,8 @@
    * Changelog:   
    *              + no_undo();
    *              + Action();
+   *              + js_API = js_ReaScriptAPI(); -- true / false
+   *              + SWS = SWS_API(); -- true / false
    *              + If_Equals(EqualsToThat,...);
    *              + SetCollapseFolderMCP(track,clickable,is_show);
    *              + Path,Name = GetPathAndNameSourceMediaFile_Take(take);
@@ -51,7 +53,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.3"
+    local VersionMod = "2.2.4"
     --========================
 
 
@@ -110,21 +112,97 @@
     --no_undo()
     function Arc_Module.No_Undo()end; 
     function Arc_Module.no_undo()--<<<
-        reaper.defer(Arc_Module.No_Undo)
-    end
+        reaper.defer(Arc_Module.No_Undo);
+    end;
     --Что бы в ундо не прописывалось "ReaScript:Run"
     --====End===============End===============End===============End===============End====
 
 
 
     -------------Action------------------------------------------------------------------
-    function Arc_Module.Action(...)
-       local Table = {...}
-       for i = 1, #Table do
-         reaper.Main_OnCommand(reaper.NamedCommandLookup(Table[i]),0)
-       end
-    end
+    function Arc_Module.Action(...);
+       local Table = {...};
+       for i = 1, #Table do;
+         reaper.Main_OnCommand(reaper.NamedCommandLookup(Table[i]),0);
+       end;
+    end;
     -- Выполняет действие, относящееся к разделу основное действие. 
+    --====End===============End===============End===============End===============End====
+    --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+    --224---------- js_ReaScriptAPI(); --------------------------------------------------
+    function Arc_Module.js_ReaScriptAPI();
+        if not reaper.JS_Mouse_GetState then;
+            local MB = reaper.MB(
+            "ENG:\n"..
+            "    There is no file 'reaper_js_ReaScriptAPI....'\n"..
+            "    Script requires an extension reaper_js_ReaScriptAPI\n"..
+            "    Install repository 'ReaTeam Extensions'.\n\n".. 
+            "    Go to website ReaPack - OK   \n\n"..
+            "RUS:\n"..
+            "    Отсутствует файл reaper_js_ReaScriptAPI....\n"..
+            "    Для работы скрипта требуется расширение reaper_js_ReaScriptAPI\n"..
+            "    Установите репозиторий 'ReaTeam Extensions'\n\n"..
+            "    Перейти на сайт ReaPack - OK \n"
+            ,"Error.",1);
+            if MB == 1 then;
+                local OS = reaper.GetOS();
+                if OS == "OSX32" or OS == "OSX64" then;
+                    os.execute("open https://reapack.com/repos");
+                else
+                    os.execute("start https://reapack.com/repos");
+                end;
+            end;
+            local function Undo()end;reaper.defer(Undo);
+            return false;
+        end;
+        return true;
+    end;
+    -- Проверяет, Установлено ли расширение 'reaper_js_ReaScriptAPI. 
+    -- Если установлено вернет true, в противном случае false и предупреждения.
+    --====End===============End===============End===============End===============End====
+    --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+    --224--------- SWS_API(); -----------------------------------------------------------
+    function Arc_Module.SWS_API();
+        if not reaper.BR_GetMediaItemGUID then;
+            local MB = reaper.MB(
+            "ENG:\n"..
+            "    Missing extension 'SWS'!\n"..
+            "    Script requires an extension SWS.\n"..
+            "    Install extension 'SWS'. \n\n"..
+            "    Go to website SWS - OK   \n\n"..
+            "RUS:\n"..
+            "    Отсутствует расширение 'SWS'!\n"..
+            "    Для работы сценария требуется расширение 'SWS'\n"..
+            "    Установите расширение 'SWS'. \n\n"..
+            "    Перейти на сайт SWS - OK \n"
+           ,"Error.",1);
+           if MB == 1 then;
+               local OS = reaper.GetOS();
+               if OS == "OSX32" or OS == "OSX64" then;
+                   os.execute("open ".."http://www.sws-extension.org/index.php");
+               else
+                   os.execute("start ".."http://www.sws-extension.org/index.php");
+               end;
+           end;
+           local function Undo()end;reaper.defer(Undo);
+           return false
+        end;
+        return true;
+    end;
+    -- Проверяет, Установлено ли расширение 'SWS'. 
+    -- Если установлено вернет true, в противном случае false и предупреждения.
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
