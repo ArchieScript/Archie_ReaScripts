@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.4
+   * Version:     2.2.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -53,7 +53,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.4"
+    local VersionMod = "2.2.5"
     --========================
 
 
@@ -135,27 +135,29 @@
 
 
 
-    --224---------- js_ReaScriptAPI(); --------------------------------------------------
-    function Arc_Module.js_ReaScriptAPI();
+    --225---------- js_ReaScriptAPI(); --------------------------------------------------
+    function Arc_Module.js_ReaScriptAPI(boolean);
         if not reaper.JS_Mouse_GetState then;
-            local MB = reaper.MB(
-            "ENG:\n"..
-            "    There is no file 'reaper_js_ReaScriptAPI....'\n"..
-            "    Script requires an extension reaper_js_ReaScriptAPI\n"..
-            "    Install repository 'ReaTeam Extensions'.\n\n".. 
-            "    Go to website ReaPack - OK   \n\n"..
-            "RUS:\n"..
-            "    Отсутствует файл reaper_js_ReaScriptAPI....\n"..
-            "    Для работы скрипта требуется расширение reaper_js_ReaScriptAPI\n"..
-            "    Установите репозиторий 'ReaTeam Extensions'\n\n"..
-            "    Перейти на сайт ReaPack - OK \n"
-            ,"Error.",1);
-            if MB == 1 then;
-                local OS = reaper.GetOS();
-                if OS == "OSX32" or OS == "OSX64" then;
-                    os.execute("open https://reapack.com/repos");
-                else
-                    os.execute("start https://reapack.com/repos");
+            if boolean == true then;
+                local MB = reaper.MB(
+                "ENG:\n"..
+                "* There is no file reaper_js_ReaScriptAPI...!\n"..
+                "* Script requires an extension 'reaper_js_ReaScriptAPI'.\n"..
+                "* Install repository 'ReaTeam Extensions'.\n\n".. 
+                "    Go to website ReaPack - OK. \n\n"..
+                "RUS:\n"..
+                "* Отсутствует файл reaper_js_ReaScriptAPI...!\n"..
+                "* Для работы скрипта требуется расширение 'reaper_js_ReaScriptAPI'.\n"..
+                "* Установите репозиторий 'ReaTeam Extensions'\n\n"..
+                "    Перейти на сайт ReaPack - OK. \n"
+                ,"Error.",1);
+                if MB == 1 then;
+                    local OS = reaper.GetOS();
+                    if OS == "OSX32" or OS == "OSX64" then;
+                        os.execute("open https://reapack.com/repos");
+                    else
+                        os.execute("start https://reapack.com/repos");
+                    end;
                 end;
             end;
             local function Undo()end;reaper.defer(Undo);
@@ -165,6 +167,8 @@
     end;
     -- Проверяет, Установлено ли расширение 'reaper_js_ReaScriptAPI. 
     -- Если установлено вернет true, в противном случае false и предупреждения.
+    -- boolean true - показать окно с предупреждением,
+    -- boolean false - не показать окно с предупреждением.
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -173,36 +177,40 @@
 
 
 
-    --224--------- SWS_API(); -----------------------------------------------------------
-    function Arc_Module.SWS_API();
+    --225--------- SWS_API(); -----------------------------------------------------------
+    function Arc_Module.SWS_API(boolean);
         if not reaper.BR_GetMediaItemGUID then;
-            local MB = reaper.MB(
-            "ENG:\n"..
-            "    Missing extension 'SWS'!\n"..
-            "    Script requires an extension SWS.\n"..
-            "    Install extension 'SWS'. \n\n"..
-            "    Go to website SWS - OK   \n\n"..
-            "RUS:\n"..
-            "    Отсутствует расширение 'SWS'!\n"..
-            "    Для работы сценария требуется расширение 'SWS'\n"..
-            "    Установите расширение 'SWS'. \n\n"..
-            "    Перейти на сайт SWS - OK \n"
-           ,"Error.",1);
-           if MB == 1 then;
-               local OS = reaper.GetOS();
-               if OS == "OSX32" or OS == "OSX64" then;
-                   os.execute("open ".."http://www.sws-extension.org/index.php");
-               else
-                   os.execute("start ".."http://www.sws-extension.org/index.php");
+            if boolean == true then;
+                local MB = reaper.MB(
+                "ENG:\n"..
+                "    Missing extension 'SWS'!\n"..
+                "    Script requires an extension SWS.\n"..
+                "    Install extension 'SWS'. \n\n"..
+                "    Go to website SWS - OK   \n\n"..
+                "RUS:\n"..
+                "    Отсутствует расширение 'SWS'!\n"..
+                "    Для работы сценария требуется расширение 'SWS'\n"..
+                "    Установите расширение 'SWS'. \n\n"..
+                "    Перейти на сайт SWS - OK \n"
+               ,"Error.",1);
+               if MB == 1 then;
+                   local OS = reaper.GetOS();
+                   if OS == "OSX32" or OS == "OSX64" then;
+                       os.execute("open ".."http://www.sws-extension.org/index.php");
+                   else
+                       os.execute("start ".."http://www.sws-extension.org/index.php");
+                   end;
                end;
            end;
            local function Undo()end;reaper.defer(Undo);
-           return false
+           return false;
         end;
         return true;
     end;
     -- Проверяет, Установлено ли расширение 'SWS'. 
     -- Если установлено вернет true, в противном случае false и предупреждения.
+    -- boolean true - показать окно с предупреждением,
+    -- boolean false - не показать окно с предупреждением.
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
