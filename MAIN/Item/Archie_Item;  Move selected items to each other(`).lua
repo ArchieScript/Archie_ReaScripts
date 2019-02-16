@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Move selected items to each other
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Move the selected items to each other (from first selected in track)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Перемещение выбранных элементов друг к другу (от первого выбранного в треке)
@@ -13,13 +13,14 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    HDVulcan [Rmm/forum]
    * Gave idea:   HDVulcan [Rmm/forum]
-   * Changelog:   +  Fixed paths for Mac/ v.1.03 [29.01.19] 
-   *              +  Исправлены пути для Mac/ v.1.03 [29.01.19]  
+   * Changelog:   
 
+   *              +  Fixed paths for Mac/ v.1.03 [29.01.19] 
+   *              +  Исправлены пути для Mac/ v.1.03 [29.01.19]  
    *              + Fix bug with undo / v.1.01 [04122018]
    *              + initialе / v.1.0
-
    ===========================================================================================\
+
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
    ===========================================================================================|
    + Reaper v.5.965 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
