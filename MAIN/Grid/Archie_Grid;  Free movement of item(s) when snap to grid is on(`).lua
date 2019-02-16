@@ -2,7 +2,7 @@
    * Category:    Grid
    * Description: Free movement of item(s) when snap to grid is on
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Free movement of item(s) when snap to grid is enabled
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Свободное перемещение элементов при включенной привязке к сетке
@@ -13,15 +13,19 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---
    * Gave idea:   Alex Menco(Rmm/forum) 
-   * Changelog:   +  добавлен список системные требования: / v.1.03 [04122018]
+   * Changelog:   
+
+   *              +  HelpWindowWhenReRunning(Reascript task control) / v.1.04 [16022019]
+   *              +  добавлен список системные требования: / v.1.03 [04122018]
    *              +  added a list of the system requirements: / v.1.03 [04122018]
-    *             +! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
+   *              +! Fixed bug when deleting active item in small size / v.1.02 [14.11.18]
    *              +! Исправлена ошибка при удалении активного айтема в маленьком размере / v.1.02 [14.11.18]
    *              +! Fixed bug with not displaying tooltips in MIDI editor / v.1.01
    *              +! Исправлена ошибка с отображением всплывающих подсказок в миди-редакторе / v.1.01
    *              +  initialе / v.1.0
---============================================================================================|
-----------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
+   ===========================================================================================|
+
+   -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
    + Reaper v.5.962 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
    + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
    - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
@@ -29,7 +33,7 @@
    + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
                                                                  http://clck.ru/Eo5Lw |и выше)|
    + Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
---===========================================================================================]]
+   ==========================================================================================]]
 
 
 
@@ -98,11 +102,24 @@
     --======================================================================================
 
 
-    if not reaper.JS_Mouse_GetState then reaper.MB(
-    'There is no file "reaper_js_ReaScriptAPI.dll" \nInstall repository "ReaTeam Extensions"\n\n'..
-    'Отсутствует файл "reaper_js_ReaScriptAPI.dll" \nУстановите репозиторий "ReaTeam Extensions"'
-    ,"Error",0) return end;
-	-----------------------
+
+    --============================ FUNCTION MODULE FUNCTION ================================ FUNCTION MODULE FUNCTION ========================================
+    local Fun,scr,dir,MB,Arc,Load = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions',select(2,reaper.get_action_context()):match("(.+)[\\/]"),
+    reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
+    if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
+    'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
+    if not Arc.VersionArc_Function_lua("2.2.2",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
+    --==================================▲=▲=▲=================================================================================================================
+
+
+
+    local SWS = Arc.SWS_API(true);
+    if not SWS then Arc.no_undo() return end;
+    
+    local js_API = Arc.js_ReaScriptAPI(true);
+    if not js_API then Arc.no_undo() return end;
+    
+    Arc.HelpWindowWhenReRunning(1,"FreeMovOfItemWhenSnapToGridIsOn",false);
 
 
     local function If_Equals(EqualsToThat,...);

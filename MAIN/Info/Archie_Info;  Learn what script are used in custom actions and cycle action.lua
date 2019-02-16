@@ -2,7 +2,7 @@
    * Category:    Info
    * Description: Learn what script are used in custom actions and cycle action
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Learn what script are used in custom actions and cycle action
    * О скрипте:   Узнайте, какие сценарии используются в настраиваемых действиях и цикл действиях
    * GIF:         ---
@@ -11,7 +11,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75/smrz1(RMM)
    * Gave idea:   Supa75/smrz1(RMM)
-   * Changelog:   +  initialе / v.1.0 [17.01.2019]
+   * Changelog:   
+   *              +! Fixed a pop-up error in the absence of a file "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]
+   *              +! Устранена всплывающая ошибка при отсутствии файла "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]
+  
+   *              +  initialе / v.1.0 [17.01.2019]
 
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -114,8 +118,8 @@
     end;
 
 
-    local Castom = GetScriptNameByCastom();
-    local Cycle = GetScriptNameByCycle();
+    local Castom = GetScriptNameByCastom() or {};
+    local Cycle = GetScriptNameByCycle() or {};
     local header = "[Archie_UsedScriptsInActions:]\n\n"..
                    "Скрипты использующиеся в пользовательских действиях и в цикл действиях:\n"..
                    "Scripts used in custom actions and cycle actions:\n\n\n";   
