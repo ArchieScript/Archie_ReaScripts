@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.09
+   * Version:     1.10
    * AboutScript: Enable spectral peaks only on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK 
    *                  TO RESET ALL PEAK CACHE FILES
@@ -16,9 +16,9 @@
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   
+
    *              !+ Fixed issues with subfolders / v.1.09 [11.02.19]
    *              !+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]
-
    *              !+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
    *              !+ Исправлено отключение действий: масштабирование пиков по квадратному корню / исправление пиков/ v.1.08 [03.02.2019]
    *              !+ Fixed reset of the peaks at the switching off action of the Toggle spectral peaks / v.1.06 [01.02.2019]
@@ -45,7 +45,7 @@
    + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
                                                                  http://clck.ru/Eo5Lw |и выше)|
    ? Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
---===========================================================================================]]
+   ==========================================================================================]]
 
 
 
@@ -209,7 +209,7 @@
     if WindHWND then;
         local Mb = reaper.MB("Rus.\n    Дождитесь окончание перестройки всех пиков,\n    Затем  нажмите ОК \n"..
                        "Eng.\n    Wait for the completion of the restructuring of all the peaks,\n"..
-                             "    and then click OK","Archie_: Building Peaks",0);
+                             "    and then click OK","Archie_BuildingPeaks",0);
         if Mb then dofile(select(2,reaper.get_action_context()))Arc.no_undo()return end;
     end;
     ----

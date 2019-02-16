@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: Auto enable spectral peaks on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -214,7 +214,7 @@
     if WindHWND then;
         local Mb = reaper.MB("Rus.\n    Дождитесь окончание перестройки всех пиков,\n    Затем  нажмите ОК \n"..
                        "Eng.\n    Wait for the completion of the restructuring of all the peaks,\n"..
-                             "    and then click OK","Archie_: Building Peaks",0);
+                             "    and then click OK","Archie_BuildingPeaks",0);
         if Mb then dofile(select(2,reaper.get_action_context())) return end;
     end;
     ----
