@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7fdb280ff3002168e4d215152737ae107480d291" name="Archie-ReaScripts">
+<index version="1" commit="5ced598874400c09810bb27d30b77a8757375198" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1597,6 +1597,17 @@
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+! Fixed curve display when visibility is disabled / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Hide%20all%20visible%20envelopes%20in%20selected%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Ignore item(s) lock with Ctrl Shift or Alt + left  click.lua" type="script" desc="Ignore item(s) lock with Ctrl Shift or Alt + left  click">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-16T19:48:31Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17022019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ced598874400c09810bb27d30b77a8757375198/MAIN/Item/Archie_Item;%20%20Ignore%20item(s)%20lock%20with%20Ctrl%20Shift%20or%20Alt%20+%20left%20%20click.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
