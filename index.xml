@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="4e20074a448ab7769c2b0e70ebf49d9371a14106" name="Archie-ReaScripts">
+<index version="1" commit="1efa431f1f7fadc5ddf3352498afabbd45fc303c" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1651,6 +1651,9 @@
         <changelog><![CDATA[+ Fix bug with undo / v.1.01 [04122018]
 + initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-02-16T10:14:59Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1efa431f1f7fadc5ddf3352498afabbd45fc303c/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Pitch down one semitone all midi items(all midi take).lua" type="script" desc="Pitch down one semitone all midi items(all midi take)">
