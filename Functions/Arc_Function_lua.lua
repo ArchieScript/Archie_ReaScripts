@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.6
+   * Version:     2.2.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -55,7 +55,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.6"
+    local VersionMod = "2.2.7"
     --========================
 
 
@@ -129,6 +129,26 @@
        end;
     end;
     -- Выполняет действие, относящееся к разделу основное действие. 
+    --====End===============End===============End===============End===============End====
+    --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+    --227-------- SelectAllTracks -------------------------------------------------------
+    function Arc_Module.SelectAllTracks(numb);
+        if numb > 0 then numb = 1 else numb = 0 end;   
+        for i = 1, reaper.CountTracks(0) do;
+            local track = reaper.GetTrack(0,i-1);
+            local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
+            if sel == math.abs (numb - 1) then;
+                reaper.SetMediaTrackInfo_Value(track,"I_SELECTED", numb);
+            end;
+        end;
+    end;
+    -- Выделить Все Дорожки; Снять выделение со Всех Дорожек;. 
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
