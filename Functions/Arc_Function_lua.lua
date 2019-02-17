@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.5
+   * Version:     2.2.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,6 +11,8 @@
    * Changelog:   
    *              + no_undo();
    *              + Action();
+   *              + SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
+   *              + RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + js_API = js_ReaScriptAPI(); -- true / false
    *              + SWS = SWS_API(); -- true / false
    *              + If_Equals(EqualsToThat,...);
@@ -53,7 +55,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.5"
+    local VersionMod = "2.2.6"
     --========================
 
 
@@ -129,6 +131,48 @@
     -- Выполняет действие, относящееся к разделу основное действие. 
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+
+    --226-----SaveSoloMuteSelStateAllTracksGuidSlot()------------------------------------
+    -------------------------------RestoreSoloMuteSelStateAllTracksGuidSlot()------------
+    function Arc_Module.SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
+        local CountTracks = reaper.CountTracks(0);
+        if CountTracks == 0 then return false end;
+        local t = {};_G['SavSolMutSelTrSlot_'..Slot] = t;
+        for i = 1, CountTracks do;
+            local track = reaper.GetTrack(0, i - 1);
+            t[i] = reaper.GetTrackGUID(track)..'{'..
+            reaper.GetMediaTrackInfo_Value(track,'B_MUTE')..'}{'..
+            reaper.GetMediaTrackInfo_Value(track,'I_SOLO')..'}{'..
+            reaper.GetMediaTrackInfo_Value(track,'I_SELECTED')..'}';
+        end;
+        return true;
+    end;
+    -------------------------------------------------------------------------
+    function Arc_Module.RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);
+        local t = _G['SavSolMutSelTrSlot_'..Slot];
+        if t then;
+            for i = 1, #t do;
+                local guin,mute,solo,sel = string.match (t[i],'({.+}){(.+)}{(.+)}{(.+)}');
+                local track = reaper.BR_GetMediaTrackByGUID(0,guin);
+                reaper.SetMediaTrackInfo_Value(track, 'B_MUTE'    , mute);
+                reaper.SetMediaTrackInfo_Value(track, 'I_SOLO'    , solo);
+                reaper.SetMediaTrackInfo_Value(track, 'I_SELECTED', sel );
+            end;
+            if clean == 1 or clean == true then;
+                _G['SavSolMutSelTrSlot_'..Slot] = nil;
+                t = nil;
+            end;
+        end;    
+    end;
+    -- Save Restore Solo Mute Sel State All Tracks, Slots
+    -- Сохранить Восстановить 'Выделения, Соло, Mute' Состояние Всех Дорожек, Слоты
+    -- clean = true или 1 - зачистить сохраненную информацию за собой
+    --====End===============End===============End===============End===============End==== 
 
 
 
