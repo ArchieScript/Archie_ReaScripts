@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a8511e9fbade8f795213b21c004bbfc3a83b5859" name="Archie-ReaScripts">
+<index version="1" commit="758f1ca55be83507237a34f9a3e19fdf0a4ab527" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -152,6 +152,9 @@
       </version>
       <version name="2.2.6" author="Archie" time="2019-02-17T11:32:57Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/a8511e9fbade8f795213b21c004bbfc3a83b5859/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.2.7" author="Archie" time="2019-02-17T12:18:58Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/758f1ca55be83507237a34f9a3e19fdf0a4ab527/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
