@@ -139,7 +139,8 @@
 
     --227-------- SelectAllTracks -------------------------------------------------------
     function Arc_Module.SelectAllTracks(numb);
-        if numb > 0 then numb = 1 else numb = 0 end;   
+        if numb > 0 then numb = 1 else numb = 0 end;  
+        reaper.PreventUIRefresh(3864597);		
         for i = 1, reaper.CountTracks(0) do;
             local track = reaper.GetTrack(0,i-1);
             local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
@@ -147,6 +148,7 @@
                 reaper.SetMediaTrackInfo_Value(track,"I_SELECTED", numb);
             end;
         end;
+		reaper.PreventUIRefresh(-3864597);
     end;
     -- Выделить Все Дорожки; Снять выделение со Всех Дорожек;. 
     --====End===============End===============End===============End===============End====
