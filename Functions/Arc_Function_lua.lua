@@ -2,17 +2,22 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.7
+   * Version:     2.2.9
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ----------------------
    
    * Changelog:   
-   *              + no_undo();
-   *              + Action();
-   *              + SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
-   *              + RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
+   *        108   + no_undo();
+   *        108   + Action();
+   
+   *        229   + RemoveAllSendTr(track,category);
+   *        229   + RemoveAllItemTr_Sel(track,rem_Idx);
+   
+   *        227   + SelectAllTracks(numb);
+   *        226   + SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
+   *        226   + RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + js_API = js_ReaScriptAPI(); -- true / false
    *              + SWS = SWS_API(); -- true / false
    *              + If_Equals(EqualsToThat,...);
@@ -55,7 +60,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.7"
+    local VersionMod = "2.2.9"
     --========================
 
 
@@ -137,10 +142,57 @@
 
 
 
+    --229------------ RemoveAllSendTr ---------------------------------------------------
+    function Arc_Module.RemoveAllSendTr(track,category);
+         local R,Rem = false;
+         for iS = reaper.GetTrackNumSends(track,category)-1,0,-1 do;
+             Rem = reaper.RemoveTrackSend(track,category,iS);
+             if Rem == true then R = true end;
+         end;
+         return R;
+    end; 
+    --Удалить все посылы в треке send/receive/hardware, 
+    --Вернёт true если удаление произошло
+    --Категория < 0 для receives, 0=sends, >0 для аппаратных выходов.
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+
+    --229------------ RemoveAllItemTr ---------------------------------------------------
+    function Arc_Module.RemoveAllItemTr_Sel(track,rem_Idx);
+        local D = false;
+        for i = reaper.CountTrackMediaItems(track)-1,0,-1 do;
+            local item = reaper.GetTrackMediaItem(track,i);
+            if rem_Idx == 0 or rem_Idx == 1 then;
+                local sel = reaper.GetMediaItemInfo_Value(item,"B_UISEL");
+                if sel == rem_Idx then;
+                    local Del = reaper.DeleteTrackMediaItem(track,item);
+                    if Del == true then D = true end;
+                end;
+            else   
+                local Del = reaper.DeleteTrackMediaItem(track,item);
+                if Del == true then D = true end;                   
+            end;
+        end; 
+        return D;        
+    end; 
+    -- Удалить все/выделенные/невыделенные элементы в треке
+    -- rem_Idx = 0 Удалить все невыделенные, = 1 удалить все выделенные, = 2 удалить все;
+    -- Вернёт true если удаление произошло
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+
     --227-------- SelectAllTracks -------------------------------------------------------
     function Arc_Module.SelectAllTracks(numb);
         if numb > 0 then numb = 1 else numb = 0 end;  
-        reaper.PreventUIRefresh(3864597);		
+        reaper.PreventUIRefresh(3864597);    
         for i = 1, reaper.CountTracks(0) do;
             local track = reaper.GetTrack(0,i-1);
             local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
@@ -148,11 +200,11 @@
                 reaper.SetMediaTrackInfo_Value(track,"I_SELECTED", numb);
             end;
         end;
-		reaper.PreventUIRefresh(-3864597);
+    reaper.PreventUIRefresh(-3864597);
     end;
     -- Выделить Все Дорожки; Снять выделение со Всех Дорожек;. 
     --====End===============End===============End===============End===============End====
-    --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
 
 
 
