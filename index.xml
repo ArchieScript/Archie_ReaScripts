@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="758f1ca55be83507237a34f9a3e19fdf0a4ab527" name="Archie-ReaScripts">
+<index version="1" commit="11abce28fe10d0731a2cc22c294adab7fd986f53" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -155,6 +155,9 @@
       </version>
       <version name="2.2.7" author="Archie" time="2019-02-17T12:18:58Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/758f1ca55be83507237a34f9a3e19fdf0a4ab527/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.2.9" author="Archie" time="2019-02-21T19:46:56Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -1825,6 +1828,28 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Render selected items to one separate track in one item(`).lua" type="script" desc="Render selected items to one separate track in one item">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Item/Archie_Item;%20%20Render%20selected%20items%20to%20one%20separate%20track%20in%20one%20item(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Render selected items to one separate track in one item(Pre-Fx Track)(`).lua" type="script" desc="Render selected items to one separate track in one item(Pre-Fx Track)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Item/Archie_Item;%20%20Render%20selected%20items%20to%20one%20separate%20track%20in%20one%20item(Pre-Fx%20Track)(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Select first item from cursor position in all selected track,without removing selection from the previous items.lua" type="script" desc="Select first item from cursor position in all selected track,">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2294,6 +2319,17 @@
     </reapack>
   </category>
   <category name="MAIN/Options">
+    <reapack name="Archie_Options;  Reset ReaScript task control for all scripts.lua" type="script" desc="Reset ReaScript task control for all scripts">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [220219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Options/Archie_Options;%20%20Reset%20ReaScript%20task%20control%20for%20all%20scripts.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Options;  Smart Multi script(Button 1).lua" type="script" desc="Smart Multi script(Button 1)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2866,6 +2902,39 @@
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Copy%20selected%20track%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Delete all receive in selected tracks.lua" type="script" desc="Delete all receive in selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20receive%20in%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Delete all send and receive in selected tracks.lua" type="script" desc="Delete all send and receive in selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20and%20receive%20in%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Delete all send in selected tracks.lua" type="script" desc="Delete all send in selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Delete folder (request for removal of child tracks).lua" type="script" desc="Delete folder (request for removal of child tracks)">
