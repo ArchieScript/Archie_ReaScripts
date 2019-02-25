@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="11abce28fe10d0731a2cc22c294adab7fd986f53" name="Archie-ReaScripts">
+<index version="1" commit="2328abb29490aca181bf00fef80cd768321f4431" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -159,6 +159,9 @@
       <version name="2.2.9" author="Archie" time="2019-02-21T19:46:56Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/Functions/Arc_Function_lua.lua</source>
       </version>
+      <version name="2.3.0" author="Archie" time="2019-02-25T19:19:39Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/Functions/Arc_Function_lua.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Envelope">
@@ -304,6 +307,28 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/FX/Archie_FX;%20%20Open%20first%20instrument%20in%20Selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Rename Fx in preset name.lua" type="script" desc="Rename Fx in preset name">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [260219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/FX/Archie_FX;%20%20Rename%20Fx%20in%20preset%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Rename last selected FX in chain to selected tracks in preset name.lua" type="script" desc="Rename last selected FX in chain to selected tracks in preset name">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [260219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20to%20selected%20tracks%20in%20preset%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle Auto open VSTi in selected tracks and close in the rest(`).lua" type="script" desc="Auto open VSTi in selected tracks and close in the rest">
@@ -2319,6 +2344,28 @@
     </reapack>
   </category>
   <category name="MAIN/Options">
+    <reapack name="Archie_Options;  Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Don't autosctoll view (when enable) when viewing other parts of project">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/Options/Archie_Options;%20%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [26.02.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/Options/Archie_Options;%20%20Open%20folder%20FX%20Chains.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Options;  Reset ReaScript task control for all scripts.lua" type="script" desc="Reset ReaScript task control for all scripts">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
