@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.2.9
+   * Version:     2.3.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -12,6 +12,7 @@
    *        108   + no_undo();
    *        108   + Action();
    
+   *        230   + TrackFx_Rename(Track,idx_Fx,Rename);
    *        229   + RemoveAllSendTr(track,category);
    *        229   + RemoveAllItemTr_Sel(track,rem_Idx);
    
@@ -60,7 +61,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.2.9"
+    local VersionMod = "2.3.0"
     --========================
 
 
@@ -136,6 +137,40 @@
     -- Выполняет действие, относящееся к разделу основное действие. 
     --====End===============End===============End===============End===============End====
     --|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+
+
+
+    --230------------ TracFx_Rename -----------------------------------------------------
+    function Arc_Module.TrackFx_Rename(Track,idx_Fx,Rename);
+        local retval,str = reaper.GetTrackStateChunk(Track,"",false);
+                     str = string.gsub(str,"<","\n\n<").."\n\n";
+        local TrackChunk;
+        local ret,buf = reaper.TrackFX_GetFXName(Track,idx_Fx,"");
+        if ret then;
+            local buf = buf:gsub("%(","%%("):gsub("%)","%%)")
+                           :gsub("%{","%%{"):gsub("%}","%%}")
+                           :gsub("%[","%%["):gsub("%]","%%]");
+            local GUID = reaper.TrackFX_GetFXGUID(Track,idx_Fx);
+            for var in string.gmatch(str,"<.-\n\n") do;
+                local guid = string.match(var,"FXID ({.-})");
+                if guid == GUID then;
+                    local pref = string.match(buf,".-: ") or "";
+                    var = string.gsub(var,buf,pref..Rename);
+                end;
+                TrackChunk = (TrackChunk or "")..var;
+            end;
+            TrackChunk = string.gsub(TrackChunk,"\n\n","\n")
+            reaper.SetTrackStateChunk(Track,TrackChunk,false);
+            --reaper.ShowConsoleMsg(TrackChunk);
+            return true;
+        end;
+        return false;
+    end;
+    -- Переименовать Fx в треке
+    -- Вернет false если Fx отсутствует, в противном случае true
+    --====End===============End===============End===============End===============End====
 
 
 
