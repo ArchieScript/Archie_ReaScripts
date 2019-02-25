@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="736f10e4caf87a3a3d8e08e44a05b2d412c29922" name="Archie-ReaScripts">
+<index version="1" commit="fa3187e7e91d45a3a8b217e8c72996f32dfe27d5" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2349,17 +2349,6 @@
     </reapack>
   </category>
   <category name="MAIN/Options">
-    <reapack name="Archie_Options;  Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Don't autosctoll view (when enable) when viewing other parts of project">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/Options/Archie_Options;%20%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2712,6 +2701,17 @@
       </metadata>
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Options;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Don't autosctoll view (when enable) when viewing other parts of project">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-25T20:37:15Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fa3187e7e91d45a3a8b217e8c72996f32dfe27d5/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
       </version>
     </reapack>
   </category>
