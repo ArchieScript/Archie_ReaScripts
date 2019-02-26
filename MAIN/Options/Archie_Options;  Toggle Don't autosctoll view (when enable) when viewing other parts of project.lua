@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Toggle Don't autosctoll view (when enable) when viewing other parts of project     
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://s8.hostingkartinok.com/uploads/images/2019/02/c9c4cf3b1169e89ccb633ba45516dbc9.png
