@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="9471efe6d36ece614a1cb5694c1e660d1b64aa5c" name="Archie-ReaScripts">
+<index version="1" commit="c5287d01b78d1b54825c591cb38cdfea7c1daccf" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2712,6 +2712,10 @@
       <version name="1.0" author="Archie" time="2019-02-25T20:37:15Z">
         <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fa3187e7e91d45a3a8b217e8c72996f32dfe27d5/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-02-26T06:14:28Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c5287d01b78d1b54825c591cb38cdfea7c1daccf/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
       </version>
     </reapack>
   </category>
