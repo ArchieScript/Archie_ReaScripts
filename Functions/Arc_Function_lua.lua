@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.3.0
+   * Version:     2.3.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -61,7 +61,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.3.0"
+    local VersionMod = "2.3.1"
     --========================
 
 
@@ -590,6 +590,7 @@
             "help.",1);
             ---------------------------------------
             if MessageBox == 1 then;
+                reaper.MB("Rus:\n * Запомни !\n *   "..BottonText.."\n\nEng:\n * Remember !\n *   "..BottonText,"help.",0);--231
                 reaper.SetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but,MessageBox,true);
             end;
         end;

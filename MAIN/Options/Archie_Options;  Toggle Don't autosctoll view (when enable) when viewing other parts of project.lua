@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Toggle Don't autosctoll view (when enable) when viewing other parts of project     
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://s8.hostingkartinok.com/uploads/images/2019/02/c9c4cf3b1169e89ccb633ba45516dbc9.png
@@ -12,7 +12,7 @@
    * Customer:    Supa75[RMM]
    * Gave idea:   Supa75[RMM]
    * Changelog: 
-   *              --- / v.1.02 [260219]
+   *              --- / v.1.03 [260219]
    
    *              +  initialе / v.1.0 [240219]
    ==========================================================================================
@@ -54,7 +54,7 @@
     
     
     local SWS = Arc.SWS_API(true);
-	if not SWS then Arc.no_undo() return end;
+    if not SWS then Arc.no_undo() return end;
     Arc.HelpWindowWhenReRunning(2,"",false);
 
 
@@ -80,6 +80,7 @@
     else
         reaper.Undo_EndBlock("Off / "..title,-1)
     end;
+    
     
     function loop();
         
