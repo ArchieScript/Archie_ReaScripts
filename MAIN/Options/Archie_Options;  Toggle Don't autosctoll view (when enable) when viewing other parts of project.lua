@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Toggle Don't autosctoll view (when enable) when viewing other parts of project     
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://s8.hostingkartinok.com/uploads/images/2019/02/c9c4cf3b1169e89ccb633ba45516dbc9.png
@@ -11,7 +11,10 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75[RMM]
    * Gave idea:   Supa75[RMM]
-   * Changelog:   +  initialе / v.1.0 [240219]
+   * Changelog: 
+   *              --- / v.1.02 [240219]
+   
+   *              +  initialе / v.1.0 [240219]
    ==========================================================================================
    
    
@@ -51,6 +54,7 @@
     
     
     local SWS = Arc.SWS_API(true);
+	if not SWS then Arc.no_undo() return end;
     Arc.HelpWindowWhenReRunning(2,"",false);
 
 
