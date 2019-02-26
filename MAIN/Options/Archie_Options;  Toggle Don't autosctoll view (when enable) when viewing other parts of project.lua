@@ -1,11 +1,11 @@
 --[[
    * Category:    Options
-   * Description: Don't autosctoll view (when enable) when viewing other parts of project
+   * Description: Toggle Don't autosctoll view (when enable) when viewing other parts of project     
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
    * О скрипте:   ---
-   * GIF:         ---
+   * GIF:         http://s8.hostingkartinok.com/uploads/images/2019/02/c9c4cf3b1169e89ccb633ba45516dbc9.png
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
