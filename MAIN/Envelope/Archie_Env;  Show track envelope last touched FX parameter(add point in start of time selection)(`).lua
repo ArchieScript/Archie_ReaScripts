@@ -2,7 +2,7 @@
    * Category:    Envelope
    * Description: Show track envelope last touched FX parameter(add point in start of time selection)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Show track envelope last touched FX parameter(add point in start of time selection)
    * О скрипте:   Показать трек автоматизации последнего тронутого параметра FX
    *                                                         (добавить точку в начало выбора времени)
