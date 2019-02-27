@@ -2,7 +2,7 @@
    * Category:    Info
    * Description: Learn what script are used in custom actions and cycle action
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Learn what script are used in custom actions and cycle action
    * О скрипте:   Узнайте, какие сценарии используются в настраиваемых действиях и цикл действиях
    * GIF:         ---
@@ -11,7 +11,10 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75/smrz1(RMM)
    * Gave idea:   Supa75/smrz1(RMM)
-   * Changelog:   
+   * Changelog:  
+   *              +! Fixed incompatibility with Mac os / v.1.03 [27022019]
+   *              +! Исправлена несовместимость с Mac os / v.1.03 [27022019]
+   
    *              +! Fixed a pop-up error in the absence of a file "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]
    *              +! Устранена всплывающая ошибка при отсутствии файла "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]
   
@@ -135,7 +138,7 @@
 
     local OS,cmd = reaper.GetOS();
     if OS == "OSX32" or OS == "OSX64" then;
-        cmd = os.execute('open "" '..path);
+        cmd = os.execute('open "'..path..'"');
     else;
         cmd = os.execute('start "" '..path);
     end;
