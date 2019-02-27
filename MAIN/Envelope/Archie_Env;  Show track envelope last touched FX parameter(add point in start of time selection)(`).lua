@@ -11,9 +11,15 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Martin111(Rmm/forum)
    * Gave idea:   Martin111(Rmm/forum)
-   * Changelog:   +  Fixed paths for Mac/ v.1.01 [29.01.19] 
+   * Changelog:   
+   *              +  Added the ability to select a track / v.1.02 [280219] 
+   *              +  Добавлена возможность выделения трека / v.1.02 [280219] 
+   
+   *              +  Fixed paths for Mac/ v.1.01 [29.01.19] 
    *              +  Исправлены пути для Mac/ v.1.01 [29.01.19]  
    *              +  initialе / v.1.0
+   
+   
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
    ===========================================================================================|
@@ -44,6 +50,24 @@
                         -----------------------------------------------------------------------------
 
 
+    local Selected_Track = 1
+                      -- = 1 | Выделить трек конверта
+                      -- = 0 | Не выделять трек конверта
+                               -------------------------
+                      -- = 1 | Select envelope track
+                      -- = 0 | Do not select envelope track
+                      -------------------------------------
+
+
+    local StartPoint = 0
+                  -- = 1 | Добавить точку в начале выбора времени
+                  -- = 0 | Не добавлять точку в начале выбора времени
+                           ------------------------------------------
+                  -- = 1 | Add a point at the beginning of time selection
+                  -- = 0 | Do not add a point at the beginning of time selection
+                  --------------------------------------------------------------
+
+
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -62,7 +86,7 @@
 
 
 
-
+    local Sel = Selected_Track;
     local retval,tracknumber,fxnumber,paramnumber = reaper.GetLastTouchedFX();
     if retval == false then Arc.no_undo() return end;
 
@@ -72,8 +96,14 @@
     reaper.Undo_BeginBlock();
 
     local envelope =  reaper.GetFXEnvelope(Track,fxnumber,paramnumber,true);
+    if Sel == 1 then
+        reaper.SetCursorContext(2,envelope);
+    end
+    
+    
     local startTime,endTime = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
 
+    if StartPoint == 1 then startTime = endTime end
     if startTime ~= endTime then;
         local retval,value,_,_,_ = reaper.Envelope_Evaluate(envelope,startTime,0,0);
         reaper.DeleteEnvelopePointRange(envelope,startTime-0.01,startTime+0.01);
