@@ -1,10 +1,10 @@
 --[[
    * Category:    Fx
-   * Description: Show all active floating FX windows for selected tracks
+   * Description: Toggle Show Hide all active floating FX windows for selected tracks
    * Author:      Archie
-   * Version:     1.01
-   * AboutScript: Show all active floating FX windows for selected tracks
-   * О скрипте:   Показать все активные плавающие окна FX для выбранных дорожек
+   * Version:     1.0
+   * AboutScript: Toggle Show Hide all active floating FX windows for selected tracks
+   * О скрипте:   Переключатель Показать Скрыть все активные плавающие окна FX для выбранных дорожек
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,9 +12,6 @@
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Changelog:   
-   *              + Added ability to open Fx on master track v.1.01 [270219]
-   *              + добавлена возможность открытия Fx на мастер-треке v.1.01 [270219]
-
    *              +  initialе / v.1.0 [270219]
    ==========================================================================================
    
@@ -51,7 +48,9 @@
     if CountSeTrack == 0 and not SelMastTrack then no_undo() return end;
     
 
-    local track;
+    reaper.PreventUIRefresh(1);
+    local track,OpenClose;
+    ::start::
     for i = 0,CountSeTrack do;
         if i == 0 then;
             track = reaper.GetMasterTrack(0);
@@ -70,13 +69,21 @@
                         if not Offline then;
                             local bypass = reaper.TrackFX_GetEnabled(track,i2-1);
                             if bypass then;
-                                reaper.TrackFX_Show(track,i2-1,3);
+                                ----
+                                if not OpenClose then;  
+                                    local Open = reaper.TrackFX_GetFloatingWindow(track,i2-1);
+                                    if Open then OpenClose = 2 goto start end;
+                                else;
+                                    reaper.TrackFX_Show(track,i2-1,OpenClose);
+                                end; 
+                                ----
                             end;
                         end;
                     end;
                 end;
+                if i == CountSeTrack and not OpenClose then OpenClose = 3 goto start end;
             end;
         end;
     end;
-
+    reaper.PreventUIRefresh(-1);
     no_undo();
