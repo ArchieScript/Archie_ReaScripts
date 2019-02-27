@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Open folder FX Chains
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Open folder FX Chains
    * О скрипте:   Открыть папку FX цепочки
    * GIF:         ---
@@ -11,7 +11,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
-   * Changelog:   +  initialе / v.1.0 [26.02.2019]
+   * Changelog:   
+   *              +! Fixed incompatibility with Mac os / v.1.01 [27022019]
+   *              +! Исправлена несовместимость с Mac os / v.1.01 [27022019]
+   
+   *              +  initialе / v.1.0 [26.02.2019]
 
 
    --========================================================================================
@@ -42,7 +46,7 @@
     
     local pathFile = reaper.GetResourcePath().."/FXChains";
     if reaper.GetOS() == "OSX32" or reaper.GetOS() == "OSX64" then;
-        os.execute('open "" '..pathFile);
+        os.execute('open "'..pathFile..'"');
     else;
         os.execute('start "" '..pathFile);
     end;
