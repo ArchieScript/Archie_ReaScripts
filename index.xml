@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a88d37972d7153f334da5b97608c26f858c84bb0" name="Archie-ReaScripts">
+<index version="1" commit="0b3972f68b84a7990b98b62b0a7da415a203b597" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1545,6 +1545,11 @@
         <changelog><![CDATA[+! Fixed a pop-up error in the absence of a file "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]
 +! Устранена всплывающая ошибка при отсутствии файла "S&M_Cyclactions.ini" / v.1.02 [16.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3cf6b877c0b2b04b018969dd14b1cdaaac74af36/MAIN/Info/Archie_Info;%20%20Learn%20what%20script%20are%20used%20in%20custom%20actions%20and%20cycle%20action.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-02-27T14:06:14Z">
+        <changelog><![CDATA[+! Fixed incompatibility with Mac os / v.1.03 [27022019]
++! Исправлена несовместимость с Mac os / v.1.03 [27022019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0b3972f68b84a7990b98b62b0a7da415a203b597/MAIN/Info/Archie_Info;%20%20Learn%20what%20script%20are%20used%20in%20custom%20actions%20and%20cycle%20action.lua</source>
       </version>
     </reapack>
   </category>
