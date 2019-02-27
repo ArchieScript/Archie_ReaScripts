@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7d9bafdfe5c40e0f711e4066e414f1126cf28282" name="Archie-ReaScripts">
+<index version="1" commit="a88d37972d7153f334da5b97608c26f858c84bb0" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -349,6 +349,11 @@
         <changelog><![CDATA[+  initialе / v.1.0 [270219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d9bafdfe5c40e0f711e4066e414f1126cf28282/MAIN/FX/Archie_FX;%20%20Show%20all%20active%20floating%20FX%20windows%20for%20selected%20tracks.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-02-27T11:10:13Z">
+        <changelog><![CDATA[+ Added ability to open Fx on master track v.1.01 [270219]
++ добавлена возможность открытия Fx на мастер-треке v.1.01 [270219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a88d37972d7153f334da5b97608c26f858c84bb0/MAIN/FX/Archie_FX;%20%20Show%20all%20active%20floating%20FX%20windows%20for%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle Auto open VSTi in selected tracks and close in the rest(`).lua" type="script" desc="Auto open VSTi in selected tracks and close in the rest">
       <metadata>
@@ -366,6 +371,17 @@
       </metadata>
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/FX/Archie_FX;%20%20Toggle%20FX%209%20online,offline%20for%20selected%20tracks(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Toggle Show Hide all active floating FX windows for selected tracks.lua" type="script" desc="Toggle Show Hide all active floating FX windows for selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-27T11:10:13Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [270219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a88d37972d7153f334da5b97608c26f858c84bb0/MAIN/FX/Archie_FX;%20%20Toggle%20Show%20Hide%20all%20active%20floating%20FX%20windows%20for%20selected%20tracks.lua</source>
       </version>
     </reapack>
   </category>
