@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a96289494aa0ce5d146be0bd3aa23300b9a75baa" name="Archie-ReaScripts">
+<index version="1" commit="e0b1ae2a6a146e8ff0bb4fd0e37fb06c13c4d0f9" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2390,6 +2390,19 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Monitoring">
+    <reapack name="Archie_MonitorFx;  Smart template monitoring Toggle Open Fx in float.lua" type="script" desc="Smart template monitoring Toggle Open Fx in float">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-02-28T16:43:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [01032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e0b1ae2a6a146e8ff0bb4fd0e37fb06c13c4d0f9/MAIN/Monitoring/Archie_MonitorFx;%20%20Smart%20template%20monitoring%20Toggle%20Open%20Fx%20in%20float.lua</source>
       </version>
     </reapack>
   </category>
