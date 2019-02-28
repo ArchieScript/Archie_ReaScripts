@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="75e1c4b14a06479966b91fe4c6eb0004e735aaf4" name="Archie-ReaScripts">
+<index version="1" commit="44afc0bcf98ee50f1845d24ffc552202e478b012" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -173,24 +173,6 @@
     </reapack>
   </category>
   <category name="MAIN/Envelope">
-    <reapack name="Archie_Env;  Restore saved points'by time'(slot 1)(`) .lua" type="script" desc="Restore saved points'by time*'(slot 1**)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Envelope/Archie_Env;%20%20Restore%20saved%20points'by%20time'(slot%201)(%60)%20.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Env;  Save selected points'by time'(slot 1)(`) .lua" type="script" desc="Save selected points'by time*'(slot 1**)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Envelope/Archie_Env;%20%20Save%20selected%20points'by%20time'(slot%201)(%60)%20.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Env;  Select all automation items in selected envelope track,with selected  points preserve .lua" type="script" desc="Select all automation items in selected envelope track,">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
