@@ -2,7 +2,7 @@
    * Category:    Monitoring
    * Description: Smart template monitoring Toggle Open Fx in float
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Smart template monitoring Toggle Open Fx in float
    * О скрипте:   Умный шаблон мониторинга переключатель открыть плавающий Fx
    * GIF:         ---
@@ -12,6 +12,9 @@
    * Customer:    Maestro Sound[RMM]
    * Gave idea:   Maestro Sound[RMM]
    * Changelog:   
+   *              +! Исправлена ошибка при добавлении более 10 Fx / v.1.01 [01032019]
+   *              +! Fixed bug when adding more than 10 Fx / v.1.01 [01032019]
+   
    *              +  initialе / v.1.0 [01032019]
 
 
@@ -85,7 +88,7 @@
    
     local
     Num_Fx = {};
-    for var in string.gmatch (retvals_csv, "[^,]") do;
+    for var in string.gmatch (retvals_csv, "[^,]+") do;
         Num_Fx[#Num_Fx+1] = tonumber(var);
     end;
     -----  
@@ -116,7 +119,7 @@
    
     local 
     Close_NoBypassOffline = {};
-    for var in string.gmatch (retvals_csv,"[^,]") do;
+    for var in string.gmatch (retvals_csv,"[^,]+") do;
         Close_NoBypassOffline[#Close_NoBypassOffline+1] = tonumber(var);
     end;
    
@@ -143,10 +146,10 @@
     local
     pathScr,NameScr = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)");
     local
-    NameScrNEXT = "Archie_MonitorFx;  Toggle Open and activate float Fx "..
-    table.concat(Num_Fx,"' ").." - Close Fx "..And..bypass..offline..".lua";
-    
-    
+    NameScrNEXT = "Archie_MonitorFx;  Toggle Open and activate float Fx - Close Fx "..
+                         And..bypass..offline.."'Fx-"..table.concat(Num_Fx,"' ")..".lua";
+  
+ 
     local FileStop,i;
     while(not wh1)do;
         i = (i or 0)+1;
@@ -229,7 +232,7 @@
 
     reaper.ClearConsole();
     reaper.ShowConsoleMsg("Rus:\n"..
-                          " * Создан скрипт \n"..
+                          " * Скрипт создан \n"..
                           " * "..NameScrNEXT.."\n"..
                           " * Ищите в экшен листе \n\n"..
                           "Eng:\n"..
