@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ecacd4dd4d1cc8de64dc2bcebf98f146da1b0407" name="Archie-ReaScripts">
+<index version="1" commit="fb8476aa28637f231d5d788273d4223bc9ad45f3" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -356,6 +356,10 @@
       <version name="1.0" author="Archie" time="2019-03-01T15:13:24Z">
         <changelog><![CDATA[+  initialе / v.1.0 [01032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/657e98d2c827467e279070f2d6af98a7dbc65507/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-03-03T19:14:37Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [01032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb8476aa28637f231d5d788273d4223bc9ad45f3/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle Auto open VSTi in selected tracks and close in the rest(`).lua" type="script" desc="Auto open VSTi in selected tracks and close in the rest">
@@ -2402,6 +2406,11 @@
 +! Fixed bug when adding more than 10 Fx / v.1.01 [01032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/75e1c4b14a06479966b91fe4c6eb0004e735aaf4/MAIN/Monitoring/Archie_MonitorFx;%20%20Smart%20template%20monitoring%20Toggle%20Open%20Fx%20in%20float.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-03-03T19:14:37Z">
+        <changelog><![CDATA[+! Исправлена ошибка при добавлении более 10 Fx / v.1.01 [01032019]
++! Fixed bug when adding more than 10 Fx / v.1.01 [01032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb8476aa28637f231d5d788273d4223bc9ad45f3/MAIN/Monitoring/Archie_MonitorFx;%20%20Smart%20template%20monitoring%20Toggle%20Open%20Fx%20in%20float.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Options">
@@ -3327,6 +3336,17 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Smart template - Load Track template by name.lua" type="script" desc="Smart template - Load Track template by name">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-03-03T19:14:37Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [04032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb8476aa28637f231d5d788273d4223bc9ad45f3/MAIN/Track/Archie_Track;%20%20Smart%20template%20-%20Load%20Track%20template%20by%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
