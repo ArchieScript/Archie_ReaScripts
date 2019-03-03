@@ -2,7 +2,7 @@
    * Category:    Monitoring
    * Description: Smart template monitoring Toggle Open Fx in float
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Smart template monitoring Toggle Open Fx in float
    * О скрипте:   Умный шаблон мониторинга переключатель открыть плавающий Fx
    * GIF:         ---
@@ -153,7 +153,7 @@
     local FileStop,i;
     while(not wh1)do;
         i = (i or 0)+1;
-        local Files = reaper.EnumerateFiles(pathScr,i);
+        local Files = reaper.EnumerateFiles(pathScr,i-1);
         if Files == NameScrNEXT then FileStop = true end;
         if FileStop or not Files then break end;
     end;

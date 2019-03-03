@@ -2,7 +2,7 @@
    * Category:    Fx
    * Description: Smart template - Add Fx chain by name for selected tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Smart template - Add Fx chain by name for selected tracks
    * О скрипте:   Умный шаблон - добавить цепочку Fx по имени для выбранных треков
    * GIF:         ---
@@ -82,7 +82,7 @@ ScriptBeginning = [[
     local ChainWithExt,ChainWithoutExt,Saved_FxChain,i,ext;
     while(not j) do;
         i = (i or 0) + 1;
-        ChainWithExt = reaper.EnumerateFiles(pathChain,i);
+        ChainWithExt = reaper.EnumerateFiles(pathChain,i-1);
         if ChainWithExt then;
             if ChainWithExt:match("%.")then;
                 ext = string.reverse(ChainWithExt):match(".-%."):reverse();
@@ -280,7 +280,7 @@ ScriptBeginning = [[
     local FileStop,i;
     while(not wh1)do;
         i = (i or 0)+1;
-        local Files = reaper.EnumerateFiles(filename,i);
+        local Files = reaper.EnumerateFiles(filename,i-1);
         if Files == NameScrNEXT or Files == NameScrNEXT..".lua" then
             FileStop = true end;
         if FileStop or not Files then break end;
