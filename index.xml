@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="2d39cd79d514191abcffd5490b7d58136dd15e6b" name="Archie-ReaScripts">
+<index version="1" commit="6d5493514cbdd5fe356aeb0350add9d7b8eca2cd" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1472,318 +1472,30 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Options/Archie_Options;%20%20Reset%20ReaScript%20task%20control%20for%20all%20scripts.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 1).lua" type="script" desc="Smart Multi script(Button 1)">
+    <reapack name="Archie_Options;  Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T11:56:03Z">
-        <changelog><![CDATA[+ initialе / v.1.0.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/891e8045dcff4a2a550f1c592184213ea3278f41/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2018-11-13T12:11:28Z">
-        <changelog><![CDATA[+ initialе / v.1.0.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0472f8cda7370b5337a95d560e2bfff5fbb9de8d/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2018-11-13T13:26:30Z">
-        <changelog><![CDATA[+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+ initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4444ab29b12c26b8999d6e57afe7a4303961350f/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.2.1" author="Archie" time="2018-11-13T13:34:12Z">
-        <changelog><![CDATA[+! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+ initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6686a907aeb1db09743bbcfafdc0c7c1657ca26a/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.2.2" author="Archie" time="2018-11-13T13:37:27Z">
-        <changelog><![CDATA[+! Fixed error in displaying a window with a hint / v.1.02 [13.11.18]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+ initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c5c33210649c709e11bb6e1938c4e9da230d5072/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2018-12-04T11:17:57Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdd1877e3b0cdacaabe073f76d405e9a566f03c0/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 10).lua" type="script" desc="Smart Multi script(Button 10)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2010).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2010).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 11).lua" type="script" desc="Smart Multi script(Button 11)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2011).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2011).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 12).lua" type="script" desc="Smart Multi script(Button 12)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2012).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2012).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 13).lua" type="script" desc="Smart Multi script(Button 13)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2013).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2013).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 14).lua" type="script" desc="Smart Multi script(Button 14)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2014).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2014).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 15).lua" type="script" desc="Smart Multi script(Button 15)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2015).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2015).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 16).lua" type="script" desc="Smart Multi script(Button 16)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2016).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%2016).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 2).lua" type="script" desc="Smart Multi script(Button 2)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%202).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%202).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 3).lua" type="script" desc="Smart Multi script(Button 3)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%203).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 4).lua" type="script" desc="Smart Multi script(Button 4">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%204).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%204).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 5).lua" type="script" desc="Smart Multi script(Button 5)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%205).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%205).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 6).lua" type="script" desc="Smart Multi script(Button 6)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%206).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%206).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 7).lua" type="script" desc="Smart Multi script(Button 7)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%207).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 8).lua" type="script" desc="Smart Multi script(Button 8)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%208).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Smart Multi script(Button 9).lua" type="script" desc="Smart Multi script(Button 9)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  добавлен список системные требования: / v.1.03 [04122018]
-+  added a list of the system requirements: / v.1.03 [04122018]
-+! Исправлена ошибка отображения окна с подсказкой / v.1.02 [13.11.18]
-+  initialе / v.1.0 [12.11.18]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%209).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.04 [29.01.19]
-+  Исправлены пути для Mac/ v.1.04 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%209).lua</source>
+      <version name="1.0" author="Archie" time="2019-03-04T12:30:01Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.11.18]]]></changelog>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 01).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 02).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 03).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 04).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 05).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 06).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 07).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 08).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 09).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="main" file="Archie_Options;  Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Solo in front' dimming +1 dB from set value(`).lua" type="script" desc="Solo in front' dimming +1 dB from set value">
@@ -3130,92 +2842,15 @@
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2664a6d6722dccdfe70a92690e0c6ecb796a9772/MIDI%20Editor/Archie_MidiEditor;%20%20Open-close%20Notes%20window.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 1).lua" type="script" desc="Smart Multi script(Button 1)">
+    <reapack name="Archie_MidiEditor;  Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
+      <version name="1.0" author="Archie" time="2019-03-04T12:30:01Z">
         <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%201).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 2).lua" type="script" desc="Smart Multi script(Button 2)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%202).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 3).lua" type="script" desc="Smart Multi script(Button 3)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%203).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 4).lua" type="script" desc="Smart Multi script(Button 4)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%204).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 5).lua" type="script" desc="Smart Multi script(Button 5)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%205).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 6).lua" type="script" desc="Smart Multi script(Button 6)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%206).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 7).lua" type="script" desc="Smart Multi script(Button 7)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%207).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button 8).lua" type="script" desc="Smart Multi script(Button 8)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-11T15:05:42Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/baf6babdcc12f62455171a47fe4dd97c3e1a0a0d/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%208).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Swing grid disable and reset(MIDI editor)(`).lua" type="script" desc="swing grid disable and reset(MIDI editor)">
