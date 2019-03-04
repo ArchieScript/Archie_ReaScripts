@@ -2,7 +2,7 @@
    * Category:    Test
    * Description: Test_Test
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.06
    * AboutScript: Test_Test
    * О скрипте:   ---
    * GIF:         ---
@@ -13,11 +13,11 @@
    * Gave idea:   ---
    * Changelog:   ---
    * Provides:     
-   *              [Inline Editor] . > Test_Test 1.lua
-   *              [Inline Editor] . > Test_Test 2.lua
-   *              [Inline Editor] . > Test_Test 3.lua
-   *              [Inline Editor] . > Test_Test 4.lua
-   *              [Inline Editor] . > Test_Test 5.lua
+   *              [midi_inlineeditor] . > Test_Test 1.lua
+   *              [midi_inlineeditor] . > Test_Test 2.lua
+   *              [midi_inlineeditor] . > Test_Test 3.lua
+   *              [midi_inlineeditor] . > Test_Test 4.lua
+   *              [midi_inlineeditor] . > Test_Test 5.lua
    
 
    --========================================================================================
