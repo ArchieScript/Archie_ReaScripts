@@ -1,10 +1,10 @@
 --[[
    * Category:    Group
-   * Description: Toggle Mute Unmute all tracks in group n
+   * Description: Toggle Solo Unsolo all tracks in group n
    * Author:      Archie
    * Version:     1.01
-   * AboutScript: Toggle Mute Unmute all tracks in group n
-   * О скрипте:   Переключить Mute Unmute все треки в группе n
+   * AboutScript: Toggle Solo Unsolo all tracks in group n
+   * О скрипте:   Переключить Соло Unsolo все треки в группе n
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,38 +12,38 @@
    * Customer:    Maestro Sound(RMM Forum)
    * Gave idea:   Maestro Sound(RMM Forum)
    * Provides:    
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 01 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 02 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 03 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 04 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 05 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 06 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 07 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 08 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 09 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 10 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 11 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 12 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 13 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 14 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 15 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 16 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 17 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 18 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 19 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 20 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 21 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 22 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 23 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 24 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 25 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 26 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 27 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 28 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 29 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 30 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 31 (`).lua
-   *              [main] . > Archie_Group;  Toggle Mute Unmute all tracks in group 32 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 01 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 02 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 03 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 04 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 05 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 06 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 07 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 08 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 09 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 10 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 11 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 12 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 13 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 14 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 15 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 16 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 17 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 18 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 19 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 20 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 21 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 22 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 23 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 24 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 25 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 26 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 27 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 28 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 29 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 30 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 31 (`).lua
+   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 32 (`).lua
    * Changelog:   
    *              +  initialе / v.1.0 [27.12.18]
    
@@ -97,7 +97,7 @@
    
 
 
-    
+
     local
     Action = {40804,40805,40806,40807,40808,40809,40810,40811,40812,40813,
         40814,40815,40816,40817,40818,40819,40820,40821,40822,40823,40824,
@@ -111,17 +111,17 @@
         reaper.MB("Rus:\n * Неверное имя скрипта\n\nEng:\n * Invalid script name","Error!",0);
         Arc.no_undo() return;
     end;
- 
-    
-   
+
+
+
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then Arc.no_undo() return end;
-     
-    
+
+
+
     if Button_State_On_Off ~= 0 then;
         Arc.HelpWindowWhenReRunning(2,"byf_HelpWindowWhenReRunning",reset);
     end;
- 
 
     reaper.PreventUIRefresh(1);
     reaper.Undo_BeginBlock();
@@ -136,12 +136,12 @@
        reaper.SetMediaTrackInfo_Value(MasterTrack,"I_SELECTED",0);
     end;
     ---------------
-    local ON, Undo, Work_once;
+    local ON, Undo;
     local CountSelTrack = reaper.CountSelectedTracks(0);
     for i = 1,CountSelTrack do;
        local SelTrack = reaper.GetSelectedTrack(0,i-1);
-       local mute = reaper.GetMediaTrackInfo_Value(SelTrack,"B_MUTE");
-       if mute <= 0 then;
+       local solo = reaper.GetMediaTrackInfo_Value(SelTrack,"I_SOLO");
+       if solo <= 0 then;
            ON = 1;
            break;
        end;
@@ -152,23 +152,23 @@
        local SelTrack = reaper.GetSelectedTrack(0,i-1);
        GUID_T[i] = reaper.GetTrackGUID(SelTrack);
        if ON == 1 then;
-           reaper.SetMediaTrackInfo_Value(SelTrack,"B_MUTE",1);
+           reaper.SetMediaTrackInfo_Value(SelTrack,"I_SOLO",1);
            if Button_State_On_Off ~= 0 then;
                if not Work_once then;
                    Arc.SetToggleButtonOnOff(1);
                    Work_once = "Active"
                end;
            end;
-           Undo = "Mute all tracks in group -"..ActionIdx;
+           Undo = "Solo all tracks in group -"..ActionIdx;
        else;
-           reaper.SetMediaTrackInfo_Value(SelTrack,"B_MUTE",0); 
+           reaper.SetMediaTrackInfo_Value(SelTrack,"I_SOLO",0); 
            if Button_State_On_Off ~= 0 then;
                if not Work_once then;
                    Arc.SetToggleButtonOnOff(0);
                    Work_once = "Active"
                end;
            end;
-           Undo = "Unmute all tracks in group -"..ActionIdx;
+           Undo = "Unsolo all tracks in group -"..ActionIdx;
        end;
     end;
     -------------------------------------
@@ -181,29 +181,27 @@
     if Undo then;
        reaper.Undo_EndBlock(Undo,-1);
     else
-       reaper.Undo_EndBlock(" ! No Group / Mute all tracks in group -"..ActionIdx,-1);
+       reaper.Undo_EndBlock(" ! No Group / Solo all tracks in group -"..ActionIdx,-1);
     end;
     ----
     reaper.PreventUIRefresh(-1);
     -----------
-    
     -- counter = 0
     local ProjState_X,ProjState;
     local function loop();
         if #GUID_T > 0 then;
             ProjState = reaper.GetProjectStateChangeCount(0);
             if ProjState ~= ProjState_X then;
-                ProjState_X = ProjState
                 for i = 1,#GUID_T do;
                     local Track = reaper.BR_GetMediaTrackByGUID(0,GUID_T[i]);
                     if Track then;
-                        if reaper.GetMediaTrackInfo_Value(Track,"B_MUTE") <= 0 then;
+                        if reaper.GetMediaTrackInfo_Value(Track,"I_SOLO") <= 0 then;
                             Arc.SetToggleButtonOnOff(0);
                             Arc.no_undo() return;
                         end;
                     end;
                 end;
-                -- counter = counter + 1;
+                --counter = counter + 1;
             end;
             reaper.defer(loop);
         end;
@@ -213,3 +211,10 @@
        loop();
     end;
     ----
+   
+   
+   
+   
+   
+   
+   
