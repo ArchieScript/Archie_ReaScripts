@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="6d5493514cbdd5fe356aeb0350add9d7b8eca2cd" name="Archie-ReaScripts">
+<index version="1" commit="96303d12cb7a234e54495c659e9ffc3957a23120" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2851,6 +2851,25 @@
       <version name="1.0" author="Archie" time="2019-03-04T12:30:01Z">
         <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-03-04T12:33:38Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 01).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 02).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 03).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 04).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 05).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 06).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 07).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 08).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 09).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Swing grid disable and reset(MIDI editor)(`).lua" type="script" desc="swing grid disable and reset(MIDI editor)">
