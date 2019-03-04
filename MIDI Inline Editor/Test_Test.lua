@@ -1,9 +1,9 @@
 --[[
    * Category:    Test
-   * Description: Test
+   * Description: Test_Test
    * Author:      Archie
-   * Version:     1.01
-   * AboutScript: Test
+   * Version:     1.02
+   * AboutScript: Test_Test
    * О скрипте:   ---
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -12,12 +12,12 @@
    * Customer:    ---
    * Gave idea:   ---
    * Changelog:   ---
-   * Provides     
-   *              [MIDI Inline Editor] . > Test_Test_1.lua
-   *              [MIDI Inline Editor] . > Test_Test_2.lua
-   *              [MIDI Inline Editor] . > Test_Test_3.lua
-   *              [MIDI Inline Editor] . > Test_Test_4.lua
-   *              [MIDI Inline Editor] . > Test_Test_5.lua
+   * Provides:     
+   *              [MIDI Inline Editor] . > Test_Test 1.lua
+   *              [MIDI Inline Editor] . > Test_Test 2.lua
+   *              [MIDI Inline Editor] . > Test_Test 3.lua
+   *              [MIDI Inline Editor] . > Test_Test 4.lua
+   *              [MIDI Inline Editor] . > Test_Test 5.lua
    
 
    --========================================================================================
