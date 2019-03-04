@@ -2,7 +2,7 @@
    * Category:    MidiEditor
    * Description: Smart Multi script(Button n)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -13,6 +13,7 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Supa75(Rmm/forum)
+   * Provides:    
    *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 01).lua
    *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 02).lua
    *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 03).lua
