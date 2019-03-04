@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="060e71f5dfe8d249798ffdcd2631a28f51e0400e" name="Archie-ReaScripts">
+<index version="1" commit="412b62dcb320768ed87f8e076d2410d01c553a14" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4248,6 +4248,18 @@
         <source main="main midi_inlineeditor" file="Test_Test 1.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/060e71f5dfe8d249798ffdcd2631a28f51e0400e/MIDI%20Inline%20Editor/Test_Test.lua</source>
         <source main="main midi_inlineeditor" file="Test_Test 2.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/060e71f5dfe8d249798ffdcd2631a28f51e0400e/MIDI%20Inline%20Editor/Test_Test.lua</source>
         <source main="main midi_inlineeditor" file="Test_Test 3.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/060e71f5dfe8d249798ffdcd2631a28f51e0400e/MIDI%20Inline%20Editor/Test_Test.lua</source>
+      </version>
+      <version name="1.14" author="Archie" time="2019-03-04T07:19:33Z">
+        <changelog><![CDATA[---]]></changelog>
+        <source main="midi_inlineeditor" file="Test_Test 1.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2067d9a1bc77e550ac5cca6938e974a8f7ff3a05/MIDI%20Inline%20Editor/Test_Test.lua</source>
+        <source main="midi_inlineeditor" file="Test_Test 2.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2067d9a1bc77e550ac5cca6938e974a8f7ff3a05/MIDI%20Inline%20Editor/Test_Test.lua</source>
+        <source main="midi_inlineeditor" file="Test_Test 3.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2067d9a1bc77e550ac5cca6938e974a8f7ff3a05/MIDI%20Inline%20Editor/Test_Test.lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2019-03-04T07:19:48Z">
+        <changelog><![CDATA[---]]></changelog>
+        <source main="midi_inlineeditor" file="Test_Test 1.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/412b62dcb320768ed87f8e076d2410d01c553a14/MIDI%20Inline%20Editor/Test_Test.lua</source>
+        <source main="midi_inlineeditor" file="Test_Test 2.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/412b62dcb320768ed87f8e076d2410d01c553a14/MIDI%20Inline%20Editor/Test_Test.lua</source>
+        <source main="midi_inlineeditor" file="Test_Test 3.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/412b62dcb320768ed87f8e076d2410d01c553a14/MIDI%20Inline%20Editor/Test_Test.lua</source>
       </version>
     </reapack>
   </category>
