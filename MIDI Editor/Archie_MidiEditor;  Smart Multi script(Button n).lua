@@ -2,7 +2,7 @@
    * Category:    MidiEditor
    * Description: Smart Multi script(Button n)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -73,7 +73,7 @@
     local
     scr_nam = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)"));
     local
-    but = tonumber(scr_nam:match("Button (%d)"));
+    but = tonumber(scr_nam:match("Button (%d+)"));
  
     if (but or -1) >= 1 and (but or -1) <= 16 then else;
         reaper.MB("Rus:\n * Неверное имя скрипта\n\nEng:\n * Invalid script name","Error!",0);
