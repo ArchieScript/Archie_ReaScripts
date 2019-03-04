@@ -13,9 +13,9 @@
    * Gave idea:   ---
    * Changelog:   ---
    * Provides:     
-   *              [main=midi_inlineeditor] . > Test_Test 1.lua
-   *              [main=midi_inlineeditor] . > Test_Test 2.lua
-   *              [main=midi_inlineeditor] . > Test_Test 3.lua
+   *              [main=main,midi_inlineeditor] . > Test_Test 1.lua
+   *              [main=main,midi_inlineeditor] . > Test_Test 2.lua
+   *              [main=main,midi_inlineeditor] . > Test_Test 3.lua
    
 
    --========================================================================================
