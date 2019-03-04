@@ -2,7 +2,7 @@
    * Category:    Test
    * Description: Test_Test
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.08
    * AboutScript: Test_Test
    * О скрипте:   ---
    * GIF:         ---
