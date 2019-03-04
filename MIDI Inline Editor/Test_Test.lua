@@ -13,11 +13,11 @@
    * Gave idea:   ---
    * Changelog:   ---
    * Provides:     
-   *              [MIDI Inline Editor] . > Test_Test 1.lua
-   *              [MIDI Inline Editor] . > Test_Test 2.lua
-   *              [MIDI Inline Editor] . > Test_Test 3.lua
-   *              [MIDI Inline Editor] . > Test_Test 4.lua
-   *              [MIDI Inline Editor] . > Test_Test 5.lua
+   *              [Inline Editor] . > Test_Test 1.lua
+   *              [Inline Editor] . > Test_Test 2.lua
+   *              [Inline Editor] . > Test_Test 3.lua
+   *              [Inline Editor] . > Test_Test 4.lua
+   *              [Inline Editor] . > Test_Test 5.lua
    
 
    --========================================================================================
