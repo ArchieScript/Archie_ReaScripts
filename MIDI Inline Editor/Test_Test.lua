@@ -14,7 +14,7 @@
    * Changelog:   ---
    * Provides:     
    *              [main=midi_inlineeditor] . > Test_Test 1.lua
-   *              [main] . Test_Test 2.lua
+   *              [main] > Test_Test 2.lua
    *              [main] > Test_Test 3.lua
    
 
