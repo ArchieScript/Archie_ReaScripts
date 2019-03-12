@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="be5edf73466a54a962d051af63b95144ca14dd55" name="Archie-ReaScripts">
+<index version="1" commit="dcb0864144bc9387c7897da21a9f8e9ae4fe1c73" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2752,6 +2752,10 @@
       <version name="1.0" author="Archie" time="2019-03-12T14:23:13Z">
         <changelog><![CDATA[+  initialе / v.1.0 [12032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be5edf73466a54a962d051af63b95144ca14dd55/MAIN/View/Archie_View;%20%20Set%20arrange%20in%20center%20when%20you%20change%20BPM.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-03-12T14:26:16Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dcb0864144bc9387c7897da21a9f8e9ae4fe1c73/MAIN/View/Archie_View;%20%20Set%20arrange%20in%20center%20when%20you%20change%20BPM.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle Layout 'Small - Small sidebar' on selected tracks MCP.lua" type="script" desc="Toggle Layout 'Small - Small sidebar' on selected tracks MCP">
