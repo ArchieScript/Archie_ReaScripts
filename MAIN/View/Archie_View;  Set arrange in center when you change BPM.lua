@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Set arrange in center when you change BPM
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Set arrange in center when you change BPM
    * О скрипте:   Установить аранжировку по центру при изменении BPM
    * GIF:         ---
@@ -51,7 +51,7 @@
     
     
     
-    if Arc.SWS_API(true)then;
+    if not Arc.SWS_API(true)then;
         Arc.no_undo() return;
     end
     
