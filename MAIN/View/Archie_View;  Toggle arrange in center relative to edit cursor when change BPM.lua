@@ -1,10 +1,10 @@
 --[[
    * Category:    View
-   * Description: Set arrange in center when you change BPM
+   * Description: Toggle arrange in center relative to edit cursor when you change BPM
    * Author:      Archie
-   * Version:     1.02
-   * AboutScript: Set arrange in center when you change BPM
-   * О скрипте:   Установить аранжировку по центру при изменении BPM
+   * Version:     1.0
+   * AboutScript: Toggle arrange in center relative to edit cursor when you change BPM
+   * О скрипте:   Переключение расположения по центру относительно курсора редактирования при изменении BPM
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,9 +12,7 @@
    * Customer:    Zit[RMM]
    * Gave idea:   Zit[RMM]
    * Changelog:   
-   *              +  [outdated] / v.1.02 [15032019]
-   
-   *              +  initialе / v.1.0  [12032019]
+   *              +  initialе / v.1.0 [15032019]
 
 
    --========================================================================================
@@ -96,26 +94,3 @@
     Arc.SetToggleButtonOnOff(1);
     Loop();
     reaper.atexit(exit);
-  
-  
-    ExtState = reaper.GetExtState("section=Set arrange in center when","key=Set arrange in center when")
- 
-    if ExtState == "" then
-        reaper.MB(
-               "Rus:\n"..
-               "  *  Скрипт устарел, используйте\n"..
-               "  *  Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua\n"..
-               "  *  Изменений никаких не произошло, только сменилось название\n"..
-               "  *  Данный Скрипт будет удален 31.03.2019\n\n"..
-               "Eng\n"..
-               "  * The script is outdated, use\n" ..
-               "  *  Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua\n"..
-               "  * No changes have occurred, only the name has changed\n"..
-               "  * This Script will be deleted. 03.31.2019 \n",
-              "Set arrange in center when you change BPM",0)
-    end;
-    
-    ValueExt = (tonumber(ExtState)or 0)+1
-    if ValueExt > 4 then ValueExt = "" end
-    
-    reaper.SetExtState("section=Set arrange in center when","key=Set arrange in center when",ValueExt,true)
