@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx chain by name for selected items or in time selection
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Smart template - Add Fx chain by name for selected items or in time selection
    * О скрипте:   Умный шаблон - Добавить цепочку Fx по имени для выбранных элементов или в выборе времени
    * GIF:         ---
@@ -11,7 +11,9 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    HDVulcan[RMM]
    * Gave idea:   HDVulcan[RMM]
-   * Changelog:   
+   * Changelog: 
+   *              +  Open Fx, Fade in/out Shape, Remove time sel / v.1.01 [20032019]
+   
    *              +  initialе / v.1.0 [18032019]
 
 
@@ -24,7 +26,7 @@
    (?) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php               ||
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                             ||
    (+) Arc_Function_lua v.2.3.1 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc ||
-   (+) reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr ||
+   (+) reaper_js_ReaScriptAPI     --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr ||
                                                                     http://clck.ru/Eo5Lw   ||
    (?) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                ||
       -------------------------------------------------------------------------------------||
@@ -32,7 +34,6 @@
    ----------------------------------------------------------------------------------------||
    --\\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: /////
    ========================================================================================]]
-    
     
     
     
@@ -55,7 +56,6 @@
     
     
     
-    
     local function S(x)return string.rep(" ",x)end;--<<
     local sectionExtState = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
     
@@ -63,9 +63,19 @@
     
     local function Size_Pos_Window(left,top,width,height);
         if Arc.js_ReaScriptAPI(false) then;
-            reaper.ShowConsoleMsg(" ")
+            reaper.ShowConsoleMsg(" ")reaper.ShowConsoleMsg("");
             local winHWND = reaper.JS_Window_Find("ReaScript console output",true);
-            if winHWND then reaper.JS_Window_SetPosition(winHWND,left,top,width,height)end;
+            if not winHWND then;
+                winHWND = reaper.JS_Window_Find("Archie. Help!",true);
+                rename = true
+            end;
+            if winHWND then;
+                reaper.JS_Window_SetPosition(winHWND,left,top,width,height);
+                reaper.JS_Window_SetForeground(winHWND);
+                if not rename then;
+                    reaper.JS_Window_SetTitle(winHWND,"Archie. Help!");
+                end;
+            end;
         end;
     end;
     
@@ -74,9 +84,16 @@
     local function Window_Destroy();
         if Arc.js_ReaScriptAPI(false) then;
             local winHWND = reaper.JS_Window_Find("ReaScript console output",true);
+            if not winHWND then;
+                winHWND = reaper.JS_Window_Find("Archie. Help!",true);
+            end;
             if winHWND then reaper.JS_Window_Destroy(winHWND)end;
         end;
     end;
+    
+    
+    
+    local function Rep(val,num) return string.rep(val,num)end;
     
     
     
@@ -109,7 +126,7 @@
     
     --Selection-----------
     reaper.ClearConsole();
-    Size_Pos_Window(60,70,450,440);
+    Size_Pos_Window(60,70,500,440);
     reaper.ShowConsoleMsg("Rus:\nВыделение:\nВведите в окно ввода значение от -1 до 1. \n\n"..
                           "-1  =  Останутся все элементы выделенными. \n\n"..
                           "0  =  Если выбор времени присутствует, то останутся выделенные только "..
@@ -125,7 +142,7 @@
     local
     Selection = tonumber(reaper.GetExtState(sectionExtState,"Selection")); 
     ::X2::local
-    retval,retvals_csv = reaper.GetUserInputs( "Smart template - Add Fx chain by name for selected items or in time select", 1,
+    retval,retvals_csv = reaper.GetUserInputs("Smart template - Add Fx chain by name for selected items or in time select", 1,
                           "What to Select: < -1  |  0  |  1 >, extrawidth=87",Selection or 0);
     if retval == false then reaper.ClearConsole()Window_Destroy()Arc.no_undo() return end;
     if not Arc.If_Equals(retvals_csv,"-1","0","1")then goto X2 end;
@@ -135,9 +152,34 @@
     
     
     
+    --openFx--------------
+    reaper.ClearConsole();
+    Size_Pos_Window(60,70,520,470);
+    reaper.ShowConsoleMsg("Rus:\nОткрыть Эффекты.\nВведите в окно ввода значение от 0 до 3.\n\n"..
+                          "0 = не открывать эффекты,\n\n1 = открыть в цепи,\n\n"..
+                          "2 = открыть только первый эффект из сохраненной цепочки эффектов (плавающий),"..
+                          "\n\n3 = открыть все эффекты сохраненной цепочки эффектов  (плавающие)\n"..
+                          "------------------------------------\n\n\n"..
+                          "Eng:\nOpen Fx.\nEnter a value between 0 and 3 in the input box.\n\n"..
+                          "0 = do not open fx,\n\n1 = open in chain,\n\n"..
+                          "2 = open only the first fx from the saved fx chain (floating),\n\n"..
+                          "3 = open all fx (floating)\n------------------------------------");
+    local
+    openFx = tonumber(reaper.GetExtState(sectionExtState,"openFx"));
+    ::X7::local
+    retval,retvals_csv = reaper.GetUserInputs( "Smart template - Add Fx chain by name for selected items or in time select", 1,
+                          S(10).."Open Fx:  < 0  -  3 >, extrawidth=87",openFx or 0);
+    if retval == false then reaper.ClearConsole()Window_Destroy()Arc.no_undo() return end;
+    if not Arc.If_Equals(retvals_csv,"0","1","2","3")then goto X7 end;
+    reaper.SetExtState(sectionExtState,"openFx",retvals_csv,true);
+    openFx = tonumber(retvals_csv);
+    ----------------------
+    
+    
+    
     --fade_in_out---------
     reaper.ClearConsole();
-    Size_Pos_Window(60,70,450,540);
+    Size_Pos_Window(60,70,730,455);
     reaper.ShowConsoleMsg("Rus:\nПовышение / Затухание.\nВведите в окно ввода значение от -1 до 1. \n\n"..
                           "-1  = Повышение / Затухание устанавливается исходя из настроек Жнеца.\n\n"..
                           "0  =  Если выбор времени присутствует, то  Повышение / Затухание установится на всех "..
@@ -170,7 +212,7 @@
         
         --fade_in-------------
         reaper.ClearConsole();
-        Size_Pos_Window(60,70,450,230);
+        Size_Pos_Window(60,70,450,250);
         reaper.ShowConsoleMsg("Rus:\nПовышение.\nВведите в окно ввода значение Повышения от 0 до бесконечности. \n"..
                               "----------------------\n\n".. 
                               "Eng:\nFade in. \nEnter the Fade in value from 0 to infinity in the input box.\n"..
@@ -190,7 +232,7 @@
         
         --fade_out------------
         reaper.ClearConsole();
-        Size_Pos_Window(60,70,450,230);
+        Size_Pos_Window(60,70,450,250);
         reaper.ShowConsoleMsg("Rus:\nЗатухание.\nВведите в окно ввода значение Затухание от 0 до бесконечности. \n"..
                               "----------------------\n\n".. 
                              "Eng:\nFade out. \nEnter the Fade out value from 0 to infinity in the input box.\n"..
@@ -205,6 +247,27 @@
         reaper.SetExtState(sectionExtState,"fade_out",retvals_csv,true);
         fade_out = retvals_csv;
         -----------------------
+        
+        
+                
+        --Shape_Fade----------
+        reaper.ClearConsole();
+        Size_Pos_Window(60,70,500,300);
+        reaper.ShowConsoleMsg("Rus:\nПовышение \\ Затухание - форма..\nВведите в окно ввода значение формы Повышения Затухание от 1 до 7.\n1 линия, .....\n"..
+                              "-1  = Форма Повышение / Затухание устанавливается исходя из настроек Жнеца.\n"..
+                              "----------------------\n\n".. 
+                              "Eng:\nFade in \\ Fade out - Shape. \nEnter a value in the input box Fade in Fade out shape from 1 to 7.\n1 lines, .....\n"..
+                              "-1  =  Fade in / Fade out Shape is set based on the Reaper settings.\n"..
+                              "----------------------");
+        shape_Fade = tonumber(reaper.GetExtState(sectionExtState,"shape_Fade"));
+        ::X6::local
+        retval,retvals_csv = reaper.GetUserInputs("Smart template - Add Fx chain by name for selected items or in time select",1,
+                                      "Fade Shape Value: < 1 - 7 or -1>, extrawidth=87",shape_Fade or -1);
+        if retval == false then reaper.ClearConsole()Window_Destroy()Arc.no_undo() return end;
+        if not Arc.If_Equals(retvals_csv,"-1","1","2","3","4","5","6","7")then goto X6 end;
+        reaper.SetExtState(sectionExtState,"shape_Fade",retvals_csv,true);
+        shape_Fade = retvals_csv;
+        -------------------------
     end;
     ----
     
@@ -242,8 +305,20 @@
             if CountSelItem == 0 then Arc.no_undo() return end;
             
             
+            
+            local function FadeShape(Item,str,num);
+                if tonumber(num) > 0 and tonumber(num) <= 7 then;
+                    reaper.SetMediaItemInfo_Value(Item,str,num-1);
+                    return true;
+                end;
+                return false;
+            end;
+            
+            
+            
             reaper.Undo_BeginBlock();
             reaper.PreventUIRefresh(1);
+            
             
             
             local   
@@ -251,6 +326,8 @@
             
             
             
+            -->>--#5---/ TimeSel /-----
+            local Start1, End1;
             if Start ~= End then;
                 local ItemTimeSel;
                 for i = 1, CountSelItem do;
@@ -262,8 +339,12 @@
                         break;
                     end;
                 end;
-                if not ItemTimeSel then Arc.no_undo() return end;
+                if not ItemTimeSel then;
+                    reaper.GetSet_LoopTimeRange(1,0,Start,Start,0);
+                    Start1, End1 = Start, End; Start, End = 0,0;
+                end;
             end;
+            --<=--#5---/ TimeSel /-----
             
             
             
@@ -281,6 +362,8 @@
                             if It_f_i then;
                                 reaper.SetMediaItemInfo_Value(It_f_i,"D_FADEINLEN",fade_in);
                                 reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                                FadeShape(It_f_i,"C_FADEINSHAPE",shape_Fade);
+                                FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
                             end;
                         end;
                         
@@ -289,6 +372,8 @@
                             if It_f_o then;
                                 reaper.SetMediaItemInfo_Value(It_f_o,"D_FADEINLEN",fade_in);
                                 reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                                FadeShape(It_f_o,"C_FADEINSHAPE",shape_Fade);
+                                FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
                             end;
                         end;  
                     end;--<-1.1
@@ -302,6 +387,8 @@
                         if PosIt >= Start and EndIt <= End then;
                             reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
                             reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                            FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade);
+                            FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
                         end;
                     end;--<-3.1  
                 end;--<-3
@@ -314,6 +401,8 @@
                         local SelItem = reaper.GetSelectedMediaItem(0,i);
                         reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
                         reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                        FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade);
+                        FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
                         
                     end;--<-3.1.2
                 end;--<-3.1.1
@@ -336,6 +425,7 @@
             
             
             -->>-#3-----------------------
+            local ChainFx,fload_one_Fx;
             if Start ~= End then;-->-1.1.0
                 for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
                     local SelItem = reaper.GetSelectedMediaItem(0,i);
@@ -344,8 +434,35 @@
                     if PosIt >= Start and EndIt <= End then;
                         local dest_take = reaper.GetActiveTake(SelItem);
                         for i2 = 1, reaper.TakeFX_GetCount(Dimmy_take) do;
+                            
+                            ---
+                            if openFx == 1 then;
+                                if not ChainFx then;
+                                   ChainFx = reaper.TakeFX_GetCount(dest_take);
+                                   reaper.TakeFX_Show(dest_take,ChainFx,0);
+                                end;
+                            end;
+                            ----
                             reaper.TakeFX_CopyToTake(Dimmy_take,i2-1,dest_take,reaper.TakeFX_GetCount(dest_take),0);
+                            ---
+                            if openFx == 2 then;
+                                if not fload_one_Fx then;
+                                    reaper.TakeFX_Show(dest_take,reaper.TakeFX_GetCount(dest_take)-1,3);
+                                    fload_one_Fx = true;
+                                end;
+                            end;
+                            
+                            if openFx == 3 then;
+                                reaper.TakeFX_Show(dest_take, reaper.TakeFX_GetCount(dest_take)-1,3);
+                            end; 
+                            ----
                         end;
+                        if openFx == 1 then;
+                            reaper.TakeFX_Show(dest_take,ChainFx,1);
+                            ChainFx = nil;
+                        end;
+                        ChainFx = nil;
+                        fload_one_Fx = nil;
                     end;
                 end;
             else;
@@ -353,16 +470,44 @@
                     local SelItem = reaper.GetSelectedMediaItem(0,i);
                     local dest_take = reaper.GetActiveTake(SelItem);
                     for i2 = 1, reaper.TakeFX_GetCount(Dimmy_take) do;
-                        reaper.TakeFX_CopyToTake(Dimmy_take,i2-1,dest_take,reaper.TakeFX_GetCount(dest_take) ,0);
+                        ---
+                        if openFx == 1 then;
+                            if not ChainFx then;
+                               ChainFx = reaper.TakeFX_GetCount(dest_take);
+                               reaper.TakeFX_Show(dest_take,ChainFx,0);
+                            end;
+                        end;
+                        ----
+                        reaper.TakeFX_CopyToTake(Dimmy_take,i2-1,dest_take,reaper.TakeFX_GetCount(dest_take),0);
+                        ---
+                        if openFx == 2 then;
+                            if not fload_one_Fx then;
+                                reaper.TakeFX_Show(dest_take,reaper.TakeFX_GetCount(dest_take)-1,3);
+                                fload_one_Fx = true;
+                            end;
+                        end;
+                        
+                        if openFx == 3 then;
+                            reaper.TakeFX_Show(dest_take, reaper.TakeFX_GetCount(dest_take)-1,3);
+                        end; 
+                        ----
                     end;
+                    if openFx == 1 then;
+                        reaper.TakeFX_Show(dest_take,ChainFx,1);
+                        ChainFx = nil;
+                    end;
+                    ChainFx = nil;
+                    fload_one_Fx = nil;
                 end;
             end;
             --<<-#3-----------------------
             
             
+            
             -->=-#2----------------------
             Arc.DeleteMediaItem(DimmyIt);
             --<<-#2----------------------
+            
             
             
             -->>-#4----------------
@@ -381,6 +526,19 @@
                 reaper.SelectAllMediaItems(0,0);
             end;
             --<<-#4----------------
+            
+            
+            
+            -->=--#5---/ TimeSel /-----
+            if TimeSelection == 0 then;
+                reaper.GetSet_LoopTimeRange(1,0,Start, Start,0);
+            else;   
+                if Start1 and End1 then;
+                    reaper.GetSet_LoopTimeRange(1,0,Start1, End1,0);
+                end;
+            end;
+            --<<--#5---/ TimeSel /-----
+            
             
             
             reaper.Undo_EndBlock(ScripnNameX,-1);
@@ -424,7 +582,17 @@
     ---- 
     
     
-    ---read----------------------------------------------
+    
+    local Info_TimeSelection = 
+    "\n\n\n\n\n    --"..Rep("=",86).."\n    --"..Rep("/",12).."  НАСТРОЙКИ  "..Rep("\\",12)..
+    "  SETTINGS  ".. Rep("/",12).."  НАСТРОЙКИ  "..Rep("\\",12).."\n"..S(4).."--"..Rep("=",86)..
+    "\n\n\n\n\n".. S(4).."local TimeSelection = 1\n".. S(21).."-- = 0 | Убрать выбор времени\n"..
+    S(21).."-- = 1 | Не убирать выбор времени\n".. S(21).."--"..Rep("=",32).."\n"..S(21)..
+    "-- = 0 | Remove time selection\n".. S(21).."-- = 1 | Do not remove time selection\n"..S(21).."--"..Rep("=",35);
+    
+    
+    
+    ---read / Читаем-------------------------------------
     local write,shift;local
     IO = io.open(({reaper.get_action_context()})[2],"r");
     local tbl={};
@@ -434,6 +602,13 @@
         var = var:gsub("AboutScript:.+", "AboutScript: "..ScripnNameX, 1); 
         var = var:gsub("О скрипте:.+", "О скрипте:   ".."Добавить цепочку Fx по имени - "..
             Name_FXChainsX.." для выбранных элементов или при выборе времени (умный)", 1);
+        var = var:gsub("Open Fx, Fade in/out Shape, ","",1);
+        var = var:gsub("%(%+%) reaper_js_ReaScriptAPI","(-) reaper_js_ReaScriptAPI",1);
+        var = var:gsub("==========%]%]","==========]]"..Info_TimeSelection,1);
+            
+            
+            
+            
         local write1 = string.match (var,"local function S%(x%)");
         if write1 then write = true end;
         
@@ -446,9 +621,11 @@
                                                --S(4).."local ScripnName = '"..ScripnName.."';\n"..
                                                S(4).."local ScripnNameX = '"..ScripnNameX.."';\n"..
                                                S(4).."local Selection = "..Selection..";\n"..
+                                               S(4).."local openFx = "..openFx..";\n"..
                                                S(4).."local fade_all_active = "..fade_all_active..";\n"..
                                                S(4).."local fade_in = "..(fade_in or 0)..";\n"..
-                                               S(4).."local fade_out = "..(fade_out or 0)..";\n\n\n",1);
+                                               S(4).."local fade_out = "..(fade_out or 0)..";\n"..
+                                               S(4).."local shape_Fade = "..(shape_Fade or -1)..";\n\n\n",1);
         end;
         
         if shift then;
@@ -472,7 +649,7 @@
     
     
     
-    ---write------------------------
+    ---write / Пишем----------------
     local
     newNameScript = io.open(({reaper.get_action_context()})[2]:match("(.+)[\\/]").."/"..ScripnName,'w');
     for i = 1,#tbl do
@@ -485,6 +662,7 @@
     
     
     ---Created Script-----
+    if not Arc.js_ReaScriptAPI(false) then;
     reaper.ClearConsole();
     Size_Pos_Window(60,70,600,250);
     reaper.ShowConsoleMsg("Rus:\n"..
@@ -497,5 +675,20 @@
                           " * "..ScripnName.."\n"..
                           " * SEARCH THE ACTION LIST\n"..
                           "-------------------------------------------------");
+    end;
     ---------------------------------------------------
+    
+    
+    
+    reaper.ShowActionList();
+    
+    if Arc.js_ReaScriptAPI(false) then;
+        local winHWND = reaper.JS_Window_Find("Actions",true);
+        if winHWND then;
+            local filter_Act = reaper.JS_Window_FindChildByID(winHWND,1324);
+            reaper.JS_Window_SetTitle(filter_Act,ScripnNameX);
+            reaper.JS_Window_Move(winHWND,250,100);
+            Window_Destroy();
+        end;
+    end;
     Arc.no_undo();
