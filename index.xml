@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="cba6e1dbe77221fd8789dc74244251e93e479033" name="Archie-ReaScripts">
+<index version="1" commit="7c510d9241bbdad93cbdae938220fb7fe08a18f1" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -360,6 +360,10 @@
       <version name="1.01" author="Archie" time="2019-03-20T09:45:40Z">
         <changelog><![CDATA[+  Open Fx, Fade in/out Shape, Remove time sel / v.1.01 [20032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cba6e1dbe77221fd8789dc74244251e93e479033/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-03-21T20:14:14Z">
+        <changelog><![CDATA[!+ Optimization / v.1.02 [22032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7c510d9241bbdad93cbdae938220fb7fe08a18f1/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Smart template - Add Fx chain by name for selected tracks.lua" type="script" desc="Smart template - Add Fx chain by name for selected tracks">
