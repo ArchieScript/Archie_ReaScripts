@@ -6,17 +6,34 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * customer:    borisuperful(RMM Forum)
    * gave idea:   borisuperful(RMM Forum)
---=====================================]]
-
-
-
-    local Name = "Имя региона"
-                           -- Задайте Имя региона 
-                           -- Specify Region Name
-                                  ---------------
+   * Changelog:   
+   *              +  Added window to enter the name/ v.1.01 [27032019]  
+   
+   *              +  initialе / v.1.0 
+--=============================================================]]
+    
+    
+    
+    
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    
+    local Name = "Enter name inside script"
+            -- = -1 Показать окно для ввода имени
+            --      Иначе введите Имя региона
+            --      Например:  Name = "Region Name"
+            
+            -- = -1 Show the window to enter the name
+            --      Otherwise, enter the region Name
+            --      Example: Region Name
+            ----------------------------
+    
                                   
     local R, G, B = nil, nil, nil
                           -- R, G, B = Задайте цвет создаваемого региона R, G, B 
@@ -26,15 +43,17 @@
                           -- иначе задайте значения 
                           -- local R, G, B = nil, nil, nil
                           -- http://csscolor.ru/rgb/162,171,171
-                                              -----------------
-                                              
+                          -------------------------------------
+    
+                     
     local TimeSelection = 0
                      -- = 0 | OFF | ВЫКЛ
                      -- = 1 | ON  |  ВКЛ
                      -------------------
-
-
-
+    
+    
+    
+    
     --===========================================================================
     --///////////////////////////////   SCRIPT   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     --===========================================================================
@@ -44,14 +63,26 @@
     -----------------------------------------------------------------------------
     local function No_Undo()end; local function no_undo()reaper.defer(No_Undo)end
     -----------------------------------------------------------------------------
-  
     
-  
+    
+    
     local Count = reaper.CountSelectedMediaItems( 0 )
     if Count == 0 then no_undo() return end
     
-
-
+    
+    ----
+    if type(Name) == "number" then;
+        if Name < 0 then;
+            local p = string.rep(" ",12);
+            local title = "Create region by borders of selected items";
+            local retval, retvals_csv = reaper.GetUserInputs(title,1,p.."Enter name region:,extrawidth=200","Name Region");
+            Name = retvals_csv;
+            if not retval then no_undo() return end;
+        end;
+    end;  
+    ----
+    
+    
     local Undo,POS,END,col = _, 9^9,0
     for i = 1,Count do
         local item = reaper.GetSelectedMediaItem( 0, i-1 )

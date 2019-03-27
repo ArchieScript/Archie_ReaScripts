@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx chain by name for selected items or in time selection
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Smart template - Add Fx chain by name for selected items or in time selection
    * О скрипте:   Умный шаблон - Добавить цепочку Fx по имени для выбранных элементов или в выборе времени
    * GIF:         ---
@@ -12,8 +12,9 @@
    * Customer:    HDVulcan[RMM]
    * Gave idea:   HDVulcan[RMM]
    * Changelog:   
-   *              !+ Fixed bug with midi / v.1.03 [23032019]
+   *              +  Added selection FadeOut Shape / v.1.04 [27032019]
    
+   *              !+ Fixed bug with midi / v.1.03 [23032019]
    *              !+ Optimization / v.1.02 [22032019]
    *              +  Open Fx, Fade in/out Shape, Remove time sel / v.1.01 [20032019]
    *              +  initialе / v.1.0 [18032019]
@@ -253,195 +254,251 @@
         
         
                 
-        --Shape_Fade----------
+        --Shape_Fade_in----------
         reaper.ClearConsole();
         Size_Pos_Window(60,70,500,300);
-        reaper.ShowConsoleMsg("Rus:\nПовышение \\ Затухание - форма..\nВведите в окно ввода значение формы Повышения Затухание от 1 до 7.\n1 линия, .....\n"..
-                              "-1  = Форма Повышение / Затухание устанавливается исходя из настроек Жнеца.\n"..
+        reaper.ShowConsoleMsg("Rus:\nПовышение - форма..\nВведите в окно ввода значение формы Повышения от 1 до 7.\n1 линия, .....\n"..
+                              "-1  = Форма Повышение устанавливается исходя из настроек Жнеца.\n"..
                               "----------------------\n\n".. 
-                              "Eng:\nFade in \\ Fade out - Shape. \nEnter a value in the input box Fade in Fade out shape from 1 to 7.\n1 lines, .....\n"..
-                              "-1  =  Fade in / Fade out Shape is set based on the Reaper settings.\n"..
+                              "Eng:\nFade in - Shape. \nEnter a value in the input box Fade in shape from 1 to 7.\n1 lines, .....\n"..
+                              "-1  =  Fade in Shape is set based on the Reaper settings.\n"..
                               "----------------------");
-        shape_Fade = tonumber(reaper.GetExtState(sectionExtState,"shape_Fade"));
+        shape_Fade_in = tonumber(reaper.GetExtState(sectionExtState,"shape_Fade_in"));
         ::X6::local
         retval,retvals_csv = reaper.GetUserInputs("Smart template - Add Fx chain by name for selected items or in time select",1,
-                                      "Fade Shape Value: < 1 - 7 or -1>, extrawidth=87",shape_Fade or -1);
+                                      "FadeIn Shape Value: <1-7 or -1>, extrawidth=87",shape_Fade_in or -1);
         if retval == false then reaper.ClearConsole()Window_Destroy()Arc.no_undo() return end;
         if not Arc.If_Equals(retvals_csv,"-1","1","2","3","4","5","6","7")then goto X6 end;
-        reaper.SetExtState(sectionExtState,"shape_Fade",retvals_csv,true);
-        shape_Fade = retvals_csv;
+        reaper.SetExtState(sectionExtState,"shape_Fade_in",retvals_csv,true);
+        shape_Fade_in = retvals_csv;
         -------------------------
     end;
     ----
     
     
     
+    --Shape_Fade_out ----------    shape_Fade_out
+    reaper.ClearConsole();
+    Size_Pos_Window(60,70,500,300);
+    reaper.ShowConsoleMsg("Rus:\nЗатухание  - форма..\nВведите в окно ввода значение формы Затухание  от 1 до 7.\n1 линия, .....\n"..
+                          "-1  = Форма Затухание устанавливается исходя из настроек Жнеца.\n"..
+                          "----------------------\n\n".. 
+                          "Eng:\nFade out - Shape. \nEnter a value in the input box Fade out shape from 1 to 7.\n1 lines, .....\n"..
+                          "-1  =  Fade out Shape is set based on the Reaper settings.\n"..
+                          "----------------------");
+    shape_Fade_out = tonumber(reaper.GetExtState(sectionExtState,"shape_Fade_out"));
+    ::X8::local
+    retval,retvals_csv = reaper.GetUserInputs("Smart template - Add Fx chain by name for selected items or in time select",1,
+                                  "FadeOut Shape Val: <1-7 or -1>, extrawidth=87",shape_Fade_out or -1);
+    if retval == false then reaper.ClearConsole()Window_Destroy()Arc.no_undo() return end;
+    if not Arc.If_Equals(retvals_csv,"-1","1","2","3","4","5","6","7")then goto X8 end;
+    reaper.SetExtState(sectionExtState,"shape_Fade_out",retvals_csv,true);
+    shape_Fade_out = retvals_csv;
+    -----------------------------
+    
+    
+    
     local function main();
     -->>New Script>> 
-    local IO;
-    do;
-        local Path1 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains..".RfxChain";
-        local Path2 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains;
-        local Path3 = Name_FXChains..".RfxChain";
-        local Path4 = Name_FXChains;
-        
-        
-        
-        IO = io.open(Path1,"r");
-        if not IO then;
-           IO = io.open(Path2,"r");
-        end;
-        if not IO then;
-           IO = io.open(Path3,"r");
-        end;
-        if not IO then;
-           IO = io.open(Path4,"r");
-        end;
-        if not IO then goto NoChain end;
-        local textChain = IO:read("a");
-        IO:close();
-        
-        
-        
-        local
-        CountSelItem = reaper.CountSelectedMediaItems(0);
-        if CountSelItem == 0 then Arc.no_undo() return end;
-        
-        
-        
-        local function FadeShape(Item,str,num);
-            if tonumber(num) > 0 and tonumber(num) <= 7 then;
-                reaper.SetMediaItemInfo_Value(Item,str,num-1);
-                return true;
+        local IO;
+        do;
+            local Path1 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains..".RfxChain";
+            local Path2 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains;
+            local Path3 = Name_FXChains..".RfxChain";
+            local Path4 = Name_FXChains;
+            
+            
+            
+            IO = io.open(Path1,"r");
+            if not IO then;
+               IO = io.open(Path2,"r");
             end;
-            return false;
-        end;
-        
-        
-        
-        reaper.Undo_BeginBlock();
-        reaper.PreventUIRefresh(1);
-        
-        
-        
-        local   
-        Start, End = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
-        
-        
-        
-        -->>--#5---/ TimeSel /-----
-        local Start1, End1;
-        if Start ~= End then;
-            local ItemTimeSel;
-            for i = 1, CountSelItem do;
-                local SelItem = reaper.GetSelectedMediaItem(0,i-1);
-                local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
-                if PosIt < End and EndIt > Start then;
-                    ItemTimeSel = true;
-                    break;
+            if not IO then;
+               IO = io.open(Path3,"r");
+            end;
+            if not IO then;
+               IO = io.open(Path4,"r");
+            end;
+            if not IO then goto NoChain end;
+            local textChain = IO:read("a");
+            IO:close();
+            
+            
+            
+            local
+            CountSelItem = reaper.CountSelectedMediaItems(0);
+            if CountSelItem == 0 then Arc.no_undo() return end;
+            
+            
+            
+            local function FadeShape(Item,str,num);
+                if tonumber(num) > 0 and tonumber(num) <= 7 then;
+                    reaper.SetMediaItemInfo_Value(Item,str,num-1);
+                    return true;
+                end;
+                return false;
+            end;
+            
+            
+            
+            reaper.Undo_BeginBlock();
+            reaper.PreventUIRefresh(1);
+            
+            
+            
+            local   
+            Start, End = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
+            
+            
+            
+            -->>--#5---/ TimeSel /-----
+            local Start1, End1;
+            if Start ~= End then;
+                local ItemTimeSel;
+                for i = 1, CountSelItem do;
+                    local SelItem = reaper.GetSelectedMediaItem(0,i-1);
+                    local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                    local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
+                    if PosIt < End and EndIt > Start then;
+                        ItemTimeSel = true;
+                        break;
+                    end;
+                end;
+                if not ItemTimeSel then;
+                    reaper.GetSet_LoopTimeRange(1,0,Start,Start,0);
+                    Start1, End1 = Start, End; Start, End = 0,0;
                 end;
             end;
-            if not ItemTimeSel then;
-                reaper.GetSet_LoopTimeRange(1,0,Start,Start,0);
-                Start1, End1 = Start, End; Start, End = 0,0;
-            end;
-        end;
-        --<=--#5---/ TimeSel /-----
-        
-        
-        
-        -->>-#1---/ Split, fade_in, fade_out /----------
-        if Start ~= End then;-->-1.1.0
+            --<=--#5---/ TimeSel /-----
             
-            for i = CountSelItem-1,0,-1 do;-->-1
-                local SelItem = reaper.GetSelectedMediaItem(0,i);
-                local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
-                if PosIt < End and EndIt > Start then;-->-1.1
-                    
-                    local It_f_i = reaper.SplitMediaItem(SelItem,End);
-                    if fade_all_active == 0 then;
-                        if It_f_i then;
-                            reaper.SetMediaItemInfo_Value(It_f_i,"D_FADEINLEN",fade_in);
-                            reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
-                            FadeShape(It_f_i,"C_FADEINSHAPE",shape_Fade);
-                            FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
-                        end;
-                    end;
-                    
-                    local It_f_o = reaper.SplitMediaItem(SelItem,Start);
-                    if fade_all_active == 0 then;
-                        if It_f_o then;
-                            reaper.SetMediaItemInfo_Value(It_f_o,"D_FADEINLEN",fade_in);
-                            reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
-                            FadeShape(It_f_o,"C_FADEINSHAPE",shape_Fade);
-                            FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
-                        end;
-                    end;  
-                end;--<-1.1
-            end;--<-1
             
-            if Arc.If_Equals(fade_all_active,0,1) then;-->-3
-                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-3.1
+            
+            -->>-#1---/ Split, fade_in, fade_out /----------
+            if Start ~= End then;-->-1.1.0
+                
+                for i = CountSelItem-1,0,-1 do;-->-1
+                    local SelItem = reaper.GetSelectedMediaItem(0,i);
+                    local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                    local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
+                    if PosIt < End and EndIt > Start then;-->-1.1
+                        
+                        local It_f_i = reaper.SplitMediaItem(SelItem,End);
+                        if fade_all_active == 0 then;
+                            if It_f_i then;
+                                reaper.SetMediaItemInfo_Value(It_f_i,"D_FADEINLEN",fade_in);
+                                reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                                FadeShape(It_f_i,"C_FADEINSHAPE",shape_Fade_in);
+                                FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade_out);
+                            end;
+                        end;
+                        
+                        local It_f_o = reaper.SplitMediaItem(SelItem,Start);
+                        if fade_all_active == 0 then;
+                            if It_f_o then;
+                                reaper.SetMediaItemInfo_Value(It_f_o,"D_FADEINLEN",fade_in);
+                                reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                                FadeShape(It_f_o,"C_FADEINSHAPE",shape_Fade_in);
+                                FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade_out);
+                            end;
+                        end;  
+                    end;--<-1.1
+                end;--<-1
+                
+                if Arc.If_Equals(fade_all_active,0,1) then;-->-3
+                    for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-3.1
+                        local SelItem = reaper.GetSelectedMediaItem(0,i);
+                        local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                        local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
+                        if PosIt >= Start and EndIt <= End then;
+                            reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
+                            reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                            FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade_in);
+                            FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade_out);
+                        end;
+                    end;--<-3.1  
+                end;--<-3
+                
+            else--<->-1.1.0;
+                if Arc.If_Equals(fade_all_active,0,1) then;-->-3.1.1
+                    
+                    for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-3.1.2
+                        
+                        local SelItem = reaper.GetSelectedMediaItem(0,i);
+                        reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
+                        reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
+                        FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade_in);
+                        FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade_out);
+                        
+                    end;--<-3.1.2
+                end;--<-3.1.1
+            end;--<-1.1.0
+            --<<-#1---/ ------------------------ /----------
+            
+            
+            
+            --------------------------------------------------------------------------------
+            --COPY------------------------------------------------------------------
+            ----------------------------------------------------------------
+            --[[
+            -->>-#2-----------------------
+            local DimmyIt = reaper.CreateNewMIDIItemInProj(reaper.GetTrack(0,0),15000,15010);
+            local Dimmy_take = reaper.GetActiveTake(DimmyIt);
+            local take = reaper.GetActiveTake(DimmyIt);
+            for i = reaper.TakeFX_GetCount(take)-1,0,-1 do;
+                reaper.TakeFX_Delete(take,i);
+            end; 
+            local str = ({reaper.GetItemStateChunk(DimmyIt,"",false)})[2]:gsub(">\n>",">\n<TAKEFX\n"..textChain..">\n>",1);
+            reaper.SetItemStateChunk(DimmyIt,str,false);
+            --<=-#2-----------------------
+            
+            
+            
+            -->>-#3-----------------------
+            local ChainFx,fload_one_Fx;
+            if Start ~= End then;-->-1.1.0
+                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
                     local SelItem = reaper.GetSelectedMediaItem(0,i);
                     local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
                     local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
                     if PosIt >= Start and EndIt <= End then;
-                        reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
-                        reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
-                        FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade);
-                        FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
+                        local dest_take = reaper.GetActiveTake(SelItem);
+                        for i2 = 1, reaper.TakeFX_GetCount(Dimmy_take) do;
+                            
+                            ---
+                            if openFx == 1 then;
+                                if not ChainFx then;
+                                   ChainFx = reaper.TakeFX_GetCount(dest_take);
+                                   reaper.TakeFX_Show(dest_take,ChainFx,0);
+                                end;
+                            end;
+                            ----
+                            reaper.TakeFX_CopyToTake(Dimmy_take,i2-1,dest_take,reaper.TakeFX_GetCount(dest_take),0);
+                            ---
+                            if openFx == 2 then;
+                                if not fload_one_Fx then;
+                                    reaper.TakeFX_Show(dest_take,reaper.TakeFX_GetCount(dest_take)-1,3);
+                                    fload_one_Fx = true;
+                                end;
+                            end;
+                            
+                            if openFx == 3 then;
+                                reaper.TakeFX_Show(dest_take, reaper.TakeFX_GetCount(dest_take)-1,3);
+                            end; 
+                            ----
+                        end;
+                        if openFx == 1 then;
+                            reaper.TakeFX_Show(dest_take,ChainFx,1);
+                            ChainFx = nil;
+                        end;
+                        ChainFx = nil;
+                        fload_one_Fx = nil;
                     end;
-                end;--<-3.1  
-            end;--<-3
-            
-        else--<->-1.1.0;
-            if Arc.If_Equals(fade_all_active,0,1) then;-->-3.1.1
-                
-                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-3.1.2
-                    
+                end;
+            else;
+                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
                     local SelItem = reaper.GetSelectedMediaItem(0,i);
-                    reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",fade_in);
-                    reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",fade_out);
-                    FadeShape(SelItem,"C_FADEINSHAPE",shape_Fade);
-                    FadeShape(SelItem,"C_FADEOUTSHAPE",shape_Fade);
-                    
-                end;--<-3.1.2
-            end;--<-3.1.1
-        end;--<-1.1.0
-        --<<-#1---/ ------------------------ /----------
-        
-        
-        
-        --------------------------------------------------------------------------------
-        --COPY------------------------------------------------------------------
-        ----------------------------------------------------------------
-        --[[
-        -->>-#2-----------------------
-        local DimmyIt = reaper.CreateNewMIDIItemInProj(reaper.GetTrack(0,0),15000,15010);
-        local Dimmy_take = reaper.GetActiveTake(DimmyIt);
-        local take = reaper.GetActiveTake(DimmyIt);
-        for i = reaper.TakeFX_GetCount(take)-1,0,-1 do;
-            reaper.TakeFX_Delete(take,i);
-        end; 
-        local str = ({reaper.GetItemStateChunk(DimmyIt,"",false)})[2]:gsub(">\n>",">\n<TAKEFX\n"..textChain..">\n>",1);
-        reaper.SetItemStateChunk(DimmyIt,str,false);
-        --<=-#2-----------------------
-        
-        
-        
-        -->>-#3-----------------------
-        local ChainFx,fload_one_Fx;
-        if Start ~= End then;-->-1.1.0
-            for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
-                local SelItem = reaper.GetSelectedMediaItem(0,i);
-                local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
-                if PosIt >= Start and EndIt <= End then;
                     local dest_take = reaper.GetActiveTake(SelItem);
                     for i2 = 1, reaper.TakeFX_GetCount(Dimmy_take) do;
-                        
                         ---
                         if openFx == 1 then;
                             if not ChainFx then;
@@ -472,172 +529,166 @@
                     fload_one_Fx = nil;
                 end;
             end;
-        else;
-            for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
-                local SelItem = reaper.GetSelectedMediaItem(0,i);
-                local dest_take = reaper.GetActiveTake(SelItem);
-                for i2 = 1, reaper.TakeFX_GetCount(Dimmy_take) do;
-                    ---
-                    if openFx == 1 then;
-                        if not ChainFx then;
-                           ChainFx = reaper.TakeFX_GetCount(dest_take);
-                           reaper.TakeFX_Show(dest_take,ChainFx,0);
-                        end;
-                    end;
-                    ----
-                    reaper.TakeFX_CopyToTake(Dimmy_take,i2-1,dest_take,reaper.TakeFX_GetCount(dest_take),0);
-                    ---
-                    if openFx == 2 then;
-                        if not fload_one_Fx then;
-                            reaper.TakeFX_Show(dest_take,reaper.TakeFX_GetCount(dest_take)-1,3);
-                            fload_one_Fx = true;
-                        end;
-                    end;
-                    
-                    if openFx == 3 then;
-                        reaper.TakeFX_Show(dest_take, reaper.TakeFX_GetCount(dest_take)-1,3);
-                    end; 
-                    ----
-                end;
-                if openFx == 1 then;
-                    reaper.TakeFX_Show(dest_take,ChainFx,1);
-                    ChainFx = nil;
-                end;
-                ChainFx = nil;
-                fload_one_Fx = nil;
-            end;
-        end;
-        --<<-#3-----------------------
-        
-         
-        -->=-#2----------------------
-        Arc.DeleteMediaItem(DimmyIt);
-        --<<-#2----------------------
-        --]]
-        ------------------------------------------------------------------
-        ---COPY-----------------------------------------------------------------
-        --------------------------------------------------------------------------------
-        
-        
-        
-        
-        ------------------------------------------------------------
-        ---CHUNK---v.1.02--------------------------------------
-        -------------------------------------------------- 
-        local function AddFxChainToItemInActiveTake(Item,textChain);
+            --<<-#3-----------------------
             
-            local GUIDTake, varX, TakeChunk, str2, lock_1
-            local str = ({reaper.GetItemStateChunk(Item,"",false)})[2];
-            ----------------------------
-            for var in string.gmatch(str.."\n\n\n\n", ".-\n") do;
-                if var == "TAKE\n" or  var == "TAKE SEL\n" then;
-                    if var == "TAKE SEL\n" then TakeChunk = true end;
-                    var = "\n\n\n\n"..var;
-                end;
-                str2 = (str2 or "")..var;
-            end;
-            str = str2;
-            str2 = nil;
-            -----------
+             
+            -->=-#2----------------------
+            Arc.DeleteMediaItem(DimmyIt);
+            --<<-#2----------------------
+            --]]
+            ------------------------------------------------------------------
+            ---COPY-----------------------------------------------------------------
+            --------------------------------------------------------------------------------
             
-            local
-            CountFXTake = reaper.TakeFX_GetCount(reaper.GetActiveTake(Item));
             
-            for var in string.gmatch(str, ".-\n\n\n") do;
+            
+            
+            ------------------------------------------------------------
+            ---CHUNK---v.1.02--------------------------------------
+            -------------------------------------------------- 
+            local function AddFxChainToItemInActiveTake(Item,textChain);
                 
-                if TakeChunk then;
-                    local Take_Sel = string.match(var, "TAKE SEL\n");
-                    if Take_Sel then;
-                        ----
-                        local Take_Fx  = string.match(var, "TAKEFX\n");
-                        if Take_Fx then;
-                            for var2 in string.gmatch(var,".-\n") do;
-                                if var2 == "<TAKEFX\n" then S=1 end;
-                                if S and S > 0 and var2 ~= "<TAKEFX\n" then;
-                                    if string.sub(var2,0,1) == "<" then S=S+1 end;
-                                    if string.sub(var2,0,1) == ">" then S=S-1 end;
-                                    if S == 0 then;
-                                        var2 = textChain.."\n"..var2;
-                                        S=nil;
-                                    end;
-                                end;
-                                varX = (varX or "")..var2;
-                            end;
-                            varX = string.gsub(varX,"LASTSEL %d","LASTSEL "..CountFXTake);
-                            GUIDTake = string.match(varX, "\nGUID ({.-})");
-                        else;
-                            for var2 in string.gmatch(var,".-\n") do;
-                                if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
-                                if S and S == 1 then;
-                                    if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
-                                        S=nil;
-                                    end;
-                                end;
-                                varX = (varX or "")..var2;
-                            end;
-                            varX = string.gsub(varX,"LASTSEL %d","LASTSEL 0");
-                            GUIDTake = string.match(varX,"\nGUID ({.-})");
-                        end; 
-                        ----
+                local GUIDTake, varX, TakeChunk, str2, lock_1
+                local str = ({reaper.GetItemStateChunk(Item,"",false)})[2];
+                ----------------------------
+                for var in string.gmatch(str.."\n\n\n\n", ".-\n") do;
+                    if var == "TAKE\n" or  var == "TAKE SEL\n" then;
+                        if var == "TAKE SEL\n" then TakeChunk = true end;
+                        var = "\n\n\n\n"..var;
                     end;
-                else;
-                    ---------
-                    if not lock_1 then;
-                        local Take_Fx  = string.match(var, "TAKEFX\n");
-                        if Take_Fx then;
+                    str2 = (str2 or "")..var;
+                end;
+                str = str2;
+                str2 = nil;
+                -----------
+                
+                local
+                CountFXTake = reaper.TakeFX_GetCount(reaper.GetActiveTake(Item));
+                
+                for var in string.gmatch(str, ".-\n\n\n") do;
+                    
+                    if TakeChunk then;
+                        local Take_Sel = string.match(var, "TAKE SEL\n");
+                        if Take_Sel then;
                             ----
-                            for var2 in string.gmatch(var,".-\n") do;
-                                if var2 == "<TAKEFX\n" then S=1 end;
-                                if S and S > 0 and var2 ~= "<TAKEFX\n" then;
-                                    if string.sub(var2,0,1) == "<" then S=S+1 end;
-                                    if string.sub(var2,0,1) == ">" then S=S-1 end;
-                                    if S == 0 then;
-                                        var2 = textChain.."\n"..var2;
-                                        S=nil;
+                            local Take_Fx  = string.match(var, "TAKEFX\n");
+                            if Take_Fx then;
+                                for var2 in string.gmatch(var,".-\n") do;
+                                    if var2 == "<TAKEFX\n" then S=1 end;
+                                    if S and S > 0 and var2 ~= "<TAKEFX\n" then;
+                                        if string.sub(var2,0,1) == "<" then S=S+1 end;
+                                        if string.sub(var2,0,1) == ">" then S=S-1 end;
+                                        if S == 0 then;
+                                            var2 = textChain.."\n"..var2;
+                                            S=nil;
+                                        end;
                                     end;
+                                    varX = (varX or "")..var2;
                                 end;
-                                varX = (varX or "")..var2;
+                                varX = string.gsub(varX,"LASTSEL %d","LASTSEL "..CountFXTake);
+                                GUIDTake = string.match(varX, "\nGUID ({.-})");
+                            else;
+                                for var2 in string.gmatch(var,".-\n") do;
+                                    if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    if S and S == 1 then;
+                                        if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
+                                            S=nil;
+                                        end;
+                                    end;
+                                    varX = (varX or "")..var2;
+                                end;
+                                varX = string.gsub(varX,"LASTSEL %d","LASTSEL 0");
+                                GUIDTake = string.match(varX,"\nGUID ({.-})");
+                            end; 
+                            ----
+                        end;
+                    else;
+                        ---------
+                        if not lock_1 then;
+                            local Take_Fx  = string.match(var, "TAKEFX\n");
+                            if Take_Fx then;
+                                ----
+                                for var2 in string.gmatch(var,".-\n") do;
+                                    if var2 == "<TAKEFX\n" then S=1 end;
+                                    if S and S > 0 and var2 ~= "<TAKEFX\n" then;
+                                        if string.sub(var2,0,1) == "<" then S=S+1 end;
+                                        if string.sub(var2,0,1) == ">" then S=S-1 end;
+                                        if S == 0 then;
+                                            var2 = textChain.."\n"..var2;
+                                            S=nil;
+                                        end;
+                                    end;
+                                    varX = (varX or "")..var2;
+                                end;
+                                ----
+                                varX = string.gsub(varX,"LASTSEL %d","LASTSEL "..CountFXTake);
+                                GUIDTake = string.match(varX,"\nGUID ({.-})");
+                            else
+                                for var2 in string.gmatch(var,".-\n") do;
+                                    if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    if S and S == 1 then;
+                                        if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
+                                            S=nil;
+                                        end;
+                                    end;
+                                    varX = (varX or "")..var2;
+                                end;
+                                varX = string.gsub(varX,"LASTSEL %d","LASTSEL 0");
+                                GUIDTake = string.match(varX,"\nGUID ({.-})");
                             end;
                             ----
-                            varX = string.gsub(varX,"LASTSEL %d","LASTSEL "..CountFXTake);
-                            GUIDTake = string.match(varX,"\nGUID ({.-})");
-                        else
-                            for var2 in string.gmatch(var,".-\n") do;
-                                if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
-                                if S and S == 1 then;
-                                    if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
-                                        S=nil;
-                                    end;
+                            lock_1 = true;
+                        end;
+                    end;
+                    ----
+                    if varX then var = varX; varX = nil; end;
+                    str2 = (str2 or "").. var;
+                end;
+                str2 = string.gsub(str2,"\n\n\n\n","\n"):gsub("\n\n","\n"); 
+                --reaper.ShowConsoleMsg(str2)-------------
+                reaper.SetItemStateChunk(Item,str2,false);
+                return GUIDTake, CountFXTake;
+            end;
+            ---------------------------------
+            ---------------------------------
+            
+            
+            --local ChainFx,fload_one_Fx;
+            if Start ~= End then;-->-1.1.0
+                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
+                    local SelItem = reaper.GetSelectedMediaItem(0,i);
+                    local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                    local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
+                    if PosIt >= Start and EndIt <= End then;
+                        -------
+                        local
+                        GuidTake,numbFxPre = AddFxChainToItemInActiveTake(SelItem,textChain);
+                        -------
+                        local take = reaper.GetMediaItemTakeByGUID(0,GuidTake);
+                        if take then;
+                            if openFx == 1 then;
+                                reaper.TakeFX_Show(take, numbFxPre,1);
+                            elseif openFx == 2 then;
+                                reaper.TakeFX_Show(take,numbFxPre,3);
+                            elseif openFx == 3 then;
+                                for i2 = numbFxPre, reaper.TakeFX_GetCount(take)-1 do;
+                                    reaper.TakeFX_Show(take,i2,3);
                                 end;
-                                varX = (varX or "")..var2;
+                            --[[  Обновить список Fx / Update Fx list;
+                            elseif openFx == 0 then;
+                                local ChainVisible = reaper.TakeFX_GetChainVisible(take);
+                                if ChainVisible >= 0 or ChainVisible == -2 then;
+                                    reaper.TakeFX_Show(take,numbFxPre,1);
+                                end;
+                            --]]
                             end;
-                            varX = string.gsub(varX,"LASTSEL %d","LASTSEL 0");
-                            GUIDTake = string.match(varX,"\nGUID ({.-})");
                         end;
                         ----
-                        lock_1 = true;
                     end;
                 end;
-                ----
-                if varX then var = varX; varX = nil; end;
-                str2 = (str2 or "").. var;
-            end;
-            str2 = string.gsub(str2,"\n\n\n\n","\n"):gsub("\n\n","\n"); 
-            --reaper.ShowConsoleMsg(str2)-------------
-            reaper.SetItemStateChunk(Item,str2,false);
-            return GUIDTake, CountFXTake;
-        end;
-        ---------------------------------
-        ---------------------------------
-        
-        
-        --local ChainFx,fload_one_Fx;
-        if Start ~= End then;-->-1.1.0
-            for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
-                local SelItem = reaper.GetSelectedMediaItem(0,i);
-                local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
-                if PosIt >= Start and EndIt <= End then;
+            else;
+                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
+                    local SelItem = reaper.GetSelectedMediaItem(0,i);
                     -------
                     local
                     GuidTake,numbFxPre = AddFxChainToItemInActiveTake(SelItem,textChain);
@@ -652,7 +703,7 @@
                             for i2 = numbFxPre, reaper.TakeFX_GetCount(take)-1 do;
                                 reaper.TakeFX_Show(take,i2,3);
                             end;
-                        --[[
+                        --[[    Обновить список Fx / Update Fx list;
                         elseif openFx == 0 then;
                             local ChainVisible = reaper.TakeFX_GetChainVisible(take);
                             if ChainVisible >= 0 or ChainVisible == -2 then;
@@ -663,110 +714,81 @@
                     end;
                     ----
                 end;
-            end;
-        else;
-            for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;
-                local SelItem = reaper.GetSelectedMediaItem(0,i);
-                -------
-                local
-                GuidTake,numbFxPre = AddFxChainToItemInActiveTake(SelItem,textChain);
-                -------
-                local take = reaper.GetMediaItemTakeByGUID(0,GuidTake);
-                if take then;
-                    if openFx == 1 then;
-                        reaper.TakeFX_Show(take, numbFxPre,1);
-                    elseif openFx == 2 then;
-                        reaper.TakeFX_Show(take,numbFxPre,3);
-                    elseif openFx == 3 then;
-                        for i2 = numbFxPre, reaper.TakeFX_GetCount(take)-1 do;
-                            reaper.TakeFX_Show(take,i2,3);
+            end;      
+            ------------------------------------------------
+            --CHUNK-----------------------------------------------       
+            ------------------------------------------------------------ 
+            
+            
+            
+            
+            -->>-#4----------------
+            if Selection == 0 then;
+                if Start ~= End then;
+                    for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-2.1
+                        local SelItem = reaper.GetSelectedMediaItem(0,i);
+                        local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                        local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
+                        if PosIt >= End or EndIt <= Start then;
+                           Arc.SetMediaItemInfo_Value(SelItem,"B_UISEL",0);
                         end;
-                    --[[
-                    elseif openFx == 0 then;
-                        local ChainVisible = reaper.TakeFX_GetChainVisible(take);
-                        if ChainVisible >= 0 or ChainVisible == -2 then;
-                            reaper.TakeFX_Show(take,numbFxPre,1);
-                        end;
-                    --]]
-                    end;
+                    end;--<-2.1  
                 end;
-                ----
+            elseif Selection == 1 then;--<->-2
+                reaper.SelectAllMediaItems(0,0);
             end;
-        end;      
-        ------------------------------------------------
-        --CHUNK-----------------------------------------------       
-        ------------------------------------------------------------ 
-        
-        
-        
-        
-        -->>-#4----------------
-        if Selection == 0 then;
-            if Start ~= End then;
-                for i = reaper.CountSelectedMediaItems(0)-1,0,-1 do;-->-2.1
-                    local SelItem = reaper.GetSelectedMediaItem(0,i);
-                    local PosIt = Arc.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                    local EndIt = Arc.GetMediaItemInfo_Value(SelItem,"D_END");
-                    if PosIt >= End or EndIt <= Start then;
-                       Arc.SetMediaItemInfo_Value(SelItem,"B_UISEL",0);
-                    end;
-                end;--<-2.1  
+            --<<-#4----------------
+            
+            
+            
+            -->=--#5---/ TimeSel /-----
+            if TimeSelection == 0 then;
+                reaper.GetSet_LoopTimeRange(1,0,Start, Start,0);
+            else;   
+                if Start1 and End1 then;
+                    reaper.GetSet_LoopTimeRange(1,0,Start1, End1,0);
+                end;
             end;
-        elseif Selection == 1 then;--<->-2
-            reaper.SelectAllMediaItems(0,0);
+            --<<--#5---/ TimeSel /-----
+            
+            
+            
+            reaper.Undo_EndBlock(ScripnNameX,-1);
+            reaper.PreventUIRefresh(-1);
+            reaper.UpdateArrange();
         end;
-        --<<-#4----------------
         
+        ::NoChain::;
         
-        
-        -->=--#5---/ TimeSel /-----
-        if TimeSelection == 0 then;
-            reaper.GetSet_LoopTimeRange(1,0,Start, Start,0);
-        else;   
-            if Start1 and End1 then;
-                reaper.GetSet_LoopTimeRange(1,0,Start1, End1,0);
-            end;
-        end;
-        --<<--#5---/ TimeSel /-----
-        
-        
-        
-        reaper.Undo_EndBlock(ScripnNameX,-1);
-        reaper.PreventUIRefresh(-1);
-        reaper.UpdateArrange();
-    end;
-    
-    ::NoChain::;
-    
-    if not IO then;
-        local
-        MB = reaper.MB(
-        "Rus:\n\n"..
-        " * Не существует цепочки FX с именем - \n"..
-        "    "..Name_FXChainsX.."\n\n"..
-        " * Создайте новый скрипт с помощью\n"..
-        "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
-        "   И существующей цепочки Fx! \n\n\n"..
-        "Eng:\n\n"..
-        " * There is no FX chain with a name - \n"..
-        "    "..Name_FXChainsX.."\n\n"..
-        " * Create a new script using\n"..
-        "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
-        "   And existing Fx chain! \n\n"..
-        "-----------------\n\n"..
-        " * УДАЛИТЬ ДАННЫЙ СКРИПТ ? - OK\n\n"..
-        " * REMOVE THIS SCRIPT ? - OK\n",
-        ScripnNameX,1);
-        
-        if MB == 1 then;
+        if not IO then;
             local
-            filename = ({reaper.get_action_context()})[2];
-            reaper.AddRemoveReaScript(false,0,filename,true);
-            os.remove(filename);
+            MB = reaper.MB(
+            "Rus:\n\n"..
+            " * Не существует цепочки FX с именем - \n"..
+            "    "..Name_FXChainsX.."\n\n"..
+            " * Создайте новый скрипт с помощью\n"..
+            "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
+            "   И существующей цепочки Fx! \n\n\n"..
+            "Eng:\n\n"..
+            " * There is no FX chain with a name - \n"..
+            "    "..Name_FXChainsX.."\n\n"..
+            " * Create a new script using\n"..
+            "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
+            "   And existing Fx chain! \n\n"..
+            "-----------------\n\n"..
+            " * УДАЛИТЬ ДАННЫЙ СКРИПТ ? - OK\n\n"..
+            " * REMOVE THIS SCRIPT ? - OK\n",
+            ScripnNameX,1);
+            
+            if MB == 1 then;
+                local
+                filename = ({reaper.get_action_context()})[2];
+                reaper.AddRemoveReaScript(false,0,filename,true);
+                os.remove(filename);
+            end;
+            Arc.no_undo() return;
         end;
-        Arc.no_undo() return;
-    end;
-    ---
+        ---
     --<<New Script<<
     end;
     ---- 
@@ -799,12 +821,12 @@
             
             
             
-        local write1 = string.match (var,"local function S%(x%)");
+        local write1 = string.match (var,"local function S%(x%)");----str 62
         if write1 then write = true end;
         
         local write2 = string.match (var,"-->>New Script>>");
         if write2 then write = false;
-            shift = true
+            shift = true;
             
             var = var:gsub("-->>New Script>>", S(4).."local Name_FXChains = '"..Name_FXChains.."';\n"..
                                                S(4).."local Name_FXChainsX = '"..Name_FXChainsX.."';\n"..
@@ -815,7 +837,8 @@
                                                S(4).."local fade_all_active = "..fade_all_active..";\n"..
                                                S(4).."local fade_in = "..(fade_in or 0)..";\n"..
                                                S(4).."local fade_out = "..(fade_out or 0)..";\n"..
-                                               S(4).."local shape_Fade = "..(shape_Fade or -1)..";\n\n\n",1);
+                                               S(4).."local shape_Fade_in = "..(shape_Fade_in or -1)..";\n"..
+                                               S(4).."local shape_Fade_out = "..(shape_Fade_out or -1)..";\n\n\n",1);
         end;
         
         if shift then;
