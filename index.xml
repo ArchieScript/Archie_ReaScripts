@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a21ab9f937f8986141ff049afad154711dca78c5" name="Archie-ReaScripts">
+<index version="1" commit="9e3a2a7f6b597934acc31d00aef78deafc28069f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1953,6 +1953,17 @@
 +! Исправлено неправильное перемещение последующих треков при удалении треков в подпапках / v.1.01/[10.11.18]
 + initialе / v.1.0  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Delete%20only%20selected%20tracks%20(show%20a%20request%20to%20delete%20child%20tracks).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Delete tracks with no items(`).lua" type="script" desc="Delete tracks with no items">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-03-30T09:25:30Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [30032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e3a2a7f6b597934acc31d00aef78deafc28069f/MAIN/Track/Archie_Track;%20%20Delete%20tracks%20with%20no%20items(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Make folder from selected tracks(`).lua" type="script" desc="Make folder from selected tracks">
