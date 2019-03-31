@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Add Fx by Name in selected tracks (a description of settings inside script)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Add Fx by Name in selected track(s)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Добавить Fx по имени в выбранные трек(и)
@@ -12,7 +12,10 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Maestro Sound(Rmm/forum)
-   * Changelog:   +  Fixed paths for Mac/ v.1.03 [29.01.19] 
+   * Changelog:   
+   *              +  Add Fx to Master Track / v.1.04 [30.03.19]
+   
+   *              +  Fixed paths for Mac / v.1.03 [29.01.19] 
    *              +  Исправлены пути для Mac / v.1.03 [29.01.19] 
    *              +! Fixed incomplete closing of previous fx / v.1.01[23112018]
    *              +! Исправлена неполное закрытие предыдущих fx / v.1.01[23112018]
@@ -158,9 +161,19 @@
                           -- does not work correctly if the closing panel 
                           --              double tools open at the top
                           --------------------------------------------
-
-
-
+    
+    
+    
+    local Master_Track = 0
+                    -- = 0 Не добавлять Fx на мастер трек
+                    -- = 1 Добавить Fx на мастер трек
+                           --------------------------
+                    -- = 0 Do not add Fx to the master track
+                    -- = 1 Add Fx to Master Track
+                    -----------------------------
+    
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -175,30 +188,50 @@
     'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
     if not Arc.VersionArc_Function_lua("2.2.2",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
     --==================================▲=▲=▲=================================================================================================================
+    
+    
+    
+    local CountSelTr;
+    if Master_Track == 1 then;
+        CountSelTr = reaper.CountSelectedTracks2(0,true);
+    else;
+        CountSelTr = reaper.CountSelectedTracks(0);
+    end;   
+    if CountSelTr == 0 then Arc.no_undo() return end;
+    
 
 
+    NameFX = NameFX:gsub(".+:%s+","");
+    AdditionalFxName = AdditionalFxName:gsub(".+:%s+","");
+    local ChainFloat, StopAction, IDX, pos;
 
 
-    local CountSelTr = reaper.CountSelectedTracks(0)
-    if CountSelTr == 0 then Arc.no_undo() return end
+    reaper.PreventUIRefresh(1);
+    reaper.Undo_BeginBlock();
 
 
-    NameFX = NameFX:gsub(".+:%s+","") 
-    AdditionalFxName = AdditionalFxName:gsub(".+:%s+","") 
-    local ChainFloat, StopAction, IDX, pos
-
-
-    reaper.PreventUIRefresh(1)
-    reaper.Undo_BeginBlock()
-
-
-    if CloseAllPreviousFx >= 0 and CloseAllPreviousFx <= 2 then
-        if CloseAllPreviousFx == 0 then chain = true float = false end
-        if CloseAllPreviousFx == 1 then float = true chain = false end
-        if CloseAllPreviousFx == 2 then float = true chain = true  end
-        Arc.CloseAllFxInAllTracks(chain, float) 
+    if CloseAllPreviousFx >= 0 and CloseAllPreviousFx <= 2 then;
+        if CloseAllPreviousFx == 0 then chain = true float = false end;
+        if CloseAllPreviousFx == 1 then float = true chain = false end;
+        if CloseAllPreviousFx == 2 then float = true chain = true  end;
+        Arc.CloseAllFxInAllTracks(chain, float);
         Arc.CloseAllFxInAllItemsAndAllTake(chain, float);
-    end
+        ---
+        if Master_Track == 1 then;
+            local Master_tr = reaper.GetMasterTrack(0);
+            local CountFx = reaper.TrackFX_GetCount(Master_tr);
+            for i = 1, CountFx do;
+                if CloseAllPreviousFx == 0 then;
+                    reaper.TrackFX_Show(Master_tr,i-1,0);
+                elseif CloseAllPreviousFx == 1 then;
+                    reaper.TrackFX_Show(Master_tr,i-1,2);
+                elseif CloseAllPreviousFx == 2 then;
+                    reaper.TrackFX_SetOpen(Master_tr,i-1,0);
+                end;
+            end;
+        end;
+        ---
+    end;
 
 
     if CloseToolbarNumber >= 0 and CloseToolbarNumber <= 16 then
@@ -206,111 +239,125 @@
     end
 
 
-    for j = 1,CountSelTr do
-        local SelTrack = reaper.GetSelectedTrack(0,j-1)
+    for j = 0,reaper.CountSelectedTracks(0) do
+        
+        local SelTrack;
+        if j == 0 then;
+            if Master_Track == 1 then;
+                local Master_tr = reaper.GetMasterTrack(0);
+                local Sel = reaper.IsTrackSelected(Master_tr);
+                if Sel then SelTrack = Master_tr end;
+            end;
+        else;
+            SelTrack = reaper.GetSelectedTrack(0,j-1);
+        end;
+        
+        if SelTrack then;
         ----
-
-        ----/ Insert Fx /----
-        if PlaceFxOn == 0 then 
-            IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
-            local CountFx = reaper.TrackFX_GetCount(SelTrack)
-            reaper.TrackFX_SetPreset(SelTrack,CountFx-1,NamePreset)
-
-        elseif PlaceFxOn == 1 then
-
-            IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
-            local CountFx = reaper.TrackFX_GetCount(SelTrack)
-            for i = CountFx-1,0,-1 do
-                reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,-1)
-            end
-            reaper.TrackFX_SetPreset(SelTrack,0,NamePreset)
-
-        elseif PlaceFxOn == 2 then
-
-            local CountFx = reaper.TrackFX_GetCount(SelTrack)
-            for i = CountFx-1,0,-1 do
-                reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,0)
-            end
-            IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
-            reaper.TrackFX_SetPreset(SelTrack,0,NamePreset)
-        end------------------------------------------------
-        ---------------------------------------------------
-
-
-
-        ----------/ Rename track /-----------
-        if TrackName and TrackName ~= "" then
-            reaper.GetSetMediaTrackInfo_String(SelTrack,"P_NAME",TrackName,1)
-        end------------------------------------------------------------------
-        ---------------------------------------------------------------------
-
-
-
-        ---------/ Open Fx /------------
-        if OpenFx >= 0 and IDX >= 0 then --(IDX ► Insert Fx)
-            if OpenFx == 0 then ChainFloat = 1 else ChainFloat = 3 end
-            local idx
-            if PlaceFxOn == 0 then
-                idx = reaper.TrackFX_GetCount(SelTrack)-1
-            else
-                idx = 0
-            end
-            reaper.TrackFX_Show(SelTrack,idx, ChainFloat) 
-        end----------------------------------------------
-        -------------------------------------------------
-
-
-
-        -------------/ Record Arm /-----------------------------
-        if RecordArm == 0 then
-            reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECARM",0)
-        elseif RecordArm == 1 then
-            reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECARM",1)
-        elseif RecordArm > 1 then 
-            if not StopAction then
-                Arc.Action(40737)
-                StopAction = "Action"
-            end
-        end----------------------------
-        ---------------------------------
-
-
-
-        -------------/ Record Monitoring /----------------------
-        if RecordMonitoring == 0 then
-            reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",0)
-        elseif RecordMonitoring == 1 then
-            reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",1)
-        elseif RecordMonitoring == 2 then
-            reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",2)
-        end------------------------------------------------------
-        ---------------------------------------------------------
-
-
-
-        --------/ AdditionalFx /--------
-        if tostring(AdditionalFxName)then
-            if #AdditionalFxName > 3 then
-                if IDX >= 0 then pos = 2 else pos = 1 end --(IDX ► Insert Fx)
-                local Idx = reaper.TrackFX_AddByName(SelTrack,AdditionalFxName,false,-1)
-                reaper.TrackFX_SetPreset(SelTrack,Idx,AdditionalNamePreset)
-                if Idx >= 0 then
-                    if PlaceFxOn == 1 then
-                        for i = Idx,pos,-1 do
-                           reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,-1)
-                           Idx = i - 1
-                        end
-                    end
-                    if AdditionalFxOpen >= 0 then
-                        if AdditionalFxOpen == 0 then ChainFloat = 1 else ChainFloat = 3 end
-                        reaper.TrackFX_Show(SelTrack,Idx,ChainFloat) 
-                    end
+            
+            ----/ Insert Fx /----
+            if PlaceFxOn == 0 then 
+                IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
+                local CountFx = reaper.TrackFX_GetCount(SelTrack)
+                reaper.TrackFX_SetPreset(SelTrack,CountFx-1,NamePreset)
+                
+            elseif PlaceFxOn == 1 then
+                
+                IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
+                local CountFx = reaper.TrackFX_GetCount(SelTrack)
+                for i = CountFx-1,0,-1 do
+                    reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,-1)
                 end
-            end
-        end-------------------------------------------------------
-        --------------------------------------------------------
-    end
+                reaper.TrackFX_SetPreset(SelTrack,0,NamePreset)
+                
+            elseif PlaceFxOn == 2 then
+                
+                local CountFx = reaper.TrackFX_GetCount(SelTrack)
+                for i = CountFx-1,0,-1 do
+                    reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,0)
+                end
+                IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
+                reaper.TrackFX_SetPreset(SelTrack,0,NamePreset)
+            end------------------------------------------------
+            ---------------------------------------------------
+            
+            
+            
+            ----------/ Rename track /-----------
+            if TrackName and TrackName ~= "" then
+                reaper.GetSetMediaTrackInfo_String(SelTrack,"P_NAME",TrackName,1)
+            end------------------------------------------------------------------
+            ---------------------------------------------------------------------
+            
+            
+            
+            ---------/ Open Fx /------------
+            if OpenFx >= 0 and IDX >= 0 then --(IDX ► Insert Fx)
+                if OpenFx == 0 then ChainFloat = 1 else ChainFloat = 3 end
+                local idx
+                if PlaceFxOn == 0 then
+                    idx = reaper.TrackFX_GetCount(SelTrack)-1
+                else
+                    idx = 0
+                end
+                reaper.TrackFX_Show(SelTrack,idx, ChainFloat) 
+            end----------------------------------------------
+            -------------------------------------------------
+            
+            
+             
+            -------------/ Record Arm /-----------------------------
+            if RecordArm == 0 then
+                reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECARM",0)
+            elseif RecordArm == 1 then
+                reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECARM",1)
+            elseif RecordArm > 1 then 
+                if not StopAction then
+                    Arc.Action(40737)
+                    StopAction = "Action"
+                end
+            end----------------------------
+            ---------------------------------
+            
+            
+             
+            -------------/ Record Monitoring /----------------------
+            if RecordMonitoring == 0 then
+                reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",0)
+            elseif RecordMonitoring == 1 then
+                reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",1)
+            elseif RecordMonitoring == 2 then
+                reaper.SetMediaTrackInfo_Value(SelTrack,"I_RECMON",2)
+            end------------------------------------------------------
+            ---------------------------------------------------------
+            
+            
+            
+             
+            --------/ AdditionalFx /--------
+            if tostring(AdditionalFxName)then
+                if #AdditionalFxName > 3 then
+                    if IDX >= 0 then pos = 2 else pos = 1 end --(IDX ► Insert Fx)
+                    local Idx = reaper.TrackFX_AddByName(SelTrack,AdditionalFxName,false,-1)
+                    reaper.TrackFX_SetPreset(SelTrack,Idx,AdditionalNamePreset)
+                    if Idx >= 0 then
+                        if PlaceFxOn == 1 then
+                            for i = Idx,pos,-1 do
+                               reaper.SNM_MoveOrRemoveTrackFX(SelTrack,i,-1)
+                               Idx = i - 1
+                            end
+                        end
+                        if AdditionalFxOpen >= 0 then
+                            if AdditionalFxOpen == 0 then ChainFloat = 1 else ChainFloat = 3 end
+                            reaper.TrackFX_Show(SelTrack,Idx,ChainFloat) 
+                        end;
+                    end;
+                end;
+            end;----------------------------------------------------
+            --------------------------------------------------------
+        end;
+    end;
 
 
-    reaper.Undo_EndBlock("Add Fx by Name".." / "..NameFX.." / "..AdditionalFxName,-1)
-    reaper.PreventUIRefresh(-1)
+    reaper.Undo_EndBlock("Add Fx by Name".." / "..NameFX.." / "..AdditionalFxName,-1);
+    reaper.PreventUIRefresh(-1);
