@@ -1,6 +1,6 @@
 --[[
    * Description: Add Repository Archie-ReaScripts
-   * Version:     1.0
+   * Version:     1.01
    * Author:      Archie
    * О скрипте:   Добавить репозиторий Archie-ReaScripts
    * Donation:    http://money.yandex.ru/to/410018003906628
