@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="70dce61922f2ce3cd7b0499a1058839b6fbc2dc9" name="Archie-ReaScripts">
+<index version="1" commit="461abd46d536f9f227074a642ab2964aef325aee" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -254,6 +254,10 @@
 +  initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2019-03-31T14:26:31Z">
+        <changelog><![CDATA[+  Add Fx to Master Track / v.1.04 [30.03.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_FX;  Close all VSTi in Selected tracks.lua" type="script" desc="Close all VSTi in Selected tracks">
       <metadata>
@@ -345,6 +349,16 @@
         <changelog><![CDATA[+ Added ability to open Fx on master track v.1.01 [270219]
 + добавлена возможность открытия Fx на мастер-треке v.1.01 [270219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a88d37972d7153f334da5b97608c26f858c84bb0/MAIN/FX/Archie_FX;%20%20Show%20all%20active%20floating%20FX%20windows%20for%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua" type="script" desc="Smart template - Add Fx by name to selected tracks + Master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-03-31T14:26:31Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [31032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20by%20name%20to%20selected%20tracks%20+%20Master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua" type="script" desc="Smart template - Add Fx chain by name for selected items or in time selection">
