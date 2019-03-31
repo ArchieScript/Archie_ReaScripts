@@ -4,6 +4,8 @@
    * Author:      Archie
    * О скрипте:   Добавить репозиторий Archie-ReaScripts
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * Provides:
+   *              [nomain] .
    * Changelog:   +  initialе / v.1.0 [150319] 
 --]]
     
