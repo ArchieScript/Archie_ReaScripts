@@ -1,10 +1,10 @@
 --[[
    * Category:    Track
-   * Description: Volume down on selected tracks -150db
+   * Description: Volume down on all tracks (-inf)
    * Author:      Archie
    * Version:     1.0
-   * AboutScript: Volume down on selected tracks -150db
-   * О скрипте:   Уменьшение громкости на выбранных треках -150 дБ
+   * AboutScript: Volume down on all tracks (-inf)
+   * О скрипте:   Уменьшение громкости на всех треках (-inf)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -49,17 +49,17 @@
     
     
     
-    local CountSelTrack = reaper.CountSelectedTracks(0);
-    if CountSelTrack == 0 then no_undo() return end;
+    local CountTrack = reaper.CountTracks(0);
+    if CountTrack == 0 then no_undo() return end;
     
     
     reaper.Undo_BeginBlock();
     
-    for i = 1, CountSelTrack do;
-	   local SelTrack = reaper.GetSelectedTrack(0, i-1);
-	   reaper.SetMediaTrackInfo_Value(SelTrack,"D_VOL",0);
+    for i = 1, CountTrack do;
+	   local Track = reaper.GetTrack(0, i-1);
+	   reaper.SetMediaTrackInfo_Value(Track,"D_VOL",0);
     end;
     
-    reaper.Undo_EndBlock("Volume down on selected tracks -150db",-1);
+    reaper.Undo_EndBlock("Volume down on all tracks (-inf)",-1);
     
     reaper.UpdateArrange();
