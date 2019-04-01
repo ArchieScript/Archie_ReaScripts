@@ -1,10 +1,10 @@
 --[[
    * Category:    Edit cursor
-   * Description: Move edit cursor to first selected item in time
+   * Description: Move edit cursor to start of first selected item in time
    * Author:      Archie
    * Version:     1.0
-   * AboutScript: Move the edit cursor to the first selected item in time
-   * О скрипте:   Переместите курсор редактирования к первому выбранному элементу по времени
+   * AboutScript: Move edit cursor to start of first selected item in time
+   * О скрипте:    Переместите курсор редактирования к началу первого выбранного элемента по времени
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

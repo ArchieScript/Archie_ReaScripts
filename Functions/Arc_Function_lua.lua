@@ -2,30 +2,29 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.3.1
+   * Version:     2.3.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * ----------------------
    
    * Changelog:   
-   *        108   + no_undo();
-   *        108   + Action();
+   *
+   *  REAPER_Lib
+   *      v.108   + no_undo();
+   *      v.108   + Action();
    
-   *        230   + TrackFx_Rename(Track,idx_Fx,Rename);
-   *        229   + RemoveAllSendTr(track,category);
-   *        229   + RemoveAllItemTr_Sel(track,rem_Idx);
+   *      v.230   + TrackFx_Rename(Track,idx_Fx,Rename);
+   *      v.229   + RemoveAllSendTr(track,category);
+   *      v.229   + RemoveAllItemTr_Sel(track,rem_Idx);
    
-   *        227   + SelectAllTracks(numb);
-   *        226   + SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
-   *        226   + RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
+   *      v.227   + SelectAllTracks(numb);
+   *      v.226   + SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
+   *      v.226   + RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);--clean = true или 1 - чтобы зачистить
    *              + js_API = js_ReaScriptAPI(); -- true / false
    *              + SWS = SWS_API(); -- true / false
-   *              + If_Equals(EqualsToThat,...);
    *              + SetCollapseFolderMCP(track,clickable,is_show);
    *              + Path,Name = GetPathAndNameSourceMediaFile_Take(take);
-   *              + ValueFromMaxRepsIn_Table(array, min_max); 
-   *              + randomOfVal(...);
    *              + SetToggleButtonOnOff(numb); 0 or 1
    *              + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
    *              + HelpWindowWhenReRunning(BottonText,but,reset);
@@ -51,9 +50,13 @@
    *              + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=]);--некорректно работает с top
    *              + GetMediaItemInfo_Value(item,parmname);/[D_END] 
    *              + Get_Format_ProjectGrid(divisionIn);
-   *              + invert_number(X);
    *              + CountTrackSelectedMediaItems(track);
    *              + GetTrackSelectedMediaItems(track,idx);
+   *     LUA_Lib  
+   *      v.218   + If_Equals(EqualsToThat,...);
+   *      v.205   + ValueFromMaxRepsIn_Table(array, min_max);
+   *      v.230   + randomOfVal(...);
+   *      v.230   + invert_number(X);
 --=======================================================]]
 
 
@@ -61,7 +64,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.3.1"
+    local VersionMod = "2.3.2"
     --========================
 
 
@@ -110,6 +113,8 @@
     --   ##           #####    ##     ##    #####       ###    ##    #####    ##     ##  ##          --
     --                                                                                               --
     --=================================================================================================
+
+
 
 
 
@@ -371,22 +376,6 @@
 
 
 
-
-    ---218----------- If_Equals(EqualsToThat,...);---------------------------------------
-    function Arc_Module.If_Equals(EqualsToThat,...);
-        for _,v in ipairs {...} do;
-            if v == EqualsToThat then return true end;
-        end;
-        return false;
-    end;
-    -- сократить условие
-    --====End===============End===============End===============End===============End====
-
-
-
-
-
-
     --219---------- SetCollapseFolderMCP(track,clickable,is_show); ----------------------
     function Arc_Module.SetCollapseFolderMCP(track,clickable,is_show);
         if clickable == 0 or clickable == 1 then;
@@ -439,76 +428,6 @@
     -- Если тейк содержит миди, то вернет false
     -- GET THE PATH AND NAME OF THE SOURCE MEDIA FILE FROM THE TAKE
     -- Path,Name = Arc.GetPathAndNameSourceMediaFile_Take(take);
-    --====End===============End===============End===============End===============End====
-
-
-
-
-
-
-    --215---------- ValueFromMaxRepsIn_Table(array, min_max);  --------------------------
-    function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); 
-        if not min_max then min_max = "MAX" end;
-        -- создаем статистику
-        local t = {};
-        for i = 1, #array do;
-            local ti = array[i];
-            if not t[ti] then t[ti] = 0 end;
-            t[ti] = t[ti] + 1;
-        end;
-        -- находим к-во максимальных вхождений
-        local max = 0;
-        local value;
-        for key, val in pairs(t) do;
-            if val > 1 then;
-                if val > max then;
-                    value = key;
-                    max = val;
-                elseif val == max then;
-                    if val > 1 then;
-                        if min_max == "MAX" then;
-                            value = math.max(key ,value);
-                        elseif min_max == "MIN" then;
-                            value = math.min(key ,value);
-                        elseif min_max == "RANDOM" then;
-                            local rand_T = {key,value};
-                            local random = math.random(#rand_T); 
-                            value = rand_T[random];
-                        end;
-                    end;   
-                end;
-            else;
-                if not value then
-                value = false
-                end
-            end;
-        end;
-        return(value);
-    end;
-    -- Вернет значение из максимальных повторений в таблице.
-    -- array = таблица
-    -- min_max = "MIN" , "MAX" , "RANDOM"
-    -- пример:
-    -- t1{1,2,3,4,5,6,7}; вернет false - повторений нет
-    -- t2{1,2,3,3,4,5,6}; вернет 3; min_max необязателен
-    -- t3{1,1,2,2,3,4,5}; вернет 1; если min_max = "MIN", 2 если min_max = "MAX",случайное число 1 или 2 если min_max = "RANDOM"
-    -- t4{1,1,2,2,5,5,5}; вернет 5; min_max необязателен
-    -- t5{1,2,5,5,1,1,5}; вернет 1 или 5 взависимости от min_max (читать t3)
-    --====End===============End===============End===============End===============End====
-
-
-
-
-
-    ------------------------ randomOfVal(...) -------------------------------------------
-    function Arc_Module.randomOfVal(...)
-        local t = {...};
-        local random = math.random(#t); 
-        return t[random]
-    end
-    -- Вернет случайное из значений
-    -- пример: Val = randomOfVal("one","two",1,2)
-    -- Вывод: "one" или "two" или 1 или 2
     --====End===============End===============End===============End===============End====
 
 
@@ -1366,17 +1285,6 @@
 
 
 
-    --------invert_number----------------------------------------------------------------
-    function Arc_Module.invert_number(X)
-        local X = X - X * 2 
-        return X
-    end
-  -- инвертировать число
-    --====End===============End===============End===============End===============End====
-
-
-
-
     ----------------CountTrackSelectedMediaItems-----------------------------------------
     function Arc_Module.CountTrackSelectedMediaItems(track);
         local CountTrItems = reaper.CountTrackMediaItems(track);
@@ -1409,6 +1317,127 @@
     --====End===============End===============End===============End===============End====
 
 
+
+
+
+
+
+
+
+
+
+
+    --===================================================================================
+    --         ##       ##   ##    #####   ##        ##       ##   ##    #####    ##   --
+    --        ##       ##   ##   ######   ##        ##       ##   ##   ######    ##    --
+    --       ##       ##   ##  ##   ##   ##        ##       ##   ##  ##   ##    ##     --
+    --      ##       ##   ##  #######             ##       ##   ##  #######            --
+    --     ######   #######  #######   ##        ######   #######  #######    ##       --
+    --    ########   ####   ##   ##   ##        ########   ####   ##   ##    ##        --
+    --===================================================================================
+
+
+
+
+
+
+
+
+
+    ---218----------- If_Equals(EqualsToThat,...); --------------------------------------
+    function Arc_Module.If_Equals(EqualsToThat,...);
+        for _,v in ipairs {...} do;
+            if v == EqualsToThat then return true end;
+        end;
+        return false;
+    end;
+    -- сократить условие
+    --====End===============End===============End===============End===============End====
+    
+    
+    
+    
+    
+    --215---------- ValueFromMaxRepsIn_Table(array, min_max); ---------------------------
+    function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); 
+        if not min_max then min_max = "MAX" end;
+        -- создаем статистику
+        local t = {};
+        for i = 1, #array do;
+            local ti = array[i];
+            if not t[ti] then t[ti] = 0 end;
+            t[ti] = t[ti] + 1;
+        end;
+        -- находим к-во максимальных вхождений
+        local max = 0;
+        local value;
+        for key, val in pairs(t) do;
+            if val > 1 then;
+                if val > max then;
+                    value = key;
+                    max = val;
+                elseif val == max then;
+                    if val > 1 then;
+                        if min_max == "MAX" then;
+                            value = math.max(key ,value);
+                        elseif min_max == "MIN" then;
+                            value = math.min(key ,value);
+                        elseif min_max == "RANDOM" then;
+                            local rand_T = {key,value};
+                            local random = math.random(#rand_T); 
+                            value = rand_T[random];
+                        end;
+                    end;   
+                end;
+            else;
+                if not value then
+                value = false
+                end
+            end;
+        end;
+        return(value);
+    end;
+    -- Вернет значение из максимальных повторений в таблице.
+    -- array = таблица
+    -- min_max = "MIN" , "MAX" , "RANDOM"
+    -- пример:
+    -- t1{1,2,3,4,5,6,7}; вернет false - повторений нет
+    -- t2{1,2,3,3,4,5,6}; вернет 3; min_max необязателен
+    -- t3{1,1,2,2,3,4,5}; вернет 1; если min_max = "MIN", 2 если min_max = "MAX",случайное число 1 или 2 если min_max = "RANDOM"
+    -- t4{1,1,2,2,5,5,5}; вернет 5; min_max необязателен
+    -- t5{1,2,5,5,1,1,5}; вернет 1 или 5 взависимости от min_max (читать t3)
+    --====End===============End===============End===============End===============End====
+    
+
+
+
+
+    --230------------------- randomOfVal(...) -------------------------------------------
+    function Arc_Module.randomOfVal(...)
+        local t = {...};
+        local random = math.random(#t); 
+        return t[random]
+    end
+    -- Вернет случайное из значений
+    -- пример: Val = randomOfVal("one","two",1,2)
+    -- Вывод: "one" или "two" или 1 или 2
+    --====End===============End===============End===============End===============End====
+    
+    
+    
+    
+    
+      --230------invert_number----------------------------------------------------------------
+      function Arc_Module.invert_number(X)
+          local X = X - X * 2 
+          return X
+      end
+    -- инвертировать число
+      --====End===============End===============End===============End===============End====
+      
+      
+      
+      
 
 
     --===============
