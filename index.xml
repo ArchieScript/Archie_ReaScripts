@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5a63f628a3d74887e3b554a0f34c66fcc9b5846e" name="Archie-ReaScripts">
+<index version="1" commit="34d7333cd70adc1f1b5ba28ce363c173b587bc2b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -165,6 +165,9 @@
       <version name="2.3.1" author="Archie" time="2019-02-26T07:57:08Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ff23e97cf5cbf924008758103974f08f6420d6ef/Functions/Arc_Function_lua.lua</source>
       </version>
+      <version name="2.3.2" author="Archie" time="2019-04-01T19:10:10Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/Functions/Arc_Function_lua.lua</source>
+      </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
       <version name="1.0" time="2019-02-25T19:21:36Z">
@@ -173,46 +176,46 @@
     </reapack>
   </category>
   <category name="MAIN/Edit cursor">
-    <reapack name="Archie_Edit cursor;  Move cursor for n milliseconds.lua" type="script" desc="Move cursor for n milliseconds">
+    <reapack name="Archie_Edit cursor;  Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-03-31T19:05:32Z">
+      <version name="1.0" author="Archie" time="2019-04-01T19:10:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [01042019]]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 100 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 200 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 300 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 400 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 500 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 600 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 700 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 800 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 900 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor left for 1000 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 100 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 200 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 300 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 400 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 500 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 600 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 700 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 800 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 900 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
-        <source main="main" file="Archie_Edit cursor;  Move cursor right for 1000 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds.lua</source>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 100 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 200 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 300 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 400 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 500 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 600 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 700 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 800 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 900 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor left for 1000 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 100 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 200 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 300 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 400 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 500 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 600 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 700 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 800 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 900 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+        <source main="main" file="Archie_Edit cursor;  Move cursor right for 1000 milliseconds.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Edit cursor;  Move edit cursor to first selected item in time.lua" type="script" desc="Move edit cursor to first selected item in time">
+    <reapack name="Archie_Edit cursor;  Move edit cursor to start of first selected item in time.lua" type="script" desc="Move edit cursor to start of first selected item in time">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-03-31T19:05:32Z">
+      <version name="1.0" author="Archie" time="2019-04-01T19:10:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [01042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20first%20selected%20item%20in%20time.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20start%20of%20first%20selected%20item%20in%20time.lua</source>
       </version>
     </reapack>
   </category>
