@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="0d5c8d0e03ecdce6b8cf18030825e20f227fbd95" name="Archie-ReaScripts">
+<index version="1" commit="078a7820ba3dcd3f5c31966230d8e1aac4e572de" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1981,50 +1981,6 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Copy%20selected%20track%20name.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Cycle Volume down on all tracks by 1 db.lua" type="script" desc="Cycle Volume down on all tracks by 1 db">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Cycle%20Volume%20down%20on%20all%20tracks%20by%201%20db.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Cycle Volume down on selected tracks by 1 db.lua" type="script" desc="Cycle Volume down on selected tracks by 1 db">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Cycle%20Volume%20down%20on%20selected%20tracks%20by%201%20db.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Cycle Volume up on all tracks by 1 dB.lua" type="script" desc="Cycle Volume up on all tracks by 1 dB">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Cycle%20Volume%20up%20on%20all%20tracks%20by%201%20dB.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Cycle Volume up on selected tracks by 1 dB.lua" type="script" desc="Cycle Volume up on selected tracks by 1 dB">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Cycle%20Volume%20up%20on%20selected%20tracks%20by%201%20dB.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Track;  Delete all receive in selected tracks.lua" type="script" desc="Delete all receive in selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2407,6 +2363,17 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a63f628a3d74887e3b554a0f34c66fcc9b5846e/MAIN/Track/Archie_Track;%20%20Volume%20down%20on%20all%20tracks%20(-inf).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Volume down on all tracks by 1 db.lua" type="script" desc="Volume down on all tracks by 1 db">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20down%20on%20all%20tracks%20by%201%20db.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Volume down on selected tracks (-inf).lua" type="script" desc="Volume down on selected tracks (-inf)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2416,6 +2383,61 @@
       <version name="1.0" author="Archie" time="2019-04-01T16:40:59Z">
         <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a63f628a3d74887e3b554a0f34c66fcc9b5846e/MAIN/Track/Archie_Track;%20%20Volume%20down%20on%20selected%20tracks%20(-inf).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Volume down on selected tracks by 1 db.lua" type="script" desc="Volume down on selected tracks by 1 db">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20down%20on%20selected%20tracks%20by%201%20db.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Volume reset on all tracks (0 db).lua" type="script" desc="Volume reset on all tracks (0 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20reset%20on%20all%20tracks%20(0%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Volume reset on selected tracks (0 db).lua" type="script" desc="Volume reset on selected tracks (0 db)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20reset%20on%20selected%20tracks%20(0%20db).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Volume up on all tracks by 1 dB.lua" type="script" desc="Volume up on all tracks by 1 dB">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20up%20on%20all%20tracks%20by%201%20dB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Volume up on selected tracks by 1 dB.lua" type="script" desc="Volume up on selected tracks by 1 dB">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-02T06:09:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20up%20on%20selected%20tracks%20by%201%20dB.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart">
