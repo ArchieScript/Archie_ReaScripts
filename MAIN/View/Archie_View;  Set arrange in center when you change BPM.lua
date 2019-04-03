@@ -106,12 +106,12 @@
                "  *  Скрипт устарел, используйте\n"..
                "  *  Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua\n"..
                "  *  Изменений никаких не произошло, только сменилось название\n"..
-               "  *  Данный Скрипт будет удален 31.03.2019\n\n"..
+               "  *  Данный Скрипт будет удален 31.04.2019\n\n"..
                "Eng\n"..
                "  * The script is outdated, use\n" ..
                "  *  Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua\n"..
                "  * No changes have occurred, only the name has changed\n"..
-               "  * This Script will be deleted. 03.31.2019 \n",
+               "  * This Script will be deleted. 04.31.2019 \n",
               "Set arrange in center when you change BPM",0)
     end;
     
