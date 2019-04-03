@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="078a7820ba3dcd3f5c31966230d8e1aac4e572de" name="Archie-ReaScripts">
+<index version="1" commit="7a21a69674c0ce526a60aa8d48b28c006b5c2cbb" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2148,6 +2148,32 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Move%20children%20from%20folder%20and%20place%20them%20above%20folder.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Move selected tracks down by one visible(`).lua" type="script" desc="Move selected tracks down by one visible*">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-03T19:19:36Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [04042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Move selected tracks up by one visible(`).lua" type="script" desc="Move selected tracks up by one visible*">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-03T19:19:36Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [04042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Paste selected track name   .lua" type="script" desc="Paste selected track name">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2491,6 +2517,10 @@
         <changelog><![CDATA[+! Fixed error when moving the last folder / v.1.02]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20%E2%86%91Move%20selected%20tracks%20in%20up%20on%20one(%60).lua</source>
       </version>
+      <version name="1.09" author="Archie" time="2019-04-03T19:19:19Z">
+        <changelog><![CDATA[!!! OUTDATED]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06c76af5a82356203d7d10e328062e6ce9872b49/MAIN/Track/Archie_Track;%20%20%E2%86%91Move%20selected%20tracks%20in%20up%20on%20one(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  ↓Move selected tracks in down on one(`).lua" type="script" desc="Move selected tracks in down on one">
       <metadata>
@@ -2500,6 +2530,10 @@
       <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
         <changelog><![CDATA[Переделан скролл / Redesigned scroll / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20%E2%86%93Move%20selected%20tracks%20in%20down%20on%20one(%60).lua</source>
+      </version>
+      <version name="1.09" author="Archie" time="2019-04-03T19:19:19Z">
+        <changelog><![CDATA[!!! OUTDATED]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06c76af5a82356203d7d10e328062e6ce9872b49/MAIN/Track/Archie_Track;%20%20%E2%86%93Move%20selected%20tracks%20in%20down%20on%20one(%60).lua</source>
       </version>
     </reapack>
   </category>
