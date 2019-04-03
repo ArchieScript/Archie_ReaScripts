@@ -6,11 +6,13 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.09
    * customer:    smrz1 (Rmm/forum)
    * gave idea:   smrz1 (Rmm/forum)
    * ---------:
-   * changelog:   Переделан скролл / Redesigned scroll / v.1.01           
+   * changelog:   !!! OUTDATED 
+   
+                     Переделан скролл / Redesigned scroll / v.1.01           
 --============================================================]]
 
 
@@ -224,7 +226,7 @@
         reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_FOCUS_ARRANGE_WND'),0)
         reaper.Main_OnCommand(reaper.NamedCommandLookup('_BR_FOCUS_TRACKS'),0)
         RestoreSelTracksGuid(sel_tracks1);
-	    if reaper.CountTracks(0) > 30 then;
+      if reaper.CountTracks(0) > 30 then;
             reaper.CSurf_OnScroll(0,1);  
         end;
     end;
@@ -232,3 +234,37 @@
     reaper.Main_OnCommand(40914,0);
     reaper.Undo_EndBlock("Move selected tracks in down on one ",-1);
     reaper.PreventUIRefresh(-1);
+    
+    
+    
+    
+    
+    
+    
+    ExtState = reaper.GetExtState('['..({reaper.get_action_context()})[2]:match(".+[\\/](.+)")..']',"outdated")
+       
+       if ExtState == "" then
+           reaper.MB(
+                  "Rus:\n\n"..
+                  "  *  Скрипт устарел, используйте\n"..
+                  "  *  Archie_Track;  Move selected tracks down by one visible(`).lua \n"..
+                  "  *  Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua\n"..
+                  "  *  Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua\n"..
+                  "  *  Данный Скрипт будет удален 31.04.2019\n\n"..
+                  "Eng\n\n"..
+                  "  * The script is outdated, use\n" ..
+                  "  *  Archie_Track;  Move selected tracks down by one visible(`).lua \n"..
+                  "  *  Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua\n"..
+                  "  *  Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua\n"..
+                  "  * This Script will be deleted. 31.04.2019 \n",
+                 "OUTDATED!",0)
+       end;
+       
+       ValueExt = (tonumber(ExtState)or 0)+1
+       if ValueExt > 3 then ValueExt = "" end
+       
+       reaper.SetExtState( '['..({reaper.get_action_context()})[2]:match(".+[\\/](.+)")..']',"outdated" ,ValueExt,false)
+    
+    
+    
+    
