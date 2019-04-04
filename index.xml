@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="7a21a69674c0ce526a60aa8d48b28c006b5c2cbb" name="Archie-ReaScripts">
+<index version="1" commit="737b46e9a6000afee0117f63158ae535f31be64a" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -231,6 +231,17 @@
         <source main="main" file="Archie_Edit cursor;  Move cursor right for 1000 milliseconds(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/79265fee911817476b95eaee837d09af82b3ba79/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Edit cursor;  Move edit cursor to start of first selected item and next in time(`).lua" type="script" desc="Move edit cursor to start of first selected item and next in time">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-04T17:00:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [04042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/737b46e9a6000afee0117f63158ae535f31be64a/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20start%20of%20first%20selected%20item%20and%20next%20in%20time(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Edit cursor;  Move edit cursor to start of first selected item in time.lua" type="script" desc="Move edit cursor to start of first selected item in time">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -240,6 +251,17 @@
       <version name="1.0" author="Archie" time="2019-04-01T19:10:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [01042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20start%20of%20first%20selected%20item%20in%20time.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Edit cursor;  Move edit cursor to start of nearest selected item and next in time(`).lua" type="script" desc="Move edit cursor to start of nearest selected item and next in time">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-04T17:00:42Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [05042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/737b46e9a6000afee0117f63158ae535f31be64a/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20start%20of%20nearest%20selected%20item%20and%20next%20in%20time(%60).lua</source>
       </version>
     </reapack>
   </category>
@@ -2160,6 +2182,12 @@
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-04-04T17:00:30Z">
+        <changelog><![CDATA[+ indent when scrolling / v.1.01 [05042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Move selected tracks up by one visible(`).lua" type="script" desc="Move selected tracks up by one visible*">
       <metadata>
@@ -2172,6 +2200,12 @@
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a21a69674c0ce526a60aa8d48b28c006b5c2cbb/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-04-04T17:00:30Z">
+        <changelog><![CDATA[+ indent when scrolling / v.1.01 [05042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3600bcc1778fd82dba6c48525c2b7f5c3f6c5f7c/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Paste selected track name   .lua" type="script" desc="Paste selected track name">
@@ -3070,25 +3104,6 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Layout%20Strip%20on%20selected%20tracks%20MCP.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_View;  Set arrange in center when you change BPM.lua" type="script" desc="Set arrange in center when you change BPM">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-03-12T14:23:13Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [12032019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be5edf73466a54a962d051af63b95144ca14dd55/MAIN/View/Archie_View;%20%20Set%20arrange%20in%20center%20when%20you%20change%20BPM.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-03-12T14:26:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [12032019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dcb0864144bc9387c7897da21a9f8e9ae4fe1c73/MAIN/View/Archie_View;%20%20Set%20arrange%20in%20center%20when%20you%20change%20BPM.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-03-14T18:32:10Z">
-        <changelog><![CDATA[+  [outdated] / v.1.02 [15032019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f4e6236e2bbee1f53c0e5201d013c1e8e947b59/MAIN/View/Archie_View;%20%20Set%20arrange%20in%20center%20when%20you%20change%20BPM.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua" type="script" desc="Toggle arrange in center relative to edit cursor when you change BPM">
