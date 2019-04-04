@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -80,7 +80,7 @@
     
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-    Script_Name ="Archie_Track;  Move selected tracks up by one visible(`).lua"
+    
     if not Arc.If_Equals(Script_Name,
                          "Archie_Track;  Move selected tracks up by one visible(`).lua",
                          "Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua",
