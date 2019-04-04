@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -16,6 +16,8 @@
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua
    * Changelog:   
+   *              + indent when scrolling / v.1.01 [05042019]
+   
    *              +  initialе / v.1.0 [04042019]
   
    
@@ -32,7 +34,7 @@
    (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                
    =======================================================================================]]
    
-        
+    
     
     
     --======================================================================================
@@ -48,7 +50,12 @@
             ------------------------------------------------------ 
     
     
- 
+    local indent = 1
+                -- | ОТСТУП ПРИ ПРОКРУТКЕ, В ТРЕКАХ
+                -- | INDENT WHEN SCROLLING, IN TRACKS
+                -------------------------------------
+    
+    
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -68,10 +75,12 @@
     
     if not Arc.SWS_API(true)then Arc.no_undo()return end;
     
+    if not indent or type(indent)~= "number" then indent = 1 end;
+    if indent >= 0 and indent <= 50 then indent = indent else indent = 1 end;
     
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-    
+    Script_Name ="Archie_Track;  Move selected tracks up by one visible(`).lua"
     if not Arc.If_Equals(Script_Name,
                          "Archie_Track;  Move selected tracks up by one visible(`).lua",
                          "Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua",
@@ -260,6 +269,9 @@
             reaper.PreventUIRefresh(2);
             reaper.SetOnlyTrackSelected(reaper.BR_GetMediaTrackByGUID(0,Guid[1]));
             Arc.Action(40285,40286);-->-< Go to track
+            for i = 1, indent do;
+                Arc.Action(40286);--< Go to track
+            end;
             reaper.SetOnlyTrackSelected(reaper.BR_GetMediaTrackByGUID(0,VisibTCPGuid[1]));
             for i = 1, #VisibTCPGuid do;
                 local track = reaper.BR_GetMediaTrackByGUID(0,VisibTCPGuid[i]);
