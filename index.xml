@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5896c124f073110d16c0226cab523a6e5b19f56a" name="Archie-ReaScripts">
+<index version="1" commit="ddc766534bce3ea768e5d8f59bd50e769c222dd1" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -282,6 +282,17 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Envelope/Archie_Env;%20%20Select%20all%20automation%20items%20in%20selected%20envelope%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Env;  Show all envelopes containing points or auto items.lua" type="script" desc="Show all envelopes containing points or auto items">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-05T19:52:00Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [05042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Envelope/Archie_Env;%20%20Show%20all%20envelopes%20containing%20points%20or%20auto%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env;  Show track envelope last touched FX parameter(add point in start of time selection)(`).lua" type="script" desc="Show track envelope last touched FX parameter(add point in start of time selection)">
@@ -1753,6 +1764,21 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20end%20of%20time%20selection.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Project">
+    <reapack name="Archie_Proj;  Move project content forward or backward.lua" type="script" desc="Move project content forward or backward*">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-05T19:52:00Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [06042019]]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
+        <source main="main" file="Archie_Proj;  Move project content forward or backward (moving in beats)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
+        <source main="main" file="Archie_Proj;  Move project content forward or backward (move in seconds)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
       </version>
     </reapack>
   </category>
