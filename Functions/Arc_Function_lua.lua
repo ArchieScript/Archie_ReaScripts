@@ -2,7 +2,7 @@
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.3.2
+   * Version:     2.3.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -64,7 +64,7 @@
 
     --========================
     local Arc_Module = {};--==
-    local VersionMod = "2.3.2"
+    local VersionMod = "2.3.3"
     --========================
 
 
@@ -97,6 +97,8 @@
     --====End===============End===============End===============End===============End====                                --###
     --########################################################################################################################
     --########################################################################################################################
+
+
 
 
 
@@ -318,7 +320,7 @@
                     end;
                 end;
             end;
-            local function Undo()end;reaper.defer(Undo);
+            reaper.defer(function()end);
             return false;
         end;
         return true;
@@ -443,34 +445,33 @@
     -- УСТАНОВИТЬ ПЕРЕКЛЮЧАТЕЛЬ ВКЛ ВЫКЛ (ПОДСВЕТКА КНОПКИ)
     -- Set Toggle Button On Off
     --====End===============End===============End===============End===============End====
-
-
-
-
-
+    
+    
+    
+    
     --220------- HelpWindow_WithOptionNotToShow(Text,Header,but,reset); -----------------
     function Arc_Module.HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
-        local ScriptName,MessageBox = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)"));
-        local TooltipWind = reaper.GetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but, ScriptName.."Archie_HelpWindow"..but);
+        local ScriptName,MessageBox = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
+        local TooltipWind = reaper.GetExtState(ScriptName..'___'..but, "HelpWindow_WithOptionNotToShow"..'___'..but);
         if TooltipWind == "" then;
             MessageBox = reaper.ShowMessageBox(Text.."\n"..
             "--------------------------------------------------------------------------------------------\n\n"..
             "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n"..
             "DO NOT SHOW THIS WINDOW - OK",Header,1);
             if MessageBox == 1 then;
-                reaper.SetExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but,ScriptName.."Archie_HelpWindow"..but,MessageBox,true);
+                reaper.SetExtState(ScriptName..'___'..but, "HelpWindow_WithOptionNotToShow"..'___'..but,MessageBox,true);
             end;
         end;
         if reset == true then;
-            reaper.DeleteExtState(ScriptName.."Archie_HelpWindowWithDoNotShowOption"..but, ScriptName.."Archie_HelpWindow"..but,true);
+            reaper.DeleteExtState(ScriptName..'___'..but, "HelpWindow_WithOptionNotToShow"..'___'..but,true);
         end;
         if MessageBox == 2 then MessageBox = 0 end;
         return MessageBox or -1;
     end;
     -- ОКНО СПРАВКИ С ОПЦИЕЙ НЕ ПОКАЗЫВАТЬ;
     -- HELP WINDOW WITH OPTION NOT TO SHOW;
-    --  but = хоть что strung;
-    --  reset = true только для сброса, а так всегда false;
+    -- but = хоть что 'strung' /  обычно "Arc_Function_lua" для навигации по ini;
+    -- reset = true только для сброса, а так всегда false;
     -- returns: ok 1; cancel 0; otherwise -1
     --====End===============End===============End===============End===============End====
 
@@ -480,8 +481,8 @@
 
     --------------- HelpWindowWhenReRunning(BottonText,but,reset); --------------------------
     function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);-- (BottonText = 1 или 2)
-        local ScriptName = select(2,select(2,reaper.get_action_context()):match("(.+)[\\/](.+)"));
-        local TooltipWind = reaper.GetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but);
+        local ScriptName = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
+        local TooltipWind = reaper.GetExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but);
         if TooltipWind == "" then;
             ----------------------
             if BottonText  == 2 then;
@@ -491,14 +492,14 @@
             ------------------------------------------------------------------------
             local MessageBox = reaper.ShowMessageBox(
             "Rus.\n"..
-            "* Важно:\n"..
+            "* ВАЖНО:\n"..
             "*   При отключении скрипта появится окно (Reascript task control):\n"..
             "*   Для коректной работы скрипта ставим галку\n"..
             "*   (Remember my answer for this script)\n"..
             "*   Нажимаем: "..BottonText.."\n"..
             "--------------------------------------------------------------------------------------------\n"..
             "Eng.\n"..
-            "* Importantly:\n"..
+            "* IMPORTANTLY:\n"..
             "*   When you disable script window will appear (Reascript task control):\n"..
             "*   For correct work of the script put the check\n"..
             "*   (Remember my answer for this script)\n"..
@@ -509,17 +510,22 @@
             "help.",1);
             ---------------------------------------
             if MessageBox == 1 then;
-                reaper.MB("Rus:\n * Запомни !\n *   "..BottonText.."\n\nEng:\n * Remember !\n *   "..BottonText,"help.",0);--231
-                reaper.SetExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but,MessageBox,true);
+                local MB = reaper.MB("Rus:\n * Запомни !\n *   "..BottonText.."\n\nEng:\n * Remember !\n *   "..BottonText,"help.",1);--231
+                if MB == 1 then;
+                    reaper.SetExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but,MessageBox,true);
+                end;
             end;
         end;
         if reset == true then;
-            reaper.DeleteExtState(ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but, ScriptName.."ArchieAllScriptdefer2Off工具提示窗口"..but,true);
+            reaper.DeleteExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but,true);
         end;
         return ScriptName;
     end;
     -- ОКНО СПРАВКИ ПРИ ПОВТОРНОМ ЗАПУСКЕ СКРИПТА
     -- Help Window When Re Running Script 
+    -- but = хоть что 'strung' /  обычно "Arc_Function_lua" для навигации по ini;
+    -- reset = true только для сброса, а так всегда false;
+    -- BottonText = 2 "'NEW INSTANCE'" , BottonText = 1 "'TERMINATE INSTANCES'"; 
     --====End===============End===============End===============End===============End====
 
 

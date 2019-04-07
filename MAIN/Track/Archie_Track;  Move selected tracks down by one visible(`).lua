@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -16,8 +16,9 @@
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua
    * Changelog:   
-   *              + indent when scrolling / v.1.01 [05042019]
+   *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
    
+   *              + indent when scrolling / v.1.01 [05042019]
    *              +  initialе / v.1.0 [04042019]
    
    
@@ -51,9 +52,20 @@
     
     
     local indent = 1
-                -- | ОТСТУП ПРИ ПРОКРУТКЕ, В ТРЕКАХ
-                -- | INDENT WHEN SCROLLING, IN TRACKS
-                -------------------------------------
+                -- | ОТСТУП ПРИ ПРОКРУТКЕ, (В ТРЕКАХ)
+                -- | INDENT WHEN SCROLLING, (IN TRACKS)
+                ---------------------------------------
+    
+    
+    local Ignore_superCollapse = 1
+                             -- = 0 | НЕ ИГНОРИРОВАТЬ ТРЕКИ У СВЕРНУТЫХ ПАПОК ПРИ СКРОЛЛЕ
+                             -- = 1 | ИГНОРИРОВАТЬ ТРЕКИ У СВЕРНУТЫХ ПАПОК ПРИ СКРОЛЛЕ
+                                      ------------------------------------------------
+                             -- = 0 | DO NOT IGNORE TRACKS IN MINIMIZED FOLDERS WHEN SCROLLING
+                             -- = 1 | IGNORE TRACKS IN MINIMIZED FOLDERS WHEN SCROLLING
+                             ----------------------------------------------------------
+    
+    
     
     
     
@@ -326,12 +338,32 @@
     
     reaper.PreventUIRefresh(-1);
 
+
+
     --------
     if Scroll == 1 then;-->-1
         if ScrollCheck then;-->-2
             reaper.PreventUIRefresh(2);
-            reaper.SetOnlyTrackSelected(reaper.BR_GetMediaTrackByGUID(0,Guid[#Guid]));
+            local TrackByGUID = reaper.BR_GetMediaTrackByGUID(0,Guid[#Guid]);
+            reaper.SetOnlyTrackSelected(TrackByGUID);
             Arc.Action(40286,40285);--<--> Go to track
+            ------------------
+            if Ignore_superCollapse == 1 then;
+                local stop;
+                local NumbPostByG = reaper.GetMediaTrackInfo_Value(TrackByGUID,"IP_TRACKNUMBER");
+                for i = NumbPostByG, reaper.CountTracks(0)-1 do;
+                    local TrackScr = reaper.GetTrack(0,i);
+                    if TrackScr then;
+                        local height = reaper.GetMediaTrackInfo_Value(TrackScr,"I_WNDH");
+                        if height < 24 then;
+                            indent = indent +1;
+                        end;
+                        stop = (stop or 0)+1;
+                        if stop == indent then break end;
+                    end;
+                end;
+            end;
+            ------------------
             for i = 1, indent do;
                 Arc.Action(40285);--> Go to track
             end;
