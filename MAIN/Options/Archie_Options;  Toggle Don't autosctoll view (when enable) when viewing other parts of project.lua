@@ -14,7 +14,7 @@
    * Changelog:   
    *              - !!! OUTDATED 
    
-                  [deleted. 31.04.2019] 
+                  [deleted. 30.04.2019] 
   
    *              --- / v.1.03 [260219]
    *              +  initialе / v.1.0 [240219]

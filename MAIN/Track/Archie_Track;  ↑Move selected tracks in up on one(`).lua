@@ -10,7 +10,7 @@
    * customer:    smrz1(Rmm/forum) 
    * gave idea:   smrz1(Rmm/forum) 
    * ---------:
-   * changelog:   !!! OUTDATED 
+   * changelog:   !!! OUTDATED    [deleted. 30.04.2019]
    
                   +! Fixed error when moving the last folder / v.1.02
                   +! Устранена ошибка при перемещении последней папки / v.1.02
@@ -232,13 +232,13 @@
                 "  *  Archie_Track;  Move selected tracks up by one visible(`).lua \n"..
                 "  *  Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua\n"..
                 "  *  Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua\n"..
-                "  *  Данный Скрипт будет удален 31.04.2019\n\n"..
+                "  *  Данный Скрипт будет удален 30.04.2019\n\n"..
                 "Eng\n\n"..
                 "  * The script is outdated, use\n" ..
                 "  *  Archie_Track;  Move selected tracks up by one visible(`).lua \n"..
                 "  *  Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua\n"..
                 "  *  Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua\n"..
-                "  * This Script will be deleted. 31.04.2019 \n",
+                "  * This Script will be deleted. 30.04.2019 \n",
                "OUTDATED!",0)
      end;
      

@@ -9,7 +9,7 @@
    * Version:     1.0
    * customer:    Supa75[RMM Forum] 
    * gave idea:   Supa75[RMM Forum] 
-    --  - !!! OUTDATED    [deleted. 31.04.2019]<<
+    --  - !!! OUTDATED    [deleted. 30.04.2019]<<
 --================================]]  
 
     
