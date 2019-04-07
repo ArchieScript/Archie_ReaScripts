@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ddc766534bce3ea768e5d8f59bd50e769c222dd1" name="Archie-ReaScripts">
+<index version="1" commit="efa763cfc218b3013d905a9c1e3a28defeae8f02" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -168,6 +168,9 @@
       <version name="2.3.2" author="Archie" time="2019-04-01T19:10:10Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/34d7333cd70adc1f1b5ba28ce363c173b587bc2b/Functions/Arc_Function_lua.lua</source>
       </version>
+      <version name="2.3.3" author="Archie" time="2019-04-07T17:28:18Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/Functions/Arc_Function_lua.lua</source>
+      </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
       <version name="1.0" time="2019-02-25T19:21:36Z">
@@ -284,15 +287,20 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Envelope/Archie_Env;%20%20Select%20all%20automation%20items%20in%20selected%20envelope%20track.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Env;  Show all envelopes containing points or auto items.lua" type="script" desc="Show all envelopes containing points or auto items">
+    <reapack name="Archie_Env;  Show all envelopes for all track containing points or auto items.lua" type="script" desc="Show all envelopes for all track containing points or auto items">
+      <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Envelope/Archie_Env;%20%20Show%20all%20envelopes%20for%20all%20track%20containing%20points%20or%20auto%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Env;  Show all envelopes for selected track containing points or auto items.lua" type="script" desc="Show all envelopes for selected track containing points or auto items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-04-05T19:52:00Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [05042019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Envelope/Archie_Env;%20%20Show%20all%20envelopes%20containing%20points%20or%20auto%20items.lua</source>
+      <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [08042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Envelope/Archie_Env;%20%20Show%20all%20envelopes%20for%20selected%20track%20containing%20points%20or%20auto%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env;  Show track envelope last touched FX parameter(add point in start of time selection)(`).lua" type="script" desc="Show track envelope last touched FX parameter(add point in start of time selection)">
@@ -1739,6 +1747,10 @@
         <changelog><![CDATA[--- / v.1.03 [260219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ff23e97cf5cbf924008758103974f08f6420d6ef/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2019-04-07T17:26:33Z">
+        <changelog><![CDATA[- !!! OUTDATED ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b04aba2544bef941cf1f70e71cd6b8d16a01d9ac/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Playback">
@@ -1764,6 +1776,41 @@
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20end%20of%20time%20selection.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Preferences">
+    <reapack name="Archie_Pref;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Preferences/Archie_Pref;%20%20Solo%20in%20front'%20dimming%20+1%20dB%20from%20set%20value.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Solo in front' dimming -1 dB from set value.lua" type="script" desc="Solo in front' dimming -1 dB from set value">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Preferences/Archie_Pref;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Don't autosctoll view (when enable) when viewing other parts of project">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Preferences/Archie_Pref;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
       </version>
     </reapack>
   </category>
@@ -2220,6 +2267,12 @@
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5896c124f073110d16c0226cab523a6e5b19f56a/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5896c124f073110d16c0226cab523a6e5b19f56a/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+ Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Move selected tracks up by one visible(`).lua" type="script" desc="Move selected tracks up by one visible*">
       <metadata>
@@ -2244,6 +2297,12 @@
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5896c124f073110d16c0226cab523a6e5b19f56a/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5896c124f073110d16c0226cab523a6e5b19f56a/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5896c124f073110d16c0226cab523a6e5b19f56a/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-04-07T17:28:18Z">
+        <changelog><![CDATA[+ Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Paste selected track name   .lua" type="script" desc="Paste selected track name">
