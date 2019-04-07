@@ -8,11 +8,12 @@
    * Author:      Archie
    * Version:     1.0
    * customer:    Supa75[RMM Forum] 
-   * gave idea:   Supa75[RMM Forum]  
+   * gave idea:   Supa75[RMM Forum] 
+    --  - !!! OUTDATED    [deleted. 31.04.2019]<<
 --================================]]  
 
     
-    local DB = 1
+    --local DB = 1
              -- установите значение на сколько дб уменьшить
              -- set the value to how much dB to reduce
              
@@ -25,7 +26,7 @@
 
  
     
-    
+    --[[
     -----------------------------------------------------------------------------
     local function No_Undo()end; local function no_undo()reaper.defer(No_Undo)end
     -----------------------------------------------------------------------------
@@ -40,3 +41,19 @@
     local undo = reaper.SNM_GetIntConfigVar("solodimdb10",0)/10;
     
     reaper.Undo_EndBlock(undo.."/"..-DB.."db Solo in front' dimming",1);
+    ]]
+    
+    
+    
+    
+    
+    
+    
+    reaper.MB(
+           "Rus:\n\n"..
+           "  *  Скрипт устарел, используйте\n"..
+           "  *  Archie_Pref;  Solo in front' dimming -1 dB from set value.lua \n"..
+           "Eng\n\n"..
+           "  * The script is outdated, use\n" ..
+           "  * Archie_Pref;  Solo in front' dimming -1 dB from set value.lua \n",
+          "OUTDATED!",0)

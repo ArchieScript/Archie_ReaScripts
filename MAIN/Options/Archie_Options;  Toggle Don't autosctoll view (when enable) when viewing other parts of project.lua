@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Toggle Don't autosctoll view (when enable) when viewing other parts of project     
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://s8.hostingkartinok.com/uploads/images/2019/02/c9c4cf3b1169e89ccb633ba45516dbc9.png
@@ -11,9 +11,12 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75[RMM]
    * Gave idea:   Supa75[RMM]
-   * Changelog: 
-   *              --- / v.1.03 [260219]
+   * Changelog:   
+   *              - !!! OUTDATED 
    
+                  [deleted. 31.04.2019] 
+  
+   *              --- / v.1.03 [260219]
    *              +  initialе / v.1.0 [240219]
    ==========================================================================================
    
@@ -41,7 +44,7 @@
     
     
     
-      
+    --[==[
     --============================ FUNCTION MODULE FUNCTION ================================ FUNCTION MODULE FUNCTION ========================================
     local Fun,scr,dir,MB,Arc,Load = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions',select(2,reaper.get_action_context()):match("(.+)[\\/]"),
     reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
@@ -52,7 +55,7 @@
     
     
     
-    
+    --[==[
     local SWS = Arc.SWS_API(true);
     if not SWS then Arc.no_undo() return end;
     Arc.HelpWindowWhenReRunning(2,"",false);
@@ -105,3 +108,19 @@
     
     loop();
     reaper.atexit(loop);
+  --]==]
+  
+  
+  
+
+
+    reaper.MB(
+           "Rus:\n\n"..
+           "  *  Скрипт устарел, используйте\n"..
+           "  *  Archie_Pref;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua \n\n\n"..
+           "Eng\n\n"..
+           "  * The script is outdated, use\n" ..
+           "  * Archie_Pref;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua \n",
+          "OUTDATED!",0)
+
+   
