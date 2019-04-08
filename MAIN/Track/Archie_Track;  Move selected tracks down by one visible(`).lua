@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -15,9 +15,11 @@
    *              [main] . > Archie_Track;  Move selected tracks down by one visible(`).lua
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua
+   *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua
    * Changelog:   
+   *              + Scrolling in place / v.1.04 [08042019]
+  
    *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
-   
    *              + indent when scrolling / v.1.01 [05042019]
    *              +  initialе / v.1.0 [04042019]
    
@@ -31,7 +33,7 @@
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
    (+) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
-   (-) reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
+   (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
    (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                
    =======================================================================================]]
     
@@ -45,26 +47,26 @@
     
     
     
-    local Scroll = 1
-            --  = 0 | OFF | ВЫКЛЮЧИТЬ СКРОЛЛИНГ \ DISABLE SCROLLING                            
-            --  = 1 | ON  | ВКЛЮЧИТЬ СКРОЛЛИНГ  \ ENABLE SCROLLING
-            ------------------------------------------------------ 
+    local Scroll = 2
+             --  = 0 | OFF | ВЫКЛЮЧИТЬ СКРОЛЛИНГ \ DISABLE SCROLLING                            
+             --  = 1 | ON  | ВКЛЮЧИТЬ СКРОЛЛИНГ  \ ENABLE SCROLLING
+             --  = 2 | *ПРОКРУТКА НА МЕСТЕ \ SCROLLING IN PLACE; требуется/requires - reaper_js_ReaScriptAPI*)
+             ------------------------------------------------------ 
     
     
     local indent = 1
-                -- | ОТСТУП ПРИ ПРОКРУТКЕ, (В ТРЕКАХ)
-                -- | INDENT WHEN SCROLLING, (IN TRACKS)
-                ---------------------------------------
+                -- | ОТСТУП ПРИ ПРОКРУТКЕ, (В ТРЕКАХ); Работает только при "Scroll = 1"
+                -- | INDENT WHEN SCROLLING, (IN TRACKS); Works only when "Scroll = 1"
+                ---------------------------------------------------------------------
     
     
-    local Ignore_superCollapse = 1
+    local Ignore_superCollapse = 1 -- Работает только при / Works only when  "Scroll = 1"
                              -- = 0 | НЕ ИГНОРИРОВАТЬ ТРЕКИ У СВЕРНУТЫХ ПАПОК ПРИ СКРОЛЛЕ
                              -- = 1 | ИГНОРИРОВАТЬ ТРЕКИ У СВЕРНУТЫХ ПАПОК ПРИ СКРОЛЛЕ
                                       ------------------------------------------------
                              -- = 0 | DO NOT IGNORE TRACKS IN MINIMIZED FOLDERS WHEN SCROLLING
                              -- = 1 | IGNORE TRACKS IN MINIMIZED FOLDERS WHEN SCROLLING
                              ----------------------------------------------------------
-    
     
     
     
@@ -92,10 +94,12 @@
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
     
+    
     if not Arc.If_Equals(Script_Name,
                          "Archie_Track;  Move selected tracks down by one visible(`).lua",
                          "Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua",
-                         "Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua" )then;
+                         "Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua",
+                         "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua")then;
         reaper.MB("Rus:\n\n"..
                   " * Неверное имя скрипта !\n * Имя скрипта должно быть одно из следующих \n"..
                   "    в зависимости от задачи. \n\n\n"..
@@ -106,16 +110,59 @@
                   "Script Name: / Имя скрипта:\n\n"..
                   "   Archie_Track;  Move selected tracks down by one visible(`).lua \n\n"..
                   "   Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua \n\n"..
-                  "   Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua",
+                  "   Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua\n\n"..
+                  "   Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua",
                   "ERROR !",0);
         Arc.no_undo() return;
     end;
     
     
+    
+    
+    local function GetScrollTrack(track);
+        if reaper.APIExists("JS_Window_FindChildByID")then;
+            if type(track)~= "userdata" then error("GetScrollTrack (MediaTrack expected)",2)end; 
+            local Numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
+            local height;
+            for i = 1,Numb-1 do;
+                local Track = reaper.GetTrack(0,i-1);
+                local wndh = reaper.GetMediaTrackInfo_Value( Track, "I_WNDH");
+                height = (height or 0)+wndh;
+            end;
+            local trackview = reaper.JS_Window_FindChildByID(reaper.GetMainHwnd(),1000);
+            local _, position = reaper.JS_Window_GetScrollInfo(trackview,"v");
+            return (height or 0) - position;
+        else;
+            reaper.ShowConsoleMsg("требуется расширение  - 'reaper_js_ReaScriptAPI'\n"..
+                                  "либо отключите скролл на месте\n\n"..
+                                  "require extension is requi - reaper_js_ReaScriptAPI\n"..
+                                  "or disable scroll in place")
+        end;
+    end;
+     
+    
+    
+    local function SetScrollTrack(track, numbPix);
+        if type(track)~= "userdata" then error("SetScrollTrack (MediaTrack expected)",2)end;
+        local Numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
+        local height;
+        for i = 1,Numb-1 do;
+            local Track = reaper.GetTrack(0,i-1);
+            local wndh = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+            height = (height or 0)+wndh;
+        end;
+        local trackview = reaper.JS_Window_FindChildByID(reaper.GetMainHwnd(),1000);
+        local _, position = reaper.JS_Window_GetScrollInfo(trackview,"v");
+        reaper.JS_Window_SetScrollPos(trackview,"v",(height or 0)-(numbPix or position));
+    end;
+    
+    
+    
+    
     local CountSelTrack = reaper.CountSelectedTracks(0);
     if CountSelTrack == 0 then Arc.no_undo() return end;
     
-    if Scroll ~= 1 and Scroll ~= 0 then Scroll = 0 end;
+    if Scroll ~= 1 and Scroll ~= 0 and Scroll ~= 2 then Scroll = 0 end;
     
     
     reaper.PreventUIRefresh(1);
@@ -132,7 +179,7 @@
     end;
     
     
-    local ScrollCheck, Fol_W, NumbTr_w, Undo,Fold_W, wind, block_request,Guid;
+    local ScrollCheck, Fol_W, NumbTr_w, Undo,Fold_W, wind, block_request,Guid,TrackByGUID;
     do;-->-0.1
     
         local CountSelTrack = reaper.CountSelectedTracks(0);
@@ -149,6 +196,11 @@
             local track = reaper.GetSelectedTrack(0,i-1);        
             Guid[i] = reaper.GetTrackGUID(track);
             GuidStr = (GuidStr or "")..Guid[i];
+            ---
+            if i == 1 then
+               GetScrollTr = GetScrollTrack(track) 
+            end;
+            ---
         end;
         
         
@@ -276,6 +328,17 @@
                             if Fold == 1 then Fold = 0 end;
                         end;
                         
+                        ---
+                        if Script_Name == "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua" then;
+                            if Fold == 1 then;
+                                local colapse = reaper.GetMediaTrackInfo_Value(NextTrack,"I_FOLDERCOMPACT");
+                                if colapse ~= 2 then;
+                                    Fold = 0;
+                                end;
+                            end;   
+                        end;
+                        ---
+                        
                         ScrollCheck = true;
                         
                         
@@ -335,6 +398,10 @@
     ----------------------------------------------------------------------------------
     
     
+    if Scroll == 2 then;
+        local TrackByGUID = reaper.BR_GetMediaTrackByGUID(0,Guid[1]);
+        SetScrollTrack(TrackByGUID, GetScrollTr);
+    end;
     
     reaper.PreventUIRefresh(-1);
 
