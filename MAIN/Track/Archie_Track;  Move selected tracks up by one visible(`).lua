@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -17,7 +17,7 @@
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua
    * Changelog:   
-   *              + Scrolling in place / v.1.04 [08042019]
+   *              + Scrolling in place / v.1.05 [09042019]
    
    *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
    *              + indent when scrolling / v.1.01 [05042019]
@@ -133,27 +133,30 @@
             local _, position = reaper.JS_Window_GetScrollInfo(trackview,"v");
             return (height or 0) - position;
         else;
+            reaper.ShowConsoleMsg("");
             reaper.ShowConsoleMsg("требуется расширение  - 'reaper_js_ReaScriptAPI'\n"..
                                   "либо отключите скролл на месте\n\n"..
                                   "require extension is requi - reaper_js_ReaScriptAPI\n"..
-                                  "or disable scroll in place")
+                                  "or disable scroll in place");
         end;
     end;
      
     
     
     local function SetScrollTrack(track, numbPix);
-        if type(track)~= "userdata" then error("SetScrollTrack (MediaTrack expected)",2)end;
-        local Numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
-        local height;
-        for i = 1,Numb-1 do;
-            local Track = reaper.GetTrack(0,i-1);
-            local wndh = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
-            height = (height or 0)+wndh;
+        if reaper.APIExists("JS_Window_FindChildByID")then;
+            if type(track)~= "userdata" then error("SetScrollTrack (MediaTrack expected)",2)end;
+            local Numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
+            local height;
+            for i = 1,Numb-1 do;
+                local Track = reaper.GetTrack(0,i-1);
+                local wndh = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                height = (height or 0)+wndh;
+            end;
+            local trackview = reaper.JS_Window_FindChildByID(reaper.GetMainHwnd(),1000);
+            local _, position = reaper.JS_Window_GetScrollInfo(trackview,"v");
+            reaper.JS_Window_SetScrollPos(trackview,"v",(height or 0)-(numbPix or position));
         end;
-        local trackview = reaper.JS_Window_FindChildByID(reaper.GetMainHwnd(),1000);
-        local _, position = reaper.JS_Window_GetScrollInfo(trackview,"v");
-        reaper.JS_Window_SetScrollPos(trackview,"v",(height or 0)-(numbPix or position));
     end;
     
     
@@ -195,7 +198,9 @@
             GuidStr = (GuidStr or "")..Guid[i];
             ---
             if i == 1 then;
-               GetScrollTr = GetScrollTrack(track);
+               if Scroll == 2 then;
+                   GetScrollTr = GetScrollTrack(track);
+               end;
             end;
             ---
         end;
