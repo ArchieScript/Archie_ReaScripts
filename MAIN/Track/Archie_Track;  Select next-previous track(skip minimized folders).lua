@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next/previous tracks(skip minimized folders)*
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Select next/previous tracks(skip minimized folders)*
    * О скрипте:   Выберите следующий/предыдущий треки(пропустить свернутые папки)
    * GIF:         ---
@@ -15,6 +15,8 @@
    *              [main] . > Archie_Track;  Select next tracks(skip minimized folders)(`).lua
    *              [main] . > Archie_Track;  Select previous tracks(skip minimized folders)(`).lua
    * Changelog:   
+   *              +  Added a mixer scroll / v.1.03 [10042019]
+   
    *              +  initialе / v.1.0 [09042019]
    
    
@@ -209,6 +211,11 @@
         SetScrollTrack(track, Scroll);
     end;--Scroll<<
     
+	
+	---/ MixerScroll /----------------------------------
+	reaper.SetMixerScroll(reaper.GetSelectedTrack(0,0));
+	----------------------------------------------------
+	
     reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ",""):gsub("%.lua",""),-1);
     reaper.PreventUIRefresh(-1);
     reaper.UpdateArrange();
