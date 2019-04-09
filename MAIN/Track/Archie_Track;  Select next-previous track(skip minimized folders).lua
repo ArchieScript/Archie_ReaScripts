@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next/previous tracks(skip minimized folders)*
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Select next/previous tracks(skip minimized folders)*
    * О скрипте:   Выберите следующий/предыдущий треки(пропустить свернутые папки)
    * GIF:         ---
@@ -39,7 +39,7 @@
     --======================================================================================
     
     
-    local SCROLL = 0    --  требуется/requires - reaper_js_ReaScriptAPI*)
+    local SCROLL = 1    --  требуется/requires - reaper_js_ReaScriptAPI*)
              --  = 0 | OFF | ВЫКЛЮЧИТЬ СКРОЛЛИНГ \ DISABLE SCROLLING
              --  = 1 | ON  | ВКЛЮЧИТЬ СКРОЛЛИНГ  \ ENABLE SCROLLING
              ------------------------------------------------------ 
