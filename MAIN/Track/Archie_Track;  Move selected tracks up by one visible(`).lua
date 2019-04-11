@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -17,8 +17,9 @@
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua
    * Changelog:   
-   *              + Scrolling in place / v.1.05 [09042019]
+   *              + Scrolling Mixer / v.1.06 [11042019]
    
+   *              + Scrolling in place / v.1.05 [09042019]
    *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
    *              + indent when scrolling / v.1.01 [05042019]
    *              +  initialе / v.1.0 [04042019]
@@ -33,8 +34,8 @@
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
    (+) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
-   (+*) reaper_js_ReaScriptAPI   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
-   (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                
+   (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
+   (-) Visual Studio С++ 2015     --| http://clck.ru/Eq5o6                                
    =======================================================================================]]
    
     
@@ -69,6 +70,10 @@
                              ----------------------------------------------------------
     
     
+    local MixerScroll = 1
+            --  = 0 | OFF | ВЫКЛЮЧИТЬ СКРОЛЛИНГ В МИКШЕРЕ \ DISABLE SCROLLING IN MIXER
+            --  = 1 | ON  | ВКЛЮЧИТЬ СКРОЛЛИНГ В МИКШЕРЕ \ ENABLE SCROLLING IN MIXER
+            ------------------------------------------------------------------------ 
     
     
     --======================================================================================
@@ -159,6 +164,11 @@
         end;
     end;
     
+    
+    
+    local function SetMixerScroll(tr);
+        reaper.defer(function();reaper.SetMixerScroll(tr);return;end);
+    end;
     
     
     
@@ -404,6 +414,12 @@
     ----------
     
     
+    ---
+    if MixerScroll == 1 then;
+        local firstSelTr = reaper.GetSelectedTrack(0,0);
+        SetMixerScroll(firstSelTr);
+    end;
+    ---
     
     if Undo then;
         reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ","",1):gsub(".lua","",1),-1);
