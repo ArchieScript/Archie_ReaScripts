@@ -2,7 +2,7 @@
    * Category:    MidiEditor
    * Description: Unselect (left-right*) wing events
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Unselect (left-right*) wing events
    * О скрипте:   Отменить выбор (слева-справа*) событий миди
    * GIF:         ---
@@ -72,7 +72,7 @@
     
     local Take = reaper.MIDIEditor_GetTake(MidiEditor);
     local retval,count_notes,ccs,sysex = reaper.MIDI_CountEvts(Take);
-    if count_notes == 0 then --[[Arc.no_undo()]] return end;
+    if count_notes == 0 then no_undo() return end;
     
     
     if ScriptName == ScriptName_2 then;
