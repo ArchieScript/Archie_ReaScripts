@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ab0b4c4f0d4e4762e2987d254f2fc906120a45de" name="Archie-ReaScripts">
+<index version="1" commit="264583dc354d793d2712f0e129b8fede642a400b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3520,6 +3520,9 @@
       </version>
       <version name="1.01" time="2019-03-30T09:28:36Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/70dce61922f2ce3cd7b0499a1058839b6fbc2dc9/MIDI%20Inline%20Editor/Test_.lua</source>
+      </version>
+      <version name="1.02" time="2019-04-21T10:27:36Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/264583dc354d793d2712f0e129b8fede642a400b/MIDI%20Inline%20Editor/Test_.lua</source>
       </version>
     </reapack>
   </category>
