@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -17,8 +17,9 @@
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua
    * Changelog:   
-   *              + Scrolling Mixer / v.1.06 [11042019]
-   
+   *              + Fixed bug when moving from folder to folder / from folder - skip folder / v.1.07 [29042019]
+
+   *              + Scrolling Mixer / v.1.06 [11042019] 
    *              + Scrolling in place / v.1.05 [09042019]
    *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
    *              + indent when scrolling / v.1.01 [05042019]
@@ -86,7 +87,7 @@
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.3.2",Fun,"")then Arc.no_undo() return end;--=====================================================
+    return end; if not Arc.VersionArc_Function_lua("2.3.6",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
@@ -190,7 +191,7 @@
     end;
     
     
-    local ScrollCheck, Fol_W, NumbTr_w, Undo,wind,Guid,GetScrollTr;
+    local ScrollCheck, Fol_W, NumbTr_w, Undo,wind,Guid,GetScrollTr,showFold;
     do;-->-0.1
         
         local CountSelTrack = reaper.CountSelectedTracks(0);
@@ -218,6 +219,38 @@
         
         reaper.InsertTrackAtIndex(0,false);
         local DummyDeleteTrack = reaper.GetTrack(0,0);
+        
+        
+        
+        ---- > --- / v.1.07 / --- [#1] ----------------------------------
+        showFold = {};
+        for i = 1, reaper.CountTracks(0) do;
+            local Track = reaper.GetTrack(0,i-1);
+            local fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
+            if fold == 1 then;
+                local visibTCP = reaper.IsTrackVisible(Track,false);
+                if not visibTCP then; 
+                    local Numb = reaper.GetMediaTrackInfo_Value(Track,"IP_TRACKNUMBER");
+                    local Depth = reaper.GetTrackDepth(Track);
+                    for i2 = Numb, reaper.CountTracks(0)-1 do;
+                        local TrFol = reaper.GetTrack(0,i2);
+                        local DepthFol = reaper.GetTrackDepth(TrFol);
+                        if DepthFol > Depth then;
+                            local visibTCPFol = reaper.IsTrackVisible(TrFol,false); 
+                            if visibTCPFol == true then; 
+                                reaper.SetMediaTrackInfo_Value(Track,"B_SHOWINTCP",1);  
+                                showFold[#showFold+1] = Track;
+                                break;  
+                            end;
+                        else;
+                            break;
+                        end;
+                    end;  
+                end;
+            end;
+        end;
+        -----------------------------------------------------------------
+         
         
         
         for i = 1, #Guid do;-->-1
@@ -352,6 +385,15 @@
         if DummyDeleteTrack then;
             reaper.DeleteTrack(DummyDeleteTrack);
         end;
+        
+        
+        ---- > --- / v.1.07 / --- [#1] ----------------------------------
+        for i = 1,#showFold do;
+            reaper.SetMediaTrackInfo_Value(showFold[i],"B_SHOWINTCP",0); 
+        end;
+        reaper.TrackList_AdjustWindows(true);
+        --- < -----------------------------------------------------------
+        
         
     end;--<-0.1
     
