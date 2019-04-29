@@ -34,7 +34,7 @@
    (+) Reaper v.5.967 +           --| http://www.reaper.fm/download.php                     
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
-   (+) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
+   (+) Arc_Function_lua v.2.3.6 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
    (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
    (-) Visual Studio С++ 2015     --| http://clck.ru/Eq5o6                                
    =======================================================================================]]
