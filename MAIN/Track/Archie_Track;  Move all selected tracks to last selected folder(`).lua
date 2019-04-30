@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move all selected tracks to the last selected folder
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Move all selected tracks to the last selected folder
    * О скрипте:   Переместить все выбранные дорожки в последнюю выбранную папку
    * GIF:         http://clck.ru/EbWRT
@@ -10,7 +10,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(Rmm/forum) 
    * Gave idea:   smrz1(Rmm/forum) 
-   * changelog:   + Added the ability to move tracks to the beginning or end of a folder / v.1.1 
+   * changelog:   
+   *              + Fixed bug when moving subfolders / v.1.02 [300419]
+   *              + Исправлена ошибка при перемещении подпапок / v.1.02 [300419]
+   
+   *              + Added the ability to move tracks to the beginning or end of a folder / v.1.1 
    *              + Добавлена возможность выбора перемещения треков в начало или конец папки / v.1.1 
 --==================================================================================================
 SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
@@ -51,40 +55,41 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
     if CountSelTrack == 0 then no_undo() return end;
 
 
-    local numb,fold,SelTrack,FoldGUID,Depth,Sel,Track,DepthFirst,DepthLast; 
-
-    for i = reaper.CountSelectedTracks(0)-1,0,-1 do; 
-        SelTrack = reaper.GetSelectedTrack(0,i);
-        fold = reaper.GetMediaTrackInfo_Value(SelTrack,"I_FOLDERDEPTH");
+    local FoldGUID;
+    
+    for i = reaper.CountSelectedTracks(0)-1,0,-1 do;
+        local SelTrack = reaper.GetSelectedTrack(0,i);
+        local fold = reaper.GetMediaTrackInfo_Value(SelTrack,"I_FOLDERDEPTH");
         if fold == 1 then;
-            Depth = reaper.GetTrackDepth(SelTrack);
+            local Depth = reaper.GetTrackDepth(SelTrack);
             if Depth == 0 then;
                 FoldGUID = reaper.GetTrackGUID(SelTrack);
                 break;
             else;
-                numb = reaper.GetMediaTrackInfo_Value(SelTrack,"IP_TRACKNUMBER");
+                local numb = reaper.GetMediaTrackInfo_Value(SelTrack,"IP_TRACKNUMBER");
+                FoldGUID = reaper.GetTrackGUID(SelTrack);
                 for i = numb-1,0,-1 do; 
-                    Track = reaper.GetTrack(0,i);
-                    fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
+                    local Track = reaper.GetTrack(0,i);
+                    local fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
                     if fold == 1 then;
-                        Sel = (reaper.IsTrackSelected(Track)and 1 or 0);
-                        if Sel == 1 then;
-                            FoldGUID = reaper.GetTrackGUID(Track);
+                        local Depth2 = reaper.GetTrackDepth(Track);
+                        if Depth2 < Depth then;
+                            local Sel = (reaper.IsTrackSelected(Track)and 1 or 0);
+                            if Sel == 1 then;
+                                FoldGUID = reaper.GetTrackGUID(Track);
+                                Depth = Depth2;
+                            end;
                         end;
-                        Depth = reaper.GetTrackDepth(Track);
-                        if Depth == 0 then;
-                            break;
-                        end;
+                        if Depth2 == 0 then goto exit1 end;
                     end;
                 end;
-            end;   
+            end;
         end;
-        if FoldGUID then break end;
     end;
+    ::exit1::
 
 
     if not FoldGUID then no_undo() return end;
-
 
 
 
@@ -97,13 +102,14 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
     reaper.ReorderSelectedTracks(0,0);
 
 
+    local numb;
     if Move_to_Start_or_End == 1 then; --/ End /--
-        DepthFirst = reaper.GetTrackDepth(track);
+        local DepthFirst = reaper.GetTrackDepth(track);
         numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
         for i = numb,reaper.CountTracks(0)-1 do; 
-            Track = reaper.GetTrack(0,i);
-            DepthLast = reaper.GetTrackDepth(Track);
-            fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
+            local Track = reaper.GetTrack(0,i);
+            local DepthLast = reaper.GetTrackDepth(Track);
+            local fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
             if fold < 0 then;
                 if DepthFirst == DepthLast - 1 then;
                     numb = reaper.GetMediaTrackInfo_Value(Track,"IP_TRACKNUMBER");
@@ -112,7 +118,7 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
             end;
         end;
     else;  --/ Start /--
-         numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");   
+         numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
     end; 
 
 
