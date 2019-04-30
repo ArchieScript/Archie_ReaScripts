@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="1f385f6b8c0ad8febb509c3491f1467d9daa3194" name="Archie-ReaScripts">
+<index version="1" commit="31120bf31ae839cc58969c541ad3f1665a2b9202" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -179,6 +179,9 @@
       </version>
       <version name="2.3.7" author="Archie" time="2019-04-29T17:31:03Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/1f385f6b8c0ad8febb509c3491f1467d9daa3194/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.3.8" author="Archie" time="2019-04-30T04:54:30Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/31120bf31ae839cc58969c541ad3f1665a2b9202/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
