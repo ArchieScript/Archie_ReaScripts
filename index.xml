@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="07a5414b4b2131f1bcbd82c3cf232641836f759b" name="Archie-ReaScripts">
+<index version="1" commit="910a86ce0f2cf3395964fd21258215f82931104e" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1741,51 +1741,6 @@
         <source main="main" file="Archie_Options;  Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MAIN/Options/Archie_Options;%20%20Smart%20Multi%20script(Button%20n).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Options;  Solo in front' dimming +1 dB from set value(`).lua" type="script" desc="Solo in front' dimming +1 dB from set value">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Solo%20in%20front'%20dimming%20+1%20dB%20from%20set%20value(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Solo in front' dimming -1 dB from set value(`).lua" type="script" desc="Solo in front' dimming -1 dB from set value">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Options/Archie_Options;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Options;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Toggle Don't autosctoll view (when enable) when viewing other parts of project">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-25T20:37:15Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fa3187e7e91d45a3a8b217e8c72996f32dfe27d5/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-02-26T06:14:28Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [240219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c5287d01b78d1b54825c591cb38cdfea7c1daccf/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-02-26T06:37:26Z">
-        <changelog><![CDATA[--- / v.1.02 [240219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ef2cd829e7dc411521b178dde6b8d624038b27aa/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-02-26T07:57:08Z">
-        <changelog><![CDATA[--- / v.1.03 [260219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ff23e97cf5cbf924008758103974f08f6420d6ef/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-04-07T17:26:33Z">
-        <changelog><![CDATA[- !!! OUTDATED ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b04aba2544bef941cf1f70e71cd6b8d16a01d9ac/MAIN/Options/Archie_Options;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
-      </version>
-    </reapack>
   </category>
   <category name="MAIN/Playback">
     <reapack name="Archie_Playback;  Toggle stop playback at end of time selection.lua" type="script" desc="Toggle stop playback at the end of time selection">
@@ -2257,6 +2212,16 @@
         <changelog><![CDATA[+ Fixed bug when moving subfolders / v.1.02 [300419]
 + Исправлена ошибка при перемещении подпапок / v.1.02 [300419]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/07a5414b4b2131f1bcbd82c3cf232641836f759b/MAIN/Track/Archie_Track;%20%20Move%20all%20selected%20tracks%20to%20last%20selected%20folder(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Move all selected tracks to last touched folder.lua" type="script" desc="Move all selected tracks to last touched folder">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-04-30T12:46:31Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [300419]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/910a86ce0f2cf3395964fd21258215f82931104e/MAIN/Track/Archie_Track;%20%20Move%20all%20selected%20tracks%20to%20last%20touched%20folder.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Move all selected tracks under first selected track or folder .lua" type="script" desc="Move all selected tracks under the first selected track or folder">
@@ -2769,34 +2734,6 @@
         <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
 + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2627ed76677e9eab2958453df65fd0d2090eb477/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  ↑Move selected tracks in up on one(`).lua" type="script" desc="Move selected tracks in up on one">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+! Fixed error when moving the last folder / v.1.02]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20%E2%86%91Move%20selected%20tracks%20in%20up%20on%20one(%60).lua</source>
-      </version>
-      <version name="1.09" author="Archie" time="2019-04-03T19:19:19Z">
-        <changelog><![CDATA[!!! OUTDATED]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06c76af5a82356203d7d10e328062e6ce9872b49/MAIN/Track/Archie_Track;%20%20%E2%86%91Move%20selected%20tracks%20in%20up%20on%20one(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  ↓Move selected tracks in down on one(`).lua" type="script" desc="Move selected tracks in down on one">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[Переделан скролл / Redesigned scroll / v.1.01]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20%E2%86%93Move%20selected%20tracks%20in%20down%20on%20one(%60).lua</source>
-      </version>
-      <version name="1.09" author="Archie" time="2019-04-03T19:19:19Z">
-        <changelog><![CDATA[!!! OUTDATED]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06c76af5a82356203d7d10e328062e6ce9872b49/MAIN/Track/Archie_Track;%20%20%E2%86%93Move%20selected%20tracks%20in%20down%20on%20one(%60).lua</source>
       </version>
     </reapack>
   </category>
