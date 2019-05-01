@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="910a86ce0f2cf3395964fd21258215f82931104e" name="Archie-ReaScripts">
+<index version="1" commit="2b28a2536dd17f445061e24397e151053a931869" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2800,6 +2800,10 @@
       </version>
       <version name="1.11" author="Archie" time="2019-02-16T12:46:38Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7fdb280ff3002168e4d215152737ae107480d291/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.12" author="Archie" time="2019-05-01T08:20:21Z">
+        <changelog><![CDATA[!+ Fixed Scrolling Of The Mixer / v.1.12 [01.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2b28a2536dd17f445061e24397e151053a931869/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Disabled prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Disabled prevention of spectral peaks / spectrogram on all tracks">
