@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * AboutScript: Auto enable spectral peaks on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -12,11 +12,14 @@
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/AutoEnableSpectralPeaksSelTr.html
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
-   * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   
+   *              !+ Fixed Scrolling Of The Mixer / v.1.12 [01.05.19]
    
+   *              !! Fixed syntax error /  v.1.11 [16.02.19]
+   *              ++ Gif (autor: smrz1) /  v.1.10 [16.02.19]
    *              !+ Fixed issues with subfolders / v.1.09 [11.02.19]
    *              !+ Исправлены  проблемы с подпапками / v.1.09 [11.02.19]
    *              !+ Fixed disabling of actions: Scale peaks by square root / Rectify peaks / v.1.08 [03.02.2019]
@@ -51,22 +54,21 @@
 
 
 
-
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
+    local MIXERSCROLL = 1;
 
 
 
-
-    --============================ FUNCTION MODULE FUNCTION ================================ FUNCTION MODULE FUNCTION ========================================
-    local Fun,scr,dir,MB,Arc,Load = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions',select(2,reaper.get_action_context()):match("(.+)[\\/]"),
-    reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
-    if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
-    'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
-    if not Arc.VersionArc_Function_lua("2.2.3",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
-    --==================================▲=▲=▲=================================================================================================================
-
+    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
+    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
+    return end; if not Arc.VersionArc_Function_lua("2.3.2",Fun,"")then Arc.no_undo() return end;--=====================================================
+    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    
+    
 
 
     if not reaper.JS_Mouse_GetState then reaper.MB(
@@ -222,6 +224,21 @@
 
 
 
+    -----------------------------
+    local function MixerScroll();
+        local LastTouchedTrack = reaper.GetLastTouchedTrack(true);
+        if LastTouchedTrack then;
+            local GetMixerScroll = reaper.GetMixerScroll();
+            if GetMixerScroll ~= LastTouchedTrack then;
+                reaper.defer(function()reaper.SetMixerScroll(LastTouchedTrack)end);
+            end;
+        end;
+    end;
+    -------
+    
+    
+    
+
     -------------------------------
     local function Run()
         reaper.PreventUIRefresh(1);
@@ -284,6 +301,9 @@
             end;
             if sel1 ~= sel2 then;
                 Run();
+                if MIXERSCROLL == 1 then;
+                    MixerScroll();
+                end;
             end;
             sel2 = sel1; 
             ProjectChange_2 = ProjectChange_1;
