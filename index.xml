@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="1bbb5aa81b735940707fe98c97f4eaf6e80c87dd" name="Archie-ReaScripts">
+<index version="1" commit="d65e11e72a3dc1811ec37ad819f0f749ce7d4eff" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2040,6 +2040,17 @@
       <version name="1.0" author="Archie" time="2019-03-01T19:30:08Z">
         <changelog><![CDATA[+  initialе / v.1.0 [02032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ecacd4dd4d1cc8de64dc2bcebf98f146da1b0407/MAIN/Track/Archie_Track;%20%20Activate-Deactivate%20rec-armed%20rec-monitoring%20all%20input-Fx%20in%20selected%20tracks(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Add tracks with locked height to collapsed folders-Restore when uncollapsed(background).lua" type="script" desc="Add tracks with locked height to collapsed folders-Restore when uncollapsed(background)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-07T10:56:29Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07052019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d65e11e72a3dc1811ec37ad819f0f749ce7d4eff/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE(`).lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
