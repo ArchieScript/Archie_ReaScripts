@@ -1,9 +1,9 @@
-local VersionMod = "v.2.4.0"
+local VersionMod = "v.2.4.1"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.4.0
+   * Version:     2.4.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -268,3 +268,4 @@ function Arc_Module.If_Equals(EqualsToThat,...); for _,v in ipairs {...} do; if 
 function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); if not min_max then min_max = "MAX" end; local t = {}; for i = 1, #array do; local ti = array[i]; if not t[ti] then t[ti] = 0 end; t[ti] = t[ti] + 1; end; local max = 0; local value; for key, val in pairs(t) do; if val > 1 then; if val > max then; value = key; max = val; elseif val == max then; if val > 1 then; if min_max == "MAX" then; value = math.max(key ,value); elseif min_max == "MIN" then; value = math.min(key ,value); elseif min_max == "RANDOM" then; local rand_T = {key,value}; local random = math.random(#rand_T); value = rand_T[random]; end; end; end; else; if not value then value = false end end; end; return(value); end; ValueFromMaxRepsIn_Table = Arc_Module.ValueFromMaxRepsIn_Table; 
 function Arc_Module.randomOfVal(...); local t = {...}; local random = math.random(#t); return t[random]; end; randomOfVal = Arc_Module.randomOfVal; 
 function Arc_Module.invert_number(X); local X = X - X * 2; return X; end; invert_number = Arc_Module.invert_number; 
+return Arc_Module; 
