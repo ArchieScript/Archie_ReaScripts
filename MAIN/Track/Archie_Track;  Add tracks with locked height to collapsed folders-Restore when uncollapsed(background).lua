@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Add tracks with locked height to collapsed folders-Restore when uncollapsed(background)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Добавить треки с заблокированной высотой в свернутые папки / восстановить, когда не свернуто - фон
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/AddTracksWithLockedHeightToCollapsedFolders.html
@@ -14,13 +14,18 @@
    * Customer:    YuriOl / smrz1:[RMM];
    * Gave idea:   YuriOl / smrz1:[RMM];
    * Changelog:   
-   *              v.1.01 [10052019] /
-   *                +  Saving state for different projects;
-   *                +  Bug fixes: When saving; With subfolders of the same level; 
+   *              v.1.02 [11052019]
+   *                Fixed bugs:
+   *                  + With subfolders of the same level;
+   *                  + Save state for different projects;
+   *                  + Removed a window asking about saving the project;
    
-   *                +  Сохранение состояния для разных проектов;
-   *                +  Исправлены ошибки: при сохранении; С подпапками одного уровня;
-   *              v.1.0 [07052019] / initialе;
+   *                  +  Исправлены ошибки:
+   *                  +  С подпапками одного уровня;
+   *                  +  Сохранение состояния для разных проектов;
+   *                  +  Убрано окно с запросом о сохранении проекта; 
+   *              v.1.0 [07052019]
+   *                Initialе;
    
    
    -- Тест только на windows  /  Test only on windows.
@@ -62,30 +67,23 @@
     if not Api_sws then Arc.no_undo() return end;
     
     
-    ::SaveProj::;
-    if reaper.GetProjectName(0,"") == "" then;
-       local MB = reaper.MB("RUS:\n Сохраните проект Иначе скрипт аварийно завершит работу!\n\n"..
-                            "ENG:\n Save the project otherwise the script will crash!","ERROR: ",1);
-       if MB == 1 then;reaper.Main_SaveProject(0,true);else;no_undo()return;end;
-    end;
-    local ProjectName = reaper.GetProjectName(0,"");
-    if ProjectName == "" then goto SaveProj end;
-    
-    
+    Arc.HelpWindowWhenReRunning(1,"Arc_Function_lua",false);
     
     local function main();
         
-        local NameScr = Arc.HelpWindowWhenReRunning(1,"Arc_Function_lua",false);
+        function ScrName_f();
+            return({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
+        end;
+        
         local ProjPathName = ({reaper.EnumProjects(-1,"")})[2];
         local ProjectState2;
         local Table = {};
-        local SectionEx = NameScr.."__"..ProjPathName;
         local KeyEx = "Table";
         local TableMonTr2={};
         
         Arc.SetToggleButtonOnOff(1);
         -------------------
-        local G_ExtState = reaper.GetExtState(SectionEx,KeyEx)..'&&&';
+        local G_ExtState = ({reaper.GetProjExtState(0,ScrName_f(),KeyEx)})[2]..'&&&'; 
         if G_ExtState ~= "&&&" then;
             for var in string.gmatch(G_ExtState,"(.-)&&&")do;
                 local ByGUIDExt = var:match("(%{.-%})");
@@ -224,8 +222,14 @@
                 end;
                 local ComTabl = ComparedTwoTables(TableMonTr1, TableMonTr2);
                 if not ComTabl then;
-                    --reaper.DeleteExtState(SectionEx,KeyEx,true);
-                    reaper.SetExtState(SectionEx,KeyEx,table.concat(Table,'&&&'),true);
+                    ---
+                    reaper.MarkProjectDirty(0);
+                    local ProjPathName2 = ({reaper.EnumProjects(-1,"")})[2];
+                    if ProjPathName2 ~= ProjPathName then;
+                        dofile(({reaper.get_action_context()})[2]) return;
+                    end;
+                    reaper.SetProjExtState(0,ScrName_f(),KeyEx,table.concat(Table,'&&&'));
+                    ---
                     TableMonTr2 = TableMonTr1;
                 end;
                 --------------------
