@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="a462bf71874a2ff3cd91dfc59724caad59b3ad0c" name="Archie-ReaScripts">
+<index version="1" commit="ab158788797944f640bee27df0e14ce6d3e88e13" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2063,6 +2063,14 @@
   +  Saving state for different projects;
   +  Bug fixes: When saving; With subfolders of the same level; ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a462bf71874a2ff3cd91dfc59724caad59b3ad0c/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-05-11T09:07:19Z">
+        <changelog><![CDATA[v.1.02 [11052019]
+  Fixed bugs:
+    + With subfolders of the same level;
+    + Save state for different projects;
+    + Removed a window asking about saving the project;]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab158788797944f640bee27df0e14ce6d3e88e13/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE(`).lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
