@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ab158788797944f640bee27df0e14ce6d3e88e13" name="Archie-ReaScripts">
+<index version="1" commit="359dc1b1db1185e8b03400509dc30270685a4572" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2745,6 +2745,12 @@
 + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1f385f6b8c0ad8febb509c3491f1467d9daa3194/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.05" author="Archie" time="2019-05-12T11:17:26Z">
+        <changelog><![CDATA[v.1.05 [12052019]
+  + Added the ability to not scale tracks with enabled 'Lock track height'
+  + Добавлена возможность не масштабировать треки с включенным "Lock track height"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/359dc1b1db1185e8b03400509dc30270685a4572/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
@@ -2768,6 +2774,12 @@
         <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
 + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2627ed76677e9eab2958453df65fd0d2090eb477/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2019-05-12T11:17:26Z">
+        <changelog><![CDATA[v.1.05 [12052019]
+  + Added the ability to not scale tracks with enabled 'Lock track height'
+  + Добавлена возможность не масштабировать треки с включенным "Lock track height"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/359dc1b1db1185e8b03400509dc30270685a4572/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
       </version>
     </reapack>
   </category>
