@@ -2,21 +2,27 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * О скрипте:   Масштабировать треки в TCP по размеру экрана (Ctrl + клик сохранить восстановить)умный
-   * GIF:         https://archiescript.github.io/ReaScriptSiteGif/html/ZoomTracksInTCPToFitScreenCtrl+ClickSaveRestore)Smart.html
-				  https://avatars.mds.yandex.net/get-pdb/1863019/d5e261f6-626e-4b59-a6dc-68f4d1eedcf6/orig
+   * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/ZoomTracksInTCPToFitScreenCtrl+ClickSaveRestoreSmart.html
+   *              https://avatars.mds.yandex.net/get-pdb/1863019/d5e261f6-626e-4b59-a6dc-68f4d1eedcf6/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    AlexLazer(RMM)$
    * Gave idea:   AlexLazer(RMM)
    * Changelog:   
-   *              + Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
-   *              + Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]
-
-   *              +  initialе / v.1.0 [29.01.2019]
+   *              v.1.05 [12052019]
+   *                + Added the ability to not scale tracks with enabled 'Lock track height'
+   *                + Добавлена возможность не масштабировать треки с включенным "Lock track height"
+   
+   *              v.1.03 [03.02.2019]
+   *                + Added the ability to adjust the indentation from the bottom 
+   *                + Добавлена возможность регулирования отступа снизу 
+   *              v.1.0 [29.01.2019]
+   *                +  initialе
+   
    
    ===========================================================================================\
    -------------SYSTEM REQUIREMENTS:-------/-------СИСТЕМНЫЕ ТРЕБОВАНИЯ:----------------------|
@@ -24,20 +30,20 @@
    + Reaper v.5.965 -----------| http://www.reaper.fm/download.php -------|(and above |и выше)|
    + SWS v.2.9.7 --------------| http://www.sws-extension.org/index.php --|(and above |и выше)|
    - ReaPack v.1.2.2 ----------| http://reapack.com/repos ----------------|(and above |и выше)|
-   + Arc_Function_lua v.2.3.7 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
+   + Arc_Function_lua v.2.4.1 -| Repository - Archie-ReaScripts  http://clck.ru/EjERc |и выше)|
    + reaper_js_ReaScriptAPI64 -| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr |и выше)|
                                                                  http://clck.ru/Eo5Lw |и выше)|
    - Visual Studio С++ 2015 ---| --------- http://clck.ru/Eq5o6 ----------|(and above |и выше)|
 --===========================================================================================]]
-
-
-
-
+    
+    
+    
+    
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-
-
+    
+    
     
     -- СКРИПТ МАСШТАБИРУЕТ ТРЕКИ В TCP ПО РАЗМЕРУ ЭКРАНА
     -- ЕСЛИ НАДО СОХРАНИТЬ ТЕКУЩИЙ РАЗМЕР ТРЕКОВ, ТО ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + КЛИК,
@@ -53,19 +59,19 @@
     -- IF THE STATUS OF THE SCRIPT ON (LIST BUTTON) IT MEANS THAT THE SCRIPT IS PRESENT TO SAVE, TO RESTORE THE -- SAVED SIZE, JUST RUN THE SCRIPT BY PRESSING CTRL + CLICK,
     -- TO RESAVE, RUN THE SCRIPT BY PRESSING CTRL +SHIFT + CLICK.
     -------------------------------------------------------------
-
-
-
+    
+    
+    
     local shrink = 0
-                 -- | Отрегулируйте отступ снизу как вам удобно 
-                 -- | shrink = 0 / shrink = 10 / shrink = 20 и т.д.
-                          -----------------------------------------
-                 -- | Adjust the padding at the bottom as you like
-                 -- | shrink = 0 / shrink = 10 / shrink = 20 etc.
-                 ------------------------------------------------
-
-
-
+                 -- | Отрегулируйте отступ снизу как вам удобно в пикселях
+                 -- | shrink = 0; shrink = 10; shrink = 20; и т.д.
+                          ----------------------------------------
+                 -- | Adjust the padding at the bottom as you like in pixels
+                 -- | shrink = 0; shrink = 10; shrink = 20; etc.
+                 -----------------------------------------------
+    
+    
+    
     local ScrollTop = 1
                  -- = 0 | Отключить прокрутку вверх
                  -- = 1 | Включить прокрутку вверх
@@ -73,63 +79,85 @@
                  -- = 0 | Disable scroll up
                  -- = 1 | Enable scroll up
                  -------------------------
-
-
+    
+    
+    
+    local  heigh_lock = 1
+                   -- = 0 | ОТКЛ ЗАМОК (ТРЕКИ С ВКЛЮЧЕННЫМ LOCK TRACK HEIGHT БУДУТ МАСШТАБИРОВАТЬСЯ)
+                   -- = 1 | ВКЛ ЗАМОК (ТРЕКИ С ВКЛЮЧЕННЫМ LOCK TRACK HEIGHT НЕ БУДУТ МАСШТАБИРОВАТЬСЯ) 
+                            --------------------------------------------------------------------------
+                   -- = 0 | OFF LOCK (TRACKS WITH INCLUDED LOCK TRACK HEIGHT WILL BE SCALE)
+                   -- = 1 | ON LOCK (TRACKS WITH INCLUDED LOCK TRACK HEIGHT WILL NOT BE SCALE)
+                   ---------------------------------------------------------------------------
+    
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
-
-
-
-   --============================ FUNCTION MODULE FUNCTION ================================ FUNCTION MODULE FUNCTION ========================================
-    local Fun,scr,dir,MB,Arc,Load = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions',select(2,reaper.get_action_context()):match("(.+)[\\/]"),
-    reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
-    if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
-    'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
-    if not Arc.VersionArc_Function_lua("2.3.7",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
-    --==================================▲=▲=▲=================================================================================================================
-
-
-
-
-    if not reaper.JS_Mouse_GetState then reaper.MB(
-    'There is no file "reaper_js_ReaScriptAPI.dll" \nInstall repository "ReaTeam Extensions"\n\n'..
-    'Отсутствует файл "reaper_js_ReaScriptAPI.dll" \nУстановите репозиторий "ReaTeam Extensions"'
-    ,"Error",0) return end;
-    -----------------------
-
-
+    
+    
+    
+    
+    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
+    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
+    return end; if not Arc.VersionArc_Function_lua("2.4.1",Fun,"")then Arc.no_undo() return end;--=====================================================
+    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
+    
+    
+    shrink = shrink + 7;
+    local Api_js = Arc.js_ReaScriptAPI(true,0.986);
+    local Api_sws = Arc.SWS_API(true);
+    if not Api_js or not Api_sws then Arc.no_undo() return end;
+    
+    
+    
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then Arc.no_undo() return end;
+    
+    
+    local function ZoomTracksInTCPToFitScreen();
+        reaper.PreventUIRefresh(1);
         
-        
-        
-   local function ZoomTracksInTCPToFitScreen();  
-        reaper.PreventUIRefresh(1);    
-
         local HeightPlus, TrackT, DepthFold, DepthChild = 0,{};
-
+    
         for i = 1, CountTrack do;
             local Track = reaper.GetTrack(0,i-1);
             local showTCP = reaper.GetMediaTrackInfo_Value(Track,"B_SHOWINTCP");
+            local HeightLock = reaper.GetMediaTrackInfo_Value(Track,"B_HEIGHTLOCK");
             ----
+            
+            if heigh_lock ~= 1 then HeightLock = 0 end;
+            
+            if HeightLock == 1 then;
+                if showTCP == 1 then;
+                    local Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                    HeightPlus = HeightPlus + Height;
+                end;
+            end;
+            
+            
             if DepthFold then;
                 DepthChild = reaper.GetTrackDepth(Track); 
                 if DepthChild <= DepthFold then;
                     DepthFold = nil;
                 else;
                     if showTCP == 1 then;
-                        local Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
-                        HeightPlus = HeightPlus + Height;
+                        if HeightLock == 0 then;
+                            local Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                            HeightPlus = HeightPlus + Height;
+                        end;
                     end;
                 end;
             end;
 
-            if not DepthFold then;
+            if not DepthFold and HeightLock == 0 then;
                 if showTCP == 1 then;
                     table.insert(TrackT,Track);
                 end;
             end;
+            
             if not DepthFold then;
                 local Fold = reaper.GetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH");
                 if Fold == 1 then;
@@ -147,7 +175,7 @@
 
         for i = 1, #TrackT do;
             reaper.SetMediaTrackInfo_Value(TrackT[i],"I_HEIGHTOVERRIDE",heightAll);
-        end
+        end;
 
         reaper.TrackList_AdjustWindows(false);
 
@@ -159,43 +187,40 @@
 
         reaper.PreventUIRefresh(-1);
     end;
-
-
-    local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+    
+    
+    
+    
+    local TrackVal;
+    local section = ({reaper.get_action_context()})[2]:match('.*[/\\](.+)%..*$');
     local CtrlShift = reaper.JS_Mouse_GetState(12);
-      if CtrlShift == 12 then;
-          reaper.DeleteExtState("CTRL_TrackScr648257","CTRL_Scr648257",false);
-          CtrlShift = 4;
-      end;
-      if CtrlShift == 4 then; -- Ctrl
-
-        if not reaper.HasExtState("CTRL_TrackScr648257","CTRL_Scr648257")then;
-
-            local TrackVal = "";
+    if CtrlShift == 12 then;
+        reaper.DeleteExtState(section,"SaveHeight",false);
+        CtrlShift = 4;
+    end;
+    
+    if CtrlShift == 4 then; -- Ctrl
+        if not reaper.HasExtState(section,"SaveHeight")then;
             for i = 1, reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 local GUID = reaper.GetTrackGUID(Track);
-                --local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE");
                 local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
-                TrackVal = TrackVal.."{"..GUID..HeightS .."}";  
+                TrackVal = (TrackVal or "").."{"..GUID..HeightS .."}";  
             end;
-            reaper.SetExtState("CTRL_TrackScr648257","CTRL_Scr648257",TrackVal,false);
+            reaper.SetExtState(section,"SaveHeight",TrackVal,false);
             ZoomTracksInTCPToFitScreen();
-            reaper.SetToggleCommandState(sec, cmd,1);
-            reaper.RefreshToolbar2(sec, cmd);
-        else;   
-            reaper.PreventUIRefresh(1);  
-
-            local rest = reaper.GetExtState("CTRL_TrackScr648257","CTRL_Scr648257"); 
+            Arc.SetToggleButtonOnOff(1);
+        else;
+            reaper.PreventUIRefresh(1);
+            local rest = reaper.GetExtState(section,"SaveHeight");
             for GUID, Height  in string.gmatch(rest,"{({.-})(.-)}") do;
                 local Track = reaper.BR_GetMediaTrackByGUID(0,GUID);
                 if Track then;
                     reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",Height);
                 end;
             end;
-            reaper.DeleteExtState("CTRL_TrackScr648257","CTRL_Scr648257",false);
-            reaper.SetToggleCommandState(sec, cmd,0);
-            reaper.RefreshToolbar2(sec, cmd);
+            reaper.DeleteExtState(section,"SaveHeight",false);
+            Arc.SetToggleButtonOnOff(0);
             
             if ScrollTop == 1 then;
                 reaper.CSurf_OnScroll(0,-1000);
@@ -206,9 +231,7 @@
             reaper.PreventUIRefresh(-1);
         end;
     else;
-        ZoomTracksInTCPToFitScreen();      
-    end;    
-
+        ZoomTracksInTCPToFitScreen();
+    end;
     reaper.TrackList_AdjustWindows(false);
-
     Arc.no_undo();
