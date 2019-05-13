@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Zoom TCP and Arrange to fit screen
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Zoom TCP and Arrange to fit screen
    * О скрипте:   Увеличьте масштаб TCP и Arrange по размеру экрана
    * GIF:         ---
@@ -12,7 +12,7 @@
    * Customer:    Microtonic (RMM)
    * Gave idea:   Microtonic (RMM)
    * Changelog:   
-   *              v.1.01 [13.05.2019]
+   *              v.1.02 [13.05.2019]
    *                + initialе
    
    

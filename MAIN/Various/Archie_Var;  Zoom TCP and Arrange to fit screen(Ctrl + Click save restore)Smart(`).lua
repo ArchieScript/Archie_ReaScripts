@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
    * О скрипте:   Увеличьте масштаб TCP и Arrange по размеру экрана(Ctrl+щелчок,чтобы сохранить восстановить)Smart(`)
    * GIF:         ---
@@ -12,7 +12,7 @@
    * Customer:    Microtonic (RMM)
    * Gave idea:   Microtonic (RMM)
    * Changelog:   
-   *              v.1.01 [13.05.2019]
+   *              v.1.02 [13.05.2019]
    *                + initialе
    
    
@@ -37,6 +37,23 @@
     
     
     -------- / TCP / ---------------
+  
+  
+    -- СКРИПТ МАСШТАБИРУЕТ ТРЕКИ В TCP ПО РАЗМЕРУ ЭКРАНА
+    -- ЕСЛИ НАДО СОХРАНИТЬ ТЕКУЩИЙ РАЗМЕР ТРЕКОВ, ТО ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + КЛИК,
+    -- СКРИПТ СДЕЛАЕТ ВСЕ ТРЕКИ ПОД РАЗМЕР ЭКРАНА И СОХРАНИТ ПРЕДЫДУЩИЕ РАЗМЕРЫ ТРЕКОВ
+    -- ЕСЛИ У СКРИПТА СТАТУС ВКЛ(ГОРИТ КНОПКА) ЭТО ЗНАЧИТ, ЧТО В СКРИПТЕ ПРИСУТСТВУЕТ СОХРАНЕНИЕ,
+    -- ДЛЯ ВОССТАНОВЛЕНИЯ СОХРАНЕННЫХ РАЗМЕРОВ, ТАК ЖЕ ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + КЛИК,
+    -- ДЛЯ ПЕРЕСОХРАНЕНИЯ, ЗАПУСТИТЕ СКРИПТ СОЧЕТАНИЕМ КЛАВИШ CTRL + SHIFT + КЛИК.
+    ------------------------------------------------------------------------------
+    -- Sorry for my english
+    -- THE SCRIPT SCALES TRACKS IN TCP TO FIT THE SCREEN
+    -- IF YOU WANT TO SAVE THE CURRENT SIZE OF THE TRACKS, RUN THE SCRIPT BY PRESSING CTRL + CLICK,
+    -- THE SCRIPT WILL MAKE ALL THE TRACKS UNDER THE SIZE OF THE SCREEN AND SAVE THE PREVIOUS SIZE OF THE TRACKS
+    -- IF THE STATUS OF THE SCRIPT ON (LIST BUTTON) IT MEANS THAT THE SCRIPT IS PRESENT TO SAVE, TO RESTORE THE -- SAVED SIZE, JUST RUN THE SCRIPT BY PRESSING CTRL + CLICK,
+    -- TO RESAVE, RUN THE SCRIPT BY PRESSING CTRL +SHIFT + CLICK.
+    -------------------------------------------------------------
+  
     
     local shrink = 0
                  -- | Отрегулируйте отступ снизу как вам удобно 
