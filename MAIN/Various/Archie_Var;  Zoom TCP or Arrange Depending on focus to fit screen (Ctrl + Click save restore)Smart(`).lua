@@ -1,10 +1,10 @@
 --[[
    * Category:    Various
-   * Description: Zoom TCP or Arrange Depending on focus to fit screen
+   * Description: Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)
    * Author:      Archie
    * Version:     1.01
-   * AboutScript: Zoom TCP or Arrange Depending on focus to fit screen
-   * О скрипте:   Увеличить TCP или Arrange В зависимости от фокуса, по размеру экрана 
+   * AboutScript: Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)
+   * О скрипте:   Увеличить TCP или Arrange В зависимости от фокуса по размеру экрана (Ctrl+клик сохранить, восстановить) Smart (`)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -25,7 +25,7 @@
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 -         --| http://reapack.com/repos                              
    (+) Arc_Function_lua v.2.4.1 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
-   (-) reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
+   (+) reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
    (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                
    =======================================================================================]] 
     
@@ -80,7 +80,7 @@
     
     
     
-    local INDENT_START = -5
+    local INDENT_START = -0.5
                     -- | ОТРЕГУЛИРУЙТЕ ОТСТУП В НАЧАЛЕ КАК ВАМ УДОБНО 
                          --------------------------------------------
                     -- | REGULATE RETIREMENT AT THE BEGINNING HOW YOU COMFORTABLE
@@ -106,6 +106,11 @@
     return end; if not Arc.VersionArc_Function_lua("2.4.1",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
     
+    
+    
+    local Api_js = Arc.js_ReaScriptAPI(true,0.986);
+    local Api_sws = Arc.SWS_API(true);
+    if not Api_js or not Api_sws then Arc.no_undo() return end;
     
     
     
@@ -213,12 +218,83 @@
     
     
     
-    local CursorContext = reaper.GetCursorContext2(true);
-    if CursorContext > 0 then;
-        Arrange();
-    else;
-        TCP();
-    end;
     
+    local section = ({reaper.get_action_context()})[2]:match('.*[/\\](.+)%..*$');
+    
+    --- / TCP / ---
+    local CursorContext = reaper.GetCursorContext2(true);
+    if CursorContext <= 0 then;
+    
+        local TrackVal;
+        local CtrlShift = reaper.JS_Mouse_GetState(12);
+        if CtrlShift == 12 then;
+            reaper.DeleteExtState(section,"SaveHeightTCP",false);
+            CtrlShift = 4;
+        end;
+        
+        if CtrlShift == 4 then; -- Ctrl
+            if not reaper.HasExtState(section,"SaveHeightTCP")then;
+                for i = 1, reaper.CountTracks(0) do;
+                    local Track = reaper.GetTrack(0,i-1);
+                    local GUID = reaper.GetTrackGUID(Track);
+                    local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                    TrackVal = (TrackVal or "").."{"..GUID..HeightS .."}";  
+                end;
+                reaper.SetExtState(section,"SaveHeightTCP",TrackVal,false);
+                TCP();
+                Arc.SetToggleButtonOnOff(1);
+            else;
+                reaper.PreventUIRefresh(1);
+                local rest = reaper.GetExtState(section,"SaveHeightTCP");
+                for GUID, Height  in string.gmatch(rest,"{({.-})(.-)}") do;
+                    local Track = reaper.BR_GetMediaTrackByGUID(0,GUID);
+                    if Track then;
+                        reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",Height);
+                    end;
+                end;
+                reaper.DeleteExtState(section,"SaveHeightTCP",false);
+                Arc.SetToggleButtonOnOff(0);
+                
+                if ScrollTop == 1 then;
+                    reaper.CSurf_OnScroll(0,-1000);
+                    reaper.CSurf_OnScroll(0, 1   );
+                    reaper.CSurf_OnScroll(0, -1  );
+                end;
+                
+                reaper.PreventUIRefresh(-1);
+            end;
+        else;
+            TCP();
+        end;
+        reaper.TrackList_AdjustWindows(false);
+         
+    else;    
+           
+        --- / ARRANGE / ---
+        local CtrlShift = reaper.JS_Mouse_GetState(12);
+        if CtrlShift == 12 then;
+            reaper.DeleteExtState(section,"SaveHeightARRANGE",false);
+            CtrlShift = 4;
+        end;
+        
+        if CtrlShift == 4 then; -- Ctrl
+            if not reaper.HasExtState(section,"SaveHeightARRANGE")then;
+                local start_zoom, end_zoom = reaper.GetSet_ArrangeView2(0,0,0,0);
+                reaper.SetExtState(section,"SaveHeightARRANGE", start_zoom..'&'..end_zoom,false);
+                Arrange();
+                Arc.SetToggleButtonOnOff(1);
+            else;
+                local rest = reaper.GetExtState(section,"SaveHeightARRANGE");
+                local start_zoom, end_zoom = string.match(rest,"(.-)&(.-)$")
+                local START = (start_zoom-(end_zoom-start_zoom)/150)-(INDENT_START / 100);
+                local END = (end_zoom + (end_zoom-start_zoom)/50)+ (INDENT_END / 100);
+                reaper.GetSet_ArrangeView2(0,1,0,0, START, END);
+                reaper.DeleteExtState(section,"SaveHeightARRANGE",false);
+                Arc.SetToggleButtonOnOff(0);
+            end;
+        else;
+            Arrange();
+        end;  
+    end;    
     reaper.UpdateArrange();
     Arc.no_undo();

@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Zoom TCP and Arrange to fit screen
    * Author:      Archie
-   * Version:     1.00
+   * Version:     1.01
    * AboutScript: Zoom TCP and Arrange to fit screen
    * О скрипте:   Увеличьте масштаб TCP и Arrange по размеру экрана
    * GIF:         ---
@@ -12,7 +12,7 @@
    * Customer:    Microtonic (RMM)
    * Gave idea:   Microtonic (RMM)
    * Changelog:   
-   *              v.1.00 [13.05.2019]
+   *              v.1.01 [13.05.2019]
    *                + initialе
    
    
@@ -22,7 +22,7 @@
    (-) - not necessary for installation | (-) - не обязательно для установки
    -----------------------------------------------------------------------------------------
    (+) Reaper v.5.975 +           --| http://www.reaper.fm/download.php                     
-   (-) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
+   (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 -         --| http://reapack.com/repos                              
    (+) Arc_Function_lua v.2.4.1 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
    (-) reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
