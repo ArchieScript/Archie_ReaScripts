@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="97c67023937db6ac087a5ae660c52cd7406c20b6" name="Archie-ReaScripts">
+<index version="1" commit="78eb528cdd412c420e06957757f07a283276b130" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2803,6 +2803,11 @@
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
+        <changelog><![CDATA[v.1.02 [13.05.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen.lua" type="script" desc="Zoom TCP and Arrange to fit screen">
       <metadata>
@@ -2820,6 +2825,11 @@
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
+        <changelog><![CDATA[v.1.02 [13.05.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)">
       <metadata>
@@ -2831,6 +2841,11 @@
         <changelog><![CDATA[v.1.01 [13.05.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
+        <changelog><![CDATA[v.1.02 [13.05.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen.lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
@@ -2848,6 +2863,11 @@
         <changelog><![CDATA[v.1.01 [13.05.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
+        <changelog><![CDATA[v.1.02[13.05.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
   </category>
