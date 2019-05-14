@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="969b55582de3d2cb1b37f46726ef7fd016954364" name="Archie-ReaScripts">
+<index version="1" commit="35135e81b942cde4d9a692677ba4f9e15d8e9bdc" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2765,6 +2765,12 @@
   + Отключить Ctrl]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2019-05-14T12:38:06Z">
+        <changelog><![CDATA[v.1.08 [14.05.2019]
+  +! Fixed bug when the lock is enabled, the height of the track
+  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
@@ -2821,6 +2827,12 @@
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-05-14T12:38:06Z">
+        <changelog><![CDATA[v.1.01 [14.05.2019]
+  +! Fixed bug when the lock is enabled, the height of the track
+  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
       <metadata>
@@ -2844,6 +2856,12 @@
         <changelog><![CDATA[v.1.00 [14.05.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-05-14T12:38:06Z">
+        <changelog><![CDATA[v.1.01 [14.05.2019]
+  +! Fixed bug when the lock is enabled, the height of the track
+  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
   </category>
