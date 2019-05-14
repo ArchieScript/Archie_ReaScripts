@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5440d4656edd2447c00bdeb348e852b0f8317488" name="Archie-ReaScripts">
+<index version="1" commit="969b55582de3d2cb1b37f46726ef7fd016954364" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2759,6 +2759,12 @@
   + Добавлена возможность не масштабировать треки с включенным "Lock track height"]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/359dc1b1db1185e8b03400509dc30270685a4572/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2019-05-14T05:22:17Z">
+        <changelog><![CDATA[v.1.07 [14052019]
+  + Disable ctrl
+  + Отключить Ctrl]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
@@ -2792,82 +2798,52 @@
     </reapack>
   </category>
   <category name="MAIN/Various">
-    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)">
+    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.01" author="Archie" time="2019-05-13T17:44:49Z">
-        <changelog><![CDATA[v.1.01 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
-        <changelog><![CDATA[v.1.02 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen.lua" type="script" desc="Zoom TCP and Arrange to fit screen">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.00" author="Archie" time="2019-05-13T14:02:37Z">
+      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
         <changelog><![CDATA[v.1.00 [13.05.2019]
   + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bc43b7aa69c4e10889836b320505ccf7f8b81c68/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-05-13T17:44:49Z">
-        <changelog><![CDATA[v.1.01 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
-        <changelog><![CDATA[v.1.02 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)">
+    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.01" author="Archie" time="2019-05-13T17:44:49Z">
-        <changelog><![CDATA[v.1.01 [13.05.2019]
+      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
+        <changelog><![CDATA[v.1.00 [14.05.2019]
   + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
-        <changelog><![CDATA[v.1.02 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen.lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
+    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.00" author="Archie" time="2019-05-13T14:02:37Z">
-        <changelog><![CDATA[v.1.00 [13.05.2019]
+      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
+        <changelog><![CDATA[v.1.00[13.05.2019]
   + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bc43b7aa69c4e10889836b320505ccf7f8b81c68/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(%60).lua</source>
       </version>
-      <version name="1.01" author="Archie" time="2019-05-13T17:44:49Z">
-        <changelog><![CDATA[v.1.01 [13.05.2019]
+    </reapack>
+    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
+        <changelog><![CDATA[v.1.00 [14.05.2019]
   + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97c67023937db6ac087a5ae660c52cd7406c20b6/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-13T18:03:37Z">
-        <changelog><![CDATA[v.1.02[13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/78eb528cdd412c420e06957757f07a283276b130/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
   </category>
