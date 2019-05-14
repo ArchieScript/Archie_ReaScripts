@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
    * Author:      Archie
-   * Version:     1.00
+   * Version:     1.01
    * AboutScript: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
    * О скрипте:   Увеличьте масштаб TCP и Arrange по размеру экрана(Ctrl+щелчок,чтобы сохранить восстановить)Smart(`)
    * GIF:         ---
@@ -12,6 +12,10 @@
    * Customer:    Microtonic (RMM)$
    * Gave idea:   Microtonic (RMM)$
    * Changelog:   
+   *              v.1.01 [14.05.2019]
+   *                +! Fixed bug when the lock is enabled, the height of the track
+   *                +! Исправлена ошибка при включенной блокировке высоты дорожки
+      
    *              v.1.00 [14.05.2019]
    *                + initialе
    
@@ -258,7 +262,12 @@
             for i = 1, reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 local GUID = reaper.GetTrackGUID(Track);
-                local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                ----
+                local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE");
+                if tonumber(HeightS) == 0 then;
+                    HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                end
+                ----
                 TrackVal = (TrackVal or "").."{"..GUID..HeightS .."}";  
             end;
             local start_zoom, end_zoom = reaper.GetSet_ArrangeView2(0,0,0,0);
@@ -273,6 +282,14 @@
             for GUID, Height  in string.gmatch(rest,"{({.-})(.-)}") do;
                 local Track = reaper.BR_GetMediaTrackByGUID(0,GUID);
                 if Track then;
+                    -------
+                    if tonumber(Height) < 24 then;
+                        Height = reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE");
+                        if Height == 0 then;
+                            Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                        end;
+                    end;
+                    -------
                     reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",Height);
                 end;
             end;

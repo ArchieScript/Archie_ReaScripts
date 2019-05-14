@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * О скрипте:   Масштабировать треки в TCP по размеру экрана (Ctrl + клик сохранить восстановить)умный
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/ZoomTracksInTCPToFitScreenCtrl+ClickSaveRestoreSmart.html
@@ -13,10 +13,13 @@
    * Customer:    AlexLazer(RMM)$
    * Gave idea:   AlexLazer(RMM)$
    * Changelog:   
+   *              v.1.08 [14.05.2019]
+   *                +! Fixed bug when the lock is enabled, the height of the track
+   *                +! Исправлена ошибка при включенной блокировке высоты дорожки
+   
    *              v.1.07 [14052019]
    *                + Disable ctrl
    *                + Отключить Ctrl
-   
    *              v.1.05 [12052019]
    *                + Added the ability to not scale tracks with enabled 'Lock track height'
    *                + Добавлена возможность не масштабировать треки с включенным "Lock track height"
@@ -216,7 +219,12 @@
             for i = 1, reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 local GUID = reaper.GetTrackGUID(Track);
-                local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                ----
+                local HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE");
+                if tonumber(HeightS) == 0 then;
+                    HeightS = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                end
+                ----
                 TrackVal = (TrackVal or "").."{"..GUID..HeightS .."}";  
             end;
             reaper.SetExtState(section,"SaveHeight",TrackVal,false);
@@ -228,6 +236,14 @@
             for GUID, Height  in string.gmatch(rest,"{({.-})(.-)}") do;
                 local Track = reaper.BR_GetMediaTrackByGUID(0,GUID);
                 if Track then;
+                    -------
+                    if tonumber(Height) < 24 then;
+                        Height = reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE");
+                        if Height == 0 then;
+                            Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                        end;
+                    end;
+                    -------
                     reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",Height);
                 end;
             end;
