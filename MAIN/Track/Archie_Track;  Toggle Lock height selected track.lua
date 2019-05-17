@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Toggle Lock height selected track
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Toggle Lock height selected track
    * О скрипте:   Переключатель блокировки высоты выбранного трека
    * GIF:         ---
@@ -121,10 +121,7 @@
             else;
                 reaper.SetMediaTrackInfo_Value(SelTrack,"B_HEIGHTLOCK",0);
             end;
-            
-            
         end;
-        
     end;
     Arc.no_undo();
     loop();
