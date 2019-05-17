@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="abde11ccda248904779b642b0d906e0a13471b1e" name="Archie-ReaScripts">
+<index version="1" commit="131bb075c2475bf11a544c4e988e48f1e6ac874e" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2637,6 +2637,12 @@
         <changelog><![CDATA[v.1.0 [170519]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/abde11ccda248904779b642b0d906e0a13471b1e/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-05-17T16:40:02Z">
+        <changelog><![CDATA[v.1.01 [17.05.19]
+    + fixed bug when delete track
+    + Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/131bb075c2475bf11a544c4e988e48f1e6ac874e/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor(`).lua" type="script" desc="Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor">
