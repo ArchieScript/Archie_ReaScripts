@@ -12,7 +12,11 @@
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:   
-   *              v.1.0 [170519]
+   *              v.1.01 [17.05.19]
+   *                  + fixed bug when delete track
+   *                  + Исправлена ошибка при удалении трека
+   
+   *              v.1.0 [17.05.19]
    *                  +  initialе
   
    --=======================================================================================
@@ -50,7 +54,9 @@
     
     local function GetSelectedTracksOfLastTouchOrFirstSelected();
         local TouchedTrack = reaper.GetLastTouchedTrack();
-        local Sel = reaper.IsTrackSelected(TouchedTrack);
+        if TouchedTrack then;
+            local Sel = reaper.IsTrackSelected(TouchedTrack);
+        end;
         if Sel then;
             return TouchedTrack;
         else;
@@ -97,10 +103,28 @@
     if CountSelTrack > 0 then;
         local Track = GetSelectedTracksOfLastTouchOrFirstSelected();
         local heightLock = reaper.GetMediaTrackInfo_Value(Track,"B_HEIGHTLOCK");
+        
         for i = 1, CountSelTrack do;
             local SelTrack = reaper.GetSelectedTrack(0,i-1);
-            reaper.SetMediaTrackInfo_Value(SelTrack,"B_HEIGHTLOCK",math.abs(heightLock-1));
+            if heightLock == 0 then;
+                local height = reaper.GetMediaTrackInfo_Value(SelTrack,"I_HEIGHTOVERRIDE");
+                if height == 0 then;
+                    height = reaper.GetMediaTrackInfo_Value(SelTrack,"I_WNDH");
+                    if height < 24 then;
+                        height = nil;
+                    end;
+                end;
+                if height then;
+                    reaper.SetMediaTrackInfo_Value(SelTrack,"I_HEIGHTOVERRIDE",height);
+                    reaper.SetMediaTrackInfo_Value(SelTrack,"B_HEIGHTLOCK",1);
+                end;
+            else;
+                reaper.SetMediaTrackInfo_Value(SelTrack,"B_HEIGHTLOCK",0);
+            end;
+            
+            
         end;
+        
     end;
     Arc.no_undo();
     loop();
