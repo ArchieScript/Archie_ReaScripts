@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="35135e81b942cde4d9a692677ba4f9e15d8e9bdc" name="Archie-ReaScripts">
+<index version="1" commit="abde11ccda248904779b642b0d906e0a13471b1e" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2625,6 +2625,18 @@
     +  ОТКЛЮЧЕНИЕ МАСШТАБИРОВАНИЕ СРЕДНЕ СВЕРНУТЫХ ТРЕКОВ
     +! ИСПРАВЛЕНЫ ОШИБКИ МАСШТАБИРОВАНИЯ ПРИ ВКЛЮЧЕННОЙ АВТОМАТИЧЕСКОЙ ЗАПИСИ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/85199130fd47d2553482ec3b3ca9cc8f5c5c8ee3/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-17T08:51:03Z">
+        <changelog><![CDATA[v.1.0 [170519]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/abde11ccda248904779b642b0d906e0a13471b1e/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor(`).lua" type="script" desc="Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor">
