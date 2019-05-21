@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="131bb075c2475bf11a544c4e988e48f1e6ac874e" name="Archie-ReaScripts">
+<index version="1" commit="7b2b33a5efcb2f138460d6f2eef3960b2b8f65c1" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2822,6 +2822,18 @@
     </reapack>
   </category>
   <category name="MAIN/Various">
+    <reapack name="Archie_Var;  Toggle auto view scroll(ctrl+click go to play position)(`).lua" type="script" desc="Toggle auto view scroll(ctrl+click go to play position)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-21T09:52:57Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [21.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7b2b33a5efcb2f138460d6f2eef3960b2b8f65c1/MAIN/Various/Archie_Var;%20%20Toggle%20auto%20view%20scroll(ctrl+click%20go%20to%20play%20position)(%60).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Toggle auto view scroll(ctrl+click go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/7b2b33a5efcb2f138460d6f2eef3960b2b8f65c1/MAIN/Various/Archie_Var;%20%20Toggle%20auto%20view%20scroll(ctrl+click%20go%20to%20play%20position)(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
