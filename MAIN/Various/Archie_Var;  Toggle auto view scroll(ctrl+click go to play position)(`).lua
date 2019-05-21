@@ -13,7 +13,7 @@
    * Gave idea:   YuriOl(RMM)
    * Provides:    
    *              [main] . 
-   *              [midi_editor] . > Archie_MidiEditor;  Toggle auto view scroll(ctrl+click go to play position)(`).lua
+   *              [main=midi_editor] . > Archie_MidiEditor;  Toggle auto view scroll(ctrl+click go to play position)(`).lua
    * Changelog:   +  initialе / v.1.0 [21.05.19]
    
    --=======================================================================================
