@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="51781afd7aa6da07f5192a579517ea468913c576" name="Archie-ReaScripts">
+<index version="1" commit="763d76348efc2ffc26572447b1fa9fecdfa44253" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -191,6 +191,9 @@
       </version>
       <version name="2.4.1" author="Archie" time="2019-05-09T13:00:39Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/54be15b4a20e1e2e044e09ed5d7b1fa83c177550/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.4.2" author="Archie" time="2019-05-23T11:20:13Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -2531,6 +2534,13 @@
         <source main="main" file="Archie_Track;  Select next tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d0594f611dbce1d0635b2edb56a32df61e62ca9d/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track;  Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d0594f611dbce1d0635b2edb56a32df61e62ca9d/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2019-05-23T11:20:13Z">
+        <changelog><![CDATA[v.1.04 [22.05.19]
+    + SCROLLING WITH the INDENT
+    + ПРОКРУТКА С ОТСТУПОМ]]></changelog>
+        <source main="main" file="Archie_Track;  Select next tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track;  Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Selects tracks that have _ARCHIVE in their name(`).lua" type="script" desc="Selects tracks that have &quot;_ARCHIVE&quot; in their name&quot;">
       <metadata>
@@ -2789,6 +2799,12 @@
   +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
       </version>
+      <version name="1.09" author="Archie" time="2019-05-23T11:20:13Z">
+        <changelog><![CDATA[v.1.09 [22.05.2019]
+  + Added the ability to scroll to the first selected track
+  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
       <metadata>
@@ -2846,7 +2862,7 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)">
+    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -2862,6 +2878,12 @@
   +! Fixed bug when the lock is enabled, the height of the track
   +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-05-23T11:20:13Z">
+        <changelog><![CDATA[v.1.02 [22.05.2019]
+  + Added the ability to scroll to the first selected track
+  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
@@ -2892,6 +2914,12 @@
   +! Fixed bug when the lock is enabled, the height of the track
   +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-05-23T11:20:13Z">
+        <changelog><![CDATA[v.1.02 [23.05.2019]
+  + Added the ability to scroll to the first selected track
+  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
       </version>
     </reapack>
   </category>
