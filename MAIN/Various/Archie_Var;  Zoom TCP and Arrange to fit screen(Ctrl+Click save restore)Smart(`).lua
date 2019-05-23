@@ -1,8 +1,8 @@
 --[[
    * Category:    Various
-   * Description: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
+   * Description: Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Zoom TCP and Arrange to fit screen(Ctrl + Click save restore)Smart(`)
    * О скрипте:   Увеличьте масштаб TCP и Arrange по размеру экрана(Ctrl+щелчок,чтобы сохранить восстановить)Smart(`)
    * GIF:         ---
@@ -12,10 +12,13 @@
    * Customer:    Microtonic (RMM)$
    * Gave idea:   Microtonic (RMM)$
    * Changelog:   
+   *              v.1.02 [22.05.2019]
+   *                + Added the ability to scroll to the first selected track
+   *                + Добавлена возможность прокрутки до первой выбранной дорожки
+   
    *              v.1.01 [14.05.2019]
    *                +! Fixed bug when the lock is enabled, the height of the track
-   *                +! Исправлена ошибка при включенной блокировке высоты дорожки
-      
+   *                +! Исправлена ошибка при включенной блокировке высоты дорожки   
    *              v.1.00 [14.05.2019]
    *                + initialе
    
@@ -75,13 +78,15 @@
     
     
     
-    local ScrollTop = 1
+    local ScrollTop = 2
                  -- = 0 | Отключить прокрутку вверх
                  -- = 1 | Включить прокрутку вверх
-                          ------------------------
+                 -- = 2 | Включить, при восстановлении верхний трек будет первый выделенный
+                          -----------------------------------------------------------------
                  -- = 0 | Disable scroll up
                  -- = 1 | Enable scroll up
-                 -------------------------
+                 -- = 2 | Enable,when restoring, the first selected track will be considered as the top one
+                 ------------------------------------------------------------------------------------------
     
     
     
@@ -229,7 +234,8 @@
         
         reaper.TrackList_AdjustWindows(false);
         
-        if ScrollTop == 1 then;
+
+        if ScrollTop == 1 or ScrollTop == 2 then;
             reaper.CSurf_OnScroll(0,-1000);
             reaper.CSurf_OnScroll(0, 1   );
             reaper.CSurf_OnScroll(0, -1  );
@@ -302,10 +308,23 @@
             reaper.DeleteExtState(section,"SaveHeight",false);
             Arc.SetToggleButtonOnOff(0);
             
+            if ScrollTop == 2 then;
+                if reaper.CountSelectedTracks(0)==0 then;
+                    ScrollTop = 1;
+                end;
+            end;
+      
             if ScrollTop == 1 then;
                 reaper.CSurf_OnScroll(0,-1000);
                 reaper.CSurf_OnScroll(0, 1   );
                 reaper.CSurf_OnScroll(0, -1  );
+            elseif ScrollTop == 2 then;
+                reaper.defer(function();
+                             reaper.PreventUIRefresh(5);
+                             reaper.CSurf_OnScroll(0,10000);  
+                             Arc.Action(40285,40286);-->-< Go to track 
+                             reaper.PreventUIRefresh(-5);
+                             end);
             end;
             
             reaper.PreventUIRefresh(-1);

@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next/previous tracks(skip minimized folders)*
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Select next/previous tracks(skip minimized folders)*
    * О скрипте:   Выберите следующий/предыдущий треки(пропустить свернутые папки)
    * GIF:         ---
@@ -15,9 +15,14 @@
    *              [main] . > Archie_Track;  Select next tracks(skip minimized folders)(`).lua
    *              [main] . > Archie_Track;  Select previous tracks(skip minimized folders)(`).lua
    * Changelog:   
-   *              +  Added a mixer scroll / v.1.03 [10042019]
+   *              v.1.04 [22.05.19]
+   *                  + SCROLLING WITH the INDENT
+   *                  + ПРОКРУТКА С ОТСТУПОМ
    
-   *              +  initialе / v.1.0 [09042019]
+   *              v.1.03 [10042019]
+   *                  +  Added a mixer scroll
+   *              v.1.0 [09042019]
+   *                  +  initialе
    
    
    --=======================================================================================
@@ -26,7 +31,7 @@
    (-) - not necessary for installation | (-) - не обязательно для установки
    -----------------------------------------------------------------------------------------
    (+) Reaper v.5.967 +           --| http://www.reaper.fm/download.php                     
-   (-) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
+   (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
    (-) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
    (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
@@ -41,10 +46,26 @@
     --======================================================================================
     
     
-    local SCROLL = 1    --  требуется/requires - reaper_js_ReaScriptAPI*)
-             --  = 0 | OFF | ВЫКЛЮЧИТЬ СКРОЛЛИНГ \ DISABLE SCROLLING
-             --  = 1 | ON  | ВКЛЮЧИТЬ СКРОЛЛИНГ  \ ENABLE SCROLLING
-             ------------------------------------------------------ 
+    
+    local SCROLL = 1
+             --  = 0 | OFF | ВЫКЛЮЧИТЬ ПРОКРУТКУ 
+             --  = 1 | ПРОКРУТКА НА МЕСТЕ *
+             --  = 2 | ПРОКРУТКА С ОТСТУПОМ В ТРЕКАХ(необходимо установать indent)
+                       -----------------------------------------------------------
+             --  = 0 | OFF | DISABLE SCROLLING
+             --  = 1 | SCROLLING IN PLACE *
+             --  = 2 | SCROLLING WITH the INDENT IN the TRACKS (you must ustanoviti indent)
+             ------------------------------------------------------------------------------
+    -- * требуется/requires - reaper_js_ReaScriptAPI
+    ------------------------------------------------
+    
+    
+    
+    local indent = 2  -- кол-во треков; number of tracks;
+                -- | ОТСТУП ПРИ ПРОКРУТКЕ,(В ТРЕКАХ); Работает только при "SCROLL = 2"
+                -- | INDENT WHEN SCROLLING,(IN TRACKS); Works only when "SCROLL = 2"
+                -------------------------------------------------------------------
+    
     
     
     --======================================================================================
@@ -52,11 +73,14 @@
     --====================================================================================== 
     
     
+  
     
-
-    -------------------------------------------------------
-    local function no_undo()reaper.defer(function()end)end;
-    -------------------------------------------------------
+    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
+    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
+    return end; if not Arc.VersionArc_Function_lua("2.4.1",Fun,"")then Arc.no_undo() return end;--=====================================================
+    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    
     
     
     
@@ -77,6 +101,8 @@
         no_undo() return;
     end;
     
+    
+    if not Arc.SWS_API(true)then Arc.no_undo() return end;
     
     
     local CountSelTrack = reaper.CountSelectedTracks(0);
@@ -129,7 +155,7 @@
     
     reaper.PreventUIRefresh(1);
     reaper.Undo_BeginBlock();
-	
+  
     
     if Script_Name == SelectNext then;--Select>>
         
@@ -144,7 +170,8 @@
                 if height >= 24 then;--h
                     local sel = reaper.GetMediaTrackInfo_Value(trackX,"I_SELECTED");
                     if sel == 0 then;
-                        reaper.SetTrackSelected(trackX,1);
+                        --reaper.SetTrackSelected(trackX,1);
+                        reaper.SetMediaTrackInfo_Value(trackX,"I_SELECTED",1);
                         reaper.SetTrackSelected(trackSel,0);
                     end;
                     break;--h
@@ -165,17 +192,21 @@
                 if height >= 24 then;--h
                     local sel = reaper.GetMediaTrackInfo_Value(trackX,"I_SELECTED");
                     if sel == 0 then;
-                        reaper.SetTrackSelected(trackX,1);
+                        --reaper.SetTrackSelected(trackX,1);
+                        reaper.SetMediaTrackInfo_Value(trackX,"I_SELECTED",1);
                         reaper.SetTrackSelected(trackSel,0);
                     end;
                     break;--h
                 end;--h
-            end;   
-        end; 
-    end;--Select<<     
+            end;
+        end;
+    end;--Select<<
+    
+    
     
     
     if SCROLL == 1 then--Scroll>>
+        
         local track = reaper.GetSelectedTrack(0,0);
         local height = reaper.GetMediaTrackInfo_Value(track,"I_WNDH");
         local Fold = reaper.GetMediaTrackInfo_Value(track,"I_FOLDERDEPTH");
@@ -209,13 +240,81 @@
         end;
         if Scroll < 0 then Scroll = 0 end;
         SetScrollTrack(track, Scroll);
+    
+    elseif SCROLL == 2 then;
+        
+        Arc.SaveSelTracksGuidSlot_SWS(1);
+        
+        local Toggle = reaper.GetToggleCommandStateEx(0,40221);
+        if Toggle == 1 then;
+            Arc.Action(40221);
+        end
+           
+        if Script_Name == SelectNext then;
+            local Track = reaper.GetSelectedTrack(0,reaper.CountSelectedTracks(0)-1);
+            reaper.SetOnlyTrackSelected(Track);
+            Arc.Action(40286,40285);--<--> Go to track
+            local stop;
+            local Numb = reaper.GetMediaTrackInfo_Value(Track,"IP_TRACKNUMBER");
+            for i = Numb, reaper.CountTracks(0)-1 do;
+                local Track = reaper.GetTrack(0,i);
+                if Track then;
+                    local Visible = reaper.IsTrackVisible(Track,false);
+                    if Visible then;
+                        local height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                        if height < 24 then;
+                            indent = indent +1;
+                        end;
+                        stop = (stop or 0)+1;
+                        if stop == indent then break end;
+                    end;
+                end;
+            end;
+            for i = 1, indent do;
+                Arc.Action(40285);--> Go to track   
+            end;
+            ------------------
+        elseif Script_Name == SelectPrev then;
+          
+            local Track = reaper.GetSelectedTrack(0,0);
+            reaper.SetOnlyTrackSelected(Track);
+            Arc.Action(40285,40286);-->-< Go to track 
+            local stop;
+            local Numb = (reaper.GetMediaTrackInfo_Value(Track,"IP_TRACKNUMBER")-2);
+            for i = Numb,0,-1 do;
+                local Track = reaper.GetTrack(0,i);
+                if Track then;
+                    local Visible = reaper.IsTrackVisible(Track,false);
+                    if Visible then;
+                        local height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+                        if height < 24 then;
+                            indent = indent +1;
+                        end;
+                        stop = (stop or 0)+1;
+                        if stop == indent then break end;
+                    end;
+                end;
+            end;
+            for i = 1, indent do;
+                Arc.Action(40286);--< Go to track
+            end;
+        end;
+        
+        if Toggle == 1 then;
+            Arc.Action(40221);
+        end
+        
+        Arc.RestoreSelTracksGuidSlot_SWS(1,true); 
     end;--Scroll<<
     
-	
-	---/ MixerScroll /----------------------------------
-	reaper.SetMixerScroll(reaper.GetSelectedTrack(0,0));
-	----------------------------------------------------
-	
+    
+    ---/ MixerScroll /----------------------------------
+    local Toggle = reaper.GetToggleCommandStateEx(0,40221);
+    if Toggle == 1 then;
+        reaper.SetMixerScroll(reaper.GetSelectedTrack(0,0));
+    end;
+    ----------------------------------------------------
+    
     reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ",""):gsub("%.lua",""),-1);
     reaper.PreventUIRefresh(-1);
     reaper.UpdateArrange();

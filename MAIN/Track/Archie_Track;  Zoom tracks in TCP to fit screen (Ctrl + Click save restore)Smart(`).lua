@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart
    * О скрипте:   Масштабировать треки в TCP по размеру экрана (Ctrl + клик сохранить восстановить)умный
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/ZoomTracksInTCPToFitScreenCtrl+ClickSaveRestoreSmart.html
@@ -13,10 +13,13 @@
    * Customer:    AlexLazer(RMM)$
    * Gave idea:   AlexLazer(RMM)$
    * Changelog:   
+   *              v.1.09 [22.05.2019]
+   *                + Added the ability to scroll to the first selected track
+   *                + Добавлена возможность прокрутки до первой выбранной дорожки
+   
    *              v.1.08 [14.05.2019]
    *                +! Fixed bug when the lock is enabled, the height of the track
    *                +! Исправлена ошибка при включенной блокировке высоты дорожки
-   
    *              v.1.07 [14052019]
    *                + Disable ctrl
    *                + Отключить Ctrl
@@ -84,13 +87,15 @@
     
     
     
-    local ScrollTop = 1
+    local ScrollTop = 2
                  -- = 0 | Отключить прокрутку вверх
                  -- = 1 | Включить прокрутку вверх
-                          ------------------------
+                 -- = 2 | Включить, при восстановлении верхний трек будет первый выделенный
+                          -----------------------------------------------------------------
                  -- = 0 | Disable scroll up
                  -- = 1 | Enable scroll up
-                 -------------------------
+                 -- = 2 | Enable,when restoring, the first selected track will be considered as the top one
+                 ------------------------------------------------------------------------------------------
     
     
     
@@ -191,7 +196,7 @@
 
         reaper.TrackList_AdjustWindows(false);
 
-        if ScrollTop == 1 then;
+        if ScrollTop == 1 or ScrollTop == 2 then;
             reaper.CSurf_OnScroll(0,-1000);
             reaper.CSurf_OnScroll(0, 1   );
             reaper.CSurf_OnScroll(0, -1  );
@@ -250,10 +255,23 @@
             reaper.DeleteExtState(section,"SaveHeight",false);
             Arc.SetToggleButtonOnOff(0);
             
+            if ScrollTop == 2 then;
+                if reaper.CountSelectedTracks(0)==0 then;
+                    ScrollTop = 1;
+                end;
+            end;
+            
             if ScrollTop == 1 then;
                 reaper.CSurf_OnScroll(0,-1000);
                 reaper.CSurf_OnScroll(0, 1   );
                 reaper.CSurf_OnScroll(0, -1  );
+            elseif ScrollTop == 2 then;
+                reaper.defer(function();
+                             reaper.PreventUIRefresh(5);
+                             reaper.CSurf_OnScroll(0,10000);  
+                             Arc.Action(40285,40286);-->-< Go to track 
+                             reaper.PreventUIRefresh(-5);
+                             end);
             end;
             
             reaper.PreventUIRefresh(-1);

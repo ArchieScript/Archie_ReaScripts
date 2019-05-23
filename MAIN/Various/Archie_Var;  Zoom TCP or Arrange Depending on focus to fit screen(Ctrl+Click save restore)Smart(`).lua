@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)
    * О скрипте:   Увеличить TCP или Arrange В зависимости от фокуса по размеру экрана (Ctrl+клик сохранить, восстановить) Smart (`)
    * GIF:         ---
@@ -12,10 +12,13 @@
    * Customer:    Microtonic (RMM)$
    * Gave idea:   Microtonic (RMM)$
    * Changelog:   
+   *              v.1.02 [23.05.2019]
+   *                + Added the ability to scroll to the first selected track
+   *                + Добавлена возможность прокрутки до первой выбранной дорожки
+   
    *              v.1.01 [14.05.2019]
    *                +! Fixed bug when the lock is enabled, the height of the track
-   *                +! Исправлена ошибка при включенной блокировке высоты дорожки
-   
+   *                +! Исправлена ошибка при включенной блокировке высоты дорожки  
    *              v.1.00 [14.05.2019]
    *                + initialе
    
@@ -76,13 +79,15 @@
     
     
     
-    local ScrollTop = 1
+    local ScrollTop = 2
                  -- = 0 | Отключить прокрутку вверх
                  -- = 1 | Включить прокрутку вверх
-                          ------------------------
+                 -- = 2 | Включить, при восстановлении верхний трек будет первый выделенный
+                          -----------------------------------------------------------------
                  -- = 0 | Disable scroll up
                  -- = 1 | Enable scroll up
-                 -------------------------
+                 -- = 2 | Enable,when restoring, the first selected track will be considered as the top one
+                 ------------------------------------------------------------------------------------------
     
     
     
@@ -131,7 +136,7 @@
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.4.1",Fun,"")then Arc.no_undo() return end;--=====================================================
+    return end; if not Arc.VersionArc_Function_lua("2.4.2",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
     
     
@@ -140,6 +145,8 @@
     local Api_sws = Arc.SWS_API(true);
     if not Api_js or not Api_sws then Arc.no_undo() return end;
     
+    
+    Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false);
     
     
     local function Arrange();
@@ -234,7 +241,7 @@
         
         reaper.TrackList_AdjustWindows(false);
         
-        if ScrollTop == 1 then;
+        if ScrollTop == 1 or ScrollTop == 2 then;
             reaper.CSurf_OnScroll(0,-1000);
             reaper.CSurf_OnScroll(0, 1   );
             reaper.CSurf_OnScroll(0, -1  );
@@ -299,10 +306,23 @@
                 reaper.DeleteExtState(section,"SaveHeightTCP",false);
                 Arc.SetToggleButtonOnOff(0);
                 
+                if ScrollTop == 2 then;
+                    if reaper.CountSelectedTracks(0)==0 then;
+                        ScrollTop = 1;
+                    end;
+                end;
+                    
                 if ScrollTop == 1 then;
                     reaper.CSurf_OnScroll(0,-1000);
                     reaper.CSurf_OnScroll(0, 1   );
                     reaper.CSurf_OnScroll(0, -1  );
+                elseif ScrollTop == 2 then;
+                    reaper.defer(function();
+                                 reaper.PreventUIRefresh(5);
+                                 reaper.CSurf_OnScroll(0,10000);  
+                                 Arc.Action(40285,40286);-->-< Go to track 
+                                 reaper.PreventUIRefresh(-5);
+                                 end);
                 end;
                 
                 reaper.PreventUIRefresh(-1);
@@ -345,3 +365,55 @@
     end;    
     reaper.UpdateArrange();
     Arc.no_undo();
+    
+    
+    
+    function loop();
+        local CursorContext = reaper.GetCursorContext2(true);
+        local HasExtStateTCP = reaper.HasExtState(section,"SaveHeightTCP");
+        local HasExtStateARRANGE = reaper.HasExtState(section,"SaveHeightARRANGE");
+        if not HasExtStateTCP and not HasExtStateARRANGE then Arc.no_undo()return end;
+        local BUTTON_ARANGE,BUTTON_TCP;
+        --- / TCP / ---
+        if CursorContext <= 0 then;
+            BUTTON_ARANGE = nil;
+            if not HasExtStateTCP then;
+                if BUTTON_TCP ~= 0 then;
+                    if GetSetToggleButtonOnOff(0,false) ~= 0 then;
+                        Arc.SetToggleButtonOnOff(0);
+                    end;
+                    BUTTON_TCP = 0;
+                end;
+            elseif HasExtStateTCP then;
+                if BUTTON_TCP ~= 1 then;
+                    if GetSetToggleButtonOnOff(0,false) ~= 1 then;
+                        Arc.SetToggleButtonOnOff(1);
+                    end;
+                    BUTTON_TCP = 1;
+                end;  
+            end;
+            -------------------
+        else;
+            --- / ARRANGE / ---
+            BUTTON_TCP = nil;
+            if not HasExtStateARRANGE then;
+                if BUTTON_ARANGE ~= 0 then;
+                    if GetSetToggleButtonOnOff(0,false) ~= 0 then;
+                        Arc.SetToggleButtonOnOff(0);
+                    end;
+                    BUTTON_ARANGE = 0;
+                end;
+            elseif HasExtStateARRANGE then;    
+                if BUTTON_ARANGE ~= 1 then;
+                    if GetSetToggleButtonOnOff(0,false) ~= 1 then;
+                        Arc.SetToggleButtonOnOff(1);
+                    end;
+                    BUTTON_ARANGE = 1;
+                end;
+            end;
+        end;
+        ------
+        reaper.defer(loop);
+        --t=(t or 0)+1
+    end;
+    loop();
