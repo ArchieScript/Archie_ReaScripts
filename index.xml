@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="763d76348efc2ffc26572447b1fa9fecdfa44253" name="Archie-ReaScripts">
+<index version="1" commit="4766894082985ef65f7b35a46ea380ea84320deb" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2074,6 +2074,12 @@
     + Save state for different projects;
     + Removed a window asking about saving the project;]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab158788797944f640bee27df0e14ce6d3e88e13/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-05-24T11:50:18Z">
+        <changelog><![CDATA[v.1.03 [24052019]
+    + Remove - make the project dirty at the start of the script
+    + Убрать - сделать проект грязный при старте скрипта]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4766894082985ef65f7b35a46ea380ea84320deb/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE(`).lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
