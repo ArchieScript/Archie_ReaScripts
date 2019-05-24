@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Add tracks with locked height to collapsed folders-Restore when uncollapsed(background)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Добавить треки с заблокированной высотой в свернутые папки / восстановить, когда не свернуто - фон
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/AddTracksWithLockedHeightToCollapsedFolders.html
@@ -14,13 +14,16 @@
    * Customer:    YuriOl / smrz1:[RMM];
    * Gave idea:   YuriOl / smrz1:[RMM];
    * Changelog:   
+   *              v.1.03 [24052019]
+   *                  + Remove - make the project dirty at the start of the script
+   *                  + Убрать - сделать проект грязный при старте скрипта
+   
    *              v.1.02 [11052019]
    *                Fixed bugs:
    *                  + With subfolders of the same level;
    *                  + Save state for different projects;
    *                  + Removed a window asking about saving the project;
-   
-   *                  +  Исправлены ошибки:
+   *                Исправлены ошибки:
    *                  +  С подпапками одного уровня;
    *                  +  Сохранение состояния для разных проектов;
    *                  +  Убрано окно с запросом о сохранении проекта; 
@@ -76,7 +79,7 @@
         end;
         
         local ProjPathName = ({reaper.EnumProjects(-1,"")})[2];
-        local ProjectState2;
+        local ProjectState2 = reaper.GetProjectStateChangeCount(0);
         local Table = {};
         local KeyEx = "Table";
         local TableMonTr2={};
