@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="1eb21b7ee1e05692c0c2678b93ec6e2d453f6283" name="Archie-ReaScripts">
+<index version="1" commit="c6f04787cdfb7a27664e3769784ef7f1b6f73a11" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -197,6 +197,9 @@
       </version>
       <version name="2.4.3" author="Archie" time="2019-05-25T09:54:08Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/1eb21b7ee1e05692c0c2678b93ec6e2d453f6283/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.4.4" author="Archie" time="2019-05-27T06:23:00Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/c6f04787cdfb7a27664e3769784ef7f1b6f73a11/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -2564,6 +2567,17 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Set height of all tracks MCP to height master track.lua" type="script" desc="Set height of all tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-27T06:23:00Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [26.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6f04787cdfb7a27664e3769784ef7f1b6f73a11/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2618,6 +2632,17 @@
       <version name="1.0" author="Archie" time="2019-03-03T19:14:37Z">
         <changelog><![CDATA[+  initialе / v.1.0 [04032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb8476aa28637f231d5d788273d4223bc9ad45f3/MAIN/Track/Archie_Track;%20%20Smart%20template%20-%20Load%20Track%20template%20by%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle Auto zoom height selected tracks in MCP.lua" type="script" desc="Toggle Auto zoom height selected tracks in MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-27T06:23:00Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6f04787cdfb7a27664e3769784ef7f1b6f73a11/MAIN/Track/Archie_Track;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
