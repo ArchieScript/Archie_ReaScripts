@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="3ae27cd064b6b30bd85070d3c80c89e98f01361e" name="Archie-ReaScripts">
+<index version="1" commit="6cf7eb123f94f3382786ee27f8a3956a82d22e5f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2576,6 +2576,17 @@
       <version name="1.0" author="Archie" time="2019-05-27T06:23:00Z">
         <changelog><![CDATA[+  initialе / v.1.0 [26.05.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6f04787cdfb7a27664e3769784ef7f1b6f73a11/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Set height of Selected tracks MCP to height master track.lua" type="script" desc="Set height of Selected tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-05-28T05:23:18Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [28.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6cf7eb123f94f3382786ee27f8a3956a82d22e5f/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20Selected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
