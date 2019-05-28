@@ -2,11 +2,17 @@
    * Category:    Track
    * Description: Toggle Auto zoom height selected tracks in MCP
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Toggle Auto zoom height selected tracks in MCP
-   *              CTRL + CLICK: SET THE HEIGHT OF ALL MCP TRACKS TO THE HEIGHT OF THE MASTER TRACK
+   *              CTRL + CLICK:         SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+   *              SHIFT + CLICK:        SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+   *              CTRL + SHIFT + CLICK: SET HEIGHT OF ALL TRACKS MCP TO HEIGHT MASTER TRACK*
+   *              * Requires extension "reaper_js_ReaScript API"(repository "ReaTeam Extensions")
    * О скрипте:   Переключатель Автоматическое увеличение высоты выбранных дорожек в MCP
-   *              CTRL + CLICK: УСТАНОВИТЕ ВЫСОТУ ВСЕХ ТРЕКОВ MCP НА ВЫСОТУ МАСТЕР ТРЕКА
+   *              CTRL + CLICK:         УСТАНОВИТЬ ВЫСОТУ ВЫБРАННЫХ ТРЕКОВ MCP НА ВЫСОТУ МАСТЕР-ТРЕКА*
+   *              SHIFT + CLICK:        УСТАНОВИТЬ ВЫСОТУ ВСЕХ НЕВЫБРАННЫХ ТРЕКОВ MCP НА ВЫСОТУ МАСТЕР-ТРЕКА*
+   *              CTRL + SHIFT + CLICK: УСТАНОВИТЬ ВЫСОТУ ВСЕХ ТРЕКОВ MCP НА ВЫСОТУ МАСТЕР-ТРЕКА*
+   *              * Требуется расширение "reaper_js_ReaScript API"(репозиторий  "ReaTeam Extensions")
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1599133/98ce76fb-ab33-468d-8db2-21c8c38edbc9/orig
    *              https://avatars.mds.yandex.net/get-pdb/1926958/c1fb2758-7147-4771-a0fa-a5f07d3f4abb/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -14,14 +20,22 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
-   * Changelog:   +  initialе / v.1.0 [27.05.19]
+   * Changelog:   
+   *              v.1.01 [28.05.19]
+   *                  CTRL + CLICK: SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+   *                  SHIFT + CLICK: SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+   *                  CTRL + SHIFT + CLICK: SET HEIGHT OF ALL TRACKS MCP TO HEIGHT MASTER TRACK*
+   *                  *Requires extension "reaper_js_ReaScript API"(repository "ReaTeam Extensions")
+   
+   *              v.1.0 [27.05.19]
+   *                  +  initialе
 
    --=======================================================================================
    --    SYSTEM REQUIREMENTS:           |  СИСТЕМНЫЕ ТРЕБОВАНИЯ:         
    (+) - required for installation      | (+) - обязательно для установки
    (-) - not necessary for installation | (-) - не обязательно для установки
    -----------------------------------------------------------------------------------------
-   (+) Reaper v.5.975 +           --| http://www.reaper.fm/download.php                     
+   (+) Reaper v.5.975 +           --| http://www.reaper.fm/download.php
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
    (+) Arc_Function_lua v.2.4.4 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
@@ -168,20 +182,32 @@
     end;
     
     
-    --- / CTRL / ---
-    if reaper.APIExists("JS_Mouse_GetState") then; 
+    
+    --- / CTRL -- Shift -- CTRL+Shift / ---
+    if reaper.APIExists("JS_Mouse_GetState") then;
         local GetState = reaper.JS_Mouse_GetState(127);
-        if GetState == 4 then;
-            local Path = ({reaper.get_action_context()})[2]:match(".+[\\/]");
-            local name = "Archie_Track;  Set height of all tracks MCP to height master track.lua";
-            local ret,err = pcall(dofile,Path..name);
-            if not ret then;
-                reaper.MB("ENG:\n\nMissing script\n"..name.."\nAlong the way\n"..Path.."...\n\n\n"..
-                          "RUS:\n\nОтсутствует скрипт\n"..name.."\nпо пути\n"..Path.."...","ERROR",0);
-            end;
+        local Path = ({reaper.get_action_context()})[2]:match(".+[\\/]");
+        local ret,err,name;
+        if GetState == 4 then;--Ctrl
+            name = "Archie_Track;  Set height of selected tracks MCP to height master track.lua";
+            ret,err = pcall(dofile,Path..name);
+            Arc.no_undo() return;
+        elseif GetState == 8 then;--Shift
+            name = "Archie_Track;  Set height of all unselected tracks MCP to height master track.lua";
+            ret,err = pcall(dofile,Path..name);
+            Arc.no_undo() return;
+        elseif GetState == 12 then;--Ctrl+Shift
+            name = "Archie_Track;  Set height of all tracks MCP to height master track.lua";
+            ret,err = pcall(dofile,Path..name);
+            Arc.no_undo() return;
+        end;
+        if not ret and name then;
+            reaper.MB("ENG:\n\nMissing script\n"..name.."\nAlong the way\n"..Path.."...\n\n\n"..
+                      "RUS:\n\nОтсутствует скрипт\n"..name.."\nпо пути\n"..Path.."...","ERROR",0);
             Arc.no_undo() return;
         end;
     end;
+    
     
     
     ---- / Toggle >/ ----
