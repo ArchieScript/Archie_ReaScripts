@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d780de9ecb18714ba99ba9311ad351a5bb082a5f" name="Archie-ReaScripts">
+<index version="1" commit="a80b50b325bc5b38cc837e384a6c60176785e4c1" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2665,6 +2665,14 @@
       <version name="1.0" author="Archie" time="2019-05-27T14:26:24Z">
         <changelog><![CDATA[+  initialе / v.1.0 [27.05.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ae27cd064b6b30bd85070d3c80c89e98f01361e/MAIN/Track/Archie_Track;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-05-28T07:48:31Z">
+        <changelog><![CDATA[v.1.01 [28.05.19]
+    CTRL + CLICK: SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+    SHIFT + CLICK: SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
+    CTRL + SHIFT + CLICK: SET HEIGHT OF ALL TRACKS MCP TO HEIGHT MASTER TRACK*
+    *Requires extension "reaper_js_ReaScript API"(repository "ReaTeam Extensions")]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a80b50b325bc5b38cc837e384a6c60176785e4c1/MAIN/Track/Archie_Track;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
