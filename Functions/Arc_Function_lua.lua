@@ -1,9 +1,9 @@
-local VersionMod = "v.2.4.4"
+local VersionMod = "v.2.4.5"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.4.4
+   * Version:     2.4.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -270,6 +270,7 @@ function Arc_Module.Get_Format_ProjectGrid(divisionIn) local grid_div if divisio
 function Arc_Module.CountTrackSelectedMediaItems(track); local CountTrItems = reaper.CountTrackMediaItems(track); local count = 0; for i = 1,CountTrItems do; local Items = reaper.GetTrackMediaItem(track,i-1); local sel = reaper.IsMediaItemSelected(Items); if sel then count = count + 1 end; end; return count; end; CountTrackSelectedMediaItems = Arc_Module.CountTrackSelectedMediaItems; 
 function Arc_Module.GetTrackSelectedMediaItems(track,idx); local CountTrItems = reaper.CountTrackMediaItems(track); local count = -1; for i = 1,CountTrItems do; local Items = reaper.GetTrackMediaItem(track,i-1); local sel = reaper.IsMediaItemSelected(Items); if sel then count = count + 1 end; if count == idx then return Items end; end; end; GetTrackSelectedMediaItems = Arc_Module.GetTrackSelectedMediaItems; 
 function Arc_Module.GetSetHeigthMCPTrack(track,numb,set); local ret,err = pcall(reaper.GetTrackGUID,track);if not ret then error("GetSetHeigthMCPTrack - "..err,2)end; if set~=0 and set~=1 then error("GetSetHeigthMCPTrack - expected 0 or 1 got "..(tonumber(set)or type(set)),2)end; if set == 1 then; if type(numb)~="number"then error("bad argument #2 to 'GetSetHeigthMCPTrack' (number expected, got "..type(numb)..")",2)end; end; local retval,str = reaper.GetTrackStateChunk(track,"",false); local heigth = string.match(str,"SHOWINMIX%s+%S-%s+(%S-)%s"); if set == 1 then; if numb > 1 then numb = 1 end; if numb < 0 then numb = 0 end; local strSHOWINMIX = string.match(str,"SHOWINMIX.-\n"); local FirstHalfLine,SecondHalfLine = string.match(str,"(SHOWINMIX%s+%S-%s+)%S+(.-\n)"); local str2 = string.gsub(str,strSHOWINMIX,FirstHalfLine..numb..SecondHalfLine); reaper.SetTrackStateChunk(track,str2,false); else; return tonumber(heigth); end; end; GetSetHeigthMCPTrack = Arc_Module.GetSetHeigthMCPTrack; 
+function Arc_Module.openFileURL(pathUrl); if type(pathUrl)~="string"then error("openFileURL - expected string got "..type(pathUrl),2)end; if #pathUrl:gsub(" ","") <= 0 then error("openFileURL - expected at least one symbol, got zero symbol.",2)end; local OS = reaper.GetOS(); if OS == OS:match("OSX") then; os.execute('open "'..pathUrl..'"'); else; os.execute('start "" '..pathUrl); end; end; openFileURL = Arc_Module.openFileURL; 
 function Arc_Module.If_Equals(EqualsToThat,...); for _,v in ipairs {...} do; if v == EqualsToThat then return true end; end; return false; end; If_Equals = Arc_Module.If_Equals; 
 function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); if not min_max then min_max = "MAX" end; local t = {}; for i = 1, #array do; local ti = array[i]; if not t[ti] then t[ti] = 0 end; t[ti] = t[ti] + 1; end; local max = 0; local value; for key, val in pairs(t) do; if val > 1 then; if val > max then; value = key; max = val; elseif val == max then; if val > 1 then; if min_max == "MAX" then; value = math.max(key ,value); elseif min_max == "MIN" then; value = math.min(key ,value); elseif min_max == "RANDOM" then; local rand_T = {key,value}; local random = math.random(#rand_T); value = rand_T[random]; end; end; end; else; if not value then value = false end end; end; return(value); end; ValueFromMaxRepsIn_Table = Arc_Module.ValueFromMaxRepsIn_Table; 
 function Arc_Module.randomOfVal(...); local t = {...}; local random = math.random(#t); return t[random]; end; randomOfVal = Arc_Module.randomOfVal; 
