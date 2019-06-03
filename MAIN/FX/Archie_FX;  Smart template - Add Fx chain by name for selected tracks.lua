@@ -2,7 +2,7 @@
    * Category:    Fx
    * Description: Smart template - Add Fx chain by name for selected tracks
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Smart template - Add Fx chain by name for selected tracks
    * О скрипте:   Умный шаблон - добавить цепочку Fx по имени для выбранных треков
    * GIF:         ---
@@ -12,7 +12,11 @@
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
    * Changelog:   
-   *              +  initialе / v.1.0 [01032019]
+   *              v.1.02 [03062019]
+   *                  + MasterTrack
+   
+   *              v.1.0 [01032019]
+   *                  +  initialе
 
 
    --========================================================================================
@@ -203,6 +207,11 @@ ScriptBeginning = [[
             reaper.InsertTrackAtIndex(0,false);
         
             local firstTr = reaper.GetTrack(0,0);
+            local fx_count = reaper.TrackFX_GetCount(firstTr);
+            for i = fx_count-1,0,-1 do;
+                reaper.TrackFX_Delete(firstTr,i);
+            end;
+            
             local retval,str = reaper.GetTrackStateChunk(firstTr,"",false);
             
             for var in string.gmatch(str, ".-\n") do;
@@ -217,11 +226,17 @@ ScriptBeginning = [[
             
             reaper.SetTrackStateChunk(firstTr,setChunk,false);
             
-            local countSelTrack = reaper.CountSelectedTracks(0);
+            local countSelTrack = reaper.CountSelectedTracks(0)+
+            reaper.GetMediaTrackInfo_Value(reaper.GetMasterTrack(0),"I_SELECTED");
+            
             local FX_Count = reaper.TrackFX_GetCount(firstTr);
+            
             
             for i = 1, countSelTrack do;
                 local selTrack = reaper.GetSelectedTrack(0,i-1);
+                if not selTrack then;
+                    selTrack = reaper.GetMasterTrack(0);
+                end;
                 
                 for i2=1,FX_Count do;
                     alwaysLastFx = reaper.TrackFX_GetCount(selTrack);
