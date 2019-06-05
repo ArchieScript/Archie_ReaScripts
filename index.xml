@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="dacf6e7307cebb4b373388708c1bc2ea8f144233" name="Archie-ReaScripts">
+<index version="1" commit="ffcb58145c61c633b613fec1e1ad4a7d40b73814" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1795,6 +1795,18 @@
     </reapack>
   </category>
   <category name="MAIN/Preferences">
+    <reapack name="Archie_Pref;  Draw edges on peaks.lua" type="script" desc="Draw edges on peaks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-05T08:40:07Z">
+        <changelog><![CDATA[v.1.0 [05062019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Preferences/Archie_Pref;%20%20Draw%20edges%20on%20peaks.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Pref;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2063,6 +2075,12 @@
     Initialе;]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dacf6e7307cebb4b373388708c1bc2ea8f144233/MAIN/Time%20selection/Archie_Time%20selection;%20Insert%20empty%20space%20at%20time%20selection%20in%20selected%20tracks(moving%20later%20items).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-06-05T08:40:07Z">
+        <changelog><![CDATA[v.1.01 [05062019]
+    Master track is selected, shift all content in time selection
+    Мастер-трек выбран, сдвинуть все содержимое в выборе времени]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Time%20selection/Archie_Time%20selection;%20Insert%20empty%20space%20at%20time%20selection%20in%20selected%20tracks(moving%20later%20items).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Time selection; Remove contents of time selection in selected tracks (moving later items).lua" type="script" desc="Remove contents of time selection in selected tracks (moving later items)">
       <metadata>
@@ -2074,6 +2092,12 @@
         <changelog><![CDATA[v.1.0 [04062019]
     Initialе;]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dacf6e7307cebb4b373388708c1bc2ea8f144233/MAIN/Time%20selection/Archie_Time%20selection;%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-06-05T08:40:07Z">
+        <changelog><![CDATA[v.1.01 [05062019]
+    + Master track is selected, delete all content in time selection
+    + Мастер трек выбран, удалить все содержимое в выборе времени ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Time%20selection/Archie_Time%20selection;%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
       </version>
     </reapack>
   </category>
