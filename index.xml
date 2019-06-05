@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ffcb58145c61c633b613fec1e1ad4a7d40b73814" name="Archie-ReaScripts">
+<index version="1" commit="d20b1e92e31404e91606a4aab19596609bb363d8" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1805,6 +1805,12 @@
         <changelog><![CDATA[v.1.0 [05062019]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Preferences/Archie_Pref;%20%20Draw%20edges%20on%20peaks.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-06-05T13:54:17Z">
+        <changelog><![CDATA[v.1.01 [05062019]
+    +! Update peaks when switching
+    +! Обновление пиков при переключении]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d20b1e92e31404e91606a4aab19596609bb363d8/MAIN/Preferences/Archie_Pref;%20%20Draw%20edges%20on%20peaks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
