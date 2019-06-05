@@ -2,7 +2,7 @@
    * Category:    Time selection
    * Description: Remove contents of time selection in selected tracks (moving later items)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Удалить содержимое выбора времени в выбранных дорожках (перемещение более поздних элементов)
    * GIF:         ---
@@ -12,8 +12,12 @@
    * Customer:    smrz1:[RMM];
    * Gave idea:   smrz1:[RMM];
    * Changelog:   
+   *              v.1.01 [05062019]
+   *                  + Master track is selected, delete all content in time selection
+   *                  + Мастер трек выбран, удалить все содержимое в выборе времени 
+   
    *              v.1.0 [04062019]
-   *                  Initialе;
+   *                  + Initialе;
    
    -- Тест только на windows  /  Test only on windows.
    --=======================================================================================
@@ -67,8 +71,19 @@
     
     
     local Start,End = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
-    local count_sel_track = reaper.CountSelectedTracks(0);
     if Start == End then reaper.MB("No Time Selected","ERROR",0)no_undo()return end;
+    
+    
+    ----------------
+    local MasterTrack = reaper.GetMasterTrack(0);
+    local sel = reaper.GetMediaTrackInfo_Value(MasterTrack,"I_SELECTED");
+    if sel == 1 then;
+        reaper.Main_OnCommand(40201,0);--Remove contents of time selection
+        return;
+    end;
+    ----------------
+    
+    local count_sel_track = reaper.CountSelectedTracks(0);
     if count_sel_track == 0 then no_undo()return end;
     
     
