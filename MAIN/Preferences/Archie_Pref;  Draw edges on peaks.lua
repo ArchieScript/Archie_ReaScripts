@@ -2,7 +2,7 @@
    * Category:    Preferences
    * Description: Draw edges on peaks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Preferences -> Peaks/Waveforms -> Name Script
    * О скрипте:   Рисовать кромки на вершинах
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1871571/d68e51ad-bf58-431c-a6d4-f188ee76af83/s1200
@@ -12,6 +12,10 @@
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Changelog:   
+   *              v.1.01 [05062019]
+   *                  +! Update peaks when switching
+   *                  +! Обновление пиков при переключении
+   
    *              v.1.0 [05062019]
    *                  +  initialе
    
@@ -66,6 +70,7 @@
     
     reaper.Undo_BeginBlock();
     reaper.SNM_SetIntConfigVar("peaksedges",SetConfigVar);
+    Arc.Action(40047);--Build any missing peaks
     reaper.Undo_EndBlock(title,-1);
     
     local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
