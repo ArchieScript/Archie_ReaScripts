@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="d20b1e92e31404e91606a4aab19596609bb363d8" name="Archie-ReaScripts">
+<index version="1" commit="3bf4ac4d7c735f239f02f5f8f732952cdea3ac6b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -812,6 +812,18 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20By%20frame%20move%20item,under%20mouse%20cursor.move%20cursor%20the%20to%20offset(mousewheel).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Change volume of selected items to (ctrl+script to set value).lua" type="script" desc="Change volume of selected items to (ctrl+script to set the value)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-07T09:43:46Z">
+        <changelog><![CDATA[v.1.0 [07062019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3bf4ac4d7c735f239f02f5f8f732952cdea3ac6b/MAIN/Item/Archie_Item;%20%20Change%20volume%20of%20selected%20items%20to%20(ctrl+script%20to%20set%20value).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Cut silence by grid from selected items to created track under item(-80 db)(`).lua" type="script" desc="Cut silence by grid from selected items to created track under item">
