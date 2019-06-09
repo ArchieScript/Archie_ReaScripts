@@ -2,7 +2,7 @@
    * Category:    Fx
    * Description: Freeze track in (...), up to last selected Fx
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Заморозить трек в (...), до последнего выбранного Fx
    * GIF:         ---
@@ -16,7 +16,7 @@
    *              [main] . > Archie_FX;  Freeze track in mono, up to last selected FX.lua
    *              [main] . > Archie_FX;  Freeze track in stereo, up to last selected FX.lua
    *              [main] . > Archie_FX;  Freeze track in multichannel, up to last selected FX.lua
-   * Changelog:   v.1.0 [09062019]
+   * Changelog:   v.1.01 [09062019]
    *                  +  initialе
    
    

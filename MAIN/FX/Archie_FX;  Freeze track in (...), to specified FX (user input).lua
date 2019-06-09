@@ -2,7 +2,7 @@
    * Category:    Fx
    * Description: Freeze track in (...), to specified Fx (user input)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Заморозить трек в (...), до указанного Fx (пользовательский ввод)
    * GIF:         ---
@@ -16,7 +16,7 @@
    *              [main] . > Archie_FX;  Freeze track in mono, to specified FX (user input).lua
    *              [main] . > Archie_FX;  Freeze track in stereo, to specified FX (user input).lua
    *              [main] . > Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua
-   * Changelog:   v.1.0 [09062019]
+   * Changelog:   v.1.01 [09062019]
    *                  +  initialе
    
    
