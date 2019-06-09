@@ -1,10 +1,10 @@
 --[[
    * Category:    Fx
-   * Description: Freeze track in (...), up to last selected FX
+   * Description: Freeze track in (....), to specified FX (user input)
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Заморозить трек в (...), до последнего выбранного FX
+   * О скрипте:   Заморозить трек в (....), до указанного FX (пользовательский ввод)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -13,10 +13,10 @@
    * Gave idea:   Maestro Sound(RMM)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_FX;  Freeze track in mono, up to last selected FX.lua
-   *              [main] . > Archie_FX;  Freeze track in stereo, up to last selected FX.lua
-   *              [main] . > Archie_FX;  Freeze track in multichannel, up to last selected FX.lua
-   * Changelog:   v.1.0 [08062019]
+   *              [main] . > Archie_FX;  Freeze track in mono, to specified FX (user input).lua
+   *              [main] . > Archie_FX;  Freeze track in stereo, to specified FX (user input).lua
+   *              [main] . > Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua
+   * Changelog:   v.1.0 [09062019]
    *                  +  initialе
    
    
@@ -48,55 +48,62 @@
     
     
     local scrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
-    
+scrName = "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua"  
     local command_id,inf;
-    if scrName == "Archie_FX;  Freeze track in mono, up to last selected FX.lua" then;
+    if scrName == "Archie_FX;  Freeze track in mono, to specified FX (user input).lua" then;
         command_id = 40901;--freez
-        inf = "mono"    
-    elseif scrName == "Archie_FX;  Freeze track in stereo, up to last selected FX.lua" then;
+        inf = "mono"
+    elseif scrName == "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua" then;
         command_id = 41223;
         inf = "stereo"
-    elseif scrName == "Archie_FX;  Freeze track in multichannel, up to last selected FX.lua" then;
+    elseif scrName == "Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua" then;
         command_id = 40877;
-        inf = "multichannel"    
+        inf = "multichannel"
     else;
         reaper.MB("RUS:\nНеверное имя скрипта\nИмя должно быть одно из следующих ***\n\n\n"..
                   "ENG:\nInvalid script name\nThe name must be one of the following ***\n\n\n***\n"..
-                  "Archie_FX;  Freeze track in mono, up to last selected FX.lua\n"..
-                  "Archie_FX;  Freeze track in stereo, up to last selected FX.lua\n"..
-                  "Archie_FX;  Freeze track in multichannel, up to last selected FX.lua","ERROR",0)
+                  "Archie_FX;  Freeze track in mono, to specified FX (user input).lua\n"..
+                  "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua\n"..
+                  "Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua","ERROR",0)
         no_undo() return;
     end;
     
     
-    local CountSelTrack = reaper.CountSelectedTracks(0);
-    --if CountSelTrack == 0 then no_undo() return end;
-    if CountSelTrack == 0 then;
-        reaper.MB("No Selected track","Woops",0);
+    
+    
+    local sel;
+    local LastTouchedTrack = reaper.GetLastTouchedTrack();
+    if LastTouchedTrack then;
+        sel = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"I_SELECTED");
+    end;
+    
+    if not LastTouchedTrack or sel == 0 then;
+        reaper.MB("Track not selected","Woops",0);
         no_undo() return;
     end;
     
+    local freezTrack = LastTouchedTrack;
     
-    local freezTrack;
-    local LastTouchedTrack = reaper.GetLastTouchedTrack()or reaper.GetTrack(0,0);
-    local sel = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"I_SELECTED");
-    if sel == 1 then;
-        freezTrack = LastTouchedTrack;
-    else;
-        freezTrack = reaper.GetSelectedTrack(0,0);
-    end;
     
     
     local FX_Count = reaper.TrackFX_GetCount(freezTrack);
     --if FX_Count == 0 then no_undo() return end;
     if FX_Count == 0 then;
-        reaper.MB("No Fx track","Woops",0);
+        reaper.MB("No Fx in track","Woops",0);
         no_undo() return;
     end;
     
     
+    
+    local retval,str = reaper.GetTrackStateChunk(freezTrack,"",false);
+    local numb = (tonumber(str:match("<FXCHAIN.-LASTSEL ([-]-%d+)"))or -1)+1;
+    local FX_Count = reaper.TrackFX_GetCount(freezTrack);
+    if FX_Count < numb then numb = FX_Count end;
+    
+    
+    
     ::Repeat1::
-    local retval, retvals_csv = reaper.GetUserInputs("Freeze track in "..inf..", up selected FX",1,"Set Number select FX / 1 - "..FX_Count,FX_Count);
+    local retval, retvals_csv = reaper.GetUserInputs("Freeze track in "..inf..", up selected FX",1,"Set Number select FX / 1 - "..FX_Count,numb);
     if not retval then no_undo() return end;
     retvals_csv = tonumber(retvals_csv);
     if not retvals_csv or retvals_csv < 1 or retvals_csv > FX_Count then;
@@ -111,6 +118,9 @@
     
     reaper.InsertTrackAtIndex(0,false);
     local firstTrack = reaper.GetTrack(0,0);
+    for i = reaper.TrackFX_GetCount(firstTrack)-1,0,-1 do;
+        reaper.TrackFX_Delete(firstTrack,i);
+    end;
     
     local fxCount = reaper.TrackFX_GetCount(freezTrack);
     for i = 1, (fxCount-retvals_csv) do;
@@ -119,7 +129,6 @@
     end;
     
     reaper.Main_OnCommand(command_id,0);
-    
     
     local FX_Count = reaper.TrackFX_GetCount(firstTrack);
     for i = 1, FX_Count do;
