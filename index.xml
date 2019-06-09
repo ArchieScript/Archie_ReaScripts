@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="dd0168cd4df93fae304ddec2bab512f2c6543915" name="Archie-ReaScripts">
+<index version="1" commit="01164c8c0615695d2268c7afefe6cadb9c97dba0" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -422,7 +422,7 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/FX/Archie_FX;%20%20Close%20first%20instrument%20in%20Selected%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Freeze track in (...), to specified FX (user input).lua" type="script" desc="Freeze track in (...), to specified FX (user input)">
+    <reapack name="Archie_FX;  Freeze track in (...), to specified FX (user input).lua" type="script" desc="Freeze track in (...), to specified Fx (user input)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -437,19 +437,19 @@
         <source main="main" file="Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/dd0168cd4df93fae304ddec2bab512f2c6543915/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(...),%20to%20specified%20FX%20(user%20input).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Freeze track in (....), up to last selected FX.lua" type="script" desc="Freeze track in (....), up to last selected FX">
+    <reapack name="Archie_FX;  Freeze track in (...), up to last selected Fx.lua" type="script" desc="Freeze track in (...), up to last selected Fx">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-06-09T16:01:26Z">
+      <version name="1.0" author="Archie" time="2019-06-09T16:17:01Z">
         <changelog><![CDATA[v.1.0 [09062019]
 +  initialе]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/21b9607f9ff097a6bef75484e47a33b6d98bb7ca/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(....),%20up%20to%20last%20selected%20FX.lua</source>
-        <source main="main" file="Archie_FX;  Freeze track in mono, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/21b9607f9ff097a6bef75484e47a33b6d98bb7ca/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(....),%20up%20to%20last%20selected%20FX.lua</source>
-        <source main="main" file="Archie_FX;  Freeze track in stereo, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/21b9607f9ff097a6bef75484e47a33b6d98bb7ca/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(....),%20up%20to%20last%20selected%20FX.lua</source>
-        <source main="main" file="Archie_FX;  Freeze track in multichannel, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/21b9607f9ff097a6bef75484e47a33b6d98bb7ca/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(....),%20up%20to%20last%20selected%20FX.lua</source>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/01164c8c0615695d2268c7afefe6cadb9c97dba0/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(...),%20up%20to%20last%20selected%20Fx.lua</source>
+        <source main="main" file="Archie_FX;  Freeze track in mono, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/01164c8c0615695d2268c7afefe6cadb9c97dba0/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(...),%20up%20to%20last%20selected%20Fx.lua</source>
+        <source main="main" file="Archie_FX;  Freeze track in stereo, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/01164c8c0615695d2268c7afefe6cadb9c97dba0/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(...),%20up%20to%20last%20selected%20Fx.lua</source>
+        <source main="main" file="Archie_FX;  Freeze track in multichannel, up to last selected FX.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/01164c8c0615695d2268c7afefe6cadb9c97dba0/MAIN/FX/Archie_FX;%20%20Freeze%20track%20in%20(...),%20up%20to%20last%20selected%20Fx.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Move last FX in selected items to first position(`).lua" type="script" desc="Move the last FX in the selected items to the first position">
