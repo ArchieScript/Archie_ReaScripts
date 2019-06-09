@@ -1,10 +1,10 @@
 --[[
    * Category:    Fx
-   * Description: Freeze track in (....), to specified FX (user input)
+   * Description: Freeze track in (...), to specified FX (user input)
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Заморозить трек в (....), до указанного FX (пользовательский ввод)
+   * О скрипте:   Заморозить трек в (...), до указанного FX (пользовательский ввод)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -48,7 +48,7 @@
     
     
     local scrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
-scrName = "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua"  
+    
     local command_id,inf;
     if scrName == "Archie_FX;  Freeze track in mono, to specified FX (user input).lua" then;
         command_id = 40901;--freez
