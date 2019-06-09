@@ -1,10 +1,10 @@
 --[[
    * Category:    Fx
-   * Description: Freeze track in (....), up to last selected FX
+   * Description: Freeze track in (...), up to last selected Fx
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Заморозить трек в (....), до последнего выбранного FX
+   * О скрипте:   Заморозить трек в (...), до последнего выбранного Fx
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

@@ -1,10 +1,10 @@
 --[[
    * Category:    Fx
-   * Description: Freeze track in (...), to specified FX (user input)
+   * Description: Freeze track in (...), to specified Fx (user input)
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Заморозить трек в (...), до указанного FX (пользовательский ввод)
+   * О скрипте:   Заморозить трек в (...), до указанного Fx (пользовательский ввод)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
