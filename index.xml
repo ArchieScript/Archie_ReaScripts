@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="b7e9107932b87d1da6a739a68e3a8c0fa21fa6e6" name="Archie-ReaScripts">
+<index version="1" commit="5b1c15fd6106b5b356bb9b037bd9793f181e6eac" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1713,6 +1713,87 @@
       </version>
     </reapack>
   </category>
+  <category name="MAIN/Mixer">
+    <reapack name="Archie_Mixer;  Set height of all tracks MCP to height master track.lua" type="script" desc="Set height of all tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Set height of all unselected tracks MCP to height master track.lua" type="script" desc="Set height of all unselected tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20unselected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Set height of not rec-armed tracks MCP to height master track.lua" type="script" desc="Set height of not rec-armed tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20not%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Set height of rec-armed tracks MCP to height master track.lua" type="script" desc="Set height of rec-armed tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Set height of Selected tracks MCP to height master track.lua" type="script" desc="Set height of Selected tracks MCP to height master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20Selected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Toggle Auto zoom height selected tracks in MCP(`).lua" type="script" desc="Toggle Auto zoom height selected tracks in MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[v.1.0 [12.06.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Toggle Auto zoom height tracks rec-armed in MCP.lua" type="script" desc="Toggle Auto zoom height tracks rec-armed in MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
+        <changelog><![CDATA[v.1.0 [12.06.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20tracks%20rec-armed%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="MAIN/Monitoring">
     <reapack name="Archie_MonitorFx;  Smart template monitoring Toggle Open Fx in float.lua" type="script" desc="Smart template monitoring Toggle Open Fx in float">
       <metadata>
@@ -2721,39 +2802,6 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Set height of all tracks MCP to height master track.lua" type="script" desc="Set height of all tracks MCP to height master track">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-05-27T06:23:00Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [26.05.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6f04787cdfb7a27664e3769784ef7f1b6f73a11/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Set height of all unselected tracks MCP to height master track.lua" type="script" desc="Set height of all unselected tracks MCP to height master track">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-05-28T06:21:27Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [28.05.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d780de9ecb18714ba99ba9311ad351a5bb082a5f/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20all%20unselected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Set height of Selected tracks MCP to height master track.lua" type="script" desc="Set height of Selected tracks MCP to height master track">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-05-28T05:23:18Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [28.05.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6cf7eb123f94f3382786ee27f8a3956a82d22e5f/MAIN/Track/Archie_Track;%20%20Set%20height%20of%20Selected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2808,25 +2856,6 @@
       <version name="1.0" author="Archie" time="2019-03-03T19:14:37Z">
         <changelog><![CDATA[+  initialе / v.1.0 [04032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb8476aa28637f231d5d788273d4223bc9ad45f3/MAIN/Track/Archie_Track;%20%20Smart%20template%20-%20Load%20Track%20template%20by%20name.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Toggle Auto zoom height selected tracks in MCP(`).lua" type="script" desc="Toggle Auto zoom height selected tracks in MCP">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-05-27T14:26:24Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [27.05.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ae27cd064b6b30bd85070d3c80c89e98f01361e/MAIN/Track/Archie_Track;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-05-28T07:48:31Z">
-        <changelog><![CDATA[v.1.01 [28.05.19]
-    CTRL + CLICK: SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
-    SHIFT + CLICK: SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
-    CTRL + SHIFT + CLICK: SET HEIGHT OF ALL TRACKS MCP TO HEIGHT MASTER TRACK*
-    *Requires extension "reaper_js_ReaScript API"(repository "ReaTeam Extensions")]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a80b50b325bc5b38cc837e384a6c60176785e4c1/MAIN/Track/Archie_Track;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
