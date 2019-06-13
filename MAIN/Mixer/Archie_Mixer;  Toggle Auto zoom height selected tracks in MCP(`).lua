@@ -1,10 +1,11 @@
 --[[
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
+   *
    * Category:    Mixer
    * Description: Toggle Auto zoom height selected tracks in MCP
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Toggle Auto zoom height selected tracks in MCP
    *              CTRL + CLICK:         SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
    *              SHIFT + CLICK:        SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
@@ -23,6 +24,9 @@
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:   
+   *              v.1.01 [13.06.19]
+   *                 ---
+   
    *              v.1.0 [12.06.19]
    *                  +  initialе
 
@@ -64,7 +68,7 @@
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.4.4",Fun,"")then Arc.no_undo() return end;--=====================================================
+    return end; if not Arc.VersionArc_Function_lua("2.4.6",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
     
     
@@ -206,6 +210,13 @@
     local Toggle = tonumber(reaper.GetExtState(section,"toggle"))or 0;
     if Toggle == 0 then;
         reaper.SetExtState(section,"toggle",1,false);
+        ---
+        local IdByName = Arc.GetIDByScriptName("Archie_Mixer;  Toggle Auto zoom height tracks rec-armed in MCP(`).lua");
+        local Toggle2 = reaper.GetToggleCommandState(reaper.NamedCommandLookup(IdByName));
+        if Toggle2 == 1 then;
+            reaper.Main_OnCommand(reaper.NamedCommandLookup(IdByName),0);
+        end;
+        ---
         loop();
         Arc.GetSetToggleButtonOnOff(1,1);
     elseif Toggle == 1 then;
