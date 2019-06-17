@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ab06a3c4c00d6fb215ef203ff43940417d2be19b" name="Archie-ReaScripts">
+<index version="1" commit="be333f90df0b46903581ed0bb1ddff31b47f1689" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2274,6 +2274,18 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ecacd4dd4d1cc8de64dc2bcebf98f146da1b0407/MAIN/Track/Archie_Track;%20%20Activate-Deactivate%20rec-armed%20rec-monitoring%20all%20input-Fx%20in%20selected%20tracks(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Add in end of name of selected track _ARCHIVE(`).lua" type="script" desc="Add in end of name of selected track _ARCHIVE">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-17T17:50:40Z">
+        <changelog><![CDATA[v. 1.0 [18.06.19]
+    + initialе / v.1.0 ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be333f90df0b46903581ed0bb1ddff31b47f1689/MAIN/Track/Archie_Track;%20%20Add%20in%20end%20of%20name%20of%20selected%20track%20_ARCHIVE(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Add tracks with locked height to collapsed folders-Restore when uncollapsed(background).lua" type="script" desc="Add tracks with locked height to collapsed folders-Restore when uncollapsed(background)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2309,22 +2321,6 @@
     + fixed bug - Remove - make the project dirty at the start of the script
     + исправлена ошибка - Убрать - сделать проект грязный при старте скрипта]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f737497313df487dfc4b734a938da5677dfad8f4/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Appends to name of selected track _ARCHIVE(`).lua" type="script" desc="Appends to the name of the selected track &quot;_ARCHIVE&quot;">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ добавлена регулируемая настройка при недописывание в конце / v.1.03[04122218]
-+ added adjustable setting when overwriting at the end / v.1.03[04122218]
-+! fixed bug with non-selection / v.1.02
-+! исправлена ошибка с невыделением / v.1.02
-+ GIF     / v.1.01 
-+ initialе / v.1.0 ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Appends%20to%20name%20of%20selected%20track%20_ARCHIVE(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Copy selected track name.lua" type="script" desc="Copy selected track name">
@@ -2685,6 +2681,18 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Paste%20selected%20track%20name%20%20%20.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Remove from end of name of selected track _ARCHIVE(`).lua" type="script" desc="Remove from end of name of selected track _ARCHIVE">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-17T17:50:40Z">
+        <changelog><![CDATA[v. 1.0 [18.06.19]
+    + initialе / v.1.0 ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be333f90df0b46903581ed0bb1ddff31b47f1689/MAIN/Track/Archie_Track;%20%20Remove%20from%20end%20of%20name%20of%20selected%20track%20_ARCHIVE(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Remove icon selected tracks.lua" type="script" desc="Remove icon selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2821,17 +2829,15 @@
         <source main="main" file="Archie_Track;  Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Selects tracks that have _ARCHIVE in their name(`).lua" type="script" desc="Selects tracks that have &quot;_ARCHIVE&quot; in their name&quot;">
+    <reapack name="Archie_Track;  Select tracks that have at end of name _ARCHIVE(`).lua" type="script" desc="Select tracks that have at end of name _ARCHIVE">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.03" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ Ничего / Nothing / v.1.03[04122018]
-+! исправлена ошибка с невыделением / v.1.02
-+ GIF     / v.1.01 
-+ initialе / v.1.0 ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Selects%20tracks%20that%20have%20_ARCHIVE%20in%20their%20name(%60).lua</source>
+      <version name="1.0" author="Archie" time="2019-06-17T17:50:40Z">
+        <changelog><![CDATA[v.1.0[18.06.19]
+    + initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be333f90df0b46903581ed0bb1ddff31b47f1689/MAIN/Track/Archie_Track;%20%20Select%20tracks%20that%20have%20at%20end%20of%20name%20_ARCHIVE(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">
