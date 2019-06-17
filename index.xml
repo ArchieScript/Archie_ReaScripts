@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ea37a81f8439cfa8a06e33baece11eb90c6258ed" name="Archie-ReaScripts">
+<index version="1" commit="fcbdccc11182975b824df208103386e31dec79ee" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -785,6 +785,20 @@
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 30 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 31 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 32 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Gui">
+    <reapack name="Archie_Gui;  Show clock window.lua" type="script" desc="Show clock window">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-06-17T11:33:23Z">
+        <changelog><![CDATA[v.1.0 [17.16.2019]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fcbdccc11182975b824df208103386e31dec79ee/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
       </version>
     </reapack>
   </category>
