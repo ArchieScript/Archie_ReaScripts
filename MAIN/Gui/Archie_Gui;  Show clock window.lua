@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -11,7 +11,7 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
-   * Changelog:   v.1.0 [17.16.2019]
+   * Changelog:   v.1.01 [17.16.2019]
    *                  + initialе
     
     
@@ -55,9 +55,11 @@
     ----------------------------
     
     
+    
     local function SetColorRGB(r,g,b,a,mode);
         gfx.set(r/256,g/256,b/256,a,mode); 
     end;
+    
     
     
     local function OpenWebSite(path);
@@ -68,6 +70,7 @@
             os.execute('start "" '..path);
         end;
     end;
+    
     
     
     local function TextByCenterAndResize(string,x,y,w,h,flags);
@@ -88,9 +91,17 @@
     end; 
     
     
+    
     local SaveDock,T;
     
     local function loop();
+        
+        local Toggle = GetSetToggleButtonOnOff(0,0);
+        if Toggle == 0 then;
+            GetSetToggleButtonOnOff(1,1);
+        end;
+        ----
+        
         
         -----
         local Color_Text = reaper.GetExtState(section,"Color_Text");
@@ -401,13 +412,27 @@
     
     
     
+    function GetSetToggleButtonOnOff(numb,set);
+        local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
+        if set == 0 or set == false then;
+            return reaper.GetToggleCommandStateEx(sec,cmd);
+        else;
+            reaper.SetToggleCommandState(sec,cmd,numb or 0);
+            reaper.RefreshToolbar2(sec,cmd);
+        end
+    end;
+    
+    
+    
     function exit();
+        GetSetToggleButtonOnOff(0,1);
         local PosDock,PosX,PosY,PosW,PosH = gfx.dock(-1,-1,-1,-1,-1);
         reaper.SetExtState(section,"PositionDock",PosDock,true);
         reaper.SetExtState(section,"PositionWind",PosX.."&"..PosY,true);
         reaper.SetExtState(section,"SizeWindow",PosW.."&"..PosH,true);
         gfx.quit();
     end;
+    
     
     
     
