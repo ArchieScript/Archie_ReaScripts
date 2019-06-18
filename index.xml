@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="b3d57189cf2a3218b3c7c7fc4285638fc4889cd1" name="Archie-ReaScripts">
+<index version="1" commit="f74769859d0c0bfeee7c059a40f2b7f7d0c36ef6" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -809,6 +809,11 @@
         <changelog><![CDATA[v.1.02 [18.16.2019]
     + Invert Color]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b3d57189cf2a3218b3c7c7fc4285638fc4889cd1/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-06-18T18:21:43Z">
+        <changelog><![CDATA[v.1.03 [19.16.2019]
+    No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f74769859d0c0bfeee7c059a40f2b7f7d0c36ef6/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
       </version>
     </reapack>
   </category>
