@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -11,7 +11,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
-   * Changelog:   v.1.01 [17.16.2019]
+   * Changelog:   
+   *              v.1.02 [18.16.2019]
+   *                  + Invert Color
+   
+   *              v.1.01 [17.16.2019]
    *                  + initialе
     
     
@@ -118,6 +122,13 @@
         -----
         
         
+        if R_Text==R_Back and G_Text==G_Back and B_Text==B_Back then;
+            local x;
+            if R_Text < 128 then x=15 else x=-15 end;
+            R_Text=R_Text+x; G_Text=G_Text+x; B_Text=B_Text+x;
+        end;
+        ----
+        
         
         ---- / background -|- Logo / ------------------
         gfx.gradrect(0,0,gfx.w,gfx.h,R_Back/256,G_Back/256,B_Back/256,1);
@@ -146,6 +157,7 @@
         
         local FlickWinExState = tonumber(reaper.GetExtState(section,"FlickeringWindow"))or 1;
         
+        local BOLD;
         local TextBoldNorm = tonumber(reaper.GetExtState(section,"TextBoldNorm"))or 0;
         if TextBoldNorm == 1 then BOLD = 98 else BOLD = nil end;
         
@@ -173,14 +185,16 @@
             if FlickWinExState == 1 then checkFlick = "!" else checkFlick = "" end;
             
             
-            local checkColText,checkColBack,checkCol;
+            local checkColText,checkColBack,checkCol,checkColTextDefault,checkColBackDefault,checkColAllDefault;
             if R_Text == R_Text_Default and G_Text == G_Text_Default and B_Text == B_Text_Default then; 
-                checkColText = "" else checkColText = "!"
+                checkColText = "" checkColTextDefault = "#" else checkColText = "!" checkColTextDefault = "";
             end;
             if R_Back == R_Back_Default and G_Back == G_Back_Default and B_Back == B_Back_Default then; 
-                checkColBack = "" else checkColBack = "!"
+                checkColBack = "" checkColBackDefault = "#" else checkColBack = "!" checkColBackDefault = "";
             end;
-            if checkColText == "!" or checkColBack == "!" then checkCol = "!" else checkCol = "" end;
+            if checkColText == "!" or checkColBack == "!" then 
+                checkCol = "!" checkColAllDefault = "" else checkCol = "" checkColAllDefault = "#";
+            end;
             
             
             local checkBold;
@@ -214,17 +228,18 @@
                                     --[[10]](T[10] or "").."Fixed number||"..
                                     --[[11]]checkFlick.."<Flickering window||"..
                                     --[[->]]checkCol..">Color|"..
-                                    --[[12]]checkColText.."Customize text color...|"..
-                                    --[[13]]"Default text color||"..
-                                    --[[14]]checkColBack.."Customize background color|"..
-                                    --[[15]]"Default background color||"..
-                                    --[[16]]"<Default All color|"..
-                                    --[[17]]checkBold.."Text: Normal / Bold||"..
+                                    --[[12]]"Invert Color||"..
+                                    --[[13]]checkColText.."Customize text color...|"..
+                                    --[[14]]checkColTextDefault.."Default text color||"..
+                                    --[[15]]checkColBack.."Customize background color|"..
+                                    --[[16]]checkColBackDefault.."Default background color||"..
+                                    --[[17]]checkColAllDefault.."<Default All color||"..
+                                    --[[18]]checkBold.."Text: Normal / Bold||"..
                                     --[[->]]">Archie|"..
-                                    --[[18]]"Dodate||"..
-                                    --[[19]]"Bug report (Of site forum)|"..
-                                    --[[20]]"<Bug report (Rmm forum)||"..
-                                    --[[21]]"Close clock window");
+                                    --[[19]]"Dodate||"..
+                                    --[[20]]"Bug report (Of site forum)|"..
+                                    --[[21]]"<Bug report (Rmm forum)||"..
+                                    --[[22]]"Close clock window");
             
             if showmenu == 1 then;
                 if Dock&1 ~= 0 then;
@@ -284,17 +299,24 @@
                 ----
             elseif showmenu == 12 then;
                 ----
+                local r,g,b = R_Back, G_Back, B_Back;
+                reaper.SetExtState(section,"Color_Text","R"..r.."G"..g.."B"..b,true);
+                local r,g,b = R_Text, G_Text, B_Text;
+                reaper.SetExtState(section,"Color_Background","R"..r.."G"..g.."B"..b,true);
+                ----
+            elseif showmenu == 13 then;
+                ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
                     local r, g, b = reaper.ColorFromNative(color);
                     reaper.SetExtState(section,"Color_Text","R"..r.."G"..g.."B"..b,true);
                 end;
                 ----
-            elseif showmenu == 13 then;
+            elseif showmenu == 14 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Text",true);
                 ----
-            elseif showmenu == 14 then;
+            elseif showmenu == 15 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -302,39 +324,39 @@
                     reaper.SetExtState(section,"Color_Background","R"..r.."G"..g.."B"..b,true);
                 end;
                 ----
-            elseif showmenu == 15 then;
+            elseif showmenu == 16 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Background",true);
                 ----
-            elseif showmenu == 16 then;
+            elseif showmenu == 17 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Text",true);
                 reaper.DeleteExtState(section,"Color_Background",true);
                 ----
-            elseif showmenu == 17 then;
+            elseif showmenu == 18 then;
                 ----
                 local val;
                 if TextBoldNorm == 1 then val = 0 else val = 1 end;
                 reaper.SetExtState(section,"TextBoldNorm",val,true);
                 ----
-            elseif showmenu == 18 then;
+            elseif showmenu == 19 then;
                 ----
                 local path = "https://money.yandex.ru/to/410018003906628";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
                 ----
-            elseif showmenu == 19 then;
+            elseif showmenu == 20 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 21 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 22 then;
                 ----
                 exit();
                 ----
