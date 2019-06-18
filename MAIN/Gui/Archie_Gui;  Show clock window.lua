@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
+   *              v.1.03 [19.16.2019]
+   *                  No change
+   
    *              v.1.02 [18.16.2019]
    *                  + Invert Color
-   
    *              v.1.01 [17.16.2019]
    *                  + initialе
     
@@ -235,7 +237,7 @@
                                     --[[16]]checkColBackDefault.."Default background color||"..
                                     --[[17]]checkColAllDefault.."<Default All color||"..
                                     --[[18]]checkBold.."Text: Normal / Bold||"..
-                                    --[[->]]">Archie|"..
+                                    --[[->]]">Support project|"..
                                     --[[19]]"Dodate||"..
                                     --[[20]]"Bug report (Of site forum)|"..
                                     --[[21]]"<Bug report (Rmm forum)||"..
