@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
-   *              v.1.03 [19.16.2019]
-   *                  No change
+   *              v.1.04 [20.16.2019]
+   *                   Save position of last dock when move / removing focus from a window
    
+   *              v.1.03 [19.16.2019]
+   *                  No change  
    *              v.1.02 [18.16.2019]
    *                  + Invert Color
    *              v.1.01 [17.16.2019]
@@ -57,8 +59,9 @@
     
     local section;
     local PositionDock;
-    local PosX,PosY,SizeW,SizeH;
-    ----------------------------
+    local SaveDock,Dock_,T;
+    local PosX,PosY,SizeW,SizeH,But;
+    --------------------------------
     
     
     
@@ -172,8 +175,13 @@
         if not ShowDisplay then ShowDisplay = 1 valuesDisplay = 0 end;
         
         
+        
+        local Dock_ = gfx.dock(-1);
+        if Dock_&1 ~= 0 and SaveDock ~= Dock_ then SaveDock = Dock_ end;
+        
+        
         if gfx.mouse_cap == 2 then;
-              
+            
             gfx.x = gfx.mouse_x;
             gfx.y = gfx.mouse_y;
             
@@ -426,6 +434,21 @@
         --gfx.update();
         ---------------
         
+        
+        ---- / Снять фокус с окна / -------------------
+        local winGuiFocus = gfx.getchar(65536)&2;
+        if winGuiFocus ~= 0 then;
+            if gfx.mouse_cap == 1 then But = "down" end;
+            if But == "down" and gfx.mouse_cap == 0 then;
+                local Context = reaper.GetCursorContext2(true);
+                reaper.SetCursorContext(Context,nil);
+            end;
+        else;
+            But = nil;
+        end;
+        ----------------------------------------------
+        
+        
         local char = gfx.getchar();
         if char >= 0 and char ~= 27 then;
             reaper.defer(loop);
@@ -454,6 +477,7 @@
         reaper.SetExtState(section,"PositionDock",PosDock,true);
         reaper.SetExtState(section,"PositionWind",PosX.."&"..PosY,true);
         reaper.SetExtState(section,"SizeWindow",PosW.."&"..PosH,true);
+        reaper.SetExtState(section,"SaveDock",SaveDock or "NULL",true);
         gfx.quit();
     end;
     
@@ -464,6 +488,7 @@
     PositionDock = tonumber(reaper.GetExtState(section,"PositionDock"))or 0;
     PosX,PosY = reaper.GetExtState(section,"PositionWind"):match("(.-)&(.-)$");
     SizeW,SizeH = reaper.GetExtState(section,"SizeWindow"):match("(.-)&(.-)$");
+    SaveDock = tonumber(reaper.GetExtState(section,"SaveDock"));
     ---
     
     gfx.init("Show clock window",SizeW or 200,SizeH or 50,PositionDock,PosX or 150,PosY or 100);
