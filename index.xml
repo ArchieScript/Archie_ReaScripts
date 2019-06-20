@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="f74769859d0c0bfeee7c059a40f2b7f7d0c36ef6" name="Archie-ReaScripts">
+<index version="1" commit="5c20c6bf1975e6e2be9a416a1a641c1f9391bfc9" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -814,6 +814,16 @@
         <changelog><![CDATA[v.1.03 [19.16.2019]
     No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f74769859d0c0bfeee7c059a40f2b7f7d0c36ef6/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2019-06-20T13:32:57Z">
+        <changelog><![CDATA[v.1.04 [20.16.2019]
+     Save position of last dock when move / removing focus from a window]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ab5cb76dc5c476c074532496ec29e2d5bd14477/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2019-06-20T14:00:49Z">
+        <changelog><![CDATA[v.1.05 [20.16.2019]
+    + Reset All]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5c20c6bf1975e6e2be9a416a1a641c1f9391bfc9/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
       </version>
     </reapack>
   </category>
