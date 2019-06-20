@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
-   *              v.1.04 [20.16.2019]
-   *                   Save position of last dock when move / removing focus from a window
+   *              v.1.05 [20.16.2019]
+   *                  + Reset All
    
+   *              v.1.04 [20.16.2019]
+   *                  + Save position of last dock when move / removing focus from a window
    *              v.1.03 [19.16.2019]
    *                  No change  
    *              v.1.02 [18.16.2019]
@@ -237,19 +239,21 @@
                                     --[[ 9]](T[9] or "").."Visual number|"..
                                     --[[10]](T[10] or "").."Fixed number||"..
                                     --[[11]]checkFlick.."<Flickering window||"..
+                                    --[[->]]">View|"..
                                     --[[->]]checkCol..">Color|"..
                                     --[[12]]"Invert Color||"..
                                     --[[13]]checkColText.."Customize text color...|"..
                                     --[[14]]checkColTextDefault.."Default text color||"..
                                     --[[15]]checkColBack.."Customize background color|"..
                                     --[[16]]checkColBackDefault.."Default background color||"..
-                                    --[[17]]checkColAllDefault.."<Default All color||"..
+                                    --[[17]]checkColAllDefault.."<Default All color|"..
                                     --[[18]]checkBold.."Text: Normal / Bold||"..
+                                    --[[19]]"<Reset All|"..
                                     --[[->]]">Support project|"..
-                                    --[[19]]"Dodate||"..
-                                    --[[20]]"Bug report (Of site forum)|"..
-                                    --[[21]]"<Bug report (Rmm forum)||"..
-                                    --[[22]]"Close clock window");
+                                    --[[20]]"Dodate||"..
+                                    --[[21]]"Bug report (Of site forum)|"..
+                                    --[[22]]"<Bug report (Rmm forum)||"..
+                                    --[[23]]"Close clock window");
             
             if showmenu == 1 then;
                 if Dock&1 ~= 0 then;
@@ -351,22 +355,38 @@
                 ----
             elseif showmenu == 19 then;
                 ----
+                reaper.DeleteExtState(section, "Color_Text"      ,true);
+                reaper.DeleteExtState(section, "Color_Background",true);
+                reaper.DeleteExtState(section, "ShowDisplay"     ,true);
+                reaper.DeleteExtState(section, "TextBoldNorm"    ,true);
+                reaper.DeleteExtState(section, "showmenu_T"      ,true);
+                reaper.DeleteExtState(section, "PositionDock"    ,true);
+                reaper.DeleteExtState(section, "PositionWind"    ,true);
+                reaper.DeleteExtState(section, "SizeWindow"      ,true);
+                reaper.DeleteExtState(section, "SaveDock"        ,true);
+                gfx.quit();
+                local PachScr = ({reaper.get_action_context()})[2];
+                dofile(PachScr);
+                do return end;
+                ----
+            elseif showmenu == 20 then;
+                ----
                 local path = "https://money.yandex.ru/to/410018003906628";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 21 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 22 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 22 then;
+            elseif showmenu == 23 then;
                 ----
                 exit();
                 ----
@@ -491,7 +511,7 @@
     SaveDock = tonumber(reaper.GetExtState(section,"SaveDock"));
     ---
     
-    gfx.init("Show clock window",SizeW or 200,SizeH or 50,PositionDock,PosX or 150,PosY or 100);
+    gfx.init("Show clock window",SizeW or 180,SizeH or 50,PositionDock,PosX or 150,PosY or 100);
     
     
     loop();
