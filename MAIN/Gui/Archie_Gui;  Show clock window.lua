@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
+   *              v.1.06 [21.16.2019]
+   *                  + Remove focus from window (Submenu)
+   
    *              v.1.05 [20.16.2019]
    *                  + Reset All
-   
    *              v.1.04 [20.16.2019]
    *                  + Save position of last dock when move / removing focus from a window
    *              v.1.03 [19.16.2019]
@@ -164,6 +166,23 @@
         
         local FlickWinExState = tonumber(reaper.GetExtState(section,"FlickeringWindow"))or 1;
         
+        
+        ---- / Remove focus from window (useful when switching Screenset) / -----------
+        local RemFocusWin = tonumber(reaper.GetExtState(section,"RemFocusWin"))or 0;
+        if RemFocusWin == 1 then;
+            --- / Снять фокус с окна / ---
+            local winGuiFocus = gfx.getchar(65536)&2;
+            if winGuiFocus ~= 0 then;
+                if gfx.mouse_cap == 0 then;
+                    local Context = reaper.GetCursorContext2(true);
+                    reaper.SetCursorContext(Context,nil);
+                    --t=(t or 0)+1;
+                end;
+            end;
+        end;
+        -------------------------------------------------------------------------------
+        
+        
         local BOLD;
         local TextBoldNorm = tonumber(reaper.GetExtState(section,"TextBoldNorm"))or 0;
         if TextBoldNorm == 1 then BOLD = 98 else BOLD = nil end;
@@ -213,6 +232,10 @@
             if TextBoldNorm > 0 then checkBold = "!" else checkBold = "" end;
             
             
+            local checkRemFocWin;
+            if RemFocusWin > 0 then checkRemFocWin = "!" else checkRemFocWin = "" end;
+            
+            
             if not T then;
                 local showmenuT_ExtState = tonumber(reaper.GetExtState(section,"showmenu_T"))or 3;
                 T = {[showmenuT_ExtState] = "!"};
@@ -223,7 +246,7 @@
                 if showmenu == 9 or showmenu == 10 then;
                    T[8.1] = "!";
                 end;
-                --t=(t or 0)+ 1;
+                --t=(t or 0)+1;
             end;
             
             
@@ -248,12 +271,13 @@
                                     --[[16]]checkColBackDefault.."Default background color||"..
                                     --[[17]]checkColAllDefault.."<Default All color|"..
                                     --[[18]]checkBold.."Text: Normal / Bold||"..
-                                    --[[19]]"<Reset All|"..
+                                    --[[19]]checkRemFocWin.."Remove focus from window (useful when switching Screenset)||"..
+                                    --[[20]]"<Reset All|"..
                                     --[[->]]">Support project|"..
-                                    --[[20]]"Dodate||"..
-                                    --[[21]]"Bug report (Of site forum)|"..
-                                    --[[22]]"<Bug report (Rmm forum)||"..
-                                    --[[23]]"Close clock window");
+                                    --[[21]]"Dodate||"..
+                                    --[[22]]"Bug report (Of site forum)|"..
+                                    --[[23]]"<Bug report (Rmm forum)||"..
+                                    --[[24]]"Close clock window");
             
             if showmenu == 1 then;
                 if Dock&1 ~= 0 then;
@@ -355,6 +379,12 @@
                 ----
             elseif showmenu == 19 then;
                 ----
+                local val;
+                if RemFocusWin == 1 then val = 0 else val = 1 end;
+                reaper.SetExtState(section,"RemFocusWin",val,true);
+                ----
+            elseif showmenu == 20 then;
+                ----
                 reaper.DeleteExtState(section, "Color_Text"      ,true);
                 reaper.DeleteExtState(section, "Color_Background",true);
                 reaper.DeleteExtState(section, "ShowDisplay"     ,true);
@@ -364,29 +394,30 @@
                 reaper.DeleteExtState(section, "PositionWind"    ,true);
                 reaper.DeleteExtState(section, "SizeWindow"      ,true);
                 reaper.DeleteExtState(section, "SaveDock"        ,true);
+                reaper.DeleteExtState(section, "RemFocusWin"     ,true);
                 gfx.quit();
                 local PachScr = ({reaper.get_action_context()})[2];
                 dofile(PachScr);
                 do return end;
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 21 then;
                 ----
                 local path = "https://money.yandex.ru/to/410018003906628";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 22 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 22 then;
+            elseif showmenu == 23 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 23 then;
+            elseif showmenu == 24 then;
                 ----
                 exit();
                 ----
@@ -454,21 +485,7 @@
         --gfx.update();
         ---------------
         
-        
-        ---- / Снять фокус с окна / -------------------
-        local winGuiFocus = gfx.getchar(65536)&2;
-        if winGuiFocus ~= 0 then;
-            if gfx.mouse_cap == 1 then But = "down" end;
-            if But == "down" and gfx.mouse_cap == 0 then;
-                local Context = reaper.GetCursorContext2(true);
-                reaper.SetCursorContext(Context,nil);
-            end;
-        else;
-            But = nil;
-        end;
-        ----------------------------------------------
-        
-        
+         
         local char = gfx.getchar();
         if char >= 0 and char ~= 27 then;
             reaper.defer(loop);
