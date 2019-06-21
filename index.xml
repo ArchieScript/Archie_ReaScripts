@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="5c20c6bf1975e6e2be9a416a1a641c1f9391bfc9" name="Archie-ReaScripts">
+<index version="1" commit="714754b98b0338a315a438e36648942841570ca8" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -824,6 +824,11 @@
         <changelog><![CDATA[v.1.05 [20.16.2019]
     + Reset All]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5c20c6bf1975e6e2be9a416a1a641c1f9391bfc9/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+      <version name="1.06" author="Archie" time="2019-06-21T07:37:18Z">
+        <changelog><![CDATA[v.1.06 [21.16.2019]
+    + Remove focus from window (Submenu)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714754b98b0338a315a438e36648942841570ca8/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
       </version>
     </reapack>
   </category>
