@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,18 +12,20 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
-   *              v.1.06 [21.16.2019]
-   *                  + Remove focus from window (Submenu)
+   *              v.1.07 [22.06.2019]
+   *                  + Add Font Size (Submenu)
    
-   *              v.1.05 [20.16.2019]
+   *              v.1.06 [21.06.2019]
+   *                  + Remove focus from window (Submenu)
+   *              v.1.05 [20.06.2019]
    *                  + Reset All
-   *              v.1.04 [20.16.2019]
+   *              v.1.04 [20.06.2019]
    *                  + Save position of last dock when move / removing focus from a window
-   *              v.1.03 [19.16.2019]
+   *              v.1.03 [19.06.2019]
    *                  No change  
-   *              v.1.02 [18.16.2019]
+   *              v.1.02 [18.06.2019]
    *                  + Invert Color
-   *              v.1.01 [17.16.2019]
+   *              v.1.01 [17.06.2019]
    *                  + initialе
     
     
@@ -37,7 +39,7 @@
     (-) SWS v.2.10.0 +              --| http://www.sws-extension.org/index.php
     (-) ReaPack v.1.2.2 +           --| http://reapack.com/repos
     (-) Arc_Function_lua v.2.4.4 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
-    (-) reaper_js_ReaScriptAPI64    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
+    (-) reaper_js_ReaScriptAPI64    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
     (-) Visual Studio С++ 2015      --|  http://clck.ru/Eq5o6
     =======================================================================================]] 
     
@@ -65,7 +67,9 @@
     local PositionDock;
     local SaveDock,Dock_,T;
     local PosX,PosY,SizeW,SizeH,But;
-    --------------------------------
+    local ScriptNameOptFontSize = "Arc_Gui_Options; Font Size(Show clock window).lua"
+    local scrPach = ({reaper.get_action_context()})[2]:match("(.+)[/\\]");
+    ----------------------------------------------------------------------
     
     
     
@@ -86,7 +90,17 @@
     
     
     
-    local function TextByCenterAndResize(string,x,y,w,h,flags);
+    function GetIDByScriptName(scriptName);
+        if type(scriptName)~="string"then error("expects a 'string', got "..type(scriptName),2) end;
+        local file = io.open(reaper.GetResourcePath()..'/reaper-kb.ini','r'); if not file then return -1 end;local
+        scrName = scriptName:gsub('Script:%s+',''):gsub("[%%%[%]%(%)%*%+%-%.%?%^%$]",function(s)return"%"..s;end);
+        for var in file:lines()do;if var:match('"Custom:%s-'..scrName..'"')then;
+            return "_"..var:match(".-%s+.-%s+.-%s+(.-)%s"):gsub('"',""):gsub("'","");
+    end;end;return -1;end;
+    
+    
+    
+    local function TextByCenterAndResize(string,x,y,w,h,ZoomInOn,flags);
         local gfx_w = gfx.w/100*w;
         local gfx_h = gfx.h/100*h;
         
@@ -95,7 +109,8 @@
         
         local F_sizeW = gfx_w/lengthFontW*gfx.texth;
         local F_sizeH = gfx_h/heightFontH*gfx.texth;
-        local F_size = math.min(F_sizeW,F_sizeH);
+        local F_size = math.min(F_sizeW+ZoomInOn,F_sizeH+ZoomInOn);
+        if F_size < 1 then F_size = 1 end;
         gfx.setfont(1,"Arial",F_size,flags);--BOLD=98,ITALIC=105,UNDERLINE=117
         
         local lengthFont,heightFont = gfx.measurestr(string);
@@ -110,10 +125,13 @@
     local function loop();
         
         local Toggle = GetSetToggleButtonOnOff(0,0);
-        if Toggle == 0 then;
+        if Toggle <= 0 then;
             GetSetToggleButtonOnOff(1,1);
         end;
         ----
+        
+        
+        local ZoomInOn = tonumber(reaper.GetExtState(section,"FontSize"))or 0;
         
         
         -----
@@ -232,6 +250,10 @@
             if TextBoldNorm > 0 then checkBold = "!" else checkBold = "" end;
             
             
+            local checkZoomInOn;
+            if ZoomInOn ~= 0 then checkZoomInOn = "!" else checkZoomInOn = "" end;
+            
+            
             local checkRemFocWin;
             if RemFocusWin > 0 then checkRemFocWin = "!" else checkRemFocWin = "" end;
             
@@ -270,14 +292,15 @@
                                     --[[15]]checkColBack.."Customize background color|"..
                                     --[[16]]checkColBackDefault.."Default background color||"..
                                     --[[17]]checkColAllDefault.."<Default All color|"..
-                                    --[[18]]checkBold.."Text: Normal / Bold||"..
-                                    --[[19]]checkRemFocWin.."Remove focus from window (useful when switching Screenset)||"..
-                                    --[[20]]"<Reset All|"..
+                                    --[[18]]checkBold.."Text: Normal / Bold|"..
+                                    --[[19]]checkZoomInOn.."Font Size||"..
+                                    --[[20]]checkRemFocWin.."Remove focus from window (useful when switching Screenset)||"..
+                                    --[[21]]"<Reset All|"..
                                     --[[->]]">Support project|"..
-                                    --[[21]]"Dodate||"..
-                                    --[[22]]"Bug report (Of site forum)|"..
-                                    --[[23]]"<Bug report (Rmm forum)||"..
-                                    --[[24]]"Close clock window");
+                                    --[[22]]"Dodate||"..
+                                    --[[23]]"Bug report (Of site forum)|"..
+                                    --[[24]]"<Bug report (Rmm forum)||"..
+                                    --[[25]]"Close clock window");
             
             if showmenu == 1 then;
                 if Dock&1 ~= 0 then;
@@ -379,11 +402,39 @@
                 ----
             elseif showmenu == 19 then;
                 ----
+                local file = io.open(scrPach.."/"..ScriptNameOptFontSize,'r');
+                if not file then;
+                    file = io.open(scrPach.."/"..ScriptNameOptFontSize,'w');
+                    file:close();
+                    file = io.open(({reaper.get_action_context()})[2],'r');
+                    ----
+                    local text = file:read('a');file:close();
+                    local Write = text:match("%s-function MainTextSize%(%).-local EndMainTextSize;");
+                    
+                    local new_file = io.open(scrPach.."/"..ScriptNameOptFontSize,'w');
+                    new_file:write("\n\n\n\n\n\n"..Write.."\n    MainTextSize()");
+                    new_file:close();
+                    reaper.AddRemoveReaScript(true,0,scrPach.."/"..ScriptNameOptFontSize,true);
+                else;
+                    file:close();
+                end;
+        
+                local x, y = reaper.GetMousePosition();
+                reaper.SetExtState(section,"Opt_FontSizeWinPosition","{"..x .."}{"..y .."}",true);
+                local IDByScriptName = GetIDByScriptName(ScriptNameOptFontSize);
+                if IDByScriptName == -1 then;
+                    reaper.AddRemoveReaScript(true,0,scrPach.."/"..ScriptNameOptFontSize,true);
+                    IDByScriptName = GetIDByScriptName(ScriptNameOptFontSize);
+                end;
+                reaper.Main_OnCommand(reaper.NamedCommandLookup(IDByScriptName),0);
+                ----
+            elseif showmenu == 20 then;
+                ----
                 local val;
                 if RemFocusWin == 1 then val = 0 else val = 1 end;
                 reaper.SetExtState(section,"RemFocusWin",val,true);
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 21 then;
                 ----
                 reaper.DeleteExtState(section, "Color_Text"      ,true);
                 reaper.DeleteExtState(section, "Color_Background",true);
@@ -395,29 +446,39 @@
                 reaper.DeleteExtState(section, "SizeWindow"      ,true);
                 reaper.DeleteExtState(section, "SaveDock"        ,true);
                 reaper.DeleteExtState(section, "RemFocusWin"     ,true);
+                ---19---
+                reaper.DeleteExtState(section, "Opt_FontSizeWinPosition",true);
+                reaper.DeleteExtState(section, "FontSize",true);
+                local file = io.open(scrPach.."/"..ScriptNameOptFontSize,'r');
+                if file then;
+                    file:close();
+                    reaper.AddRemoveReaScript(false,0,scrPach.."/"..ScriptNameOptFontSize,true);
+                    os.remove(scrPach.."/"..ScriptNameOptFontSize);
+                end;
+                -------
                 gfx.quit();
                 local PachScr = ({reaper.get_action_context()})[2];
                 dofile(PachScr);
                 do return end;
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 22 then;
                 ----
                 local path = "https://money.yandex.ru/to/410018003906628";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
                 ----
-            elseif showmenu == 22 then;
+            elseif showmenu == 23 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 23 then;
+            elseif showmenu == 24 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 24 then;
+            elseif showmenu == 25 then;
                 ----
                 exit();
                 ----
@@ -449,12 +510,12 @@
         if ShowDisplay == 1 then;
             ----
             buf = reaper.format_timestr_pos(Position,"",valuesDisplay);
-            TextByCenterAndResize(buf,0,0,100,100,BOLD);
+            TextByCenterAndResize(buf,0,0,100,100,ZoomInOn,BOLD);
             ----
         elseif ShowDisplay == 2 then;
             ----
             buf = math.floor(Position/0.0333333333);--Absolute Frames
-            TextByCenterAndResize(buf,0,0,100,100,BOLD);
+            TextByCenterAndResize(buf,0,0,100,100,ZoomInOn,BOLD);
             ----
         elseif ShowDisplay == 3 or ShowDisplay == 4 then;
             ----
@@ -471,9 +532,9 @@
             if ShowDisplay == 3 then;
                 local _, bpi = reaper.GetProjectTimeSignature2(0);
                 local Bpi = 100 / bpi;
-                TextByCenterAndResize(buf,Bpi*(buf-1),0,Bpi,100,BOLD);
+                TextByCenterAndResize(buf,Bpi*(buf-1),0,Bpi,100,ZoomInOn,BOLD);
             elseif ShowDisplay == 4 then;
-                TextByCenterAndResize(buf,0,0,100,100,BOLD);  
+                TextByCenterAndResize(buf,0,0,100,100,ZoomInOn,BOLD);  
             end;
             ----
         end;
@@ -533,3 +594,188 @@
     
     loop();
     reaper.atexit(exit);
+    
+    
+    
+    
+    
+    --=========================================================================================
+    --=========================================================================================
+    --=========================================================================================
+    
+    
+    function MainTextSize();
+    
+        local ScriptNameMain = "Archie_Gui;  Show clock window.lua";
+        
+        function GetIDByScriptName(scriptName);
+            if type(scriptName)~="string"then error("expects a 'string', got "..type(scriptName),2) end;
+            local file = io.open(reaper.GetResourcePath()..'/reaper-kb.ini','r'); if not file then return -1 end;local
+            scrName = scriptName:gsub('Script:%s+',''):gsub("[%%%[%]%(%)%*%+%-%.%?%^%$]",function(s)return"%"..s;end);
+            for var in file:lines()do;if var:match('"Custom:%s-'..scrName..'"')then;
+                return "_"..var:match(".-%s+.-%s+.-%s+(.-)%s"):gsub('"',""):gsub("'","");
+        end;end;return -1;end;
+        
+        
+        
+        local IDByScriptName = GetIDByScriptName(ScriptNameMain);
+        if IDByScriptName == -1 then;
+            reaper.AddRemoveReaScript(false,0,({reaper.get_action_context()})[2],true);
+            os.remove(({reaper.get_action_context()})[2]);
+        end;
+        local Toggle = reaper.GetToggleCommandState(reaper.NamedCommandLookup(IDByScriptName));
+        if Toggle ~= 1 then return end;
+        
+        
+        
+        local function TextByCenterAndResize(string,x,y,w,h,ZoomInOn,flags);
+            local gfx_w = gfx.w/100*w;
+            local gfx_h = gfx.h/100*h;
+            
+            gfx.setfont(1,"Arial",10000);
+            local lengthFontW,heightFontH = gfx.measurestr(string);
+            
+            local F_sizeW = gfx_w/lengthFontW*gfx.texth;
+            local F_sizeH = gfx_h/heightFontH*gfx.texth;
+            local F_size = math.min(F_sizeW+ZoomInOn,F_sizeH+ZoomInOn);
+            if F_size < 1 then F_size = 1 end;
+            gfx.setfont(1,"Arial",F_size,flags);--BOLD=98,ITALIC=105,UNDERLINE=117
+            
+            local lengthFont,heightFont = gfx.measurestr(string);
+            gfx.x = gfx.w/100*x + (gfx_w - lengthFont)/2; 
+            gfx.y = gfx.h/100*y + (gfx_h- heightFont )/2;
+        end; 
+        
+        
+        -----
+        local function Mouse_Is_Inside(x, y, w, h) --мышь находится внутри
+        local mouse_x, mouse_y = gfx.mouse_x, gfx.mouse_y
+        local inside =
+        mouse_x >= x and mouse_x < (x + w) and
+        mouse_y >= y and mouse_y < (y + h)
+        return inside
+        end
+        
+        
+        
+        local mouse_btn_down,fake,lamp = {},{},{}
+        local function LeftMouseButton(x, y, w, h,numbuf)
+        if Mouse_Is_Inside(x, y, w, h) then;
+            if gfx.mouse_cap&1 == 0 then fake[numbuf] = 1 end;
+            if gfx.mouse_cap&1 == 0 and lamp[numbuf] ~= 0 then mouse_btn_down[numbuf] = 0 end;
+            if gfx.mouse_cap&1 == 1 and fake[numbuf]==1 then mouse_btn_down[numbuf]=1 lamp[numbuf]=0; end; 
+            if mouse_btn_down[numbuf] == 2 then mouse_btn_down[numbuf] = -1 end;
+            if gfx.mouse_cap&1 == 0 and fake[numbuf] == 1 and mouse_btn_down[numbuf] == 1 then;
+                mouse_btn_down[numbuf] = 2 lamp[numbuf] = nil;
+            end;
+        else 
+            mouse_btn_down[numbuf] = -1 lamp[numbuf]=nil;
+            if gfx.mouse_cap&1 == 1 and fake[numbuf] == 1 then mouse_btn_down[numbuf] = 1 end;
+            if gfx.mouse_cap&1 == 0 then fake[numbuf] = nil end;
+        end  
+        return mouse_btn_down[numbuf];
+        end
+        ----=================================================================
+        
+        
+         
+        local Opt_FontSizeWinPosition = reaper.GetExtState(ScriptNameMain,"Opt_FontSizeWinPosition");
+        local X,Y = Opt_FontSizeWinPosition:match("{(.-)}{(.-)}$");
+         
+        gfx.init("Font Size",190,50,0,X-(190/2),Y-(50/2));
+        local FontSize = tonumber(reaper.GetExtState(ScriptNameMain,"FontSize"))or 0;
+        
+        local function loopFontSize();
+            
+            if FontSize <= -99 then FontSize = -99 elseif FontSize >= 99 then FontSize = 99 end;
+            
+            local winGuiFocus = gfx.getchar(65536)&2;
+            if winGuiFocus ~= 2 then;
+                gfx.quit();return;
+            end;
+            
+            local Toggle = reaper.GetToggleCommandState(reaper.NamedCommandLookup(IDByScriptName));
+            if Toggle ~= 1 then gfx.quit();return end;
+            
+            gfx.gradrect(0,0,gfx.w,gfx.h,0.55,0.55,0.55,1);
+            
+            gfx.set(.9,.9,.9);
+            TextByCenterAndResize("-",0,0,20,100,0,nil);      gfx.drawstr("-");
+            TextByCenterAndResize("Reset",25,0,50,100,0,nil); gfx.drawstr("Reset");
+            TextByCenterAndResize("+",80,0,20,100,0,nil);     gfx.drawstr("+");
+            
+            gfx.set(.65,.65,.65);
+            gfx.line(gfx.w/100*20, 0, gfx.w/100*20, gfx.h);
+            gfx.line(gfx.w/100*80, 0, gfx.w/100*80, gfx.h);
+            
+            
+            local ButMin = LeftMouseButton(0,0,gfx.w/100*20,gfx.h,"minus");
+            if ButMin == 0 then;
+                gfx.set(.8,.8,.8);
+            elseif ButMin == 1 then;
+                gfx.set(.3,.3,.3);
+                TextByCenterAndResize("-",0,0,20,100,0,nil); gfx.drawstr("-");
+                TextByCenterAndResize("Ctrl",5,0,10,40,0,nil); gfx.drawstr("Ctrl");
+            end;
+            if ButMin == 0 or ButMin == 1 or ButMin == 2 then;
+                gfx.roundrect(0,0,gfx.w/100*20,gfx.h-1,0,0);
+                gfx.roundrect(3,3,gfx.w/100*20-6,gfx.h-1-6,0);
+                if gfx.mouse_cap&5==5 then;ButMin = 2 end;
+            end;
+            
+            
+            local ButReset = LeftMouseButton(gfx.w/100*20,0,gfx.w/100*60,gfx.h,"Reset");
+            if ButReset == 0 then;
+                gfx.set(.8,.8,.8);
+            elseif ButReset == 1 then;
+                gfx.set(.3,.3,.3);
+                TextByCenterAndResize("Reset",25,0,50,100,0,nil); gfx.drawstr("Reset");
+            end;
+            if ButReset == 0 or ButReset == 1 then;
+                gfx.roundrect(gfx.w/100*20,0,gfx.w/100*60,gfx.h-1,0,0);
+                gfx.roundrect(gfx.w/100*20+3,3,gfx.w/100*60-6,gfx.h-1-6,0);
+            end;
+            
+            
+            local ButPlus = LeftMouseButton(gfx.w/100*80,0,gfx.w,gfx.h,"Plus");
+            if ButPlus == 0 then;
+                gfx.set(.8,.8,.8);
+            elseif ButPlus == 1 then;
+                gfx.set(.3,.3,.3);
+                TextByCenterAndResize("+",80,0,20,100,0,nil);gfx.drawstr("+");
+                TextByCenterAndResize("Ctrl",85,0,10,40,0,nil);gfx.drawstr("Ctrl");
+            end;
+            if ButPlus == 0 or ButPlus == 1 or ButPlus == 2 then;
+                gfx.roundrect(gfx.w/100*80,0,gfx.w/100*20,gfx.h-1 ,0,0);
+                gfx.roundrect(gfx.w/100*80+3,3,gfx.w/100*20-6,gfx.h-1-6,0);
+                if gfx.mouse_cap&5==5 then;ButPlus = 2 end;
+            end;
+            
+            
+            if ButMin == 2 then;
+                FontSize = (FontSize or 0)-1;
+                reaper.SetExtState(ScriptNameMain,"FontSize",FontSize,true);
+            end;
+            if ButReset == 2 then;
+               reaper.DeleteExtState(ScriptNameMain,"FontSize",true);
+               FontSize = 0;
+            end;
+            if ButPlus == 2 then;
+                FontSize = (FontSize or 0)+1;
+                reaper.SetExtState(ScriptNameMain,"FontSize",FontSize,true);
+            end;
+            
+            if gfx.getchar() >= 0 then;
+                reaper.defer(loopFontSize);
+            else;
+                reaper.atexit(loopFontSize);
+                return;
+            end;
+            --t=(t or 0)+1;
+        end;
+        -----
+        loopFontSize();
+    end; local EndMainTextSize;
+    --=========================================================================================
+    --=========================================================================================
+    --========================================================================================= 
