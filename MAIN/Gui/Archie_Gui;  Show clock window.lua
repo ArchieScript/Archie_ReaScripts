@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
+   *              v.1.08 [23.06.2019]
+   *                  + Remove - close the clock by pressing Esc
+   
    *              v.1.07 [22.06.2019]
    *                  + Add Font Size (Submenu)
-   
    *              v.1.06 [21.06.2019]
    *                  + Remove focus from window (Submenu)
    *              v.1.05 [20.06.2019]
@@ -548,7 +550,7 @@
         
          
         local char = gfx.getchar();
-        if char >= 0 and char ~= 27 then;
+        if char >= 0 --[[and char ~= 27]] then;
             reaper.defer(loop);
         else;
             reaper.atexit(exit);
