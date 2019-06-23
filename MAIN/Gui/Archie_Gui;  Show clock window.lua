@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -12,21 +12,23 @@
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:   
+   *              v.1.09 [23.06.2019]
+   *                  +! Fixed bug (Use ruler time unit)
+   
    *              v.1.08 [23.06.2019]
    *                  + Remove - close the clock by pressing Esc
-   
    *              v.1.07 [22.06.2019]
    *                  + Add Font Size (Submenu)
    *              v.1.06 [21.06.2019]
    *                  + Remove focus from window (Submenu)
    *              v.1.05 [20.06.2019]
-   *                  + Reset All
+   *                  + Reset All (Submenu)
    *              v.1.04 [20.06.2019]
    *                  + Save position of last dock when move / removing focus from a window
    *              v.1.03 [19.06.2019]
    *                  No change  
    *              v.1.02 [18.06.2019]
-   *                  + Invert Color
+   *                  + Invert Color (Submenu)
    *              v.1.01 [17.06.2019]
    *                  + initialе
     
@@ -325,7 +327,7 @@
             elseif showmenu == 4 then;
                 ----
                 ShowDisplay = 1;
-                valuesDisplay = 1;
+                valuesDisplay = 2;
                 ----
             elseif showmenu == 5 then;
                 ----
@@ -344,7 +346,8 @@
                 ----
             elseif showmenu == 8 then;
                 ----
-                ShowDisplay = 2;
+                ShowDisplay = 1;
+                valuesDisplay = 8;
                 ----
             elseif showmenu == 9 then;
                 ----
@@ -514,14 +517,10 @@
             buf = reaper.format_timestr_pos(Position,"",valuesDisplay);
             TextByCenterAndResize(buf,0,0,100,100,ZoomInOn,BOLD);
             ----
-        elseif ShowDisplay == 2 then;
-            ----
-            buf = math.floor(Position/0.0333333333);--Absolute Frames
-            TextByCenterAndResize(buf,0,0,100,100,ZoomInOn,BOLD);
             ----
         elseif ShowDisplay == 3 or ShowDisplay == 4 then;
             ----
-            buf = reaper.format_timestr_pos(Position,"",-1):match("%d-%.(%d-)%.");--Beats (Visual Click)
+            buf = reaper.format_timestr_pos(Position,"",2):match("%d-%.(%d-)%.");--Beats (Visual Click)
             if math.fmod(buf,2) == 0 then;
                 if FlickWinExState == 1 then;
                     -- /color changing in places/--
