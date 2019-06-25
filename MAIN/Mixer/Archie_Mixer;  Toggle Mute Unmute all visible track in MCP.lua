@@ -89,7 +89,7 @@
         
             local Repeat_Off,Repeat_On;
             local Off = nil;
-            for i = 1,CountTrack do;
+            for i = 1,reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 local Visible = reaper.IsTrackVisible(Track,true);
                 if Visible then;
