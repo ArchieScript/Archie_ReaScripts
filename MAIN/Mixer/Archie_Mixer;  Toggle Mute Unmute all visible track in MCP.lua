@@ -97,7 +97,7 @@
                 local Track = reaper.GetTrack(0,i-1);
                 local Visible = reaper.IsTrackVisible(Track,true);
                 if Visible then;
-                    mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
                     if mute == 0 then Off = 1 break end;
                 end;
             end;
