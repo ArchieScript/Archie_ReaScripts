@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="21c0e2905b1fb17c1d90158b41c988886b2f1cee" name="Archie-ReaScripts">
+<index version="1" commit="d49cc98614978cb6a7cb36d430a67d2b048df870" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1888,6 +1888,12 @@
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06e871a19b4eabdb42840f9d7c798737dd60f766/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20MCP.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-06-26T05:50:44Z">
+        <changelog><![CDATA[v.1.01 [26.06.2019]
+    +! Fixed bug when deleting a track
+    +! Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d49cc98614978cb6a7cb36d430a67d2b048df870/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20MCP.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Unmute all visible track in MCP.lua" type="script" desc="Unmute all visible track in MCP">
       <metadata>
@@ -3050,6 +3056,12 @@
         <changelog><![CDATA[v.1.01 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06e871a19b4eabdb42840f9d7c798737dd60f766/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20TCP.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-06-26T05:50:44Z">
+        <changelog><![CDATA[v.1.01 [26.06.2019]
+    +! Fixed bug when deleting a track
+    +! Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d49cc98614978cb6a7cb36d430a67d2b048df870/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor(`).lua" type="script" desc="Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor">
