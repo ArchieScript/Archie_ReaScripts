@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
