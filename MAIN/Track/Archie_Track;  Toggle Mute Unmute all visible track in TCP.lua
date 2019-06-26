@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Toggle Mute Unmute all visible track in TCP
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в TCP
    * GIF:         ---
@@ -13,6 +13,10 @@
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
    *              v.1.01 [26.06.2019]
+   *                  +! Fixed bug when deleting a track
+   *                  +! Исправлена ошибка при удалении трека
+   
+   *              v.1.0 [26.06.2019]
    *                  + initialе
     
     

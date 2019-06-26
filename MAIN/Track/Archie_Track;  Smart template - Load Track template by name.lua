@@ -12,8 +12,13 @@
    * Customer:    ---
    * Gave idea:   Ahmed5599887744112233[RMM]
    * Changelog:   
-   *              +  initialе / v.1.0 [04032019]
-
+   *              v.1.01 [26.06.2019]
+   *                  +! fixed bug when adding a template as the first track in the project
+   *                  +! Исправлена ошибка при добавлении шаблона в качестве первого трека в проекте
+   
+   *              v.1.0 [04.03.2019]
+   *                  +  initialе 
+   
 
    --========================================================================================
    --///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\\
@@ -143,8 +148,15 @@ ScriptBeginning = [[
      
             local
             LastTouchedTrack = reaper.GetLastTouchedTrack();
-            local
-            trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
+            
+            
+            local trNumb;
+            if LastTouchedTrack then;
+                trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
+            else;
+                trNumb = 0;
+            end;
+            
             
             local several;
             for var in string.gmatch(str,"<TRACK.-\n\n") do;
