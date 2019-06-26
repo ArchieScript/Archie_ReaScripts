@@ -1,8 +1,8 @@
 --[[
    * Category:    Mixer
-   * Description: Toggle Mute Unmute all visible track in MCP
+   * Description: Toggle Mute unmute all visible track in MCP
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в MCP
    * GIF:         ---
@@ -12,7 +12,7 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.01 [26.06.2019]
+   *              v.1.02 [26.06.2019]
    *                  +! Fixed bug when deleting a track
    *                  +! Исправлена ошибка при удалении трека
    
@@ -66,7 +66,7 @@
         local Visible = reaper.IsTrackVisible(Track,true);
         if Visible then;
             mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-            break;
+            if mute == 0 then break end;
         end;
     end;
     
@@ -121,4 +121,3 @@
     
     
     loop();
-     

@@ -1,10 +1,10 @@
 --[[
    * Category:    Track
-   * Description: Toggle Mute unmute all visible track in TCP
+   * Description: Toggle Unmute mute all visible track in TCP and MCP
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в TCP
+   * О скрипте:   Переключатель Включить Отключить звук на всех видимых дорожках в TCP и MCP
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,10 +12,6 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.02 [26.06.2019]
-   *                  +! Fixed bug when deleting a track
-   *                  +! Исправлена ошибка при удалении трека
-   
    *              v.1.0 [26.06.2019]
    *                  + initialе
     
@@ -60,13 +56,16 @@
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then no_undo() return end;
     
-    local mute;
+    --local mute;
     for i = 1,CountTrack do;
         local Track = reaper.GetTrack(0,i-1);
         local Visible = reaper.IsTrackVisible(Track,false);
         if Visible then;
-            mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-            if mute == 0 then break end;
+            local Visible = reaper.IsTrackVisible(Track,true);
+            if Visible then;
+                mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                if mute == 1 then break end;
+            end;
         end;
     end;
     
@@ -75,7 +74,10 @@
         local Track = reaper.GetTrack(0,i-1);
         local Visible = reaper.IsTrackVisible(Track,false);
         if Visible then;
-            reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",math.abs(mute-1));
+            local Visible = reaper.IsTrackVisible(Track,true);
+            if Visible then;
+                reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",math.abs(mute-1));
+            end;
         end;
     end;
     
@@ -92,27 +94,29 @@
         
         
             local Repeat_Off,Repeat_On;
-            local Off = nil;
+            local On = nil;
             for i = 1,reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 local Visible = reaper.IsTrackVisible(Track,false);
                 if Visible then;
-                    mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 then Off = 1 break end;
+                    local Visible = reaper.IsTrackVisible(Track,true);
+                    if Visible then;
+                        mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                        if mute == 1 then On = 1 break end;
+                    end;
                 end;
             end;
             
-            if Off == 1 and not Repeat_Off then;
-                reaper.SetToggleCommandState(sec,cmd,0);
-                reaper.RefreshToolbar2(sec,cmd);
-                Repeat_Off = true;
-                Off = nil;
-                Repeat_On = nil;
-            elseif not Off and not Repeat_On then;
+            if On == 1 and not Repeat_On then;
                 reaper.SetToggleCommandState(sec,cmd,1);
                 reaper.RefreshToolbar2(sec,cmd);
                 Repeat_On = true;
                 Repeat_Off = nil;
+            elseif not On and not Repeat_Off then;
+                reaper.SetToggleCommandState(sec,cmd,0);
+                reaper.RefreshToolbar2(sec,cmd);
+                Repeat_Off = true;
+                Repeat_On = nil;
             end;
             --t=(t or 0)+1
         end;

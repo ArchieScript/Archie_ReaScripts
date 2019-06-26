@@ -1,10 +1,10 @@
 --[[
    * Category:    Track
-   * Description: Toggle Mute unmute all visible track in TCP
+   * Description: Toggle Mute unmute all visible track in TCP and MCP
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в TCP
+   * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в TCP и MCP
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,10 +12,6 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.02 [26.06.2019]
-   *                  +! Fixed bug when deleting a track
-   *                  +! Исправлена ошибка при удалении трека
-   
    *              v.1.0 [26.06.2019]
    *                  + initialе
     
@@ -65,8 +61,11 @@
         local Track = reaper.GetTrack(0,i-1);
         local Visible = reaper.IsTrackVisible(Track,false);
         if Visible then;
-            mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-            if mute == 0 then break end;
+            local Visible = reaper.IsTrackVisible(Track,true);
+            if Visible then;
+                mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                if mute == 0 then break end;
+            end;
         end;
     end;
     
@@ -75,7 +74,10 @@
         local Track = reaper.GetTrack(0,i-1);
         local Visible = reaper.IsTrackVisible(Track,false);
         if Visible then;
-            reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",math.abs(mute-1));
+            local Visible = reaper.IsTrackVisible(Track,true);
+            if Visible then;
+                reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",math.abs(mute-1));
+            end;
         end;
     end;
     
@@ -97,8 +99,11 @@
                 local Track = reaper.GetTrack(0,i-1);
                 local Visible = reaper.IsTrackVisible(Track,false);
                 if Visible then;
-                    mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 then Off = 1 break end;
+                    local Visible = reaper.IsTrackVisible(Track,true);
+                    if Visible then;
+                        mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                        if mute == 0 then Off = 1 break end;
+                    end;
                 end;
             end;
             
