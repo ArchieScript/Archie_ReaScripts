@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="01616f2dd4cb7e1cb3ea507177e6362abd0a0df1" name="Archie-ReaScripts">
+<index version="1" commit="e3a4f51c315b4ddfc25b4fc10ce4f3167d26825b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3390,16 +3390,16 @@
     </reapack>
   </category>
   <category name="MAIN/Various">
-    <reapack name="Archie_Var;  Fade in-out-crossfade auto both edges(Ctrl+fade,Ctrl+Alt+fade All sel items).lua" type="script" desc="Fade in-out-crossfade auto both edges(Ctrl+fade,Ctrl+Alt+fade All sel items)">
+    <reapack name="Archie_Var;  Fade in-out auto both edges(Ctrl+fade,Shift+fade,+Alt+fade).lua" type="script" desc="Fade in-out auto both edges(Ctrl+fade,Shift+fade,*+Alt+fade)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-07-02T09:06:26Z">
-        <changelog><![CDATA[v.1.0 [02.07.19]
+      <version name="1.0" author="Archie" time="2019-07-02T18:36:27Z">
+        <changelog><![CDATA[v.1.0 [03.07.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/01616f2dd4cb7e1cb3ea507177e6362abd0a0df1/MAIN/Various/Archie_Var;%20%20Fade%20in-out-crossfade%20auto%20both%20edges(Ctrl+fade,Ctrl+Alt+fade%20All%20sel%20items).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e3a4f51c315b4ddfc25b4fc10ce4f3167d26825b/MAIN/Various/Archie_Var;%20%20Fade%20in-out%20auto%20both%20edges(Ctrl+fade,Shift+fade,+Alt+fade).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua" type="script" desc="Toggle auto view scroll(ctrl+click go to play position)">
