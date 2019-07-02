@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Unarm record of all visible tracks in TCP
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Снять запись со всех видимых треков в TCP
    * GIF:         ---
@@ -12,6 +12,9 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   *              v.1.01 [27.06.2019]
+   *                  +! fixed bug auto record arm
+   
    *              v.1.0 [26.06.2019]
    *                  + initialе
     
@@ -71,31 +74,24 @@
     
     
     
+    local CountTrack = reaper.CountTracks(0);
+    if CountTrack == 0 then no_undo() return end;
+    
+    
     reaper.Undo_BeginBlock();
     
-    local hiddenTrack = {};
-    for i = 1,reaper.CountTracks(0) do;
+    for i = 1,CountTrack do;
         local Track = reaper.GetTrack(0,i-1);
-        local Visible = reaper.IsTrackVisible(Track,false);--TCP
-        if not Visible then;
+        local Visible = reaper.IsTrackVisible(Track,false);
+        if Visible then;
             local Rec = reaper.GetMediaTrackInfo_Value(Track,"I_RECARM");
-            if Rec == 1 then;
-                hiddenTrack[#hiddenTrack+1] = Track;
+            if Rec > 0 then;
+                reaper.SetMediaTrackInfo_Value(Track,"I_RECARM",0);
             end;
         end;
     end;
     
-    reaper.ClearAllRecArmed();
-    
-    for i = 1,#hiddenTrack do;
-        local retval,str = reaper.GetTrackStateChunk(hiddenTrack[i],"",false);
-        str = str:gsub("REC %d-[^%s]","REC 1");
-        reaper.SetTrackStateChunk(hiddenTrack[i],str,false);
-    end;
-    
     reaper.Undo_EndBlock("Unarm record of all visible tracks in TCP",-1);
-    
-    
     
     
     
@@ -109,7 +105,6 @@
             local ProjtState = reaper.GetProjectStateChangeCount(0);
             if ProjtState ~= ProjtState2 then;
                 ProjtState2 = ProjtState;
-            
             
                 local Repeat_Off,Repeat_On;
                 local On = nil;
