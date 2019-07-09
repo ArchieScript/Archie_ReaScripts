@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items relative to specified grid by time selection
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Дублирование выбранных элементов относительно указанной сетки по выбору времени
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -17,8 +17,8 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    *
    * Customer:    Krikets(Rmm)
-   * Gave idea:  Krikets(Rmm)
-   * Changelog:   v.1.0 [09.07.2019]
+   * Gave idea:   Krikets(Rmm)
+   * Changelog:   v.1.01 [09.07.2019]
    *                  + initialе
     
     -- Тест только на windows  /  Test only on windows.
@@ -1099,3 +1099,4 @@
     ---------
     
     loop();
+	reaper.atexit(exit);
