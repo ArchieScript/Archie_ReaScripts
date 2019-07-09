@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="ee2cdb2d5787a7a275d0d8aaac2cc1de0e4fa41e" name="Archie-ReaScripts">
+<index version="1" commit="3f4ee952e48a5ad7448bfad125ab464d3b36fd0c" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -861,6 +861,14 @@
         <changelog><![CDATA[v.1.01 [09.07.2019]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ee2cdb2d5787a7a275d0d8aaac2cc1de0e4fa41e/MAIN/Gui/Archie_Gui;%20Duplicate%20selected%20items%20relative%20to%20specified%20grid%20by%20time%20selection.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-07-09T18:17:58Z">
+        <changelog><![CDATA[v.1.02 [10.07.2019]
+    + Add Trim edge end (Right menu)
+    !+ Fix bug master track popping
+v.1.01 [09.07.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f4ee952e48a5ad7448bfad125ab464d3b36fd0c/MAIN/Gui/Archie_Gui;%20Duplicate%20selected%20items%20relative%20to%20specified%20grid%20by%20time%20selection.lua</source>
       </version>
     </reapack>
   </category>
