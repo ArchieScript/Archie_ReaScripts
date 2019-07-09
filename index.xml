@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="e3a4f51c315b4ddfc25b4fc10ce4f3167d26825b" name="Archie-ReaScripts">
+<index version="1" commit="f385d2609c3f8d5f96d0071ce3ce6b0e7057618b" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -844,6 +844,18 @@
         <changelog><![CDATA[v.1.09 [23.06.2019]
     +! Fixed bug (Use ruler time unit)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be828c6d453a947a4b0aa71c3b895483eff55ba1/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Gui; Duplicate selected items relative to specified grid by time selection.lua" type="script" desc="Duplicate selected items relative to specified grid by time selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-07-09T12:27:52Z">
+        <changelog><![CDATA[v.1.0 [09.07.2019]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f385d2609c3f8d5f96d0071ce3ce6b0e7057618b/MAIN/Gui/Archie_Gui;%20Duplicate%20selected%20items%20relative%20to%20specified%20grid%20by%20time%20selection.lua</source>
       </version>
     </reapack>
   </category>
