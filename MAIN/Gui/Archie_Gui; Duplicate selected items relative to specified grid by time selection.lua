@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items relative to specified grid by time selection
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Дублирование выбранных элементов относительно указанной сетки по выбору времени
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -18,7 +18,11 @@
    *
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
-   * Changelog:   v.1.01 [09.07.2019]
+   * Changelog:   
+   *              v.1.02 [10.07.2019]
+   *                  + Add Trim edge end (Right menu)
+   *                  !+ Fix bug master track popping
+   *              v.1.01 [09.07.2019]
    *                  + initialе
     
     -- Тест только на windows  /  Test only on windows.
@@ -230,6 +234,12 @@
     -----
     
     
+    -----
+    local TRIM_EDGE_END = tonumber(reaper.GetExtState(section,"TRIM_EDGE_END"))or 0;
+    -----
+    
+    
+    
     ---- / Remove focus from window (useful when switching Screenset) / -----------
     local RemFocusWin = tonumber(reaper.GetExtState(section,"RemFocusWin"))or 0;
     local function RemoveFocusWindow(RemFocusWin);
@@ -329,7 +339,7 @@
     
     
     ---------
-    local checked_Toggle,Start_W,Start_H,LastClickForPreset;
+    local checked_Toggle,Start_W,Start_H,LastClickForPreset,DIVISION;
     function loop();
     
         ----/Проверить тоггле(полезно для автозагрузки)/----
@@ -736,6 +746,9 @@
             local checkCOPY_MOVE;
             if COPY_MOVE == 1 then checkCOPY_MOVE = "!" else checkCOPY_MOVE = "" end;
             
+            local checkTrimEdge;
+            if TRIM_EDGE_END == 1 then checkTrimEdge = "!" else checkTrimEdge = "" end;
+            
             local checkBold;
             if TextBoldNorm == 98 then checkBold = "!" else checkBold = "" end;
             
@@ -749,7 +762,7 @@
             showmenu = gfx.showmenu(--[[ 1]]checkedDock.."Dock Big Clock in Docker||"..
                                     --[[ 2]]checkSELECTION.."Selection Items|"..
                                     --[[ 3]]checkCOPY_MOVE.."Move / COPY Original|"..
-                                    --[[ 4]]"# #|"..
+                                    --[[ 4]]checkTrimEdge.."Trim edge end|"..
                                     --[[ 5]]"# #|"..
                                     --[[ 6]]"# #||"..
                                     --[[->]]">View|"..
@@ -794,7 +807,8 @@
                 ----
             elseif showmenu == 4 then;
                 ----
-                
+                if TRIM_EDGE_END ~= 0 then TRIM_EDGE_END = 0 else TRIM_EDGE_END = 1 end;
+                reaper.SetExtState(section,"TRIM_EDGE_END",TRIM_EDGE_END,true);
                 ----
             elseif showmenu == 5 then;
                 ----
@@ -938,6 +952,9 @@
     function DuplicateSelItRelToSpecGridByTS(DIVISION,SELECTION,COPY_MOVE);
         
         
+        
+        
+        
         if not reaper.GetSelectedMediaItem(0,0) then;
             reaper.MB("No Selected Media Item","ERROR",0);
             return;
@@ -953,6 +970,7 @@
             
         reaper.PreventUIRefresh(1);
         reaper.Undo_BeginBlock()
+        local VisibeMaster = reaper.GetMasterTrackVisibility()&1
         -----
         local TableWithPositions = {};
         -----
@@ -1051,6 +1069,37 @@
                 local nextLength = prevLength / bpm;
                 reaper.SetMediaItemInfo_Value(selIt_T[i],"D_LENGTH",nextLength);
                 ----
+                
+                -----
+                if TRIM_EDGE_END == 1 then;
+                    ----
+                    local fade;
+                    local buf = ({reaper.get_config_var_string("splitautoxfade")})[2]&8;--8off;0on
+                    if buf == 0 then;
+                        local retval, buf = reaper.get_config_var_string("deffadelen");
+                        fade = tonumber(buf);
+                    end;
+                    ----
+                    local pos = reaper.GetMediaItemInfo_Value(selIt_T[i],"D_POSITION");
+                    local len = reaper.GetMediaItemInfo_Value(selIt_T[i],"D_LENGTH");
+                    
+                    if len > TableWithPositions[i2+1] then;
+                        reaper.SetMediaItemInfo_Value(selIt_T[i],"D_LENGTH",TableWithPositions[i2+1]);
+                        if type(fade)== "number" then;
+                            reaper.SetMediaItemInfo_Value(selIt_T[i],"D_FADEOUTLEN",fade);
+                        end;
+                    end;
+                    ----
+                    if len+pos > End then;
+                        reaper.SetMediaItemInfo_Value(selIt_T[i],"D_LENGTH",End-pos);
+                        
+                        if type(fade)== "number"then;
+                            reaper.SetMediaItemInfo_Value(selIt_T[i],"D_FADEOUTLEN",fade);
+                        end;
+                    end;
+                end;
+                -----
+                
             end;
             
             if TableActive then;
@@ -1077,6 +1126,7 @@
             end;
         end;
         --------------------------------------------
+        reaper.SetMasterTrackVisibility(VisibeMaster);
         reaper.Undo_EndBlock("Duplicate by "..DIVISION.." by time selection",-1);
         reaper.PreventUIRefresh(-1);
         reaper.UpdateArrange();
@@ -1099,4 +1149,4 @@
     ---------
     
     loop();
-	reaper.atexit(exit);
+    reaper.atexit(exit);
