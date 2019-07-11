@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division 
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -19,6 +19,9 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   *              v.1.01 [12.07.2019]
+   *                  !+ Fixed bug at startup presets
+   
    *              v.1.0 [12.07.2019]
    *                  + initialе
     
@@ -480,6 +483,7 @@
                         if v == showmenuPreset-3 then;
                             local
                             namePres,DIVISION,StartLoop,EndLoop = var:match("{{(.-)}{(.-)}{(.-)}{(.-)}}");
+                            DIVISION = tonumber(DIVISION);
                             reaper.PreventUIRefresh(2);
                             reaper.Undo_BeginBlock();
                             reaper.GetSet_LoopTimeRange(1,0,StartLoop,EndLoop,0);
