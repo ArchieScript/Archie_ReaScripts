@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division 
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -19,7 +19,7 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.02 [12.07.2019]
+   *              v.1.03 [12.07.2019]
    *                  + Save presets in Beats / Seconds (Right menu)
    
    *              v.1.01 [12.07.2019]
@@ -274,7 +274,7 @@
     end;
     -------------------------------------------------------------------------------
     
-    local title = "Duplicate selected item relative to specified grid by time selection"
+    local title = "Duplicate selected items to time selection relative given division"
     gfx.init(title,SizeW or 700,SizeH or 37,PositionDock,PosX or 350,PosY or 100);
     
     
