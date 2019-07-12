@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division 
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -19,9 +19,11 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.01 [12.07.2019]
-   *                  !+ Fixed bug at startup presets
+   *              v.1.02 [12.07.2019]
+   *                  + Save presets in Beats / Seconds (Right menu)
    
+   *              v.1.01 [12.07.2019]
+   *                  !+ Fixed bug at startup presets 
    *              v.1.0 [12.07.2019]
    *                  + initialе
     
@@ -400,19 +402,27 @@
             --gfx.mouse_cap = 2;
             ------------
             local List;
+            local BEATS_SEC_PRES = tonumber(reaper.GetExtState(section,"BEATS_SEC_PRES"))or 1;
+            local checkBeatsSec;
+            if BEATS_SEC_PRES == 1 then checkBeatsSec = "!" else checkBeatsSec = "" end;
+            
             local Preset = reaper.GetExtState(section,"Preset");
-            for var in string.gmatch(Preset, "{{(.-)}{.-}{.-}{.-}}") do;
+            --namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat;
+            for var in string.gmatch(Preset, "{{(.-)}{.-}{.-}{.-}{.-}{.-}}") do;
                 List = (List or "").."|"..var;
             end;
             if not List then List = "" end;
+
             gfx.x = gfx.mouse_x;
             gfx.y = gfx.mouse_y;
             local
-            showmenuPreset = gfx.showmenu(--[[ 0]]">Preset - Save / Remove|"..
+            showmenuPreset = gfx.showmenu(--[[>>]]">Preset - Save / Remove|"..
                                           --[[ 1]]"Save|"..
-                                          --[[ 2]]"Remove||"..
-                                          --[[ 3]]"<Remove All list|"..
-                                                  List);
+                                          --[[>>]]">Remove|"..
+                                          --[[ 2]]"Remove|"..
+                                          --[[ 3]]"<Remove All list||"..
+                                          --[[ 4]]checkBeatsSec.."<Beats(on) / Seconds(off)|"..
+                                          --[[5+]]List);
             if showmenuPreset == 1 then; --Save
                 
                 local Start, End = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
@@ -425,7 +435,8 @@
                     saveNamePres = saveNamePres:gsub("[{}]","");
                     if retval and #saveNamePres > 0 then;
                         --local Preset = reaper.GetExtState(section,"Preset");
-                        for var in string.gmatch(Preset, "{{(.-)}{.-}{.-}{.-}}") do;
+                        --namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat;
+                        for var in string.gmatch(Preset, "{{(.-)}{.-}{.-}{.-}{.-}{.-}}") do;
                             if var == saveNamePres then;
                                 reaper.MB("End:\nThis Name already exists\n\nRus:\nТакое Имя уже существует","ERROR",0);
                                 goto restartNamePreset;
@@ -435,7 +446,12 @@
                         if retval then;
                             saveGridPres = load("return "..saveGridPres)();
                             if type(saveGridPres)== "number" then;
-                                local Pres = Preset.."{{"..saveNamePres.."}".."{"..saveGridPres.."}".."{"..Start.."}".."{"..End.."}}"
+                                ---
+                                --namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat;
+                                StartBeat = reaper.format_timestr_pos(Start,"",2);
+                                EndBeat = reaper.format_timestr_pos(End,"",2);
+                                ---
+                                local Pres = Preset.."{{"..saveNamePres.."}{"..saveGridPres.."}{"..Start.."}{"..End.."}{"..StartBeat.."}{"..EndBeat.."}}";
                                 reaper.SetExtState(section,"Preset",Pres,true);
                             end;
                         end;
@@ -454,7 +470,8 @@
                 if showmenuRemovePreset > 0 then;
                     
                     local v,StrPreset;
-                    for var in string.gmatch(Preset, "{{.-}{.-}{.-}{.-}}") do;
+                    --namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat;
+                    for var in string.gmatch(Preset, "{{.-}{.-}{.-}{.-}{.-}{.-}}") do;
                         v = (v or 0)+1;
                         if v == showmenuRemovePreset then;
                             var = "";
@@ -468,7 +485,12 @@
                 -----
                 reaper.DeleteExtState(section,"Preset",true);
                 -----
-            elseif showmenuPreset > 3 then;
+            elseif showmenuPreset == 4 then;
+                -----
+                if BEATS_SEC_PRES ~= 0 then BEATS_SEC_PRES = 0 else BEATS_SEC_PRES = 1 end;
+                reaper.SetExtState(section,"BEATS_SEC_PRES",BEATS_SEC_PRES,true);
+                -----
+            elseif showmenuPreset > 4 then;
                 -----
                 if not reaper.GetSelectedMediaItem(0,0)then;
                     reaper.MB("No Selected Media Item","ERROR",0);
@@ -478,19 +500,28 @@
                         reaper.GetSet_LoopTimeRange(1,0,Start, End+0.01,0);
                     end;
                     local v;
-                    for var in string.gmatch(Preset, "{{.-}{.-}{.-}{.-}}") do;
+                    --namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat;
+                    for var in string.gmatch(Preset, "{{.-}{.-}{.-}{.-}{.-}{.-}}") do;
                         v = (v or 0)+1;
-                        if v == showmenuPreset-3 then;
+                        if v == showmenuPreset-4 then;
                             local
-                            namePres,DIVISION,StartLoop,EndLoop = var:match("{{(.-)}{(.-)}{(.-)}{(.-)}}");
+                            namePres,DIVISION,StartLoop,EndLoop,StartBeat,EndBeat = var:match("{{(.-)}{(.-)}{(.-)}{(.-)}{(.-)}{(.-)}}");
                             DIVISION = tonumber(DIVISION);
                             reaper.PreventUIRefresh(2);
                             reaper.Undo_BeginBlock();
-                            reaper.GetSet_LoopTimeRange(1,0,StartLoop,EndLoop,0);
+                            ----
+                            if BEATS_SEC_PRES == 1 then;
+                                local StartLoopB = reaper.parse_timestr_pos(StartBeat,2);
+                                local EndLoopB = reaper.parse_timestr_pos(EndBeat,2);
+                                reaper.GetSet_LoopTimeRange(1,0,StartLoopB,EndLoopB,0);
+                            else;
+                                reaper.GetSet_LoopTimeRange(1,0,StartLoop,EndLoop,0);
+                            end;
+                            ----
                             DuplicateSelItRelToSpecGridByTS(DIVISION,SELECTION,COPY_MOVE,TRIM_EDGE_END,UNSELECT_EVEN_ITEMS,UNSELECT_ODD_ITEMS,UNSELECT_ORIGINAL_IT);
                             reaper.GetSet_LoopTimeRange(1,0,Start, End,0);
                             reaper.PreventUIRefresh(-2);
-                            reaper.Undo_EndBlock("Duplicate items - preset "..namePres,0)
+                            reaper.Undo_EndBlock("Duplicate items - preset "..namePres,0);
                         end;  
                     end;  
                     
