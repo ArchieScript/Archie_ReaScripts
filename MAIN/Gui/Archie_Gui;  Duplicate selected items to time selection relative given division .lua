@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division 
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -19,9 +19,11 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   *              v.1.04 [12.07.2019]
+   *                  No changes
+   
    *              v.1.03 [12.07.2019]
    *                  + Save presets in Beats / Seconds (Right menu)
-   
    *              v.1.01 [12.07.2019]
    *                  !+ Fixed bug at startup presets 
    *              v.1.0 [12.07.2019]
@@ -1000,6 +1002,8 @@
                     reaper.DeleteExtState(section, "PositionWind"        ,true);
                     reaper.DeleteExtState(section, "SizeWindow"          ,true);
                     reaper.DeleteExtState(section, "SaveDock"            ,true);
+                    ---
+                    reaper.DeleteExtState(section, "BEATS_SEC_PRES"      ,true);
                     ---
                     gfx.quit();
                     dofile(({reaper.get_action_context()})[2]);
