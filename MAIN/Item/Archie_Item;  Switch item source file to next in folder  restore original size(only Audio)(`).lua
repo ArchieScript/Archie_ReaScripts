@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Switch item source file to next in folder restore original size(only Audio)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Switch item source file to next in folder restore original size(only Audio)
    * О скрипте:   Переключить исходный файл элемента на следующий в 
                         папке восстановить исходный размер (только аудио)
@@ -13,9 +13,12 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---(---)
    * Gave idea:   ---(---)
-   * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19] 
-   *              +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
+   * Changelog:   
+   *              v.1.03 [14.07.19]
+   *                  Build missing peaks
    
+   *              +  Fixed paths for Mac/ v.1.02 [29.01.19] 
+   *              +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
    *              +  initialе / v.1.0 [16.01.2019]
    
    ===========================================================================================\
@@ -180,4 +183,5 @@
         Arc.no_undo();
     end;
     ----
+	    Arc.Action(40047);--Build missing peaks
     reaper.UpdateArrange();
