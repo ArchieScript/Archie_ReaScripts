@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="8db346ccedc59540ec61c64c9c98fdab0b2a66cb" name="Archie-ReaScripts">
+<index version="1" commit="8e9821024eeeaeec1365c234087442864452214e" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2385,6 +2385,19 @@
     </reapack>
   </category>
   <category name="MAIN/Time selection">
+    <reapack name="Archie_Time selection;  Insert empty space at time selection in selected tracks(moving later items).lua" type="script" desc="Insert empty space at time selection in selected tracks(moving later items)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.01" author="Archie" time="2019-07-16T17:11:22Z">
+        <changelog><![CDATA[v.1.01 [05062019]
+    Master track is selected, shift all content in time selection
+    Мастер-трек выбран, сдвинуть все содержимое в выборе времени]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8e9821024eeeaeec1365c234087442864452214e/MAIN/Time%20selection/Archie_Time%20selection;%20%20Insert%20empty%20space%20at%20time%20selection%20in%20selected%20tracks(moving%20later%20items).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Time selection;  Nudge left edge left to nearest grid.lua" type="script" desc="Nudge left edge left to nearest grid">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2429,40 +2442,29 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9cea98478ac21bcc4723b3f7a910c82e2385edbd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Nudge%20right%20edge%20right%20to%20nearest%20grid.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Time selection; Insert empty space at time selection in selected tracks(moving later items).lua" type="script" desc="Insert empty space at time selection in selected tracks(moving later items)">
+    <reapack name="Archie_Time selection;  Remove all contents of time selection.lua" type="script" desc="Remove all contents of time selection">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-06-04T12:18:39Z">
-        <changelog><![CDATA[v.1.0 [04062019]
-    Initialе;]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dacf6e7307cebb4b373388708c1bc2ea8f144233/MAIN/Time%20selection/Archie_Time%20selection;%20Insert%20empty%20space%20at%20time%20selection%20in%20selected%20tracks(moving%20later%20items).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-06-05T08:40:07Z">
-        <changelog><![CDATA[v.1.01 [05062019]
-    Master track is selected, shift all content in time selection
-    Мастер-трек выбран, сдвинуть все содержимое в выборе времени]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Time%20selection/Archie_Time%20selection;%20Insert%20empty%20space%20at%20time%20selection%20in%20selected%20tracks(moving%20later%20items).lua</source>
+      <version name="1.0" author="Archie" time="2019-07-16T17:11:22Z">
+        <changelog><![CDATA[v.1.0 [17.07.2019]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8e9821024eeeaeec1365c234087442864452214e/MAIN/Time%20selection/Archie_Time%20selection;%20%20Remove%20all%20contents%20of%20time%20selection.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Time selection; Remove contents of time selection in selected tracks (moving later items).lua" type="script" desc="Remove contents of time selection in selected tracks (moving later items)">
+    <reapack name="Archie_Time selection;  Remove contents of time selection in selected tracks (moving later items).lua" type="script" desc="Remove contents of time selection in selected tracks (moving later items)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-06-04T12:18:39Z">
-        <changelog><![CDATA[v.1.0 [04062019]
-    Initialе;]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dacf6e7307cebb4b373388708c1bc2ea8f144233/MAIN/Time%20selection/Archie_Time%20selection;%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-06-05T08:40:07Z">
+      <version name="1.01" author="Archie" time="2019-07-16T17:11:22Z">
         <changelog><![CDATA[v.1.01 [05062019]
     + Master track is selected, delete all content in time selection
     + Мастер трек выбран, удалить все содержимое в выборе времени ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffcb58145c61c633b613fec1e1ad4a7d40b73814/MAIN/Time%20selection/Archie_Time%20selection;%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8e9821024eeeaeec1365c234087442864452214e/MAIN/Time%20selection/Archie_Time%20selection;%20%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
       </version>
     </reapack>
   </category>
