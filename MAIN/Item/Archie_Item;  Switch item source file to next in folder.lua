@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Switch item source file to next in folder
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Switch item source file to next in folder
    * О скрипте:   Переключить исходный файл элемента на следующий в папке
    *              НЕ СПОТЫКАЕТСЯ(ЛОМАЕТСЯ) НА МИДИ ФАЙЛАХ КАК В SWS
@@ -20,6 +20,9 @@
    *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua
    *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua
    * Changelog:   
+   *              v.1.01 [19.07.19] 
+   *                  + "WAVPACK"(.wv),.flac,...
+   
    *              v.1.0 [19.07.19] 
    *                  initial
    
@@ -33,7 +36,7 @@
     (+) Reaper v.5.975 +            --| http://www.reaper.fm/download.php
     (+) SWS v.2.10.0 +              --| http://www.sws-extension.org/index.php
     (-) ReaPack v.1.2.2 +           --| http://reapack.com/repos
-    (+) Arc_Function_lua v.2.4.7 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
+    (+) Arc_Function_lua v.2.4.8 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
     (-) reaper_js_ReaScriptAPI64    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
     (-) Visual Studio С++ 2015      --|  http://clck.ru/Eq5o6
     =======================================================================================]] 
@@ -77,7 +80,7 @@
     reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
     if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
     'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
-    if not Arc.VersionArc_Function_lua("2.4.7",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
+    if not Arc.VersionArc_Function_lua("2.4.8",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
     --==================================▲=▲=▲=================================================================================================================
 
 
@@ -96,38 +99,26 @@
     local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
     local ScrNameUndo = ScrName:match("Archie.-%s%s*(.+)%.lua$");
     
-    local AUDIO,AUDIO_MP3,ORIGINAL_SIZE;
     
-    if ScrName == ScrNameT[1] then;
-        ----
-        AUDIO, AUDIO_MP3  = "WAVE", "MP3";
-        VIDEO  = "VIDEO";
-        ----
-    elseif ScrName == ScrNameT[2] then;
-        ----
-        AUDIO, AUDIO_MP3  = "WAVE", "MP3";
-        ----
+    
+    local AUDIO = {"WAVE","MP3","WAVPACK","OPUS","VORBIS","FLAC","DDP"};
+    local VIDEO = {"VIDEO"};
+    local ORIGINAL_SIZE;
+    
+    
+    if ScrName == ScrNameT[2] then;
+        VIDEO = nil;
     elseif ScrName == ScrNameT[3] then;
-        ----
-        VIDEO  = "VIDEO";
-        ----
+        AUDIO = nil;
     elseif ScrName == ScrNameT[4] then;
-        ----
-        AUDIO, AUDIO_MP3  = "WAVE", "MP3";
-        VIDEO  = "VIDEO";
         ORIGINAL_SIZE = true;
-        ---- 
     elseif ScrName == ScrNameT[5] then;
-        ----
-        AUDIO, AUDIO_MP3  = "WAVE", "MP3";
+        VIDEO = nil;
         ORIGINAL_SIZE = true;
-        ---- 
     elseif ScrName == ScrNameT[6] then;
-        ----
-        VIDEO  = "VIDEO";
+        AUDIO = nil;
         ORIGINAL_SIZE = true;
-        ---- 
-    else;
+    elseif ScrName ~= ScrNameT[1] then;
         reaper.MB("Rus:\nНеверное имя скрипта!\nИмя скрипта должно быть одно из следующих в зависимости от задачи:\n\n"..
                   "Eng:\nInvalid script name!\nThe script name must be one of the following depending on the task:\n\n\n\n"..
                   table.concat(ScrNameT,"\n\n")
@@ -155,7 +146,7 @@
             if Path and Name then;
                 local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."/"..Name);
                 local WavMidVideo = reaper.GetMediaSourceType(PCM_Source,"");
-                if Arc.If_Equals_Or(WavMidVideo, AUDIO, AUDIO_MP3, VIDEO)then;----
+                if Arc.If_Equals_OrEx(WavMidVideo, AUDIO, VIDEO)then;----
                     
                     ---- Number of Files in directory ---------------
                     for i = 1, math.huge do;
@@ -183,7 +174,7 @@
                                 if ExpansionFile then;
                                     local PCM_Source = reaper.PCM_Source_CreateFromFile(Path.."/"..Name);
                                     local WavMidVideo = reaper.GetMediaSourceType(PCM_Source,"");
-                                    if Arc.If_Equals_Or(WavMidVideo, AUDIO, AUDIO_MP3, VIDEO)then;----
+                                    if Arc.If_Equals_OrEx(WavMidVideo, AUDIO, VIDEO)then;----
                                     
                                         local Channels = reaper.GetMediaSourceNumChannels(PCM_Source);
                                         if Channels > 0 then;
