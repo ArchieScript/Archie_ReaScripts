@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" commit="8e9821024eeeaeec1365c234087442864452214e" name="Archie-ReaScripts">
+<index version="1" commit="86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f" name="Archie-ReaScripts">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -206,6 +206,9 @@
       </version>
       <version name="2.4.6" author="Archie" time="2019-06-13T12:29:31Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/cfeaacc1a64217fa42e7ae0ff0e03e8d1890fd99/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.4.7" author="Archie" time="2019-07-19T12:31:38Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -1419,265 +1422,38 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Stretch%20time%20and%20reduce%20the%20selected%20item(s)%20by%202%20times.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder  restore original size(only Audio)(`).lua" type="script" desc="Switch item source file to next in folder restore original size(only Audio)">
+    <reapack name="Archie_Item;  Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19]
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Audio)(%60).lua</source>
+      <version name="1.0" author="Archie" time="2019-07-19T12:31:38Z">
+        <changelog><![CDATA[v.1.0 [19.07.19] 
+    initial]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder  restore original size(only Video)(`).lua" type="script" desc="Switch item source file to next in folder restore original size(only Video)">
+    <reapack name="Archie_Item;  Switch item source file to previous in folder.lua" type="script" desc="Switch item source file to previous in folder">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20%20restore%20original%20size(only%20Video)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder (only Audio)(`).lua" type="script" desc="Switch item source file to next in folder (only Audio)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02[29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder (only Video)(`).lua" type="script" desc="Switch item source file to next in folder (only Video))">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder restore original size(`).lua" type="script" desc="Switch item source file to next in folder restore original size">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to next in folder(`).lua" type="script" desc="Switch item source file to next in folder">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder (only Audio)(`).lua" type="script" desc="Switch item source file to previous in folder (only Audio)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Audio)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder (only Video)(`).lua" type="script" desc="Switch item source file to previous in folder (only Video)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20(only%20Video)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder restore original size (only Audio)(`).lua" type="script" desc="Switch item source file to previous in folder restore original size (only Audio)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie-" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie-" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Audio)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie-" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Audio)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder restore original size (only Video)(`).lua" type="script" desc="Switch item source file to previous in folder restore original size (only Video)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [16.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Video)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size%20(only%20Video)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder restore original size(`).lua" type="script" desc="Switch item source file to previous in folder restore original size">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  
-+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder%20restore%20original%20size(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Switch item source file to previous in folder(`).lua" type="script" desc="Switch item source file to previous in folder">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [15.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-07-14T14:00:09Z">
-        <changelog><![CDATA[v.1.03 [14.07.19] 
-    Build missing peaks]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8db346ccedc59540ec61c64c9c98fdab0b2a66cb/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder(%60).lua</source>
+      <version name="1.0" author="Archie" time="2019-07-19T12:31:38Z">
+        <changelog><![CDATA[v.1.0 [19.07.19] 
+    initial]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/86fb4baff2f7e945d00fcdaa81bb91bbe2c6bd7f/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Trim Extend selected of items to time selection(`).lua" type="script" desc="Trim Extend selected of items to time selection">
