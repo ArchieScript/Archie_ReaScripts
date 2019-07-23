@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5033974a6967c7625101bca6da6da46318930761">
+<index version="1" name="Archie-ReaScripts" commit="f2459d6b62384e16412e9a22e09a15fdfc22aaae">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -942,6 +942,18 @@
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20By%20frame%20move%20item,under%20mouse%20cursor.move%20cursor%20the%20to%20offset(mousewheel).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Change volume items in time selection on selected tracks(ctrl+script to set the value).lua" type="script" desc="Change volume items in time selection on selected tracks(ctrl+script to set the value)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-07-23T18:47:06Z">
+        <changelog><![CDATA[v.1.0 [24072019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f2459d6b62384e16412e9a22e09a15fdfc22aaae/MAIN/Item/Archie_Item;%20%20Change%20volume%20items%20in%20time%20selection%20on%20selected%20tracks(ctrl+script%20to%20set%20the%20value).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Change volume of selected items to (ctrl+script to set value).lua" type="script" desc="Change volume of selected items to (ctrl+script to set the value)">
