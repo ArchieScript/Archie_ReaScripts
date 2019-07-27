@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Change volume of selected items to (ctrl+script to set the value)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Измените громкость выбранных элементов на (ctrl+script, чтобы установить значение)
    * GIF:         ---
@@ -105,7 +105,7 @@
     reaper.UpdateArrange();
     
     if Undo then;
-        reaper.Undo_EndBlock(value_from_dB..' dB change volume to',1);
+        reaper.Undo_EndBlock(value_from_dB..' dB change volume to',-1);
     else;
         Arc.no_undo();
     end; 

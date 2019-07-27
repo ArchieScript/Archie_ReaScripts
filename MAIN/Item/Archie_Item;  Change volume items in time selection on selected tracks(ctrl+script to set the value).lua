@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Change volume items in time selection on selected tracks(ctrl+script to set the value)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Изменение громкости элементов в выборе времени на выбранных дорожках (ctrl+script, чтобы установить значение)
    * GIF:         ---
@@ -134,7 +134,7 @@
     
     
     if Undo then;
-        reaper.Undo_EndBlock(value_from_dB..' dB Change volume items in time selection on selected tracks',1);
+        reaper.Undo_EndBlock(value_from_dB..' dB Change volume items in time selection on selected tracks',-1);
     else;
         Arc.no_undo();
     end;
