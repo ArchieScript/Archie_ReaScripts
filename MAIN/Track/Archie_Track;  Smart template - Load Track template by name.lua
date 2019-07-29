@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
@@ -12,10 +12,12 @@
    * Customer:    ---
    * Gave idea:   Ahmed5599887744112233[RMM]
    * Changelog:   
+   *              v.1.02 [30.07.2019]
+   *                  + Added - Add a template to the selected track
+   
    *              v.1.01 [26.06.2019]
    *                  +! fixed bug when adding a template as the first track in the project
    *                  +! Исправлена ошибка при добавлении шаблона в качестве первого трека в проекте
-   
    *              v.1.0 [04.03.2019]
    *                  +  initialе 
    
@@ -110,8 +112,33 @@ ScriptBeginning = [[
     local
     Name_TrTemplate = Saved_TrackTemplates;
     
-    local
-    NameScrNEXT = "Archie_Track;  Load Track template with name - "..Name_TrTemplate;
+    
+    ----
+    ::goto_SELECTED::
+    local MB = reaper.MB("Rus:\n\n"
+               .." * В следующем окне введите:\n"
+               .."   0 - чтобы трек шаблон добавить как новый трек\n"
+               .."   1 - чтобы заменить выделенные треки\n\n"
+               .."Eng\n\n"
+               .." * In the next window, enter:\n"
+               .."   0 - to add the track template as a new track\n"
+               .."   1 - to replace selected tracks\n",
+               "Help!",1);
+    if MB == 2 then no_undo() return end;
+    
+    local ret,SELECTED = reaper.GetUserInputs( "Smart template - Load Track templates by name.", 1,
+                        " How add template, extrawidth=50",-1);
+    if not ret then no_undo() return end;
+    if SELECTED ~= "0" and SELECTED ~= "1" then goto goto_SELECTED end;
+    SELECTED = tonumber(SELECTED);
+    ----
+    
+    local NameScrNEXT;
+    if SELECTED == 0 then;
+        NameScrNEXT = "Archie_Track;  Load Track template with name - "..Name_TrTemplate;
+    elseif SELECTED == 1 then;
+        NameScrNEXT = "Archie_Track;  Load Track template for selected tracks with name - "..Name_TrTemplate;
+    end
     ----
     
     
@@ -131,7 +158,23 @@ ScriptBeginning = [[
     ------------------------------------------------------------------------------
     
     
-    local function LoadTrackTemplateByName(Name_TrTemplate,NameScrNEXT);
+    local function LoadTrackTemplateByName(Name_TrTemplate,NameScrNEXT,SELECTED);
+        
+        
+        local function replaceAllGuid(str);
+            local var2;
+            for var in str:gmatch(".-\n") do;
+                local t;
+                for x in var:gmatch("{.-}")do t = (t or 0)+1 end;
+                for i = (t or 1), 1, -1 do;
+                    var = var:gsub("{.-}",reaper.genGuid(),i);
+                end;
+                var2 = (var2 or "")..var;
+            end;
+            return var2;
+        end;
+        
+        
             
         local IO; do;
             local Path = reaper.GetResourcePath().."/TrackTemplates/"..Name_TrTemplate..".RTrackTemplate";
@@ -144,44 +187,60 @@ ScriptBeginning = [[
             reaper.Undo_BeginBlock();
             reaper.PreventUIRefresh(1);
             
+            
             local str = string.gsub(textTemplates,"<TRACK","\n\n<TRACK").."\n\n";
-     
-            local
-            LastTouchedTrack = reaper.GetLastTouchedTrack();
+                        
             
-            
-            local trNumb;
-            if LastTouchedTrack then;
-                trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
-            else;
-                trNumb = 0;
-            end;
-            
-            
-            local several;
-            for var in string.gmatch(str,"<TRACK.-\n\n") do;
-            
-                reaper.InsertTrackAtIndex(trNumb,false);
-                local Track = reaper.GetTrack(0,trNumb);
-            
-                math.randomseed(tostring(os.clock()):gsub("%.",""));
-                local randFirst = math.random (9);
-                local randLast  = math.random (9);
-                local str = var:gsub("{.","{"..randFirst):gsub(".}",randLast.."}"):gsub("\n\n","\n");
-               
-                reaper.SetTrackStateChunk(Track,str,false);
+            if SELECTED == 0 then;
+                -----------------
+                local
+                LastTouchedTrack = reaper.GetLastTouchedTrack();
                 
-                if not several then;
-                    reaper.SetOnlyTrackSelected(Track);
-                    several = true;
+                local trNumb;
+                if LastTouchedTrack then;
+                    trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
                 else;
-                    reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
+                    trNumb = reaper.CountTracks(0);
                 end;
                 
-                trNumb = trNumb+1;
-            
+                reaper.SelectAllMediaItems(0,0);
+                str = replaceAllGuid(str);
+                
+                local several;
+                for var in string.gmatch(str,"<TRACK.-\n\n") do;
+                    reaper.InsertTrackAtIndex(trNumb,false);
+                    local Track = reaper.GetTrack(0,trNumb);
+
+                    str = var:gsub("\n\n","\n");
+                    reaper.SetTrackStateChunk(Track,str,false);
+                    
+                    if not several then;
+                        reaper.SetOnlyTrackSelected(Track);
+                        several = true;
+                    else;
+                        reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
+                    end; 
+                    trNumb = trNumb+1;
+                end;
+                -----------------
+            elseif SELECTED == 1 then;
+                ----
+                str = str:match("<TRACK.-\n\n");
+                local CountSelTrack = reaper.CountSelectedTracks(0);
+                if CountSelTrack > 0 then;
+                    reaper.SelectAllMediaItems(0,0);
+                    
+                    for i = 1,CountSelTrack do;
+                        local SelTrack = reaper.GetSelectedTrack(0,i-1);
+                        str = replaceAllGuid(str);
+                        reaper.SetTrackStateChunk(SelTrack,str,false);
+                    end;
+                end;
+                ----
             end;
-     
+
+            --reaper.ShowConsoleMsg( var2 )
+
             local Undo = NameScrNEXT:gsub("Archie_Track;  ","");
             reaper.PreventUIRefresh(-1);
             reaper.Undo_EndBlock(Undo,-1);
@@ -217,9 +276,9 @@ ScriptBeginning = [[
             end;
             no_undo() return;
         end;
-    end; 
+    end;
     
-    LoadTrackTemplateByName("]]..Name_TrTemplate..[[","]]..NameScrNEXT..[[");]]
+    LoadTrackTemplateByName("]]..Name_TrTemplate..[[","]]..NameScrNEXT..[[",]]..SELECTED..[[);]]
     -----------
     
     
