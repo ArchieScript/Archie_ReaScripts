@@ -8,7 +8,7 @@
    * Version:     1.0
    * AboutScript: ---
    * О скрипте:   Копирование выбранных файлов из Обозревателя мультимедиа в каталог проекта
-   * GIF:         ---
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/1969020/73e651b5-2612-45a3-b605-c2d26fd3b5ce/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
