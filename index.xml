@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="217fa35f8633ae730cc2305b1b08a6b983f296ae">
+<index version="1" name="Archie-ReaScripts" commit="8c9659263cad3bfb63e1f0a58b418843c121925f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3325,7 +3325,7 @@
     </reapack>
   </category>
   <category name="MAIN/Various">
-    <reapack name="Archie_Var;  Copy selected files from media Explorer to project directory.lua" type="script" desc="Copy selected files of media Explorer to project directory">
+    <reapack name="Archie_Var;  Copy selected files from media Explorer to project directory.lua" type="script" desc="Copy selected files from media Explorer to project directory">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -3335,6 +3335,11 @@
         <changelog><![CDATA[v.1.0 [02.08.2019]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc1c710e93098770bb78ea5f2b3e7f1e1b99950d/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20Explorer%20to%20project%20directory.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-02T10:04:21Z">
+        <changelog><![CDATA[v.1.01[02.08.2019]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8c9659263cad3bfb63e1f0a58b418843c121925f/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20Explorer%20to%20project%20directory.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Fade in-out auto both edges(Ctrl+fade,Shift+fade,+Alt+fade).lua" type="script" desc="Fade in-out auto both edges(Ctrl+fade,Shift+fade,*+Alt+fade)">
