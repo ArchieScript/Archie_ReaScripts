@@ -3,9 +3,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Various
-   * Description: Copy selected files of media Explorer to project directory
+   * Description: Copy selected files from media Explorer to project directory
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Копирование выбранных файлов из Обозревателя мультимедиа в каталог проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1969020/73e651b5-2612-45a3-b605-c2d26fd3b5ce/orig
@@ -14,7 +14,7 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Maestro Sound(RMM)
    * Gave idea:   Maestro Sound(RMM)
-   * Changelog:   v.1.0 [02.08.2019]
+   * Changelog:   v.1.01[02.08.2019]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -43,7 +43,7 @@
                        -- Enter the name of the created folder
     
     
-    local COPY_REQUEST = 0
+    local COPY_REQUEST = 1
                     -- = 0 Не показывать запрос о копировании
                     -- = 1 Показывать запрос о копировании
                          --------------------------------
