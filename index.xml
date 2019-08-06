@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="95c3cbc219b042220a35c06debe336d61a8a2174">
+<index version="1" name="Archie-ReaScripts" commit="76849c0b52bd828c491dc99031b2b8a41c3b6fe3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -978,6 +978,30 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e24fea364959ba4632c4fddcaa25afaf18eb00e0/MAIN/Item/Archie_Item;%20%20Change%20volume%20of%20selected%20items%20to%20(ctrl+script%20to%20set%20value).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Copy source media file of all items to project directory.lua" type="script" desc="Copy source media file of all items to project directory (all take)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-06T13:55:06Z">
+        <changelog><![CDATA[v.1.0 [04.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/76849c0b52bd828c491dc99031b2b8a41c3b6fe3/MAIN/Item/Archie_Item;%20%20Copy%20source%20media%20file%20of%20all%20items%20to%20project%20directory.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Copy source media file of selected items to project directory.lua" type="script" desc="Copy source media file of selected items to project directory (all take)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-06T13:55:06Z">
+        <changelog><![CDATA[v.1.0 [04.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/76849c0b52bd828c491dc99031b2b8a41c3b6fe3/MAIN/Item/Archie_Item;%20%20Copy%20source%20media%20file%20of%20selected%20items%20to%20project%20directory.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Cut silence by grid from selected items to created track under item(-80 db)(`).lua" type="script" desc="Cut silence by grid from selected items to created track under item">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1408,6 +1432,17 @@
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+! Fixed curve display when visibility is disabled / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Show%20all%20visible%20envelopes%20in%20selected%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Smart Template Add item by name to selected tracks.lua" type="script" desc="Smart Template Add item by name to selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-06T13:55:06Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [06082019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/76849c0b52bd828c491dc99031b2b8a41c3b6fe3/MAIN/Item/Archie_Item;%20%20Smart%20Template%20Add%20item%20by%20name%20to%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
@@ -3335,6 +3370,11 @@
         <changelog><![CDATA[v.1.0[02.08.2019]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/95c3cbc219b042220a35c06debe336d61a8a2174/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20explorer%20to%20project%20subdirectory.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-06T13:54:22Z">
+        <changelog><![CDATA[v.1.01[04.08.2019]
+    ! Fixed bug copying the same file to a directory]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/28581636a9f2ef956432ff50665aed907e4f2bab/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20explorer%20to%20project%20subdirectory.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Fade in-out auto both edges(Ctrl+fade,Shift+fade,+Alt+fade).lua" type="script" desc="Fade in-out auto both edges(Ctrl+fade,Shift+fade,*+Alt+fade)">
