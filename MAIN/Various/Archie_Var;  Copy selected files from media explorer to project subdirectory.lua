@@ -5,7 +5,7 @@
    * Category:    Various
    * Description: Copy selected files from media explorer to project subdirectory
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Копирование выбранных файлов из проводника мультимедиа в подкаталог проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1969020/73e651b5-2612-45a3-b605-c2d26fd3b5ce/orig
@@ -14,7 +14,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Maestro Sound(RMM)
    * Gave idea:   Maestro Sound(RMM)
-   * Changelog:   v.1.0[02.08.2019]
+   * Changelog:  
+   *              v.1.01[04.08.2019]
+   *                  ! Fixed bug copying the same file to a directory
+               
+   *              v.1.0[02.08.2019]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -95,7 +99,16 @@
         if not in_file then return false end;
         local in_str = in_file:read("*a");
         in_file:close();
-        ----
+        ----/Один и тот же файл/----
+        local check_file = io.open(file2,"rb");
+        if check_file then;
+            local check_file_str = check_file:read("*a");
+            check_file:close();
+            if in_str == check_file_str then;
+                return -1, file2;
+            end;
+        end;
+        ----------------------------
         local x,i = file2;
         while true do;
             i = (i or 0)+1;
@@ -113,7 +126,7 @@
         if not out_file then return false end;
         out_file:write(in_str);
         out_file:close();
-        return true;
+        return true, file2;
     end;
     
     
@@ -168,7 +181,8 @@
     end;
     
     if MB == 1 then;
-        local buf = reaper.GetProjectPath("").."/"..NAME_FOLDER;
+        local buf = projfn:match("(.+)[/\\]").."/"..NAME_FOLDER;
+        
         reaper.RecursiveCreateDirectory(buf,0);
         for i = 1,#fileName do;
             copyFile(pathSample.."/"..fileName[i], buf.."/"..fileName[i]);
