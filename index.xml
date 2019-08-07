@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="92cc6b6c59e560ee1ed6b7d3ec7726b3464688f6">
+<index version="1" name="Archie-ReaScripts" commit="920fc269307bdc528f0ba10a6cdeb559af8f2e9f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1100,6 +1100,42 @@
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
 +  initialе / v.1.0 [20.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20in%20time%20selection(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Duplicate item to mouse position (relative snap).lua" type="script" desc="Duplicate item to mouse position (relative snap)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-07T14:38:44Z">
+        <changelog><![CDATA[v.1.0 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(relative%20snap).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Duplicate item to mouse position (snap to grid relative to project settings).lua" type="script" desc="Duplicate item to mouse position (snap to grid relative to project settings)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-07T14:38:44Z">
+        <changelog><![CDATA[v.1.0 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(snap%20to%20grid%20relative%20to%20project%20settings).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Duplicate item to mouse position.lua" type="script" desc="Duplicate item to mouse position">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-07T14:38:44Z">
+        <changelog><![CDATA[v.1.0 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
