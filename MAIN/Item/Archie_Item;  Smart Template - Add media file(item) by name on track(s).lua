@@ -1,10 +1,10 @@
 --[[
    * Category:    Item
-   * Description: Smart Template Add item by name to selected tracks
+   * Description: Smart Template - Add media file(item) by name on track(s)
    * Author:      Archie
    * Version:     1.0
    * AboutScript: ---
-   * О скрипте:   Умный шаблон - добавить элемент по имени в выбранные треки
+   * О скрипте:   Умный шаблон - добавить медиа-файл(элемент) по имени на трек(и)         
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,7 +12,7 @@
    * Customer:    Maestro Sound[RMM]
    * Gave idea:   Maestro Sound[RMM]
    * Changelog:   
-   *              +  initialе / v.1.0 [06082019]
+   *              +  initialе / v.1.0 [07082019]
    
    
    -- Тест только на windows  /  Test only on windows.
@@ -42,8 +42,10 @@
     ---------------------------------------------------------
     
     
+    local ScriptPath, ScriptName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)");
+    
     ::Repeat::
-    local retval, filename_N = reaper.GetUserFileNameForRead("","Smart Template - Add item by name to selected tracks","");
+    local retval, filename_N = reaper.GetUserFileNameForRead("","Add File / "..ScriptName,"");
     if not retval then no_undo()return end;
     filename_N = filename_N:gsub("%\\","/");
     local source = reaper.PCM_Source_CreateFromFile(filename_N);
@@ -55,12 +57,9 @@
     end;
     
     local PATH_N       = filename_N
-    local titleUndo_N  = "Add item by name ("..filename_N:match(".+[/\\](.+)%..-$")..") to selected tracks";
+    local titleUndo_N  = "Add media file(item) by name ("..filename_N:match(".+[/\\](.+)%..-$")..") on track(s)";
     local nameScript_N = "Archie_Item;  "..titleUndo_N..".lua"
-    -----
-    
-    
-    local ScriptPath, ScriptName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)");
+    -----    
     
     
     local in_file = io.open(ScriptPath.."/"..nameScript_N,"r");
@@ -124,6 +123,7 @@
 	   local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,1);
 	   reaper.JS_Window_SetPosition(winHWND,scr_x/2-200,scr_y/2-140,400,280);
 	   reaper.JS_Window_SetForeground(winHWND);
+	   reaper.JS_Window_SetTitle(winHWND,ScriptName)
     end;
     
     
@@ -146,7 +146,17 @@
 	   do;
 		 -----------------------------------------------------
 		  local CountSelTrack = reaper.CountSelectedTracks(0);
-		  if CountSelTrack == 0 then no_undo() return end;
+		  if CountSelTrack == 0 then; --no_undo() return end;
+			 local CountTrack = reaper.CountTracks(0);
+			 if CountTrack == 0 then;
+				no_undo() return;
+			 else;
+				reaper.InsertTrackAtIndex(CountTrack,false);
+				local Track = reaper.GetTrack(0,CountTrack);
+				reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
+				CountSelTrack = reaper.CountSelectedTracks(0);
+			 end;
+		  end;
 		  
 		  
 		  reaper.Undo_BeginBlock();
@@ -170,6 +180,7 @@
 				reaper.GetSetMediaItemTakeInfo_String(Take,"P_NAME",PATH:match(".+[/\\](.+)"),1);
 				reaper.SetMediaItemInfo_Value(NewItem,'B_UISEL',1);
 				reaper.SetMediaItemTake_Source(Take,source);
+				reaper.SetEditCurPos(CursorPosition+retval,true,false);
 			 end;
 		  end;
 		  reaper.Main_OnCommand(40047,0); -- build missing peaks
