@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="76849c0b52bd828c491dc99031b2b8a41c3b6fe3">
+<index version="1" name="Archie-ReaScripts" commit="92cc6b6c59e560ee1ed6b7d3ec7726b3464688f6">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1434,15 +1434,15 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Show%20all%20visible%20envelopes%20in%20selected%20items.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Smart Template Add item by name to selected tracks.lua" type="script" desc="Smart Template Add item by name to selected tracks">
+    <reapack name="Archie_Item;  Smart Template - Add media file(item) by name on track(s).lua" type="script" desc="Smart Template - Add media file(item) by name on track(s)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-06T13:55:06Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [06082019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/76849c0b52bd828c491dc99031b2b8a41c3b6fe3/MAIN/Item/Archie_Item;%20%20Smart%20Template%20Add%20item%20by%20name%20to%20selected%20tracks.lua</source>
+      <version name="1.0" author="Archie" time="2019-08-07T09:52:03Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07082019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/92cc6b6c59e560ee1ed6b7d3ec7726b3464688f6/MAIN/Item/Archie_Item;%20%20Smart%20Template%20-%20Add%20media%20file(item)%20by%20name%20on%20track(s).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
