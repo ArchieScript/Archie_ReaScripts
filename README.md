@@ -6,6 +6,13 @@
 
 https://reapack.com/
 
+---
+- It is not enabled by default in [Reapack](https://reapack.com/), so you must import it first:
+    - *Он не включен по умолчанию в [Reapack](https://reapack.com/), поэтому его необходимо сначала импортировать:*
+>- https://reapack.com/user-guide#import-repositories
+-----
+
+
 
 
 - To run the scripts, download the file.  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  and unzip the folder with the resources of the Reaper/script
