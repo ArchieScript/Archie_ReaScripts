@@ -3,12 +3,12 @@
 ---
 
 ### This repository is compatible with ReaPack / Этот репозиторий совместим с ReaPack
-> - https://reapack.com/
+    - https://reapack.com/
 
 ---
 - It is not enabled by default in [Reapack](https://reapack.com/), so you must import it first:
     - *Он не включен по умолчанию в [Reapack](https://reapack.com/), поэтому его необходимо сначала импортировать:*
->- https://reapack.com/user-guide#import-repositories
+        - https://reapack.com/user-guide#import-repositories
 -----
 
 
