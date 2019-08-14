@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="541fc2c7631bd30c6a66bf3c566d5652474d2ef6">
+<index version="1" name="Archie-ReaScripts" commit="9e2f0d7140e398caf41d0a6d93abbac9d7db92ff">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1151,6 +1151,11 @@
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(relative%20snap).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-08-14T15:09:07Z">
+        <changelog><![CDATA[v.1.01 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e2f0d7140e398caf41d0a6d93abbac9d7db92ff/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(relative%20snap).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Duplicate item to mouse position (snap to grid relative to project settings).lua" type="script" desc="Duplicate item to mouse position (snap to grid relative to project settings)">
       <metadata>
@@ -1163,6 +1168,11 @@
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(snap%20to%20grid%20relative%20to%20project%20settings).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-08-14T15:09:07Z">
+        <changelog><![CDATA[v.1.01 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e2f0d7140e398caf41d0a6d93abbac9d7db92ff/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position%20(snap%20to%20grid%20relative%20to%20project%20settings).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Duplicate item to mouse position.lua" type="script" desc="Duplicate item to mouse position">
       <metadata>
@@ -1174,6 +1184,11 @@
         <changelog><![CDATA[v.1.0 [07.08.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/920fc269307bdc528f0ba10a6cdeb559af8f2e9f/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-14T15:09:07Z">
+        <changelog><![CDATA[v.1.01 [07.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e2f0d7140e398caf41d0a6d93abbac9d7db92ff/MAIN/Item/Archie_Item;%20%20Duplicate%20item%20to%20mouse%20position.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
