@@ -2,7 +2,10 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                     [***ReaPack***](https://reapack.com/repos)                                                                                               [&nbsp;|&nbsp;](https://github.com/ArchieScript/Archie_ReaScripts)                                                                   [***Discussion, error messages***.](https://forum.cockos.com/showthread.php?t=212819)                                                   [&nbsp;|&nbsp;](https://github.com/ArchieScript/Archie_ReaScripts)                                                                   [***Donate***](https://money.yandex.ru/to/410018003906628)  
 ---
 
-## This repository is compatible with ReaPack
+### This repository is compatible with ReaPack / Этот репозиторий совместим с ReaPack
+
+https://reapack.com/
+
 
 
 - To run the scripts, download the file.  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  and unzip the folder with the resources of the Reaper/script
