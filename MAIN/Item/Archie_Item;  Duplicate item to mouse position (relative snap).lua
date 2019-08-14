@@ -5,16 +5,16 @@
    * Category:    Item
    * Description: Duplicate item to mouse position (relative snap)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Дублировать элемент в положение мыши (относительная привязка)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Antibio(Rmm)
-   * Gave idea:   Antibio(Rmm)
-   * Changelog:   v.1.0 [07.08.19]
+   * Customer:    Antibio($) - (Rmm)
+   * Gave idea:   Antibio($) - (Rmm)
+   * Changelog:   v.1.01 [07.08.19]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
