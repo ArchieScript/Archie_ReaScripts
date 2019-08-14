@@ -3,8 +3,6 @@
 ---
 
 ### This repository is compatible with ReaPack / Этот репозиторий совместим с ReaPack
-- This repository is compatible with ReaPack
--   Этот репозиторий совместим с ReaPack
 > - https://reapack.com/
 
 ---
