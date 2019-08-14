@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="658c5beeb64d107f2a5c2cbe21f4872e38a4953e">
+<index version="1" name="Archie-ReaScripts" commit="0490effd8b07f83af96d8fffee18b2b50a1cacf4">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3812,16 +3812,16 @@
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Mute note under mouse.lua" type="script" desc="Mute note(s) under mouse">
+    <reapack name="Archie_MidiEditor;  Mute note under mouse cursor.lua" type="script" desc="Mute note under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T10:56:33Z">
+      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
         <changelog><![CDATA[v.1.0 [14.08.19]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/658c5beeb64d107f2a5c2cbe21f4872e38a4953e/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Open a floating instrument, appropriate MIDI editor.lua" type="script" desc="Open a floating instrument, appropriate MIDI editor">
@@ -3919,28 +3919,28 @@
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Swing%20grid%20plus%20one%20percent(MIDI%20editor)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Toggle Mute-Unmute note under mouse.lua" type="script" desc="Toggle Mute-Unmute note(s) under mouse">
+    <reapack name="Archie_MidiEditor;  Toggle Auto Mute-Unmute note under mouse cursor.lua" type="script" desc="Toggle Auto Mute-Unmute note under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T10:56:33Z">
+      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
         <changelog><![CDATA[v.1.0 [14.08.19]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/658c5beeb64d107f2a5c2cbe21f4872e38a4953e/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Mute-Unmute%20note%20under%20mouse.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Unmute note under mouse.lua" type="script" desc="Unmute note under mouse">
+    <reapack name="Archie_MidiEditor;  Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T10:56:33Z">
+      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
         <changelog><![CDATA[v.1.0 [14.08.19]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/658c5beeb64d107f2a5c2cbe21f4872e38a4953e/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Unselect (left - right) wing events.lua" type="script" desc="Unselect (left-right*) wing events">
