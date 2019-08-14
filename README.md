@@ -15,7 +15,7 @@
 **Используйте эту ссылку для импорта:**
 - Copy and paste this URL in Extensions > ReaPack > Import a repository:
 ```
-    - ```https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml```
+https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
 ```
 ---
 
