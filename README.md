@@ -24,22 +24,3 @@ https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
 ##
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[*Archie_ReaScripts.*](https://github.com/ArchieScript/Archie_ReaScripts) 
 
-
------
-## info
-- Pay attention to the name of the script, if at the end there is a quotation mark in parentheses **(`)**, then this means that the script contains any editing settings that you can correct for your needs or a description of the script.
-
-    - *Обратите внимание на название скрипта, если в конце стоит кавычка в скобках **(`)** то это означает, что в скрипте присутствуют какие либо настройки для редактирования, которые вы можете подправить под свои нужды или описание скрипта.*
-##
-    
-- To run the scripts, download the file.  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  and unzip the folder with the resources of the Reaper/Scripts/Archie-ReaScripts/Functions
-
-    - *Для работы скриптов, скачайте файл  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  и распакуйте в папку с ресурсами рипера/Scripts/Archie-ReaScripts/Functions*
-##
-
-- Also, for some scripts, the reaper_js_ReaScriptAPI file is required to install it — install the ReaTeam Extensions repository or [*download*](https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI) the ReaTeam Extensions repository and put it in the folder with the ripper resources /UserPlugins
-
-    - *Так же для работы некоторых скриптов требуется файл reaper_js_ReaScriptAPI, что бы его установить - установите репозиторий "ReaTeam Extensions" или скачайте [*файл*](https://github.com/juliansader/ReaExtensions/tree/master/js_ReaScriptAPI) с репозитория и положите в папку с ресурсами рипера/UserPlugins*
-##
-
------
