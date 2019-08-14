@@ -9,7 +9,10 @@
 ## Installation
 **It is not enabled by default in [Reapack](https://reapack.com/), so you must import it first:**</br>
 ***Он не включен по умолчанию в [Reapack](https://reapack.com/), поэтому его необходимо сначала импортировать:***
-- > https://reapack.com/user-guide#import-repositories
+- https://reapack.com/user-guide#import-repositories
+---
+
+
 **Use this link for importing:**</br>
 **Используйте эту ссылку для импорта:**
 - > Copy and paste this URL in Extensions > ReaPack > Import a repository:
