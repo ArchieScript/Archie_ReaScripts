@@ -6,8 +6,17 @@
 - https://reapack.com/
 
 ---
-- #### It is not enabled by default in [Reapack](https://reapack.com/), so you must import it first:
-- #### *Он не включен по умолчанию в [Reapack](https://reapack.com/), поэтому его необходимо сначала импортировать:*
+## Installation
+It is not enabled by default in [Reapack](https://reapack.com/), so you must import it first:
+*Он не включен по умолчанию в [Reapack](https://reapack.com/), поэтому его необходимо сначала импортировать:*
+
+
+Copy and paste this URL in Extensions > ReaPack > Import a repository:
+```
+https://github.com/ArchieScript/Archie_ReaScripts/raw/master/index.xml
+```
+
+
     - https://reapack.com/user-guide#import-repositories
     - ##### Use this link to import:
     - ##### Используйте эту ссылку для импорта: 
@@ -22,12 +31,7 @@
     - *Для работы скриптов, скачайте файл  [***Arc_Function_lua***](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua)  и распакуйте в папку с ресурсами рипера/скрипт*
 -----
 
->- #### ***Download:*** >>>
->    - [*Main*](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MAIN) &nbsp; — &nbsp; *All scripts from main section*
->    - [*MIDI Editor*](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MIDI%20Editor) &nbsp; — &nbsp; *All scripts from MIDI Editor section*   
->    - [*MIDI Inline Editor*](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/ArchieScript/Archie_ReaScripts/tree/master/MIDI%20Inline%20Editor) — *All scripts from MIDI Inline Editor section*
->        - [***All Scripts***](https://github.com/ArchieScript/Archie_ReaScripts/archive/master.zip) &nbsp; — &nbsp; *Download all Scripts*
------
+
 
 ## Installation
 
