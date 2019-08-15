@@ -2,7 +2,8 @@
 #### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                     [***ReaPack***](https://reapack.com/repos)                                                                                               [&nbsp;|&nbsp;](https://github.com/ArchieScript/Archie_ReaScripts)                                                                   [***Discussion, error messages***.](https://forum.cockos.com/showthread.php?t=212819)                                                   [&nbsp;|&nbsp;](https://github.com/ArchieScript/Archie_ReaScripts)                                                                   [***Donate***](https://money.yandex.ru/to/410018003906628)  
 ---
 
-### This repository is compatible with ReaPack / Этот репозиторий совместим с ReaPack
+### This repository is compatible with ReaPack</br>
+***Этот репозиторий совместим с ReaPack***
 - https://reapack.com/
 
 ---
