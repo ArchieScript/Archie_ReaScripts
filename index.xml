@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9e2f0d7140e398caf41d0a6d93abbac9d7db92ff">
+<index version="1" name="Archie-ReaScripts" commit="9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -389,6 +389,18 @@
     </reapack>
   </category>
   <category name="MAIN/Envelope Take">
+    <reapack name="Archie_EnvT;  Volume selected items-take in time selection(Mouse wheel).lua" type="script" desc="Volume selected items-take in time selection(Mouse wheel)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.0 [15.08.09]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20selected%20items-take%20in%20time%20selection(Mouse%20wheel).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_EnvT;  Volume take under mouse in time selection (Mouse wheel).lua" type="script" desc="Volume take under mouse in time selection (Mouse wheel)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -399,6 +411,11 @@
         <changelog><![CDATA[v.1.0 [14.08.09]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/541fc2c7631bd30c6a66bf3c566d5652474d2ef6/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20(Mouse%20wheel).lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [15.08.09]
+    Do not respond to midi take]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20(Mouse%20wheel).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_EnvT;  Volume take under mouse in time selection +1 db.lua" type="script" desc="Volume take under mouse in time selection +1 db">
@@ -412,6 +429,11 @@
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/541fc2c7631bd30c6a66bf3c566d5652474d2ef6/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20+1%20db.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [15.08.09]
+    Do not respond to midi take]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20+1%20db.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_EnvT;  Volume take under mouse in time selection -1 db.lua" type="script" desc="Volume take under mouse in time selection -1 db">
       <metadata>
@@ -423,6 +445,11 @@
         <changelog><![CDATA[v.1.0 [14.08.09]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/541fc2c7631bd30c6a66bf3c566d5652474d2ef6/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20-1%20db.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [15.08.09]
+    Do not respond to midi take]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MAIN/Envelope%20Take/Archie_EnvT;%20%20Volume%20take%20under%20mouse%20in%20time%20selection%20-1%20db.lua</source>
       </version>
     </reapack>
   </category>
@@ -3838,6 +3865,11 @@
 + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse%20cursor.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [14.08.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Open a floating instrument, appropriate MIDI editor.lua" type="script" desc="Open a floating instrument, appropriate MIDI editor">
       <metadata>
@@ -3945,6 +3977,11 @@
 + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [14.08.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
       <metadata>
@@ -3956,6 +3993,11 @@
         <changelog><![CDATA[v.1.0 [14.08.19]
 + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+        <changelog><![CDATA[v.1.01 [14.08.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Unselect (left - right) wing events.lua" type="script" desc="Unselect (left-right*) wing events">
