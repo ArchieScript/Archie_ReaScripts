@@ -5,7 +5,7 @@
    * Category:    Envelope Take
    * Description: Volume take under mouse in time selection (Mouse wheel)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -14,7 +14,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    AlexLazer($) / Maestro Sound - (Rmm)
    * Gave idea:   AlexLazer($) / Maestro Sound - (Rmm)
-   * Changelog:   v.1.0 [14.08.09]
+   * Changelog:   
+   *              v.1.01 [15.08.09]
+   *                  Do not respond to midi take
+   
+   *              v.1.0 [14.08.09]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -209,6 +213,8 @@
     local xMouse,yMouse = reaper.GetMousePosition();
     local item,take = reaper.GetItemFromPoint(xMouse,yMouse,false);
     if not item then no_undo()return end;
+    local takeMIDI = reaper.TakeIsMIDI(take);
+    if takeMIDI then no_undo()return end;
     
     
     local pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
