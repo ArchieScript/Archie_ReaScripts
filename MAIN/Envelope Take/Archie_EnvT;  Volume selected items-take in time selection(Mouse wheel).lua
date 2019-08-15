@@ -5,7 +5,7 @@
    * Category:    Envelope Take
    * Description: Volume selected items-take in time selection(Mouse wheel)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -14,7 +14,11 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Supa75 - (Rmm)
    * Gave idea:   AlexLazer / Maestro Sound / Supa75 - (Rmm)
-   * Changelog:   v.1.0 [15.08.09]
+   * Changelog:   
+   *              v.1.02 [16.08.09]
+   *                  + Envelope Reset with Inactive Envelope
+   
+   *              v.1.0 [15.08.09]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -201,6 +205,11 @@
     else;
         VOLUME_DB = 1;
     end;
+    local MouseWheel = ({reaper.get_action_context()})[7];
+    if MouseWheel < 0 then;
+        VOLUME_DB = (VOLUME_DB-VOLUME_DB*2);
+    end;
+    if MouseWheel == 0 then no_undo()return end;
     
     
     local startLoop, endLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
@@ -249,12 +258,18 @@
             end;
             
             
+            local ResetEnvelope;
             local Alloc_env = reaper.BR_EnvAlloc(Env,false);
             local active,visible,armed,inLane,laneHeight,defaultShape,minValue,maxValue,centerValue,Type,faderScaling=reaper.BR_EnvGetProperties(Alloc_env);
             local max_DB = math.floor((20*math.log(maxValue,10))+0.5)--1;
             if not active then;
                 reaper.BR_EnvSetProperties(Alloc_env,true,visible,armed,inLane,laneHeight,defaultShape,faderScaling);
+                ResetEnvelope = true;--v1.02
             end; reaper.BR_EnvFree(Alloc_env,true);
+            
+            if ResetEnvelope then;--v1.02
+                DeleteEnvelopePointRange_Arc(Env,0,reaper.GetProjectLength(0),true);--v1.02
+            end;--v1.02
             
             
             ClearDuplicatePointsEnvelopeByTime(Env,-1,startLoop,endLoop);
@@ -287,15 +302,7 @@
             
             
             local ScalingMode = reaper.GetEnvelopeScalingMode(Env);
-            
-            
-            local MouseWheel = ({reaper.get_action_context()})[7];
-            if MouseWheel < 0 then;
-                VOLUME_DB = (VOLUME_DB-VOLUME_DB*2);
-            end;
-            
-            
-            
+             
             for i = 1, reaper.CountEnvelopePoints(Env) do;
                 
                 local retval, time, value, shape, tension, selected = GetEnvelopePointInfo(Env,i-1,true);

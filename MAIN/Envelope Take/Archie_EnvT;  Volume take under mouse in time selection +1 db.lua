@@ -5,7 +5,7 @@
    * Category:    Envelope Take
    * Description: Volume take under mouse in time selection +1 db
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -15,9 +15,11 @@
    * Customer:    AlexLazer($) / Maestro Sound - (Rmm)
    * Gave idea:   AlexLazer($) / Maestro Sound - (Rmm)
    * Changelog:   
-   *              v.1.01 [15.08.09]
-   *                  Do not respond to midi take
+   *              v.1.02 [16.08.09]
+   *                  + Envelope Reset with Inactive Envelope
    
+   *              v.1.01 [15.08.09]
+   *                  Do not respond to midi take  
    *              v.1.0 [14.08.09]
    *                  + initialе
 
@@ -244,12 +246,18 @@
     end;
     
     
+    local ResetEnvelope;
     local Alloc_env = reaper.BR_EnvAlloc(Env,false);
     local active,visible,armed,inLane,laneHeight,defaultShape,minValue,maxValue,centerValue,Type,faderScaling=reaper.BR_EnvGetProperties(Alloc_env);
     local max_DB = math.floor((20*math.log(maxValue,10))+0.5)--1;
     if not active then;
         reaper.BR_EnvSetProperties(Alloc_env,true,visible,armed,inLane,laneHeight,defaultShape,faderScaling);
+        ResetEnvelope = true;--v1.02
     end; reaper.BR_EnvFree(Alloc_env,true);
+    
+    if ResetEnvelope then;--v1.02
+        DeleteEnvelopePointRange_Arc(Env,0,reaper.GetProjectLength(0),true);--v1.02
+    end;--v1.02
     
     
     ClearDuplicatePointsEnvelopeByTime(Env,-1,startLoop,endLoop);
