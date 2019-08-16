@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2c048aabece1e93923d1e76a72f9824eb4fcf90f">
+<index version="1" name="Archie-ReaScripts" commit="7d6411199b3781318bd8aed8b323b1df43620918">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1136,28 +1136,28 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  De stutters 1.2 items.lua" type="script" desc="De stutters 1.2 items">
+    <reapack name="Archie_Item;  De stutter 1.2 items.lua" type="script" desc="De stutter 1.2 items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-16T17:31:33Z">
+      <version name="1.0" author="Archie" time="2019-08-16T17:50:45Z">
         <changelog><![CDATA[v.1.0 [16.08.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2c048aabece1e93923d1e76a72f9824eb4fcf90f/MAIN/Item/Archie_Item;%20%20De%20stutters%201.2%20items.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d6411199b3781318bd8aed8b323b1df43620918/MAIN/Item/Archie_Item;%20%20De%20stutter%201.2%20items.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  De stutters 1.3 items.lua" type="script" desc="De stutters 1.3 items">
+    <reapack name="Archie_Item;  De stutter 1.3 items.lua" type="script" desc="De stutter 1.3 items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-16T17:31:33Z">
+      <version name="1.0" author="Archie" time="2019-08-16T17:50:45Z">
         <changelog><![CDATA[v.1.0 [16.08.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2c048aabece1e93923d1e76a72f9824eb4fcf90f/MAIN/Item/Archie_Item;%20%20De%20stutters%201.3%20items.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d6411199b3781318bd8aed8b323b1df43620918/MAIN/Item/Archie_Item;%20%20De%20stutter%201.3%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Delete selected items (time selection)(`).lua" type="script" desc="Delete selected items (time selection)">
@@ -1657,28 +1657,28 @@
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Stretch%20time%20and%20reduce%20the%20selected%20item(s)%20by%202%20times.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Stutters 1.2 items.lua" type="script" desc="Stutter 1.2 items">
+    <reapack name="Archie_Item;  Stutter 1.2 items.lua" type="script" desc="Stutter 1.2 items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-16T17:31:33Z">
+      <version name="1.0" author="Archie" time="2019-08-16T17:50:45Z">
         <changelog><![CDATA[v.1.0 [16.08.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2c048aabece1e93923d1e76a72f9824eb4fcf90f/MAIN/Item/Archie_Item;%20%20Stutters%201.2%20items.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d6411199b3781318bd8aed8b323b1df43620918/MAIN/Item/Archie_Item;%20%20Stutter%201.2%20items.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Stutters 1.3 items.lua" type="script" desc="Stutter 1.3 items">
+    <reapack name="Archie_Item;  Stutter 1.3 items.lua" type="script" desc="Stutter 1.3 items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-16T17:31:33Z">
+      <version name="1.0" author="Archie" time="2019-08-16T17:50:45Z">
         <changelog><![CDATA[v.1.0 [16.08.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2c048aabece1e93923d1e76a72f9824eb4fcf90f/MAIN/Item/Archie_Item;%20%20Stutters%201.3%20items.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d6411199b3781318bd8aed8b323b1df43620918/MAIN/Item/Archie_Item;%20%20Stutter%201.3%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
