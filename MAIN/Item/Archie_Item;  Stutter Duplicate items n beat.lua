@@ -5,7 +5,7 @@
    * Category:    Item
    * Description: Stutter Duplicate items n beat
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -15,18 +15,18 @@
    * Customer:    ---(---)
    * Gave idea:   ---(---)
    * Provides:    
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.2 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.2T beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.4 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.4T beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.8 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.8T beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.16 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.16T beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.32 beat.lua"
-   *              [main] . > "Archie_Item;  Stutter Duplicate items 1.32T beat.lua"
-   * Changelog:   v.1.0 [18.08.19]
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.2 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.2T beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.4 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.4T beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.8 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.8T beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.16 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.16T beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.32 beat.lua
+   *              [main] . > Archie_Item;  Stutter Duplicate items 1.32T beat.lua
+   * Changelog:   v.1.01 [18.08.19]
    *                  + initialе
     
     -- Тест только на windows  /  Test only on windows.
