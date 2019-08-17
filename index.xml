@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="7d6411199b3781318bd8aed8b323b1df43620918">
+<index version="1" name="Archie-ReaScripts" commit="1756584135d5e477e9fe2c5d5ac6b79ede9a411b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1679,6 +1679,28 @@
         <changelog><![CDATA[v.1.0 [16.08.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d6411199b3781318bd8aed8b323b1df43620918/MAIN/Item/Archie_Item;%20%20Stutter%201.3%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Stutter Duplicate items n beat.lua" type="script" desc="Stutter Duplicate items n beat">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-17T16:52:17Z">
+        <changelog><![CDATA[v.1.0 [18.08.19]
++ initialе]]></changelog>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.2 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.2T beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.4 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.4T beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.8 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.8T beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.16 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.16T beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.32 beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
+        <source main="main" file="&quot;Archie_Item;  Stutter Duplicate items 1.32T beat.lua&quot;">https://github.com/ArchieScript/Archie_ReaScripts/raw/1756584135d5e477e9fe2c5d5ac6b79ede9a411b/MAIN/Item/Archie_Item;%20%20Stutter%20Duplicate%20items%20n%20beat.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
