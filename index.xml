@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8a75c4c8e7f716f2366982c86f33088453a93ac0">
+<index version="1" name="Archie-ReaScripts" commit="31e691ecb1604de6cc79902d8dd6a9bbee1da202">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2269,6 +2269,18 @@
       <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
         <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Preferences/Archie_Pref;%20%20Solo%20in%20front'%20dimming%20-1%20dB%20from%20set%20value.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Toggle Allow snap grid,track envelope,routing windows to stay open.lua" type="script" desc="Toggle Allow snap grid,track envelope,routing windows to stay open">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-08-22T15:08:33Z">
+        <changelog><![CDATA[v.1.0 [22.08.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/31e691ecb1604de6cc79902d8dd6a9bbee1da202/MAIN/Preferences/Archie_Pref;%20%20Toggle%20Allow%20snap%20grid,track%20envelope,routing%20windows%20to%20stay%20open.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Toggle Don't autosctoll view (when enable) when viewing other parts of project.lua" type="script" desc="Don't autosctoll view (when enable) when viewing other parts of project">
