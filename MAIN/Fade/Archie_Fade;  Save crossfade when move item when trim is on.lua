@@ -1,0 +1,188 @@
+--[[
+   * Тест только на windows  /  Test only on windows.
+   * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
+   * Bug Reports: If you find any errors, please report one of the links below (*Website)
+   *
+   * Category:    Fade
+   * Description: save crossfade when move item when trim is on
+   * Author:      Archie
+   * Version:     1.0
+   * AboutScript: ---
+   * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
+   * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
+   * DONATION:    http://money.yandex.ru/to/410018003906628
+   * Customer:    AlexLazer(Rmm)
+   * Gave idea:   AlexLazer(Rmm)
+   * Extension:   SWS v.2.10.0 http://www.sws-extension.org/index.php
+   *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
+   *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
+   * Changelog:   
+   *              v.1.0 [28.08.19]
+   *                  + initialе
+--]]
+    
+    
+    
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --====================================================================================== 
+    
+    
+    
+    
+    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
+    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
+    return end; if not Arc.VersionArc_Function_lua("2.4.8",Fun,"")then Arc.no_undo() return end;--=====================================================
+    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    
+    
+    
+    local Api_js,version = Arc.js_ReaScriptAPI(true,0.99);
+    local Api_sws = Arc.SWS_API(true); 
+    Arc.HelpWindowWhenReRunning(1,"Arc_Function_lua",false);
+    
+    
+    local OverlapAndCrossfadeX = reaper.SNM_GetIntConfigVar("splitautoxfade",0);
+    local OverlapAndCrossfade = OverlapAndCrossfadeX&1;
+    if OverlapAndCrossfade == 0 then;
+        local MB = reaper.MB(
+                             'Rus:\n\nДля работы скрипта должно быть включено в настройках\n'..
+                             '"Overlap and crossfade items when splitting-length"\n\n'..
+                             'флажок (выкл) - Включить ?\n'..("-"):rep(80)..'\n\n'..
+                             'Eng:\n\nFor the script to work, it must be enabled in the settings\n'..
+                             '"Overlap and crossfade items when splitting-length"\n\n'..
+                             'checkbox (off) - Enable?',
+                             'Woops',1);
+        if MB == 2 then Arc.no_undo() return end;
+        if MB == 1 then;
+            reaper.SNM_SetIntConfigVar("splitautoxfade",OverlapAndCrossfadeX|1);
+        end; 
+    end;
+    
+    
+    
+    local ToggleTrimBehind = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
+    if ToggleTrimBehind ~= 1 then;
+        local MB = reaper.MB(
+                   'Rus:\n\nДля работы скрипта должен быть включен\n'..
+                   '"trim behind items when editing"\n\nВключить ?\n'..("-"):rep(55)..'\n\n\n'..
+                   'Eng:\n\nTo run the script must be enabled\n"trim behind items when editing"\n\n'..
+                   'Enable ?'
+                   ,"Woops",1);
+        if MB == 2 then Arc.no_undo() return end;
+        if MB == 1 then; 
+            reaper.Main_OnCommand(41120,0);--Enable trim
+        end;  
+    end;
+    
+    
+    
+    local ToggleAutoCrossfade = reaper.GetToggleCommandStateEx(0,40041)--Toggle auto-crossfade on/off
+    if ToggleAutoCrossfade ~= 1 then;
+        local MB = reaper.MB(
+                   'Rus:\n\nДля работы скрипта должен быть включен\n'..
+                   '"Auto-crossfade media items when editing"\n\nВключить ?\n'..("-"):rep(55)..'\n\n\n'..
+                   'Eng:\n\nTo run the script must be enabled\n"Auto-crossfade media items when editing"\n\nEnable ?"\n\n'..
+                   'Enable ?'
+                   ,"Woops",1);
+        if MB == 2 then Arc.no_undo() return end;
+        if MB == 1 then; 
+             reaper.Main_OnCommand(41118,0);--Enable auto-crossfades
+             
+        end;  
+    end;
+    
+    
+    
+    local MousItActive,checking,DisableAutoCros;
+    
+    local function loop(stop)
+        --T=(T or 0)+1
+        if stop then return -1 end;
+        local ToggleTrimBehind = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
+        if ToggleTrimBehind == 1 then;
+        
+            ----------------------
+            local x, y = reaper.GetMousePosition();
+            local item,take = reaper.GetItemFromPoint(x,y,false);
+            
+            if item then;
+                local Mouse_GetState = reaper.JS_Mouse_GetState(1);
+                if Mouse_GetState == 1 then;
+                    if not checking then;
+                        checking = true;
+                        local fadeIn = reaper.GetMediaItemInfo_Value(item, "D_FADEINLEN_AUTO");
+                        local fadeOut = reaper.GetMediaItemInfo_Value(item, "D_FADEOUTLEN_AUTO");
+                        if fadeIn ~= 0 or fadeOut ~= 0 then;
+                            local TogAutoCrossfade = reaper.GetToggleCommandStateEx(0,40041)--Toggle auto-crossfade on/off
+                            if TogAutoCrossfade == 1 then;
+                                reaper.Main_OnCommand(41119,0);--Disable auto-cros
+                                DisableAutoCros = true;
+                            end;
+                            MousItActive = true;
+                        end;
+                    end;
+                else;
+                    checking=nil;
+                end;
+                
+                if Mouse_GetState == 0 and MousItActive then;
+                    
+                    local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION");
+                    local len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH");
+                    local fadeIn = reaper.GetMediaItemInfo_Value(item, "D_FADEINLEN_AUTO");
+                    if fadeIn == 0 then;
+                        fadeIn = reaper.GetMediaItemInfo_Value(item, "D_FADEINLEN");    
+                    end;
+                    local fadeOut = reaper.GetMediaItemInfo_Value(item, "D_FADEOUTLEN_AUTO");
+                    if fadeOut == 0 then;
+                        fadeOut = reaper.GetMediaItemInfo_Value(item,"D_FADEOUTLEN");    
+                    end;
+                      
+                    local trackIt = reaper.GetMediaItemInfo_Value(item, "P_TRACK");
+                    local CountTracItem = reaper.CountTrackMediaItems(trackIt);
+                    for i = 1,CountTracItem do;
+                        local item2 =  reaper.GetTrackMediaItem(trackIt,i-1);
+                        local pos2 = reaper.GetMediaItemInfo_Value(item2,"D_POSITION");
+                        local len2 = reaper.GetMediaItemInfo_Value(item2,"D_LENGTH");
+                        if pos2+len2 == pos then;
+                            reaper.SetMediaItemInfo_Value(item2,"D_FADEOUTLEN_AUTO",fadeIn);
+                            reaper.SetMediaItemInfo_Value(item2,"D_LENGTH",pos+fadeIn-pos2);
+                        end;
+                        if pos2 == pos+len then;
+                            if fadeOut > len2 then fadeOut = len2 end;
+                            reaper.SetMediaItemInfo_Value(item2,"D_FADEINLEN_AUTO",fadeOut);
+                            --reaper.SetMediaItemInfo_Value(item, "D_LENGTH",pos2+fadeOut);
+                            Arc.SetMediaItemLeftTrim2(pos2-fadeOut,item2); 
+                        end;
+                    end;
+                    if DisableAutoCros then;
+                        reaper.Main_OnCommand(41118,0);--Enable auto-crossfades
+                        DisableAutoCros = nil;
+                    end;
+                    MousItActive = nil;
+                end;
+            end;
+            ----------------------
+        end;
+        reaper.defer(loop);
+    end;
+    
+    
+    local function exit();
+        local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
+        reaper.SetToggleCommandState(sectionID,cmdID,0);
+        reaper.RefreshToolbar2(sectionID,cmdID);
+        loop(true);
+    end;
+    
+    
+    local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
+    reaper.SetToggleCommandState(sectionID,cmdID,1);
+    reaper.RefreshToolbar2(sectionID,cmdID);
+    loop(false);
+    reaper.atexit(exit);
