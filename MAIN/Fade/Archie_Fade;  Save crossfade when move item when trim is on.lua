@@ -6,7 +6,7 @@
    * Category:    Fade
    * Description: Save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
@@ -20,9 +20,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.04 [28.08.19]
+   *                  +  Remove Enable "Overlap and crossfade items when splitting-length"
+   
    *              v.1.03 [28.08.19]
    *                  +  Disable "Show overlapping media items in lanes" due to incompatibility
-   
    *              v.1.02 [28.08.19]
    *                  +  No change
    *              v.1.01 [28.08.19]
@@ -54,7 +56,7 @@
     Arc.HelpWindowWhenReRunning(1,"Arc_Function_lua",false);
     
     
-    
+    --[[
     local OverlapAndCrossfadeX = reaper.SNM_GetIntConfigVar("splitautoxfade",0);
     local OverlapAndCrossfade = OverlapAndCrossfadeX&1;
     if OverlapAndCrossfade == 0 then;
@@ -71,7 +73,7 @@
             reaper.SNM_SetIntConfigVar("splitautoxfade",OverlapAndCrossfadeX|1);
         end; 
     end;
-    
+    --]]
     
     
     local ToggleTrimBehind = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
