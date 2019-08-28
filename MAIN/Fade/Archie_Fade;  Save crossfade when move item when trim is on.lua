@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Fade
-   * Description: save crossfade when move item when trim is on
+   * Description: Save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
@@ -20,6 +20,9 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.03 [28.08.19]
+   *                  +  Disable "Show overlapping media items in lanes" due to incompatibility
+   
    *              v.1.02 [28.08.19]
    *                  +  No change
    *              v.1.01 [28.08.19]
@@ -103,21 +106,62 @@
     end;
     
     
+    reaper.DeleteExtState("SaveCrossFade","SaveCrossFadeX",false);
+    local ShowOverMediaI = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
+    if ShowOverMediaI == 1 then;
+        reaper.Main_OnCommand(40507,0);
+        reaper.SetExtState("SaveCrossFade","SaveCrossFadeX",1,false);
+    end;
+    
+    
+    
     
     local function exit();
         local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
         reaper.SetToggleCommandState(sectionID,cmdID,0);
         reaper.RefreshToolbar2(sectionID,cmdID);
         pcall(loop,true);
+        local GetExtState = tonumber(reaper.GetExtState("SaveCrossFade","SaveCrossFadeX"))or 0;
+        local ShowOverMed = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
+        if GetExtState == 1 then;
+            if ShowOverMed ~= 1 then; reaper.Main_OnCommand(40507,0); end;
+        elseif GetExtState == 2 then;
+            local MB = reaper.MB('Rus:\n\nПри включении скрипта был включен\n'..
+                                 '"Show overlapping media items in lanes"\n'..
+                                 'Но скрипт отключил его\n\n'..
+                                 'Включить Повторно ?\n'..
+                                 ("-"):rep(55)..'\n\n'..
+                                 'Eng:\n\nWhen you turn on the script was turned on\n'..
+                                 '"Show overlapping media items in lanes"\n'..
+                                 'But the script disabled it\n\n'..
+                                 'Re-enable ?',
+                                 'save crossfade when move item when trim is on',1);
+            if MB == 2 then Arc.no_undo() return end;
+            if ShowOverMed ~= 1 then; reaper.Main_OnCommand(40507,0); end;
+        end;
     end;
     
     
     
-    local MousItActive,checking,DisableAutoCros,Tr,Ac;
+    
+    
+    local MousItActive,checking,DisableAutoCros,Tr,Ac,ShowOverMediaIX;
     
     local function loop(stop)
         --T=(T or 0)+1
         if stop then return -1 end;
+        
+        local ShowOverMediaI_2 = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
+        if ShowOverMediaI_2 == 1 then;
+            reaper.Main_OnCommand(40507,0);
+            if not ShowOverMediaIX then;
+                local GetExtState = tonumber(reaper.GetExtState("SaveCrossFade","SaveCrossFadeX"))or 0;
+                if GetExtState == 1 then;
+                    reaper.SetExtState("SaveCrossFade","SaveCrossFadeX", 2,false);
+                    ShowOverMediaIX = true;
+                end;
+            end;
+        end;
         
         local ToggleTrimBehind = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
         if ToggleTrimBehind ~= 1 then;
