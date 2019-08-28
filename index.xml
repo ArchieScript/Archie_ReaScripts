@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="df29bea867d86191e5c61763927a4ea9afb154b9">
+<index version="1" name="Archie-ReaScripts" commit="9e4e33d2db277723611cee09996ecd1faba3ac85">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -484,6 +484,11 @@
         <changelog><![CDATA[v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df29bea867d86191e5c61763927a4ea9afb154b9/MAIN/Fade/Archie_Fade;%20%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-08-28T11:04:16Z">
+        <changelog><![CDATA[v.1.01 [28.08.19]
+    + request or disable the script when you disable trim or autocrossfade]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e4e33d2db277723611cee09996ecd1faba3ac85/MAIN/Fade/Archie_Fade;%20%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
       </version>
     </reapack>
   </category>
