@@ -6,7 +6,7 @@
    * Category:    Fade
    * Description: save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
@@ -15,13 +15,15 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
+   *                  http://rmmedia.ru/threads/134701/post-2389975
    * Extension:   SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [28.08.19]
+   *                  +  No change
    *              v.1.01 [28.08.19]
    *                  + request or disable the script when you disable trim or autocrossfade
-   
    *              v.1.0 [28.08.19]
    *                  + initialе
 --]]
