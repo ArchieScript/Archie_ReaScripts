@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="554daf37fcb9c72de3929b9ccaf035101bd055c5">
+<index version="1" name="Archie-ReaScripts" commit="10c49799b70e89327a4e87669ca5a55fe9a0490b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4011,6 +4011,18 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Duplicate notes to mouse position(snap relative).lua" type="script" desc="Duplicate notes to mouse position(snap relative)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-01T07:56:24Z">
+        <changelog><![CDATA[v.1.0 [01.09.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/10c49799b70e89327a4e87669ca5a55fe9a0490b/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20notes%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Mute note under mouse cursor.lua" type="script" desc="Mute note under mouse cursor">
