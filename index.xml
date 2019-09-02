@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2d0ccaa7c2febbc63d6d4a683a2d2cd30166768a">
+<index version="1" name="Archie-ReaScripts" commit="52913f497267fd7c8ad237945e1405b6a1be05f3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1321,6 +1321,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ced598874400c09810bb27d30b77a8757375198/MAIN/Item/Archie_Item;%20%20Ignore%20item(s)%20lock%20with%20Ctrl%20Shift%20or%20Alt%20+%20left%20%20click.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Lengthen selected items one grid unit.lua" type="script" desc="Lengthen selected items one grid unit">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-02T07:20:37Z">
+        <changelog><![CDATA[v.1.0 [02.09.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/52913f497267fd7c8ad237945e1405b6a1be05f3/MAIN/Item/Archie_Item;%20%20Lengthen%20selected%20items%20one%20grid%20unit.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1620,6 +1632,18 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20Set%20volume%20-6%20dB.for%20selected%20media%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Shorten selected items one grid unit.lua" type="script" desc="Shorten selected items one grid unit">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-02T07:20:37Z">
+        <changelog><![CDATA[v.1.0 [02.09.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/52913f497267fd7c8ad237945e1405b6a1be05f3/MAIN/Item/Archie_Item;%20%20Shorten%20selected%20items%20one%20grid%20unit.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Show all visible envelopes in selected items.lua" type="script" desc="Show all visible envelopes in selected items">
