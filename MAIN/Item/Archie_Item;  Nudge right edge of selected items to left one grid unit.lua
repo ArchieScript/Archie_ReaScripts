@@ -4,13 +4,13 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Lengthen selected items one grid unit
+   * Description: Nudge right edge of selected items to left one grid unit
    * Author:      Archie
    * Version:     1.0
-   * AboutScript: lengthen selected items one grid unit 
-   *              Shorten selected items one grid unit*
-   * О скрипте:   Удлинить выбранные элементы на одну единицу сетки
-   *              Сократить выбранные элементы на одну единицу сетки*
+   * AboutScript: Nudge right edge of selected items to left one grid unit
+   *              Nudge right edge of selected items to right one grid unit*
+   * О скрипте:   Сдвиг правого края выделенных элементов влево на одну единицу сетки
+   *              Сдвиньте правый край выделенных элементов вправо на одну единицу сетки*
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -43,9 +43,9 @@
         for i = 1,math.huge do;
             val = reaper.SnapToGrid(0,time);
             if nextPrev < 0 then;
-                if val<=--[[<]]time then;goto ret;end;time=time-0.001;
+                if val<--[[<=]]time then;goto ret;end;time=time-0.001;
             else;
-                if val>--[[>=]]time then;goto ret;end;time=time+0.001;
+                if val>=--[[>]]time then;goto ret;end;time=time+0.001;
             end;
         end;::ret::;
         if ToggleSnap == 0 then;reaper.Main_OnCommand(1157 ,0);end;
@@ -62,13 +62,13 @@
     
     for i = 1, CountSelItem do
         local item = reaper.GetSelectedMediaItem(0,i-1);
-        local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION')
+        local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION');
         local len = reaper.GetMediaItemInfo_Value(item,'D_LENGTH');
         local Prev = GetPrevNextGridArrange(pos+len,-1);
         local Next = GetPrevNextGridArrange(pos+len,1);
-        reaper.SetMediaItemInfo_Value(item,'D_LENGTH',(len+(Next-Prev)));
+        reaper.SetMediaItemInfo_Value(item,'D_LENGTH',(len-(Next-Prev)));
     end;
     
-    reaper.Undo_EndBlock("Lengthen selected items one grid unit",-1);
+    reaper.Undo_EndBlock("Nudge right edge of selected items to left one grid unit",-1);
     reaper.PreventUIRefresh(-1);
     reaper.UpdateArrange();
