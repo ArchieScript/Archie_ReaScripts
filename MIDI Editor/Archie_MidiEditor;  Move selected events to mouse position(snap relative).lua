@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: Move selected events to mouse position(snap relative)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Перемещение выбранных событий(нот) в положение мыши(привязка относительно)
    * GIF:         ---
@@ -18,7 +18,11 @@
    *              https://rmmedia.ru/threads/134701/post-2391494
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [01.09.19]
+   * Changelog:   
+   *              v.1.01 [02.09.19]
+   *              Bug fixed: Incorrect duplication when item not at beginning; / Undo action; 
+   
+   *              v.1.0 [01.09.19]
    *                  + initialе
 --]]
     
@@ -58,19 +62,29 @@
     
     reaper.PreventUIRefresh(1);
     
+    
+    local ToggleOver = reaper.GetToggleCommandStateEx(32060,40681)--Correct overlapping
+    if ToggleOver == 1 then;
+	   reaper.MIDIEditor_OnCommand(MidiEditor,40681);
+    end;
+    
+    local item = reaper.GetMediaItemTake_Item(take);
+    local posTake = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
+    
+    
     local GridM = select(1,reaper.MIDI_GetGrid(take))/4;
     local retval,Agrid,AswingOnOff,AswingShift = reaper.GetSetProjectGrid(0,0);
     reaper.GetSetProjectGrid(0,1,GridM,0,0);
     
     local posNoteStartGrid   = reaper.BR_GetPrevGridDivision(posFirstNoteTime+1e-11);
     local posMouseCursorGrid = reaper.BR_GetPrevGridDivision(mouseTime+1e-11);
-    local Shift_value = (posMouseCursorGrid-posNoteStartGrid);
+    local Shift_value = ((posMouseCursorGrid-posNoteStartGrid)+posTake);
     local Shift_valuePpq = reaper.MIDI_GetPPQPosFromProjTime(take,Shift_value);
     
     reaper.GetSetProjectGrid(0,1,Agrid,AswingOnOff,AswingShift);
     
-    
     local selT,muteT,startppqposT,endppqposT,chanT,pitchT,velT = {},{},{},{},{},{},{};
+    
     
     local Undo, Shift;
     ::restart::;
@@ -101,6 +115,8 @@
     reaper.MIDI_Sort(take);
     
     if Undo then;
+	   local item = reaper.GetMediaItemTake_Item(take)
+	   reaper.MarkTrackItemsDirty(reaper.GetMediaItemTake_Track(take),item);
 	   reaper.Undo_EndBlock('Move selected events to mouse position(snap relative)',-1);
     else;
 	   no_undo();
