@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="88068ff65c04ebde45740ae9e50a1bd8563653be">
+<index version="1" name="Archie-ReaScripts" commit="e797cf1037bdc807e6b67e8dc964eb999a6e056e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4035,6 +4035,18 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse cursor(snap relative).lua" type="script" desc="Duplicate selected events to mouse cursor(snap relative)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-02T17:41:27Z">
+        <changelog><![CDATA[v.1.0 [01.09.19]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/e797cf1037bdc807e6b67e8dc964eb999a6e056e/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse position(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
