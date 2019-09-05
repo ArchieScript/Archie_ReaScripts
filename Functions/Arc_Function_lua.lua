@@ -1,14 +1,15 @@
-local VersionMod = "v.2.4.9"
+local VersionMod = "v.2.5.1"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.4.9
+   * Version:     2.5.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
    * 
+
    * Changelog:   
    *
    *  REAPER_Lib
@@ -56,6 +57,7 @@ local VersionMod = "v.2.4.9"
    *      v.245   + openFileURL(pathUrl);
    *      v.249   + GetIDByScriptName(scriptName,scriptPath); 
    *      v.246   + GetScriptNameByID(id);
+   *      v.251   + StartupScript(function_name,id);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -63,6 +65,8 @@ local VersionMod = "v.2.4.9"
    *      v.230   + randomOfVal(...);   
    *      v.230   + invert_number(X);
 --=======================================================]]
+
+
     local Arc_Module = {};
     function Arc_Module.VersionArc_Function_lua(version);
         if not VersionMod then VersionMod = "0" else VersionMod = tostring(VersionMod);end;
@@ -984,6 +988,95 @@ local VersionMod = "v.2.4.9"
         text:match('"'..id..'"%s-"Custom:%s-.(.-)"')or-1;
     end;
     GetScriptNameByID = Arc_Module.GetScriptNameByID;
+     function Arc_Module.StartupScript(nameAction,id,nameFun,Clean);
+        if type(nameAction)~="string"then;error("#1 expects 'string', got "..type(nameAction),2)end;
+        local nameAction = nameAction:gsub('[%s%p]',''):upper();
+        if #nameAction < 5 then;error("#1 expected a string 5 or more characters, got "..#nameAction,2)end;
+        if Clean ~= "ALL" and Clean ~= "ONE" then;
+            local CheckId=reaper.NamedCommandLookup(id);if CheckId<1 then error("#2 enter the relevant ID",2)end;
+        end;
+        local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
+        if ScrName:match("^Archie_")or ScrName:match("^Arc_")and not nameFun then nameFun = "Archie"end;
+        if type(nameFun)~="string"then;error("#3 expects 'string', got "..type(nameFun),2)end;
+        local nameFun=nameFun:gsub('[%s%p]',''):gsub('.','_%0',1)
+        if #nameFun < 7 then;error("expected a string 6 or more characters, got "..#nameFun-1,2)end;
+        if Clean == "ALL" then goto ALL end; if Clean == "ONE" then goto ONE end;
+        do;
+            local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
+            if not file then
+                io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w'):close();
+                file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
+            end; local text = file:read('a')..'\n'; file:close();
+            text = text:gsub("\n%s-\n%s-\n%s-\n","\n\n\n");
+            local CheckFun,var2;
+            for var in text:gmatch(".-\n") do;
+                if var:match("^%s-function%s-StartupScript"..nameFun.."%s-%(%s-%)")then;
+                    var = var..nameAction.."=reaper.Main_OnCommand(reaper.NamedCommandLookup('"..id.."'),0)\n";
+                    CheckFun = true;
+                end;
+                var2 = (var2 or "")..var;
+            end;
+            if not CheckFun then;
+                var2 = text.."\n\nfunction StartupScript"..nameFun.."()\n"..
+                nameAction.."=reaper.Main_OnCommand(reaper.NamedCommandLookup('"..id.."'),0)\n"..
+                "end StartupScript"..nameFun.."()";
+            end;
+            local header = var2;
+            file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
+            file:write(header); file:close();
+            local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
+            local text = file:read('a')..'\n'; file:close();
+            local T = {}; local var2,X;
+            for var in text:gmatch(".-\n") do;
+                if StartF and var:match("^.-StartupScript"..nameFun.."%s-%(%s-%)")then;StartF=nil T={}StartF=nil end;
+                if var:match("^%s-function%s-StartupScript"..nameFun.."%s-%(%s-%)")then; StartF = true end;
+                if StartF then;
+                    if var:match("^%s-\n")then var = "" end;
+                    T[#T+1] = var:match("^.-NamedCommandLookup%('(.-)'.-\n");
+                    for i = 1,#T do;
+                        if T[i] == var:match("^.-NamedCommandLookup%('(.-)'.-\n")then;
+                            X=(X or 0)+1;
+                            if X > 1 then; var = ""; T[#T]=nil; break end;
+                        end;
+                    end; X = nil;
+                end; var2 = (var2 or "")..var;
+            end;
+            local header = var2;
+            file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
+            file:write(header); file:close();
+        end;
+        ::ALL::::ONE::
+        if Clean == "ALL" or Clean == "ONE" then;
+            local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
+            if not file then return end; local text = file:read('a')..'\n'; file:close();
+            if Clean == "ALL" then;
+                for var in text:gmatch(".-\n") do;
+                    if StartF and var:match("^.-StartupScript"..nameFun.. "%s-%(%s-%)")then;StartF = 2 end;
+                    if var:match("^%s-function%s-StartupScript"..nameFun.."%s-%(%s-%)")then;StartF = 1 end;
+                    if StartF == 1 or StartF == 2 then;
+                        var = "";
+                        if StartF == 2 then StartF = nil end;
+                    end;
+                    var2 = (var2 or "")..var;
+                end;
+            elseif Clean == "ONE" then;
+                for var in text:gmatch(".-\n") do;
+                    if StartF and var:match("^.-StartupScript"..nameFun.. "%s-%(%s-%)")then;StartF = 2 end;
+                    if var:match("^%s-function%s-StartupScript"..nameFun.."%s-%(%s-%)")then;StartF = 1 end;
+                    if StartF == 1 or StartF == 2 then;
+                        if var:match("^.-NamedCommandLookup%('(.-)'.-\n") == id then var = "" end;
+                        if StartF == 2 then StartF = nil end;   
+                    end;
+                    var2 = (var2 or "")..var;
+                end;
+            end;
+            local header = var2;
+            file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
+            file:write(header); file:close(); 
+        end;
+    end;
+    StartupScript = Arc_Module.StartupScript;
+     --local scrPath,scrName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)")
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
