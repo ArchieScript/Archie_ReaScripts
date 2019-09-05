@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Toggle Zoom Arrange to fit screen - recover back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: Switch to zoom in the arrange window to fit the screen - restore back
    * О скрипте:   Переключатель масштабировать окно аранжировки по размеру экрана - восстановить обратно
    * GIF:         ---
@@ -17,7 +17,8 @@
    * Gave idea:   Krikets(RMM)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.5.2+   Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
-   * Changelog:   v.1.0 [06.09.19]
+   * Changelog:   
+   *              v.1.01 [06.09.19]
    *                  + initialе
 --]]
     
@@ -45,7 +46,7 @@
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
-    
+    Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false);
     
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     
