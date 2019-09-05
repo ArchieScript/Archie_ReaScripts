@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a77679d46414b7905ea9d1761b71809becca039d">
+<index version="1" name="Archie-ReaScripts" commit="d092e001df253e57ddb1c750d2a1d2764bb610a9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -267,6 +267,12 @@ LUA_Lib
     v.230   + randomOfVal(...);   
     v.230   + invert_number(X);]]></changelog>
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/a77679d46414b7905ea9d1761b71809becca039d/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.5.1" author="Archie" time="2019-09-05T13:04:11Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/48f84edf84a8ac5581c39fa6e1b4ace898dbe425/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.5.2" author="Archie" time="2019-09-05T17:35:33Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/919dc4da45feec0534ec1088b3e8a2d0aecd557e/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -3829,6 +3835,18 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/View">
+    <reapack name="Arc_View; Toggle Zoom Arrange to fit screen - recover back.lua" type="script" desc="Toggle Zoom Arrange to fit screen - recover back">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-05T18:05:53Z">
+        <changelog><![CDATA[v.1.0 [06.09.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d092e001df253e57ddb1c750d2a1d2764bb610a9/MAIN/View/Arc_View;%20Toggle%20Zoom%20Arrange%20to%20fit%20screen%20-%20recover%20back.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
