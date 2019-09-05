@@ -1,9 +1,9 @@
-local VersionMod = "v.2.5.1"
+local VersionMod = "v.2.5.2"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.1
+   * Version:     2.5.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -27,7 +27,7 @@ local VersionMod = "v.2.5.1"
    *      v.216   + Path,Name = GetPathAndNameSourceMediaFile_Take_SWS(take);
    *      v.242   + GetSetToggleButtonOnOff(numb,boolean set); numb:0 or 1;
    *      v.220   + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
-   *      v.120   + HelpWindowWhenReRunning(BottonText,but,reset);
+   *      v.252   + HelpWindowWhenReRunning(BottonText,but,reset);
    *      v.119   + DeleteMediaItem(item);
    *      v.118   + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
    *      v.117   + SetMediaItemLeftTrim2(position,item);
@@ -345,40 +345,50 @@ local VersionMod = "v.2.5.1"
     end;
     HelpWindow_WithOptionNotToShow=Arc_Module.HelpWindow_WithOptionNotToShow;
     function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);
-        local ScriptName = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-        local TooltipWind = reaper.GetExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but);
+        local BottonTextS,NotReadTextR,NotReadTextE::NotRead::local time = os.time();
+        local ScriptName = ({reaper.get_action_context()})[2];
+        local TooltipWind = reaper.GetExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but);
         if TooltipWind == "" then;
-            if BottonText  == 2 then;
-                BottonText = "'NEW INSTANCE'" elseif BottonText  == 1 then;
-                BottonText = "'TERMINATE INSTANCES'"else BottonText = "- ??? Error"; 
+            if BottonText == 2 then;
+                BottonTextS = "'NEW INSTANCE'" elseif BottonText == 1 then;
+                BottonTextS = "'TERMINATE INSTANCES'"else BottonTextS = "- ??? Error"; 
             end;
             local MessageBox = reaper.ShowMessageBox(
             "RUS.\n\n"..
             "ВАЖНО:\n"..
-            "При отключении скрипта появится окно (Reascript task control):\n"..
+            (NotReadTextR or "")..
+            "При отключении или повторном включении скрипта появится окно (Reascript task control):\n"..
             "Для коректной работы скрипта ставим галку\n"..
             "(Remember my answer for this script)\n"..
-            "Нажимаем: "..BottonText.."\n"..
+            "Нажимаем: "..BottonTextS.."\n"..
+            ("-"):rep(50)..
             "\n\n"..
             "ENG.\n\n"..
             "IMPORTANTLY:\n"..
-            "When you disable script window will appear (Reascript task control):\n"..
+            (NotReadTextE or "")..
+            "When you disable or re-enable the script window will appear (Reascript control tasks):\n"..
             "For correct work of the script put the check\n"..
             "(Remember my answer for this script)\n"..
-            "Click: "..BottonText.."\n"..
+            "Click: "..BottonTextS.."\n"..
+            ("-"):rep(50)..
             "\n\n\n"..
             "DO NOT SHOW THIS WINDOW - OK\n"..
-            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК",
+            "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n\n"..
+            ("-"):rep(50),
             "help.",1);
             if MessageBox == 1 then;
-                local MB = reaper.MB("RUS: / ENG:\n\nЗапомни ! / Remember ! \n\n"..BottonText,"help.",1);
+                local time2 = os.time();
+                NotReadTextR = "\nВы не прочитали текст !!!\nПрочитайте текст!\nОкно можно будет закрыть по истечению 10 секунд\n\n"
+                NotReadTextE = "\nYou have not read the text !!!\nRead the text!\nThe window can be closed after 10 seconds\n\n"
+                if time+10 > time2 then goto NotRead end;
+                local MB = reaper.MB("RUS: / ENG:\n\nЗапомни ! / Remember ! \n\n"..BottonTextS,"help.",1);
                 if MB == 1 then;
-                    reaper.SetExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but,MessageBox,true);
+                    reaper.SetExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but,MessageBox,true);
                 end;
             end;
         end;
         if reset == true then;
-            reaper.DeleteExtState(ScriptName..'___'..but, "HelpWindowWhenReRunning"..'___'..but,true);
+            reaper.DeleteExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but,true);
         end;
         return ScriptName;
     end;
