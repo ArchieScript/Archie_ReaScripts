@@ -1,16 +1,16 @@
-local VersionMod = "v.2.5.2"
+local VersionMod = "v.2.5.3"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.2
+   * Version:     2.5.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
    * 
 
-   * Changelog:   
+   * Changelog:
    *
    *  REAPER_Lib
    *      v.108   + no_undo();
@@ -58,6 +58,8 @@ local VersionMod = "v.2.5.2"
    *      v.249   + GetIDByScriptName(scriptName,scriptPath); 
    *      v.246   + GetScriptNameByID(id);
    *      v.251   + StartupScript(function_name,id);
+   *      v.253   + GetTrackAutoRecArm(Track);
+   *      v.253   + SetTrackAutoRecArm(Track,val);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1087,6 +1089,23 @@ local VersionMod = "v.2.5.2"
     end;
     StartupScript = Arc_Module.StartupScript;
      --local scrPath,scrName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)")
+    function Arc_Module.GetTrackAutoRecArm(Track);
+        local retval, str = reaper.GetTrackStateChunk(Track,"",false);
+        local str2 = tonumber(str:match("AUTO_RECARM%s-(%d+)"));
+        if str2 ~= 1 then return 0 else return 1 end;
+    end;
+    GetTrackAutoRecArm = Arc_Module.GetTrackAutoRecArm;
+    function Arc_Module.SetTrackAutoRecArm(Track,val);
+        if tonumber(val)and val >= 1 or val == true then val = 1 else val = 0 end;
+        local retval, str = reaper.GetTrackStateChunk(Track,"",false);local str2;
+        if str:match("AUTO_RECARM") then;
+            str2 = str:gsub("AUTO_RECARM%s-%d+","AUTO_RECARM "..val);
+        else;
+            str2 = str:gsub("REC%s%d.-\n","%0AUTO_RECARM "..val);
+        end;
+        reaper.SetTrackStateChunk(Track,str2,false);
+    end;
+    SetTrackAutoRecArm = Arc_Module.SetTrackAutoRecArm;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
