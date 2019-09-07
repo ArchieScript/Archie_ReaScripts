@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="663a7c9a6cb359a058da2b201f64ffaff03738b4">
+<index version="1" name="Archie-ReaScripts" commit="066e1e10ac0b3031983babcf641c21d04cd1a4e5">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3426,6 +3426,11 @@ v.1.0 [28.08.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/663a7c9a6cb359a058da2b201f64ffaff03738b4/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20all%20tracks%20-%20restore%20back.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-09-07T17:10:39Z">
+        <changelog><![CDATA[v.1.01 [07.09.19]
+    + Remove desync when saving between "Minimize all tracks","Minimize selected tracks"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/066e1e10ac0b3031983babcf641c21d04cd1a4e5/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20all%20tracks%20-%20restore%20back.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Minimize selected tracks - restore back.lua" type="script" desc="Toggle Minimize selected tracks - recover back">
       <metadata>
@@ -3437,6 +3442,9 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [07.09.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/663a7c9a6cb359a058da2b201f64ffaff03738b4/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-07T17:10:39Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/066e1e10ac0b3031983babcf641c21d04cd1a4e5/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Mute unmute all visible track in TCP and MCP.lua" type="script" desc="Toggle Mute unmute all visible track in TCP and MCP">
