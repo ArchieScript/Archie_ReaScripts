@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Toggle Minimize all tracks - recover back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * AboutScript: ---
    * О скрипте:   Переключение Минимизировать все треки - восстановить назад
    * GIF:         ---
@@ -17,7 +17,11 @@
    * Gave idea:   Krikets(RMM)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [07.09.19]
+   * Changelog:   
+   *              v.1.01 [07.09.19]
+   *                  + Remove desync when saving between "Minimize all tracks","Minimize selected tracks"
+   
+   *              v.1.0 [07.09.19]
    *                  + initialе
 --]]
     
@@ -58,9 +62,7 @@
     
     
     
-    local extname = ({reaper.get_action_context()})[2]:gsub("[%p%s]","");
-    
-    
+    local extname = "ArchieMinimizeTracksRecoverBackHeight"
     -------
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then no_undo() return end;
