@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division 
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -19,9 +19,11 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
-   *              v.1.04 [12.07.2019]
-   *                  No changes
+   *              v.1.05 [09.09.2019]
+   *                  fixed bug when enabled «Trim behind items when editing»
    
+   *              v.1.04 [12.07.2019]
+   *                  No changes   
    *              v.1.03 [12.07.2019]
    *                  + Save presets in Beats / Seconds (Right menu)
    *              v.1.01 [12.07.2019]
@@ -1075,6 +1077,9 @@
         end;
         --------------------
         function CopyMoveMediaItem(item, track, time, COPY_MOVE);
+            local TogTrim = reaper.GetToggleCommandStateEx(0,41117);
+            if TogTrim == 1 then; reaper.Main_OnCommand(41117,0); end;
+            
             local var2;
             local pcal, retval, str = pcall(reaper.GetItemStateChunk,item,"",false);
             if not pcal then;
@@ -1097,6 +1102,7 @@
             if COPY_MOVE ~= 1 then;
                 reaper.DeleteTrackMediaItem(reaper.GetMediaItem_Track(item),item); 
             end;
+            if TogTrim == 1 then; reaper.Main_OnCommand(41117,0); end;
             return newPos,newItem;          
         end;
         --------------------
