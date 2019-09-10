@@ -1,9 +1,9 @@
-local VersionMod = "v.2.5.6"
+local VersionMod = "v.2.5.7"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.6
+   * Version:     2.5.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -27,7 +27,7 @@ local VersionMod = "v.2.5.6"
    *      v.216   + Path,Name = GetPathAndNameSourceMediaFile_Take_SWS(take);
    *      v.242   + GetSetToggleButtonOnOff(numb,boolean set); numb:0 or 1;
    *      v.220   + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
-   *      v.256   + HelpWindowWhenReRunning(BottonText,but,reset);
+   *      v.257   + HelpWindowWhenReRunning(BottonText,but,reset);
    *      v.119   + DeleteMediaItem(item);
    *      v.118   + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
    *      v.117   + SetMediaItemLeftTrim2(position,item);
@@ -1155,10 +1155,7 @@ local VersionMod = "v.2.5.6"
             end; 
             heightSet = minSize;      
         end;
-        local retval = reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
-        reaper.TrackList_AdjustWindows(false);
-        local newHeigth = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
-        return retval,newHeigth;
+        return reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
     end;
     SetHeightTrack_Env_TCP = Arc_Module.SetHeightTrack_Env_TCP;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
