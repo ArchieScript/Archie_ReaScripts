@@ -1,14 +1,14 @@
-local VersionMod = "v.2.5.4"
+local VersionMod = "v.2.5.5"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.4
+   * Version:     2.5.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
-   * 
+   * -----------------------
 
    * Changelog:   
    *
@@ -20,9 +20,9 @@ local VersionMod = "v.2.5.4"
    *      v.229   + boolean = RemoveAllItemTr_Sel(track,rem_Idx);
    *      v.227   + SelectAllTracks(numb);
    *      v.226   + SaveSoloMuteSelStateAllTracksGuidSlot_SWS(Slot);
-   *      v.226   + RestoreSoloMuteSelStateAllTracksGuidSlot_SWS(Slot,clean);
+   *      v.226   + RestoreSoloMuteSelStateAllTracksGuidSlot_SWS(Slot,clean);--clean = true или 1 - чтобы зачистить
    *      v.237   + boolean = js_ReaScriptAPI(boolean,numb__JS_API_Version);
-   *      v.225   + boolean = SWS_API(boolean); 
+   *      v.225   + boolean = SWS_API(boolean); -- true / false
    *      v.219   + SetCollapseFolderMCP(track,clickable,is_show);
    *      v.216   + Path,Name = GetPathAndNameSourceMediaFile_Take_SWS(take);
    *      v.242   + GetSetToggleButtonOnOff(numb,boolean set); numb:0 or 1;
@@ -32,11 +32,11 @@ local VersionMod = "v.2.5.4"
    *      v.118   + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
    *      v.117   + SetMediaItemLeftTrim2(position,item);
    *      v.116   + Save_Selected_Items_GuidSlot_SWS(Slot);
-   *      v.116   + Restore_Selected_Items_GuidSlot_SWS(Slot,clean);
+   *      v.116   + Restore_Selected_Items_GuidSlot_SWS(Slot,clean);--clean = true или 1 - чтобы зачистить
    *      v.115   + SaveSoloMuteStateAllTracksGuidSlot_SWS(Slot);
-   *      v.115   + RestoreSoloMuteStateAllTracksGuidSlot_SWS(Slot,clean);
+   *      v.115   + RestoreSoloMuteStateAllTracksGuidSlot_SWS(Slot,clean);--clean = true или 1 - чтобы зачистить
    *      v.114   + SaveMuteStateAllItemsGuidSlot_SWS(Slot);
-   *      v.114   + RestoreMuteStateAllItemsGuidSlot_SWS(Slot,clean);
+   *      v.114   + RestoreMuteStateAllItemsGuidSlot_SWS(Slot,clean);--clean = true или 1 - чтобы зачистить
    *      v.113   + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast();
    *      v.112   + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast();
    *      v.111   + RemoveStretchMarkersSavingTreatedWave_Render_SWS(Take);
@@ -44,9 +44,9 @@ local VersionMod = "v.2.5.4"
    *      v.110   + RestoreSelTracksGuidSlot_SWS(Slot,clean);
    *      v.109   + GetPreventSpectralPeaksInTrack(Track);
    *      v.108   + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
-   *      v.107   + CloseAllFxInAllItemsAndAllTake(chain,float);
+   *      v.107   + CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
    *      v.106   + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
-   *      v.105   + CloseAllFxInAllTracks(chain, float);
+   *      v.105   + CloseAllFxInAllTracks(chain, float);--true,false
    *      v.247   + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=]);
    *      v.217   + GetMediaItemInfo_Value(item,parmname);/[D_END] 
    *      v.217   + SetMediaItemInfo_Value(item,parmname,val);/[D_END] 
@@ -60,7 +60,7 @@ local VersionMod = "v.2.5.4"
    *      v.251   + StartupScript(function_name,id);
    *      v.253   + GetTrackAutoRecArm(Track);
    *      v.253   + SetTrackAutoRecArm(Track,val);
-   *      v.254   + SetHeightTrack_Env_TCP(Track,Height,minSize,resetSize,PercentageDefault);
+   *      v.255   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minSize,resetSize,PercentageDefault);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -70,7 +70,13 @@ local VersionMod = "v.2.5.4"
 --=======================================================]]
 
 
-    local Arc_Module = {};
+    --========================
+    local Arc_Module = {};--==
+    --========================
+
+
+
+    ----------- / VersionArc_Function_lua(version); / -----------------------------------
     function Arc_Module.VersionArc_Function_lua(version);
         if not VersionMod then VersionMod = "0" else VersionMod = tostring(VersionMod);end;
         VersionMod = tonumber((VersionMod:gsub("%D","")));
@@ -97,8 +103,21 @@ local VersionMod = "v.2.5.4"
         return true; 
     end;
     VersionArc_Function_lua = Arc_Module.VersionArc_Function_lua; 
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+    --------------no_undo()--------------------------------------------------------------
     function Arc_Module.no_undo()reaper.defer(function()end)end;
     no_undo = Arc_Module.no_undo;
+    -- Что бы в ундо не прописывалось "ReaScript:Run"
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 122 ---------- Action -----------------------------------------------------------
     function Arc_Module.Action(...);
        local Table = {...};
        for i = 1, #Table do;
@@ -106,6 +125,12 @@ local VersionMod = "v.2.5.4"
        end;
     end;
     Action = Arc_Module.Action;
+    -- Выполняет действие, относящееся к разделу основное действие. 
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 230 ------------ TracFx_Rename --------------------------------------------------
     function Arc_Module.TrackFx_Rename(Track,idx_Fx,Rename);
         local retval,str = reaper.GetTrackStateChunk(Track,"",false);
                      str = string.gsub(str,"<","\n\n<").."\n\n";
@@ -126,11 +151,19 @@ local VersionMod = "v.2.5.4"
             end;
             TrackChunk = string.gsub(TrackChunk,"\n\n","\n")
             reaper.SetTrackStateChunk(Track,TrackChunk,false);
+            --reaper.ShowConsoleMsg(TrackChunk);
             return true;
         end;
         return false;
     end;
     TrackFx_Rename = Arc_Module.TrackFx_Rename;
+    -- Переименовать Fx в треке
+    -- Вернет false если Fx отсутствует, в противном случае true
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 229 ------------ RemoveAllSendTr ------------------------------------------------
     function Arc_Module.RemoveAllSendTr(track,category);
          local R,Rem = false;
          for iS = reaper.GetTrackNumSends(track,category)-1,0,-1 do;
@@ -140,6 +173,14 @@ local VersionMod = "v.2.5.4"
          return R;
     end;
     RemoveAllSendTr = Arc_Module.RemoveAllSendTr;
+    --Удалить все посылы в треке send/receive/hardware, 
+    --Вернёт true если удаление произошло
+    --Категория < 0 для receives, 0=sends, >0 для аппаратных выходов.
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 229 ----------- RemoveAllItemTr -------------------------------------------------
     function Arc_Module.RemoveAllItemTr_Sel(track,rem_Idx);
         local D = false;
         for i = reaper.CountTrackMediaItems(track)-1,0,-1 do;
@@ -158,6 +199,14 @@ local VersionMod = "v.2.5.4"
         return D;        
     end;
     RemoveAllItemTr_Sel = Arc_Module.RemoveAllItemTr_Sel; 
+    -- Удалить все/выделенные/невыделенные элементы в треке
+    -- rem_Idx = 0 Удалить все невыделенные, = 1 удалить все выделенные, = 2 удалить все;
+    -- Вернёт true если удаление произошло
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 227 -------- SelectAllTracks ----------------------------------------------------
     function Arc_Module.SelectAllTracks(numb);
         if numb > 0 then numb = 1 else numb = 0 end;  
         reaper.PreventUIRefresh(3864597);    
@@ -171,6 +220,13 @@ local VersionMod = "v.2.5.4"
     reaper.PreventUIRefresh(-3864597);
     end;
     SelectAllTracks = Arc_Module.SelectAllTracks;
+    -- Выделить Все Дорожки; Снять выделение со Всех Дорожек;. 
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 226 -----SaveSoloMuteSelStateAllTracksGuidSlot()---------------------------------
+    --- 226 ---------------------- RestoreSoloMuteSelStateAllTracksGuidSlot() -----------
     function Arc_Module.SaveSoloMuteSelStateAllTracksGuidSlot(Slot);
         local CountTracks = reaper.CountTracks(0);
         if CountTracks == 0 then return false end;
@@ -186,6 +242,10 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.SaveSoloMuteSelStateAllTracksGuidSlot_SWS = Arc_Module.SaveSoloMuteSelStateAllTracksGuidSlot;
     SaveSoloMuteSelStateAllTracksGuidSlot_SWS = Arc_Module.SaveSoloMuteSelStateAllTracksGuidSlot;
+    -------------------------------------------------------------------------
+
+
+
     function Arc_Module.RestoreSoloMuteSelStateAllTracksGuidSlot(Slot,clean);
         local t = _G['SavSolMutSelTrSlot_'..Slot];
         if t then;
@@ -204,6 +264,14 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.RestoreSoloMuteSelStateAllTracksGuidSlot_SWS = Arc_Module.RestoreSoloMuteSelStateAllTracksGuidSlot;
     RestoreSoloMuteSelStateAllTracksGuidSlot_SWS = Arc_Module.RestoreSoloMuteSelStateAllTracksGuidSlot;
+    -- Save Restore Solo Mute Sel State All Tracks, Slots
+    -- Сохранить Восстановить 'Выделения, Соло, Mute' Состояние Всех Дорожек, Слоты
+    -- clean = true или 1 - зачистить сохраненную информацию за собой
+    --====End===============End===============End===============End===============End==== 
+
+
+
+    --- 237 ---------- js_ReaScriptAPI(); -----------------------------------------------
     function Arc_Module.js_ReaScriptAPI(boolean,JS_API_Version);
         if type(JS_API_Version)~= "number" then JS_API_Version = 0 end;
         local MB,version,Ret;
@@ -253,6 +321,16 @@ local VersionMod = "v.2.5.4"
         return true,version;
     end;
     js_ReaScriptAPI = Arc_Module.js_ReaScriptAPI;
+    -- Проверяет, Установлено ли расширение 'reaper_js_ReaScriptAPI. 
+    -- Если установлено вернет true и версию, в противном случае false и версию и предупреждения.
+    -- boolean true - показать окно с предупреждением,
+    -- boolean false - не показать окно с предупреждением.
+    -- JS_API_Version - Установить версию, ниже которой будет ошибка
+    --====End===============End===============End===============End===============End====
+
+
+
+     --- 225 --------- SWS_API(); --------------------------------------------------------
     function Arc_Module.SWS_API(boolean);
         if not reaper.BR_GetMediaItemGUID then;
             if boolean == true then;
@@ -283,6 +361,16 @@ local VersionMod = "v.2.5.4"
         return true;
     end;
     SWS_API = Arc_Module.SWS_API;
+    -----------------------------
+    -- Проверяет, Установлено ли расширение 'SWS'. 
+    -- Если установлено вернет true, в противном случае false и предупреждения.
+    -- boolean true - показать окно с предупреждением,
+    -- boolean false - не показать окно с предупреждением.
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 219 ---------- SetCollapseFolderMCP(track,clickable,is_show); -------------------
     function Arc_Module.SetCollapseFolderMCP(track,clickable,is_show);
         if clickable == 0 or clickable == 1 then;
             if clickable == 0 then clickable = 1 else clickable = 0 end;
@@ -295,6 +383,16 @@ local VersionMod = "v.2.5.4"
         reaper.SetTrackStateChunk(track, tr_chunk_out,true);
     end;
     SetCollapseFolderMCP = Arc_Module.SetCollapseFolderMCP;
+    -- Collapsed / Uncollapsed Track MCP
+    -- Свернуть / Развернуть Трек в Mикшере
+    -- clickable = 0 кликабельный значок для папок скрыть:
+    -- clickable = 1 кликабельный значок для папок показать:  иначе = -1;
+    -- is_show = 1 - скрыть; is_show = 0 показать:
+    --====End===============End===============End===============End===============End==== 
+
+
+
+    --- 216 ---------- GetPathAndNameSourceMediaFile_Take(take); ------------------------
     function Arc_Module.GetPathAndNameSourceMediaFile_Take(take);
         local guidStringTAKE = reaper.BR_GetMediaItemTakeGUID(take);
         local item = reaper.GetMediaItemTake_Item(take);
@@ -318,6 +416,17 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.GetPathAndNameSourceMediaFile_Take_SWS = Arc_Module.GetPathAndNameSourceMediaFile_Take;
     GetPathAndNameSourceMediaFile_Take_SWS = Arc_Module.GetPathAndNameSourceMediaFile_Take;
+    -- ПОЛУЧИТЬ ПУТЬ И ИМЯ ИСХОДНОГО МЕДИАФАЙЛА ФАЙЛА У ТЕЙКА
+    -- В отличии от "reaper.GetMediaSourceFileName(source,filenamebuf)" 
+    --                     не ломается на реверсных файлах и видит .png
+    -- Если тейк содержит миди, то вернет false
+    -- GET THE PATH AND NAME OF THE SOURCE MEDIA FILE FROM THE TAKE
+    -- Path,Name = Arc.GetPathAndNameSourceMediaFile_Take(take);
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 242 ---------- SetToggleButtonOnOff(numb) ---------------------------------------
     function Arc_Module.SetToggleButtonOnOff(numb,set);
         local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
         if set == 0 or set == false then;
@@ -330,6 +439,14 @@ local VersionMod = "v.2.5.4"
     SetToggleButtonOnOff = Arc_Module.SetToggleButtonOnOff;
     Arc_Module.GetSetToggleButtonOnOff=Arc_Module.SetToggleButtonOnOff;
     GetSetToggleButtonOnOff=Arc_Module.SetToggleButtonOnOff;
+    -- boolean set (true = Set; false = Get)
+    -- УСТАНОВИТЬ ПЕРЕКЛЮЧАТЕЛЬ ВКЛ ВЫКЛ (ПОДСВЕТКА КНОПКИ)
+    -- Set Toggle Button On Off
+    --====End===============End===============End===============End===============End====
+
+
+
+    -- 220 ------- HelpWindow_WithOptionNotToShow(Text,Header,but,reset); ---------------
     function Arc_Module.HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
         local ScriptName,MessageBox = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
         local TooltipWind = reaper.GetExtState(ScriptName..'___'..but, "HelpWindow_WithOptionNotToShow"..'___'..but);
@@ -347,15 +464,27 @@ local VersionMod = "v.2.5.4"
         return MessageBox or -1;
     end;
     HelpWindow_WithOptionNotToShow=Arc_Module.HelpWindow_WithOptionNotToShow;
-    function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);
+    -- ОКНО СПРАВКИ С ОПЦИЕЙ НЕ ПОКАЗЫВАТЬ;
+    -- HELP WINDOW WITH OPTION NOT TO SHOW;
+    -- but = хоть что 'strung' /  обычно "Arc_Function_lua" для навигации по ini;
+    -- reset = true только для сброса, а так всегда false;
+    -- returns: ok 1; cancel 0; otherwise -1
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 252 ------------ HelpWindowWhenReRunning(BottonText,but,reset); ---------------------
+    function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);-- (BottonText = 1 или 2)
         local BottonTextS,NotReadTextR,NotReadTextE::NotRead::local time = os.time();
         local ScriptName = ({reaper.get_action_context()})[2];
         local TooltipWind = reaper.GetExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but);
         if TooltipWind == "" then;
+            ----------------------
             if BottonText == 2 then;
                 BottonTextS = "'NEW INSTANCE'" elseif BottonText == 1 then;
                 BottonTextS = "'TERMINATE INSTANCES'"else BottonTextS = "- ??? Error"; 
             end;
+            ------------------------------------------------------------------------
             local MessageBox = reaper.ShowMessageBox(
             "RUS.\n\n"..
             "ВАЖНО:\n"..
@@ -379,12 +508,15 @@ local VersionMod = "v.2.5.4"
             "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n\n"..
             ("-"):rep(50),
             "help.",1);
+            ---------------------------------------
             if MessageBox == 1 then;
+                ----
                 local time2 = os.time();
                 NotReadTextR = "\nВы не прочитали текст !!!\nПрочитайте текст!\nОкно можно будет закрыть по истечению 10 секунд\n\n"
                 NotReadTextE = "\nYou have not read the text !!!\nRead the text!\nThe window can be closed after 10 seconds\n\n"
                 if time+10 > time2 then goto NotRead end;
-                local MB = reaper.MB("RUS: / ENG:\n\nЗапомни ! / Remember ! \n\n"..BottonTextS,"help.",1);
+                -----
+                local MB = reaper.MB("RUS: / ENG:\n\nЗапомни ! / Remember ! \n\n"..BottonTextS,"help.",1);--231
                 if MB == 1 then;
                     reaper.SetExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but,MessageBox,true);
                 end;
@@ -393,9 +525,21 @@ local VersionMod = "v.2.5.4"
         if reset == true then;
             reaper.DeleteExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but,true);
         end;
+        ---------------
         return ScriptName;
     end;
     HelpWindowWhenReRunning = Arc_Module.HelpWindowWhenReRunning;
+    -- ОКНО СПРАВКИ ПРИ ПОВТОРНОМ ЗАПУСКЕ СКРИПТА
+    -- Help Window When Re Running Script 
+    -- but = хоть что 'strung' /  обычно "Arc_Function_lua" для навигации по ini;
+    -- reset = true только для сброса, а так всегда false;
+    -- BottonText = 2 "'NEW INSTANCE'" , BottonText = 1 "'TERMINATE INSTANCES'"; 
+    -- Всегда вернет имя скрипта
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 119 ------- DeleteMediaItem(item); ----------------------------------------------
     function Arc_Module.DeleteMediaItem(item);
         if item then;
             local tr = reaper.GetMediaItem_Track(item);
@@ -403,15 +547,27 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     DeleteMediaItem = Arc_Module.DeleteMediaItem;
+    -- УДАЛИТЬ ЭЛЕМЕНТ МУЛЬТИМЕДИА
+    -- Delete Media Item
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 118 ---- GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,true,true,true); ----
     function Arc_Module.GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem,FeelVolumeOfTake,FeelVolumeOfEnvelopeItem);
+
         if not take or reaper.TakeIsMIDI(take)then return false,false,false,false,false,false,false end;
+        ------------------------------------------------------------------------------------------  
         if not tonumber(SkipNumberOfSamplesPerChannel) then SkipNumberOfSamplesPerChannel = 0 end;
         SkipNumberOfSamplesPerChannel = math.floor(SkipNumberOfSamplesPerChannel+0.5);
+        ------------------------------------------------
         local item = reaper.GetMediaItemTake_Item(take);
+        -- Reset Play Rate -------------------------------------------------------------
         local PlayRate_Original =  reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
         local Item_len_Original = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
         reaper.SetMediaItemInfo_Value(item,"D_LENGTH",Item_len_Original * PlayRate_Original);
         reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",1);
+        -------------------------------------------------------
         local item_pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
         local item_len = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
         local accessor = reaper.CreateTakeAudioAccessor(take);
@@ -419,26 +575,37 @@ local VersionMod = "v.2.5.4"
         local samplerate = reaper.GetMediaSourceSampleRate(source);
         local numchannels = reaper.GetMediaSourceNumChannels(source);
         local item_len_idx = math.ceil(item_len);
+        -----------------------------------------
         local CountSamples_OneChannel  = math.floor(item_len*samplerate+2);
         local CountSamples_AllChannels = math.floor(item_len*samplerate+2)*numchannels;
+        -------------------------------------------------------------------------------
         local NumberSamplesOneChan  = {};
         local NumberSamplesAllChan  = {};
         local Sample_min            = {};
         local Sample_max            = {};
         local TimeSample            = {};
+        ---------------------------------
         local breakX,multi;
+        -------------------
         for i1 = 1, item_len_idx do
-            local buffer = reaper.new_array(samplerate*numchannels); 
+            local buffer = reaper.new_array(samplerate*numchannels); -- 1 sec
             local Accessor_Samples = reaper.GetAudioAccessorSamples(
-                                                        accessor   , 
-                                                        samplerate , 
-                                                        numchannels, 
-                                                        i1-1       , 
-                                                        samplerate , 
-                                                        buffer     ) 
-            local ContinueCounting = (i1-1) * samplerate; 
+                                                        accessor   , -- accessor
+                                                        samplerate , -- samplerate
+                                                        numchannels, -- numchannels
+                                                        i1-1       , -- starttime_sec
+                                                        samplerate , -- numsamplesperchannel
+                                                        buffer     ) -- reaper.array samplebuffer
+            -------------------------------------------------------------------------------------
+            local ContinueCounting = (i1-1) * samplerate; -- Продолжить Подсчет
+            -------------------------------------------------------------------
             for i2 = 1, samplerate*numchannels,numchannels*(SkipNumberOfSamplesPerChannel+1) do;
+
+                --- / Sample Point Number / --------------------------------
                 local SamplePointNumb = (i2-1)/numchannels+ContinueCounting;
+                ------------------------------------------------------------
+
+                -- / min max sample from all channels /------------
                 local Sample_min_all_channels = 9^99;
                 local Sample_max_all_channels = 0;
                 for i3 = 1, numchannels do;
@@ -446,14 +613,20 @@ local VersionMod = "v.2.5.4"
                     Sample_min_all_channels = math.min(Sample,Sample_min_all_channels);
                     Sample_max_all_channels = math.max(Sample,Sample_max_all_channels);
                 end;
+
+                ---/ Feel volume of take - Чувствительность к громкости тейка /---
                 if FeelVolumeOfTake == true then;
                     Sample_min_all_channels = Sample_min_all_channels*reaper.GetMediaItemTakeInfo_Value(take, "D_VOL");
                     Sample_max_all_channels = Sample_max_all_channels*reaper.GetMediaItemTakeInfo_Value(take, "D_VOL");
                 end;
+
+                ---/ Feel volume of item - Чувствительность к громкости элемента /---
                 if FeelVolumeOfItem == true then;
                     Sample_min_all_channels = Sample_min_all_channels*reaper.GetMediaItemInfo_Value(item, "D_VOL");
                     Sample_max_all_channels = Sample_max_all_channels*reaper.GetMediaItemInfo_Value(item, "D_VOL");
                 end;
+
+                --- / Feel Volume Of Envelope Item /------------
                 if FeelVolumeOfEnvelopeItem == true then;
                     local Envelope = reaper.GetTakeEnvelopeByName(take,"Volume");
                     if Envelope then;
@@ -464,26 +637,57 @@ local VersionMod = "v.2.5.4"
                        end;
                     end;
                 end; 
+
+                -- / min max sample from all channels /------------
                 Sample_min[#Sample_min+1] = Sample_min_all_channels;
                 Sample_max[#Sample_max+1] = Sample_max_all_channels;
+                ----------------------------------------------------
+
+                --- Sample Number - One / All Channels ---------------------------------
                 NumberSamplesAllChan[#NumberSamplesAllChan+1] = (i2 + ContinueCounting);
                 if numchannels > 2 then multi = 1 else multi = 0 end;
                 NumberSamplesOneChan[#NumberSamplesOneChan+1] = math.floor(((i2 + ContinueCounting)/numchannels)+0.5)+multi;
+                ------------------------------------------------------------------------------------------------------------
+
+                --- GetTime ------------------------------------------------------------------------
                 TimeSample[#TimeSample+1] = SamplePointNumb/samplerate/PlayRate_Original + item_pos;
+                                
+                --- End Of Element, To Complete Cycle ---------------------------------------------
                if TimeSample[#TimeSample] > Item_len_Original + item_pos then breakX = 1 break end;
+               ------------------------------------------------------------------------------------
             end;
             buffer.clear();
             if breakX == 1 then break end;
         end
         reaper.DestroyAudioAccessor(accessor);
+        ---
+        -- Restore Play Rate -------------------------------------------------------
         reaper.SetMediaItemInfo_Value(item,"D_LENGTH",item_len / PlayRate_Original);
         reaper.SetMediaItemTakeInfo_Value(take,"D_PLAYRATE",PlayRate_Original);
+        -----------------------------------------------------------------------
         TimeSample[1] = item_pos; 
         TimeSample[#TimeSample] = item_pos + Item_len_Original;
+        -----------------------------------------------------------------------------
         return CountSamples_AllChannels,CountSamples_OneChannel,NumberSamplesAllChan,
-               NumberSamplesOneChan,Sample_min,Sample_max,TimeSample;
+               NumberSamplesOneChan,Sample_min,Sample_max,TimeSample;----------------
     end;
     GetSampleNumberPosValue=Arc_Module.GetSampleNumberPosValue;
+    -----------------------------------------------------------
+    -- Get Sample Number Position Value
+    -- ПОЛУЧИТЬ У ОБРАЗЦА НОМЕР ЗНАЧЕНИЕ ПОЗИЦИЮ.
+    -- samples_skip = сколько сэмплов пропустить в секунду (обычно
+    --       плэйрейт делим на сто - получится 100 точек в секунду) 
+    -- FeelVolumeOfItem = false - не реагировать на громкость элемента 
+    -- FeelVolumeOfItem = true - реагировать на громкость элемента
+    -- FeelVolumeOfTake = false - не реагировать на громкость тейка
+    -- FeelVolumeOfTake = true - реагировать на громкость тейка
+    -- FeelVolumeOfEnvelopeItem = false - не реагировать на автоматизацию громкости элемента 
+    -- FeelVolumeOfEnvelopeItem = true - реагировать на автоматизацию громкости элемента 
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 117 --------- SetMediaItemLeftTrim2 ---------------------------------------------
     function Arc_Module.SetMediaItemLeftTrim2(position,item);
         reaper.PreventUIRefresh(3864598);
         local sel_item = {};
@@ -500,6 +704,13 @@ local VersionMod = "v.2.5.4"
         reaper.PreventUIRefresh(-3864598);
     end;
     SetMediaItemLeftTrim2=Arc_Module.SetMediaItemLeftTrim2;
+    -- Удлинить укоротить Медиа Элемент Слева
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 116 -------- Save_Selected_Items_Slot() -----------------------------------------
+    --- 116 ---------------------------- Restore_Selected_Items_Slot() ------------------
     function Arc_Module.Save_Selected_Items_GuidSlot(Slot);
         local CountSelItem = reaper.CountSelectedMediaItems(0);
         if CountSelItem == 0 then return false end;
@@ -513,6 +724,10 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.Save_Selected_Items_GuidSlot_SWS=Arc_Module.Save_Selected_Items_GuidSlot;
     Save_Selected_Items_GuidSlot_SWS=Arc_Module.Save_Selected_Items_GuidSlot;
+    -------------------------------------------------------------------------
+
+
+
     function Arc_Module.Restore_Selected_Items_GuidSlot(Slot,clean);
         t = _G["SaveSelItem_"..Slot];
         if t then;
@@ -532,6 +747,12 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.Restore_Selected_Items_GuidSlot_SWS=Arc_Module.Restore_Selected_Items_GuidSlot;
     Restore_Selected_Items_GuidSlot_SWS=Arc_Module.Restore_Selected_Items_GuidSlot;
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 115 ---- SaveSoloMuteStateAllTracksSlot() ---------------------------------------
+    --- 115 ---------------------------- RestoreSoloMuteStateAllTracksSlot() ------------
     function Arc_Module.SaveSoloMuteStateAllTracksGuidSlot(Slot);
         local CountTracks = reaper.CountTracks(0);
         if CountTracks == 0 then return false end;
@@ -546,6 +767,10 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.SaveSoloMuteStateAllTracksGuidSlot_SWS=Arc_Module.SaveSoloMuteStateAllTracksGuidSlot;
     SaveSoloMuteStateAllTracksGuidSlot_SWS=Arc_Module.SaveSoloMuteStateAllTracksGuidSlot;
+    -----------------------------------------------------------------
+
+
+
     function Arc_Module.RestoreSoloMuteStateAllTracksGuidSlot(Slot,clean);
         local t = _G['SavSolMutTrSlot_'..Slot];
         if t then;
@@ -563,6 +788,15 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.RestoreSoloMuteStateAllTracksGuidSlot_SWS=Arc_Module.RestoreSoloMuteStateAllTracksGuidSlot;
     RestoreSoloMuteStateAllTracksGuidSlot_SWS=Arc_Module.RestoreSoloMuteStateAllTracksGuidSlot;
+    -- Save Restore Solo Mute State All Tracks, Slots
+    -- Сохранить Восстановить Соло Mute Состояние Всех Дорожек, Слоты
+    -- clean = true или 1 - зачистить сохраненную информацию за собой
+    --====End===============End===============End===============End===============End==== 
+
+
+
+    --- 114 ----------- SaveMuteStateAllItemsSlot ---------------------------------------
+    --- 114 ------------------------------ RestoreMuteStateAllItemsSlot -----------------
     function Arc_Module.SaveMuteStateAllItemsGuidSlot(Slot);
         local CountItem = reaper.CountMediaItems(0);
         if CountItem == 0 then return false end;
@@ -577,6 +811,12 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.SaveMuteStateAllItemsGuidSlot_SWS = Arc_Module.SaveMuteStateAllItemsGuidSlot;
     SaveMuteStateAllItemsGuidSlot_SWS = Arc_Module.SaveMuteStateAllItemsGuidSlot;
+    -- Save Mute State All Items, Slots
+    -- Сохранить Состояние Отключения Звука На Всех Элементах Слоты
+    -------------------------------------------------------------------------
+
+
+
     function Arc_Module.RestoreMuteStateAllItemsGuidSlot(Slot, clean);
         local T = _G["Save_GuidAndMuteSlot_"..Slot];
         if T then;
@@ -595,6 +835,14 @@ local VersionMod = "v.2.5.4"
     end
     Arc_Module.RestoreMuteStateAllItemsGuidSlot_SWS = Arc_Module.RestoreMuteStateAllItemsGuidSlot;
     RestoreMuteStateAllItemsGuidSlot_SWS = Arc_Module.RestoreMuteStateAllItemsGuidSlot;
+    -- Restore Mute State All Items, Slots
+    -- Восстановить Беззвучное Состояние Всех Элементов, Слотов
+    -- clean = true или 1 - зачистить сохраненную информацию за собой
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 113 ------------- GetPositionOfFirstItemAndEndOfLast ----------------------------
     function Arc_Module.GetPositionOfFirstItemAndEndOfLast();
         local CountItem = reaper.CountMediaItems(0);
         if CountItem == 0 then return false, false end;
@@ -614,6 +862,14 @@ local VersionMod = "v.2.5.4"
         return Fir,End;
     end;
     GetPositionOfFirstItemAndEndOfLast = Arc_Module.GetPositionOfFirstItemAndEndOfLast;
+    -- Get Position Of First Item And End Of Last
+    -- Получить Позицию Первого Элемента И Конец Последнего     
+    -- PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast()
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 112 ------------- GetPositionOfFirstSelectedItemAndEndOfLast --------------------
     function Arc_Module.GetPositionOfFirstSelectedItemAndEndOfLast();
         local CountSelItem = reaper.CountSelectedMediaItems(0);
         if CountSelItem == 0 then return false, false end;
@@ -633,23 +889,48 @@ local VersionMod = "v.2.5.4"
         return Fir,End;
     end;
     GetPositionOfFirstSelectedItemAndEndOfLast = Arc_Module.GetPositionOfFirstSelectedItemAndEndOfLast;
+    -- Get Position Of First Selected Item And End Of Last
+    -- Получить Позицию Первого Выделенного Элемента И Конец Последнего     
+    -- PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast()
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 111 ----------- RemoveStretchMarkersSavingTreatedWave_Render --------------------
     function Arc_Module.RemoveStretchMarkersSavingTreatedWave_Render(Take);
+
+        ----#0---------------------------------------------------------------------------
         if not Take then reaper.ReaScriptError("bad argument #1 to"..
             "'RemoveStretchMarkersSavingTreatedWave_Render' (Take expected)");
             return
         end;
+        ---------------------------------------------------------------------------------
+
+        ----#1---------------------------------------------------------------------------
         if not reaper.TakeIsMIDI(Take) then;
             if reaper.GetTakeNumStretchMarkers(Take) > 0 then;
+            -----------------------------------------------------------------------------
+
+                ----#2-------------------------------------------------------------------
                 reaper.PreventUIRefresh(195638945);
                 reaper.Undo_BeginBlock2(0);
+                -------------------------------------------------------------------------
+
+                ----#3---Save All Items--------------------------------------------------
                 local Guid = {};
                 for i = 1, reaper.CountSelectedMediaItems(0) do;
                     local sel_item = reaper.GetSelectedMediaItem(0,i-1);
                     Guid[i] = reaper.BR_GetMediaItemGUID(sel_item);
                 end;
+                -------------------------------------------------------------------------
+
+                ----#4---Select item Take work-------------------------------------------
                 reaper.SelectAllMediaItems(0,0);
                 local item = reaper.GetMediaItemTake_Item(Take);
                 reaper.SetMediaItemSelected(item,1);
+                -------------------------------------------------------------------------
+
+                ----#5---Disable and Prepare Envelope------------------------------------
                 local Len = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
                 local PlayRat = reaper.GetMediaItemTakeInfo_Value(Take,"D_PLAYRATE");
                 local active,visible,armed,inLane,laneHeight,defaultShape,minValue,
@@ -657,9 +938,11 @@ local VersionMod = "v.2.5.4"
                 local CountTakeEnv = reaper.CountTakeEnvelopes(Take);
                 if CountTakeEnv > 0 then;
                     EnvelopePresent = "Active";
+                    ----
                     for i = 1,CountTakeEnv do;
                         local EnvTake = reaper.GetTakeEnvelope(Take,i-1);
                         local NotCreateStart,NotCreateEnd,valuestart,valueEnd = nil,nil,nil,nil;
+                        ----
                         for i2 = 1,reaper.CountEnvelopePoints(EnvTake) do;
                             local time = select(2,reaper.GetEnvelopePoint(EnvTake,i2-1))/PlayRat;
                             if time == 0 then;
@@ -683,9 +966,10 @@ local VersionMod = "v.2.5.4"
                         end;
                         reaper.Envelope_SortPoints(EnvTake);
                         reaper.DeleteEnvelopePointRange(EnvTake,(-9^99),-0.0000001);
-                        reaper.DeleteEnvelopePointRange(EnvTake,0.0000001,0.01);
+                        reaper.DeleteEnvelopePointRange(EnvTake,0.0000001,0.01);--!?
                         reaper.DeleteEnvelopePointRange(EnvTake,(Len*PlayRat)+0.0000001,9^99);
-                        reaper.DeleteEnvelopePointRange(EnvTake,(Len*PlayRat)-0.01,(Len*PlayRat)-0.0000001);
+                        reaper.DeleteEnvelopePointRange(EnvTake,(Len*PlayRat)-0.01,(Len*PlayRat)-0.0000001);--!?
+                        ----
                         local EnvAlloc = reaper.BR_EnvAlloc(EnvTake,false);
                         active[i],visible,armed,inLane,laneHeight,defaultShape,minValue,maxValue,
                         centerValue,typeS,faderScaling = reaper.BR_EnvGetProperties(EnvAlloc);     
@@ -694,12 +978,18 @@ local VersionMod = "v.2.5.4"
                         reaper.BR_EnvFree(EnvAlloc,true);
                     end;
                 end;
+                -------------------------------------------------------------------------
+
+                ----#6---Disable All Fx--------------------------------------------------
                 local FX_Enabled = {};
                 local CountFx = reaper.TakeFX_GetCount(Take);
                 for i = 1,CountFx do;
                     FX_Enabled[i] = reaper.TakeFX_GetEnabled(Take,i-1);
                     reaper.TakeFX_SetEnabled(Take,i-1,0);
                 end;
+                -------------------------------------------------------------------------
+                
+                ----#7---Take properties Reset-------------------------------------------
                 local Pich = reaper.GetMediaItemTakeInfo_Value(Take,"D_PITCH");
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_PITCH",0);
                 local PreserPitch = reaper.GetMediaItemTakeInfo_Value(Take,"B_PPITCH");
@@ -712,17 +1002,34 @@ local VersionMod = "v.2.5.4"
                 reaper.SetMediaItemTakeInfo_Value(Take,"I_CHANMODE",0);
                 PichMode = reaper.GetMediaItemTakeInfo_Value(Take,"I_PITCHMODE");
                 reaper.SetMediaItemTakeInfo_Value(Take,"I_PITCHMODE",-1);
+                
+                ----#8---Item Fx Tail Reset----------------------------------------------
                 local itemfxtail = reaper.SNM_GetIntConfigVar("itemfxtail",0);
                 reaper.SNM_SetIntConfigVar("itemfxtail",0);
+                -------------------------------------------------------------------------
+                
+                ----#9---Render items to new take-------GetActiveTake--------------------
                 Arc_Module.Action(41999);
                 local Take_X = reaper.GetActiveTake(item);
+                -------------------------------------------------------------------------
+                
+                ----#8---Item Fx Tail Restore--------------------------------------------
                 reaper.SNM_SetIntConfigVar("itemfxtail",itemfxtail);
+                -------------------------------------------------------------------------
+                
+                ----#10---Delete Take All Stretch Markers--------------------------------
                 local NumStrMar = reaper.GetTakeNumStretchMarkers(Take);
                 reaper.DeleteTakeStretchMarkers(Take, 0, NumStrMar);
+                -------------------------------------------------------------------------
+                
+                ----#11---Reset play rate / Reset Offset---------------------------------
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_STARTOFFS",0);
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_PLAYRATE",1);
                 local retval,section,start,length,fade,reverse = reaper.BR_GetMediaSourceProperties(Take_X);
                 reaper.BR_SetMediaSourceProperties(Take,section,start,length,fade,reverse);
+                -------------------------------------------------------------------------
+                
+                ----#5---Enable and Recover Envelope-------------------------------------
                 if EnvelopePresent then;
                     for i = 1,CountTakeEnv do;
                         local EnvTake = reaper.GetTakeEnvelope(Take,i-1);
@@ -742,20 +1049,35 @@ local VersionMod = "v.2.5.4"
                         reaper.BR_EnvFree(EnvAlloc,true);
                     end;
                 end;
+                -------------------------------------------------------------------------
+                
+                ----#12---Change the file------------------------------------------------
                 local Take_X_Source = reaper.GetMediaItemTake_Source(Take_X);
                 local Filenamebuf = reaper.GetMediaSourceFileName(Take_X_Source,"");
                 reaper.BR_SetTakeSourceFromFile(Take,Filenamebuf,true);
+                -------------------------------------------------------------------------
+                
+                ----#7---Take properties Recover-----------------------------------------
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_PITCH",Pich);
                 reaper.SetMediaItemTakeInfo_Value(Take,"B_PPITCH",PreserPitch);
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_VOL",vol);
                 reaper.SetMediaItemTakeInfo_Value(Take,"D_PAN",pan);
                 reaper.SetMediaItemTakeInfo_Value(Take,"I_CHANMODE",Chanmode);
                 reaper.SetMediaItemTakeInfo_Value(Take,"I_PITCHMODE",PichMode);
+                -------------------------------------------------------------------------
+
+                ----13---Delete created Take -/-(Delete active take from items)----------
                 Arc_Module.Action(40129);
                 reaper.SetActiveTake(Take);
+                -------------------------------------------------------------------------
+
+                ----#6---Enable All Fx---------------------------------------------------
                 for i = 1, #FX_Enabled do;
                     reaper.TakeFX_SetEnabled(Take,i-1,FX_Enabled[i]);
                 end;
+                -------------------------------------------------------------------------
+
+                ----#3---Restore Select Media Items--------------------------------------
                 reaper.SelectAllMediaItems(0,0);
                 for i = 0, #Guid do; 
                     local item = reaper.BR_GetMediaItemByGUID(0,Guid[i]);
@@ -763,14 +1085,29 @@ local VersionMod = "v.2.5.4"
                         reaper.SetMediaItemSelected(item,1);
                     end;
                 end;
+                -------------------------------------------------------------------------
+
+                ---#2--------------------------------------------------------------------
                 reaper.Undo_EndBlock2(0,"RemoveStretchMarkersSavingTreatedWave",-1);
                 reaper.PreventUIRefresh(-195638945);
+                -------------------------------------------------------------------------
+                
+            ----#1-----------------------------------------------------------------------
             end;
         end;
+        ---
+        ----#14----------------
         reaper.UpdateArrange();
     end;
     Arc_Module.RemoveStretchMarkersSavingTreatedWave_Render_SWS=Arc_Module.RemoveStretchMarkersSavingTreatedWave_Render;
     RemoveStretchMarkersSavingTreatedWave_Render_SWS=Arc_Module.RemoveStretchMarkersSavingTreatedWave_Render;
+    -- Удалить Маркеры Растяжки, Сохраняя Обработанную Волну (Render)
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 110 ---- SaveSelTracksGuidSlot --------------------------------------------------
+    --- 110 --- RestoreSelTracksGuidSlot ------------------------------------------------
     function Arc_Module.SaveSelTracksGuidSlot(Slot);
         local CountSelTrack = reaper.CountSelectedTracks(0);
         if CountSelTrack == 0 then return false end;
@@ -784,10 +1121,15 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.SaveSelTracksGuidSlot_SWS = Arc_Module.SaveSelTracksGuidSlot;
     SaveSelTracksGuidSlot_SWS = Arc_Module.SaveSelTracksGuidSlot;
+    ---------------------------------------------------------
+
+
+
     function Arc_Module.RestoreSelTracksGuidSlot(Slot,clean);
        local tr = reaper.GetTrack(0,0);
        reaper.SetOnlyTrackSelected(tr);
        reaper.SetMediaTrackInfo_Value(tr,"I_SELECTED",0);
+       ---
        local t = _G['SaveSelTr_'..Slot];
        if t then;
            for i = 1, #t do;
@@ -804,6 +1146,16 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.RestoreSelTracksGuidSlot_SWS = Arc_Module.RestoreSelTracksGuidSlot;
     RestoreSelTracksGuidSlot_SWS = Arc_Module.RestoreSelTracksGuidSlot;
+    -- SaveSelTracksGuidSlot("Slot_1");
+    -- RestoreSelTracksGuidSlot("Slot_1",true);
+    -- SaveSelTracksGuidSlot("Slot_2");
+    -- RestoreSelTracksGuidSlot("Slot_2",false);
+    -- RestoreSelTracksGuidSlot("Slot_2",true);
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 109 ------------- GetPreventSpectralPeaksInTrack --------------------------------
     function Arc_Module.GetPreventSpectralPeaksInTrack(Track)
         local _,str = reaper.GetTrackStateChunk(Track,"",false);
         local Perf = str:match('PERF (%d+)');
@@ -811,7 +1163,12 @@ local VersionMod = "v.2.5.4"
         return false
     end
     GetPreventSpectralPeaksInTrack = Arc_Module.GetPreventSpectralPeaksInTrack;
-    --- 108 ---SetPreventSpectralPeaksInTrack ----- [[Perf = true;false]] 
+    -- ПОЛУЧИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 108 ---SetPreventSpectralPeaksInTrack ----- [[Perf = true;false]] ---------------
     function Arc_Module.SetPreventSpectralPeaksInTrack(Track,Perf);
         if Perf == true then Perf = 4 end;
         if Perf == false then Perf = 0 end;
@@ -820,7 +1177,13 @@ local VersionMod = "v.2.5.4"
         reaper.SetTrackStateChunk(Track,str2,false);
     end;
     SetPreventSpectralPeaksInTrack = Arc_Module.SetPreventSpectralPeaksInTrack;
-    function Arc_Module.CloseAllFxInAllItemsAndAllTake(chain,float);
+    -- УСТАНОВИТЬ ПРЕДОТВРАЩЕНИЕ СПЕКТРАЛЬНЫХ ПИКОВ В ТРЕКЕ
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 107 --------------CloseAllFxInAllItemsAndAllTake----true;false;------------------
+    function Arc_Module.CloseAllFxInAllItemsAndAllTake(chain,float);--true;false;
         local CountItem = reaper.CountMediaItems(0);
         if CountItem == 0 then Arc_Module.no_undo() return -1 end;
         for j = CountItem-1,0,-1 do;
@@ -842,6 +1205,13 @@ local VersionMod = "v.2.5.4"
         return true
     end;
     CloseAllFxInAllItemsAndAllTake = Arc_Module.CloseAllFxInAllItemsAndAllTake;
+    -- Закрыть Все Fx Во Всех Элементах  И Во всех тейках
+    -- Close All Fx In All Elements And In All Takes
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 106 -----------SetShow_HideTrackMCP----------------------------------------------
     function Arc_Module.SetShow_HideTrackMCP(Track,show_hide--[[0;1]]);
         local _,str = reaper.GetTrackStateChunk(Track,"",true);
         local SHOWINMIX = str:match('SHOWINMIX %d+');
@@ -849,7 +1219,14 @@ local VersionMod = "v.2.5.4"
         reaper.SetTrackStateChunk(Track, str, true);
     end;
     SetShow_HideTrackMCP = Arc_Module.SetShow_HideTrackMCP;
-    function Arc_Module.CloseAllFxInAllTracks(chain, float)
+    -- Show Hide Track in Mixer (MCP)
+    -- Показать Скрыть дорожку в микшере (MCP)
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 105 -------------- CloseAllFxInAllTracks ----------------------------------------
+    function Arc_Module.CloseAllFxInAllTracks(chain, float)--true,false
         local CountTr = reaper.CountTracks(0)
         if CountTr == 0 then 
             reaper.ReaScriptError("No Tracks in project") 
@@ -869,21 +1246,35 @@ local VersionMod = "v.2.5.4"
         end
     end
     CloseAllFxInAllTracks = Arc_Module.CloseAllFxInAllTracks;
+    -- Закрыть Все Fx На Всех Дорожках
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 247 ----------- CloseToolbarByNumber --------------------------------------------
     function Arc_Module.CloseToolbarByNumber(ToolbarNumber--[[1-16]]);
         local Toolbar_T = {[0]=41651,41679,41680,41681,41682,41683,41684,41685,
                           41686,41936,41937,41938,41939,41940,41941,41942,41943};
         reaper.PreventUIRefresh(6548);
         local stateTopDock = (reaper.GetToggleCommandState(41297)==1);
         if stateTopDock then reaper.Main_OnCommand(41297,0) end;
+        ---
         local state = reaper.GetToggleCommandState(Toolbar_T[ToolbarNumber]);
         if state == 1 then;
             reaper.Main_OnCommand(Toolbar_T[ToolbarNumber],0);
         end;
+        ---
         local stateTopDock_End = (reaper.GetToggleCommandState(41297)==1);
         if stateTopDock_End ~= stateTopDock then reaper.Main_OnCommand(41297,0) end; 
         reaper.PreventUIRefresh(-6548);
     end;
     CloseToolbarByNumber = Arc_Module.CloseToolbarByNumber;
+    -- Закрыть Панель Инструментов По Номеру
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 217 ------------ GetMediaItemInfo_Value -----------------------------------------
     function Arc_Module.GetMediaItemInfo_Value(item, parmname);
         if parmname == "END" or parmname == "D_END" then return
             reaper.GetMediaItemInfo_Value(item,"D_POSITION")+
@@ -893,6 +1284,12 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     GetMediaItemInfo_Value = Arc_Module.GetMediaItemInfo_Value;
+    -- D_END :Получить конечную позицию элемента от начала проекта в секундах
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 217 ----------- SetMediaItemInfo_Value -----------------------------------------
     function Arc_Module.SetMediaItemInfo_Value(item, parmname,val);
         if parmname == "END" or parmname == "D_END" then;
             local pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION"); 
@@ -902,6 +1299,12 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     SetMediaItemInfo_Value = Arc_Module.SetMediaItemInfo_Value;
+    -- D_END :Установить конечную позицию элемента от начала проекта в секундах
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 103 ---------- Get_Format_ProjectGrid -------------------------------------------
     function Arc_Module.Get_Format_ProjectGrid(divisionIn)
         local grid_div
         if divisionIn < 1 then
@@ -917,6 +1320,12 @@ local VersionMod = "v.2.5.4"
         return grid_div
     end
     Get_Format_ProjectGrid = Arc_Module.Get_Format_ProjectGrid;
+    -- Форматирует значение сетки проекта в удобочитаемую форму
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 102 --------- CountTrackSelectedMediaItems --------------------------------------
     function Arc_Module.CountTrackSelectedMediaItems(track);
         local CountTrItems = reaper.CountTrackMediaItems(track);
         local count = 0;
@@ -928,6 +1337,12 @@ local VersionMod = "v.2.5.4"
         return count;
     end;
     CountTrackSelectedMediaItems = Arc_Module.CountTrackSelectedMediaItems;
+    --Количество в треке Выбранных Элементов
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 101 ---------GetTrackSelectedMediaItems------------------------------------------
     function Arc_Module.GetTrackSelectedMediaItems(track,idx);
         local CountTrItems = reaper.CountTrackMediaItems(track);
         local count = -1;
@@ -939,12 +1354,19 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     GetTrackSelectedMediaItems = Arc_Module.GetTrackSelectedMediaItems;
+    -- Получить в треке Выбранный Элемент
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 244 ------------ GetSetHeigthMCPTrack -------------------------------------------
     function Arc_Module.GetSetHeigthMCPTrack(track,numb,set);
         local ret,err = pcall(reaper.GetTrackGUID,track);if not ret then error("GetSetHeigthMCPTrack - "..err,2)end;
         if set~=0 and set~=1 then error("GetSetHeigthMCPTrack - expected 0 or 1 got "..(tonumber(set)or type(set)),2)end;
         if set == 1 then;
             if type(numb)~="number"then error("bad argument #2 to 'GetSetHeigthMCPTrack' (number expected, got "..type(numb)..")",2)end;
         end;
+        ---
         local retval,str = reaper.GetTrackStateChunk(track,"",false);
         local heigth = string.match(str,"SHOWINMIX%s+%S-%s+(%S-)%s");
         if set == 1 then;
@@ -959,6 +1381,14 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     GetSetHeigthMCPTrack = Arc_Module.GetSetHeigthMCPTrack;
+    -- Вернет высоту трека от 0 до 1;  0 самый высокий, 1 самый маленький.
+    -- numb - от 0 до 1;  0 самый высокий, 1 самый маленький.
+    -- set - set 1; get 0.
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 245 -------------- openFileURL --------------------------------------------------
     function Arc_Module.openFileURL(pathUrl);
         if type(pathUrl)~="string"then error("openFileURL - expected string got "..type(pathUrl),2)end;
         if #pathUrl:gsub(" ","") <= 0 then error("openFileURL - expected at least one symbol, got zero symbol.",2)end;
@@ -970,6 +1400,13 @@ local VersionMod = "v.2.5.4"
         end;
     end;
     openFileURL = Arc_Module.openFileURL;
+    -- Открыть файл или url
+    -- To open a file or url
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 249 --------- / GetIDByScriptName / ---------------------------------------------
     function Arc_Module.GetIDByScriptName(scriptName,scriptPath); 
         if type(scriptName)~="string"then error("expects a 'string', got "..type(scriptName),2) end;
         if type(scriptPath)~= "string" or #scriptPath:gsub('%s','')== 0 then scriptPath = nil end;
@@ -992,6 +1429,14 @@ local VersionMod = "v.2.5.4"
        return -1;   
     end;  
     GetIDByScriptName = Arc_Module.GetIDByScriptName;
+    -- Получить Id по имени скрипта или кастом экшена
+    -- scriptPath: Необязательный параметр, на случай если присутствует несколько скриптов с одинаковым именем
+    -- В случае неудачи вернет -1
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 246 --------- / GetScriptNameByID / ---------------------------------------------
     function Arc_Module.GetScriptNameByID(id);
         if type(id)~="string"then error("expects a 'string', got "..type(id),2) end;
         local file = io.open(reaper.GetResourcePath()..'/reaper-kb.ini','r');
@@ -1001,26 +1446,39 @@ local VersionMod = "v.2.5.4"
         text:match('"'..id..'"%s-"Custom:%s-.(.-)"')or-1;
     end;
     GetScriptNameByID = Arc_Module.GetScriptNameByID;
+    -- Получить имя скрипта или кастом экшена по ID
+    -- В случае неудачи вернет -1
+    --====End===============End===============End===============End===============End====
+
+
+
+    --251-------- StartupScript() -------------------------------------------------------
      function Arc_Module.StartupScript(nameAction,id,nameFun,Clean);
+        -----
         if type(nameAction)~="string"then;error("#1 expects 'string', got "..type(nameAction),2)end;
         local nameAction = nameAction:gsub('[%s%p]',''):upper();
         if #nameAction < 5 then;error("#1 expected a string 5 or more characters, got "..#nameAction,2)end;
+        ----
         if Clean ~= "ALL" and Clean ~= "ONE" then;
             local CheckId=reaper.NamedCommandLookup(id);if CheckId<1 then error("#2 enter the relevant ID",2)end;
         end;
+        ----
         local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
         if ScrName:match("^Archie_")or ScrName:match("^Arc_")and not nameFun then nameFun = "Archie"end;
         if type(nameFun)~="string"then;error("#3 expects 'string', got "..type(nameFun),2)end;
-        local nameFun=nameFun:gsub('[%s%p]',''):gsub('.','_%0',1)
+        local nameFun=nameFun:gsub('[%s%p]',''):gsub('.','_%0',1)--:upper();
         if #nameFun < 7 then;error("expected a string 6 or more characters, got "..#nameFun-1,2)end;
+        ------
         if Clean == "ALL" then goto ALL end; if Clean == "ONE" then goto ONE end;
         do;
+            ------
             local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
             if not file then
                 io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w'):close();
                 file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
             end; local text = file:read('a')..'\n'; file:close();
             text = text:gsub("\n%s-\n%s-\n%s-\n","\n\n\n");
+            ------
             local CheckFun,var2;
             for var in text:gmatch(".-\n") do;
                 if var:match("^%s-function%s-StartupScript"..nameFun.."%s-%(%s-%)")then;
@@ -1029,16 +1487,21 @@ local VersionMod = "v.2.5.4"
                 end;
                 var2 = (var2 or "")..var;
             end;
+            -----
             if not CheckFun then;
                 var2 = text.."\n\nfunction StartupScript"..nameFun.."()\n"..
                 nameAction.."=reaper.Main_OnCommand(reaper.NamedCommandLookup('"..id.."'),0)\n"..
                 "end StartupScript"..nameFun.."()";
             end;
+            --- / Записываем в файл / ------
             local header = var2;
             file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
             file:write(header); file:close();
+            ---------------------------------
+            ---------------------------------
             local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
             local text = file:read('a')..'\n'; file:close();
+            ---
             local T = {}; local var2,X;
             for var in text:gmatch(".-\n") do;
                 if StartF and var:match("^.-StartupScript"..nameFun.."%s-%(%s-%)")then;StartF=nil T={}StartF=nil end;
@@ -1054,14 +1517,18 @@ local VersionMod = "v.2.5.4"
                     end; X = nil;
                 end; var2 = (var2 or "")..var;
             end;
+            --- / Записываем в файл / ------
             local header = var2;
             file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
             file:write(header); file:close();
+            -------------------------------- 
+            --------------------------------
         end;
         ::ALL::::ONE::
         if Clean == "ALL" or Clean == "ONE" then;
             local file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'r');
             if not file then return end; local text = file:read('a')..'\n'; file:close();
+            ----------
             if Clean == "ALL" then;
                 for var in text:gmatch(".-\n") do;
                     if StartF and var:match("^.-StartupScript"..nameFun.. "%s-%(%s-%)")then;StartF = 2 end;
@@ -1072,6 +1539,7 @@ local VersionMod = "v.2.5.4"
                     end;
                     var2 = (var2 or "")..var;
                 end;
+                ----
             elseif Clean == "ONE" then;
                 for var in text:gmatch(".-\n") do;
                     if StartF and var:match("^.-StartupScript"..nameFun.. "%s-%(%s-%)")then;StartF = 2 end;
@@ -1082,20 +1550,47 @@ local VersionMod = "v.2.5.4"
                     end;
                     var2 = (var2 or "")..var;
                 end;
+                ----
             end;
+            ----------
+            --- / Записываем в файл / ------
             local header = var2;
             file = io.open(reaper.GetResourcePath().."/Scripts/__startup.lua",'w');
             file:write(header); file:close(); 
         end;
+        --------------------------------
+        --------------------------------
     end;
     StartupScript = Arc_Module.StartupScript;
+    -- Добавить скрипт в автозагрузку
+    -- nameAction: Имя экшена или скрипта добавляемого в автозагрузку
+    -- id: id экшена или скрипта добавляемого в автозагрузку
+    -- nameFun: Имя с которым будет создана функция в автозагрузке, обычно это свой ник. Например: "ArchieScript" *#8
+    -- Clean: "ONE" удалить действие из автозагрузки из функции установленной в nameFun и с id установленного в id.(nameAction*)
+    --        "ALL" удалить все что в функции nameFun (id при ALL равен пустой строкой "").(nameAction*)
+    --  *nameAction при очистке может быть любой строкой(так как этот параметр не работает), но не менее 6 символов, для того что бы пропустила функция,.
+    -- Пример:
      --local scrPath,scrName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)")
+     --local ID = Arc.GetIDByScriptName(scrName,scrPath); 
+     --if ID == -1 or type(ID) ~= "string" then Arc.no_undo()return end;
+     --Arc.StartupScript(scrName,ID,"ArchieScript");
+    --====End===============End===============End===============End===============End====
+    
+    
+    
+    --- 253 -----------------------------------------------------------------------------
     function Arc_Module.GetTrackAutoRecArm(Track);
         local retval, str = reaper.GetTrackStateChunk(Track,"",false);
         local str2 = tonumber(str:match("AUTO_RECARM%s-(%d+)"));
         if str2 ~= 1 then return 0 else return 1 end;
     end;
     GetTrackAutoRecArm = Arc_Module.GetTrackAutoRecArm;
+    -- Получить значение автозаписи
+    --====End===============End===============End===============End===============End====
+    
+    
+    
+    --- 253 -----------------------------------------------------------------------------
     function Arc_Module.SetTrackAutoRecArm(Track,val);
         if tonumber(val)and val >= 1 or val == true then val = 1 else val = 0 end;
         local retval, str = reaper.GetTrackStateChunk(Track,"",false);local str2;
@@ -1107,17 +1602,24 @@ local VersionMod = "v.2.5.4"
         reaper.SetTrackStateChunk(Track,str2,false);
     end;
     SetTrackAutoRecArm = Arc_Module.SetTrackAutoRecArm;
+    -- Установите автозапись / 0-1 / true-false;
+    --====End===============End===============End===============End===============End====
+    
+    
+    
+    --- 255 -----------------------------------------------------------------------------
     function Arc_Module.SetHeightTrack_Env_TCP(Track,Height,minSize,resetSize,PercentageDefault);
         if not tonumber(minSize) then minSize = 24 end;
         if not tonumber(PercentageDefault) then PercentageDefault = 0.75 end;
-        local CountTrEnv = reaper.CountTrackEnvelopes(Track);
+        local Pcall,CountTrEnv = pcall(reaper.CountTrackEnvelopes,Track);
+        if not Pcall then error(CountTrEnv,2)end;
         local TotalHeight,countEnv,countTrackCustomSize = 0,0,0;
         for i = 1,CountTrEnv do;
             local env = reaper.GetTrackEnvelope(Track,i-1);
             local retval, str = reaper.GetEnvelopeStateChunk(env,"",false);
             local visEnvTr,visInline = str:match("VIS%s-(%d+)%s-(%d+)");
             local visibleEnvTr = tonumber(visEnvTr);
-            local visibleInline = tonumber(visInline); 
+            local visibleInline = tonumber(visInline); --1-track/0-line
             local heightEnvTr = tonumber(str:match("LANEHEIGHT%s-(%d+)%s"));
             if visibleEnvTr == 1 then;
                 if visibleInline == 1 then;
@@ -1154,9 +1656,47 @@ local VersionMod = "v.2.5.4"
             end; 
             heightSet = minSize;      
         end;
-        return reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
+        local retval = reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
+        reaper.TrackList_AdjustWindows(false);
+        local newHeigth = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
+        return retval,newHeigth;
     end;
     SetHeightTrack_Env_TCP = Arc_Module.SetHeightTrack_Env_TCP;
+    -- Height: Высота в пикселях которую нужно установить
+    -- minSize: минимальный размер трека(по умолчанию 24)
+    -- resetSize: = 1 - при уменьшении env трека с пользовательской высотой, при достижении minSize сбросить в 0 (по умолчанию 0)
+    -- PercentageDefault: Процент погибающей по умолчанию относительно трека TCP(по умолчанию 0.75)
+    -- minSize,resetSize,PercentageDefault: Необязательные параметры
+    -- Вернет true в случае успеха и новый размер трека который удалось установить
+    --====End===============End===============End===============End===============End====
+
+
+
+
+
+
+
+
+
+
+    --===================================================================================
+    --         ##       ##   ##    #####   ##        ##       ##   ##    #####    ##   --
+    --        ##       ##   ##   ######   ##        ##       ##   ##   ######    ##    --
+    --       ##       ##   ##  ##   ##   ##        ##       ##   ##  ##   ##    ##     --
+    --      ##       ##   ##  #######             ##       ##   ##  #######            --
+    --     ######   #######  #######   ##        ######   #######  #######    ##       --
+    --    ########   ####   ##   ##   ##        ########   ####   ##   ##    ##        --
+    --===================================================================================
+
+
+
+
+
+
+
+    
+
+    --- 247 ----------- If_Equals_Or(EqualsToThat,...); ------------------------------------
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
@@ -1165,6 +1705,15 @@ local VersionMod = "v.2.5.4"
     end;
     Arc_Module.If_Equals = Arc_Module.If_Equals_Or;
     If_Equals_Or = Arc_Module.If_Equals_Or;
+    -- Сократить условие. Вернет true при совпадении, иначе false.
+    -- Пример:
+    -- if item == item_1 or item == item_2 or item == item_3 or item == item_4 then код end;
+    -- if If_Equals(item, item_1, item_2, item_3, item_4 ) then код end;
+    --====End===============End===============End===============End===============End====
+
+
+
+    --- 248 ----------- If_Equals_OrEx(EqualsToThat,...); ------------------------------------
     function  Arc_Module.If_Equals_OrEx(EqualsToThat,...);
         local T = {};
         for _,v in pairs{...} do;
@@ -1182,14 +1731,30 @@ local VersionMod = "v.2.5.4"
         return false;
     end;
     If_Equals_OrEx = Arc_Module.If_Equals_OrEx;
+    -- Тоже самое, что и  If_Equals_Or , только ищет значения еще и в таблицах
+    -- Сравнить значение EqualsToThat на совпадения со значением из таблицы или переданным аргументом
+    -- Пример:
+    -- EqualsToThat = "arg4"
+    -- T1 = {"arg1", "arg2"}
+    -- T2 = {"arg3", "arg4"}
+    -- Ar = "Arg5"
+    -- Boolean = If_Equals_OrEx(EqualsToThat , T1,T2,Ar) -- Вернет true
+    -- Boolean = If_Equals_OrEx(EqualsToThat , T1, Ar)   -- Вернет false
+    --====End===============End===============End===============End===============End====
+
+
+
+    -- 215 ---------- ValueFromMaxRepsIn_Table(array, min_max); -------------------------
     function Arc_Module.ValueFromMaxRepsIn_Table(array, min_max); 
         if not min_max then min_max = "MAX" end;
+        -- создаем статистику
         local t = {};
         for i = 1, #array do;
             local ti = array[i];
             if not t[ti] then t[ti] = 0 end;
             t[ti] = t[ti] + 1;
         end;
+        -- находим к-во максимальных вхождений
         local max = 0;
         local value;
         for key, val in pairs(t) do;
@@ -1219,15 +1784,44 @@ local VersionMod = "v.2.5.4"
         return(value);
     end;
     ValueFromMaxRepsIn_Table = Arc_Module.ValueFromMaxRepsIn_Table;
+    -- Вернет значение из максимальных повторений в таблице.
+    -- array = таблица
+    -- min_max = "MIN" , "MAX" , "RANDOM"
+    -- пример:
+    -- t1{1,2,3,4,5,6,7}; вернет false - повторений нет
+    -- t2{1,2,3,3,4,5,6}; вернет 3; min_max необязателен
+    -- t3{1,1,2,2,3,4,5}; вернет 1; если min_max = "MIN", 2 если min_max = "MAX",случайное число 1 или 2 если min_max = "RANDOM"
+    -- t4{1,1,2,2,5,5,5}; вернет 5; min_max необязателен
+    -- t5{1,2,5,5,1,1,5}; вернет 1 или 5 взависимости от min_max (читать t3)
+    --====End===============End===============End===============End===============End====
+
+
+
+    --230------------------- randomOfVal(...) -------------------------------------------
     function Arc_Module.randomOfVal(...);
         local t = {...};
         local random = math.random(#t); 
         return t[random];
     end;
     randomOfVal = Arc_Module.randomOfVal;
+    -- Вернет случайное из значений
+    -- пример: Val = randomOfVal("one","two",1,2)
+    -- Вывод: "one" или "two" или 1 или 2
+    --====End===============End===============End===============End===============End====
+
+
+
+    --230------invert_number-------------------------------------------------------------
     function Arc_Module.invert_number(X);
         local X = X - X * 2;
         return X;
     end;
     invert_number = Arc_Module.invert_number;
+    -- инвертировать число
+    --====End===============End===============End===============End===============End====
+ 
+
+
+    --================
     return Arc_Module;
+    --================
