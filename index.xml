@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="066e1e10ac0b3031983babcf641c21d04cd1a4e5">
+<index version="1" name="Archie-ReaScripts" commit="5a0f97aa2f6db0dcc8eb0c95bb3cd6dfef6e6509">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -276,6 +276,12 @@ LUA_Lib
       </version>
       <version name="2.5.3" author="Archie" time="2019-09-06T16:01:54Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/3ed33f66854e9b3abebad1b5a09d91e9ddc2238c/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.5.4" author="Archie" time="2019-09-09T14:38:24Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/a891af34eeb14e71be0ac872d2a97b883cc19698/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.5.5" author="Archie" time="2019-09-10T05:56:26Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/5a0f97aa2f6db0dcc8eb0c95bb3cd6dfef6e6509/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -1012,6 +1018,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.04 [12.07.2019]
     No changes]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9273c609f0806f1e09e257bc3080a4f8fb3e7020/MAIN/Gui/Archie_Gui;%20%20Duplicate%20selected%20items%20to%20time%20selection%20relative%20given%20division%20.lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2019-09-09T14:38:24Z">
+        <changelog><![CDATA[v.1.05 [09.09.2019]
+    fixed bug when enabled «Trim behind items when editing»]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a891af34eeb14e71be0ac872d2a97b883cc19698/MAIN/Gui/Archie_Gui;%20%20Duplicate%20selected%20items%20to%20time%20selection%20relative%20given%20division%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Gui;  Show clock window.lua" type="script" desc="Show clock window">
