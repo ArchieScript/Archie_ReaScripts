@@ -1,9 +1,9 @@
-local VersionMod = "v.2.5.7"
+local VersionMod = "v.2.5.9"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.7
+   * Version:     2.5.9
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -60,7 +60,7 @@ local VersionMod = "v.2.5.7"
    *      v.251   + StartupScript(function_name,id);
    *      v.253   + GetTrackAutoRecArm(Track);
    *      v.253   + SetTrackAutoRecArm(Track,val);
-   *      v.255   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minSize,resetSize,PercentageDefault);
+   *      v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1107,12 +1107,13 @@ local VersionMod = "v.2.5.7"
         reaper.SetTrackStateChunk(Track,str2,false);
     end;
     SetTrackAutoRecArm = Arc_Module.SetTrackAutoRecArm;
-    function Arc_Module.SetHeightTrack_Env_TCP(Track,Height,minSize,resetSize,PercentageDefault);
-        if not tonumber(minSize) then minSize = 24 end;
+    function Arc_Module.SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault); 
+        if not tonumber(minHeigth) then minHeigth = 24 end;
         if not tonumber(PercentageDefault) then PercentageDefault = 0.75 end;
         local Pcall,CountTrEnv = pcall(reaper.CountTrackEnvelopes,Track);
         if not Pcall then error(CountTrEnv,2)end;
-        local TotalHeight,countEnv,countTrackCustomSize = 0,0,0;
+        if reaper.GetMediaTrackInfo_Value(Track,"I_WNDH")== Height then return end;
+        local CustomH_EnvTr, TotalHeight, countEnv,ret = {},0,0;
         for i = 1,CountTrEnv do;
             local env = reaper.GetTrackEnvelope(Track,i-1);
             local retval, str = reaper.GetEnvelopeStateChunk(env,"",false);
@@ -1126,37 +1127,45 @@ local VersionMod = "v.2.5.7"
                         countEnv = countEnv + 1;
                     elseif tonumber(heightEnvTr) and heightEnvTr ~= 0 then;
                         TotalHeight = TotalHeight + heightEnvTr;
-                        countTrackCustomSize = countTrackCustomSize + 1;
+                        CustomH_EnvTr[#CustomH_EnvTr+1] = env;
                     end;
                 end;
             end; 
         end;
+        if ((Height-TotalHeight)-(countEnv*minHeigth)) < 30 then PercentageDefault = 1 end;
         local heightSet = (Height - TotalHeight) / (1+(PercentageDefault*countEnv));
-        if heightSet < minSize and countTrackCustomSize == 0 then;
-            heightSet = minSize;
-        elseif heightSet < minSize and countTrackCustomSize > 0 then;
-            local reduceEnv = (minSize - heightSet) / countTrackCustomSize;
-            for i = 1,CountTrEnv do;
-                local env = reaper.GetTrackEnvelope(Track, i-1);
-                local retval, str = reaper.GetEnvelopeStateChunk(env,"",false);
-                local visEnvTr,visInline = str:match("VIS%s-(%d+)%s-(%d+)");
-                if tonumber(visInline) == 1 then;
-                    if tonumber(visEnvTr) == 1 then;
-                        local heightEnvTr = tonumber(str:match("LANEHEIGHT%s-(%d+)%s"))or 0;
-                        if heightEnvTr > 0 then;
-                            local newHeightEnvTr = heightEnvTr - reduceEnv;
-                            if resetSize == 1 then resetSize = 0 else resetSize = minSize end;
-                            if newHeightEnvTr <= minSize then newHeightEnvTr = resetSize end;
-                            str = str:gsub("LANEHEIGHT%s-%d+","LANEHEIGHT "..newHeightEnvTr);
-                            reaper.SetEnvelopeStateChunk(env,str,false);  
-                        end;
+        reaper.PreventUIRefresh(10);
+        if heightSet < minHeigth and #CustomH_EnvTr == 0 then;
+            heightSet = minHeigth; 
+        elseif heightSet < minHeigth and #CustomH_EnvTr > 0 then;
+            local reduceEnv = (TotalHeight-(Height-(minHeigth*(countEnv+1))))/#CustomH_EnvTr;
+            heightSet = minHeigth;
+            local removeEnv,repeatEnvRecount,t;
+            repeat;
+                repeatEnvRecount = nil;
+                for i = #CustomH_EnvTr,1,-1 do;
+                    local retval,str = reaper.GetEnvelopeStateChunk(CustomH_EnvTr[i],"",false);
+                    local heightEnvTr = tonumber(str:match("LANEHEIGHT%s-(%d+)%s"))or 0;
+                    local newHeightEnvTr = heightEnvTr - reduceEnv;
+                    if newHeightEnvTr <= minHeigth then;
+                        repeatEnvRecount = (repeatEnvRecount or 0)+(minHeigth - newHeightEnvTr);
+                        if resetHeigthEnv == 1 then newHeightEnvTr = 0 else newHeightEnvTr = minHeigth end;
+                        removeEnv = true;
                     end;
-                end;
-            end; 
-            heightSet = minSize;      
+                    local str = str:gsub("LANEHEIGHT%s-%d+","LANEHEIGHT "..newHeightEnvTr);
+                    reaper.SetEnvelopeStateChunk(CustomH_EnvTr[i],str,false);
+                    if removeEnv then table.remove(CustomH_EnvTr,i)removeEnv = nil end;
+                end; 
+                if repeatEnvRecount then reduceEnv = repeatEnvRecount / #CustomH_EnvTr end;
+                t = (t or 0)+1 if t == 1e+6 then break end;
+            until not repeatEnvRecount;
         end;
-        return reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
-    end;
+        if reaper.GetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE") ~= heightSet then;
+            ret = reaper.SetMediaTrackInfo_Value(Track,"I_HEIGHTOVERRIDE",heightSet);
+        end;
+        reaper.PreventUIRefresh(-10);
+        return ret;
+    end;                
     SetHeightTrack_Env_TCP = Arc_Module.SetHeightTrack_Env_TCP;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
@@ -1232,3 +1241,4 @@ local VersionMod = "v.2.5.7"
     end;
     invert_number = Arc_Module.invert_number;
     return Arc_Module;
+
