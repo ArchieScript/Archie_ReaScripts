@@ -1,9 +1,9 @@
-local VersionMod = "v.2.5.9"
+local VersionMod = "v.2.6.0"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.5.9
+   * Version:     2.6.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -11,7 +11,7 @@ local VersionMod = "v.2.5.9"
    * 
 
    * Changelog:   
-   *
+   * 
    *  REAPER_Lib
    *      v.108   + no_undo();
    *      v.108   + Action(id,...);
@@ -61,6 +61,7 @@ local VersionMod = "v.2.5.9"
    *      v.253   + GetTrackAutoRecArm(Track);
    *      v.253   + SetTrackAutoRecArm(Track,val);
    *      v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
+   *      v.260   + GetTrackByGUID(proj,Guid);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1167,6 +1168,17 @@ local VersionMod = "v.2.5.9"
         return ret;
     end;                
     SetHeightTrack_Env_TCP = Arc_Module.SetHeightTrack_Env_TCP;
+    function Arc_Module.GetTrackByGUID(proj,Guid);
+        for i = 1, reaper.CountTracks(proj) do;
+            local track = reaper.GetTrack(proj,i-1);
+            local retval,str = reaper.GetTrackStateChunk(track,"",false);
+            local TRACKID = str:match("TRACKID%s-("..(Guid:gsub("%p","%%%0"))..")");
+            if TRACKID == Guid then;
+                return track;
+            end;
+        end;
+    end;
+    GetTrackByGUID = Arc_Module.GetTrackByGUID;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
@@ -1241,4 +1253,3 @@ local VersionMod = "v.2.5.9"
     end;
     invert_number = Arc_Module.invert_number;
     return Arc_Module;
-
