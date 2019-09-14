@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Zoom TCP or Arrange Depending on focus to fit screen
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Масштабировать TCP или Arrange В зависимости от фокуса, по размеру экрана
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,7 +17,7 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+  (Repository Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.0 [12.09.2019]
+   *              v.1.01 [14.09.2019]
    *                + initialе
 --]]
     
