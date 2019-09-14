@@ -1,9 +1,9 @@
-local VersionMod = "v.2.6.0"
+local VersionMod = "v.2.6.2"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.6.0
+   * Version:     2.6.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -61,7 +61,6 @@ local VersionMod = "v.2.6.0"
    *      v.253   + GetTrackAutoRecArm(Track);
    *      v.253   + SetTrackAutoRecArm(Track,val);
    *      v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
-   *      v.260   + GetTrackByGUID(proj,Guid);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1004,7 +1003,7 @@ local VersionMod = "v.2.6.0"
     GetScriptNameByID = Arc_Module.GetScriptNameByID;
      function Arc_Module.StartupScript(nameAction,id,nameFun,Clean);
         if type(nameAction)~="string"then;error("#1 expects 'string', got "..type(nameAction),2)end;
-        local nameAction = nameAction:gsub('[%s%p]',''):upper();
+        local nameAction = nameAction:gsub('[%s%p]','_'):gsub('__','_'):gsub('__','_'):upper();
         if #nameAction < 5 then;error("#1 expected a string 5 or more characters, got "..#nameAction,2)end;
         if Clean ~= "ALL" and Clean ~= "ONE" then;
             local CheckId=reaper.NamedCommandLookup(id);if CheckId<1 then error("#2 enter the relevant ID",2)end;
@@ -1090,7 +1089,7 @@ local VersionMod = "v.2.6.0"
         end;
     end;
     StartupScript = Arc_Module.StartupScript;
-     --local scrPath,scrName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)")
+    -- local scrPath,scrName = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)")
     function Arc_Module.GetTrackAutoRecArm(Track);
         local retval, str = reaper.GetTrackStateChunk(Track,"",false);
         local str2 = tonumber(str:match("AUTO_RECARM%s-(%d+)"));
@@ -1168,17 +1167,6 @@ local VersionMod = "v.2.6.0"
         return ret;
     end;                
     SetHeightTrack_Env_TCP = Arc_Module.SetHeightTrack_Env_TCP;
-    function Arc_Module.GetTrackByGUID(proj,Guid);
-        for i = 1, reaper.CountTracks(proj) do;
-            local track = reaper.GetTrack(proj,i-1);
-            local retval,str = reaper.GetTrackStateChunk(track,"",false);
-            local TRACKID = str:match("TRACKID%s-("..(Guid:gsub("%p","%%%0"))..")");
-            if TRACKID == Guid then;
-                return track;
-            end;
-        end;
-    end;
-    GetTrackByGUID = Arc_Module.GetTrackByGUID;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
