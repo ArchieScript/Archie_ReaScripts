@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0457a96482446f271e449756a4d11452bd026707">
+<index version="1" name="Archie-ReaScripts" commit="175015b4b409abfef39a2f32aeede0d6d9d28f19">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -288,6 +288,15 @@ LUA_Lib
       </version>
       <version name="2.5.7" author="Archie" time="2019-09-10T08:23:37Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/0457a96482446f271e449756a4d11452bd026707/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.5.9" author="Archie" time="2019-09-11T18:13:47Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/94f5bfb278dce9ecae290b4b3b24698abf9ed44f/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.6.0" author="Archie" time="2019-09-12T08:51:46Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/9fb891ed53d84ef26841b2338954076327f6b743/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.6.2" author="Archie" time="2019-09-14T13:13:13Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -3693,83 +3702,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/078a7820ba3dcd3f5c31966230d8e1aac4e572de/MAIN/Track/Archie_Track;%20%20Volume%20up%20on%20selected%20tracks%20by%201%20dB.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (Ctrl + Click save restore)Smart">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [29.01.2019]
-+  Description inside
-+  Описание внутри]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-02-03T11:53:05Z">
-        <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
-+ Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20c60bc11cf6d7020900cbb8cb9731cf8e2f96b2/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2019-04-29T17:31:03Z">
-        <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
-+ Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1f385f6b8c0ad8febb509c3491f1467d9daa3194/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.05" author="Archie" time="2019-05-12T11:17:26Z">
-        <changelog><![CDATA[v.1.05 [12052019]
-  + Added the ability to not scale tracks with enabled 'Lock track height'
-  + Добавлена возможность не масштабировать треки с включенным "Lock track height"]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/359dc1b1db1185e8b03400509dc30270685a4572/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.07" author="Archie" time="2019-05-14T05:22:17Z">
-        <changelog><![CDATA[v.1.07 [14052019]
-  + Disable ctrl
-  + Отключить Ctrl]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.08" author="Archie" time="2019-05-14T12:38:06Z">
-        <changelog><![CDATA[v.1.08 [14.05.2019]
-  +! Fixed bug when the lock is enabled, the height of the track
-  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.09" author="Archie" time="2019-05-23T11:20:13Z">
-        <changelog><![CDATA[v.1.09 [22.05.2019]
-  + Added the ability to scroll to the first selected track
-  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(Ctrl%20+%20Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Zoom tracks in TCP to fit screen (If possible)(`).lua" type="script" desc="Zoom tracks in TCP to fit screen (If possible)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-28T11:55:30Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/445da1186d5a7d762207093cda09e9d50166d778/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-01-28T12:09:10Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f9d4f8f47ac339da7bae0648162c9b22b32ad139/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T08:46:16Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [28.01.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/56e592f4168797ba43bfea6eb4402534d889ad9c/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-02-03T11:53:12Z">
-        <changelog><![CDATA[+ Added the ability to adjust the indentation from the bottom  / v.1.03 [03.02.2019]
-+ Добавлена возможность регулирования отступа снизу  / v.1.03 [03.02.2019]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2627ed76677e9eab2958453df65fd0d2090eb477/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-      <version name="1.05" author="Archie" time="2019-05-12T11:17:26Z">
-        <changelog><![CDATA[v.1.05 [12052019]
-  + Added the ability to not scale tracks with enabled 'Lock track height'
-  + Добавлена возможность не масштабировать треки с включенным "Lock track height"]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/359dc1b1db1185e8b03400509dc30270685a4572/MAIN/Track/Archie_Track;%20%20Zoom%20tracks%20in%20TCP%20to%20fit%20screen%20(If%20possible)(%60).lua</source>
-      </version>
-    </reapack>
   </category>
   <category name="MAIN/Various">
     <reapack name="Archie_Var;  Copy selected files from media explorer to project subdirectory.lua" type="script" desc="Copy selected files from media explorer to project subdirectory">
@@ -3813,95 +3745,30 @@ v.1.0 [28.08.19]
         <source main="midi_editor" file="Archie_MidiEditor;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/51781afd7aa6da07f5192a579517ea468913c576/MAIN/Various/Archie_Var;%20%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
-        <changelog><![CDATA[v.1.00 [13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Var;  Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP and Arrange to fit screen(Ctrl+Click save restore)Smart(`)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
-        <changelog><![CDATA[v.1.00 [14.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-05-14T12:38:06Z">
-        <changelog><![CDATA[v.1.01 [14.05.2019]
-  +! Fixed bug when the lock is enabled, the height of the track
-  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-23T11:20:13Z">
-        <changelog><![CDATA[v.1.02 [22.05.2019]
-  + Added the ability to scroll to the first selected track
-  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
-        <changelog><![CDATA[v.1.00[13.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Var;  Zoom TCP or Arrange Depending on focus to fit screen(Ctrl+Click save restore)Smart(`).lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen (Ctrl + Click save restore)Smart(`)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.00" author="Archie" time="2019-05-14T05:22:17Z">
-        <changelog><![CDATA[v.1.00 [14.05.2019]
-  + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/969b55582de3d2cb1b37f46726ef7fd016954364/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-05-14T12:38:06Z">
-        <changelog><![CDATA[v.1.01 [14.05.2019]
-  +! Fixed bug when the lock is enabled, the height of the track
-  +! Исправлена ошибка при включенной блокировке высоты дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35135e81b942cde4d9a692677ba4f9e15d8e9bdc/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-05-23T11:20:13Z">
-        <changelog><![CDATA[v.1.02 [23.05.2019]
-  + Added the ability to scroll to the first selected track
-  + Добавлена возможность прокрутки до первой выбранной дорожки]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/763d76348efc2ffc26572447b1fa9fecdfa44253/MAIN/Various/Archie_Var;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen(Ctrl+Click%20save%20restore)Smart(%60).lua</source>
-      </version>
-    </reapack>
   </category>
   <category name="MAIN/View">
-    <reapack name="Arc_View; Toggle Zoom Arrange to fit screen - recover back.lua" type="script" desc="Toggle Zoom Arrange to fit screen - recover back">
+    <reapack name="Arc_View;  Zoom height full project - recover back.lua" type="script" desc="Zoom height full project - recover back">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-09-05T18:05:53Z">
-        <changelog><![CDATA[v.1.0 [06.09.19]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d092e001df253e57ddb1c750d2a1d2764bb610a9/MAIN/View/Arc_View;%20Toggle%20Zoom%20Arrange%20to%20fit%20screen%20-%20recover%20back.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-05T18:13:24Z">
-        <changelog><![CDATA[v.1.01 [06.09.19]
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.0 [14.09.19]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/de9dcd74be4307ca6585e0f619df68327bb07863/MAIN/View/Arc_View;%20Toggle%20Zoom%20Arrange%20to%20fit%20screen%20-%20recover%20back.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Arc_View;  Zoom width full project - recovery back.lua" type="script" desc="Zoom width full project - recovery back">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.01 [14.09.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
@@ -4135,6 +4002,54 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Toggle%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Zoom Arrange to fit screen.lua" type="script" desc="Zoom Arrange to fit screen">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.0 [14.09.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Zoom TCP and Arrange to fit screen.lua" type="script" desc="Zoom TCP and Arrange to fit screen">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.0 [14.09.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Zoom TCP or Arrange Depending on focus to fit screen.lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.0 [12.09.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Zoom TCP to fit screen.lua" type="script" desc="Zoom TCP to fit screen">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-14T13:13:13Z">
+        <changelog><![CDATA[v.1.0 [14.09.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
   </category>
