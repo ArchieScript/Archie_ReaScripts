@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="29c0d1a300e88f3ecd3466567d791addb27132f1">
+<index version="1" name="Archie-ReaScripts" commit="ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3758,6 +3758,13 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.01 [15.09.19]
+    ! Fix bug flickering button
+    ! Performance: Break previous copy "defer"
+    + Added ability to zoom on selected tracks]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
+      </version>
     </reapack>
     <reapack name="Arc_View;  Zoom width full project - recovery back.lua" type="script" desc="Zoom width full project - recovery back">
       <metadata>
@@ -3769,6 +3776,12 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [14.09.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.01 [15.09.19]
+    ! Fix bug flickering button
+    ! Performance: Break previous copy "defer"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
@@ -4027,6 +4040,11 @@ v.1.0 [28.08.19]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.01 [15.09.2019]
+  + Scroll selected tracks to the center]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Archie_View;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Zoom TCP or Arrange Depending on focus to fit screen.lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
       <metadata>
@@ -4055,6 +4073,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [14.09.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.01 [15.09.2019]
+  + Scroll selected tracks to the center]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
   </category>
@@ -4087,7 +4110,7 @@ v.1.0 [28.08.19]
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse cursor(snap relative).lua" type="script" desc="Duplicate selected events to mouse cursor(snap relative)">
+    <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse cursor(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -4097,6 +4120,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [01.09.19]
     + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/e797cf1037bdc807e6b67e8dc964eb999a6e056e/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+Performance: Script completely rewritten]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse position(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
@@ -4115,6 +4143,23 @@ v.1.0 [28.08.19]
 Bug fixed: Incorrect duplication when item not at beginning; / Undo action; ]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/88068ff65c04ebde45740ae9e50a1bd8563653be/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+Performance: Script completely rewritten]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Move selected events to mouse cursor(snap relative).lua" type="script" desc="Move selected events to mouse cursor(snap relative)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+Performance: Script completely rewritten]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Move selected events to mouse position(snap relative).lua" type="script" desc="Move selected events to mouse position(snap relative)">
       <metadata>
@@ -4131,6 +4176,11 @@ Bug fixed: Incorrect duplication when item not at beginning; / Undo action; ]]><
         <changelog><![CDATA[v.1.01 [02.09.19]
 Bug fixed: Incorrect duplication when item not at beginning; / Undo action; ]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/88068ff65c04ebde45740ae9e50a1bd8563653be/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+Performance: Script completely rewritten]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Mute note under mouse cursor.lua" type="script" desc="Mute note under mouse cursor">
