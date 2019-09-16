@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom height full project - recover back
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * О скрипте:   Масштабировать высоту под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,16 +19,17 @@
    *              Arc_Function_lua v.2.6.1+   Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.01 [15.09.19]
+   *              v.1.02 [16.09.19]
    *                  ! Fix bug flickering button
+   
+   *              v.1.01 [15.09.19]
    *                  ! Performance: Break previous copy "defer"
    *                  + Added ability to zoom on selected tracks
-   
    *              v.1.0 [14.09.19]
    *                  + initialе
 --]]
     
-    
+        
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -297,19 +298,19 @@
         local ToggleSaveHeight = tonumber(({reaper.GetProjExtState(0,extnameProj,"ToggleSaveHeight")})[2])or -1;
         local HeightAllTrack = GetHeightAllTrack();
         if HeightAllTrack ~= ToggleSaveHeight then;
+            reaper.SetToggleCommandState(sectionID,cmdID,1);
+            reaper.RefreshToolbar2(sectionID,cmdID);
             SaveHeightAllTrack();
             FitAllTracksToFullScreen(shrink,shrink_FullScreen)
             HeightAllTrack = GetHeightAllTrack();
             reaper.SetProjExtState(0,extnameProj,"ToggleSaveHeight",HeightAllTrack);
             scroll();
-            reaper.SetToggleCommandState(sectionID,cmdID,1);
-            reaper.RefreshToolbar2(sectionID,cmdID);
         else;
+            reaper.SetToggleCommandState(sectionID,cmdID,0);
+            reaper.RefreshToolbar2(sectionID,cmdID);
             reaper.SetProjExtState(0,extnameProj,"ToggleSaveHeight","");
             RestoreHeightAllTrack();
             scroll();
-            reaper.SetToggleCommandState(sectionID,cmdID,0);
-            reaper.RefreshToolbar2(sectionID,cmdID);
         end;
     end;
     -----------------------------------------------------

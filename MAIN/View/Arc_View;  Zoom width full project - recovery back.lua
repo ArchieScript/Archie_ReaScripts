@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom width full project - recovery back
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Масштабировать ширину под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,10 +18,11 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+   (Repository: Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.01 [15.09.19]
+   *              v.1.02 [16.09.19]
    *                  ! Fix bug flickering button
+    
+   *              v.1.01 [15.09.19]
    *                  ! Performance: Break previous copy "defer"
-   
    *              v.1.0 [14.09.19]
    *                  + initialе
 --]]
@@ -176,7 +177,10 @@
         if Toggle == 0 then ret = 0 SaveArrange_View = "" end;
         -----
         if ret == 0 and SaveArrange_View == "" then;
-        
+            
+            reaper.SetToggleCommandState(sectionID,cmdID,1);
+            reaper.RefreshToolbar2(sectionID,cmdID);
+            
             reaper.SetProjExtState(0,extname,"SaveArrange_View","");
             reaper.SetProjExtState(0,extname,"SaveFullArrange_Button","");
             
@@ -206,19 +210,16 @@
             
             reaper.UpdateTimeline();
             
-            reaper.SetToggleCommandState(sectionID,cmdID,1);
-            reaper.RefreshToolbar2(sectionID,cmdID);
             ---------------------
             local start_View,end_View = reaper.GetSet_ArrangeView2(0,0,0,0);
             reaper.SetProjExtState(0,extname,"SaveFullArrange_Button",start_View.."&&&"..end_View);
         else;
+            reaper.SetToggleCommandState(sectionID,cmdID,0);
+            reaper.RefreshToolbar2(sectionID,cmdID);
             local restStart, restEnd  = SaveArrange_View:match("(.+)&&&(.+)");
             Set_ArrangeView(0, restStart, restEnd);
             reaper.SetProjExtState(0,extname,"SaveArrange_View","");
-            reaper.SetProjExtState(0,extname,"SaveFullArrange_Button","");
-            
-            reaper.SetToggleCommandState(sectionID,cmdID,0);
-            reaper.RefreshToolbar2(sectionID,cmdID);
+            reaper.SetProjExtState(0,extname,"SaveFullArrange_Button",""); 
         end;
         --------------------------------------------------------------
     end;
