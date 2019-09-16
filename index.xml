@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4">
+<index version="1" name="Archie-ReaScripts" commit="065bf30e294dab960c84614d448450fd42fddc23">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3765,6 +3765,11 @@ v.1.0 [28.08.19]
     + Added ability to zoom on selected tracks]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-09-16T17:58:54Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+    ! Fix bug flickering button]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/065bf30e294dab960c84614d448450fd42fddc23/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
+      </version>
     </reapack>
     <reapack name="Arc_View;  Zoom width full project - recovery back.lua" type="script" desc="Zoom width full project - recovery back">
       <metadata>
@@ -3782,6 +3787,11 @@ v.1.0 [28.08.19]
     ! Fix bug flickering button
     ! Performance: Break previous copy "defer"]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-09-16T17:58:54Z">
+        <changelog><![CDATA[v.1.02 [16.09.19]
+    ! Fix bug flickering button]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/065bf30e294dab960c84614d448450fd42fddc23/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
