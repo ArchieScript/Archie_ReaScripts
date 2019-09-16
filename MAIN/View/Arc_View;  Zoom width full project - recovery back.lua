@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom width full project - recovery back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Масштабировать ширину под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,7 +18,11 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+   (Repository: Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.01 [14.09.19]
+   *              v.1.01 [15.09.19]
+   *                  ! Fix bug flickering button
+   *                  ! Performance: Break previous copy "defer"
+   
+   *              v.1.0 [14.09.19]
    *                  + initialе
 --]]
     
@@ -29,7 +33,7 @@
     
     
     
-    local SCROLL_RESET_SAVE = 1
+    local SCROLL_RESET_SAVE = 0
                         --  = 0 | НЕ СБРАСЫВАТЬ СОХРАНЕНИЯ ПРИ СКРОЛЛЕ 
                         --  = 1 | СБРОСИТЬ СОХРАНЕНИЯ ПРИ СКРОЛЛЕ
                                   -------------------------------
@@ -51,9 +55,9 @@
                     -------------------------------------------------------------
     
     
-    local OFF_TIME_SELECTION = 1
+    local OFF_TIME_SELECTION = 0
                     -- = 0 | МАСШТАБИРОВАТЬ ПО ВЫБОРУ ВРЕМЕНИ, ЕСЛИ УСТАНОВЛЕНО
-                    -- = 1 | ИГНОРИРОВАТЬ  ВЫБОР ВРЕМЕНИ
+                    -- = 1 | ИГНОРИРОВАТЬ ВЫБОР ВРЕМЕНИ
                             ----------------------------
                     -- = 0 | ZOOM BY TIME SELECTION IF INSTALLED
                     -- = 1 | IGNORE TIME SELECTION
@@ -87,6 +91,18 @@
     --------------------------------------------------------------
     local NullProject,ProjUserdata2;
     local function loop();
+        
+        ----- stop Double Script -------
+        if not ActiveDoubleScr then;
+            stopDoubleScr = (tonumber(reaper.GetExtState(extname,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(extname,"stopDoubleScr",stopDoubleScr,false);
+            ActiveDoubleScr = true;
+        end;
+        
+        local stopDoubleScr2 = tonumber(reaper.GetExtState(extname,"stopDoubleScr"));
+        if stopDoubleScr2 > stopDoubleScr then return end;
+        --------------------------------
+        
         local ret,SaveFull_But = reaper.GetProjExtState(0,extname,"SaveFullArrange_Button");
         local RestButStart, RestButEnd = SaveFull_But:match("(.+)&&&(.+)");
         local RestButStart = tonumber(RestButStart)or 0;
@@ -189,6 +205,9 @@
             Set_ArrangeView(0,START,END);
             
             reaper.UpdateTimeline();
+            
+            reaper.SetToggleCommandState(sectionID,cmdID,1);
+            reaper.RefreshToolbar2(sectionID,cmdID);
             ---------------------
             local start_View,end_View = reaper.GetSet_ArrangeView2(0,0,0,0);
             reaper.SetProjExtState(0,extname,"SaveFullArrange_Button",start_View.."&&&"..end_View);
@@ -197,6 +216,9 @@
             Set_ArrangeView(0, restStart, restEnd);
             reaper.SetProjExtState(0,extname,"SaveArrange_View","");
             reaper.SetProjExtState(0,extname,"SaveFullArrange_Button","");
+            
+            reaper.SetToggleCommandState(sectionID,cmdID,0);
+            reaper.RefreshToolbar2(sectionID,cmdID);
         end;
         --------------------------------------------------------------
     end;

@@ -17,7 +17,10 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+  (Repository Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.01 [14.09.2019]
+   *              v.1.01 [15.09.2019]
+   *                + Scroll selected tracks to the center
+   
+   *              v.1.0 [12.09.2019]
    *                + initialе
 --]]
     
@@ -235,6 +238,7 @@
         return HeightAll;
     end;
     -----------------------------------------------------
+        
     
     
     
@@ -242,13 +246,17 @@
     if CursorContext == 0 then;
     
     
-        local scrTrack;
-        for i = 1, reaper.CountTracks(0) do;
-            local Track = reaper.GetTrack(0,i-1);
-            local scr = reaper.GetMediaTrackInfo_Value(Track,"I_TCPY");
-            if scr >= 0 then scrTrack = (TrackX or Track) break end;
-            TrackX = Track;
+        -----------------------------------------------------
+        local function VerticalScrollSelectedTracksIntoView();
+            local track = reaper.GetTrack(0,0);
+            local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
+            if sel == 1 then;
+                reaper.CSurf_OnScroll(0,-1000);
+            else;
+                reaper.Main_OnCommand(40913,0)--Vertical scroll selected tracks into view
+            end;
         end;
+        -----------------------------------------------------
         
         ----
         local Restart = tonumber(reaper.GetExtState(filename,"Restart"))or -1;
@@ -266,10 +274,7 @@
                 reaper.CSurf_OnScroll(0, 1   );
                 reaper.CSurf_OnScroll(0, -1  );
             else;    
-                reaper.CSurf_OnScroll(0,-1000);
-                local scr = reaper.GetMediaTrackInfo_Value(scrTrack,"I_TCPY");
-                local scr = math.floor(math.abs(scr)/8);
-                reaper.CSurf_OnScroll(0, scr  );
+                VerticalScrollSelectedTracksIntoView();
             end;
             
             reaper.PreventUIRefresh(-1);

@@ -6,22 +6,24 @@
    * Category:    MidiEditor
    * Description: Duplicate selected events to mouse position(snap relative)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные события(ноты) в положение мыши(привязка относительно)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Antibio(Rmm)
-   * Gave idea:   Antibio(Rmm)
+   * Customer:    Antibio(Rmm)$
+   * Gave idea:   Antibio(Rmm)$
    *              https://rmmedia.ru/threads/134701/post-2391494
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.02 [16.09.19]
+   *              Performance: Script completely rewritten
+   
    *              v.1.01 [02.09.19]
    *              Bug fixed: Incorrect duplication when item not at beginning; / Undo action; 
-   
    *              v.1.0 [01.09.19]
    *                  + initialе
 --]]
@@ -39,6 +41,77 @@
     
     
     
+    -----------------------------------------------------------------------------------------  
+    -- Author of function: MPL http://github.com/MichaelPilyavskiy/ReaScripts/blob/571c10a9c3b6d78dc454fd7f69ec8f40fb81d9c8/MIDI%20editor/mpl_Smart%20duplicate%20events.lua#L27
+	 function ParseRAWMIDI(take)
+		local data = {}
+		local gotAllOK, MIDIstring = reaper.MIDI_GetAllEvts(take, "")
+		if not gotAllOK then return end
+		local s_unpack = string.unpack
+		local s_pack   = string.pack
+		local MIDIlen = MIDIstring:len()
+		local idx = 0    
+		local offset, flags, msg1
+		local ppq_pos = 0
+		local nextPos, prevPos = 1, 1 
+		while nextPos <= MIDIlen do 
+		    prevPos = nextPos
+		    offset, flags, msg1, nextPos = s_unpack("i4Bs4", MIDIstring, prevPos)  
+		    idx = idx + 1
+		    ppq_pos = ppq_pos + offset
+		    data[idx] = {rawevt = s_pack("i4Bs4", offset, flags , msg1),
+						  offset=offset, 
+						  flags=flags, 
+						  selected =flags&1==1,
+						  muted =flags&2==2,
+						  msg1=msg1,
+						  ppq_pos = ppq_pos,
+						  isNoteOn =msg1:byte(1)>>4 == 0x9,
+						  isNoteOff =msg1:byte(1)>>4 == 0x8,
+						  isCC = msg1:byte(1)>>4 == 0xB,
+						  chan = 1+(msg1:byte(1)&0xF),
+						  vel=vel}
+		end
+		return data
+	 end
+    ----------------------------------------------------------------------------------------- 
+    
+    
+    ----------------------------------------------------------------------------------------- 
+    -- Author of function: MPL http://github.com/MichaelPilyavskiy/ReaScripts/blob/571c10a9c3b6d78dc454fd7f69ec8f40fb81d9c8/MIDI%20editor/mpl_Smart%20duplicate%20events.lua#L78
+	function AddShiftedSelectedEvents(take, data, ppq_shift )
+	  local str = ''
+	  local last_ppq
+	  for i = 1, #data-1 do      
+	    local flag
+	    if data[i].flags&1==1 then flag = data[i].flags-1 else flag = data[i].flags end
+	    local str_per_msg = string.pack("i4Bs4", data[i].offset, flag , data[i].msg1)
+	    str = str..str_per_msg
+	    last_ppq = data[i].ppq_pos
+	  end
+	  
+	  for i = 1, #data-1 do   
+	    if data[i].selected then
+		 local new_ppq = data[i].ppq_pos + ppq_shift
+		 local str_per_msg = string.pack("i4Bs4", new_ppq-last_ppq, data[i].flags , data[i].msg1)
+		 str = str..str_per_msg
+		 last_ppq = new_ppq
+	    end
+	  end
+	  
+	  local noteoffoffs = data[#data].ppq_pos -last_ppq
+	  if data[#data].ppq_pos < last_ppq then noteoffoffs = 1 end
+	  str = str.. string.pack("i4Bs4", noteoffoffs, data[#data].flags , data[#data].msg1)
+	  reaper.MIDI_SetAllEvts(take, str) 
+	  
+	  if data[#data].ppq_pos < last_ppq then return true, noteoffoffs + last_ppq  end
+	end
+    ----------------------------------------------------------------------------------------- 
+    
+    
+    
+    
+    
     local MidiEditor = reaper.MIDIEditor_GetActive();
     if not MidiEditor then no_undo() return end;
     
@@ -49,28 +122,24 @@
     
     local mouseTime = reaper.BR_GetMouseCursorContext_Position();
     
-    local _,notecnt,_,_ = reaper.MIDI_CountEvts(take);
-    for i = 1, notecnt do;
-	   local _,selected,_,startppqpos,_,_,_,_ = reaper.MIDI_GetNote(take,i-1);
-	   if selected == true then posFirstNotePpq = startppqpos break end;
+    local ParseMIDI = ParseRAWMIDI(take);
+
+    for i = 1,#ParseMIDI do;
+	   if ParseMIDI[i].selected == true then;
+		  posFirstNotePpq = ParseMIDI[i].ppq_pos break;
+	   end;  
     end;
     
     if not posFirstNotePpq then no_undo() return end;
     
+    reaper.Undo_BeginBlock();
+    
     local posFirstNoteTime = reaper.MIDI_GetProjTimeFromPPQPos(take,posFirstNotePpq);
-    
-    
-    reaper.PreventUIRefresh(1);
-    
-    local ToggleOver = reaper.GetToggleCommandStateEx(32060,40681)--Correct overlapping
-    if ToggleOver == 1 then;
-	   reaper.MIDIEditor_OnCommand(MidiEditor,40681);
-    end;
     
     local item = reaper.GetMediaItemTake_Item(take);
     local posTake = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
     
-    
+    reaper.PreventUIRefresh(1);
     local GridM = select(1,reaper.MIDI_GetGrid(take))/4;
     local retval,Agrid,AswingOnOff,AswingShift = reaper.GetSetProjectGrid(0,0);
     reaper.GetSetProjectGrid(0,1,GridM,0,0);
@@ -82,46 +151,12 @@
     
     reaper.GetSetProjectGrid(0,1,Agrid,AswingOnOff,AswingShift);
     
-    
-    local selT,muteT,startppqposT,endppqposT,chanT,pitchT,velT = {},{},{},{},{},{},{};
-    
-    local Undo;
-    ::restart::;
-    for i = 1, reaper.MIDI_CountEvts(take) do;
-	   local retval,sel,mute,startppqpos,endppqpos,chan,pitch,vel = reaper.MIDI_GetNote(take,i-1);
-	   if sel == true then;
-		  table.insert(selT        ,       true );
-		  table.insert(muteT       ,       mute );
-		  table.insert(startppqposT,startppqpos + Shift_valuePpq);
-		  table.insert(endppqposT  ,  endppqpos + Shift_valuePpq);
-		  table.insert(chanT       ,       chan );
-		  table.insert(pitchT      ,      pitch );
-		  table.insert(velT        ,        vel );
-		  if not Undo then Undo = true reaper.Undo_BeginBlock();end;
-	   end;
-	   table.insert(selT       ,       false );
-	   table.insert(muteT       ,       mute );
-	   table.insert(startppqposT,startppqpos );
-	   table.insert(endppqposT  ,  endppqpos );
-	   table.insert(chanT       ,       chan );
-	   table.insert(pitchT      ,      pitch );
-	   table.insert(velT        ,        vel );
-	   local Del = reaper.MIDI_DeleteNote(take,i-1);
-	   if Del then goto restart end;
-    end;
+    reaper.PreventUIRefresh(1);
     
     
-    for i =  #muteT,1,-1 do;
-	   reaper.MIDI_InsertNote(take,selT[i],muteT[i],startppqposT[i],endppqposT[i],chanT[i],pitchT[i],velT[i],false); 
-    end;
+    AddShiftedSelectedEvents(take,ParseMIDI,Shift_valuePpq);
     
-    reaper.MIDI_Sort(take);
     
-    if Undo then;
-	   local item = reaper.GetMediaItemTake_Item(take)
-	   reaper.MarkTrackItemsDirty(reaper.GetMediaItemTake_Track(take),item);
-	   reaper.Undo_EndBlock('Duplicate events to mouse position(snap relative)',-1);
-    else;
-	   no_undo();
-    end;
-    reaper.PreventUIRefresh(-1);
+    local item = reaper.GetMediaItemTake_Item(take);
+    reaper.MarkTrackItemsDirty(reaper.GetMediaItemTake_Track(take),item);
+    reaper.Undo_EndBlock('Duplicate events to mouse position(snap relative)',-1);

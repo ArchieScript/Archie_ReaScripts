@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom height full project - recover back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * О скрипте:   Масштабировать высоту под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,6 +19,11 @@
    *              Arc_Function_lua v.2.6.1+   Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.01 [15.09.19]
+   *                  ! Fix bug flickering button
+   *                  ! Performance: Break previous copy "defer"
+   *                  + Added ability to zoom on selected tracks
+   
    *              v.1.0 [14.09.19]
    *                  + initialе
 --]]
@@ -27,6 +32,10 @@
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
+    
+    
+    --Скрипт масштабирует все треки под размер экрана или от первого выделенного до последнего выделенного
+    --The script scales all tracks to fit the screen or from the first selected to the last selected
     
     
     local shrink = 255
@@ -41,7 +50,17 @@
                       ----------------------------------------------------------------------------------------------------------------------------
                  -- Screen: http://avatars.mds.yandex.net/get-pdb/2011865/f84c2b64-f46a-4e2a-bc36-a1a23d6fa1e5/s1200
                  ---------------------------------------------------------------------------------------------
-                 
+    
+    
+    
+    local ZOOM_SELECTED_TRACK = 1
+                           -- = 0 | Игнорировать выделенные треки и масштабировать только все треки
+                           -- = 1 | Масштабировать по выделенным трекам, если нет выделенных, то все треки.
+                                    -----------------------------------------------------------------------
+                           -- = 0 | Scale by selected tracks, if not selected, then all tracks.
+                           -- = 1 | Ignore selected tracks and scale only all tracks.
+                           ----------------------------------------------------------
+    
     
     
     --======================================================================================
@@ -78,10 +97,22 @@
         -----
         local Toggle = reaper.GetToggleCommandStateEx(0,40346);--Toggle fullscreen
         if Toggle == 1 then shrink = shrink_FullScreen end;
+        -----
         
+        local numbFirst,numbLast;
+        local FirstSelTrack = reaper.GetSelectedTrack(0,0);
+        if FirstSelTrack and ZOOM_SELECTED_TRACK == 1 then;
+            local LastSelTrack = reaper.GetSelectedTrack(0,reaper.CountSelectedTracks(0)-1);
+            numbFirst = reaper.GetMediaTrackInfo_Value(FirstSelTrack,"IP_TRACKNUMBER");
+            numbLast = reaper.GetMediaTrackInfo_Value(LastSelTrack,"IP_TRACKNUMBER");
+        else;
+            numbFirst = 1;
+            numbLast = reaper.CountTracks(0);
+        end;
         
         -----
-        for i = 1, reaper.CountTracks(0) do;
+        for i = numbFirst, numbLast do;
+        --for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
             local Height = reaper.GetMediaTrackInfo_Value(Track,"I_WNDH");
             local showTCP = reaper.GetMediaTrackInfo_Value(Track,"B_SHOWINTCP");
@@ -195,8 +226,10 @@
     
     
     -----------------------------------------------------
-    local function scroll();
-        if not reaper.GetSelectedTrack(0,0)then;
+    local function VerticalScrollSelectedTracksIntoView();
+        local track = reaper.GetTrack(0,0);
+        local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
+        if sel == 1 then;
             reaper.CSurf_OnScroll(0,-1000);
         else;
             reaper.Main_OnCommand(40913,0)--Vertical scroll selected tracks into view
@@ -206,7 +239,30 @@
     
     
     -----------------------------------------------------
+    local function scroll();
+        if not reaper.GetSelectedTrack(0,0)then;
+            reaper.CSurf_OnScroll(0,-1000);
+        else;
+            VerticalScrollSelectedTracksIntoView();
+        end;
+    end;
+    -----------------------------------------------------
+    
+    
+    -----------------------------------------------------
     local function loop();
+        
+        ----- stop Double Script -------
+        local ActiveDoubleScr,stopDoubleScr;
+        if not ActiveDoubleScr then;
+            stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
+            ActiveDoubleScr = true;
+        end;
+        local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
+        if stopDoubleScr2 > stopDoubleScr then return end;
+        --------------------------------
+        
         local ToggleSaveHeight = tonumber(({reaper.GetProjExtState(0,extnameProj,"ToggleSaveHeight")})[2])or -1;
         local HeightAllTrack = GetHeightAllTrack();
         local Toggle = reaper.GetToggleCommandStateEx(sectionID,cmdID);
@@ -246,10 +302,14 @@
             HeightAllTrack = GetHeightAllTrack();
             reaper.SetProjExtState(0,extnameProj,"ToggleSaveHeight",HeightAllTrack);
             scroll();
+            reaper.SetToggleCommandState(sectionID,cmdID,1);
+            reaper.RefreshToolbar2(sectionID,cmdID);
         else;
             reaper.SetProjExtState(0,extnameProj,"ToggleSaveHeight","");
             RestoreHeightAllTrack();
             scroll();
+            reaper.SetToggleCommandState(sectionID,cmdID,0);
+            reaper.RefreshToolbar2(sectionID,cmdID);
         end;
     end;
     -----------------------------------------------------

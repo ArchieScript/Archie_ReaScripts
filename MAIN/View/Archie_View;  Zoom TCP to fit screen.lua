@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Zoom TCP to fit screen
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Масштабирование TCP по размеру экрана
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,6 +17,9 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+  (Repository Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.01 [15.09.2019]
+   *                + Scroll selected tracks to the center
+   
    *              v.1.0 [14.09.2019]
    *                + initialе
 --]]
@@ -162,15 +165,17 @@
     
     
     
-    
-    local scrTrack;
-    for i = 1, reaper.CountTracks(0) do;
-        local Track = reaper.GetTrack(0,i-1);
-        local scr = reaper.GetMediaTrackInfo_Value(Track,"I_TCPY");
-        if scr >= 0 then scrTrack = (TrackX or Track) break end;
-        TrackX = Track;
+    -----------------------------------------------------
+    local function VerticalScrollSelectedTracksIntoView();
+        local track = reaper.GetTrack(0,0);
+        local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED");
+        if sel == 1 then;
+            reaper.CSurf_OnScroll(0,-1000);
+        else;
+            reaper.Main_OnCommand(40913,0)--Vertical scroll selected tracks into view
+        end;
     end;
-    
+    -----------------------------------------------------
     
     
     ----
@@ -189,10 +194,7 @@
             reaper.CSurf_OnScroll(0, 1   );
             reaper.CSurf_OnScroll(0, -1  );
         else;    
-            reaper.CSurf_OnScroll(0,-1000);
-            local scr = reaper.GetMediaTrackInfo_Value(scrTrack,"I_TCPY");
-            local scr = math.floor(math.abs(scr)/8);
-            reaper.CSurf_OnScroll(0, scr  );
+            VerticalScrollSelectedTracksIntoView();
         end;
         
         reaper.PreventUIRefresh(-1);

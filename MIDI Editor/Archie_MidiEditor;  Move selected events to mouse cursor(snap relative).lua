@@ -4,11 +4,11 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    MidiEditor
-   * Description: Move selected events to mouse position(snap relative)
+   * Description: Move selected events to mouse cursor(snap relative)
    * Author:      Archie
    * Version:     1.02
    * AboutScript: ---
-   * О скрипте:   Перемещение выбранных событий(нот) в положение мыши(привязка относительно)
+   * О скрипте:   Перемещение выбранных событий(нот) в курсор мыши(привязка относительно)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -131,22 +131,22 @@
     
     local mouseTime = reaper.BR_GetMouseCursorContext_Position();
     
-    --local noteRow = ({reaper.BR_GetMouseCursorContext_MIDI()})[3];
-    --if noteRow < 0 then no_undo() return end;
+    local noteRow = ({reaper.BR_GetMouseCursorContext_MIDI()})[3];
+    if noteRow < 0 then no_undo() return end;
     
     local ParseMIDI = ParseRAWMIDI(take);
     
     local pitchFirstNote;
     for i = 1,#ParseMIDI do;
 	   if ParseMIDI[i].selected == true then;
-		  --pitchFirstNote = ParseMIDI[i].pitch 
+		  pitchFirstNote = ParseMIDI[i].pitch 
 		  posFirstNotePpq = ParseMIDI[i].ppq_pos break;
 	   end;  
     end;
     
     if not posFirstNotePpq then no_undo() return end;
     
-    --local shiftPitch = noteRow - pitchFirstNote;
+    local shiftPitch = noteRow - pitchFirstNote;
     
     
     reaper.Undo_BeginBlock();
@@ -171,11 +171,10 @@
     reaper.PreventUIRefresh(1);
     
     
-    AddShiftedSelectedEvents(take,ParseMIDI,Shift_valuePpq,0);
+    AddShiftedSelectedEvents(take,ParseMIDI,Shift_valuePpq,shiftPitch);
     
     
     local item = reaper.GetMediaItemTake_Item(take);
     reaper.MarkTrackItemsDirty(reaper.GetMediaItemTake_Track(take),item);
-    reaper.Undo_EndBlock('Move selected events to mouse position(snap relative)',-1);
-    
-    --reaper.ShowConsoleMsg( shiftPitch )
+    reaper.Undo_EndBlock('Move selected events to mouse cursor(snap relative)',-1);
+	-- reaper.ShowConsoleMsg(shiftPitch);
