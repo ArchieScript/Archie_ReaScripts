@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="065bf30e294dab960c84614d448450fd42fddc23">
+<index version="1" name="Archie-ReaScripts" commit="2daebdc422ceda36f3bebb49638a19c5992ff3cb">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2938,6 +2938,30 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0cd6bf3605cfa7c3fd7ae86b594764633ad45dd8/MAIN/Track/Archie_Track;%20%20Make%20folder%20from%20selected%20tracks(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Minimize all tracks - restore back.lua" type="script" desc="Minimize all tracks - recover back">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-18T18:03:01Z">
+        <changelog><![CDATA[v.1.0 [19.09.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c8929006f19ee2b92e1f8c5ddffbda614ee9b65a/MAIN/Track/Archie_Track;%20%20Minimize%20all%20tracks%20-%20restore%20back.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Minimize selected tracks - restore back.lua" type="script" desc="Minimize selected tracks - recover back">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-18T18:03:01Z">
+        <changelog><![CDATA[v.1.0 [19.09.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c8929006f19ee2b92e1f8c5ddffbda614ee9b65a/MAIN/Track/Archie_Track;%20%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Move all selected tracks to first selected folder(`).lua" type="script" desc="Move all selected tracks to the first selected folder">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3353,6 +3377,62 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Set selected tracks all MIDI input to n channels.lua" type="script" desc="Set selected tracks all MIDI input to n channels">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-19T13:53:15Z">
+        <changelog><![CDATA[v.1.0 [19.09.19]
++ initialе]]></changelog>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to all channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 1 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 2 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 3 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 4 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 5 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 6 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 7 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 8 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 9 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 10 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 11 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 12 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 13 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 14 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 15 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks all MIDI input to 16 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20all%20MIDI%20input%20to%20n%20channels.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Set selected tracks virtual MIDI keyboard to n channels.lua" type="script" desc="Set selected tracks virtual MIDI keyboard to n channels">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-19T13:53:15Z">
+        <changelog><![CDATA[v.1.0 [19.09.19]
++ initialе]]></changelog>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to all channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 1 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 2 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 3 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 4 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 5 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 6 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 7 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 8 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 9 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 10 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 11 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 12 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 13 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 14 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 15 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+        <source main="main" file="Archie_Track;  Set selected tracks virtual MIDI keyboard to 16 channels.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2daebdc422ceda36f3bebb49638a19c5992ff3cb/MAIN/Track/Archie_Track;%20%20Set%20selected%20tracks%20virtual%20MIDI%20keyboard%20to%20n%20channels.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Set Volume all tracks to -6.0 dB.lua" type="script" desc="Set Volume all tracks to -6.0 dB">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3439,38 +3519,6 @@ v.1.0 [28.08.19]
     + fixed bug when delete track
     + Исправлена ошибка при удалении трека]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/131bb075c2475bf11a544c4e988e48f1e6ac874e/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Toggle Minimize all tracks - restore back.lua" type="script" desc="Toggle Minimize all tracks - recover back">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-09-07T16:16:30Z">
-        <changelog><![CDATA[v.1.0 [07.09.19]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/663a7c9a6cb359a058da2b201f64ffaff03738b4/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20all%20tracks%20-%20restore%20back.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-07T17:10:39Z">
-        <changelog><![CDATA[v.1.01 [07.09.19]
-    + Remove desync when saving between "Minimize all tracks","Minimize selected tracks"]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/066e1e10ac0b3031983babcf641c21d04cd1a4e5/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20all%20tracks%20-%20restore%20back.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Toggle Minimize selected tracks - restore back.lua" type="script" desc="Toggle Minimize selected tracks - recover back">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-09-07T16:16:30Z">
-        <changelog><![CDATA[v.1.0 [07.09.19]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/663a7c9a6cb359a058da2b201f64ffaff03738b4/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-07T17:10:39Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/066e1e10ac0b3031983babcf641c21d04cd1a4e5/MAIN/Track/Archie_Track;%20%20Toggle%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Mute unmute all visible track in TCP and MCP.lua" type="script" desc="Toggle Mute unmute all visible track in TCP and MCP">
