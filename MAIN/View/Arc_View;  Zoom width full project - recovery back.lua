@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom width full project - recovery back
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Масштабировать ширину под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,9 +18,11 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+   (Repository: Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.03 [21.09.19]
+   *                  ! not show help window at startup reaper
+    
    *              v.1.02 [16.09.19]
    *                  ! Fix bug flickering button
-    
    *              v.1.01 [15.09.19]
    *                  ! Performance: Break previous copy "defer"
    *              v.1.0 [14.09.19]
@@ -80,8 +82,6 @@
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
-    
-    Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false);
     
     
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
@@ -170,6 +170,8 @@
     
     
     if not FirstRun then;
+        Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false,"/ "..extname);
+        
         --------------------------------------------------------------
         local ret,SaveArrange_View = reaper.GetProjExtState(0,extname,"SaveArrange_View");
         -----

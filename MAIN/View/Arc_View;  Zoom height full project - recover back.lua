@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom height full project - recover back
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * О скрипте:   Масштабировать высоту под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,11 @@
    *              Arc_Function_lua v.2.6.1+   Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.02 [16.09.19]
-   *                  ! Fix bug flickering button
+   *              v.1.03 [21.09.19]
+   *                  ! not show help window at startup reaper
    
+   *              v.1.02 [16.09.19]
+   *                  ! Fix bug flickering button  
    *              v.1.01 [15.09.19]
    *                  ! Performance: Break previous copy "defer"
    *                  + Added ability to zoom on selected tracks
@@ -43,13 +45,13 @@
     local shrink_FullScreen = 195
                  -- | Отрегулируйте отступ снизу как вам удобно
                  -- | shrink = 0 / shrink = 100 / shrink = 200 и т.д.
-                 -- | Нужно отнять расстояние от верха монитора до начала видимости трека, снизу также
+                 -- | Нужно отнять расстояние от верха монитора до начала видимости трека, снизу также*
                       --------------------------------------------------------------------------------
                  -- | Adjust the padding at the bottom as you like
                  -- | shrink = 0 / shrink = 10 / shrink = 20 etc.
                  -- | You need to subtract the distance from the top of the monitor to the beginning of the track visibility, from the bottom also
                       ----------------------------------------------------------------------------------------------------------------------------
-                 -- Screen: http://avatars.mds.yandex.net/get-pdb/2011865/f84c2b64-f46a-4e2a-bc36-a1a23d6fa1e5/s1200
+                 -- *Screen: http://avatars.mds.yandex.net/get-pdb/2011865/f84c2b64-f46a-4e2a-bc36-a1a23d6fa1e5/s1200
                  ---------------------------------------------------------------------------------------------
     
     
@@ -78,11 +80,6 @@
     
    
     
-    Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false);
-    
-    
-    local CountTrack = reaper.CountTracks(0);
-    if CountTrack == 0 then Arc.no_undo() return end;
     
    
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
@@ -295,6 +292,10 @@
     
     -----------------------------------------------------
     if not FirstRun then;
+        Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false,"/ "..extnameProj);
+        local CountTrack = reaper.CountTracks(0);
+        if CountTrack == 0 then Arc.no_undo() return end;
+        
         local ToggleSaveHeight = tonumber(({reaper.GetProjExtState(0,extnameProj,"ToggleSaveHeight")})[2])or -1;
         local HeightAllTrack = GetHeightAllTrack();
         if HeightAllTrack ~= ToggleSaveHeight then;

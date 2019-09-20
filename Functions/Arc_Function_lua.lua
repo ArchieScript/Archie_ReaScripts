@@ -1,9 +1,9 @@
-local VersionMod = "v.2.6.2"
+local VersionMod = "v.2.6.3"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.6.2
+   * Version:     2.6.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -347,7 +347,8 @@ local VersionMod = "v.2.6.2"
         return MessageBox or -1;
     end;
     HelpWindow_WithOptionNotToShow=Arc_Module.HelpWindow_WithOptionNotToShow;
-    function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset);
+    function Arc_Module.HelpWindowWhenReRunning(BottonText,but,reset,header);
+        if type(header)~="string" then header = "" end;
         local BottonTextS,NotReadTextR,NotReadTextE::NotRead::local time = os.time();
         local ScriptName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)"):upper();
         local TooltipWind = reaper.GetExtState(ScriptName,"HelpWindowWhenReRunning"..'_'..but);
@@ -378,7 +379,7 @@ local VersionMod = "v.2.6.2"
             "DO NOT SHOW THIS WINDOW - OK\n"..
             "НЕ ПОКАЗЫВАТЬ ПОЛЬШЕ ЭТО ОКНО  -  ОК\n\n"..
             ("-"):rep(50),
-            "help.",1);
+            "help "..header,1);
             if MessageBox == 1 then;
                 local time2 = os.time();
                 NotReadTextR = "\nВы не прочитали текст !!!\nПрочитайте текст!\nОкно можно будет закрыть по истечению 10 секунд\n\n"
