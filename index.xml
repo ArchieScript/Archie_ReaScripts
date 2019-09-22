@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="50ee54e86ec0a855b59efea913d8699d4acb2edf">
+<index version="1" name="Archie-ReaScripts" commit="5d14441b4687d0a4e70085ded8f4b648f824a056">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -309,6 +309,18 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MAIN/Edit cursor">
+    <reapack name="Arc_Edit cursor;  Move edit cursor to last start of play cursor.lua" type="script" desc="Move edit cursor to last start of play cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-22T08:22:11Z">
+        <changelog><![CDATA[v.1.0 [21.09.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d14441b4687d0a4e70085ded8f4b648f824a056/MAIN/Edit%20cursor/Arc_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20last%20start%20of%20play%20cursor.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Edit cursor;  Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
