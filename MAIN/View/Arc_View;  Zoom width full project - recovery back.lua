@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom width full project - recovery back
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Масштабировать ширину под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -16,11 +16,13 @@
    * Customer:    Krikets(RMM)
    * Gave idea:   Krikets(RMM)
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
-   *              Arc_Function_lua v.2.6.1+   (Repository: Archie-ReaScripts)  http://clck.ru/EjERc
+   *              Arc_Function_lua v.2.6.5+   (Repository: Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.04 [24.09.19]
+   *                  ---
+   
    *              v.1.03 [21.09.19]
-   *                  ! not show help window at startup reaper
-    
+   *                  ! not show help window at startup reaper 
    *              v.1.02 [16.09.19]
    *                  ! Fix bug flickering button
    *              v.1.01 [15.09.19]
@@ -64,7 +66,19 @@
                             ----------------------------
                     -- = 0 | ZOOM BY TIME SELECTION IF INSTALLED
                     -- = 1 | IGNORE TIME SELECTION
-    ----------------------------------------------
+                    ------------------------------
+    
+    
+    local
+    STARTUP = 1
+         -- = 0 Отключить автозапуск скрипта*
+         -- = 1 Включить автозапуск скрипта*
+         -- * После изменения запустите скрипт, что бы изменения вступили в силу
+              ------------------------------------------------------------------
+         -- = 0 Disable script autorun*
+         -- = 1 Enable script autorun*
+         -- * After the change, run the script so that the changes take effect
+         ----------------------------------------------------------------------
     
     
     
@@ -78,7 +92,7 @@
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.6.1",Fun,"")then Arc.no_undo() return end;--=====================================================
+    return end; if not Arc.VersionArc_Function_lua("2.6.5",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
@@ -91,6 +105,7 @@
     
     --------------------------------------------------------------
     local NullProject,ProjUserdata2;
+    local stopDoubleScr,ActiveDoubleScr;
     local function loop();
         
         ----- stop Double Script -------
@@ -158,11 +173,15 @@
     --------------------------------------------------------------
     
     
-    --------------------------------------------------------------
-    --reaper.DeleteExtState(extname,"FirstRun",false);
-    local FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
-    reaper.SetExtState(extname,"FirstRun",1,false);
-    --------------------------------------------------------------
+    ---___-----------------------------------------------
+    if STARTUP == 1 then;
+        --reaper.DeleteExtState(extname,"FirstRun",false);
+        local FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
+        if FirstRun then;
+            reaper.SetExtState(extname,"FirstRun",1,false);
+        end;
+    end;
+    -----------------------------------------------------
     
     loop();
     
@@ -227,9 +246,20 @@
     end;
     
     
-    --------------------------------------------------------------
+    
+    ---___-----------------------------------------------
     local scriptPath,scriptName = filename:match("(.+)[/\\](.+)");
     local id = Arc.GetIDByScriptName(scriptName,scriptPath);
     if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
-    Arc.StartupScript(scriptName,id);
-    --------------------------------------------------------------
+    local check_Id, check_Fun = Arc.GetStartupScript(id);
+    
+    if STARTUP == 1 then;
+        if not check_Id then;
+            Arc.SetStartupScript(scriptName,id);
+        end;
+    else;
+        if check_Id then;
+            Arc.SetStartupScript(scriptName,id,nil,"ONE");
+        end;
+    end;
+    -----------------------------------------------------]]

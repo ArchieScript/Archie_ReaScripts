@@ -7,18 +7,22 @@
    * Features:    Startup
    * Description: Move edit cursor to last start of play cursor
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Переместить курсор редактирования на последний старт  плей курсора 
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Eq Tunkul(Rmm)
+   * Customer:    Eq Tunkul(Rmm)http://rmmedia.ru/threads/118091/post-2397132
    * Gave idea:   Eq Tunkul(Rmm)
    * Extension:   
    *              Reaper 5.983+ http://www.reaper.fm/
-   *              Arc_Function_lua v.2.6.3+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:   v.1.0 [21.09.19]
+   *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
+   * Changelog:   
+   *              v.1.01 [23.09.19]
+   *                  + ---
+   
+   *              v.1.0 [21.09.19]
    *                  + initialе
 --]]
     
@@ -38,6 +42,18 @@
                 ---------------------------------------------------------
     
     
+    local
+    STARTUP = 1
+         -- = 0 Отключить автозапуск скрипта*
+         -- = 1 Включить автозапуск скрипта*
+         -- * После изменения запустите скрипт, что бы изменения вступили в силу
+              ------------------------------------------------------------------
+         -- = 0 Disable script autorun*
+         -- = 1 Enable script autorun*
+         -- * After the change, run the script so that the changes take effect
+         ----------------------------------------------------------------------
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -47,7 +63,7 @@
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.6.3",Fun,"")then Arc.no_undo() return end;--=====================================================
+    return end; if not Arc.VersionArc_Function_lua("2.6.5",Fun,"")then Arc.no_undo() return end;--=====================================================
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
     
     
@@ -105,10 +121,12 @@
     
     
     ---___-----------------------------------------------
-    --reaper.DeleteExtState(extname,"FirstRun",false);
-    local FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
-    if FirstRun then;
-        reaper.SetExtState(extname,"FirstRun",1,false);
+    if STARTUP == 1 then;
+        --reaper.DeleteExtState(extname,"FirstRun",false);
+        local FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
+        if FirstRun then;
+            reaper.SetExtState(extname,"FirstRun",1,false);
+        end;
     end;
     -----------------------------------------------------
     
@@ -128,9 +146,20 @@
     end;
     
     
+    
     ---___-----------------------------------------------
     local scriptPath,scriptName = filename:match("(.+)[/\\](.+)");
     local id = Arc.GetIDByScriptName(scriptName,scriptPath);
     if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
-    Arc.StartupScript(scriptName,id);
-    -----------------------------------------------------
+    local check_Id, check_Fun = Arc.GetStartupScript(id);
+    
+    if STARTUP == 1 then;
+        if not check_Id then;
+            Arc.SetStartupScript(scriptName,id);
+        end;
+    else;
+        if check_Id then;
+            Arc.SetStartupScript(scriptName,id,nil,"ONE");
+        end;
+    end;
+    -----------------------------------------------------]]
