@@ -14,6 +14,7 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    smrz1(Rmm Forum)
    * Gave idea:   smrz1(Rmm Forum)
+   *                              http://rmmedia.ru/threads/134701/post-2397574
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              !? reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
