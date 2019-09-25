@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="26caa652e67fc155c4f0cc37c3fca6bf6b53fe29">
+<index version="1" name="Archie-ReaScripts" commit="c1d66c4118e54ff3d9a00869208eb11ce6418f8c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2762,6 +2762,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.09.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/26caa652e67fc155c4f0cc37c3fca6bf6b53fe29/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-25T18:29:24Z">
+        <changelog><![CDATA[v.1.01 [26.09.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c1d66c4118e54ff3d9a00869208eb11ce6418f8c/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks(`).lua" type="script" desc="Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks">
