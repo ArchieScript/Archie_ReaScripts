@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Zoom height full project - recover back
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * О скрипте:   Масштабировать высоту под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,7 +19,7 @@
    *              Arc_Function_lua v.2.6.5+   Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.04 [24.09.19]
+   *              v.1.05 [25.09.19]
    *                  ---
    
    *              v.1.03 [21.09.19]
@@ -295,9 +295,10 @@
     
     
     ---___-----------------------------------------------
+    local FirstRun;
     if STARTUP == 1 then;
         --reaper.DeleteExtState(extnameProj,"FirstRun",false);
-        local FirstRun = reaper.GetExtState(extnameProj,"FirstRun")=="";
+        FirstRun = reaper.GetExtState(extnameProj,"FirstRun")=="";
         if FirstRun then;
             reaper.SetExtState(extnameProj,"FirstRun",1,false);
         end;
