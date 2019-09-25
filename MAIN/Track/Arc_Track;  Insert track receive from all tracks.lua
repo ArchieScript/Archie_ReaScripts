@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Insert track receive from all tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Вставить трек - прием со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,7 +18,7 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:   v.1.0 [26.09.19]
+   * Changelog:   v.1.01 [26.09.19]
    *                  + initialе
 --]]
     
@@ -71,6 +71,14 @@
                          -- 1 Добавлять цифру к имени / 0 Не добавлять цифру к имени
                          -- 1 Add digit to name / 0 Do not add digit to name
                          ---------------------------------------------------
+    
+    
+    
+    
+          
+           -- НИЖЕ НЕ РЕКОМЕНДУЕТСЯ МЕНЯТЬ НАСТРОЙКИ
+           -- IT IS NOT RECOMMENDED TO CHANGE THE SETTINGS BELOW
+    
     
     
     local SEND_ON = 1
