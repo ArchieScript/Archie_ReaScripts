@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="99d8d41fddcefe8362e209f22b37b46faefaa4e1">
+<index version="1" name="Archie-ReaScripts" commit="a3f4f90268b21d48e094750bfca050c26df23fa0">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2319,6 +2319,9 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2019-09-26T09:46:03Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4bf90effb7ee9f8efcce8adf5615ff2fd991be49/MAIN/Options/Arc_%20Options;%20%20Clear%20Auto%20Startup%20Archie.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-26T12:41:17Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3f4f90268b21d48e094750bfca050c26df23fa0/MAIN/Options/Arc_%20Options;%20%20Clear%20Auto%20Startup%20Archie.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
