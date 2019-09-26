@@ -6,19 +6,22 @@
    * Category:    View
    * Description: Show full mixer - Restore view back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Показать полный микшер - восстановить вид назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    smrz1(Rmm Forum)
+   * Customer:    smrz1(Rmm Forum)$
    * Gave idea:   smrz1(Rmm Forum)
-   *                              http://rmmedia.ru/threads/134701/post-2397574
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              !? reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:   v.1.0 [24.09.19]
+   * Changelog:   
+   *              v.1.01 [24.09.19]
+   *                  + Recovery Request
+		    
+   *              v.1.0 [24.09.19]
    *                  + initialе
 --]]
     
@@ -194,11 +197,9 @@
 			 reaper.Main_OnCommand(41636,0);
 		  end;
 		  
-		  if mixerVisibleEx ~= 0 then
-			  local mixerInDocker = reaper.GetToggleCommandStateEx(0,40083); -- mixer in Docker
-			  if mixerInDocker ~= mixerInDockerEx then;
-				 reaper.Main_OnCommand(40083,0);
-			  end;
+		  local mixerInDocker = reaper.GetToggleCommandStateEx(0,40083); -- mixer in Docker
+		  if mixerInDocker ~= mixerInDockerEx then;
+			 reaper.Main_OnCommand(40083,0);
 		  end;
 		  
 		  local mixerVisible  = reaper.GetToggleCommandStateEx(0,40078); -- mixerVisible
@@ -239,8 +240,28 @@
 		  no_undo() return;
 	   end;
 	   
+	   
 	   local mixerVis = reaper.GetToggleCommandStateEx(0,40078); -- mixerVisible
-	   if mixerVis == 0 then;
+	   local mixerInDocker = reaper.GetToggleCommandStateEx(0,40083); -- mixer in Docker
+	   if mixerVis == 0 or mixerInDocker == 1 then;
+	   ----
+		  if mixerVis == 0 then;
+			 local MB = reaper.MB("Вы закрыли микшер, Восстановить вид или оставить\n\n"..
+							  "Восстановить: ОК   /   Оставить: ОТМЕНА\n"..
+							  ("-"):rep(50).."\n\n"..
+							  "You closed the mixer, Restore the view or leave\n\n"..
+							  "Restore: OK / Leave: CANCEL","Archie - Show mixer",1);
+			 if MB == 2 then no_undo() return end;
+		  end;
+	   
+		  if mixerInDocker == 1 and mixerVis == 1 then;
+			 local MB = reaper.MB("Вы переместили микшер в док, Восстановить вид или оставить\n\n"..
+							  "Восстановить: ОК   /   Оставить: ОТМЕНА\n"..
+							  ("-"):rep(50).."\n\n"..
+							  "You moved the mixer to the dock, Restore the view or leave\n\n"..
+							  "Restore: OK / Leave: CANCEL","Archie - Show mixer",1);
+			 if MB == 2 then no_undo() return end;
+		  end;
 		  restoreView();
 		  no_undo() return;
 	   end;
