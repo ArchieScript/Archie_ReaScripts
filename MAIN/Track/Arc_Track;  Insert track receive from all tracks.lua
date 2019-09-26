@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Insert track receive from all tracks
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Вставить трек - прием со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.03 [26.09.19]
-   *                  + Added height adjustment for the created track
+   *              v.1.04 [26.09.19]
+   *                  + No change
    
+   *              v.1.03 [26.09.19]
+   *                  + Added height adjustment for the created track  
    *              v.1.02 [26.09.19]
    *                  + Call a dialog box for entering the name of the track
    *                  + Added ability to select track selection
@@ -110,7 +112,11 @@
     
           
            -- НИЖЕ НЕ РЕКОМЕНДУЕТСЯ МЕНЯТЬ НАСТРОЙКИ
+           -- ВСЕ ЧТО ИЗМЕНЯЕТЕ, ВЫ ИЗМЕНЯЕТЕ НА СВОЙ СТРАХ И РИСК
+           
            -- IT IS NOT RECOMMENDED TO CHANGE THE SETTINGS BELOW
+           -- ANYTHING YOU CHANGE, YOU CHANGE AT YOUR OWN RISK
+    
     
     
     
