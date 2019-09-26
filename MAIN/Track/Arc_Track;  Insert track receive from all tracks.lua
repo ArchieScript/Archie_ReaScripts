@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Insert track receive from all tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Вставить трек - прием со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,11 +19,13 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.03 [26.09.19]
+   *                  + Added height adjustment for the created track
+   
    *              v.1.02 [26.09.19]
    *                  + Call a dialog box for entering the name of the track
    *                  + Added ability to select track selection
-   *                  ! Fixed bug with malfunctioning send volume
-   
+   *                  ! Fixed bug with malfunctioning send volume 
    *              v.1.01 [26.09.19]
    *                  + initialе
 --]]
@@ -50,6 +52,15 @@
                     -------------------------------------------
     
     
+    local HEIGHT = 24
+              -- =  0 Высота по умолчанию
+              -- =    Иначе высота в пикселях
+                      -----------------------
+              -- =  0 Default height
+              -- =    Otherwise, the height in pixels
+              ---------------------------------------
+    
+    
     local TCP_LAYOUT = "bc --- Small Media" 
                     -- Название лейаута TCP
                     -- Name of TCP layout
@@ -59,7 +70,6 @@
                     -- Название лейаута MCP
                     -- Name of MCP layout
                     ---------------------
-    
     
     
     local R,G,B = 0,0,0
@@ -158,6 +168,7 @@
     if SEND_VOLUME_DB > 12 then SEND_VOLUME_DB = 12 end;
     if SEND_MODE ~= 0 and SEND_MODE ~= 1 and SEND_MODE~=3 then SEND_MODE = 0 end;
     
+    if HEIGHT < 0 or HEIGHT >= ({reaper.my_getViewport(0,0,0,0,0,0,0,0,1)})[4] then HEIGHT = 0 end;
     
     
     local function clean();
@@ -235,6 +246,10 @@
         local TrackFirst = reaper.GetTrack(0,0);
         local GUID = reaper.GetTrackGUID(TrackFirst);
         reaper.SetProjExtState(0,"IS_RETURN_TRACK",GUID,0);
+        ----- / Heigth Track / -----
+        if HEIGHT ~= 0 then;
+            reaper.SetMediaTrackInfo_Value(TrackFirst,"I_HEIGHTOVERRIDE",HEIGHT);
+        end;
         ----- / Select Track / -----
         if SELECT_TRACK == -1 then;
             SelectTrack(-1);
