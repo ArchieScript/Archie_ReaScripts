@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Insert track receive from all tracks
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Вставить трек - прием со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,7 +18,13 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:   v.1.01 [26.09.19]
+   * Changelog:   
+   *              v.1.02 [26.09.19]
+   *                  + Call a dialog box for entering the name of the track
+   *                  + Added ability to select track selection
+   *                  ! Fixed bug with malfunctioning send volume
+   
+   *              v.1.01 [26.09.19]
    *                  + initialе
 --]]
     
@@ -29,17 +35,31 @@
     
     
     
+    local SELECT_TRACK =  0
+                    -- = -2 Ничего не делать с выделением треков
+                    -- = -1 Снять выделение со всех треков
+                    -- =  0 Выделить только созданный трек
+                    -- =  1 Выделить все треки Получатели(Receives)
+                    -- =  2 Выделить все треки кроме Получателей(Receives)
+                    
+                    -- = -2 Do nothing with track selection
+                    -- = -1 Unselect all tracks
+                    -- =  0 Select only created track
+                    -- =  1 Select all tracks (Receives)
+                    -- =  2 Select all tracks except (Receives)
+                    -------------------------------------------
+    
     
     local TCP_LAYOUT = "bc --- Small Media" 
                     -- Название лейаута TCP
                     -- Name of TCP layout
                     ---------------------
     
-    
     local MCP_LAYOUT = ""
                     -- Название лейаута MCP
                     -- Name of MCP layout
                     ---------------------
+    
     
     
     local R,G,B = 0,0,0
@@ -49,9 +69,12 @@
     
     
     local NAME_TRACK = "Receives"
-                    -- Имя трека
-                    -- Name track
-                    -------------
+                  -- = "WND" Вызвать диалоговое окно для ввода имени трека
+                  --    Иначе введите имя трека
+                        -----------------------
+                  -- = "WND" Call a dialog box for entering the name of the track
+                  --   Otherwise enter the name of the track
+                  ------------------------------------------
     
     
     local SEND_VOLUME_DB = -150
@@ -104,7 +127,7 @@
                     --   * Работает только при SEND_ON = 1 / STARTUP = 1
                     --   * Works only when SEND_ON = 1 / STARTUP = 1
                     ------------------------------------------------
-    
+        
     
     
     --======================================================================================
@@ -120,11 +143,21 @@
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
-    if reaper.CountTracks(0)==0 then Arc.no_undo() return end;
-    
     
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     local extname = filename:match(".+[/\\](.+)");
+    
+    
+    if SEND_ON == 0 then SEND_ON_AUTO = 0 STARTUP = 0 end;
+    if SEND_ON_AUTO == 0 then STARTUP = 0 end;
+    if SEND_ON_AUTO == 1 then STARTUP = 1 SEND_ON = 1 end;
+    if STARTUP == 1 then SEND_ON_AUTO = 1 SEND_ON = 1 end;
+    if STARTUP == 0 then SEND_ON_AUTO = 0  end;
+    
+    if SEND_VOLUME_DB < -150 then SEND_VOLUME_DB = -150 end;
+    if SEND_VOLUME_DB > 12 then SEND_VOLUME_DB = 12 end;
+    if SEND_MODE ~= 0 and SEND_MODE ~= 1 and SEND_MODE~=3 then SEND_MODE = 0 end;
+    
     
     
     local function clean();
@@ -136,7 +169,7 @@
             if not tr then;
                 if tonumber(value)and tonumber(value) == 0 then;
                     reaper.SetProjExtState(0,"IS_RETURN_TRACK",key,time);
-                elseif tonumber(value)and tonumber(value)+3600 < time then;
+                elseif tonumber(value)and tonumber(value)+3600 < time then;--3600-1 час
                     reaper.SetProjExtState(0,"IS_RETURN_TRACK",key,"");
                 elseif not tonumber(value) then;
                     reaper.SetProjExtState(0,"IS_RETURN_TRACK",key,0)
@@ -149,34 +182,87 @@
     
     
     
+    local function cleanFirstRun();
+        for i = 1, math.huge do;
+            local ret,key,value = reaper.EnumProjExtState(0,"IS_RETURN_TRACK",i-1);
+            if not ret then break end;
+            local tr = reaper.BR_GetMediaTrackByGUID(0,key);
+            if not tr then;
+                reaper.SetProjExtState(0,"IS_RETURN_TRACK",key,"");
+            end;
+        end;
+    end;
+    
+    
+    
+    local function SelectTrack(var);
+        Arc.SelectAllTracks(0);
+        if var == 1 then;
+            for i = 1, math.huge do;
+                local ret,key,value = reaper.EnumProjExtState(0,"IS_RETURN_TRACK",i-1);
+                if not ret then break end;
+                local tr = reaper.BR_GetMediaTrackByGUID(0,key);
+                if tr then;
+                    reaper.SetMediaTrackInfo_Value(tr,"I_SELECTED",1);
+                end;
+            end;
+        elseif var == 2 then;
+            for i = 1, reaper.CountTracks(0) do;
+                local Track = reaper.GetTrack(0,i-1);
+                local GUID = reaper.GetTrackGUID(Track);
+                local retval, val = reaper.GetProjExtState(0,"IS_RETURN_TRACK",GUID);
+                if retval == 0 then;
+                    reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
+                end;
+            end;
+        end;
+    end;
+    
+    
+    
     local function body();
+        ----- / Name Track / -----
+        if NAME_TRACK == "WND" then;
+            local retval,name = reaper.GetUserInputs(extname,1,"Name Inserted Track,extrawidth=100","Receives");
+            if not retval then Arc.no_undo()return end;
+            if name == "" then NAME_TRACK = name elseif #name:gsub("%s","") == 0 then NAME_TRACK = "Receives"else NAME_TRACK = name end;
+        end;
+        -----
         reaper.Undo_BeginBlock();
         reaper.PreventUIRefresh(1);
-        
+        -----
         reaper.InsertTrackAtIndex(0,false);
         local TrackFirst = reaper.GetTrack(0,0);
-        reaper.SetOnlyTrackSelected(TrackFirst);
         local GUID = reaper.GetTrackGUID(TrackFirst);
         reaper.SetProjExtState(0,"IS_RETURN_TRACK",GUID,0);
+        ----- / Select Track / -----
+        if SELECT_TRACK == -1 then;
+            SelectTrack(-1);
+        elseif SELECT_TRACK == 0 then;
+            reaper.SetOnlyTrackSelected(TrackFirst);
+        elseif SELECT_TRACK == 1 then;
+            SelectTrack(1);
+        elseif SELECT_TRACK == 2 then;
+            SelectTrack(2);
+        end;
+        ----- / layout / -----
         reaper.GetSetMediaTrackInfo_String(TrackFirst,"P_TCP_LAYOUT",TCP_LAYOUT,1);
         reaper.GetSetMediaTrackInfo_String(TrackFirst,"P_MCP_LAYOUT",MCP_LAYOUT,1);
+        ----- / Name Track / -----
         reaper.GetSetMediaTrackInfo_String(TrackFirst,"P_NAME",NAME_TRACK,1);
+        ----- / Color / -----
         if R < 0 or G < 0 or B < 0 or R > 255 or G > 255 or B > 255 then;
             reaper.SetMediaTrackInfo_Value(TrackFirst,"I_CUSTOMCOLOR",0);
         else;
             reaper.SetMediaTrackInfo_Value(TrackFirst,"I_CUSTOMCOLOR",reaper.ColorToNative(R,G,B)|0x1000000);
         end;
-        
+        ----- / Send / -----
         for i = 1, reaper.CountTracks(0) do;
             local Track = reaper.GetTrack(0,i-1);
             local GUID = reaper.GetTrackGUID(Track);
             
             local retval, val = reaper.GetProjExtState(0,"IS_RETURN_TRACK",GUID);
             if retval == 0 then;
-                
-                if SEND_VOLUME_DB < -150 then SEND_VOLUME_DB = -150 end;
-                if SEND_VOLUME_DB > 12 then SEND_VOLUME_DB = 12 end;
-                if SEND_MODE~=0 and SEND_MODE~=1 and SEND_MODE~=3 then SEND_MODE=0 end;
                 
                 if SEND_ON == 1 then;
                     local Send;
@@ -213,23 +299,29 @@
             local Track_T = {};
             for i = 1, reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
-                local ret,name = reaper.GetSetMediaTrackInfo_String(Track,"P_NAME","",0);
-                if #NAME_TRACK:gsub("%s","") > 0 and name:match("^%s-"..NAME_TRACK.."%s-%d-%s-$") then;
-                    Track_T[#Track_T+1] = Track
-                    numb = tonumber(name:match(NAME_TRACK.."%s-(%d+)%s-$"));
-                    if numb then numb_T[numb] = true end;
+                local GUID = reaper.GetTrackGUID(Track);
+                local retval, val = reaper.GetProjExtState(0,"IS_RETURN_TRACK",GUID);
+                if retval == 1 then;
+                    local ret,name = reaper.GetSetMediaTrackInfo_String(Track,"P_NAME","",0);
+                    if name:match("^%s-"..NAME_TRACK.."%s-%d-%s-$") then;
+                        Track_T[#Track_T+1] = Track
+                        local numb = tonumber(name:match(NAME_TRACK.."%s-(%d+)%s-$"));
+                        if numb then numb_T[numb] = numb end;
+                    end;
                 end;
             end;
-            local n;
+            -----
+            local n,nameNew;
             for i = #Track_T,1,-1 do;
                 local ret,name = reaper.GetSetMediaTrackInfo_String(Track_T[i],"P_NAME","",0);
-                if #NAME_TRACK:gsub("%s","") > 0 and name:match("^%s-"..NAME_TRACK.."%s-$") then;
+                if name:match("^%s-"..NAME_TRACK.."%s-$") then;
                     n = (n or -1)+1;
                     if n > 0 then;
-                        for i2 = 1, math.huge do;
+                        for i2 = 2, math.huge do;
                             if not numb_T[i2] then;
-                                reaper.GetSetMediaTrackInfo_String(Track_T[i],"P_NAME",name:gsub("%s-$","").." "..i2,1);
-                                numb_T[i2]=true;
+                                if #name:gsub("%s","") == 0 then nameNew = i2 else nameNew = name:gsub("%s-$","").." "..i2 end;
+                                reaper.GetSetMediaTrackInfo_String(Track_T[i],"P_NAME",nameNew,1);
+                                numb_T[i2] = i2;
                                 break;
                             end;
                         end;
@@ -291,6 +383,8 @@
                                     if not Send then;
                                         reaper.PreventUIRefresh(1);
                                         local sendidx = reaper.CreateTrackSend(Track,trRet);
+                                        reaper.SetTrackSendInfo_Value(Track,0,sendidx,"D_VOL",10^(SEND_VOLUME_DB/20));
+                                        reaper.SetTrackSendInfo_Value(Track,0,sendidx,"I_SENDMODE",SEND_MODE);
                                         reaper.PreventUIRefresh(-1);
                                     end;
                                     Send = nil;
@@ -319,20 +413,26 @@
         end;
     end;
     -----------------------------------------------------
-    
-    
-    if SEND_ON == 1 then;
-        if SEND_ON_AUTO == 1 then;
-            loop();
-        end;
-    end;
+        
     
     
     if not FirstRun then;
+        if reaper.CountTracks(0)==0 then Arc.no_undo() return end;
         if SEND_ON_AUTO == 1 then;
             Arc.HelpWindowWhenReRunning(2,"Arc_Function_lua",false,"/ "..extname);
         end;
         body();
+    elseif FirstRun then;
+        cleanFirstRun();
+    end;
+    
+    
+    
+    if SEND_ON == 1 then;
+        if SEND_ON_AUTO == 1 then;
+            if FirstRun and reaper.CountTracks(0)==0 then Arc.no_undo() return end;
+            loop();
+        end;
     end;
     
     
@@ -346,7 +446,7 @@
         if not check_Id then;
             Arc.SetStartupScript(scriptName,id);
         end;
-    elseif STARTUP ~= 1 or SEND_ON_AUTO ~= 1 or SEND_ON ~= 1 then;
+    elseif STARTUP ~= 1 and SEND_ON_AUTO ~= 1 or SEND_ON ~= 1 then;
         if check_Id then;
             Arc.SetStartupScript(scriptName,id,nil,"ONE");
         end;
