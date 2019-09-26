@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="4bf90effb7ee9f8efcce8adf5615ff2fd991be49">
+<index version="1" name="Archie-ReaScripts" commit="60daad068dbc40599d8c35a4f802667f3a844a71">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2789,6 +2789,11 @@ v.1.0 [28.08.19]
     + Added ability to select track selection
     ! Fixed bug with malfunctioning send volume]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/119e14a48fe6e3edc17321d184f9620f79d135d7/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-09-26T12:03:45Z">
+        <changelog><![CDATA[v.1.03 [26.09.19]
+    + Added height adjustment for the created track]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/60daad068dbc40599d8c35a4f802667f3a844a71/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks(`).lua" type="script" desc="Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks">
