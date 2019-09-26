@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a3f4f90268b21d48e094750bfca050c26df23fa0">
+<index version="1" name="Archie-ReaScripts" commit="dcaac987b2da254e86a88fe679e06f891b9717b7">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4156,6 +4156,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [24.09.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c744eb5dfcda8d20d27f655ff9d1281258699fcf/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-09-26T17:15:53Z">
+        <changelog><![CDATA[v.1.01 [24.09.19]
+    + Recovery Request]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dcaac987b2da254e86a88fe679e06f891b9717b7/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua" type="script" desc="Toggle arrange in center relative to edit cursor when you change BPM">
