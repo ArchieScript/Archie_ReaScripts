@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Move edit cursor to last start of play cursor
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Переместить курсор редактирования на последний старт  плей курсора 
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,7 +19,7 @@
    *              Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.01 [23.09.19]
+   *              v.1.02 [26.09.19]
    *                  + ---
    
    *              v.1.0 [21.09.19]
@@ -121,9 +121,10 @@
     
     
     ---___-----------------------------------------------
+    local FirstRun;
     if STARTUP == 1 then;
         --reaper.DeleteExtState(extname,"FirstRun",false);
-        local FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
+        FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
         if FirstRun then;
             reaper.SetExtState(extname,"FirstRun",1,false);
         end;
