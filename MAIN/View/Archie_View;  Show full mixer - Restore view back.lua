@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Show full mixer - Restore view back
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Показать полный микшер - восстановить вид назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,9 +18,11 @@
    *              !? reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.01 [24.09.19]
-   *                  + Recovery Request
-		    
+   *              v.1.02 [27.09.19]
+   *                  + ---
+   
+   *              v.1.01 [26.09.19]
+   *                  + Recovery Request            
    *              v.1.0 [24.09.19]
    *                  + initialе
 --]]
@@ -119,7 +121,9 @@
 			 reaper.DeleteExtState(section,"masterShowRight",true);
 		  end;
 	   end;
-	   -----
+	   -----        
+	   
+	   
 	   
 	   local masterSepWind = reaper.GetToggleCommandStateEx(0,41636); -- master Separate Window
 	   if masterSepWind == 1 then;
@@ -129,6 +133,11 @@
 	   local masterDocked = reaper.GetToggleCommandStateEx(0,41610); -- master in Docker
 	   if masterDocked == 1 then;
 		  reaper.Main_OnCommand(41610,0);
+	   else;
+		  -- что бы мастер появился в микшере если закрыть док --
+		  reaper.Main_OnCommand(40389,0);
+		  reaper.Main_OnCommand(40389,0);
+		  -------------------------------------------------------
 	   end;
 	   
 	   local mixerInDocker = reaper.GetToggleCommandStateEx(0,40083); -- mixer in Docker
@@ -250,7 +259,7 @@
 							  "Восстановить: ОК   /   Оставить: ОТМЕНА\n"..
 							  ("-"):rep(50).."\n\n"..
 							  "You closed the mixer, Restore the view or leave\n\n"..
-							  "Restore: OK / Leave: CANCEL","Archie - Show mixer",1);
+							  "Restore: OK / Leave: CANCEL",scrName:gsub("%.lua",""),1);
 			 if MB == 2 then no_undo() return end;
 		  end;
 	   
@@ -259,7 +268,7 @@
 							  "Восстановить: ОК   /   Оставить: ОТМЕНА\n"..
 							  ("-"):rep(50).."\n\n"..
 							  "You moved the mixer to the dock, Restore the view or leave\n\n"..
-							  "Restore: OK / Leave: CANCEL","Archie - Show mixer",1);
+							  "Restore: OK / Leave: CANCEL",scrName:gsub("%.lua",""),1);
 			 if MB == 2 then no_undo() return end;
 		  end;
 		  restoreView();
