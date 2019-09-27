@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="dcaac987b2da254e86a88fe679e06f891b9717b7">
+<index version="1" name="Archie-ReaScripts" commit="0d1aa77abd84c559980459d5f66a3ba9223dc172">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4161,6 +4161,23 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [24.09.19]
     + Recovery Request]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dcaac987b2da254e86a88fe679e06f891b9717b7/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-09-27T09:45:51Z">
+        <changelog><![CDATA[v.1.02 [27.09.19]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d1aa77abd84c559980459d5f66a3ba9223dc172/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Show hide mixer and master in docker.lua" type="script" desc="Show hide mixer and master in docker">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-09-27T09:45:51Z">
+        <changelog><![CDATA[v.1.0 [27.09.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d1aa77abd84c559980459d5f66a3ba9223dc172/MAIN/View/Archie_View;%20%20Show%20hide%20mixer%20and%20master%20in%20docker.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle arrange in center relative to edit cursor when change BPM.lua" type="script" desc="Toggle arrange in center relative to edit cursor when you change BPM">
