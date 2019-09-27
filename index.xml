@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0d1aa77abd84c559980459d5f66a3ba9223dc172">
+<index version="1" name="Archie-ReaScripts" commit="cff7022c4e3f4d99a3b7863747412257d8fc88a2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4166,6 +4166,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [27.09.19]
     + ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d1aa77abd84c559980459d5f66a3ba9223dc172/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-09-27T10:07:54Z">
+        <changelog><![CDATA[v.1.03 [27.09.19]
+    ! Performance: Break previous copy "defer"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cff7022c4e3f4d99a3b7863747412257d8fc88a2/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Show hide mixer and master in docker.lua" type="script" desc="Show hide mixer and master in docker">
