@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Show full mixer - Restore view back
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Показать полный микшер - восстановить вид назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,8 +18,8 @@
    *              !? reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.6.5+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.02 [27.09.19]
-   *                  + ---
+   *              v.1.03 [27.09.19]
+   *                  ! Performance: Break previous copy "defer"
    
    *              v.1.01 [26.09.19]
    *                  + Recovery Request            
@@ -239,9 +239,23 @@
     end;  
     
     
+    local stopDoubleScr,ActiveDoubleScr;
+    
     local function loop();
 	   --t=(t or 0)+1;
 	   --reaper.ShowConsoleMsg(t);
+	   
+	   ----- stop Double Script -------
+	   if not ActiveDoubleScr then;
+		  stopDoubleScr = (tonumber(reaper.GetExtState(scrName,"stopDoubleScr"))or 0)+1;
+		  reaper.SetExtState(scrName,"stopDoubleScr",stopDoubleScr,false);
+		  ActiveDoubleScr = true;
+	   end;
+	   
+	   local stopDoubleScr2 = tonumber(reaper.GetExtState(scrName,"stopDoubleScr"));
+	   if stopDoubleScr2 > stopDoubleScr then return end;
+	   --------------------------------
+	   
 	   
 	   local returnLoop = tonumber(reaper.GetExtState(section,"returnLoop"));
 	   if returnLoop then;
