@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="cff7022c4e3f4d99a3b7863747412257d8fc88a2">
+<index version="1" name="Archie-ReaScripts" commit="497642ca1aa5e41fa17e45b15e17fcaba23b9277">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -303,6 +303,9 @@ LUA_Lib
       </version>
       <version name="2.6.5" author="Archie" time="2019-09-24T15:19:14Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/c744eb5dfcda8d20d27f655ff9d1281258699fcf/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.7.0" author="Archie" time="2019-09-29T18:04:07Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/497642ca1aa5e41fa17e45b15e17fcaba23b9277/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -733,26 +736,28 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/FX/Archie_FX;%20%20Open%20first%20instrument%20in%20Selected%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Rename Fx in preset name.lua" type="script" desc="Rename Fx in preset name">
+    <reapack name="Archie_FX;  Rename Fx in selected tracks to preset name.lua" type="script" desc="Rename Fx in selected tracks to preset name">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [260219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/FX/Archie_FX;%20%20Rename%20Fx%20in%20preset%20name.lua</source>
+      <version name="1.01" author="Archie" time="2019-09-29T18:04:07Z">
+        <changelog><![CDATA[v.1.01 [28.09.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/497642ca1aa5e41fa17e45b15e17fcaba23b9277/MAIN/FX/Archie_FX;%20%20Rename%20Fx%20in%20selected%20tracks%20to%20preset%20name.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Rename last selected FX in chain to selected tracks in preset name.lua" type="script" desc="Rename last selected FX in chain to selected tracks in preset name">
+    <reapack name="Archie_FX;  Rename last selected FX in chain in selected tracks to preset name.lua" type="script" desc="Rename last selected FX in chain in selected tracks to preset name">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-02-25T19:19:39Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [260219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2328abb29490aca181bf00fef80cd768321f4431/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20to%20selected%20tracks%20in%20preset%20name.lua</source>
+      <version name="1.01" author="Archie" time="2019-09-29T18:04:07Z">
+        <changelog><![CDATA[v.1.01 [28.09.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/497642ca1aa5e41fa17e45b15e17fcaba23b9277/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20in%20selected%20tracks%20to%20preset%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Show all active floating FX windows for selected tracks.lua" type="script" desc="Show all active floating FX windows for selected tracks">
