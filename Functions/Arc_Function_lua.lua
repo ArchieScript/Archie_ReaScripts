@@ -1,9 +1,9 @@
-local VersionMod = "v.2.7.0"
+local VersionMod = "v.2.7.2"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.7.0
+   * Version:     2.7.2
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -63,10 +63,10 @@ local VersionMod = "v.2.7.0"
    *      v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
    *      v.265   + SetStartupScript(nameAction,id,nameFun,Clean);
    *      v.265   + boolean, boolean = GetStartupScript(id,nameFun);
-   *      v.269   + DeleteEnvelopeRangeEx(env,time1,time2,Undo);
+   *      v.271   + DeleteEnvelopeRangeEx(env,time1,time2,Undo);
    *      v.269   + Convert_Env_ValueInValueAndInPercent_SWS(envelope,valPoint,PerVal);
-   *      v.269   + CopyMove_EnvTr_PointsInRangeOfTime_SWS(ENV,ENV_NEW,time1,time2,timeNew1,Move,Undo);
-   *      v.270   + CopyMoveItem_WithEnvelope_SWS(Item,New_track,NewPosition,Move,EnvPointMove,noAct,Undo);
+   *      v.271   + CopyMove_EnvTr_PointsInRangeOfTime_SWS(ENV,ENV_NEW,time1,time2,timeNew1,Move,Undo);
+   *      v.271   + CopyMoveItem_WithEnvelope_SWS(Item,New_track,NewPosition,Move,EnvPointMove,noAct,Undo);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1267,10 +1267,10 @@ local VersionMod = "v.2.7.0"
         local _,str = reaper.GetEnvelopeStateChunk(env,"",false);
         local str2 = str:gsub("POOLEDENV.-\n","")or"";
         reaper.SetEnvelopeStateChunk(env,str2,false);
-        local _,value1,_,_,_ = reaper.Envelope_Evaluate(env,m(time1-0.00001),0,0);
-        local _,value2,_,_,_ = reaper.Envelope_Evaluate(env,m(time2+0.00001),0,0);
+        local _,value1,_,_,_ = reaper.Envelope_Evaluate(env,m(time1-0.000005),0,0);
+        local _,value2,_,_,_ = reaper.Envelope_Evaluate(env,m(time2+0.000005),0,0);
         reaper.SetEnvelopeStateChunk(env,str,false);
-        reaper.DeleteEnvelopePointRangeEx(env,-1,m(math.abs(time1-0.00001)),time2+0.00001);
+        reaper.DeleteEnvelopePointRangeEx(env,-1,m(math.abs(time1-0.000005)),time2+0.000005);
         reaper.InsertEnvelopePointEx(env,-1,m(time1-0.000001),value1,0,0,0,true);
         reaper.InsertEnvelopePointEx(env,-1,m(time2+0.000001),value2,0,0,0,true);
         ::Res::
@@ -1363,34 +1363,36 @@ local VersionMod = "v.2.7.0"
                 local _,str = reaper.GetEnvelopeStateChunk(ENV_NEW,"",false);
                 local str2 = str:gsub("POOLEDENV.-\n","")or"";
                 reaper.SetEnvelopeStateChunk(ENV_NEW,str2,false); 
-                local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew1-0.00001),0,0);
-                local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew2+0.00001),0,0);
+                local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew1-0.000005),0,0);
+                local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew2+0.000005),0,0);
                 reaper.SetEnvelopeStateChunk(ENV_NEW,str,false);
-                reaper.DeleteEnvelopePointRangeEx(ENV_NEW,i,m(math.abs(timeNew1-0.00001)),timeNew2+0.00001);
-                reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.000005),value1,0,0,0,true);
-                reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.000005),value2,0,0,0,true);
-                local _,str = reaper.GetEnvelopeStateChunk(ENV,"",false);
-                local str2 = str:gsub("POOLEDENV.-\n","")or"";
-                reaper.SetEnvelopeStateChunk(ENV,str2,false);
-                local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time1-0.000001),0,0);
-                local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time2+0.000001),0,0);
-                reaper.SetEnvelopeStateChunk(ENV,str,false);
-                local ScalingPre = reaper.GetEnvelopeScalingMode(ENV);
-                if ScalingPre == 1 then;
-                    value1 = reaper.ScaleFromEnvelopeMode(ScalingPre,value1);
-                    value2 = reaper.ScaleFromEnvelopeMode(ScalingPre,value2);
-                end;
-                local Perc1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value1,0);
-                local Perc2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value2,0);
-                value1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc1,1);
-                value2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc2,1);
-                local ScalingPost = reaper.GetEnvelopeScalingMode(ENV_NEW);
-                if ScalingPost == 1 then;
-                    value1 = reaper.ScaleToEnvelopeMode(ScalingPost,value1)
-                    value2= reaper.ScaleToEnvelopeMode(ScalingPost,value2)
-                end;
+                reaper.DeleteEnvelopePointRangeEx(ENV_NEW,i,m(math.abs(timeNew1-0.000005)),timeNew2+0.000005);
                 reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.000001),value1,0,0,0,true);
                 reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.000001),value2,0,0,0,true);
+                if ENV ~= ENV_NEW then;
+                    local _,str = reaper.GetEnvelopeStateChunk(ENV,"",false);
+                    local str2 = str:gsub("POOLEDENV.-\n","")or"";
+                    reaper.SetEnvelopeStateChunk(ENV,str2,false);
+                    local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time1-0.0000001),0,0);
+                    local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time2+0.0000001),0,0);
+                    reaper.SetEnvelopeStateChunk(ENV,str,false);
+                    local ScalingPre = reaper.GetEnvelopeScalingMode(ENV);
+                    if ScalingPre == 1 then;
+                        value1 = reaper.ScaleFromEnvelopeMode(ScalingPre,value1);
+                        value2 = reaper.ScaleFromEnvelopeMode(ScalingPre,value2);
+                    end;
+                    local Perc1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value1,0);
+                    local Perc2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value2,0);
+                    value1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc1,1);
+                    value2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc2,1);
+                    local ScalingPost = reaper.GetEnvelopeScalingMode(ENV_NEW);
+                    if ScalingPost == 1 then;
+                        value1 = reaper.ScaleToEnvelopeMode(ScalingPost,value1)
+                        value2= reaper.ScaleToEnvelopeMode(ScalingPost,value2)
+                    end;
+                    reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.0000001),value1,0,0,0,true);
+                    reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.0000001),value2,0,0,0,true);
+                end;
                 ::Res::
                 for ii = reaper.CountAutomationItems(ENV_NEW)-1,0,-1 do;
                     local posIt = reaper.GetSetAutomationItemInfo(ENV_NEW,ii,"D_POSITION" ,0,0);
@@ -1484,6 +1486,27 @@ local VersionMod = "v.2.7.0"
         GotoMOVEActive = nil;
         if not Goto_DimmyActive and DimmyTr then;Goto_DimmyActive = true goto Goto_Dimmy;
         elseif Goto_DimmyActive and DimmyTr then;reaper.DeleteTrack(reaper.GetTrack(0,0))end;
+        local function ClearEnvelopeInTimeInterval(env,time1,time2,interval);
+            local leftPoint  = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time1-0.00001);
+            local RightPoint = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time2+0.00001);
+            local timeEnd,check;
+            for i = RightPoint,leftPoint,-1 do;
+                local timeR = ({reaper.GetEnvelopePoint(env,i-0)})[2];
+                local timeC = ({reaper.GetEnvelopePoint(env,i-1)})[2];
+                local timeL = ({reaper.GetEnvelopePoint(env,i-2)})[2];
+                if (timeR - timeL) <= interval then;
+                    if not check then;
+                        timeEnd = ({reaper.GetEnvelopePoint(env,reaper.CountEnvelopePoints(env)-1)})[2]+10^2;
+                        check = true;
+                    end;
+                    reaper.SetEnvelopePoint(env,i-1,timeEnd,0,0,0,0,true);
+                    reaper.DeleteEnvelopePointRange(env,timeEnd-0.01,timeR+0.01);
+                end;
+            end;
+            if check then reaper.Envelope_SortPoints(env)end;
+        end;
+        ClearEnvelopeInTimeInterval(ENV_NEW,timeNew1-0.0001,timeNew1+0.0001,0.0001);
+        ClearEnvelopeInTimeInterval(ENV_NEW,timeNew2-0.0001,timeNew2+0.0001,0.0001);
         if Undo == true or Undo == 1 then;
             reaper.Undo_EndBlock("CopyMoveEnvelopePointsInRangeOfTime",-1);
         end;
@@ -1494,8 +1517,8 @@ local VersionMod = "v.2.7.0"
     function Arc_Module.CopyMoveItem_WithEnvelope_SWS(Item,New_track,NewPosition,Move,EnvPointMove,noAct,newAct,newVis,Undo);
         local function CopyMove_EnvTr_PointsInRangeOfTime_SWS(ENV,ENV_NEW,time1,time2,timeNew1,Move,Undo);
             local function Convert_Env_ValueInValueAndInPercent_SWS(envelope,valPoint,PerVal);
-                local _,_,_,_,_,_,min,max,_,_,faderS = reaper.BR_EnvGetProperties(reaper.BR_EnvAlloc(envelope,true));
                 reaper.BR_EnvFree(reaper.BR_EnvAlloc(envelope,true),true);
+                local _,_,_,_,_,_,min,max,_,_,faderS = reaper.BR_EnvGetProperties(reaper.BR_EnvAlloc(envelope,true));
                 local interval = (max - min);
                 if PerVal == 0 then return (valPoint-min)/interval*100;
                 elseif PerVal == 1 then return (valPoint/100)*interval + min;
@@ -1503,6 +1526,7 @@ local VersionMod = "v.2.7.0"
             end;
             reaper.GetEnvelopeName(ENV)reaper.GetEnvelopeName(ENV_NEW);
             if time2 <= time1 then return false end;
+            if ENV == ENV_NEW and time1 == timeNew1 then return false end;
             reaper.PreventUIRefresh(123456);
             if Undo == true or Undo == 1 then;
                 reaper.Undo_BeginBlock();
@@ -1530,34 +1554,36 @@ local VersionMod = "v.2.7.0"
                     local _,str = reaper.GetEnvelopeStateChunk(ENV_NEW,"",false);
                     local str2 = str:gsub("POOLEDENV.-\n","")or"";
                     reaper.SetEnvelopeStateChunk(ENV_NEW,str2,false); 
-                    local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew1-0.00001),0,0);
-                    local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew2+0.00001),0,0);
+                    local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew1-0.000005),0,0);
+                    local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV_NEW,m(timeNew2+0.000005),0,0);
                     reaper.SetEnvelopeStateChunk(ENV_NEW,str,false);
-                    reaper.DeleteEnvelopePointRangeEx(ENV_NEW,i,m(math.abs(timeNew1-0.00001)),timeNew2+0.00001);
-                    reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.000005),value1,0,0,0,true);
-                    reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.000005),value2,0,0,0,true);
-                    local _,str = reaper.GetEnvelopeStateChunk(ENV,"",false);
-                    local str2 = str:gsub("POOLEDENV.-\n","")or"";
-                    reaper.SetEnvelopeStateChunk(ENV,str2,false);
-                    local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time1-0.000001),0,0);
-                    local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time2+0.000001),0,0);
-                    reaper.SetEnvelopeStateChunk(ENV,str,false);
-                    local ScalingPre = reaper.GetEnvelopeScalingMode(ENV);
-                    if ScalingPre == 1 then;
-                        value1 = reaper.ScaleFromEnvelopeMode(ScalingPre,value1);
-                        value2 = reaper.ScaleFromEnvelopeMode(ScalingPre,value2);
-                    end;
-                    local Perc1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value1,0);
-                    local Perc2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value2,0);
-                    value1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc1,1);
-                    value2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc2,1);
-                    local ScalingPost = reaper.GetEnvelopeScalingMode(ENV_NEW);
-                    if ScalingPost == 1 then;
-                        value1 = reaper.ScaleToEnvelopeMode(ScalingPost,value1)
-                        value2= reaper.ScaleToEnvelopeMode(ScalingPost,value2)
-                    end;
+                    reaper.DeleteEnvelopePointRangeEx(ENV_NEW,i,m(math.abs(timeNew1-0.000005)),timeNew2+0.000005);
                     reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.000001),value1,0,0,0,true);
                     reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.000001),value2,0,0,0,true);
+                    if ENV ~= ENV_NEW then;
+                        local _,str = reaper.GetEnvelopeStateChunk(ENV,"",false);
+                        local str2 = str:gsub("POOLEDENV.-\n","")or"";
+                        reaper.SetEnvelopeStateChunk(ENV,str2,false);
+                        local _,value1,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time1-0.0000001),0,0);
+                        local _,value2,_,_,_ = reaper.Envelope_Evaluate(ENV,m(time2+0.0000001),0,0);
+                        reaper.SetEnvelopeStateChunk(ENV,str,false);
+                        local ScalingPre = reaper.GetEnvelopeScalingMode(ENV);
+                        if ScalingPre == 1 then;
+                            value1 = reaper.ScaleFromEnvelopeMode(ScalingPre,value1);
+                            value2 = reaper.ScaleFromEnvelopeMode(ScalingPre,value2);
+                        end;
+                        local Perc1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value1,0);
+                        local Perc2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV,value2,0);
+                        value1 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc1,1);
+                        value2 = Convert_Env_ValueInValueAndInPercent_SWS(ENV_NEW,Perc2,1);
+                        local ScalingPost = reaper.GetEnvelopeScalingMode(ENV_NEW);
+                        if ScalingPost == 1 then;
+                            value1 = reaper.ScaleToEnvelopeMode(ScalingPost,value1)
+                            value2= reaper.ScaleToEnvelopeMode(ScalingPost,value2)
+                        end;
+                        reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew1-0.0000001),value1,0,0,0,true);
+                        reaper.InsertEnvelopePointEx(ENV_NEW,i,m(timeNew2+0.0000001),value2,0,0,0,true);
+                    end;
                     ::Res::
                     for ii = reaper.CountAutomationItems(ENV_NEW)-1,0,-1 do;
                         local posIt = reaper.GetSetAutomationItemInfo(ENV_NEW,ii,"D_POSITION" ,0,0);
@@ -1651,6 +1677,27 @@ local VersionMod = "v.2.7.0"
             GotoMOVEActive = nil;
             if not Goto_DimmyActive and DimmyTr then;Goto_DimmyActive = true goto Goto_Dimmy;
             elseif Goto_DimmyActive and DimmyTr then;reaper.DeleteTrack(reaper.GetTrack(0,0))end;
+            local function ClearEnvelopeInTimeInterval(env,time1,time2,interval);
+                local leftPoint  = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time1-0.00001);
+                local RightPoint = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time2+0.00001);
+                local timeEnd,check;
+                for i = RightPoint,leftPoint,-1 do;
+                    local timeR = ({reaper.GetEnvelopePoint(env,i-0)})[2];
+                    local timeC = ({reaper.GetEnvelopePoint(env,i-1)})[2];
+                    local timeL = ({reaper.GetEnvelopePoint(env,i-2)})[2];
+                    if (timeR - timeL) <= interval then;
+                        if not check then;
+                            timeEnd = ({reaper.GetEnvelopePoint(env,reaper.CountEnvelopePoints(env)-1)})[2]+10^2;
+                            check = true;
+                        end;
+                        reaper.SetEnvelopePoint(env,i-1,timeEnd,0,0,0,0,true);
+                        reaper.DeleteEnvelopePointRange(env,timeEnd-0.01,timeR+0.01);
+                    end;
+                end;
+                if check then reaper.Envelope_SortPoints(env)end;
+            end;
+            ClearEnvelopeInTimeInterval(ENV_NEW,timeNew1-0.0001,timeNew1+0.0001,0.0001);
+            ClearEnvelopeInTimeInterval(ENV_NEW,timeNew2-0.0001,timeNew2+0.0001,0.0001);
             if Undo == true or Undo == 1 then;
                 reaper.Undo_EndBlock("CopyMoveEnvelopePointsInRangeOfTime",-1);
             end;
@@ -1664,10 +1711,10 @@ local VersionMod = "v.2.7.0"
             local _,str = reaper.GetEnvelopeStateChunk(env,"",false);
             local str2 = str:gsub("POOLEDENV.-\n","")or"";
             reaper.SetEnvelopeStateChunk(env,str2,false);
-            local _,value1,_,_,_ = reaper.Envelope_Evaluate(env,m(time1-0.00001),0,0);
-            local _,value2,_,_,_ = reaper.Envelope_Evaluate(env,m(time2+0.00001),0,0);
+            local _,value1,_,_,_ = reaper.Envelope_Evaluate(env,m(time1-0.000005),0,0);
+            local _,value2,_,_,_ = reaper.Envelope_Evaluate(env,m(time2+0.000005),0,0);
             reaper.SetEnvelopeStateChunk(env,str,false);
-            reaper.DeleteEnvelopePointRangeEx(env,-1,m(math.abs(time1-0.00001)),time2+0.00001);
+            reaper.DeleteEnvelopePointRangeEx(env,-1,m(math.abs(time1-0.000005)),time2+0.000005);
             reaper.InsertEnvelopePointEx(env,-1,m(time1-0.000001),value1,0,0,0,true);
             reaper.InsertEnvelopePointEx(env,-1,m(time2+0.000001),value2,0,0,0,true);
             ::Res::
@@ -1736,7 +1783,7 @@ local VersionMod = "v.2.7.0"
         if NewPosition ~= pos then reaper.SetMediaItemInfo_Value(newItem,"D_POSITION",NewPosition)end;
         if Move == true or Move == 1 then reaper.DeleteTrackMediaItem(trackPrev,Item)end;
         if EnvPointMove < 0 then goto Exit end;
-        if EnvPointMove == 1 or EnvPointMove == true then;
+        if EnvPointMove == 1 then;
             local Toggle_EPM = reaper.GetToggleCommandStateEx(0,40070);
             if Toggle_EPM == 0 then goto Exit end;
         end;
@@ -1801,6 +1848,25 @@ local VersionMod = "v.2.7.0"
         return true;
     end;
     CopyMoveItem_WithEnvelope_SWS = Arc_Module.CopyMoveItem_WithEnvelope_SWS;
+    function Arc_Module.ClearEnvelopeInTimeInterval(env,time1,time2,interval);
+        local leftPoint  = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time1-0.00001);
+        local RightPoint = reaper.GetEnvelopePointByTimeEx(ENV_NEW,-1,time2+0.00001);
+        local timeEnd,check;
+        for i = RightPoint,leftPoint,-1 do;
+            local timeR = ({reaper.GetEnvelopePoint(env,i-0)})[2];
+            local timeC = ({reaper.GetEnvelopePoint(env,i-1)})[2];
+            local timeL = ({reaper.GetEnvelopePoint(env,i-2)})[2];
+            if (timeR - timeL) <= interval then;
+                if not check then;
+                    timeEnd = ({reaper.GetEnvelopePoint(env,reaper.CountEnvelopePoints(env)-1)})[2]+10^2;
+                    check = true;
+                end;
+                reaper.SetEnvelopePoint(env,i-1,timeEnd,0,0,0,0,true);
+                reaper.DeleteEnvelopePointRange(env,timeEnd-0.01,timeR+0.01);
+            end;
+        end;
+        if check then reaper.Envelope_SortPoints(env)end;
+    end;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
