@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="24427294c416c76053150d959c368ec5d8402b86">
+<index version="1" name="Archie-ReaScripts" commit="e8e41b69b52cb446dc11935448e24579932c5245">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1165,28 +1165,28 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Item">
-    <reapack name="Archie_Item;  Add Remove stretch marks under mouse cursor(snap to grid).lua" type="script" desc="Add Remove stretch marks under mouse cursor(snap to grid)">
+    <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor(snap to grid).lua" type="script" desc="Add Remove stretch marks under mouse cursor(snap to grid)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-10-07T18:01:28Z">
+      <version name="1.0" author="Archie" time="2019-10-07T18:08:38Z">
         <changelog><![CDATA[v.1.0 [08.10.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/24427294c416c76053150d959c368ec5d8402b86/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marks%20under%20mouse%20cursor(snap%20to%20grid).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e8e41b69b52cb446dc11935448e24579932c5245/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor(snap%20to%20grid).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Add Remove stretch marks under mouse cursor.lua" type="script" desc="Add Remove stretch marks under mouse cursor">
+    <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor.lua" type="script" desc="Add Remove stretch marks under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-10-07T18:01:28Z">
+      <version name="1.0" author="Archie" time="2019-10-07T18:08:38Z">
         <changelog><![CDATA[v.1.0 [08.10.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/24427294c416c76053150d959c368ec5d8402b86/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marks%20under%20mouse%20cursor.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e8e41b69b52cb446dc11935448e24579932c5245/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  adjust item length by grid (mousewheel).lua" type="script" desc="adjust item length by grid (mousewheel)">
