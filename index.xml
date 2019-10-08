@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="79725fbb7acad49613de27c03d895973799b9757">
+<index version="1" name="Archie-ReaScripts" commit="3359e392b30fe2812c32d57704e6214dd9c9854a">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2572,6 +2572,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [08.10.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79725fbb7acad49613de27c03d895973799b9757/MAIN/Preferences/Archie_Pref;%20%20Ignore%20mousewheel%20on%20all%20faders.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-10-08T13:38:46Z">
+        <changelog><![CDATA[v.1.01 [08.10.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3359e392b30fe2812c32d57704e6214dd9c9854a/MAIN/Preferences/Archie_Pref;%20%20Ignore%20mousewheel%20on%20all%20faders.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
