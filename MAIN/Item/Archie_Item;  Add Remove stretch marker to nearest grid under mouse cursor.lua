@@ -4,10 +4,10 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Add Remove stretch marks under mouse cursor
+   * Description: Add Remove stretch marker to nearest grid under mouse cursor
    * Author:      Archie
-   * Version:     1.01
-   * Описание:    Добавить удалить маркеры растяжки под курсором мыши
+   * Version:     1.0
+   * Описание:    Добавить удалить маркер растяжки к ближайшей сетки под курсором мыши
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -16,9 +16,6 @@
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.01 [08.10.19]
-   *                  + Insert extreme markers, if necessary
-   
    *              v.1.0 [08.10.19]
    *                  + initialе
 --]]
@@ -33,23 +30,54 @@
     --------------------------------------------------------
     
     
+    
+    local function GetPreviousGrid(time);
+        for i = 1,math.huge do;
+            local val = reaper.SnapToGrid(0,time);
+            if val <= time then return val end;
+            time = time-0.001;
+        end;
+    end;
+    
+    
+    local function GetNextGrid(time);
+        for i = 1,math.huge do;
+            local val = reaper.SnapToGrid(0,time);
+            if val >= time then return val end;
+            time = time+0.001;
+        end;
+    end;
+    
+    
     local x,y = reaper.GetMousePosition();
     local item,take = reaper.GetItemFromPoint(x,y,false);
     if not take or reaper.TakeIsMIDI(take)then no_undo() return end;
     reaper.BR_GetMouseCursorContext();
     local mousePos = reaper.BR_PositionAtMouseCursor(true);
+    local PreviousGrid = GetPreviousGrid(mousePos);
+    local NextGrid = GetNextGrid(mousePos);
+    local newPos;
+    if math.abs(mousePos-PreviousGrid ) < math.abs(mousePos-NextGrid)then;
+        newPos = PreviousGrid else newPos = NextGrid;
+    end;
     local posIt = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
     local lenIt= reaper.GetMediaItemInfo_Value(item, "D_LENGTH");
     local ratIt = reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
     local sm_mar = reaper.BR_GetMouseCursorContext_StretchMarker();
-    
+    if sm_mar < 0 then;
+        for i = 1, reaper.GetTakeNumStretchMarkers(take)do;
+            local retval, pos, srcpos = reaper.GetTakeStretchMarker(take,i-1);
+            if (pos/ratIt)+posIt == newPos then sm_mar = i-1 end;
+        end;
+    end;
     reaper.Undo_BeginBlock();
     
     if sm_mar >= 0 then; 
         reaper.DeleteTakeStretchMarkers(take,sm_mar);
-        reaper.Undo_EndBlock("Remove stretch marks under mouse cursor",-1);
+        reaper.Undo_EndBlock("Remove stretch marker to nearest grid under mouse cursor",-1);
     else;
-        local idx = reaper.SetTakeStretchMarker(take,-1,(mousePos-posIt)*ratIt);
+        local idx = reaper.SetTakeStretchMarker(take,-1,(newPos-posIt)*ratIt);
+        
         if idx == 0 then;
             reaper.SetTakeStretchMarker(take,-1,0);
             idx = idx + 1;
@@ -59,6 +87,6 @@
             reaper.SetTakeStretchMarker(take,-1,lenIt*ratIt);
         end;
         
-        reaper.Undo_EndBlock("Add stretch marker under mouse cursor",-1);
+        reaper.Undo_EndBlock("Add stretch marker to nearest grid under mouse cursor",-1);
     end;
     reaper.UpdateArrange();
