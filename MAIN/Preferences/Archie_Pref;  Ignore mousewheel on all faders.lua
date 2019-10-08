@@ -6,7 +6,7 @@
    * Category:    Preferences
    * Description: Ignore mousewheel on all faders
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Игнорировать колесико мыши на всех фейдерах
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -15,7 +15,7 @@
    * Gave idea:   Shico(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [08.10.19]
+   * Changelog:   v.1.01 [08.10.19]
    *                  + initialе
 --]]
     
@@ -39,10 +39,10 @@
     if mousewheelMode == 0 then;
         reaper.SNM_SetIntConfigVar("mousewheelmode",IntConfigVar|2);
         reaper.SetToggleCommandState(sec,cmd,1);
-        reaper.Undo_EndBlock("Enable mousewheel on all faders",-1);
+        reaper.Undo_EndBlock("Enable ignore mousewheel on all faders",-1);
     else;
         reaper.SNM_SetIntConfigVar("mousewheelmode",IntConfigVar&~(IntConfigVar&2));
         reaper.SetToggleCommandState(sec,cmd,0);
-        reaper.Undo_EndBlock("Disable mousewheel on all faders",-1);
+        reaper.Undo_EndBlock("Disable ignore mousewheel on all faders",-1);
     end;
     reaper.RefreshToolbar2(sec,cmd);
