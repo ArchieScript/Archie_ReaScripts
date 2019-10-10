@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3359e392b30fe2812c32d57704e6214dd9c9854a">
+<index version="1" name="Archie-ReaScripts" commit="3f8c1f939878024f5445eaba5a420bd33e318b7d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3972,6 +3972,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [03.07.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e3a4f51c315b4ddfc25b4fc10ce4f3167d26825b/MAIN/Various/Archie_Var;%20%20Fade%20in-out%20auto%20both%20edges(Ctrl+fade,Shift+fade,+Alt+fade).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Var;  Show hide Media explorer FX browser Track manager Region-marker manager.lua" type="script" desc="Show hide Media explorer FX browser Track manager Region-marker manager">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-10-10T05:37:54Z">
+        <changelog><![CDATA[v.1.0 [10.10.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f8c1f939878024f5445eaba5a420bd33e318b7d/MAIN/Various/Archie_Var;%20%20Show%20hide%20Media%20explorer%20FX%20browser%20Track%20manager%20Region-marker%20manager.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua" type="script" desc="Toggle auto view scroll(ctrl+click go to play position)">
