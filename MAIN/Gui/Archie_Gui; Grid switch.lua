@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,7 +16,12 @@
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-   * Changelog:   v.1.0 [10.10.19]
+   * Changelog:   
+   *              v.1.02 [12.10.19]
+   *                  + Close window when focus is lost
+   *                  + When click button close window
+   
+   *              v.1.0 [10.10.19]
    *                  + initialе
 --]]
     
@@ -279,7 +284,7 @@
     local section = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     reaper.SetToggleCommandState(sectionID,cmdID,1);
-    reaper.DockWindowRefresh();
+    reaper.RefreshToolbar2(sectionID,cmdID);
     
     
     local PositionDock = tonumber(reaper.GetExtState(section,"PositionDock"))or 0;
@@ -326,6 +331,16 @@
     
     -----
     local TOOL_TIP = tonumber(reaper.GetExtState(section,"TOOL_TIP"))or 1;
+    -----
+    
+    
+    -----
+    local FOCUS_LOST_CLOSE = tonumber(reaper.GetExtState(section,"FOCUS_LOST_CLOSE"))or 0;
+    -----
+    
+    
+    -----
+    CLICK_BUT_CLOSE_WIN = tonumber(reaper.GetExtState(section,"CLICK_BUT_CLOSE_WIN"))or 1;
     -----
     
     
@@ -497,7 +512,7 @@
             local Toggle = reaper.GetToggleCommandStateEx(sectionID,cmdID);
             if Toggle <= 0 then;
                 reaper.SetToggleCommandState(sectionID,cmdID,1);
-                reaper.DockWindowRefresh();
+                reaper.RefreshToolbar2(sectionID,cmdID);
             end;
             checked_Toggle = true;
         end;
@@ -509,6 +524,10 @@
         end;
         ----/ Удалить Фокус с Окна /----
         RemoveFocusWindow(RemFocusWin);
+        ---/ Закрыть окно при потере фокуса / ---
+        if FOCUS_LOST_CLOSE == 1 and Counter(5,"focus_lost_close")== 0 then;
+            if gfx.getchar(65536)&2 ~= 2 then reaper.atexit(exit) return end;
+        end;
         --------------------------------------------------------
         
         -- body --
@@ -652,6 +671,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,4,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_Four < 0 then; CleanToolTip("L_But_Four") end;
@@ -684,6 +706,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,2,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_Two < 0 then; CleanToolTip("L_But_Two") end;
@@ -716,6 +741,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,1,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_One < 0 then; CleanToolTip("L_But_One") end;
@@ -748,6 +776,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.5,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_aHalf < 0 then; CleanToolTip("L_But_aHalf") end;
@@ -780,6 +811,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.25,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end; 
                 
             end;
@@ -813,6 +847,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.125,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneEighth < 0 then; CleanToolTip("L_But_oneEighth") end;
@@ -845,6 +882,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.0625,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneEighth < 0 then; CleanToolTip("L_But_oneEighth") end;
@@ -877,6 +917,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.03125,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneThirtyTwo < 0 then; CleanToolTip("L_But_oneThirtyTwo") end;
@@ -909,6 +952,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.015625,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneSixtyFourth < 0 then; CleanToolTip("L_But_oneSixtyFourth") end;
@@ -940,8 +986,10 @@
                         reaper.GetSetProjectGrid(0,1,0.005208333333,swingmodeF,swingshiftF);
                     else;
                         reaper.GetSetProjectGrid(0,1,0.0078125,swingmodeF,swingshiftF);
-                        
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneHundredTwentyEighth < 0 then; CleanToolTip("L_But_oneHundredTwentyEighth") end;
@@ -974,6 +1022,7 @@
                     end;
                 end;
             end;
+            if L_But_Triplet < 0 then; CleanToolTip("L_But_Triplet") end;
             --------------
             
         else;
@@ -1107,6 +1156,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,4,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_Four < 0 then; CleanToolTip("L_But_Four") end;
@@ -1139,6 +1191,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,2,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_Two < 0 then; CleanToolTip("L_But_Two") end;
@@ -1171,6 +1226,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,1,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_One < 0 then; CleanToolTip("L_But_One") end;
@@ -1203,6 +1261,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.5,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end;
             if L_But_aHalf < 0 then; CleanToolTip("L_But_aHalf") end;
@@ -1235,6 +1296,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.25,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
                 
             end;
@@ -1268,6 +1332,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.125,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneEighth < 0 then; CleanToolTip("L_But_oneEighth") end;
@@ -1300,6 +1367,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.0625,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneEighth < 0 then; CleanToolTip("L_But_oneEighth") end;
@@ -1332,6 +1402,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.03125,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneThirtyTwo < 0 then; CleanToolTip("L_But_oneThirtyTwo") end;
@@ -1364,6 +1437,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.015625,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneSixtyFourth < 0 then; CleanToolTip("L_But_oneSixtyFourth") end;
@@ -1396,6 +1472,9 @@
                     else;
                         reaper.GetSetProjectGrid(0,1,0.0078125,swingmodeF,swingshiftF);
                     end;
+                    ---
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    ---
                 end;
             end; 
             if L_But_oneHundredTwentyEighth < 0 then; CleanToolTip("L_But_oneHundredTwentyEighth") end;
@@ -1428,6 +1507,7 @@
                     end;
                 end;
             end;
+            if L_But_Triplet < 0 then; CleanToolTip("L_But_Triplet") end;
             --------------
             
             
@@ -1453,6 +1533,12 @@
             local checkZoomInOn;
             if FontSize ~= 0 then checkZoomInOn = "!" else checkZoomInOn = "" end;
             
+            local checkedLClose;
+            if FOCUS_LOST_CLOSE == 1 then checkedLClose = "!" else checkedLClose = "" end;
+            
+            local checkedButWClose;
+            if CLICK_BUT_CLOSE_WIN == 1 then checkedButWClose = "!" else checkedButWClose = "" end;
+            
             local checkRemFocWin;
             if RemFocusWin == 1 then checkRemFocWin = "!" else checkRemFocWin = "" end;
             
@@ -1466,24 +1552,30 @@
                                     --[[ 4]]"# #|"..
                                     --[[ 5]]"# #|"..
                                     --[[ 6]]"# #||"..
+                                    --[[->]]">Window|"..
+                                    --[[ 7]]"#Close Window||"..
+                                    --[[ 8]]checkedLClose.."Close window when focus is lost|"..
+                                    --[[ 9]]checkedButWClose.."When click button close window||"..
+                                    --[[10]]"<"..checkRemFocWin.."Remove focus from window (useful when switching Screenset)|"..
                                     --[[->]]">View|"..
                                     --[[->]]">Color|"..
-                                    --[[ 7]]"Customize text color...|"..
-                                    --[[ 8]]"Default text color||"..
-                                    --[[ 9]]"Customize background color|"..
-                                    --[[10]]"Default background color||"..
-                                    --[[11]]"Customize Gui color|"..
-                                    --[[12]]"Default Gui color||"..
-                                    --[[13]]"<Default All color|"..
-                                    --[[14]]checkBold.."Text: Normal / Bold|"..
-                                    --[[15]]checkZoomInOn.."Font Size||"..
-                                    --[[16]]checkRemFocWin.."Remove focus from window (useful when switching Screenset)||"..
-                                    --[[17]]"<Reset All|"..
+                                    --[[11]]"Customize text color...|"..
+                                    --[[12]]"Default text color||"..
+                                    --[[13]]"Customize background color|"..
+                                    --[[14]]"Default background color||"..
+                                    --[[15]]"Customize Gui color|"..
+                                    --[[16]]"Default Gui color||"..
+                                    --[[17]]"<Default All color|"..
+                                    --[[18]]checkBold.."Text: Normal / Bold|"..
+                                    --[[19]]"<"..checkZoomInOn.."Font Size|"..
+                                    --[[->]]">Default|"..
+                                    --[[20]]"Default All color|"..
+                                    --[[21]]"<Default Script|"..
                                     --[[->]]">Support project|"..
-                                    --[[18]]"Dodate||"..
-                                    --[[19]]"Bug report (Of site forum)|"..
-                                    --[[20]]"<Bug report (Rmm forum)||"..
-                                    --[[21]]"Close Grid switch window");
+                                    --[[22]]"Dodate||"..
+                                    --[[23]]"Bug report (Of site forum)|"..
+                                    --[[24]]"< Bug report (Rmm forum)||"..
+                                    --[[25]]"Close Grid switch window");
             
             
             if showmenu == 1 then;
@@ -1519,6 +1611,31 @@
                 ----
             elseif showmenu == 7 then;
                 ----
+                
+                ----
+            elseif showmenu == 8 then;
+                ----
+                if FOCUS_LOST_CLOSE == 1 then FOCUS_LOST_CLOSE = 0 else FOCUS_LOST_CLOSE = 1 end;
+                reaper.SetExtState(section,"FOCUS_LOST_CLOSE",FOCUS_LOST_CLOSE,true);
+                if FOCUS_LOST_CLOSE == 1 then;
+                    reaper.SetExtState(section,"RemFocusWin",0,true);RemFocusWin=0;
+                end;
+                ----
+            elseif showmenu == 9 then;---
+                ----
+                if CLICK_BUT_CLOSE_WIN == 1 then CLICK_BUT_CLOSE_WIN = 0 else CLICK_BUT_CLOSE_WIN = 1 end;
+                reaper.SetExtState(section,"CLICK_BUT_CLOSE_WIN",CLICK_BUT_CLOSE_WIN,true);
+                ----
+            elseif showmenu == 10 then;
+                ----
+                if RemFocusWin == 1 then RemFocusWin = 0 else RemFocusWin = 1 end;
+                reaper.SetExtState(section,"RemFocusWin",RemFocusWin,true);
+                if RemFocusWin == 1 then;
+                    reaper.SetExtState(section,"FOCUS_LOST_CLOSE",0,true);FOCUS_LOST_CLOSE=0;
+                end;
+                ----
+            elseif showmenu == 11 then;
+                ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
                     local r, g, b = reaper.ColorFromNative(color);
@@ -1527,13 +1644,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 8 then;
+            elseif showmenu == 12 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Text",true);
                 R_Text,G_Text,B_Text = R_Text_Default,G_Text_Default,B_Text_Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 9 then;
+            elseif showmenu == 13 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -1543,13 +1660,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 10 then;
+            elseif showmenu == 14 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Background",true);
                 R_Back,G_Back,B_Back = R_Back_Default,G_Back_Default,B_Back_Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 11 then;
+            elseif showmenu == 15 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -1559,29 +1676,32 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 12 then;
+            elseif showmenu == 16 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Gui",true);
                 R_Gui,G_Gui,B_Gui = R_Gui__Default,G_Gui__Default,B_Gui__Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 13 then;
+            elseif showmenu == 17 then;
                 ----
-                reaper.DeleteExtState(section,"Color_Text",true);
-                R_Text,G_Text,B_Text = R_Text_Default,G_Text_Default,B_Text_Default;
-                reaper.DeleteExtState(section,"Color_Background",true);
-                R_Back,G_Back,B_Back = R_Back_Default,G_Back_Default,B_Back_Default;
-                reaper.DeleteExtState(section,"Color_Gui",true);
-                R_Gui,G_Gui,B_Gui = R_Gui__Default,G_Gui__Default,B_Gui__Default;
-                Start_GUI();
+                local MB = reaper.MB("Eng:\nSet all colors to default ?\n\nRus:\nУстановить все цвета по умолчанию ?","Default Color",1);
+                if MB == 1 then;
+                    reaper.DeleteExtState(section,"Color_Text",true);
+                    R_Text,G_Text,B_Text = R_Text_Default,G_Text_Default,B_Text_Default;
+                    reaper.DeleteExtState(section,"Color_Background",true);
+                    R_Back,G_Back,B_Back = R_Back_Default,G_Back_Default,B_Back_Default;
+                    reaper.DeleteExtState(section,"Color_Gui",true);
+                    R_Gui,G_Gui,B_Gui = R_Gui__Default,G_Gui__Default,B_Gui__Default;
+                    Start_GUI();
+                end;
                 ----
-            elseif showmenu == 14 then;
+            elseif showmenu == 18 then;
                 ----
                 if TextBoldNorm == 98 then TextBoldNorm = 0 else TextBoldNorm = 98 end;
                 reaper.SetExtState(section,"TextBoldNorm",TextBoldNorm,true);
                 Start_GUI();
                 ----
-            elseif showmenu == 15 then;
+            elseif showmenu == 19 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("font size",1,"Size: -- < Default = 0 > ++ ",FontSize or 0);
                 if retval and tonumber(retvals_csv) then;
@@ -1590,47 +1710,58 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 16 then;
+            elseif showmenu == 20 then;
                 ----
-                if RemFocusWin == 1 then RemFocusWin = 0 else RemFocusWin = 1 end;
-                reaper.SetExtState(section,"RemFocusWin",RemFocusWin,true);
+                local MB = reaper.MB("Eng:\nSet all colors to default ?\n\nRus:\nУстановить все цвета по умолчанию ?","Default Color",1);
+                if MB == 1 then;
+                    reaper.DeleteExtState(section,"Color_Text",true);
+                    R_Text,G_Text,B_Text = R_Text_Default,G_Text_Default,B_Text_Default;
+                    reaper.DeleteExtState(section,"Color_Background",true);
+                    R_Back,G_Back,B_Back = R_Back_Default,G_Back_Default,B_Back_Default;
+                    reaper.DeleteExtState(section,"Color_Gui",true);
+                    R_Gui,G_Gui,B_Gui = R_Gui__Default,G_Gui__Default,B_Gui__Default;
+                    Start_GUI();
+                end;
                 ----
-            elseif showmenu == 17 then;
+            elseif showmenu == 21 then;
                 ----
-                reaper.DeleteExtState(section,"TOOL_TIP",true);
-                
-                reaper.DeleteExtState(section,"Color_Text",true);
-                reaper.DeleteExtState(section,"Color_Background",true);
-                reaper.DeleteExtState(section,"Color_Gui",true);
-                reaper.DeleteExtState(section,"TextBoldNorm",true);
-                reaper.DeleteExtState(section,"FontSize",true);
-                reaper.DeleteExtState(section,"RemFocusWin",true);
-                reaper.DeleteExtState(section,"PositionDock",true);
-                reaper.DeleteExtState(section,"PositionWind",true);
-                reaper.DeleteExtState(section,"SizeWindow",true);
-                reaper.DeleteExtState(section,"SaveDock",true);
-                gfx.quit();
-                dofile(({reaper.get_action_context()})[2]);
-                do return end;
+                local MB = reaper.MB("Eng:\nDo you really want to delete all saved settings ?\n\nRus:\nВы действительно хотите удалить все сохраненные настройки ?","Default Script",1);
+                if MB == 1 then;
+                    reaper.DeleteExtState(section,"TOOL_TIP",true);
+                    reaper.DeleteExtState(section,"FOCUS_LOST_CLOSE",true);
+                    reaper.DeleteExtState(section,"Color_Text",true);
+                    reaper.DeleteExtState(section,"Color_Background",true);
+                    reaper.DeleteExtState(section,"Color_Gui",true);
+                    reaper.DeleteExtState(section,"TextBoldNorm",true);
+                    reaper.DeleteExtState(section,"FontSize",true);
+                    reaper.DeleteExtState(section,"RemFocusWin",true);
+                    reaper.DeleteExtState(section,"PositionDock",true);
+                    reaper.DeleteExtState(section,"PositionWind",true);
+                    reaper.DeleteExtState(section,"SizeWindow",true);
+                    reaper.DeleteExtState(section,"SaveDock",true);
+                    gfx.quit();
+                    dofile(({reaper.get_action_context()})[2]);
+                    do return end;
+                end;
                 ----
-            elseif showmenu == 18 then;
+            elseif showmenu == 22 then;
                 ----
                 local path = "https://money.yandex.ru/to/410018003906628";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
-                ----
-            elseif showmenu == 19 then;
+                ---- 
+            elseif showmenu == 23 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 24 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 25 then;
                 ----
                 exit();
                 ----
@@ -1652,7 +1783,7 @@
     ---------
     function exit();
         reaper.SetToggleCommandState(sectionID,cmdID,0);
-        reaper.DockWindowRefresh();
+        reaper.RefreshToolbar2(sectionID,cmdID);
         local PosDock,PosX,PosY,PosW,PosH = gfx.dock(-1,-1,-1,-1,-1);
         reaper.SetExtState(section,"PositionDock",PosDock,true);
         reaper.SetExtState(section,"PositionWind",PosX.."&"..PosY,true);
@@ -1662,3 +1793,4 @@
     end;
     ---------
     loop();
+    reaper.atexit(exit);
