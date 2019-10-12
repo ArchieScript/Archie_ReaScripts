@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -17,7 +17,7 @@
    *              [main] . > Archie_Track;  Select next tracks(skip folders)(`).lua
    *              [main] . > Archie_Track;  Select previous tracks(skip folders)(`).lua
    * Changelog:   
-   *              v.1.05 [22.05.19]
+   *              v.1.06 [22.05.19]
    *                  + Add script ...(skip folders)
                       
    *              v.1.04 [22.05.19]
@@ -256,9 +256,9 @@
         local track = reaper.GetSelectedTrack(0,0);
         local Scroll = GetScrollTrack(track);
         
-        if Script_Name == SelectNext then;
+        if Script_Name == SelectNext or Script_Name == SelectNext2 then;
             Scroll = (Scroll - height);
-        elseif Script_Name == SelectPrev then;
+        elseif Script_Name == SelectPrev or Script_Name == SelectPrev2 then;
             Scroll = (Scroll + height);
         end;
         if Scroll < 0 then Scroll = 0 end;
