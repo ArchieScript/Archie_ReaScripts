@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -17,8 +17,9 @@
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua
    * Changelog:   
-   *              + Fixed bug when moving from folder to folder / from folder - skip folder / v.1.07 [29042019]
+   *              No change / v.1.08 [12.10.19]
    
+   *              + Fixed bug when moving from folder to folder / from folder - skip folder / v.1.07 [29042019]
    *              + Scrolling Mixer / v.1.06 [11042019]
    *              + Scrolling in place / v.1.05 [09042019]
    *              + Ignoring tracks in collapsed folders when scrolling / v.1.03 [06042019]
@@ -34,7 +35,7 @@
    (+) Reaper v.5.967 +           --| http://www.reaper.fm/download.php                     
    (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos                              
-   (+) Arc_Function_lua v.2.3.6 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
+   (+) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
    (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw    
    (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                
    =======================================================================================]]
@@ -195,7 +196,7 @@
     end;
     
     
-    local ScrollCheck, Fol_W, NumbTr_w, Undo,Fold_W, wind, block_request,Guid,TrackByGUID,showFold;
+    local ScrollCheck, Fol_W, GetScrollTr, Undo,Fold_W, wind, block_request,Guid,TrackByGUID,showFold;
     do;-->-0.1
     
         local CountSelTrack = reaper.CountSelectedTracks(0);
@@ -302,6 +303,7 @@
                         if Script_Name == "Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua" then;-->-3.21
                             
                             -->>--// Один запрос для всех треков перед папками //-->>--
+                            local NumbTr_w = {};
                             if not wind then;-->-3.1
                                 for i3 = #Guid,1,-1 do;-->-3.2
                                     local track_W = reaper.BR_GetMediaTrackByGUID(0,Guid[i3]);
@@ -340,7 +342,7 @@
                                                         local PostFold_W = reaper.GetMediaTrackInfo_Value(Track_W,"I_FOLDERDEPTH");
                                                         if PostDepth_W > Depth_W or PostFold_W == 1 then;
                                                             wind = true;
-                                                            NumbTr_w = math.ceil(Numb__W)..", "..(NumbTr_w or "");
+                                                            table.insert(NumbTr_w,1,math.ceil(Numb__W));
                                                         end;
                                                         break;--<-3.6
                                                     end;--<-3.6
@@ -352,7 +354,7 @@
                                 
                                 
                                 if wind then;
-                                    NumbTr_w = NumbTr_w:reverse():gsub(",", "- ",1):reverse();
+                                    NumbTr_w = table.concat(NumbTr_w,", ").." - ";
                                     local text_w = "Rus:\n * Поместить трек(и) № "..NumbTr_w.."в папку(и)\n\n"..
                                                    "Eng:\n * Put the track(s) № "..NumbTr_w.."in folder(s)";
                                     local MB = reaper.MB(text_w,"Move the selected track down one.",3);

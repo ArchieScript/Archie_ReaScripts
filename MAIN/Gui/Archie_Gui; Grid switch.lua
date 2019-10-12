@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -340,7 +340,7 @@
     
     
     -----
-    CLICK_BUT_CLOSE_WIN = tonumber(reaper.GetExtState(section,"CLICK_BUT_CLOSE_WIN"))or 1;
+    local CLICK_BUT_CLOSE_WIN = tonumber(reaper.GetExtState(section,"CLICK_BUT_CLOSE_WIN"))or 1;
     -----
     
     
@@ -1729,6 +1729,7 @@
                 if MB == 1 then;
                     reaper.DeleteExtState(section,"TOOL_TIP",true);
                     reaper.DeleteExtState(section,"FOCUS_LOST_CLOSE",true);
+                    reaper.DeleteExtState(section,"CLICK_BUT_CLOSE_WIN",true);
                     reaper.DeleteExtState(section,"Color_Text",true);
                     reaper.DeleteExtState(section,"Color_Background",true);
                     reaper.DeleteExtState(section,"Color_Gui",true);

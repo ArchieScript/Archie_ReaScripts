@@ -1,10 +1,10 @@
 --[[
    * Category:    Track
-   * Description: Select next/previous tracks(skip minimized folders)*
+   * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.04
-   * AboutScript: Select next/previous tracks(skip minimized folders)*
-   * О скрипте:   Выберите следующий/предыдущий треки(пропустить свернутые папки)
+   * Version:     1.05
+   * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
+   * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,11 +14,15 @@
    * Provides:    
    *              [main] . > Archie_Track;  Select next tracks(skip minimized folders)(`).lua
    *              [main] . > Archie_Track;  Select previous tracks(skip minimized folders)(`).lua
+   *              [main] . > Archie_Track;  Select next tracks(skip folders)(`).lua
+   *              [main] . > Archie_Track;  Select previous tracks(skip folders)(`).lua
    * Changelog:   
+   *              v.1.05 [22.05.19]
+   *                  + Add script ...(skip folders)
+                      
    *              v.1.04 [22.05.19]
    *                  + SCROLLING WITH the INDENT
-   *                  + ПРОКРУТКА С ОТСТУПОМ
-   
+   *                  + ПРОКРУТКА С ОТСТУПОМ  
    *              v.1.03 [10042019]
    *                  +  Added a mixer scroll
    *              v.1.0 [09042019]
@@ -70,10 +74,10 @@
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --====================================================================================== 
+    --======================================================================================
     
     
-  
+    
     
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
@@ -84,12 +88,15 @@
     
     
     
-    local SelectPrev = "Archie_Track;  Select previous tracks(skip minimized folders)(`).lua";
-    local SelectNext = "Archie_Track;  Select next tracks(skip minimized folders)(`).lua";
+    local SelectPrev  = "Archie_Track;  Select previous tracks(skip minimized folders)(`).lua";
+    local SelectNext  = "Archie_Track;  Select next tracks(skip minimized folders)(`).lua";
+    local SelectPrev2 = "Archie_Track;  Select previous tracks(skip folders)(`).lua";
+    local SelectNext2 = "Archie_Track;  Select next tracks(skip folders)(`).lua";
+    
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
     
-    if Script_Name ~= SelectPrev and Script_Name ~= SelectNext or SelectPrev == SelectNext then;
+    if Script_Name ~= SelectPrev and Script_Name ~= SelectNext and Script_Name ~= SelectPrev2 and Script_Name ~= SelectNext2 then;
         reaper.MB("Rus:\n\n"..
                   " * Неверное имя скрипта !\n * Имя скрипта должно быть одно из следующих \n"..
                   "    в зависимости от задачи. \n\n\n"..
@@ -97,7 +104,7 @@
                   " * The script name must be one of the following \n"..
                   "    depending on the task.\n"..
                   "-------\n\n\n"..
-                  "Script Name: / Имя скрипта:\n\n"..SelectPrev.."\n\n"..SelectNext,"ERROR",1);
+                  "Script Name: / Имя скрипта:\n\n"..SelectPrev.."\n\n"..SelectNext.."\n\n"..SelectPrev2.."\n\n"..SelectNext2,"ERROR",1);
         no_undo() return;
     end;
     
@@ -157,16 +164,24 @@
     reaper.Undo_BeginBlock();
   
     
-    if Script_Name == SelectNext then;--Select>>
+    if Script_Name == SelectNext or Script_Name == SelectNext2 then;--Select>>
         
-        -- / SelectPrev /--
+        -- / SelectNext /--
+        
         for i = CountSelTrack-1,0,-1 do;
             local trackSel = reaper.GetSelectedTrack(0,i);
-            local Numb = reaper.GetMediaTrackInfo_Value(trackSel,"IP_TRACKNUMBER");
+            local Numb = reaper.GetMediaTrackInfo_Value(trackSel,"IP_TRACKNUMBER"); 
+            local Depth = reaper.GetTrackDepth(trackSel);
             
             for i2 = Numb, reaper.CountTracks(0)-1 do;
                 local trackX = reaper.GetTrack(0,i2);
                 local height = reaper.GetMediaTrackInfo_Value(trackX,"I_WNDH");
+                
+                if Script_Name == SelectNext2 then;
+                    local Depth2 = reaper.GetTrackDepth(trackX);
+                    if Depth2 > Depth then height = 0 end;
+                end;
+                
                 if height >= 24 then;--h
                     local sel = reaper.GetMediaTrackInfo_Value(trackX,"I_SELECTED");
                     if sel == 0 then;
@@ -179,16 +194,24 @@
             end;
         end;
         
-    elseif Script_Name == SelectPrev then;--Select<>
+    elseif Script_Name == SelectPrev or Script_Name == SelectPrev2 then;--Select<>
         
-        -- / SelectNext /--
+        -- / SelectPrev /--
+        
         for i = 1, CountSelTrack do;
             local trackSel = reaper.GetSelectedTrack(0,i-1);
             local Numb = reaper.GetMediaTrackInfo_Value(trackSel,"IP_TRACKNUMBER")-2;
+            local Depth = reaper.GetTrackDepth(trackSel);
             
             for i2 = Numb, 0,-1 do;
                 local trackX = reaper.GetTrack(0,i2);
                 local height = reaper.GetMediaTrackInfo_Value(trackX,"I_WNDH");
+                
+                if Script_Name == SelectPrev2 then;
+                    local Depth2 = reaper.GetTrackDepth(trackX);
+                    if Depth2 > Depth then height = 0 end;
+                end;
+                
                 if height >= 24 then;--h
                     local sel = reaper.GetMediaTrackInfo_Value(trackX,"I_SELECTED");
                     if sel == 0 then;
@@ -250,7 +273,7 @@
             Arc.Action(40221);
         end
            
-        if Script_Name == SelectNext then;
+        if Script_Name == SelectNext or Script_Name == SelectNext2 then;
             local Track = reaper.GetSelectedTrack(0,reaper.CountSelectedTracks(0)-1);
             reaper.SetOnlyTrackSelected(Track);
             Arc.Action(40286,40285);--<--> Go to track
@@ -274,7 +297,7 @@
                 Arc.Action(40285);--> Go to track   
             end;
             ------------------
-        elseif Script_Name == SelectPrev then;
+        elseif Script_Name == SelectPrev or Script_Name == SelectPrev2 then;
           
             local Track = reaper.GetSelectedTrack(0,0);
             reaper.SetOnlyTrackSelected(Track);
