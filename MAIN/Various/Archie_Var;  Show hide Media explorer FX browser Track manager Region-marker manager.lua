@@ -6,14 +6,14 @@
    * Category:    Various
    * Description: Show hide Media explorer FX browser Track manager Region-marker manager
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Snjuk(Rmm) http://rmmedia.ru/threads/134701/post-2403405
    * Gave idea:   Snjuk(Rmm)
    * Changelog:   
-   *              v.1.02 [13.10.19]
+   *              v.1.03 [13.10.19]
    *                  -----
    
    *              v.1.01 [10.10.19]
@@ -47,7 +47,7 @@
     
     
     local
-    Focus_Reaper = 1
+    Focus_Reaper = 0
     
     
     local MediaExplorer = reaper.GetToggleCommandStateEx(0,50124);
