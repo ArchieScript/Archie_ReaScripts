@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="393f9785864c233d92c31938ce004fe78afe3b79">
+<index version="1" name="Archie-ReaScripts" commit="452f5a85a17b1d8edf81912891c0cefebe91020c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4465,6 +4465,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [14.09.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Zoom horizontally - snap to playback cursor (mousewheel).lua" type="script" desc="Zoom horizontally - snap to playback cursor (mousewheel)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-10-20T13:18:35Z">
+        <changelog><![CDATA[initialе
+   + v.1.0 [20.10.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/452f5a85a17b1d8edf81912891c0cefebe91020c/MAIN/View/Archie_View;%20%20Zoom%20horizontally%20-%20snap%20to%20playback%20cursor%20(mousewheel).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Zoom TCP and Arrange to fit screen.lua" type="script" desc="Zoom TCP and Arrange to fit screen">
