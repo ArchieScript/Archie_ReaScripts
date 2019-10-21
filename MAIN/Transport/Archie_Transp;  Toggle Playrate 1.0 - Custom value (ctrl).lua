@@ -11,7 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    smrz1(RMM)
+   * Customer:    smrz1(RMM)https://rmmedia.ru/threads/134701/page-26#post-2408113
    * Gave idea:   smrz1(RMM)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw

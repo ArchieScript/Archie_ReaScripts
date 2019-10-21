@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Add Remove stretch marker under mouse cursor and snap to nearest grid
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Добавить удалить маркер растяжения под курсором мыши и привязать к ближайшей сетке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,12 +16,27 @@
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.03 [22.10.19]
+   *                  + Added ability to add marker to selected items
+   
    *              v.1.02 [19.10.19]
    *                  + No change
-   
    *              v.1.0 [08.10.19]
    *                  + initialе
 --]]
+    
+    
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    local ADD_MAR_SEL_ITEM = false;
+                        -- = true;  Add marker to selected items 
+                        --          Добавить маркер в выбранные элементы
+                        -- = false; Not add marker to selected items
+                        --          Не добавлять маркер в выбранные элементы
+    
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -63,37 +78,60 @@
     if math.abs(mousePos-PreviousGrid ) < math.abs(mousePos-NextGrid)then;
         newPos = PreviousGrid else newPos = NextGrid;
     end;
-    local posIt = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
-    local lenIt= reaper.GetMediaItemInfo_Value(item, "D_LENGTH");
-    local ratIt = reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
     local sm_mar = reaper.BR_GetMouseCursorContext_StretchMarker();
-    --[[
-    if sm_mar < 0 then;
-        for i = 1, reaper.GetTakeNumStretchMarkers(take)do;
-            local retval, pos, srcpos = reaper.GetTakeStretchMarker(take,i-1);
-            if (pos/ratIt)+posIt == newPos then sm_mar = i-1 end;
-        end;
-    end;
-    --]]
     reaper.Undo_BeginBlock();
+    -----
+    local Undo;
+    local itemX = item;
+    local takeX = take;
+    local CountSelItem = reaper.CountSelectedMediaItems(0);
+    if ADD_MAR_SEL_ITEM ~= true or sm_mar >= 0 then CountSelItem = 0 end;
     
-    if sm_mar >= 0 then; 
-        reaper.DeleteTakeStretchMarkers(take,sm_mar);
-        reaper.Undo_EndBlock("Remove stretch marks under mouse cursor",-1);
-    else;
-        local idx = reaper.SetTakeStretchMarker(take,-1,(mousePos-posIt)*ratIt);
-        
-        if idx == 0 then;
-            reaper.SetTakeStretchMarker(take,-1,0);
-            idx = idx + 1;
+    for i = 0,CountSelItem do;
+        if i > 0 then;
+            item = reaper.GetSelectedMediaItem(0,i-1);
+            take = reaper.GetActiveTake(item);
+            if itemX == item and takeX == take then;
+                item = nil;
+                take = nil;
+            end;
         end;
-        
-        if idx == reaper.GetTakeNumStretchMarkers(take)-1 then;
-            reaper.SetTakeStretchMarker(take,-1,lenIt*ratIt);
+        if item and take then;
+            -----
+            local posIt = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
+            local lenIt= reaper.GetMediaItemInfo_Value(item, "D_LENGTH");
+            local ratIt = reaper.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE");
+            if posIt < mousePos and posIt+lenIt > mousePos then;
+            -----
+                --[[
+                if sm_mar < 0 then;
+                    for i = 1, reaper.GetTakeNumStretchMarkers(take)do;
+                        local retval, pos, srcpos = reaper.GetTakeStretchMarker(take,i-1);
+                        if (pos/ratIt)+posIt == newPos then sm_mar = i-1 end;
+                    end;
+                end;
+                --]]
+                if sm_mar >= 0 then; 
+                    reaper.DeleteTakeStretchMarkers(take,sm_mar);
+                    Undo = "Remove stretch marks under mouse cursor"
+                else;
+                    local idx = reaper.SetTakeStretchMarker(take,-1,(mousePos-posIt)*ratIt);
+                    
+                    if idx == 0 then;
+                        reaper.SetTakeStretchMarker(take,-1,0);
+                        idx = idx + 1;
+                    end;
+                    
+                    if idx == reaper.GetTakeNumStretchMarkers(take)-1 then;
+                        reaper.SetTakeStretchMarker(take,-1,lenIt*ratIt);
+                    end;
+                    
+                    reaper.SetTakeStretchMarker(take,idx,(newPos-posIt)*ratIt);
+                    
+                    Undo = "Add stretch marker under mouse cursor and snap to nearest grid"
+                end;
+            end;
         end;
-        
-        reaper.SetTakeStretchMarker(take,idx,(newPos-posIt)*ratIt);
-        
-        reaper.Undo_EndBlock("Add stretch marker under mouse cursor and snap to nearest grid",-1);
     end;
+    reaper.Undo_EndBlock(Undo,-1);
     reaper.UpdateArrange();
