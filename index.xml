@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="7b81fd2ac4e862bc244d26e81464acc3094ea85b">
+<index version="1" name="Archie-ReaScripts" commit="376b38a32e3f0b9abff83550dcae472a0a8cb866">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4023,6 +4023,20 @@ v.1.0 [28.08.19]
       </version>
     </reapack>
   </category>
+  <category name="MAIN/Transport">
+    <reapack name="Archie_Transp;  Toggle Playrate 1.0 - Custom value (ctrl).lua" type="script" desc="Toggle Playrate 1.0 - Custom value (ctrl)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-10-21T16:39:11Z">
+        <changelog><![CDATA[v.1.0 [21.10.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/376b38a32e3f0b9abff83550dcae472a0a8cb866/MAIN/Transport/Archie_Transp;%20%20Toggle%20Playrate%201.0%20-%20Custom%20value%20(ctrl).lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="MAIN/Various">
     <reapack name="Archie_Var;  Copy selected files from media explorer to project subdirectory.lua" type="script" desc="Copy selected files from media explorer to project subdirectory">
       <metadata>
@@ -4490,6 +4504,11 @@ v.1.0 [28.08.19]
    + v.1.0 [21.10.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7b81fd2ac4e862bc244d26e81464acc3094ea85b/MAIN/View/Archie_View;%20%20Zoom%20in%20horizontally%20-%20snap%20to%20playback%20cursor.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-10-21T16:39:11Z">
+        <changelog><![CDATA[v.1.01 [21.10.19]
+    + No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/376b38a32e3f0b9abff83550dcae472a0a8cb866/MAIN/View/Archie_View;%20%20Zoom%20in%20horizontally%20-%20snap%20to%20playback%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Zoom out horizontally - snap to playback cursor.lua" type="script" desc="Zoom out horizontally - snap to playback cursor">
       <metadata>
@@ -4501,6 +4520,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[initialе
    + v.1.0 [21.10.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7b81fd2ac4e862bc244d26e81464acc3094ea85b/MAIN/View/Archie_View;%20%20Zoom%20out%20horizontally%20-%20snap%20to%20playback%20cursor.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2019-10-21T16:39:11Z">
+        <changelog><![CDATA[v.1.01 [21.10.19]
+    + No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/376b38a32e3f0b9abff83550dcae472a0a8cb866/MAIN/View/Archie_View;%20%20Zoom%20out%20horizontally%20-%20snap%20to%20playback%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Zoom TCP and Arrange to fit screen.lua" type="script" desc="Zoom TCP and Arrange to fit screen">
