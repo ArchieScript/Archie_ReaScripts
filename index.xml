@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="376b38a32e3f0b9abff83550dcae472a0a8cb866">
+<index version="1" name="Archie-ReaScripts" commit="bb5658c609250af7b17effa0d5b0082a62283ff8">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1205,6 +1205,11 @@ v.1.0 [28.08.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20to%20nearest%20grid%20under%20mouse%20cursor.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2019-10-21T18:04:51Z">
+        <changelog><![CDATA[v.1.03 [22.10.19]
+    + Added ability to add marker to selected items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb5658c609250af7b17effa0d5b0082a62283ff8/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20to%20nearest%20grid%20under%20mouse%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor and snap to nearest grid.lua" type="script" desc="Add Remove stretch marker under mouse cursor and snap to nearest grid">
       <metadata>
@@ -1222,6 +1227,11 @@ v.1.0 [28.08.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20nearest%20grid.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2019-10-21T18:04:51Z">
+        <changelog><![CDATA[v.1.03 [22.10.19]
+    + Added ability to add marker to selected items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb5658c609250af7b17effa0d5b0082a62283ff8/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20nearest%20grid.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor and snap to next grid.lua" type="script" desc="Add Remove stretch marker under mouse cursor and snap to next grid">
       <metadata>
@@ -1238,6 +1248,23 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [19.10.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20next%20grid.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2019-10-21T18:04:51Z">
+        <changelog><![CDATA[v.1.03 [22.10.19]
+    + Added ability to add marker to selected items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb5658c609250af7b17effa0d5b0082a62283ff8/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20next%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor and snap to previous grid.lua" type="script" desc="Add Remove stretch marker under mouse cursor and snap to previous grid">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.03" author="Archie" time="2019-10-21T18:04:51Z">
+        <changelog><![CDATA[v.1.03 [22.10.19]
+    + Added ability to add marker to selected items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb5658c609250af7b17effa0d5b0082a62283ff8/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20previous%20grid.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Add Remove stretch marker under mouse cursor.lua" type="script" desc="Add Remove stretch marks under mouse cursor">
@@ -1261,22 +1288,10 @@ v.1.0 [28.08.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor.lua</source>
       </version>
-    </reapack>
-    <reapack name="Archie_Item;  Add-remove stretch marker under mouse cursor and snap to previous grid.lua" type="script" desc="Add Remove stretch marker under mouse cursor and snap to previous grid">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-10-08T11:07:32Z">
-        <changelog><![CDATA[v.1.0 [08.10.19]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1a44529c3f904d4649d3ebf0c4bb4644f827989c/MAIN/Item/Archie_Item;%20%20Add-remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20previous%20grid.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-10-19T06:18:49Z">
-        <changelog><![CDATA[v.1.02 [19.10.19]
-    + No change]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/Item/Archie_Item;%20%20Add-remove%20stretch%20marker%20under%20mouse%20cursor%20and%20snap%20to%20previous%20grid.lua</source>
+      <version name="1.03" author="Archie" time="2019-10-21T18:04:51Z">
+        <changelog><![CDATA[v.1.03 [22.10.19]
+    + Added ability to add marker to selected items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb5658c609250af7b17effa0d5b0082a62283ff8/MAIN/Item/Archie_Item;%20%20Add%20Remove%20stretch%20marker%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  adjust item length by grid (mousewheel).lua" type="script" desc="adjust item length by grid (mousewheel)">
