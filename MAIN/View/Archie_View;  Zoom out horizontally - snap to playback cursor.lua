@@ -6,13 +6,15 @@
    * Description: Zoom out horizontally - snap to playback cursor
    * Описание:    Уменьшение масштаба по горизонтали - привязка к курсору воспроизведения
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
-   * Customer:    AndiVax(Rmm)
-   * Gave idea:   AndiVax(Rmm)
+   * Customer:    AndiVax(Rmm)$
+   * Gave idea:   AndiVax(Rmm)$
    * Changelog:   
+   *              v.1.01 [21.10.19]
+   *                  + No change
    *             initialе
    *                + v.1.0 [21.10.19]
 --]]
