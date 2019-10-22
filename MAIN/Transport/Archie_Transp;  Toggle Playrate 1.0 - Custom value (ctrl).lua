@@ -7,15 +7,15 @@
    * Category:    Transport
    * Description: Toggle Playrate 1.0 - Custom value (ctrl)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    smrz1(RMM)https://rmmedia.ru/threads/134701/page-26#post-2408113
+   * Customer:    smrz1(RMM)
    * Gave idea:   smrz1(RMM)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-   * Changelog:   v.1.0 [21.10.19]
+   * Changelog:   v.1.01 [22.10.19]
    *                  + initialе
 --]]
     
@@ -38,7 +38,8 @@
     if Mouse_State&4 == 4 or
         Mouse_State&8 == 8 or
         Mouse_State&16 == 16 then;
-        local retval, retvals_csv = reaper.GetUserInputs("Toggle Playrate",1,"Enter custom value","");
+        local ret = tonumber(reaper.GetExtState(section,"PLAYRATE_CUSTOM_VALUE"))or "";
+        local retval, retvals_csv = reaper.GetUserInputs("Toggle Playrate",1,"Enter custom value",ret);
         retvals_csv = tonumber(retvals_csv);
         if not retval then no_undo() return end;
         if not retvals_csv then;
@@ -50,6 +51,7 @@
         end;
         no_undo() return;
     end;
+    
     
     
     local ExtState = tonumber(reaper.GetExtState(section,"PLAYRATE_CUSTOM_VALUE"));
@@ -87,17 +89,14 @@
     end;
     
     
-    local function Counter();
-        local t={};return function(x,b)b=b or 1 t[b]=(t[b]or 0)+1 if t[b]>(x or math.huge)then t[b]=0 end return t[b]end;  
-    end;Counter = Counter(); -- Counter(x,buf); x=reset
+    local PlayRate2;
     
-    
-    local ActiveDoubleScr,stopDoubleScr;
-    
-    local function loop()
+    local function loop();
         
-        if Counter(10,"Counter")== 0 then;
-        
+        local PlayRate = reaper.Master_GetPlayRate(0);
+        if PlayRate ~= PlayRate2 then;
+            PlayRate2 = PlayRate;
+            
             ----- stop Double Script -------
             if not ActiveDoubleScr then;
                 stopDoubleScr = (tonumber(reaper.GetExtState(section,"stopDoubleScr"))or 0)+1;
@@ -108,7 +107,6 @@
             if stopDoubleScr2 > stopDoubleScr then return end;
             --------------------------------
             
-            local PlayRate = reaper.Master_GetPlayRate(0);
             local Toggle = reaper.GetToggleCommandStateEx(sectionID,cmdID);
             if PlayRate == 1 then;
                 if Toggle ~= 0 then;
