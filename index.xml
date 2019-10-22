@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bb5658c609250af7b17effa0d5b0082a62283ff8">
+<index version="1" name="Archie-ReaScripts" commit="c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1577,6 +1577,18 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-02-16T19:48:31Z">
         <changelog><![CDATA[+  initialе / v.1.0 [17022019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ced598874400c09810bb27d30b77a8757375198/MAIN/Item/Archie_Item;%20%20Ignore%20item(s)%20lock%20with%20Ctrl%20Shift%20or%20Alt%20+%20left%20%20click.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Invert items selection on selected tracks.lua" type="script" desc="Invert items selection on selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-10-22T06:25:34Z">
+        <changelog><![CDATA[v.1.0 [22.10.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Item/Archie_Item;%20%20Invert%20items%20selection%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
@@ -4050,6 +4062,11 @@ v.1.0 [28.08.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/376b38a32e3f0b9abff83550dcae472a0a8cb866/MAIN/Transport/Archie_Transp;%20%20Toggle%20Playrate%201.0%20-%20Custom%20value%20(ctrl).lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2019-10-22T06:25:34Z">
+        <changelog><![CDATA[v.1.01 [22.10.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Transport/Archie_Transp;%20%20Toggle%20Playrate%201.0%20-%20Custom%20value%20(ctrl).lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Various">
@@ -4080,6 +4097,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [03.07.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e3a4f51c315b4ddfc25b4fc10ce4f3167d26825b/MAIN/Various/Archie_Var;%20%20Fade%20in-out%20auto%20both%20edges(Ctrl+fade,Shift+fade,+Alt+fade).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-10-22T06:25:34Z">
+        <changelog><![CDATA[v.1.0 [22.10.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Various/Archie_Var;%20%20Remove%20items%20outside%20time%20selection%20in%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Show hide Media explorer FX browser Track manager Region-marker manager.lua" type="script" desc="Show hide Media explorer FX browser Track manager Region-marker manager">
