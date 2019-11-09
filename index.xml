@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e136dbc397fe4dd58657acc293fa5a2a8f9df0b2">
+<index version="1" name="Archie-ReaScripts" commit="27c0e860b5d2cb502482c01f6a95ecd4545ccb96">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1335,6 +1335,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [07.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e136dbc397fe4dd58657acc293fa5a2a8f9df0b2/MAIN/Item/Archie_Item;%20%20Change%20playback%20rate%20selected%20items%20to%20(ctrl-custom%20value).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Change playback rate selected items to (custom value).lua" type="script" desc="Change playback rate selected items to (custom value)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-09T05:18:18Z">
+        <changelog><![CDATA[v.1.0 [08.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/27c0e860b5d2cb502482c01f6a95ecd4545ccb96/MAIN/Item/Archie_Item;%20%20Change%20playback%20rate%20selected%20items%20to%20(custom%20value).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Change volume items in time selection on selected tracks(ctrl+script to set the value).lua" type="script" desc="Change volume items in time selection on selected tracks(ctrl+script to set the value)">
