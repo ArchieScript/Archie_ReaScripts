@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="27c0e860b5d2cb502482c01f6a95ecd4545ccb96">
+<index version="1" name="Archie-ReaScripts" commit="3592c2c735cc4e5aad0ee0d3af06806c33c25bf8">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2029,6 +2029,11 @@ v.1.0 [28.08.19]
     + copying automation]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d039ae3f9682996af36bb7041c9a107321a669a/MAIN/Item/Archie_Item;%20%20Stutter%201.2%20items.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-11-09T06:39:25Z">
+        <changelog><![CDATA[v.1.02 [09.11.19]
+    +  Fixed bug cleared check box (Move edit cursor when pasting/inserting media)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3592c2c735cc4e5aad0ee0d3af06806c33c25bf8/MAIN/Item/Archie_Item;%20%20Stutter%201.2%20items.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Stutter 1.3 items.lua" type="script" desc="Stutter 1.3 items">
       <metadata>
@@ -2045,6 +2050,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [02.10.19]
     + copying automation]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7d039ae3f9682996af36bb7041c9a107321a669a/MAIN/Item/Archie_Item;%20%20Stutter%201.3%20items.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-11-09T06:39:25Z">
+        <changelog><![CDATA[v.1.02 [09.11.19]
+    +  Fixed bug cleared check box (Move edit cursor when pasting/inserting media)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3592c2c735cc4e5aad0ee0d3af06806c33c25bf8/MAIN/Item/Archie_Item;%20%20Stutter%201.3%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Stutter Duplicate items (n) beat.lua" type="script" desc="Stutter Duplicate items (n) beat">
