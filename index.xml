@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3592c2c735cc4e5aad0ee0d3af06806c33c25bf8">
+<index version="1" name="Archie-ReaScripts" commit="5a198bcde01959c5f150f433d2752983d7519c67">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3164,6 +3164,18 @@ v.1.0 [28.08.19]
     + fixed bug - Remove - make the project dirty at the start of the script
     + исправлена ошибка - Убрать - сделать проект грязный при старте скрипта]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f737497313df487dfc4b734a938da5677dfad8f4/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Auto add icon to track depending on MIDI send.lua" type="script" desc="Auto add icon to track depending on MIDI send">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-13T05:29:14Z">
+        <changelog><![CDATA[v.1.0 [12.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a198bcde01959c5f150f433d2752983d7519c67/MAIN/Track/Archie_Track;%20%20Auto%20add%20icon%20to%20track%20depending%20on%20MIDI%20send.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Copy selected track name.lua" type="script" desc="Copy selected track name">
