@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Set note ends to start of next note - in selected items (legato)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Установите конец ноты в начало следующей ноты - в выбранных элементах (Легато)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,7 +16,11 @@
    * Extension:   Reaper 5.984+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI; Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-   * Changelog:   v.1.0 [16.11.19]
+   * Changelog:   
+   *              v.1.02 [16.11.19]
+   *                  +! fix bug
+   
+   *              v.1.0 [16.11.19]
    *                  + initialе
 --]]
     
@@ -45,6 +49,7 @@
     local UnSel_all_evn = 40214;
     local legato_end_to = 40405;
     local Open_built_MD = 40153;
+    local showMDEditWin = 2;
     local Open_all_selI = 204640;
     
     
@@ -66,6 +71,15 @@
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
     
+    ---
+    while true do;
+        local midieditor = reaper.MIDIEditor_GetActive();
+        if midieditor then;
+            reaper.MIDIEditor_OnCommand(midieditor,showMDEditWin);  
+        else;
+            break;
+        end;
+    end;
     ---
     local ConfigVar = reaper.SNM_GetIntConfigVar("midieditor",0);
     reaper.SNM_SetIntConfigVar("midieditor",Open_all_selI);
