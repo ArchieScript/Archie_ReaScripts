@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Set note ends to start of next note - in selected items (legato)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Установите конец ноты в начало следующей ноты - в выбранных элементах (Легато)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,9 +17,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI; Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.02 [16.11.19]
-   *                  +! fix bug
+   *              v.1.03 [17.11.19]
+   *                  +! fixed bug main window disappearing 
    
+   *              v.1.02 [16.11.19]
+   *                  +! fix bug  
    *              v.1.0 [16.11.19]
    *                  + initialе
 --]]
@@ -71,28 +73,36 @@
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
     
-    ---
+    ----
     while true do;
         local midieditor = reaper.MIDIEditor_GetActive();
         if midieditor then;
-            reaper.MIDIEditor_OnCommand(midieditor,showMDEditWin);  
+            reaper.MIDIEditor_OnCommand(midieditor,showMDEditWin);
+            --reaper.JS_Window_Destroy(midieditor);
         else;
             break;
         end;
+        --t=(t or 0)+1;
     end;
-    ---
+    ----
     local ConfigVar = reaper.SNM_GetIntConfigVar("midieditor",0);
-    reaper.SNM_SetIntConfigVar("midieditor",Open_all_selI);
+    if ConfigVar ~= Open_all_selI then;
+        reaper.SNM_SetIntConfigVar("midieditor",Open_all_selI);
+    end;
     ---
     reaper.Main_OnCommand(Open_built_MD,0);
     local midieditor = reaper.MIDIEditor_GetActive();
     reaper.JS_Window_SetOpacity(midieditor,"ALPHA",0);
+    
     reaper.MIDIEditor_OnCommand(midieditor,Sel_all_event);
     reaper.MIDIEditor_OnCommand(midieditor,legato_end_to);
     reaper.MIDIEditor_OnCommand(midieditor,UnSel_all_evn);
+    reaper.JS_Window_SetOpacity(midieditor,"ALPHA",1);
     reaper.JS_Window_Destroy(midieditor);
     ---
-    reaper.SNM_SetIntConfigVar("midieditor",ConfigVar);
+    if ConfigVar ~= Open_all_selI then;
+        reaper.SNM_SetIntConfigVar("midieditor",ConfigVar);
+    end;
     ---
     reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock("legato selected items",-1);
