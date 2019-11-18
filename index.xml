@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ca2e3407c9f15513c45d272ebca2ce77ab35ead1">
+<index version="1" name="Archie-ReaScripts" commit="593bca0e28a9372e0311fc61e367317d868744b1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1152,7 +1152,7 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [12.10.19]
     + Close window when focus is lost
     + When click button close window]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6244ba6303ba50688e687565d6bcfff06ec635a3/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/593bca0e28a9372e0311fc61e367317d868744b1/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_GuiD; Grid switch.lua" type="script" desc="Grid switch">
