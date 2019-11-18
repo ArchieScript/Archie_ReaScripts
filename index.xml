@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c595f77c719632d1d739844e648dfccca27413f6">
+<index version="1" name="Archie-ReaScripts" commit="2dd43561dbf85bccf0a0eedd7147abf9b1b869d5">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1134,6 +1134,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.09 [23.06.2019]
     +! Fixed bug (Use ruler time unit)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/be828c6d453a947a4b0aa71c3b895483eff55ba1/MAIN/Gui/Archie_Gui;%20%20Show%20clock%20window.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Gui; Grid switch.lua" type="script" desc="Grid switch">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.03" author="Archie" time="2019-11-18T10:33:42Z">
+        <changelog><![CDATA[v.1.02 [12.10.19]
+    + Close window when focus is lost
+    + When click button close window]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2dd43561dbf85bccf0a0eedd7147abf9b1b869d5/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_GuiD; Grid switch.lua" type="script" desc="Grid switch">
