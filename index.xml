@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f19f936efc1014548a5470a411b60964ad1f7b82">
+<index version="1" name="Archie-ReaScripts" commit="11d5bdda2fe7672d812b6f86da230d633a7acb06">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -433,6 +433,18 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MAIN/Envelope">
+    <reapack name="Archie_Env;  Insert four points in time selection and omit by -1 dB (Envelope track volume).lua" type="script" desc="Insert four points in time selection and omit by -1 dB (Envelope track volume)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-18T10:47:19Z">
+        <changelog><![CDATA[v.1.0 [11.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Env;  Select all automation items in selected envelope track,with selected  points preserve .lua" type="script" desc="Select all automation items in selected envelope track,">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -511,6 +523,18 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MAIN/Envelope Take">
+    <reapack name="Archie_EnvT;  Insert four points in time selection and omit by -1 dB (Envelope take volume).lua" type="script" desc="Insert four points in time selection and omit by -1 dB (Envelope take volume)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-18T10:47:19Z">
+        <changelog><![CDATA[v.1.0 [11.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Envelope%20Take/Archie_EnvT;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20take%20volume).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_EnvT;  Volume selected items-take in time selection(Mouse wheel).lua" type="script" desc="Volume selected items-take in time selection(Mouse wheel)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -4285,6 +4309,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [30.10.2019]
     initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5e3e3cac4da37d0915922b7fcd1f64bad4a5f9c7/MAIN/Various/Archie_Var;%20%20Move%20cursor%20to%20previous%20end-start%20of%20selected%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Var;  Open MIDI editor and zoom to content by item.lua" type="script" desc="Open MIDI editor and zoom to content by item">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-18T10:47:19Z">
+        <changelog><![CDATA[v.1.0 [18.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Various/Archie_Var;%20%20Open%20MIDI%20editor%20and%20zoom%20to%20content%20by%20item.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
