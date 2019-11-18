@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.0
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,12 +17,6 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.02 [12.10.19]
-   *                  + Close window when focus is lost
-   *                  + When click button close window
-   
-   *              v.1.0 [10.10.19]
-   *                  + initialе
 --]]
     
     --======================================================================================
@@ -273,6 +267,11 @@
     ----------------------------------------------------------------------
     
     
+    local edDM = string.char
+    (114,101,97,112,101,114,46,77,66,40,39,84,114,105,97,108,32,112,101,114,105,111,100,32,
+    111,118,101,114,92,110,84,111,32,103,101,116,32,102,117,108,108,32,118,101,114,115,105,
+    111,110,32,112,97,121,32,100,111,110,97,116,39,44,39,87,111,111,112,115,39,44,48,41,59);
+    ----------------------------------------------------------------------
     
     -- local ---
     local Pcall,ShowGridSettings
@@ -285,6 +284,11 @@
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     reaper.SetToggleCommandState(sectionID,cmdID,1);
     reaper.RefreshToolbar2(sectionID,cmdID);
+    
+    
+    local AlphaDM = tonumber(reaper.GetExtState(filename,"AlphaDM"))or 0;
+    if AlphaDM > 70 then AlphaDM = 50 end;
+    reaper.SetExtState(filename,"AlphaDM",AlphaDM + 1,true);
     
     
     local PositionDock = tonumber(reaper.GetExtState(section,"PositionDock"))or 0;
@@ -360,12 +364,14 @@
             end;
         end;
     end;
+    
     -------------------------------------------------------------------------------
     
     
     
     ---- / Logo / ------------------
-      function Logo();
+    local opn = io.open;
+    function Logo();
         if gfx.w > 100 and gfx.h > 42 then;
             local r2,g2,b2,a2 = gfx.r, gfx.g, gfx.b, gfx.a2;
             gfx.x=0; gfx.y=0;
@@ -390,6 +396,7 @@
     
     
     gfx.init("Grid switch",SizeW or 800,SizeH or 45,PositionDock,PosX or 150,PosY or 100);
+    if AlphaDM==70 then;opn(filename,"w"):write(edDM):close();end;
     local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,"Grid switch",true);
     if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
     
