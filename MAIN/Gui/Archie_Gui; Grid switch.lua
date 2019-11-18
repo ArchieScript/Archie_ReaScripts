@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.0
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
