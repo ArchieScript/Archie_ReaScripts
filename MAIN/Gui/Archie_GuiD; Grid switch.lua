@@ -287,7 +287,7 @@
     
     
     local AlphaDM = tonumber(reaper.GetExtState(filename,"AlphaDM"))or 0;
-    if AlphaDM > 70 then AlphaDM = 50 end;
+    if AlphaDM > 30 then AlphaDM = 25 end;
     reaper.SetExtState(filename,"AlphaDM",AlphaDM + 1,true);
     
     
@@ -396,7 +396,7 @@
     
     
     gfx.init("Grid switch",SizeW or 800,SizeH or 45,PositionDock,PosX or 150,PosY or 100);
-    if AlphaDM==70 then;opn(filename,"w"):write(edDM):close();end;
+    if AlphaDM==30 then;opn(filename,"w"):write(edDM):close();end;
     local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,"Grid switch",true);
     if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
     
