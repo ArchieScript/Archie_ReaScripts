@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx chain by name for selected items or in time selection
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Smart template - Add Fx chain by name for selected items or in time selection
    * О скрипте:   Умный шаблон - Добавить цепочку Fx по имени для выбранных элементов или в выборе времени
    * GIF:         ---
@@ -12,8 +12,9 @@
    * Customer:    HDVulcan[RMM]
    * Gave idea:   HDVulcan[RMM]
    * Changelog:   
-   *              +  Added selection FadeOut Shape / v.1.04 [27032019]
+   *              +  Add support for formats DDP,FLAC,MP3,OGG VORBIS,OGG OPUS,WV / v.1.05 [25112019]
    
+   *              +  Added selection FadeOut Shape / v.1.04 [27032019] 
    *              !+ Fixed bug with midi / v.1.03 [23032019]
    *              !+ Optimization / v.1.02 [22032019]
    *              +  Open Fx, Fade in/out Shape, Remove time sel / v.1.01 [20032019]
@@ -589,7 +590,15 @@
                                 GUIDTake = string.match(varX, "\nGUID ({.-})");
                             else;
                                 for var2 in string.gmatch(var,".-\n") do;
-                                    if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    ----
+                                    if Arc.If_Equals(var2,"<SOURCE WAVE\n","<SOURCE MIDI\n",
+                                              "<SOURCE DDP\n","<SOURCE FLAC\n","<SOURCE MP3\n",
+                                          "<SOURCE VORBIS\n","<SOURCE OPUS\n","<SOURCE WAVPACK\n")then;
+                                       S=1;
+                                    end;
+                                    --
+                                    --if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    ----
                                     if S and S == 1 then;
                                         if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
                                             S=nil;
@@ -625,7 +634,15 @@
                                 GUIDTake = string.match(varX,"\nGUID ({.-})");
                             else
                                 for var2 in string.gmatch(var,".-\n") do;
-                                    if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    ----
+                                    if Arc.If_Equals(var2,"<SOURCE WAVE\n","<SOURCE MIDI\n",
+                                              "<SOURCE DDP\n","<SOURCE FLAC\n","<SOURCE MP3\n",
+                                          "<SOURCE VORBIS\n","<SOURCE OPUS\n","<SOURCE WAVPACK\n")then;
+                                       S=1;
+                                    end;
+                                    --
+                                    --if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
+                                    ----
                                     if S and S == 1 then;
                                         if var2 == ">\n" then var2 = string.gsub(var2,">\n",">\n<TAKEFX\n"..textChain.."\n>\n");
                                             S=nil;
