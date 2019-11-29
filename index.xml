@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="6ed7bc965166767e4387785e054da5aaa9db8ec4">
+<index version="1" name="Archie-ReaScripts" commit="d2153faed32dd72ec3a550bdb87d2cef15fb9acd">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3104,6 +3104,23 @@ v.1.0 [28.08.19]
     + Master track is selected, delete all content in time selection
     + Мастер трек выбран, удалить все содержимое в выборе времени ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8e9821024eeeaeec1365c234087442864452214e/MAIN/Time%20selection/Archie_Time%20selection;%20%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-11-29T17:59:22Z">
+        <changelog><![CDATA[v.1.02 [30112019]
+    + fix bug automation: Add points to time selection]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d2153faed32dd72ec3a550bdb87d2cef15fb9acd/MAIN/Time%20selection/Archie_Time%20selection;%20%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks%20(moving%20later%20items).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Time selection; Remove contents of time selection in selected tracks.lua" type="script" desc="Remove contents of time selection in selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-11-29T17:59:22Z">
+        <changelog><![CDATA[v.1.0 [30.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d2153faed32dd72ec3a550bdb87d2cef15fb9acd/MAIN/Time%20selection/Archie_Time%20selection;%20Remove%20contents%20of%20time%20selection%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
   </category>
