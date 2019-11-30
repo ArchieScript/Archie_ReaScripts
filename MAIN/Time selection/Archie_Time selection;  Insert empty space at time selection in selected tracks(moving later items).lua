@@ -2,7 +2,7 @@
    * Category:    Time selection
    * Description: Insert empty space at time selection in selected tracks(moving later items) 
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Вставить пустое пространство при выборе времени в выбранные треки(перемещение более поздних элементов)
    * GIF:         ---
