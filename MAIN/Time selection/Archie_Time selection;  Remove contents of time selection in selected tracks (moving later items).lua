@@ -12,8 +12,9 @@
    * Customer:    smrz1:[RMM];
    * Gave idea:   smrz1:[RMM];
    * Changelog:   
-   *              v.1.02 [30112019]
+   *              v.1.02 [30112019] 
    *                  + fix bug automation: Add points to time selection
+   *                  http://rmmedia.ru/threads/134701/post-2424819
    
    *              v.1.01 [05062019]
    *                  + Master track is selected, delete all content in time selection
@@ -36,6 +37,13 @@
    =======================================================================================]]  
     
     
+    
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    local AddPointsToTimeSel = true  -- true / false  | + v.1.02 http://rmmedia.ru/threads/134701/post-2424819
     
     
     --======================================================================================
@@ -110,7 +118,6 @@
         end;
         
         
-        
         local CountTrItem = reaper.CountTrackMediaItems(sel_track);
         for i = CountTrItem-1,0,-1 do;
             local Item = reaper.GetTrackMediaItem(sel_track,i);
@@ -120,7 +127,6 @@
                 reaper.DeleteTrackMediaItem(sel_track,Item);
             end;
         end;
-        
         
         
         local CountTrItem = reaper.CountTrackMediaItems(sel_track);
@@ -134,13 +140,15 @@
         ---
         
         
-        
         local CountTrEnv = reaper.CountTrackEnvelopes(sel_track);
         for i = 1,CountTrEnv do;
            local TrackEnv = reaper.GetTrackEnvelope(sel_track,i-1);
            reaper.SetCursorContext(2,TrackEnv);
            
-           reaper.Main_OnCommand(40726,0);--Insert 4 envelope points at time selection
+           if AddPointsToTimeSel then;
+               reaper.Main_OnCommand(40726,0);--Insert 4 envelope points at time selection
+           end;
+           
            reaper.Main_OnCommand(40089,0);--Delete all points in time selection
            
            SelAllAutoItemsTrack(TrackEnv,1);
@@ -161,7 +169,6 @@
            reaper.Main_OnCommand(42086,0);--Delete automation items
            reaper.SetCursorContext(1,TrackEnv);
         end;
-        
         
         
         local CountTrEnv = reaper.CountTrackEnvelopes(sel_track);

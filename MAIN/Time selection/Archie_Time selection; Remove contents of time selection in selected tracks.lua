@@ -26,6 +26,9 @@
     
     local RemoveTimeSel = false -- true / false
     
+	local AddPointsToTimeSel = true  -- true / false  | + v.1.0 http://rmmedia.ru/threads/134701/post-2424819
+    
+	
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -104,7 +107,10 @@
            local TrackEnv = reaper.GetTrackEnvelope(sel_track,i-1);
            reaper.SetCursorContext(2,TrackEnv);
            
-           reaper.Main_OnCommand(40726,0);--Insert 4 envelope points at time selection
+           if AddPointsToTimeSel then;
+               reaper.Main_OnCommand(40726,0);--Insert 4 envelope points at time selection
+           end;
+		   
            reaper.Main_OnCommand(40089,0);--Delete all points in time selection
            
            SelAllAutoItemsTrack(TrackEnv,1);
