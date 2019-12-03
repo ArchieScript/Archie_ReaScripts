@@ -33,9 +33,12 @@
     --======================================================================================  
     
     
+    local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+    
     
     local function Offline();
         reaper.Undo_BeginBlock();
+        local str;
         for itr = 0, reaper.CountTracks(0) do;
         
             local Track;
@@ -66,6 +69,8 @@
             end;  
         end;
         reaper.SetProjExtState(0,'OFFLINEFX_PDC','FXGUID_STATE',str or '');
+        reaper.SetToggleCommandState(sec,cmd,1);
+        reaper.RefreshToolbar2(sec,cmd);
         reaper.Undo_EndBlock('Offline fx PDC',-1);
     end;
    
@@ -107,8 +112,11 @@
         end;
         
         reaper.SetProjExtState(0,'OFFLINEFX_PDC','FXGUID_STATE','');
+        reaper.SetToggleCommandState(sec,cmd,0);
+        reaper.RefreshToolbar2(sec,cmd);
         reaper.Undo_EndBlock('Online fx PDC',-1);
     end;
+    
     
     
     
@@ -121,3 +129,5 @@
         Online();
         reaper.SetExtState('ArchieTOGGLESTATEPDC','STATE',0,true);
     end;
+    
+    
