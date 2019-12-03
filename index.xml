@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="fe6cd857b234e318d28b275d1959a2ef3f434cf5">
+<index version="1" name="Archie-ReaScripts" commit="aabff6089577b180b215e2a3821b1553f2701907">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -746,6 +746,18 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/FX/Archie_FX;%20%20Move%20last%20FX%20in%20selected%20tracks%20to%20first%20position(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Offline all Fx in project with delay (PDC) over 256 samples(`).lua" type="script" desc="Offline all Fx in project with delay (PDC) over x samples">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-03T16:54:05Z">
+        <changelog><![CDATA[v.1.0 [03.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aabff6089577b180b215e2a3821b1553f2701907/MAIN/FX/Archie_FX;%20%20Offline%20all%20Fx%20in%20project%20with%20delay%20(PDC)%20over%20256%20samples(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Open all VSTi in Selected tracks.lua" type="script" desc="Open all VSTi in Selected tracks">
@@ -2783,6 +2795,20 @@ v.1.0 [28.08.19]
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
         <source main="main" file="Archie_Proj;  Move project content forward or backward (moving in beats)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
         <source main="main" file="Archie_Proj;  Move project content forward or backward (move in seconds)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc766534bce3ea768e5d8f59bd50e769c222dd1/MAIN/Project/Archie_Proj;%20%20Move%20project%20content%20forward%20or%20backward.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Render">
+    <reapack name="Archie_Render;  Render stems Template(`).lua" type="script" desc="Render stems Template(`)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-03T16:54:05Z">
+        <changelog><![CDATA[v.1.0 [03.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aabff6089577b180b215e2a3821b1553f2701907/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
   </category>
