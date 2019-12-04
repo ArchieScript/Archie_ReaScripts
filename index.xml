@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="20a3b8f8721a237c652adb2765cd6a696ecc3712">
+<index version="1" name="Archie-ReaScripts" commit="b52cbd5b2bc4f590a7ff3b05e4da7bad70a9a618">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3190,6 +3190,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.04 [26.09.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/99d8d41fddcefe8362e209f22b37b46faefaa4e1/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Arc_Track;  Toggle show-hide track receives from all tracks.lua" type="script" desc="Toggle show-hide track receives from all tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-04T16:14:27Z">
+        <changelog><![CDATA[v.1.0 [04.12.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b52cbd5b2bc4f590a7ff3b05e4da7bad70a9a618/MAIN/Track/Arc_Track;%20%20Toggle%20show-hide%20track%20receives%20from%20all%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks(`).lua" type="script" desc="Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks">
