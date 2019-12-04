@@ -7,7 +7,7 @@
    * Description: Toggle show-hide track receives from all tracks
    * tip:         Works in conjunction with <<* Insert track receive from all tracks >>
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переключатель Показать-Скрыть трек получатель от всех треков
    * подсказка:   Работает в паре с - << Вставить трек - прием со всех треков >>
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,7 +17,10 @@
    * Gave idea:   Snjuk(Rmm)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   
+   * Changelog:  
+   *              v.1.02 [04.12.19]
+   *                  + show-hide MCP
+   
    *              v.1.0 [04.12.19]
    *                  + initialе
 --]]
@@ -28,12 +31,22 @@
     --======================================================================================
     
     
+    local TCP = true   -- true / false
+    
+    local MCP = true   -- true / false
+    
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --======================================================================================
+    
     
     
     --------------------------------------------------------
     local function no_undo() reaper.defer(function()end)end;
     --------------------------------------------------------
     
+    if not TCP and not MCP then no_undo()return end;
     
     local t = {};
     local Visible;
@@ -47,6 +60,9 @@
             t[#t+1]= track;
             if not Visible then;
                 Visible = reaper.IsTrackVisible(track,false);
+                if not Visible then;
+                    Visible = reaper.IsTrackVisible(track,true);
+                end;
             end;
         end;
     end;
@@ -55,11 +71,23 @@
     
     for i = 1, #t do;
         if Visible then;
-            reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINTCP",0);
-            reaper.SetMediaTrackInfo_Value(t[i],"I_SELECTED",0);
+            if TCP then;
+                reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINTCP",0);
+            end; 
+            if MCP then;
+                reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINMIXER",0);
+            end;
+            if TCP or MCP then;
+                reaper.SetMediaTrackInfo_Value(t[i],"I_SELECTED",0);
+            end;
         else;
-            reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINTCP",1);
-        end;  
+            if TCP then;
+                reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINTCP",1);
+            end;
+            if MCP then;
+                reaper.SetMediaTrackInfo_Value(t[i],"B_SHOWINMIXER",1);
+            end;
+        end;
     end;
     
     reaper.TrackList_AdjustWindows(false);
