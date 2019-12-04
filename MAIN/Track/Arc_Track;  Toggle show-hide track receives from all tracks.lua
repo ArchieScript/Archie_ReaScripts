@@ -5,11 +5,11 @@
    *
    * Category:    Track
    * Description: Toggle show-hide track receives from all tracks
-   *           *  Works in conjunction with <<* Insert track receive from all tracks >>
+   * tip:         Works in conjunction with <<* Insert track receive from all tracks >>
    * Author:      Archie
    * Version:     1.0
    * Описание:    Переключатель Показать-Скрыть трек получатель от всех треков
-   *           *  Работает в паре с - << Вставить трек - прием со всех треков >>
+   * подсказка:   Работает в паре с - << Вставить трек - прием со всех треков >>
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
