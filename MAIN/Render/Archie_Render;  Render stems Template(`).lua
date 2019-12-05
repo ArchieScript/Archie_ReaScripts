@@ -17,7 +17,7 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.02 [05.12.19]
+   *              v.1.02 [06.12.19]
    
    *              v.1.01 [05.12.19]
    *                  + Delete the previous track 
@@ -45,20 +45,21 @@
           -----------------------------------------------------------------------
           
     
-    local Render_Directory = 'Render-stem'
+    local Render_Directory = 'XXRPP/Render-stem'
             -- путь может быть пустым    = ''
-            -- Директория проекта        = ' '
             -- или относительным путем   = '-stem-'
             -- или впишите полный путь   = 'C:/Users/...'
             -- Взять путь с окна рендера = -1
-            ---------------------------------
+            -- Путь .rpp файла           = "XXRPP"
+            -- Или продолжите путь       = "XXRPP/My Render/MULTI"
+            ------------------------------------------------------
           
     
-    local Render_Name = '$track-$day$month$year2'
+    local Render_Name = '$track-$day$month$year2-$hour-$minute'
         -- Взять имя с окна рендера      = 0
         -- Показать окно для ввода имени = 1
         -- или впишите Имя               = '-stem-'  Имя может содержать спец знаки, 
-        --                                           такие как '$track' или '$track - $day$month$year2'
+        --                                           такие как '$track', 
         --                                           смотрите окно рендера - 'Wildcards'
         --------------------------------------------------------------------------------
           
@@ -770,6 +771,8 @@
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
         if type(Render_Directory)~='string' then Render_Directory=''end;
+        local projfn = ({reaper.EnumProjects(-1,"")})[2]:match("(.+)[/\\]")or "";
+        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("^/",""):gsub("/$",""))or"";
         reaper.GetSetProjectInfo_String(0,"RENDER_FILE",Render_Directory,1);
     end;
     ------------------------------------------
