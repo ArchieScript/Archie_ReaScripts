@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,7 +16,11 @@
    * Extension:   Reaper 5.984+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-   * Changelog:   v.1.0 [03.12.19]
+   * Changelog:   
+   *              v.1.01 [05.12.19]
+   *                  + Delete the previous track
+   
+   *              v.1.0 [03.12.19]
    *                  + initialе
 --]]
     
@@ -29,7 +33,7 @@
     
     
     
-    local TailOnOff = 0
+    local TailOnOff =  0
                  -- = -1 настройки из окна рендера (Tail)
                  -- =  0 отключить хвост (Tail)
                  -- =  1 включить хвост (Tail) / Необходимо установить TailTime ms
@@ -231,6 +235,12 @@
                     -- = true    Выделить новые треки
                     -- = false   Не выделять новые треки
                     ------------------------------------
+                    
+                    
+    local RemovePreTrack = false
+                      -- = true   Удалить предыдущие (отрендеренные) треки
+                      -- = false  Не удалять предыдущие (отрендеренные) треки
+                      -------------------------------------------------------
                    
           
     local TITLE = "" 
@@ -404,11 +414,24 @@
             
             reaper.Main_OnCommand(40297,0); -- Track: Unselect all tracks
             
-            if SelPreTrack == true then;
+            if SelPreTrack == true or CountTrackPreRend == CountTrackPostRend then;
                 for i = 1, #SV do;
                     reaper.SetMediaTrackInfo_Value(SV[i].SelTr,"I_SELECTED",1);
                 end;
             end;
+            
+            ---
+            if RemovePreTrack == true then;
+                if(CountTrackPostRend-CountTrackPreRend)==#SV then;
+                    if SelPreTrack ~= true then;
+                        for i = 1, #SV do;
+                            reaper.SetMediaTrackInfo_Value(SV[i].SelTr,"I_SELECTED",1);
+                        end;
+                    end;
+                    reaper.Main_OnCommand(40005,0);--Track: Remove tracks
+                end;
+            end;
+            ---
             
             if SelPostTrack == true then;
                 for i = 1,#ST do;
@@ -575,21 +598,36 @@
                 if CountTrackPostRend ~= CountTrackPreRend then;
                     if MutePreTrack == true then;
                         reaper.SetMediaTrackInfo_Value(SelT[i].Track,"B_MUTE",1);
-                    end;
-                    
-                    if SelPreTrack == true then;
-                        reaper.SetMediaTrackInfo_Value(SelT[i].Track,"I_SELECTED",1);
-                    end;
+                    end;                    
                 end;
-                ---
-                
-                if SelPostTrack == true then;
-                    reaper.SetMediaTrackInfo_Value(LPostTrack,"I_SELECTED",1);
-                else;
-                    reaper.SetMediaTrackInfo_Value(LPostTrack,"I_SELECTED",0);
-                end;
-                ---    
             end;
+            
+            
+            ---
+            if SelPreTrack == true or CountTrackPostRend == CountTrackPreRend then;
+                for i = 1, #SelT do;
+                    reaper.SetMediaTrackInfo_Value(SelT[i].Track,"I_SELECTED",1);
+                end;
+            end;
+            
+            if RemovePreTrack == true then;
+                if CountTrackPostRend ~= CountTrackPreRend then;
+                    if SelPreTrack ~= true then;
+                        for i = 1, #SelT do;
+                            reaper.SetMediaTrackInfo_Value(SelT[i].Track,"I_SELECTED",1);
+                        end;
+                    end;
+                    reaper.Main_OnCommand(40005,0);--Track: Remove tracks
+                end;
+            end;
+            ---
+            
+            if SelPostTrack == true then;
+                if CountTrackPostRend ~= CountTrackPreRend and LPostTrack then;
+                    reaper.SetMediaTrackInfo_Value(LPostTrack,"I_SELECTED",1);
+                end;  
+            end;
+            --- 
             
             if TITLE and #TITLE:gsub("%s*","") == 0 then TITLE = nil end;
             reaper.Undo_EndBlock(TITLE or "Render Selected Track Into One New Track",-1);
