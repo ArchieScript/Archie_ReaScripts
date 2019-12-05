@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="eea8dd8f3633b3448ae8cbc7f12e3fae5ecb9b36">
+<index version="1" name="Archie-ReaScripts" commit="e30af37d6bfdc7b40977c3ec53d7aa87a67efd90">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2814,6 +2814,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [05.12.19]
     + Delete the previous track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/eea8dd8f3633b3448ae8cbc7f12e3fae5ecb9b36/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-12-05T12:02:37Z">
+        <changelog><![CDATA[v.1.02 [05.12.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e30af37d6bfdc7b40977c3ec53d7aa87a67efd90/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
   </category>
