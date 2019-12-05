@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,9 +17,10 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.01 [05.12.19]
-   *                  + Delete the previous track
+   *              v.1.02 [05.12.19]
    
+   *              v.1.01 [05.12.19]
+   *                  + Delete the previous track 
    *              v.1.0 [03.12.19]
    *                  + initialе
 --]]
@@ -44,19 +45,22 @@
           -----------------------------------------------------------------------
           
     
-    local Render_Directory = 'Render stem'
+    local Render_Directory = 'Render-stem-'
             -- путь может быть пустым    = ''
+            -- Директория проекта        = ' '
             -- или относительным путем   = '-stem-'
             -- или впишите полный путь   = 'C:/Users/...'
             -- Взять путь с окна рендера = -1
             ---------------------------------
           
     
-    local Render_Name = '-stem-'
+    local Render_Name = '$track'
         -- Взять имя с окна рендера      = 0
         -- Показать окно для ввода имени = 1
-        -- или впишите Имя               = '-stem-'
-        -------------------------------------------
+        -- или впишите Имя               = '-stem-'  Имя может содержать спец знаки, 
+        --                                           такие как '$track', 
+        --                                           смотрите окно рендера - 'Wildcards'
+        --------------------------------------------------------------------------------
           
     
     local channelsRend = 2  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
@@ -241,6 +245,13 @@
                       -- = true   Удалить предыдущие (отрендеренные) треки
                       -- = false  Не удалять предыдущие (отрендеренные) треки
                       -------------------------------------------------------
+                      
+                      
+    local AddRendFileInProj = 1
+                         -- = 0  Не добавлять отрендеренные файлы в проект 
+						 --      (в этом режиме неработают некоторые настройки выше,мьют,удалить и т.д.)
+                         -- = 1  Добавить отрендеренные файлы в проект
+                         ---------------------------------------------
                    
           
     local TITLE = "" 
@@ -254,11 +265,9 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-
-      
-      
-      
-      
+    
+    
+    
     
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
@@ -657,19 +666,19 @@
         
         if CountTrackPostRend ~= CountTrackPreRend then;
             LastPostTrack = reaper.GetTrack(0,reaper.CountTracks(0)-1);
-        end;
         
-        reaper.Main_OnCommand(40297,0); -- Track: Unselect all tracks
-        
-        if LastPostTrack then;
-            reaper.SetOnlyTrackSelected(LastPostTrack);
-            if RenMastTrMOVE == 1 then;  
-                reaper.ReorderSelectedTracks(0,2);
-            end;
+            reaper.Main_OnCommand(40297,0); -- Track: Unselect all tracks
             
-            if SelPostTrack ~= true then;
-                reaper.SetMediaTrackInfo_Value(LastPostTrack,"I_SELECTED",0);
-            end; 
+            if LastPostTrack then;
+                reaper.SetOnlyTrackSelected(LastPostTrack);
+                if RenMastTrMOVE == 1 then;  
+                    reaper.ReorderSelectedTracks(0,2);
+                end;
+                
+                if SelPostTrack ~= true then;
+                    reaper.SetMediaTrackInfo_Value(LastPostTrack,"I_SELECTED",0);
+                end; 
+            end;
         end;
         
         if SelPreTrack == true then;
@@ -756,11 +765,11 @@
         reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",Render_Name,true);
     end;
     ------------------------------------------
-    
+
      
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
-        if type(Render_Directory)~='string'then Render_Directory=''end;
+        if type(Render_Directory)~='string' then Render_Directory=''end;
         reaper.GetSetProjectInfo_String(0,"RENDER_FILE",Render_Directory,1);
     end;
     ------------------------------------------
@@ -840,7 +849,8 @@
     
     
     -- / add rendered files to project / -----
-    reaper.GetSetProjectInfo(0,"RENDER_ADDTOPROJ",1,1);
+    if not If_Equals_Or(AddRendFileInProj,0,1)then AddRendFileInProj = 1 end;
+    reaper.GetSetProjectInfo(0,"RENDER_ADDTOPROJ",AddRendFileInProj,1);
     ------------------------------------------
     
     
@@ -877,14 +887,16 @@
     -------------------------------------------------------------------------------------------
     -- / рендер / -----------------------------------------------------------------------------
     ----
+    if AddRendFileInProj == 0 and RENDER_MASTER ~= true then NewTrack_RendINOne = 1 end;
+    
     if RENDER_MASTER == true then;
         Render_Master_Tr();
     else;
         ----
         if NewTrack_RendINOne == 0 then;
-            RenderSelectedTrackOneNewTrack();
+            RenderSelectedTrackOneNewTrack(); -- трек в один трек
         elseif NewTrack_RendINOne == 1 then;
-            RenderSelectedTrackToNewTrack();
+            RenderSelectedTrackToNewTrack(); --трек в трек
         end;
         ----
     end;
