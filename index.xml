@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c19cd1a93d9f5cc0fca072963fe7c8c0d33cd298">
+<index version="1" name="Archie-ReaScripts" commit="6e3a075b5cba377a9a19b01b336fe246b66be401">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3617,6 +3617,11 @@ v.1.0 [28.08.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c19cd1a93d9f5cc0fca072963fe7c8c0d33cd298/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20in%20folder%20with%20name%20(user%20input).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2019-12-10T11:13:35Z">
+        <changelog><![CDATA[v.1.02 [10.12.19]
+    Add: Insert folder, if it does not exist.]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6e3a075b5cba377a9a19b01b336fe246b66be401/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20in%20folder%20with%20name%20(user%20input).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Move selected tracks up by one visible(`).lua" type="script" desc="Move selected tracks up by one visible*">
       <metadata>
@@ -4003,6 +4008,30 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
         <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Set%20Volume%20selected%20tracks%20to%20-6.0%20dB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show only send of selected track(s).lua" type="script" desc="Show only send of selected track(s)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-10T11:13:35Z">
+        <changelog><![CDATA[v.1.0 [10.12.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6e3a075b5cba377a9a19b01b336fe246b66be401/MAIN/Track/Archie_Track;%20%20Show%20only%20send%20of%20selected%20track(s).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show only send selected track(s) matching name.lua" type="script" desc="Show only send selected track(s) matching name">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-10T11:13:35Z">
+        <changelog><![CDATA[v.1.0 [10.12.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6e3a075b5cba377a9a19b01b336fe246b66be401/MAIN/Track/Archie_Track;%20%20Show%20only%20send%20selected%20track(s)%20matching%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Show-Hide tracks receives (created by script - Insert track receive from all tracks).lua" type="script" desc="Show-Hide tracks receives (created by script - Insert track receive from all tracks)">
