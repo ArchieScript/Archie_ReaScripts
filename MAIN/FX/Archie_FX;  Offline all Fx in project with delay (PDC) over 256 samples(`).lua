@@ -99,14 +99,14 @@
             for ifx = 1, reaper.TrackFX_GetCount(Track) do;
                 local GUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
                 if T[GUID] then;
-                    reaper.TrackFX_SetOffline(Track,ifx-1,false);
+                    reaper.TrackFX_SetOffline(Track,ifx-1,T[GUID]);
                 end;
             end;
             
             for ifx = 1, reaper.TrackFX_GetCount(Track) do;
                 local GUID = reaper.TrackFX_GetFXGUID(Track,0x1000000+ifx-1);
                 if T[GUID] then;
-                    reaper.TrackFX_SetOffline(Track,0x1000000+ifx-1,false);
+                    reaper.TrackFX_SetOffline(Track,0x1000000+ifx-1,T[GUID]);
                 end;
             end;
         end;
@@ -129,5 +129,3 @@
         Online();
         reaper.SetExtState('ArchieTOGGLESTATEPDC','STATE',0,true);
     end;
-    
-    
