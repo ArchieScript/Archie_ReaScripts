@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Move selected tracks in folder with name (user input)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переместить выбранные треки в папку с именем (ввод пользователем)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,7 +14,11 @@
    * Customer:    J T(Rmm)
    * Gave idea:   J T(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
-   * Changelog:   v.1.0 [09.12.19]
+   * Changelog:   
+   *              v.1.02 [10.12.19]
+   *                  Add: Insert folder, if it does not exist.
+   
+   *              v.1.0 [09.12.19]
    *                  + initialе
 --]]
     
@@ -27,8 +31,13 @@
     local TrName = -1
               -- = -1 | показать окно ввода
               -- Или введите имя = "Temp"
-              
-              
+    
+    
+    local InsertFolder = true
+                    -- = true  | Если не существует папки с таким именем, то создать новую папку
+                    -- = false | Не создавать новую папку
+                    
+                    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -70,9 +79,24 @@
                 reaper.Undo_EndBlock("Move selected tracks in folder "..TrName,-1);
                 Undo = true;
                 break;
-            end
+            end;
         end;
     end;
+    
+    
+    if InsertFolder == true then;
+        if not Undo then;
+            reaper.Undo_BeginBlock();
+            local CountTrack = reaper.CountTracks(0);
+            reaper.InsertTrackAtIndex(CountTrack,true);
+            local Track = reaper.GetTrack(0,CountTrack);
+            reaper.GetSetMediaTrackInfo_String(Track,"P_NAME",TrName,1);
+            reaper.ReorderSelectedTracks(CountTrack+1,1);
+            reaper.Undo_EndBlock("Move selected tracks in folder "..TrName,-1);
+            Undo = true;
+        end;
+    end;
+    
     
     if not Undo then;
         no_undo();
