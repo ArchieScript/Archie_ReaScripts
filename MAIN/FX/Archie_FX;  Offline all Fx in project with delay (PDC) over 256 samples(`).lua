@@ -14,7 +14,7 @@
    * Customer:    vax(Rmm) http://www.andivaxmastering.com/
    * Gave idea:   vax(Rmm) http://www.youtube.com/channel/UCfqzOtNcxtITNsBw0x-RiZw
    * Extension:   Reaper 5.984+ http://www.reaper.fm/
-   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   *              SWS v.2.10.0 http://www.sws-extension.org/index.php 
    * Changelog:   v.1.0 [03.12.19]
    *                  + initialе
 --]]
