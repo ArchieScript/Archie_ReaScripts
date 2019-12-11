@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="24740cac2b6852513d34f862a5af70893be5b4e5">
+<index version="1" name="Archie-ReaScripts" commit="59b0299b0a88197dfe14115812cc37a6ceba0b77">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -682,16 +682,28 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Bypass all FX save previous.lua" type="script" desc="Bypass all FX save previous">
+    <reapack name="Archie_FX;  Bypass all FX - save previous.lua" type="script" desc="Bypass all FX - save previous">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-10T12:41:50Z">
+      <version name="1.0" author="Archie" time="2019-12-11T13:10:54Z">
         <changelog><![CDATA[v.1.0 [10.12.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a891789e8937b74c086a456124d73bfe49621bb5/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20save%20previous.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/59b0299b0a88197dfe14115812cc37a6ceba0b77/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20-%20save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX except instruments - save previous.lua" type="script" desc="Bypass all FX except instruments - save previous">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-11T13:10:54Z">
+        <changelog><![CDATA[v.1.0 [11.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/59b0299b0a88197dfe14115812cc37a6ceba0b77/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20except%20instruments%20-%20save%20previous.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Close all VSTi in Selected tracks.lua" type="script" desc="Close all VSTi in Selected tracks">
