@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ccdfef82e874fc23db8d1b0143f621d6411ca6f2">
+<index version="1" name="Archie-ReaScripts" commit="df9456ef5e1afc8cffdc71df42533c6cac38180b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -620,6 +620,42 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MAIN/Fade">
+    <reapack name="Archie_Fade;  Delete fade in selected items.lua" type="script" desc="Delete fade in selected items">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-11T17:14:49Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df9456ef5e1afc8cffdc71df42533c6cac38180b/MAIN/Fade/Archie_Fade;%20%20Delete%20fade%20in%20selected%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fade;  Enlarge fade by 100 ms.lua" type="script" desc="Enlarge fade by 100 ms">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-11T17:14:49Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df9456ef5e1afc8cffdc71df42533c6cac38180b/MAIN/Fade/Archie_Fade;%20%20Enlarge%20fade%20by%20100%20ms.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fade;  Reduce fade by 100 ms.lua" type="script" desc="Reduce fade by 100 ms">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-11T17:14:49Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df9456ef5e1afc8cffdc71df42533c6cac38180b/MAIN/Fade/Archie_Fade;%20%20Reduce%20fade%20by%20100%20ms.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Fade;  Save crossfade when move item when trim is on.lua" type="script" desc="Save crossfade when move item when trim is on">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
