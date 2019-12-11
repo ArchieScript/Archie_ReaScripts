@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="78e82c9ecba4edde9692753dd4afa421a6cded86">
+<index version="1" name="Archie-ReaScripts" commit="24740cac2b6852513d34f862a5af70893be5b4e5">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1913,28 +1913,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Render selected items to one separate track in one item(`).lua" type="script" desc="Render selected items to one separate track in one item">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Item/Archie_Item;%20%20Render%20selected%20items%20to%20one%20separate%20track%20in%20one%20item(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Render selected items to one separate track in one item(Pre-Fx Track)(`).lua" type="script" desc="Render selected items to one separate track in one item(Pre-Fx Track)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Item/Archie_Item;%20%20Render%20selected%20items%20to%20one%20separate%20track%20in%20one%20item(Pre-Fx%20Track)(%60).lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Item;  Select first item from cursor position in all selected track,without removing selection from the previous items.lua" type="script" desc="Select first item from cursor position in all selected track,">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3778,79 +3756,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Removes%208%20characters%20from%20the%20end%20of%20the%20selected%20track%20name(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Render project in time selection on a separate created track (Pre master)(`).lua" type="script" desc="Render project in time selection on a separate created track (Pre master)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master)(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
-+  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-02-11T11:48:30Z">
-        <changelog><![CDATA[!+ Fixed volume issues / v.1.03 [11.02.19] 
-!+ Исправлены проблемы с громкостью / v.1.03 [11.02.19] ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fd63d1158ef5eed63b4d2754475118584e204d1f/MAIN/Track/Archie_Track;%20%20Render%20project%20in%20time%20selection%20on%20a%20separate%20created%20track%20(Pre%20master)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Render selected tracks on one separate track (delete originals)(Pre master)(`).lua" type="script" desc="Render selected tracks on one separate track (delete originals)(Pre master)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.02" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
-+ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(delete%20originals)(Pre%20master)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
-+  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(delete%20originals)(Pre%20master)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Render selected tracks on one separate track (mute originals)(Pre master)(`).lua" type="script" desc="Render selected tracks on one separate track(mute originals)(Pre master)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.02" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
-+ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(mute%20originals)(Pre%20master)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
-+  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(mute%20originals)(Pre%20master)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Render selected tracks on one separate track (Pre master)(`).lua" type="script" desc="Render selected tracks on one separate track (Pre master)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.02" author="Archie" time="2019-01-24T13:32:36Z">
-        <changelog><![CDATA[+ Added a pop-up error when no tracks are selected / v 1.01[08122018]
-+ Добавлена всплывающая ошибка при отсутствии выбранных треков / v 1.01[08122018]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(Pre%20master)(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2019-01-29T18:41:48Z">
-        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
-+  Исправлены пути для Mac/ v.1.03 [29.01.19]  
-+ Added a pop-up error when no tracks are selected / v 1.01[08122018]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Render%20selected%20tracks%20on%20one%20separate%20track%20(Pre%20master)(%60).lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input)(`).lua" type="script" desc="Select a track by name(abbreviated input)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -4461,6 +4366,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [18.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Various/Archie_Var;%20%20Open%20MIDI%20editor%20and%20zoom%20to%20content%20by%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Var;  Pre-reverb.lua" type="script" desc="Pre-reverb">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-11T11:48:09Z">
+        <changelog><![CDATA[v.1.0 [11.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/24740cac2b6852513d34f862a5af70893be5b4e5/MAIN/Various/Archie_Var;%20%20Pre-reverb.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
