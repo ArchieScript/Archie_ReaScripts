@@ -110,10 +110,10 @@
                 local _,trName = reaper.GetSetMediaTrackInfo_String(Track,"P_NAME",0,0);
                 for key, val in pairs(nameSetT) do;  
                     NAME_Coincides = trName:match(val);
-                    if NAME_Coincides then break end
+                    if NAME_Coincides then break end;
                 end;
-                
             end;
+            if NAME_Coincides then break end;
         end; 
     end;
     if not NAME_Coincides then no_undo() return end;
@@ -132,8 +132,9 @@
             
             if (totalT[GUID] or selTrackT[GUID]) then;
                 local _,trName = reaper.GetSetMediaTrackInfo_String(Track,"P_NAME",0,0);
-                for key, val in pairs(nameSetT) do;  
+                for key, val in pairs(nameSetT) do;
                     NAME_Coincides = trName:match(val);
+                    if NAME_Coincides then break end;
                 end;
             end;
             
