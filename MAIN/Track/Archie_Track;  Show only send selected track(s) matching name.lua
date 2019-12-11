@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Show only send selected track(s) matching name
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Показать только отправленные выбранные треки с соответствующим названием
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
