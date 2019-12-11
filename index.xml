@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9fe3fc38cc76dd0e856ea8b806ed16fa3ebab82a">
+<index version="1" name="Archie-ReaScripts" commit="ccdfef82e874fc23db8d1b0143f621d6411ca6f2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3961,6 +3961,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [10.12.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9fe3fc38cc76dd0e856ea8b806ed16fa3ebab82a/MAIN/Track/Archie_Track;%20%20Show%20only%20send%20selected%20track(s)%20matching%20name.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2019-12-11T15:16:04Z">
+        <changelog><![CDATA[v.1.0 [10.12.19]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ccdfef82e874fc23db8d1b0143f621d6411ca6f2/MAIN/Track/Archie_Track;%20%20Show%20only%20send%20selected%20track(s)%20matching%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Show-Hide tracks receives (created by script - Insert track receive from all tracks).lua" type="script" desc="Show-Hide tracks receives (created by script - Insert track receive from all tracks)">
