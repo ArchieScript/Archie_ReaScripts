@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e05b9620728adcc351a73bc23aa4bddce498f116">
+<index version="1" name="Archie-ReaScripts" commit="0862040ffae4397d3310406bd6a0bf159f1d69ad">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2821,6 +2821,90 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [08.10.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3359e392b30fe2812c32d57704e6214dd9c9854a/MAIN/Preferences/Archie_Pref;%20%20Ignore%20mousewheel%20on%20all%20faders.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Dots and lines).lua" type="script" desc="Sample-level waveform (Dots and lines)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Dots%20and%20lines).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Dots and sinc).lua" type="script" desc="Sample-level waveform (Dots and sinc)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Dots%20and%20sinc).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Filled samples).lua" type="script" desc="Sample-level waveform (Filled samples)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Filled%20samples).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Outlined samples).lua" type="script" desc="Sample-level waveform (Outlined samples)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Outlined%20samples).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Sinc smoothed).lua" type="script" desc="Sample-level waveform (Sinc smoothed)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Sinc%20smoothed).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Smooth).lua" type="script" desc="Sample-level waveform (Smooth)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Smooth).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Pref;  Sample-level waveform (Stepped samples).lua" type="script" desc="Sample-level waveform (Stepped samples)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T06:13:16Z">
+        <changelog><![CDATA[v.1.0 [12122019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0862040ffae4397d3310406bd6a0bf159f1d69ad/MAIN/Preferences/Archie_Pref;%20%20Sample-level%20waveform%20(Stepped%20samples).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Solo in front' dimming +1 dB from set value.lua" type="script" desc="Solo in front' dimming +1 dB from set value">
