@@ -742,7 +742,7 @@
     
     
     -----
-    local FOCUS_LOST_CLOSE = tonumber(reaper.GetExtState(section,"FOCUS_LOST_CLOSE"))or 0;
+    local FOCUS_LOST_CLOSE = tonumber(reaper.GetExtState(section,"FOCUS_LOST_CLOSE"))or 1;
     -----
     
     
@@ -783,6 +783,16 @@
     
     -----
     local COL_PREV_GRAD = tonumber(reaper.GetExtState(section,"COL_PREV_GRAD"))or 1;
+    -----
+    
+    
+    -----
+    local CLICK_BUT_CLOSE_WIN = tonumber(reaper.GetExtState(section,"CLICK_BUT_CLOSE_WIN"))or 1;
+    -----
+    
+    
+    -----
+    local CLICK_GRD_CLOSE_WIN = tonumber(reaper.GetExtState(section,"CLICK_GRD_CLOSE_WIN"))or 1;
     -----
     
     
@@ -1057,6 +1067,7 @@
                 
                 if L_Click_Tr1 == 2 then;
                     reaper.Main_OnCommand(40357,0);
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr1 < 0 then; CleanToolTip("L_Click_Tr1") end;
@@ -1086,6 +1097,7 @@
                 
                 if L_Click_Tr2 == 2 then;
                     reaper.Main_OnCommand(40358,0);--Track: Set to random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr2 < 0 then; CleanToolTip("L_Click_Tr2") end;
@@ -1115,6 +1127,7 @@
                 
                 if L_Click_Tr3 == 2 then;
                     reaper.Main_OnCommand(40360,0);--Track: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr3 < 0 then; CleanToolTip("L_Click_Tr3") end;               
@@ -1144,6 +1157,7 @@
                 
                 if L_Click_Tr4 == 2 then;
                     reaper.Main_OnCommand(40359,0);--Track: Set to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr4 < 0 then; CleanToolTip("L_Click_Tr4") end;
@@ -1173,6 +1187,7 @@
                 
                 if L_Click_It1 == 2 then;
                     reaper.Main_OnCommand(40704,0);--Item: Set to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It1 < 0 then; CleanToolTip("L_Click_It1") end;
@@ -1202,6 +1217,7 @@
                 
                 if L_Click_It2 == 2 then;
                     reaper.Main_OnCommand(40705,0);--Item: Set to random colors
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It2 < 0 then; CleanToolTip("L_Click_It2") end;
@@ -1231,6 +1247,7 @@
             
                 if L_Click_It3 == 2 then;
                     reaper.Main_OnCommand(40706,0);--Item: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It3 < 0 then; CleanToolTip("L_Click_It3") end;
@@ -1260,6 +1277,7 @@
             
                 if L_Click_It4 == 2 then;
                     reaper.Main_OnCommand(40707,0);--Item: Set to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It4 < 0 then; CleanToolTip("L_Click_It4") end;
@@ -1289,6 +1307,7 @@
             
                 if L_Click_Tk1 == 2 then;
                     reaper.Main_OnCommand(41331,0);--Take: Set active take to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk1 < 0 then; CleanToolTip("L_Click_Tk1") end;
@@ -1318,6 +1337,7 @@
             
                 if L_Click_Tk2 == 2 then;
                     reaper.Main_OnCommand(41333,0);--Take: Set active take to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk2 < 0 then; CleanToolTip("L_Click_Tk2") end;
@@ -1426,7 +1446,9 @@
                         reaper.PreventUIRefresh(-1);
                         reaper.Undo_EndBlock("Set track color",-1);
                     end;
-                end;       
+                end;
+                reaper.UpdateArrange();
+                if CLICK_GRD_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
             end;
             -----
             -----
@@ -1453,6 +1475,7 @@
                 
                 if L_Click_Tr1 == 2 then;
                     reaper.Main_OnCommand(40357,0);
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end; 
             end;
             if L_Click_Tr1 < 0 then; CleanToolTip("L_Click_Tr1") end;
@@ -1481,6 +1504,7 @@
                 
                 if L_Click_Tr2 == 2 then;
                     reaper.Main_OnCommand(40358,0);--Track: Set to random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr2 < 0 then; CleanToolTip("L_Click_Tr2") end;
@@ -1509,6 +1533,7 @@
                 
                 if L_Click_Tr3 == 2 then;
                     reaper.Main_OnCommand(40360,0);--Track: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr3 < 0 then; CleanToolTip("L_Click_Tr3") end;
@@ -1537,6 +1562,7 @@
                 
                 if L_Click_Tr4 == 2 then;
                     reaper.Main_OnCommand(40359,0);--Track: Set to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr4 < 0 then; CleanToolTip("L_Click_Tr4") end;
@@ -1565,6 +1591,7 @@
                 
                 if L_Click_It1 == 2 then;
                     reaper.Main_OnCommand(40704,0);--Item: Set to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It1 < 0 then; CleanToolTip("L_Click_It1") end;  
@@ -1593,6 +1620,7 @@
                 
                 if L_Click_It2 == 2 then;
                     reaper.Main_OnCommand(40705,0);--Item: Set to random colors
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It2 < 0 then; CleanToolTip("L_Click_It2") end;
@@ -1621,6 +1649,7 @@
                 
                 if L_Click_It3 == 2 then;
                     reaper.Main_OnCommand(40706,0);--Item: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It3 < 0 then; CleanToolTip("L_Click_It3") end;
@@ -1649,6 +1678,7 @@
                 
                 if L_Click_It4 == 2 then;
                     reaper.Main_OnCommand(40707,0);--Item: Set to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It4 < 0 then; CleanToolTip("L_Click_It4") end;   
@@ -1677,6 +1707,7 @@
                 
                 if L_Click_Tk1 == 2 then;
                     reaper.Main_OnCommand(41331,0);--Take: Set active take to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk1 < 0 then; CleanToolTip("L_Click_Tk1") end; 
@@ -1705,6 +1736,7 @@
                 
                 if L_Click_Tk2 == 2 then;
                     reaper.Main_OnCommand(41333,0);--Take: Set active take to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk2 < 0 then; CleanToolTip("L_Click_Tk2") end;
@@ -1739,6 +1771,7 @@
                 
                 if L_Click_Tr1 == 2 then;
                    reaper.Main_OnCommand(40357,0);
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
                 
             end;
@@ -1768,6 +1801,7 @@
                 
                 if L_Click_Tr2 == 2 then;
                    reaper.Main_OnCommand(40358,0);--Track: Set to random color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr2 < 0 then; CleanToolTip("L_Click_Tr2") end;
@@ -1796,6 +1830,7 @@
                 
                 if L_Click_Tr3 == 2 then;
                    reaper.Main_OnCommand(40360,0);--Track: Set to one random color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;    
             end;
             if L_Click_Tr3 < 0 then; CleanToolTip("L_Click_Tr3") end;
@@ -1824,6 +1859,7 @@
                 
                 if L_Click_Tr4 == 2 then;
                    reaper.Main_OnCommand(40359,0);--Track: Set to default color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end; 
             end;
             if L_Click_Tr4 < 0 then; CleanToolTip("L_Click_Tr4") end;
@@ -1852,6 +1888,7 @@
                 
                 if L_Click_It1 == 2 then;
                    reaper.Main_OnCommand(40704,0);--Item: Set to custom color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end; 
                 
             end;
@@ -1881,6 +1918,7 @@
                 
                 if L_Click_It2 == 2 then;
                    reaper.Main_OnCommand(40705,0);--Item: Set to random colors 
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;  
             end;
             if L_Click_It2 < 0 then; CleanToolTip("L_Click_It2") end;
@@ -1909,6 +1947,7 @@
                 
                 if L_Click_It3 == 2 then;
                    reaper.Main_OnCommand(40706,0);--Item: Set to one random color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It3 < 0 then; CleanToolTip("L_Click_It3") end;
@@ -1937,6 +1976,7 @@
                 
                 if L_Click_It4 == 2 then;
                    reaper.Main_OnCommand(40707,0);--Item: Set to default color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It4 < 0 then; CleanToolTip("L_Click_It4") end;
@@ -1965,6 +2005,7 @@
                 
                 if L_Click_Tk1 == 2 then;
                    reaper.Main_OnCommand(41331,0);--Take: Set active take to custom color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk1 < 0 then; CleanToolTip("L_Click_Tk1") end;
@@ -1993,6 +2034,7 @@
                 
                 if L_Click_Tk2 == 2 then;
                    reaper.Main_OnCommand(41333,0);--Take: Set active take to default color
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tk2 < 0 then; CleanToolTip("L_Click_Tk2") end;
@@ -2103,6 +2145,8 @@
                         reaper.Undo_EndBlock("Set track color",-1);
                     end;
                 end;
+                reaper.UpdateArrange();
+                if CLICK_GRD_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
             end;
             -----
             -----
@@ -2129,6 +2173,7 @@
                 
                 if L_Click_Tr1 == 2 then;
                    reaper.Main_OnCommand(40357,0);
+                   if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr1 < 0 then; CleanToolTip("L_Click_Tr1") end;
@@ -2157,6 +2202,7 @@
                 
                 if L_Click_Tr2 == 2 then;
                     reaper.Main_OnCommand(40358,0);--Track: Set to random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_Tr2 < 0 then; CleanToolTip("L_Click_Tr2") end;
@@ -2185,6 +2231,7 @@
                 
                 if L_Click_Tr3 == 2 then;
                     reaper.Main_OnCommand(40360,0);--Track: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;  
             end;
             if L_Click_Tr3 < 0 then; CleanToolTip("L_Click_Tr3") end;
@@ -2213,6 +2260,7 @@
                 
                 if L_Click_Tr4 == 2 then;
                     reaper.Main_OnCommand(40359,0);--Track: Set to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;  
             end;
             if L_Click_Tr4 < 0 then; CleanToolTip("L_Click_Tr4") end;
@@ -2241,6 +2289,7 @@
                 
                 if L_Click_It1 == 2 then;
                     reaper.Main_OnCommand(40704,0);--Item: Set to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It1 < 0 then; CleanToolTip("L_Click_It1") end;
@@ -2269,6 +2318,7 @@
                 
                 if L_Click_It2 == 2 then;
                     reaper.Main_OnCommand(40705,0);--Item: Set to random colors
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end; 
             end;
             if L_Click_It2 < 0 then; CleanToolTip("L_Click_It2") end;
@@ -2297,6 +2347,7 @@
                 
                 if L_Click_It3 == 2 then;
                     reaper.Main_OnCommand(40706,0);--Item: Set to one random color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end; 
             end;
             if L_Click_It3 < 0 then; CleanToolTip("L_Click_It3") end;
@@ -2325,6 +2376,7 @@
                 
                 if L_Click_It4 == 2 then;
                     reaper.Main_OnCommand(40707,0);--Item: Set to default color 
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;
             end;
             if L_Click_It4 < 0 then; CleanToolTip("L_Click_It4") end;
@@ -2353,6 +2405,7 @@
                 
                 if L_Click_Tk1 == 2 then;
                     reaper.Main_OnCommand(41331,0);--Take: Set active take to custom color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;  
             end;
             if L_Click_Tk1 < 0 then; CleanToolTip("L_Click_Tk1") end;
@@ -2381,6 +2434,7 @@
                 
                 if L_Click_Tk2 == 2 then;
                     reaper.Main_OnCommand(41333,0);--Take: Set active take to default color
+                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
                 end;  
             end;
             if L_Click_Tk2 < 0 then; CleanToolTip("L_Click_Tk2") end;
@@ -2423,6 +2477,11 @@
             local checkRemFocWin;
             if RemFocusWin == 1 then checkRemFocWin = "!" else checkRemFocWin = "" end;
             
+            local checkedButWClose;
+            if CLICK_BUT_CLOSE_WIN == 1 then checkedButWClose = "!" else checkedButWClose = "" end;
+            
+            local checkedGrdWClose;
+            if CLICK_GRD_CLOSE_WIN == 1 then checkedGrdWClose = "!" else checkedGrdWClose = "" end;
             
             local checkedLClose;
             if FOCUS_LOST_CLOSE == 1 then checkedLClose = "!" else checkedLClose = "" end;
@@ -2453,36 +2512,37 @@
                                     --[[->]]">Settings|"..
                                     --[[->]]">Window|"..
                                     --[[ 8]]"# #||"..
-                                    --[[ 9]]checkedLClose.."Close window when focus is lost|"..
-                                    --[[ 10]]checkRemFocWin.."Remove focus from window (useful when switching Screenset)|"..
-                                    --[[11]]"<# #|"..
+                                    --[[ 9]]checkedGrdWClose.."When click gradient close window|"..
+                                    --[[ 10]]checkedButWClose.."When click button close window|"..
+                                    --[[ 11]]checkedLClose.."Close window when focus is lost||"..
+                                    --[[ 12]]"<"..checkRemFocWin.."Remove focus from window (useful when switching Screenset)|"..
                                     --[[->]]">View|"..
                                     --[[->]]">Color|"..
-                                    --[[12]]"Customize text color...|"..
-                                    --[[13]]"Default text color||"..
-                                    --[[14]]"Customize background color|"..
-                                    --[[15]]"Default background color||"..
-                                    --[[16]]"Customize Gui color|"..
-                                    --[[17]]"Default Gui color||"..
-                                    --[[18]]"<Default All color|"..
-                                    --[[19]]checkBold.."Text: Normal / Bold|"..
-                                    --[[20]]checkZoomInOn.."Font Size||"..
+                                    --[[13]]"Customize text color...|"..
+                                    --[[14]]"Default text color||"..
+                                    --[[15]]"Customize background color|"..
+                                    --[[16]]"Default background color||"..
+                                    --[[17]]"Customize Gui color|"..
+                                    --[[18]]"Default Gui color||"..
+                                    --[[19]]"<Default All color|"..
+                                    --[[20]]checkBold.."Text: Normal / Bold|"..
+                                    --[[21]]checkZoomInOn.."Font Size||"..
                                     --[[ >]]">Button|"..
-                                    --[[21]]"# #||"..
-                                    --[[22]]"Button: Brightness  (white-black)|"..
-                                    --[[23]]"Button: Transparency (alpha)|"..
-                                    --[[24]]"Frame: Transparency (alpha)|"..
-                                    --[[25]]"Frame: Frame Thickness|"..
-                                    --[[26]]check_BACKLIGHT.."Backlight||"..
-                                    --[[27]]"<Default: Transparency / Brightness / Backlight|<|"..
+                                    --[[22]]"# #||"..
+                                    --[[23]]"Button: Brightness  (white-black)|"..
+                                    --[[24]]"Button: Transparency (alpha)|"..
+                                    --[[25]]"Frame: Transparency (alpha)|"..
+                                    --[[26]]"Frame: Frame Thickness|"..
+                                    --[[27]]check_BACKLIGHT.."Backlight||"..
+                                    --[[28]]"<Default: Transparency / Brightness / Backlight|<|"..
                                     --[[->]]">Default|"..
-                                    --[[28]]"Default All color Gui|"..
-                                    --[[29]]"<Default Script|<|"..
+                                    --[[29]]"Default All color Gui|"..
+                                    --[[30]]"<Default Script|<|"..
                                     --[[->]]">Support project |"..
-                                    --[[30]]"Dodate ||"..
-                                    --[[31]]"Bug report (Of site forum)|"..
-                                    --[[32]]"<Bug report (Rmm forum)||"..
-                                    --[[33]]"Close Color switch window");
+                                    --[[31]]"Dodate ||"..
+                                    --[[32]]"Bug report (Of site forum)|"..
+                                    --[[33]]"<Bug report (Rmm forum)||"..
+                                    --[[34]]"Close Color switch window");
             
             
             if showmenu == 1 then;
@@ -2531,9 +2591,17 @@
                 ----
             elseif showmenu == 8 then;
                 ----
-                
-                ----
             elseif showmenu == 9 then;
+                ----
+                if CLICK_GRD_CLOSE_WIN == 1 then CLICK_GRD_CLOSE_WIN = 0 else CLICK_GRD_CLOSE_WIN = 1 end;
+                reaper.SetExtState(section,"CLICK_GRD_CLOSE_WIN",CLICK_GRD_CLOSE_WIN,true);
+                ----
+            elseif showmenu == 10 then;
+                ----
+                if CLICK_BUT_CLOSE_WIN == 1 then CLICK_BUT_CLOSE_WIN = 0 else CLICK_BUT_CLOSE_WIN = 1 end;
+                reaper.SetExtState(section,"CLICK_BUT_CLOSE_WIN",CLICK_BUT_CLOSE_WIN,true);
+                ----
+            elseif showmenu == 11 then;
                 ----
                 if FOCUS_LOST_CLOSE == 1 then FOCUS_LOST_CLOSE = 0 else FOCUS_LOST_CLOSE = 1 end;
                 reaper.SetExtState(section,"FOCUS_LOST_CLOSE",FOCUS_LOST_CLOSE,true);
@@ -2541,7 +2609,7 @@
                     reaper.SetExtState(section,"RemFocusWin",0,true);RemFocusWin=0;
                 end;
                 ----
-            elseif showmenu == 10 then;
+            elseif showmenu == 12 then;
                 ----
                 if RemFocusWin == 1 then RemFocusWin = 0 else RemFocusWin = 1 end;
                 reaper.SetExtState(section,"RemFocusWin",RemFocusWin,true);
@@ -2549,11 +2617,7 @@
                     reaper.SetExtState(section,"FOCUS_LOST_CLOSE",0,true);FOCUS_LOST_CLOSE=0;
                 end;
                 ----
-            elseif showmenu == 11 then;
-                ----
-                
-                ----
-            elseif showmenu == 12 then;
+            elseif showmenu == 13 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -2563,13 +2627,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 13 then;
+            elseif showmenu == 14 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Text",true);
                 R_Text,G_Text,B_Text = R_Text_Default,G_Text_Default,B_Text_Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 14 then;
+            elseif showmenu == 15 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -2579,13 +2643,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 15 then;
+            elseif showmenu == 16 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Background",true);
                 R_Back,G_Back,B_Back = R_Back_Default,G_Back_Default,B_Back_Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 16 then;
+            elseif showmenu == 17 then;
                 ----
                 local retval, color = reaper.GR_SelectColor();
                 if retval > 0 then;
@@ -2595,13 +2659,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 17 then;
+            elseif showmenu == 18 then;
                 ----
                 reaper.DeleteExtState(section,"Color_Gui",true);
                 R_Gui,G_Gui,B_Gui = R_Gui__Default,G_Gui__Default,B_Gui__Default;
                 Start_GUI();
                 ----
-            elseif showmenu == 18 then;
+            elseif showmenu == 19 then;
                 ----
                 local MB = reaper.MB("Eng:\nSet all colors to default ?\n\nRus:\nУстановить все цвета по умолчанию ?","Default Color",1);
                 if MB == 1 then;
@@ -2614,13 +2678,13 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 19 then;
+            elseif showmenu == 20 then;
                 ----
                 if TextBoldNorm == 98 then TextBoldNorm = 0 else TextBoldNorm = 98 end;
                 reaper.SetExtState(section,"TextBoldNorm",TextBoldNorm,true);
                 Start_GUI();
                 ----
-            elseif showmenu == 20 then;
+            elseif showmenu == 21 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("font size",1,"Size: -- < Default = 0 > ++ ",FontSize or 0);
                 if retval and tonumber(retvals_csv) then;
@@ -2629,11 +2693,11 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 21 then;
+            elseif showmenu == 22 then;
                 ----
                 
                 ----
-            elseif showmenu == 22 then;
+            elseif showmenu == 23 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("Button Brightness",1,"Value: -1 ... 0 ... 1 ",But_Bright or 0);
                 retvals_csv = tonumber(retvals_csv);
@@ -2644,7 +2708,7 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 23 then;
+            elseif showmenu == 24 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("But Transparency (alpha)",1,"Value:  0 ... 1 ",But_Transp or 1);
                 retvals_csv = tonumber(retvals_csv);
@@ -2655,7 +2719,7 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 24 then;
+            elseif showmenu == 25 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("Frame Transparency (alpha)",1,"Value:  0 ... 1 ",Frame_Transp or 1);
                 retvals_csv = tonumber(retvals_csv);
@@ -2666,7 +2730,7 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 25 then;
+            elseif showmenu == 26 then;
                 ----
                 local retval, retvals_csv = reaper.GetUserInputs("Frame Thickness",1,"Value:  0 ... ? ",Frame_Thickness or 1);
                 retvals_csv = tonumber(retvals_csv);
@@ -2677,12 +2741,12 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 26 then;
+            elseif showmenu == 27 then;
                 ----
                 if BACKLIGHT_BTN == 1 then BACKLIGHT_BTN = 0 else BACKLIGHT_BTN = 1 end;
                 reaper.SetExtState(section,"BACKLIGHT_BTN",BACKLIGHT_BTN,true);
                 ----
-            elseif showmenu == 27 then;
+            elseif showmenu == 28 then;
                 ----
                 local MB = reaper.MB("Eng:\nSet default brightness and transparency of buttons ?\n\nRus:\nУстановить яркость и прозрачность кнопок по умолчанию ?","Default Button",1);
                 if MB == 1 then;
@@ -2695,7 +2759,7 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 28 then;
+            elseif showmenu == 29 then;
                 ----
                 local MB = reaper.MB("Eng:\nSet all colors to default ?\n\nRus:\nУстановить все цвета по умолчанию ?","Default Color",1);
                 if MB == 1 then;
@@ -2712,7 +2776,7 @@
                     Start_GUI();
                 end;
                 ----
-            elseif showmenu == 29 then;
+            elseif showmenu == 30 then;
                 ----
                 local MB = reaper.MB("Eng:\nDo you really want to delete all saved settings ?\n\nRus:\nВы действительно хотите удалить все сохраненные настройки ?","Default Script",1);
                 if MB == 1 then;
@@ -2725,6 +2789,9 @@
                     reaper.DeleteExtState(section,"TOOL_TIP",true);
                     reaper.DeleteExtState(section,"TOOLTIP_GRDNT",true);
                     reaper.DeleteExtState(section,"COL_PREV_GRAD",true);
+                    
+                    reaper.DeleteExtState(section,"CLICK_GRD_CLOSE_WIN",true);
+                    reaper.DeleteExtState(section,"CLICK_BUT_CLOSE_WIN",true);
                     
                     reaper.DeleteExtState(section,"FOCUS_LOST_CLOSE",true);
                     reaper.DeleteExtState(section,"Color_Text",true);
@@ -2742,24 +2809,24 @@
                     do return end;
                 end;
                 ----
-            elseif showmenu == 30 then;
+            elseif showmenu == 31 then;
                 ----
                 local path = "https://money.yandex.ru/to/410018003906628/1000";
                 OpenWebSite(path);
                 reaper.ClearConsole();
                 reaper.ShowConsoleMsg("Yandex-money - "..path.."\n\nWebManey - R159026189824");
                 ---- 
-            elseif showmenu == 31 then;
+            elseif showmenu == 32 then;
                 ----
                 local path = "https://forum.cockos.com/showthread.php?t=212819";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 32 then;
+            elseif showmenu == 33 then;
                 ----
                 local path = "https://rmmedia.ru/threads/134701/";
                 OpenWebSite(path);
                 ----
-            elseif showmenu == 33 then;
+            elseif showmenu == 34 then;
                 ----
                 exit();
                 ----
