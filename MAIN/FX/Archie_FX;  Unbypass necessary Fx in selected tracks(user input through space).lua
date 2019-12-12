@@ -27,6 +27,12 @@
     -------------------------------------------------------
     
     
+    ----------------------------------------------------------------------------------------
+    local function retT(X)local x for key, val in pairs(X) do x=(x or 0)+1 end return x end;
+    ----------------------------------------------------------------------------------------
+    
+    
+    
     local retval, str = reaper.GetUserInputs("Bypass fx in selected tracks by number",1,"number fx by comma,extrawidth=150","");
     if not retval or #str:gsub("%s","")==0 then no_ubdo()return end;
     
@@ -40,7 +46,7 @@
     end;
     
     
-    if T == 0 then no_ubdo()return end;
+    if retT(T) == 0 then no_ubdo()return end;
     
     
     local 
