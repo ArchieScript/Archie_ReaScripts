@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bc058bc96f1a1c999e740ccd985fb744087af3f8">
+<index version="1" name="Archie-ReaScripts" commit="e231dde1b8eba4681007b168462724c284d9a3b1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -751,7 +751,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-12-12T15:00:43Z">
         <changelog><![CDATA[v.1.0 [12.12.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/41c74b286eaf9dc6838a928d491653a7a41be4cc/MAIN/FX/Archie_FX;%20%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20%20space).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e231dde1b8eba4681007b168462724c284d9a3b1/MAIN/FX/Archie_FX;%20%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20%20space).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Close all VSTi in Selected tracks.lua" type="script" desc="Close all VSTi in Selected tracks">
@@ -960,6 +960,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/FX/Archie_FX;%20%20Toggle%20Auto%20open%20VSTi%20in%20selected%20tracks%20and%20close%20in%20the%20rest(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_FX;  Toggle Bypass necessary Fx in selected tracks(user input through space).lua" type="script" desc="Toggle Bypass necessary Fx in selected tracks(user input through space)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-12T18:07:02Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e231dde1b8eba4681007b168462724c284d9a3b1/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20space).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_FX;  Toggle FX 9 online,offline for selected tracks(`).lua" type="script" desc="Toggle FX 9 online/offline for selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -989,7 +1001,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-12-12T15:00:43Z">
         <changelog><![CDATA[v.1.0 [12.12.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/41c74b286eaf9dc6838a928d491653a7a41be4cc/MAIN/FX/Archie_FX;%20%20Unbypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20space).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e231dde1b8eba4681007b168462724c284d9a3b1/MAIN/FX/Archie_FX;%20%20Unbypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20space).lua</source>
       </version>
     </reapack>
   </category>
