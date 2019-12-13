@@ -6,13 +6,13 @@
    * Category:    Fx
    * Description: Toggle Bypass necessary Fx in selected tracks(user input through space)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
-   * Changelog:   v.1.0 [12.12.19]
+   * Changelog:   v.1.0 [13.12.19]
    *                  + initialе
 --]]
     
@@ -35,7 +35,7 @@
         "Например: 1, 3, 5\n"..
         "Или введите имена Fx через запятую добавив *(звездочку) перед именем\n"..
         "Например: *Delay,name2,name3\n"..
-        "Для того чтобы не появилось это окно зайдите в скрипт и в пометке настройки в строке --[ добавьте знак [ что бы получилось --[["
+        "Для того чтобы не появлялось это окно зайдите в скрипт и в пометке настройки в строке --[ добавьте знак [ что бы получилось --[["
         
         reaper.ShowConsoleMsg("");
         reaper.ShowConsoleMsg(msg);
@@ -58,9 +58,16 @@
     
     
     
-    ----------------------------------------------------------------------------------------
-    local function retT(X)local x for key, val in pairs(X) do x=(x or 0)+1 end return x end;
-    ----------------------------------------------------------------------------------------
+    -------------------------------------------------------------------------------------------
+    local function retT(X)local x for key,val in pairs(X)do x=(x or 0)+1 end return x or 0 end;
+    -------------------------------------------------------------------------------------------
+    
+    
+    
+    ---------------------------------------------------------
+    local function SC(x)return string.gsub(x,'%p','%%%0')end;
+    ---------------------------------------------------------
+    
     
     
     ::RESTART::
@@ -70,28 +77,31 @@
     if not retval or #str:gsub("%s","")==0 then no_ubdo()return end;
     reaper.SetExtState('gs94DPKEKEOPEPOKPE85klpgkh','iJ9iuGDGHiIHPIUGGol0lu0oi9OK',str,false);
     
+    
     local NT = {};
     local T = {};
     local NameNumb;
     
+    
     if str:match("%S")=='*' then;
         str = str:gsub('.-*','',1);
         for S in string.gmatch(str..',',"(.-),") do;
-            NT[#NT+1]=S;
+            NT[#NT+1]=S:lower();
         end;
     else;
         for S in string.gmatch(str,"%d+") do;
             if tonumber(S) then;
-               T[tonumber(S)]=tonumber(S);
+                T[tonumber(S)]=tonumber(S);
             end;
         end;
     end;
     
     
-    
     if retT(T) == 0 and retT(NT) == 0 then no_ubdo()return end;
  
     if retT(T) > 0 then NameNumb = 'NUMB' elseif retT(NT) > 0 then NameNumb = 'NAME' end;
+    
+    
     
     local GetEnabled, SetEnabled, Undo, strU;
     local 
@@ -106,8 +116,11 @@
                 local _, nameFx = reaper.TrackFX_GetFXName(SelTrack,ifx-1,'');
                 
                 for inm = 1, #NT do;
-                
-                    if nameFx == NT[inm] then;
+                    
+                    nameFx = nameFx:lower();
+                    
+                    if nameFx:match(SC(NT[inm])) then;
+                        
                         if not GetEnabled then;
                             GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
                             if GetEnabled then SetEnabled = false else SetEnabled = true GetEnabled = true end;
@@ -136,7 +149,7 @@
                         if SetEnabled == true then strU = "Unbypass Fx" else strU = "Bypass Fx" end
                     end;
                     reaper.TrackFX_SetEnabled(SelTrack,ifx-1,SetEnabled);
-                end;  
+                end;
             end;
         end;
     end;
@@ -151,3 +164,4 @@
     if WINDOW_RESTART == true then;
         goto RESTART;
     end;
+    
