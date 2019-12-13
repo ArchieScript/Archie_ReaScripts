@@ -6,7 +6,7 @@
    * Category:    Fx
    * Description: Toggle Bypass necessary Fx in selected tracks(user input through space)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -24,19 +24,22 @@
     
         local msg = 
         "Eng:\nScript: Toggle Bypass necessary Fx in selected tracks(user input through space)\n"..
-        "In the window that appears, enter the fx numbers that you want to bypass/unbypass separated by commas\n"..
-        "example: 1, 3, 5\n"..
-        "Or enter the Fx names separated by commas adding *(asterisk) before the name\n"..
-        "example: * Delay, name2, name3\n"..
-        "In order not to appear this window, go to the script and mark the settings in the line -- [add a sign [ what would happen --[[\n\n\n"..
+        "In the window that appears, enter the Fx names that You want to bypass/unbypass  separated by a comma (,) or semicolon(;)\n"..
+        "For example: Delay, name2; name3\n"..
+        "Or enter the Fx numbers separated by a comma or semicolon(;)\n"..
+        "adding *(asterisk) before the name\n"..
+        "For example: *1, 3, 5\n"..
+        "In order not to appear this a hint window, go to the script and mark, the settings in the line -- [add a sign [ to get it --[[\n\n\n"..
     
         "Rus:\nСкрипт: переключатель - байпас необходимых Fx в выбранных треках(пользовательский ввод  через пробел)\n"..
-        "Введите в появившемся окне номера fx, которые нужно забайпасить/разбайпасить через запятую\n"..
-        "Например: 1, 3, 5\n"..
-        "Или введите имена Fx через запятую добавив *(звездочку) перед именем\n"..
-        "Например: *Delay,name2,name3\n"..
-        "Для того чтобы не появлялось это окно зайдите в скрипт и в пометке настройки в строке --[ добавьте знак [ что бы получилось --[["
-        
+        "Введите в появившемся окне имена Fx , которые нужно забайпасить/разбайпасить через запятую(,) или точку с запятой(;)\n"..
+        "Например: Delay,name2;name3\n"..
+        "Или введите номера Fx через запятую или точку с запятой(;)\n"..
+        " добавив *(звездочку) перед именем\n"..
+        "Например: *1, 3, 5\n"..
+        "Для того чтобы не появлялось это окно с подсказкой зайдите в скрипт и в пометке настройки в строке --[ добавьте знак [ чтобы получилось --[[\n"
+   
+   
         reaper.ShowConsoleMsg("");
         reaper.ShowConsoleMsg(msg);
     
@@ -44,7 +47,7 @@
     
     local WINDOW_RESTART = true 
                       -- = true  | Повторно открыть окно 
-                      -- = false | Не открывать Повторно  окно
+                      -- = false | Не открывать Повторно окно
         
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -88,14 +91,14 @@
    
     if str:match("%S")=='*' then;
         str = str:gsub('%s-*','',1);
-        for S in string.gmatch(str..';',"(.-);") do;
-            NT[#NT+1]=S:lower();
-        end;
-    else;
         for S in string.gmatch(str,"%d+") do;
             if tonumber(S) then;
                 T[tonumber(S)]=tonumber(S);
             end;
+        end;
+    else;
+        for S in string.gmatch(str..';',"(.-);") do;
+            NT[#NT+1]=S:lower();
         end;
     end;
     
@@ -103,7 +106,6 @@
     if retT(T) == 0 and retT(NT) == 0 then no_ubdo()return end;
  
     if retT(T) > 0 then NameNumb = 'NUMB' elseif retT(NT) > 0 then NameNumb = 'NAME' end;
-    
     
     
     local GetEnabled, SetEnabled, Undo, strU;
