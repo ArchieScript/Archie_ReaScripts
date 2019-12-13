@@ -71,21 +71,24 @@
     
     
     ::RESTART::
-    local ExtState = reaper.GetExtState('gs94DPKEKEOPEPOKPE85klpgkh','iJ9iuGDGHiIHPIUGGol0lu0oi9OK');
+    local 
+    ExtState = reaper.GetExtState('gs94DPKEKEOPEPOKPE85klpgkh','iJ9iuGDGHiIHPIUGGol0lu0oi9OK');
     local 
     retval, str = reaper.GetUserInputs("Toggle Bypass fx in selected tracks by number or name",1,"number fx or *name (by comma),extrawidth=150",ExtState);
     if not retval or #str:gsub("%s","")==0 then no_ubdo()return end;
+    str = str:gsub(',',';')
     reaper.SetExtState('gs94DPKEKEOPEPOKPE85klpgkh','iJ9iuGDGHiIHPIUGGol0lu0oi9OK',str,false);
+    
     
     
     local NT = {};
     local T = {};
     local NameNumb;
     
-    
+   
     if str:match("%S")=='*' then;
-        str = str:gsub('.-*','',1);
-        for S in string.gmatch(str..',',"(.-),") do;
+        str = str:gsub('%s-*','',1);
+        for S in string.gmatch(str..';',"(.-);") do;
             NT[#NT+1]=S:lower();
         end;
     else;
