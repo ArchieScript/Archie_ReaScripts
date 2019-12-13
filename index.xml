@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="042b465abbc5e212f998733fe3a83cfe0acc2f1b">
+<index version="1" name="Archie-ReaScripts" commit="503c9c823d77899340c5287045364d04d2c257c2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -979,7 +979,7 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2019-12-13T10:19:55Z">
         <changelog><![CDATA[v.1.0 [13.12.19]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/042b465abbc5e212f998733fe3a83cfe0acc2f1b/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20space).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/503c9c823d77899340c5287045364d04d2c257c2/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input%20through%20space).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle FX 9 online,offline for selected tracks(`).lua" type="script" desc="Toggle FX 9 online/offline for selected tracks">
