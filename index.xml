@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="59f1bba419755ae3444f55bd1f0eb6e2f62b292d">
-<index version="1" name="Archie-ReaScripts" commit="d52438ef05c01fe073a5869f5815bacc3823e456">
+<index version="1" name="Archie-ReaScripts" commit="e156a7db81bdf7aeee936853732ba7d6d8bc84d4">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3041,6 +3040,36 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-15T13:28:02Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d52438ef05c01fe073a5869f5815bacc3823e456/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e156a7db81bdf7aeee936853732ba7d6d8bc84d4/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Render;  Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e156a7db81bdf7aeee936853732ba7d6d8bc84d4/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20((Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e156a7db81bdf7aeee936853732ba7d6d8bc84d4/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
   </category>
