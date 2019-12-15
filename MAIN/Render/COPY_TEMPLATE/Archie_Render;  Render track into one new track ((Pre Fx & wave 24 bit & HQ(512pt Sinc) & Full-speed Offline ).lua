@@ -5,7 +5,7 @@
    *
    * Category:    Render
    * Description: Render track into one new track ((Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
-   *              (COPY) >>> Render stems Template(`)
+   * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
    * Version:     1.0
    * Описание:    Шаблон Рендера треков

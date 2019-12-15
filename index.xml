@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <index version="1" name="Archie-ReaScripts" commit="59f1bba419755ae3444f55bd1f0eb6e2f62b292d">
+<index version="1" name="Archie-ReaScripts" commit="d52438ef05c01fe073a5869f5815bacc3823e456">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3028,6 +3029,18 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2019-12-05T12:02:37Z">
         <changelog><![CDATA[v.1.02 [06.12.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d699a4b1d03579193f7c3d6bb624fe179650a48c/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/Render/COPY_TEMPLATE">
+    <reapack name="Archie_Render;  Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T13:28:02Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d52438ef05c01fe073a5869f5815bacc3823e456/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
   </category>
