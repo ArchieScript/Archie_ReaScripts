@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e156a7db81bdf7aeee936853732ba7d6d8bc84d4">
+<index version="1" name="Archie-ReaScripts" commit="714bfa622787b23da7c9b4bc15268ae6fc53b3ee">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -632,6 +632,18 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df9456ef5e1afc8cffdc71df42533c6cac38180b/MAIN/Fade/Archie_Fade;%20%20Delete%20fade%20in%20selected%20items.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Fade;  Enlarge fade by 10 ms.lua" type="script" desc="Enlarge fade by 10 ms">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Fade/Archie_Fade;%20%20Enlarge%20fade%20by%2010%20ms.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Fade;  Enlarge fade by 100 ms.lua" type="script" desc="Enlarge fade by 100 ms">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -642,6 +654,18 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [12.12.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/df9456ef5e1afc8cffdc71df42533c6cac38180b/MAIN/Fade/Archie_Fade;%20%20Enlarge%20fade%20by%20100%20ms.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fade;  Reduce fade by 10 ms.lua" type="script" desc="Reduce fade by 10 ms">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [12.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Fade/Archie_Fade;%20%20Reduce%20fade%20by%2010%20ms.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Fade;  Reduce fade by 100 ms.lua" type="script" desc="Reduce fade by 100 ms">
@@ -2851,6 +2875,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3359e392b30fe2812c32d57704e6214dd9c9854a/MAIN/Preferences/Archie_Pref;%20%20Ignore%20mousewheel%20on%20all%20faders.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Pref;  Mouse clickedit in track view changes track selection.lua" type="script" desc="Mouse click/edit in track view changes track selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [1.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Preferences/Archie_Pref;%20%20Mouse%20clickedit%20in%20track%20view%20changes%20track%20selection.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Pref;  Sample-level waveform (Dots and lines).lua" type="script" desc="Sample-level waveform (Dots and lines)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3660,6 +3696,30 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e3a2a7f6b597934acc31d00aef78deafc28069f/MAIN/Track/Archie_Track;%20%20Delete%20tracks%20with%20no%20items(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Go to next track - track solo in solo exclusive.lua" type="script" desc="Go to next track - track solo in solo exclusive">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [04.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Go%20to%20next%20track%20-%20track%20solo%20in%20solo%20exclusive.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Go to previous track - track solo in solo exclusive.lua" type="script" desc="Go to previous track - track solo in solo exclusive">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [04.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Go%20to%20previous%20track%20-%20track%20solo%20in%20solo%20exclusive.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Insert new track with send on selected tracks.lua" type="script" desc="Insert new track with send on selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3670,6 +3730,30 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [14.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6b353e49f52e441536f3027b766c9c0e2afff109/MAIN/Track/Archie_Track;%20%20Insert%20new%20track%20with%20send%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Insert track double middle click in empty TCP and random color,rename.lua" type="script" desc="Insert track double middle click in empty TCP and random color,rename">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [28.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Insert%20track%20double%20middle%20click%20in%20empty%20TCP%20and%20random%20color,rename.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Insert track holding the mouse into empty TCP and rename, random color.lua.lua" type="script" desc="Insert track holding the mouse into empty TCP and rename, random color">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [28.11.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Insert%20track%20holding%20the%20mouse%20into%20empty%20TCP%20and%20rename,%20random%20color.lua.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Make folder from selected tracks(`).lua" type="script" desc="Make folder from selected tracks">
@@ -3778,6 +3862,30 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Move%20children%20from%20folder%20and%20place%20them%20above%20folder.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Move selected track down to nearest folder.lua" type="script" desc="Move selected track down to nearest folder">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [01.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Move%20selected%20track%20down%20to%20nearest%20folder.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Move selected track up to nearest folder.lua" type="script" desc="Move selected track up to nearest folder">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-15T15:21:52Z">
+        <changelog><![CDATA[v.1.0 [01.12.19]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Move%20selected%20track%20up%20to%20nearest%20folder.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Move selected tracks down by one visible(`).lua" type="script" desc="Move selected tracks down by one visible*">
