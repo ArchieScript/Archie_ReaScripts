@@ -237,5 +237,16 @@
         Arc.no_undo();
     end;
     ----
-     Arc.Action(40047);--Build missing peaks
+    --------------------------------------------------
+    local ShowStatusWindow = reaper.SNM_GetIntConfigVar("showpeaksbuild",0);
+    if ShowStatusWindow == 1 then;
+        reaper.SNM_SetIntConfigVar("showpeaksbuild",0);
+    end;
+    ---
+    Arc.Action(40047);--Build missing peaks
+    ---
+    if ShowStatusWindow == 1 then;
+        reaper.SNM_SetIntConfigVar("showpeaksbuild",1);
+    end;
+    --------------------------------------------------
     reaper.UpdateArrange();

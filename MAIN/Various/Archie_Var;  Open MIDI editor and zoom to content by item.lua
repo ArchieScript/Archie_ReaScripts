@@ -25,7 +25,7 @@
     
     local Indent = 0.04;  -- Отступ
     
-    local Vertically_Zoom = true -- true/false
+    local Vertically_Zoom = false -- true/false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
