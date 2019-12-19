@@ -8,7 +8,8 @@
    * Author:      Archie
    * Version:     1.0
    * Описание:    Предварительная реверберация
-   * GIF:         Пошаговое выполнение скрипта  http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
+   * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
+   *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -26,23 +27,27 @@
     
     
     local Tail_Rever = true;
-                 --  = true | показать окно ввода времени
-                 --  = .5   | или введите время в сек
-     
-     
+                 --  = true  | показать окно для ввода времени хвоста
+                 --  = false | хвост по размеру выбора времени
+                 --  = 1.50..| или введите время в сек
+    
+    
     
     local NameTemplates = "ArchiePreVerb"  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
     
     
-    local PreFxTrack = false 
+    
+    local PreFxTrack = false
                   -- = true  Перед эффектами на треке
                   -- = false После эффектов на треке
-               
-               
+    
+    
+    
     local Channel = 2
                -- = 1 Track: Render selected area of tracks to mono post-fader stem tracks (and mute originals)
                -- = 2 Track: Render selected area of tracks to stereo post-fader stem tracks (and mute originals)
                -- = 3 Track: Render selected area of tracks to multichannel post-fader stem tracks (and mute originals)
+    
     
     
     local snapToGrid = true
@@ -65,20 +70,29 @@
     
     
     
-        
+    local Pre_Vol_Track = true
+                     -- = true  | Перед громкостью на треке
+                     -- = false | После громкости на треке
+    
+    
+    local Pre_Pan_Track = true
+                     -- = true  | Перед панорамой на треке
+                     -- = false | После панорамой на треке
+    
+    
+    local Name_Track = 'Pre Reverb'
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-
- 
- 
- 
- 
- 
+    
+    
+    
+    
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
-    
     
     
     
@@ -144,17 +158,21 @@
     
     
     --=====================================================
-    if not tonumber(Tail_Rever)or Tail_Rever <= 0 then Tail_Rever = true end;
+    if not tonumber(Tail_Rever) and Tail_Rever ~= true then Tail_Rever = false end;
     if Tail_Rever == true then;
-        local val = tonumber(reaper.GetExtState("ArchiePreReverbScRiPt","valueTailSec"))or .5;
-        ::rest::;
-        local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value Sec",val);
+        local val = tonumber(({reaper.GetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec")})[2])or(endLoop-startLoop);
+        
+        local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection)",val);
         if not retval then no_undo() return end;
-        if not tonumber(retvals_csv) then;
-            reaper.MB("Invalid value, expected number !\n\nНедопустимое значение, ожидаемое число !","Woops",0);
-            goto rest;
+        retvals_csv = tonumber(retvals_csv);
+        
+        if not retvals_csv or retvals_csv <= 0 then;
+            retvals_csv = (endLoop-startLoop);
         end;
+        reaper.SetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec",retvals_csv);
         Tail_Rever=retvals_csv;
+    elseif not Tail_Rever or Tail_Rever <= 0 then;
+        Tail_Rever = (endLoop-startLoop); 
     end;
     --=====================================================
     
@@ -177,6 +195,15 @@
     
     
     --=====================================================
+    local ShowStatusWindow = reaper.SNM_GetIntConfigVar("showpeaksbuild",0);
+    if ShowStatusWindow == 1 then;
+        reaper.SNM_SetIntConfigVar("showpeaksbuild",0);
+    end;
+    --=====================================================
+    
+    
+    
+    --=====================================================
     reaper.Main_OnCommand(40297,0);-- Unselect all tracks
     
     for i = 1,#SelItemT do;
@@ -188,7 +215,7 @@
     
     
     --=====================================================
-    -- / Save mute Fx tr / -- 
+    -- / Save Mute Vol Pan Fx tr / -- 
     local CountSelTrack = reaper.CountSelectedTracks(0);
     local STrT = {};
     for i = 1,CountSelTrack do;
@@ -196,7 +223,16 @@
         STrT[i].SelTrack = reaper.GetSelectedTrack(0,i-1);
         STrT[i].Mute = reaper.GetMediaTrackInfo_Value(STrT[i].SelTrack,"B_MUTE");
         STrT[i].Solo = reaper.GetMediaTrackInfo_Value(STrT[i].SelTrack,"I_SOLO");
-        
+        -----
+        if Pre_Vol_Track == true then;
+            STrT[i].vol = reaper.GetMediaTrackInfo_Value(STrT[i].SelTrack,"D_VOL");
+            reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_VOL",1);
+        end;
+        if Pre_Pan_Track == true then;
+            STrT[i].pan = reaper.GetMediaTrackInfo_Value(STrT[i].SelTrack,"D_PAN"); 
+            reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_PAN",0);
+        end;
+        -----
         if PreFxTrack == true then;
             local CountFX = reaper.TrackFX_GetCount(STrT[i].SelTrack);
             local Instrument = reaper.TrackFX_GetInstrument(STrT[i].SelTrack);
@@ -216,7 +252,7 @@
     
     --=====================================================
     if Channel~=1 and Channel~=2 and Channel~=3 then Channel=2 end;
-    local ChanT = {41718,41716,41717}
+    local ChanT = {41718,41716,41717};
     reaper.Main_OnCommand(ChanT[Channel],0);--render
     reaper.SelectAllMediaItems(0,0);
     --=====================================================
@@ -229,6 +265,8 @@
     reaper.InsertTrackAtIndex(numb-1,false);
     local TrackPreVerb = reaper.GetTrack(0,numb-1);
     reaper.SetTrackStateChunk(TrackPreVerb,strTemplate,false);
+    reaper.SetMediaTrackInfo_Value(TrackPreVerb,"D_VOL",1);
+    reaper.SetMediaTrackInfo_Value(TrackPreVerb,"D_PAN",0);
     --=====================================================
     
     
@@ -239,6 +277,20 @@
         local item = reaper.GetTrackMediaItem(TrackPreVerb,i-1);
         reaper.DeleteTrackMediaItem(TrackPreVerb,item);
     end; 
+    --=====================================================
+    
+    
+    
+    --=====================================================
+    local CountTrackEnvelopes = reaper.CountTrackEnvelopes(TrackPreVerb);
+    for ienv = 1, CountTrackEnvelopes do;
+        local TrackEnv = reaper.GetTrackEnvelope(TrackPreVerb,ienv-1);
+        local retval,str = reaper.GetEnvelopeStateChunk(TrackEnv,"",false);
+        if str:match("ACT%s-(%d+)")~='0'then;
+             str = str:gsub("ACT%s-%d+","ACT 0");
+             reaper.SetEnvelopeStateChunk(TrackEnv,str,false);
+         end;
+     end;
     --=====================================================
     
     
@@ -282,10 +334,14 @@
     
     --=====================================================
     reaper.SetOnlyTrackSelected(TrackPreVerb);
-    reaper.SetMediaTrackInfo_Value(TrackPreVerb,"D_VOL",1);
-    reaper.SetMediaTrackInfo_Value(TrackPreVerb,"D_PAN",0);
     reaper.Main_OnCommand(ChanT[Channel],0);--render
     local TrackPreVerbReady = reaper.GetSelectedTrack(0,0);
+    
+    reaper.defer(function()
+        if type(Name_Track)~='string'or #Name_Track:gsub('[%s.,;"]','')==0 then Name_Track='Pre Reverb'end;
+        reaper.GetSetMediaTrackInfo_String(TrackPreVerbReady,"P_NAME",Name_Track,1);
+    end);
+    
     reaper.SetOnlyTrackSelected(TrackPreVerb);
     reaper.Main_OnCommand(40005,0);--Track: Remove tracks 
     reaper.SetOnlyTrackSelected(TrackPreVerbReady);
@@ -300,8 +356,29 @@
         reaper.SetMediaItemInfo_Value(item,"D_POSITION",pos-((pos+len)-endLoop));
         reaper.SetMediaItemInfo_Value(item,"B_UISEL",1);
     end;
-    
     reaper.Main_OnCommand(41051,0); -- Toggle take reverse
+    --=====================================================
+    
+    
+    
+    --=====================================================
+    for i = 1,#STrT do;
+        reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"B_MUTE",STrT[i].Mute);
+        reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"I_SOLO",STrT[i].Solo);
+        
+        if Pre_Vol_Track == true then;
+            reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_VOL",STrT[i].vol);
+        end;
+        if Pre_Pan_Track == true then;
+            reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_PAN",STrT[i].pan);
+        end;
+        
+        if PreFxTrack == true then;
+            for ifx = 1, #STrT[i].FxEnabled do;
+                reaper.TrackFX_SetEnabled(STrT[i].SelTrack,ifx-1,STrT[i].FxEnabled[ifx]);
+            end;
+        end;
+    end;
     --=====================================================
     
     
@@ -332,18 +409,18 @@
     
     
     --=====================================================
-    for i = 1,#STrT do;
-        reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"B_MUTE",STrT[i].Mute);
-        reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"I_SOLO",STrT[i].Solo);
-        if PreFxTrack == true then;
-            for ifx = 1, #STrT[i].FxEnabled do;
-                reaper.TrackFX_SetEnabled(STrT[i].SelTrack,ifx-1,STrT[i].FxEnabled[ifx]);
-            end;
-        end;
+    if ShowStatusWindow == 1 then;
+        reaper.defer(function()reaper.SNM_SetIntConfigVar("showpeaksbuild",1)end);
     end;
     --=====================================================
     
     
+    
+    --=========================
     reaper.Undo_EndBlock("Pre-reverb",-1);
     reaper.PreventUIRefresh(-1);
     reaper.UpdateArrange();
+    --=========================
+    
+    
+    
