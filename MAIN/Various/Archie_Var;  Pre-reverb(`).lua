@@ -330,6 +330,9 @@
     local Tail;
     if snapToGrid == true then;
         Tail = reaper.SnapToGrid(0,endLoop+Tail_Rever);
+        if Tail == endLoop then;
+            Tail = endLoop+Tail_Rever;
+        end;
     else;
         Tail = endLoop+Tail_Rever;
     end;
