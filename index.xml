@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="65284bccf86b8578232a3828a3cf29980b7513b5">
+<index version="1" name="Archie-ReaScripts" commit="af88f388020d8f5617e9be7546e7e80919bdad6e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1060,6 +1060,36 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.05" author="Archie" time="2019-02-16T09:48:14Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4e20074a448ab7769c2b0e70ebf49d9371a14106/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Grid;  Move edit cursor to nearest 1`1.3 grid line.lua" type="script" desc="Move edit cursor to nearest 1/1.3 grid line">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-25T10:20:08Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/af88f388020d8f5617e9be7546e7e80919bdad6e/MAIN/Grid/Archie_Grid;%20%20Move%20edit%20cursor%20to%20nearest%201%601.3%20grid%20line.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Grid;  Move edit cursor to nearest 1`2 grid line.lua" type="script" desc="Move edit cursor to nearest 1/2 grid line">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-25T10:20:08Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/af88f388020d8f5617e9be7546e7e80919bdad6e/MAIN/Grid/Archie_Grid;%20%20Move%20edit%20cursor%20to%20nearest%201%602%20grid%20line.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Grid;  Move edit cursor to nearest 1`4 grid line.lua" type="script" desc="Move edit cursor to nearest 1/4 grid line">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2019-12-25T10:20:08Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/af88f388020d8f5617e9be7546e7e80919bdad6e/MAIN/Grid/Archie_Grid;%20%20Move%20edit%20cursor%20to%20nearest%201%604%20grid%20line.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Grid;  Move edit cursor to nearest measure.lua" type="script" desc="Move edit cursor to nearest measure">
