@@ -18,7 +18,9 @@
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
    *              v.1.02 [06.12.19]
+   *                  +Fixed: Name track ($track)
    
+   *              v.1.02 [06.12.19] 
    *              v.1.01 [05.12.19]
    *                  + Delete the previous track 
    *              v.1.0 [03.12.19]
@@ -399,6 +401,12 @@
                     x = (x or 1);
                     local lastTr = reaper.GetTrack(0,CountTrackPostRend-x);
                     reaper.SetOnlyTrackSelected(lastTr);
+                    ---
+                    if RenderViaMaster == 1 then;
+                        local _,nmTr = reaper.GetSetMediaTrackInfo_String(lastTr,'P_NAME',0,0);
+                        reaper.GetSetMediaTrackInfo_String(lastTr,'P_NAME','Mast - '..nmTr,1);
+                    end;
+                    ---
                     if RenTrInTrMOVE == 0 then;
                         local numb = reaper.GetMediaTrackInfo_Value(SV[i].SelTr,"IP_TRACKNUMBER");
                         reaper.ReorderSelectedTracks(numb-1,Reorder);
@@ -461,6 +469,7 @@
     ----------------------------------------
     ----------------------------------------
     local function RenderSelectedTrackOneNewTrack();
+        local nameTrck;
         local CountSelTrack = reaper.CountSelectedTracks(0);
         if CountSelTrack > 0 then;
             ----
@@ -482,6 +491,12 @@
                     NoSelT[#NoSelT].solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
                     reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",0);
                 else;
+                    ---
+                    if not nameTrck then;
+                        nameTrck = ({reaper.GetSetMediaTrackInfo_String(Track,'P_NAME',0,0)})[2];
+                        if nameTrck == "" then nameTrck = nil end;
+                    end;
+                    ---
                     SelT[#SelT+1] = {};
                     SelT[#SelT].Track = Track;
                     SelT[#SelT].solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
@@ -531,6 +546,9 @@
             local CountTrackPreRend = reaper.CountTracks(0);
             reaper.InsertTrackAtIndex(0,false);
             local Track = reaper.GetTrack(0,0);
+            ---
+            reaper.GetSetMediaTrackInfo_String(Track,'P_NAME',nameTrck or '',1);
+            ---
             --
             if SelT[1].RSOLO ~= true then;
                 reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",1);
@@ -550,6 +568,12 @@
                 if RenInOneTrMOVE == 0 then Reorder = 0 else Reorder = 2 end;
                 reaper.SetOnlyTrackSelected(LPostTrack);
                 if not SelT[1].Track then SelT[1].Track = LPostTrack end; 
+                ---
+                if RenderViaMaster == 1 then;
+                 local _,nmTr = reaper.GetSetMediaTrackInfo_String(LPostTrack,'P_NAME',0,0);
+                 reaper.GetSetMediaTrackInfo_String(LPostTrack,'P_NAME','Mast - '..nmTr,1);
+                end;
+                ---
                 if RenInOneTrMOVE == 0 then;
                     local numb = reaper.GetMediaTrackInfo_Value(SelT[1].Track,"IP_TRACKNUMBER");
                     reaper.ReorderSelectedTracks(numb-1,Reorder);
