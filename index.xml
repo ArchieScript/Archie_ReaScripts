@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="727a16815bb85e1a60d1a77e33a3482d7aa52a2b">
+<index version="1" name="Archie-ReaScripts" commit="aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3132,6 +3132,13 @@ v.1.0 [28.08.19]
     +Fixed: Name track ($track)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ea7f8fefcef714d47e1f6337bb39b832ea15819c/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2019-12-26T14:29:06Z">
+        <changelog><![CDATA[v.1.04 [26.12.19]
+    + Add: tail length matches time selection
+    + Add: Name of the track/file from the clipboard
+    + Add: Render to one file when rendering to one track]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/853ba21ee07d2b5ec8323c38c260a0c14b39910e/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Render/COPY_TEMPLATE">
@@ -3142,7 +3149,7 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-15T13:28:02Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2652fc804c260954d60ebe1ceff35306bc6abd9a/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3152,7 +3159,7 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2652fc804c260954d60ebe1ceff35306bc6abd9a/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3162,7 +3169,7 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2652fc804c260954d60ebe1ceff35306bc6abd9a/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20((Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20((Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3172,7 +3179,7 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2652fc804c260954d60ebe1ceff35306bc6abd9a/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
       </version>
     </reapack>
   </category>
