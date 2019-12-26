@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,16 +17,19 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.03 [26.12.19]
-   *                  +Fixed: Name track ($track)
+   *              v.1.04 [26.12.19]
+   *                  + Add: tail length matches time selection
+   *                  + Add: Name of the track/file from the clipboard
+   *                  + Add: Render to one file when rendering to one track
    
+   *              v.1.03 [26.12.19]
+   *                  +Fixed: Name track ($track) 
    *              v.1.02 [06.12.19] 
    *              v.1.01 [05.12.19]
    *                  + Delete the previous track 
    *              v.1.0 [03.12.19]
    *                  + initialе
 --]]
-    
     
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
@@ -43,8 +46,10 @@
                  -----------------------------------------------------------------
           
     
-    local TailTime = 1000 -- ms / Длина хвоста, должен быть включен TailOnOff = 1
-          -----------------------------------------------------------------------
+    local TailTime = 1000 -- Длина хвоста, должен быть включен TailOnOff = 1
+                -- = n ms
+                -- = < 0 (-1)  длина хвоста соответствует выбору времени
+          --------------------------------------------------------------
           
     
     local Render_Directory = 'XXRPP/Render-stem'
@@ -60,6 +65,7 @@
     local Render_Name = '$track-$day$month$year2-$hour-$minute'
         -- Взять имя с окна рендера      = 0
         -- Показать окно для ввода имени = 1
+        -- Взять имя из буфера обмена    = 2
         -- или впишите Имя               = '-stem-'  Имя может содержать спец знаки, 
         --                                           такие как '$track', 
         --                                           смотрите окно рендера - 'Wildcards'
@@ -75,12 +81,7 @@
                   -- =  0  'моно в моно, мульти в мульти' Отключить
                   -- =  1  'моно в моно, мульти в мульти' Включить
                   ------------------------------------------------
-          
-    
-    local RenderViaMaster = 0
-                       -- = 0 Рендер Трек (только трек)
-                       -- = 1 Рендер Трек Через Мастер
-                      --------------------------------
+        
                       
    
    local OffTimeSelection = false
@@ -202,7 +203,15 @@
                     -- = false рендерить только выделенные треки,
                     --         не обращая внимания на мастер трек
                     ---------------------------------------------
-                       
+    
+    
+    
+    local RenderViaMaster = 0
+                       -- = 0 Рендер Трек (только трек)
+                       -- = 1 Рендер Трек Через Мастер
+                      --------------------------------
+                      
+                      
           
     local RenInOneTrMOVE = 0 
                       -- = 0 Создать трек НАД первым выделенным (Рендер в один трек)
@@ -784,7 +793,11 @@
     if Render_Name == 1 then;
         local retval, NameFile = reaper.GetUserInputs("Name File",1,"Name File,extrawidth=150","-Stem-");
         if not retval then no_undo() return end;
-        reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true); 
+        reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true);
+    elseif Render_Name == 2 then;
+        local NameFile = reaper.CF_GetClipboard(''):sub(0,50);
+        if #NameFile:gsub('%s','')==0 then NameFile = '' end;
+        reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true);
     elseif Render_Name ~= 0 then;
         if type(Render_Name)~='string'then Render_Name=''end;
         reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",Render_Name,true);
@@ -835,7 +848,9 @@
         reaper.GetSetProjectInfo(0,"RENDER_TAILFLAG",(S.RENDER_TAILFLAG&~4),1);
     elseif TailOnOff == 1 then;
         reaper.GetSetProjectInfo(0,"RENDER_TAILFLAG",(S.RENDER_TAILFLAG |4),1);
-        reaper.GetSetProjectInfo(0,"RENDER_TAILMS",tonumber(TailTime)or 1000,1);
+        if not tonumber(TailTime)then TailTime = 0 end;
+        if TailTime < 0 then TailTime = (endLoop-startLoop)*1000 end;
+        reaper.GetSetProjectInfo(0,"RENDER_TAILMS",TailTime,1);
     end;
     ------------------------------------------
    
@@ -914,7 +929,7 @@
     -------------------------------------------------------------------------------------------
     -- / рендер / -----------------------------------------------------------------------------
     ----
-    if AddRendFileInProj == 0 and RENDER_MASTER ~= true then NewTrack_RendINOne = 1 end;
+    --if AddRendFileInProj == 0 and RENDER_MASTER ~= true then NewTrack_RendINOne = 1 end;-- (-v.1.04)
     
     if RENDER_MASTER == true then;
         Render_Master_Tr();
