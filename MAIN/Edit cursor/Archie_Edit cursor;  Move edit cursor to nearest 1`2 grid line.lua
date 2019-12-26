@@ -1,9 +1,9 @@
 --[[
-   * Category:    Grid
-   * Description: Move edit cursor to nearest 1/1.3 grid line
+   * Category:    Edit cursor
+   * Description: Move edit cursor to nearest 1/2 grid line
    * Author:      Archie
    * Version:     1.0
-   * Описание:    Переместить курсор редактирования на ближайшую 1/1.3 линию сетки
+   * Описание:    Переместить курсор редактирования на ближайшую 1/2 линию сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -31,7 +31,7 @@
               -- < 0 To round back
     
     
-    local SHIFT = 1/1.333333333333333  -- 0...0.999 (0.25 or 1/4)
+    local SHIFT = 1/2  -- 0...0.999 (0.25 or 1/4)
     
     
     --======================================================================================

@@ -1,5 +1,5 @@
 --[[
-   * Category:    Grid
+   * Category:    Edit cursor
    * Description: Move edit cursor to nearest visible grid
    * Author:      Archie
    * Version:     1.0
