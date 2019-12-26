@@ -17,249 +17,39 @@
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
 --]]
     
-    
-    --======================================================================================
-    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
-    --======================================================================================    
-    
-    
-    
-    
-    
-    local TailOnOff =  0
-			  -- = -1 настройки из окна рендера (Tail)
-			  -- =  0 отключить хвост (Tail)
-			  -- =  1 включить хвост (Tail) / Необходимо установить TailTime ms
-			  -----------------------------------------------------------------
-		
-    
-    local TailTime = 1000 -- ms / Длина хвоста, должен быть включен TailOnOff = 1
-		-----------------------------------------------------------------------
-		
-    
-    local Render_Directory = 'XXRPP/Render-stem'
-		  -- путь может быть пустым    = ''
-		  -- или относительным путем   = '-stem-'
-		  -- или впишите полный путь   = 'C:/Users/...'
-		  -- Взять путь с окна рендера = -1
-		  -- Путь .rpp файла           = "XXRPP"
-		  -- Или продолжите путь       = "XXRPP/My Render/MULTI"
-		  ------------------------------------------------------
-		
-    
-    local Render_Name = '$track-$day$month$year2-$hour-$minute'
-	   -- Взять имя с окна рендера      = 0
-	   -- Показать окно для ввода имени = 1
-	   -- или впишите Имя               = '-stem-'  Имя может содержать спец знаки, 
-	   --                                           такие как '$track', 
-	   --                                           смотрите окно рендера - 'Wildcards'
-	   --------------------------------------------------------------------------------
-		
-    
-    local channelsRend = 2  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
-		------------------------------------------------------------------
-		
-    
-    local monoInMono =  1
-			   -- = -1  'моно в моно, мульти в мульти' Взависимости от галок из окна рендера
-			   -- =  0  'моно в моно, мульти в мульти' Отключить
-			   -- =  1  'моно в моно, мульти в мульти' Включить
-			   ------------------------------------------------
-		
-    
-    local RenderViaMaster = 0
-				   -- = 0 Рендер Трек (только трек)
-				   -- = 1 Рендер Трек Через Мастер
-				  --------------------------------
-				  
-   
-   local OffTimeSelection = false
-				   -- = true Отключить Выбор времени 
-				   --        (рендерить только длину всего проекта)
-				   -- = false Включить Выбор времени 
-				   --         (рендерить по выбору времени если установлено, 
-				   --          иначе  длину всего проекта)
-				   ---------------------------------------
-    
-    
-    local SampleRate  = 0 -- = 0 default-сэмплрейт проекта или установите в виде = 44100 или 48000 и т.д.
-		----------------------------------------------------------------------------------------------
-		
-		
-    local Render_Speed = 0
-				-- = 0  Full-speed Offline
-				-- = 1  1x Offline
-				-- = 2  Online Render
-				-- = 3  Offline Render (Idle)
-				-- = 4  1x Offline Render (ldle)
-				--------------------------------
-		
-		
-    local ResampleMode = 8
-				-- = 0  Medium (64pt Sinc)
-				-- = 1  Low (Linear Interpolation) 
-				-- = 2  Lowest (Point Sampling)
-				-- = 3  Good (192pt Sinc)
-				-- = 4  Better (384pt Sinc)
-				-- = 5  Fast (IIR + Linear Interpolation)
-				-- = 6  Fast (lliRx2 + Linear Interpolation)
-				-- = 7  Fast (16pt Sinc)
-				-- = 8  HQ (512pt Sinc)
-				-- = 9  Extreme HQ (768pt HQ Sinc)
-				----------------------------------
-		
-		
-    local OutputFormat = 0
-				-- = 0 Wave
-				-- = 1 AIFF
-				-- = 2 FLAC
-				-- = 3 MP3
-				-- = 4 WavPack
-				--------------
-		
-		
-    local bit = 24
-	   -- Wave
-	   --    = 8  |  8 bit PCM 
-	   --    = 16 | 16 bit PCM 
-	   --    = 24 | 24 bit PCM 
-	   --    = 32 | 32 bit FP 
-	   --    = 64 | 64 bit FP 
-	   --    =  4 |  4 bit IMA ADPCM 
-	   --    =  2 |  2 bit adpcm
-	   -- AIFF 
-	   --    =  8 |  8 bit PCM 
-	   --    = 16 | 16 bit PCM 
-	   --    = 24 | 24 bit PCM 
-	   --    = 32 | 32 bit PCM
-	   -- FLAC
-	   --    = 24 | 24 bit
-	   --    = 23 | 23/24 bit
-	   --    = 22 | 22/24 bit
-	   --    = 21 | 21/24 bit
-	   --    = 20 | 20/24 bit
-	   --    = 19 | 19/24 bit
-	   --    = 18 | 18/24 bit
-	   --    = 17 | 17/24 bit
-	   --    = 16 | 16 bit
-	   -- MP3
-	   --    =  0 | Maximum bitrate/quality
-	   -- WavPack
-	   --    =  0 |    16 bit
-	   --    =  1 |    24 bit
-	   --    =  2 |    32 bit integer
-	   --    =  3 |    32 bit FP
-	   --    =  4 | 23/24 bit
-	   --    =  5 | 22/24 bit
-	   --    =  6 | 21/24 bit
-	   --    =  7 | 20/24 bit
-	   --    =  8 | 19/24 bit
-	   --    =  9 | 18/24 bit
-	   --    = 10 | 17/24 bit
-	   --    = 11 |    32 bit FP - 144db floor
-	   --    = 12 |    32 bit FP - 120db floor
-	   --    = 13 |    32 bit FP - 96db floor
-	   --------------------------------------
-		
-		
-    local PrePan = false
-		    -- = true  Перед панорамой / PrePan
-		    -- = false После панорамы  / PostPan
-		    -------------------------------------
-		
-		
-    local PreFade = false
-			-- = true  Перед фейдером / PreFade
-			-- = false После фейдера / PostFade
-			-----------------------------------
-    
-    
-    local PreFx = false
-		   -- = true  Перед Эффектами / PreFx
-		   -- = false После Эффектов  / PostFx
-		   -----------------------------------
-    
-    
-    local NewTrack_RendINOne = 0
-					 -- = 0 Рендер выделенный трек в ОДИН новый трек
-					 -- = 1 Рендер каждый выделенный трек в новый Трек
-					 -------------------------------------------------
-    
-    
-    local MasterRender = false
-				-- = true  Если выбран мастер трек, то рендерить только 
-				--         мастер трек, иначе выделенные треки
-				-- = false рендерить только выделенные треки,
-				--         не обращая внимания на мастер трек
-				---------------------------------------------
-				   
-		
-    local RenInOneTrMOVE = 0 
-				  -- = 0 Создать трек НАД первым выделенным (Рендер в один трек)
-				  -- = 1 Создать трек ПОД первым выделенным  (Рендер в один трек)
-				  -- = 2 Создать трек в самом верху  (Рендер в один трек)
-				  -- = 3 Создать трек в самом низу  (Рендер в один трек)
-				  ------------------------------------------------------
-		
-		
-    local RenTrInTrMOVE = 0 
-				 -- = 0 Создать треки НАД выделенными (Рендер трек в трек)
-				 -- = 1 Создать треки ПОД выделенными (Рендер трек в трек)
-				 -- = 2 Создать треки в самом верху   (Рендер трек в трек)
-				 -- = 3 Создать треки в самом низу    (Рендер трек в трек)
-				 ---------------------------------------------------------
-	 
-	 
-    local RenMastTrMOVE = 0 
-				 -- = 0 Создать трек в самом низу (Рендер Мастер в трек)
-				 -- = 1 Создать трек в самом верху (Рендер Мастер в трек)
-				 --------------------------------------------------------
-		
-		
-    local MutePreTrack = true
-				-- = true  Замьютировать отрендеренные (предыдущие) треки
-				-- = false Не мьютировать отрендеренные (предыдущие) треки
-				----------------------------------------------------------
-	 
-	 
-    local SelPreTrack = false
-			    -- = true  -- Не снимать выделения с предыдущих (отрендеренных) треков
-			    -- = false -- Снять выделения с предыдущих (отрендеренных) треков
-			    -----------------------------------------------------------------
-	 
-	 
-    local SelPostTrack = true
-				-- = true    Выделить новые треки
-				-- = false   Не выделять новые треки
-				------------------------------------
-				
-				
-    local RemovePreTrack = false
-				  -- = true   Удалить предыдущие (отрендеренные) треки
-				  -- = false  Не удалять предыдущие (отрендеренные) треки
-				  -------------------------------------------------------
-				  
-				  
-    local AddRendFileInProj = 1
-					-- = 0  Не добавлять отрендеренные файлы в проект 
-					--      (в этом режиме неработают некоторые настройки выше,мьют,удалить и т.д.)
-					-- = 1  Добавить отрендеренные файлы в проект
-					---------------------------------------------
-			    
-		
-    local TITLE = "Render track into one new track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )" 
-		   -- = "Строка истории отмены, если хотите изменить"
-		   --------------------------------------------------
-	  
-	 
-    
-    
-    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
+	-- Смотрите Script: Archie_Render;  Render stems Template(`).lua
     
+    local TailOnOff =  0;
+    local TailTime = 1000;
+    local Render_Directory = 'XXRPP/Render-stem';
+    local Render_Name = '$track-$day$month$year2-$hour-$minute';
+    local channelsRend = 2;
+    local monoInMono =  1;
+    local RenderViaMaster = 0;
+    local OffTimeSelection = false;
+    local SampleRate  = 0;
+    local Render_Speed = 0;
+    local ResampleMode = 8;
+    local OutputFormat = 0;
+    local bit = 24;
+    local PrePan = false;
+    local PreFade = false;
+    local PreFx = false;
+    local NewTrack_RendINOne = 0;
+    local MasterRender = false;
+    local RenInOneTrMOVE = 0;
+    local RenTrInTrMOVE = 0;
+    local RenMastTrMOVE = 0;
+    local MutePreTrack = true;
+    local SelPreTrack = false;
+    local SelPostTrack = true;
+    local RemovePreTrack = false;
+    local AddRendFileInProj = 1;
+    local TITLE = "Render track into one new track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline)";
     
     
     -------------------------------------------------------
@@ -774,7 +564,11 @@
     if Render_Name == 1 then;
 	   local retval, NameFile = reaper.GetUserInputs("Name File",1,"Name File,extrawidth=150","-Stem-");
 	   if not retval then no_undo() return end;
-	   reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true); 
+	   reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true);
+    elseif Render_Name == 2 then;
+	   local NameFile = reaper.CF_GetClipboard(''):sub(0,50);
+	   if #NameFile:gsub('%s','')==0 then NameFile = '' end;
+	   reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",NameFile,true);
     elseif Render_Name ~= 0 then;
 	   if type(Render_Name)~='string'then Render_Name=''end;
 	   reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",Render_Name,true);
@@ -825,7 +619,9 @@
 	   reaper.GetSetProjectInfo(0,"RENDER_TAILFLAG",(S.RENDER_TAILFLAG&~4),1);
     elseif TailOnOff == 1 then;
 	   reaper.GetSetProjectInfo(0,"RENDER_TAILFLAG",(S.RENDER_TAILFLAG |4),1);
-	   reaper.GetSetProjectInfo(0,"RENDER_TAILMS",tonumber(TailTime)or 1000,1);
+	   if not tonumber(TailTime)then TailTime = 0 end;
+	   if TailTime < 0 then TailTime = (endLoop-startLoop)*1000 end;
+	   reaper.GetSetProjectInfo(0,"RENDER_TAILMS",TailTime,1);
     end;
     ------------------------------------------
    
@@ -904,7 +700,7 @@
     -------------------------------------------------------------------------------------------
     -- / рендер / -----------------------------------------------------------------------------
     ----
-    if AddRendFileInProj == 0 and RENDER_MASTER ~= true then NewTrack_RendINOne = 1 end;
+    --if AddRendFileInProj == 0 and RENDER_MASTER ~= true then NewTrack_RendINOne = 1 end;-- (-v.1.04)
     
     if RENDER_MASTER == true then;
 	   Render_Master_Tr();
