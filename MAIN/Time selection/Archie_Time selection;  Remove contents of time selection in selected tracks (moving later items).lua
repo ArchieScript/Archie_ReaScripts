@@ -2,7 +2,7 @@
    * Category:    Time selection
    * Description: Remove contents of time selection in selected tracks (moving later items)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Удалить содержимое выбора времени в выбранных дорожках (перемещение более поздних элементов)
    * GIF:         ---
@@ -12,10 +12,12 @@
    * Customer:    smrz1:[RMM];
    * Gave idea:   smrz1:[RMM];
    * Changelog:   
+   *              v.1.03 [30.12.19]
+   *                  + fade in/out
+   
    *              v.1.02 [30112019] 
    *                  + fix bug automation: Add points to time selection
-   *                  http://rmmedia.ru/threads/134701/post-2424819
-   
+   *                  http://rmmedia.ru/threads/134701/post-2424819  
    *              v.1.01 [05062019]
    *                  + Master track is selected, delete all content in time selection
    *                  + Мастер трек выбран, удалить все содержимое в выборе времени 
@@ -45,6 +47,11 @@
     
     local AddPointsToTimeSel = true  -- true / false  | + v.1.02 http://rmmedia.ru/threads/134701/post-2424819
     
+    
+    local FADE = -1
+            -- = < 0 fade in/out default (В зависимости от настроек reaper)
+            -- = Иначе установите в миллисекундах
+            
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -126,6 +133,16 @@
             if positi >= Start and positi+length <= End then;
                 reaper.DeleteTrackMediaItem(sel_track,Item);
             end;
+            --- v1.03 ---
+            if tonumber(FADE)and FADE >= 0 then;
+                if positi == End then;
+                    reaper.SetMediaItemInfo_Value(Item,"D_FADEINLEN",FADE/1000);
+                end;
+                if positi+length == Start then;
+                    reaper.SetMediaItemInfo_Value(Item,"D_FADEOUTLEN",FADE/1000);
+                end;
+            end;
+            -------------
         end;
         
         

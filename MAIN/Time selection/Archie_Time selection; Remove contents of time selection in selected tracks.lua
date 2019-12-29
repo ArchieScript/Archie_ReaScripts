@@ -6,7 +6,7 @@
    * Category:    Time selection
    * Description: Remove contents of time selection in selected tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.03
    * Описание:    Удалить содержимое выбора времени в выбранных дорожках
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -15,7 +15,11 @@
    * Gave idea:   smrz1(RMM)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [30.11.19]
+   * Changelog:   
+   *              v.1.03 [30.12.19]
+   *                  + fade in/out
+   
+   *              v.1.0 [30.11.19]
    *                  + initialе
 --]]
     
@@ -26,9 +30,13 @@
     
     local RemoveTimeSel = false -- true / false
     
-	local AddPointsToTimeSel = true  -- true / false  | + v.1.0 http://rmmedia.ru/threads/134701/post-2424819
+    local AddPointsToTimeSel = true  -- true / false  | + v.1.0 http://rmmedia.ru/threads/134701/post-2424819
     
-	
+    
+    local FADE = -1
+            -- = < 0 fade in/out default (В зависимости от настроек reaper)
+            -- = Иначе установите в миллисекундах
+    
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -99,6 +107,16 @@
             if positi >= Start and positi+length <= End then;
                 reaper.DeleteTrackMediaItem(sel_track,Item);
             end;
+            --- v1.03 ---
+            if tonumber(FADE)and FADE >= 0 then;
+                if positi == End then;
+                    reaper.SetMediaItemInfo_Value(Item,"D_FADEINLEN",FADE/1000);
+                end;
+                if positi+length == Start then;
+                    reaper.SetMediaItemInfo_Value(Item,"D_FADEOUTLEN",FADE/1000);
+                end;
+            end;
+            -------------
         end;
         
         
@@ -110,7 +128,7 @@
            if AddPointsToTimeSel then;
                reaper.Main_OnCommand(40726,0);--Insert 4 envelope points at time selection
            end;
-		   
+       
            reaper.Main_OnCommand(40089,0);--Delete all points in time selection
            
            SelAllAutoItemsTrack(TrackEnv,1);
