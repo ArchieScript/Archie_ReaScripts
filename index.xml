@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2a8650141828c5342a402434e4d1d633e5ff2c1c">
+<index version="1" name="Archie-ReaScripts" commit="8a105b66ef78b35017b536035d409cd40fcc7deb">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5499,6 +5499,18 @@ Performance: Script completely rewritten]]></changelog>
       <version name="1.0" author="Archie" time="2018-11-25T15:30:29Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2664a6d6722dccdfe70a92690e0c6ecb796a9772/MIDI%20Editor/Archie_MidiEditor;%20%20Open-close%20Notes%20window.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Show Instrument.lua" type="script" desc="Show Instrument">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-08T17:33:19Z">
+        <changelog><![CDATA[v.1.0 [09.01.2020]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/8a105b66ef78b35017b536035d409cd40fcc7deb/MIDI%20Editor/Archie_MidiEditor;%20%20Show%20Instrument.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
