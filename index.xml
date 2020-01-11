@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0aaec9c2ef4cbe6f272deabd9b8788219322aa41">
+<index version="1" name="Archie-ReaScripts" commit="b2a6e826105ced0cf144a32e499dedcddaa6ea49">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5611,7 +5611,7 @@ Performance: Script completely rewritten]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Toggle Loop source.lua" type="script" desc="Toggle Loop source">
+    <reapack name="Archie_MidiEditor;  Toggle Loop source.lua" type="script" desc="Toggle Loop source item">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
