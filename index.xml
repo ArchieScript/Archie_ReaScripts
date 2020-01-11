@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5699aebcc150b1117c4ac4546491069333b60697">
+<index version="1" name="Archie-ReaScripts" commit="0aaec9c2ef4cbe6f272deabd9b8788219322aa41">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5620,7 +5620,7 @@ Performance: Script completely rewritten]]></changelog>
       <version name="1.0" author="Archie" time="2020-01-11T13:55:53Z">
         <changelog><![CDATA[v.1.0 [11.01.2020]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/5699aebcc150b1117c4ac4546491069333b60697/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Loop%20source.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0aaec9c2ef4cbe6f272deabd9b8788219322aa41/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Loop%20source.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
