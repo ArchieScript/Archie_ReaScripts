@@ -38,5 +38,5 @@
         reaper.UpdateArrange();
     else;
         reaper.defer(function()end);
-    end;s
+    end;
     ------------------------------------------------
