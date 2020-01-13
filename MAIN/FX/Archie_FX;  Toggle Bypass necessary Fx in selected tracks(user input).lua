@@ -6,7 +6,7 @@
    * Category:    Fx
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -61,7 +61,7 @@
                       -- = false; | Не открывать Повторно окно
     
     
-    local MASTER_TRACK = false; -- true/false
+    local MASTER_TRACK = true; -- true/false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -239,7 +239,7 @@
                 end;
             end;
             --================================================  
-        end;    
+        end;
         -----
     end;
     
