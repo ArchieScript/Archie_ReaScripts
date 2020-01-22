@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Gui
-   * Description: Toggle Bypass necessary Fx in selected tracks(user input)
+   * Description: Toggle Remove necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,7 +14,7 @@
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
    * Changelog:   
-   *              v.1.0 [19.01.20]
+   *              v.1.0 [22.01.20]
    *                  + initialе
 --]]
     
@@ -29,7 +29,7 @@
         local msg = 
         "Rus:\n\n"..
         "Скрипт: "..
-        "Переключатель - байпас необходимых Fx в выбранных треках\n"..
+        "Переключатель - Удалить необходимые Fx в выбранных треках\n"..
         "(пользовательский ввод  через запятую или точка с запятой)\n"..
         "Нажмите на ввод имени и введите в появившемся окне имена Fx,\n"..
         "которые нужно забайпасить/разбайпасить через запятую(,) или точку с запятой(;)\n"..
@@ -40,12 +40,10 @@
         "введите номера Fx через запятую(,) или точку с запятой(;)\n"..
         "добавив *(звездочку) в начале\n"..
         "Например: *1, 3, 5\n"..
-        "Правый клик или кнопка 'P' вызовет меню для сохранения пресетов.\n"..
-        "Mode: Mode 1 - байпас всех Fx в одно состояние, Mode 2 - переключать зеркально\n"..
-        "т.е. если один fx включен, а второй выключен, то они поменяются местами.\n\n\n\n"..
+        "Правый клик или кнопка 'P' вызовет меню для сохранения пресетов.\n\n\n\n"..
         "Eng:\n\n"..
         "Script: "..
-        "Toggle-bypass required Fx in selected tracks\n"..
+        "Toggle - Delete necessary Fx in selected tracks\n"..
         "(user input separated by a comma or semicolon)\n"..
         "Click on enter a name and enter the Fx names in The window that appears,\n"..
         "that need to be pasted / unpacked with a comma (,) or semicolon(;)\n"..
@@ -56,9 +54,7 @@
         "enter the Fx numbers separated by a comma (,) or semicolon(;)\n"..
         "adding *(asterisk) at the beginning\n"..
         "For example: *1, 3, 5\n"..
-        "Right click or 'P' button will open the menu for saving presets.\n"..
-        "Mode: Mode 1-bypass all Fx in one state, Mode 2 - switch mirror\n"..
-        "that is, if one fx is enabled and the other is bypassed they will switch places."
+        "Right click or 'P' button will open the menu for saving presets.\n"
         
         
         
@@ -82,7 +78,7 @@
     
     
     --=============================================================================================
-    local function ToggleBypass(str,MASTER_TRACK,Mode);--str,true
+    local function ToggleDelete(str,MASTER_TRACK);--str,boolean
         
         ---------------------------------------------------------
         local function SC(x)return string.gsub(x,'%p','%%%0')end;
@@ -145,38 +141,27 @@
                     if SelTrack then;
                         
                         --================================================
+                        
                         local FX_Count = reaper.TrackFX_GetCount(SelTrack);
-                        for ifx = 1, FX_Count do;
+                        for ifx = FX_Count-1,0,-1 do;
                         
                             if NameNumb == 'NAME' then;
                                 -----------
                                 ---------
-                                local _, nameFx = reaper.TrackFX_GetFXName(SelTrack,ifx-1,'');
+                                local _, nameFx = reaper.TrackFX_GetFXName(SelTrack,ifx,'');
                                 
                                 for key,val in pairs(strT)do;
                                 
                                     nameFx = nameFx:upper();
                                     if nameFx:match(SC(strT[key])) and #strT[key]>=1 then;
-                                        
-                                        if not GetEnabled then;
-                                            GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
-                                            if GetEnabled then SetEnabled = false else SetEnabled = true end;
-                                            if Mode == 2 then GetEnabled = nil else GetEnabled = true end;
-                                        end;
-                                        
+                                         
                                         if not Undo then;
                                             reaper.Undo_BeginBlock();
                                             reaper.PreventUIRefresh(1);
                                             Undo = true;
                                         end;
                                         
-                                        reaper.TrackFX_SetEnabled(SelTrack,ifx-1,SetEnabled);
-                                        
-                                        if Mode == 2 then;
-                                            strU = "Toggle Bypass Fx by name (reflect)"
-                                        else;
-                                            if SetEnabled == true then strU = "Unbypass Fx by name" else strU = "Bypass Fx by name" end;
-                                        end;
+                                        reaper.TrackFX_Delete(SelTrack,ifx);
                                         
                                         break;
                                     end; 
@@ -186,26 +171,16 @@
                             elseif NameNumb == 'NUMB' then;
                                 -----------
                                 ---------
-                                if numT[ifx] then;
-                                    
-                                    if not GetEnabled then;
-                                        GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
-                                        if GetEnabled then SetEnabled = false else SetEnabled = true end;
-                                        if Mode == 2 then GetEnabled = nil else GetEnabled = true end;
-                                    end;
-                                    
+                                if numT[ifx+1] then;
+                                     
                                     if not Undo then;
                                         reaper.Undo_BeginBlock();
                                         reaper.PreventUIRefresh(1);
                                         Undo = true;
-                                        
-                                        if Mode == 2 then;
-                                            strU = "Toggle Bypass Fx by number (reflect)";
-                                        else;
-                                            if SetEnabled == true then strU = "Unbypass Fx by number" else strU = "Bypass Fx by number" end;
-                                        end;
                                     end;
-                                    reaper.TrackFX_SetEnabled(SelTrack,ifx-1,SetEnabled);
+                                    
+                                    reaper.TrackFX_Delete(SelTrack,ifx);
+                                    
                                 end;
                                 ---------
                                 -----------
@@ -219,7 +194,7 @@
         
         if Undo then;
             reaper.PreventUIRefresh(-1);
-            reaper.Undo_EndBlock(strU,-1);
+            reaper.Undo_EndBlock("Remove Fx",-1);
         end;   
     end;
     --=============================================================================================
@@ -276,19 +251,13 @@
     end;
     
     local wWinSize,hWinSize = 400,80;
-    local nameWin = 'Toggle Bypass fx in selected tracks by number or name';
+    local nameWin = 'Toggle Remove fx in selected tracks by number or name';
     gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
     --reaper.DeleteExtState(section,"SaveUserInput",true);
     local SaveUserInput = reaper.GetExtState(section,"SaveUserInput"); 
     AttachTopmostPin(nameWin);
     --===================================================================================
     
-    
-    
-    --===================================================================================
-    local 
-    ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
-    --===================================================================================
     
     
     
@@ -311,7 +280,7 @@
         gfx.gradrect(230,45,75,25,  .4,.4,.4,1);
         gfx.x = 230;
         gfx.y = 48;
-        gfx.drawstr("   Bypass");
+        gfx.drawstr("  Remove");
         
         
         
@@ -355,16 +324,7 @@
         gfx.x = 2;
         gfx.y = 0;
         gfx.drawstr("P");
-        ---------
-        
-        
-        ---------
-        gfx.gradrect(20,0,30,10,  .4,.4,.4,1);
-        gfx.x = 20;
-        gfx.y = -1;
-        gfx.drawstr(" Mode");
-        ---------
-        
+        --------- 
         
         
         ---------
@@ -378,15 +338,15 @@
         
         
         -- / click Button / ----------------------------------------------------------
-        local ButtonBypass = LeftMouseButton(230,45,75,25,'ButtonBypass');
-        if ButtonBypass == 0 then;
+        local ButtonRemove = LeftMouseButton(230,45,75,25,'ButtonRemove');
+        if ButtonRemove == 0 then;
             gfx.set(1,1,1,.4);
             gfx.rect(230,45,75,25,0);
-        elseif ButtonBypass == 1 or ButtonBypass == 2 then;
+        elseif ButtonRemove == 1 or ButtonRemove == 2 then;
             gfx.set(.4,.7,0,1);
             gfx.rect(230+1,45+1,75-2,25-2,0);
-            if ButtonBypass == 2 then;
-                ToggleBypass(SaveUserInput,true,ModeState);
+            if ButtonRemove == 2 then;
+                ToggleDelete(SaveUserInput,true);
             end;
         end;
         
@@ -422,27 +382,6 @@
             end;
         end;
         
-        
-        
-        local ButtonMode = LeftMouseButton(20,0,30,10,'ButtonMode');
-        if ButtonMode >= 0 then;
-            gfx.set(1,1,1,.5);
-            gfx.rect(20,0,30,10,0);
-            if ButtonMode == 2 then;
-                ---
-                ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
-                local M1,M2;
-                if ModeState==1 then M1='!'M2=''elseif ModeState==2 then M1=''M2='!'else M1=''M2=''end;
-                gfx.x,gfx.y = gfx.screentoclient(reaper.GetMousePosition());
-                --gfx.x,gfx.y = 0,0;
-                local showmenuMode = gfx.showmenu("#Mode:||"..M1.."Mode 1 (Default)|"..M2.."Mode 2 (Reflect)");
-                if showmenuMode > 0 then;
-                    ModeState = showmenuMode-1;
-                    reaper.SetExtState(section,"ModeState",ModeState,true);
-                end;
-                ---
-            end;
-        end;
         
         
         
@@ -596,7 +535,9 @@
         end;
         -------------------------------------------------
         -------------------------------------------------
-         
+        
+        
+        
         
         
         --- / Resize / -------------------
