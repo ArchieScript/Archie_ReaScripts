@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2ab6b0b86aa2d7c4e3ea83b54b22d5c2548aa966">
+<index version="1" name="Archie-ReaScripts" commit="136be8860cb5e45f51aef32f7b45133f5f574330">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1380,6 +1380,23 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [19.01.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9eed9cbc7fd2f0836f941ded10b042bd8de6747b/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-01-22T12:39:15Z">
+        <changelog><![CDATA[v.1.0 [19.01.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/136be8860cb5e45f51aef32f7b45133f5f574330/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Gui; Toggle Remove necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Remove necessary Fx in selected tracks(user input)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-22T12:39:15Z">
+        <changelog><![CDATA[v.1.0 [22.01.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/136be8860cb5e45f51aef32f7b45133f5f574330/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_GuiD; Grid switch.lua" type="script" desc="Grid switch">
