@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b60cc6f50eef1681c27cd03f114196a0266d90ef">
+<index version="1" name="Archie-ReaScripts" commit="7db2c1117fde66612861196bf45bfca662d19e3f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1047,6 +1047,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [03062019]
     + MasterTrack]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f737497313df487dfc4b734a938da5677dfad8f4/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-01-23T17:50:36Z">
+        <changelog><![CDATA[v.1.03 [240120]
+    + Ability to enter the completely path]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7db2c1117fde66612861196bf45bfca662d19e3f/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle Auto open VSTi in selected tracks and close in the rest(`).lua" type="script" desc="Auto open VSTi in selected tracks and close in the rest">
