@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="61d0a11e0f23762d30b88c070db23c91417112fa">
+<index version="1" name="Archie-ReaScripts" commit="b856c79faa8dae72abbf93ec69ccbc6ad570f5b7">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4955,7 +4955,7 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/59f1bba419755ae3444f55bd1f0eb6e2f62b292d/MAIN/Various/Archie_Var;%20%20Toggle%20Open%20close%20MIDI%20editor%20and%20zoom%20to%20content%20by%20item.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Toggle Select Unselect all items tracks envelope points (depending on focus).lua" type="script" desc="Toggle Select Unselect all items/tracks/envelope points (depending on focus)">
+    <reapack name="Archie_Var;  Toggle Select Unselect all items tracks envelope points (depending on focus).lua" type="script" desc="Toggle Select Unselect all items tracks envelope points (depending on focus)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -4964,7 +4964,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2020-01-23T07:50:07Z">
         <changelog><![CDATA[v.1.0 [23.01.20]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/61d0a11e0f23762d30b88c070db23c91417112fa/MAIN/Various/Archie_Var;%20%20Toggle%20Select%20Unselect%20all%20items%20tracks%20envelope%20points%20(depending%20on%20focus).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b856c79faa8dae72abbf93ec69ccbc6ad570f5b7/MAIN/Various/Archie_Var;%20%20Toggle%20Select%20Unselect%20all%20items%20tracks%20envelope%20points%20(depending%20on%20focus).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Toggle Select Unselect all items tracks envelope points (depending on focus)(Save previous).lua" type="script" desc="Toggle Select all items tracks envelope points (depending on focus)(Save previous)">
