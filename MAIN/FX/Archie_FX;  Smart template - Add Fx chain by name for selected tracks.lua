@@ -1,8 +1,8 @@
---[[
+--[[ add fx chain by name
    * Category:    Fx
    * Description: Smart template - Add Fx chain by name for selected tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Smart template - Add Fx chain by name for selected tracks
    * О скрипте:   Умный шаблон - добавить цепочку Fx по имени для выбранных треков
    * GIF:         ---
@@ -12,9 +12,11 @@
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
    * Changelog:   
-   *              v.1.02 [03062019]
-   *                  + MasterTrack
+   *              v.1.03 [240120]
+   *                  + Ability to enter the completely path
    
+   *              v.1.02 [03062019]
+   *                  + MasterTrack  
    *              v.1.0 [01032019]
    *                  +  initialе
 
@@ -32,16 +34,16 @@
    ----------------------------------------------------------------------------------------||
    --\\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: /////
    ========================================================================================]]
-
-
-
+    
+    
+    
+    
 local
-ScriptBeginning = [[    
+ScriptBeginning = [[
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --====================================================================================== 
-]]   
-    
+    --======================================================================================
+]] 
     
     
     ------------------------------------------------------------------------------
@@ -49,9 +51,9 @@ ScriptBeginning = [[
     ------------------------------------------------------------------------------
     
     
-    
-    reaper.ClearConsole();
-    reaper.ShowConsoleMsg( "Rus:\n"..
+    local function Help();
+        reaper.ClearConsole();
+        reaper.ShowConsoleMsg( "Rus:\n"..
                            " Создать скрипт:\n"..
                            " *  Введите в первом появившемся окне сохраненную цепочку Fx, \n"..
                            " *  Во втором появившемся окне введите номер,  \n"..
@@ -67,44 +69,38 @@ ScriptBeginning = [[
                            " * 0 - Not open\n"..
                            " * 1 - To open in the chain\n"..
                            " * 2 - Open floating\n");
-   
+    end;
     ----
     ::Repeat::
     local
-    retval,retvals_csv = reaper.GetUserInputs( "Smart template - Add Fx chain by name for selected tracks", 1,
+    retval,Name_FXChains = reaper.GetUserInputs( "Smart template - Add Fx chain by name for selected tracks", 1,
                         "    Enter Name Saved Fx Chain:, extrawidth=87","");
-    if retval == false or retvals_csv:gsub(" ","") == "" then no_undo()return end;
+    if retval == false or Name_FXChains:gsub(" ","") == "" then no_undo()return end;
     
     
-
-    --------------------------------------------------
-    local
-    pathChain = reaper.GetResourcePath()..'/FXChains';
-    --------------------------------------------------
     
     
-    local ChainWithExt,ChainWithoutExt,Saved_FxChain,i,ext;
-    while(not j) do;
-        i = (i or 0) + 1;
-        ChainWithExt = reaper.EnumerateFiles(pathChain,i-1);
-        if ChainWithExt then;
-            if ChainWithExt:match("%.")then;
-                ext = string.reverse(ChainWithExt):match(".-%."):reverse();
-                if ext and ext == string.match(ext,"%.RfxChain") then;
-                    ChainWithoutExt = string.reverse(ChainWithExt):gsub(".-%.","",1):reverse();
-                end;
-            end;     
-            if ChainWithExt == retvals_csv or ChainWithoutExt == retvals_csv then;
-                Saved_FxChain = retvals_csv;
-            end;
-        end;
-        if not ChainWithExt or Saved_FxChain then i = nil goto exit1 end;
-    end
-    ::exit1::
-
-
-
-    if not Saved_FxChain then;
+    local Path1 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains..".RfxChain";
+    local Path2 = reaper.GetResourcePath().."/FXChains/"..Name_FXChains;
+    local Path3 = Name_FXChains..".RfxChain";
+    local Path4 = Name_FXChains;
+    
+    IO = io.open(Path1,"r");
+    local 
+    PathFXChains = Path1;
+    if not IO then;
+       IO = io.open(Path2,"r");
+       PathFXChains = Path2;
+    end;
+    if not IO then;
+       IO = io.open(Path3,"r");
+       PathFXChains = Path3;
+    end;
+    if not IO then;
+       IO = io.open(Path4,"r");
+       PathFXChains = Path4;
+    end;
+    if not IO then 
         local MB = reaper.MB("Rus:\n"
                    .." * Отсутствует цепочка Fx с таким Именем!\n"
                    .." * Введите правильное Имя.\n\n"
@@ -113,24 +109,18 @@ ScriptBeginning = [[
                    .." * Enter a valid Name.\n",
                    "Warning!",5);
         if MB == 4 then goto Repeat end;
-        no_undo() return;
+        No_Undo() return;
     end;
- 
     
-    
-    if Saved_FxChain:match("%.")then;
-        if string.reverse(Saved_FxChain):match(".-%."):reverse()== ".RfxChain" then;
-            Saved_FxChain = Saved_FxChain:reverse():gsub(".-%.","",1):reverse();
-        end;
-    end;
+    IO:close();
+    Help();
     
     
     local
-    NameScrNEXT = "Add Fx chain with Name - "..Saved_FxChain;
-    --------
+    NameScrNEXT = "Add Fx chain with Name - "..PathFXChains:gsub('^.+[/\\]',''):gsub('%..*$','');
     
     
-    
+   
     -----------
     ::Repeat2::
     local
@@ -156,24 +146,25 @@ ScriptBeginning = [[
     
     local OpenScrName;
     if retvals_csv == "0" then;
-        OpenScrName = "' Not open";
+        OpenScrName = " Not open";
     elseif retvals_csv == "1" then;
-        OpenScrName = "' Open chain";
+        OpenScrName = " Open chain";
     elseif retvals_csv == "2" then;
-        OpenScrName = "' Open float";
+        OpenScrName = " Open float";
     else;
         OpenScrName = "";
     end;
     --------
     
-    local
-    NameScrNEXT = "Archie_FX;  Add Fx chain with Name - "..Saved_FxChain..OpenScrName.."- for selected tracks";
+    
+    NameScrNEXT = NameScrNEXT.." - "..OpenScrName.." - for selected tracks";
+    PathFXChains = PathFXChains;
     local open_Fx = tonumber(retvals_csv);
-    local Name_FXChains = Saved_FxChain;
-    --------
-
-
-
+    
+    
+    
+    
+    
     -----------
     local SCR = "--[[\n   * Description: "..NameScrNEXT.."\n   * Author:      Archie\n"..
     "   * Website:     http://forum.cockos.com/showthread.php?t=212819 \n"..
@@ -190,10 +181,10 @@ ScriptBeginning = [[
     
     local function PasteFXChainByNameToSelTr(Name_FXChains,open_Fx,NameOfThisScript);
     
-        local NameOfThisScript = NameOfThisScript:gsub("Archie_FX;  ","");
-        local IO; 
+        
+        local IO;
         do;
-            local Path = reaper.GetResourcePath().."/FXChains/"..Name_FXChains..".RfxChain";
+            local Path = Name_FXChains
             IO = io.open(Path,"r");
             if not IO then goto MB end;
             local textChain = IO:read("a");
@@ -283,13 +274,13 @@ ScriptBeginning = [[
             no_undo() return;
          end;
     end;
- 
-    PasteFXChainByNameToSelTr(]]..'"'..Name_FXChains..'"'..","..open_Fx..[[,
+    
+    PasteFXChainByNameToSelTr(]]..'"'..PathFXChains:gsub('\\','/')..'"'..","..open_Fx..[[,
               "]]..NameScrNEXT..'"'..[[);]]
     ---------------------------------------
- 
- 
-    local filename = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)"); 
+    
+    
+    local filename = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)");
     
     
     local FileStop,i;
@@ -314,13 +305,13 @@ ScriptBeginning = [[
         if MB == 2 then no_undo() return end;
     end;
     -----
- 
+    
     local
     newScript = io.open(filename.."/"..NameScrNEXT..".lua",'w');
     newScript:write(SCR);
     newScript:close();
     reaper.AddRemoveReaScript(true,0,filename.."/"..NameScrNEXT..".lua",true);
-   
+    
     
     reaper.ClearConsole();
     reaper.ShowConsoleMsg("Rus:\n"..
