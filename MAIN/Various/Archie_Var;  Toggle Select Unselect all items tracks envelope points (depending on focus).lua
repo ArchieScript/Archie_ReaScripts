@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Various
-   * Description: Toggle Select Unselect all items/tracks/envelope points (depending on focus)
+   * Description: Toggle Select Unselect all items tracks envelope points (depending on focus)
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
