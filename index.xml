@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="7db2c1117fde66612861196bf45bfca662d19e3f">
+<index version="1" name="Archie-ReaScripts" commit="2668381daf91a2dd5645bd9c1bd32c1d2801c0df">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -505,6 +505,30 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [11.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Env;  Restore envelope point selection, slot 01.lua" type="script" desc="Restore envelope point selection, slot 01">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
+        <changelog><![CDATA[v.1.0 [25.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Envelope/Archie_Env;%20%20Restore%20envelope%20point%20selection,%20slot%2001.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Env;  Save envelope point selection, slot 01.lua" type="script" desc="Save envelope point selection, slot 01">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
+        <changelog><![CDATA[v.1.0 [25.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Envelope/Archie_Env;%20%20Save%20envelope%20point%20selection,%20slot%2001.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env;  Select all automation items in selected envelope track,with selected  points preserve .lua" type="script" desc="Select all automation items in selected envelope track,">
@@ -4639,6 +4663,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/01616f2dd4cb7e1cb3ea507177e6362abd0a0df1/MAIN/Track/Archie_Track;%20%20Unarm%20record%20of%20all%20visible%20tracks%20in%20TCP(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  UnMute all tracks(`).lua" type="script" desc="UnMute all track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
+        <changelog><![CDATA[v.1.0 [25.01.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in TCP and MCP(`).lua" type="script" desc="Unmute all visible track in TCP and MCP">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -4661,6 +4697,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  UnSolo all tracks(`).lua" type="script" desc="UnSolo all track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
+        <changelog><![CDATA[v.1.0 [25.01.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in TCP and MCP(`).lua" type="script" desc="Unsolo all visible track in TCP and MCP">
