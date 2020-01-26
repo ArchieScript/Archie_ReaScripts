@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="09cf253247e53ff8b4d59e885d08ea410b3cbb9a">
+<index version="1" name="Archie-ReaScripts" commit="1a0d510b520c376a6c9203c3377895d3d0be13a6">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5799,6 +5799,18 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.02 [13.01.2020]
     + Button Backlight Monitoring]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/863b17787b65b78b9bf3aa9f47c587b9f93a7e5b/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Loop%20source%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Toggle metronome.lua" type="script" desc="Toggle metronome">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-26T16:41:10Z">
+        <changelog><![CDATA[v.1.0 [27.01.20]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/1a0d510b520c376a6c9203c3377895d3d0be13a6/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20metronome.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
