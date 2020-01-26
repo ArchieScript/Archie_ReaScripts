@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2668381daf91a2dd5645bd9c1bd32c1d2801c0df">
+<index version="1" name="Archie-ReaScripts" commit="09cf253247e53ff8b4d59e885d08ea410b3cbb9a">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2284,6 +2284,18 @@ v.1.0 [28.08.19]
       <version name="1.07" author="Archie" time="2019-01-24T14:02:34Z">
         <changelog><![CDATA[+! Fixed bugs when cutting at the point of zero / v.1.06]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e4dff9a7c247660fba84aa912e107a983bd9f98c/MAIN/Item/Archie_Item;%20%20Split%20(selected)%20item(s)%20under%20mouse%20cursor(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Split items at grid (Time Selection).lua" type="script" desc="Split items at grid (Time Selection)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-26T12:28:47Z">
+        <changelog><![CDATA[v.1.0 [26.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/09cf253247e53ff8b4d59e885d08ea410b3cbb9a/MAIN/Item/Archie_Item;%20%20Split%20items%20at%20grid%20(Time%20Selection).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Stretch time and reduce the selected item(s) by 2 times.lua" type="script" desc="Stretch time and reduce the selected item(s) by 2 times">
