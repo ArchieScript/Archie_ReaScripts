@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="1a0d510b520c376a6c9203c3377895d3d0be13a6">
+<index version="1" name="Archie-ReaScripts" commit="bbbf1a85858eb9402a3eb30ec46a07646883d205">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2441,6 +2441,30 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/59f1bba419755ae3444f55bd1f0eb6e2f62b292d/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/59f1bba419755ae3444f55bd1f0eb6e2f62b292d/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/59f1bba419755ae3444f55bd1f0eb6e2f62b292d/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Toggle (Loop source OFF) - (SWS Loop section of selected item(s)).lua" type="script" desc="Toggle (Loop source OFF) - (SWS Loop section of selected item(s))">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-27T13:43:35Z">
+        <changelog><![CDATA[v.1.0 [27.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbbf1a85858eb9402a3eb30ec46a07646883d205/MAIN/Item/Archie_Item;%20%20Toggle%20(Loop%20source%20OFF)%20-%20(SWS%20Loop%20section%20of%20selected%20item(s)).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Toggle Loop item source under mouse cursor.lua" type="script" desc="Toggle Loop item source under mouse cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-27T13:43:35Z">
+        <changelog><![CDATA[v.1.0 [27.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbbf1a85858eb9402a3eb30ec46a07646883d205/MAIN/Item/Archie_Item;%20%20Toggle%20Loop%20item%20source%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Trim Extend selected of items to time selection(`).lua" type="script" desc="Trim Extend selected of items to time selection">
