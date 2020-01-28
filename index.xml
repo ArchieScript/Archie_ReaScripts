@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b10ce2ae25a4f8c9016eceb6e052fc6d3c21d17e">
+<index version="1" name="Archie-ReaScripts" commit="714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3196,6 +3196,18 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Render">
+    <reapack name="Archie_Render;  Render multi-track to a stereo track in certain channels.lua" type="script" desc="Render multi-track to a stereo track in certain channels">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/Archie_Render;%20%20Render%20multi-track%20to%20a%20stereo%20track%20in%20certain%20channels.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Render;  Render stems Template(`).lua" type="script" desc="Render stems Template(`)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3229,46 +3241,66 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/853ba21ee07d2b5ec8323c38c260a0c14b39910e/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/Archie_Render;%20%20Render%20track%20to%20a%20Mono%20track%20in%20certain%20channels.lua</source>
+      </version>
+    </reapack>
   </category>
-  <category name="MAIN/Render/COPY_TEMPLATE">
-    <reapack name="Archie_Render;  Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+  <category name="MAIN/Render/COPY_Render stems Template">
+    <reapack name="Archie_Render;  Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-15T13:28:02Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+    <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Render;  Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track ((Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+    <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20((Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline ).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
+    <reapack name="Archie_Render;  Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-15T13:30:00Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aeea2928b0ce1d179cc2ab868cf445a3b5a8a67d/MAIN/Render/COPY_TEMPLATE/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20).lua</source>
+      <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
+        <changelog><![CDATA[v.1.02 [29.01.20]
+    + Fixed: Pach MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
   </category>
@@ -4302,30 +4334,6 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Removes%208%20characters%20from%20the%20end%20of%20the%20selected%20track%20name(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Render multi-track to a stereo track in certain channels.lua" type="script" desc="Render multi-track to a stereo track in certain channels">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-01-21T15:39:02Z">
-        <changelog><![CDATA[v.1.0 [20.01.20]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2ab6b0b86aa2d7c4e3ea83b54b22d5c2548aa966/MAIN/Track/Archie_Track;%20%20Render%20multi-track%20to%20a%20stereo%20track%20in%20certain%20channels.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Track;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-01-21T15:39:02Z">
-        <changelog><![CDATA[v.1.0 [20.01.20]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2ab6b0b86aa2d7c4e3ea83b54b22d5c2548aa966/MAIN/Track/Archie_Track;%20%20Render%20track%20to%20a%20Mono%20track%20in%20certain%20channels.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input)(`).lua" type="script" desc="Select a track by name(abbreviated input)">
