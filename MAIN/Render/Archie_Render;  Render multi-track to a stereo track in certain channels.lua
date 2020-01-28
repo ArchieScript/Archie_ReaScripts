@@ -19,7 +19,7 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
    *              v.1.02 [29.01.20]
-   *                  + Fixed: Pach MacOs
+   *                  + Fixed: Path MacOs
    
    *              v.1.0 [20.01.20]
    *                  + initialе

@@ -18,7 +18,7 @@
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
    *              v.1.05 [29.01.20]
-   *                  + Fixed: Pach MacOs
+   *                  + Fixed: Path MacOs
    
    *              v.1.04 [26.12.19]
    *                  + Add: tail length matches time selection
