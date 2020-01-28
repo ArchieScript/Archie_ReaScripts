@@ -3,10 +3,10 @@
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
-   * Category:    Track
+   * Category:    Render
    * Description: Render track to a Mono track in certain channels
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Рендер трек в моно трек на определенных каналах
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,7 +17,11 @@
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-   * Changelog:   v.1.0 [20.01.20]
+   * Changelog:   
+   *              v.1.02 [29.01.20]
+   *                  + Fixed: Pach MacOs
+   
+   *              v.1.0 [20.01.20]
    *                  + initialе
 --]]
     
@@ -376,7 +380,7 @@
     if Render_Directory ~= -1 then;
         if type(Render_Directory)~='string' then Render_Directory=''end;
         local projfn = ({reaper.EnumProjects(-1,"")})[2]:match("(.+)[/\\]")or "";
-        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("^/",""):gsub("/$",""))or"";
+        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or"";
         reaper.GetSetProjectInfo_String(0,"RENDER_FILE",Render_Directory,1);
     end;
     ------------------------------------------
