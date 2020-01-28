@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bbbf1a85858eb9402a3eb30ec46a07646883d205">
+<index version="1" name="Archie-ReaScripts" commit="b10ce2ae25a4f8c9016eceb6e052fc6d3c21d17e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4560,6 +4560,12 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [30.07.2019]
     + Added - Add a template to the selected track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/baa77ffae16039996fb97ecd0927567168e73759/MAIN/Track/Archie_Track;%20%20Smart%20template%20-%20Load%20Track%20template%20by%20name.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-01-28T07:49:48Z">
+        <changelog><![CDATA[v.1.03 [28.01.2020]
+    + Ability to enter the full path to the track template
+    + Возможность вписать полный путь к шаблону трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b10ce2ae25a4f8c9016eceb6e052fc6d3c21d17e/MAIN/Track/Archie_Track;%20%20Smart%20template%20-%20Load%20Track%20template%20by%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
