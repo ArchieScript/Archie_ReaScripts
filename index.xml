@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9">
+<index version="1" name="Archie-ReaScripts" commit="0742b04f43c763c8f27b128cfacde825dc45ef17">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3204,8 +3204,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/Archie_Render;%20%20Render%20multi-track%20to%20a%20stereo%20track%20in%20certain%20channels.lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/Archie_Render;%20%20Render%20multi-track%20to%20a%20stereo%20track%20in%20certain%20channels.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render stems Template(`).lua" type="script" desc="Render stems Template(`)">
@@ -3234,11 +3234,9 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ea7f8fefcef714d47e1f6337bb39b832ea15819c/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
       <version name="1.04" author="Archie" time="2019-12-26T14:29:06Z">
-        <changelog><![CDATA[v.1.04 [26.12.19]
-    + Add: tail length matches time selection
-    + Add: Name of the track/file from the clipboard
-    + Add: Render to one file when rendering to one track]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/853ba21ee07d2b5ec8323c38c260a0c14b39910e/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+        <changelog><![CDATA[v.1.05 [29.01.20]
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
@@ -3249,8 +3247,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/Archie_Render;%20%20Render%20track%20to%20a%20Mono%20track%20in%20certain%20channels.lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/Archie_Render;%20%20Render%20track%20to%20a%20Mono%20track%20in%20certain%20channels.lua</source>
       </version>
     </reapack>
   </category>
@@ -3263,8 +3261,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3275,8 +3273,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3287,8 +3285,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3299,8 +3297,8 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-01-28T17:38:40Z">
         <changelog><![CDATA[v.1.02 [29.01.20]
-    + Fixed: Pach MacOs]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714a71f3cf53a91bd3ecd05ef6c91f1680ca71c9/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
   </category>
