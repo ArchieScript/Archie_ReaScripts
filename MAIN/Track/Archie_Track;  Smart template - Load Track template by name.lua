@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
@@ -12,9 +12,12 @@
    * Customer:    ---
    * Gave idea:   Ahmed5599887744112233[RMM]
    * Changelog:   
-   *              v.1.02 [30.07.2019]
-   *                  + Added - Add a template to the selected track
+   *              v.1.03 [28.01.2020]
+   *                  + Ability to enter the full path to the track template
+   *                  + Возможность вписать полный путь к шаблону трека
    
+   *              v.1.02 [30.07.2019]
+   *                  + Added - Add a template to the selected track 
    *              v.1.01 [26.06.2019]
    *                  +! fixed bug when adding a template as the first track in the project
    *                  +! Исправлена ошибка при добавлении шаблона в качестве первого трека в проекте
@@ -39,8 +42,6 @@
 
 
 
-
-
 local
 ScriptBeginning = [[    
     --======================================================================================
@@ -58,38 +59,33 @@ ScriptBeginning = [[
 
     ::Repeat::
     local
-    retval,retvals_csv = reaper.GetUserInputs( "Smart template - Load Track templates by name.", 1,
-                        "  Enter Name Track Templates:, extrawidth=87","name");
-    if retval == false or retvals_csv:gsub(" ","") == "" then no_undo()return end;
-    
-
-    ------------------------------------------------------------
-    local
-    pathTemplates = reaper.GetResourcePath()..'/TrackTemplates';
-    ------------------------------------------------------------
+    retval,pathTemplates = reaper.GetUserInputs( "Smart template - Load Track templates by name.", 1,
+                        "  Enter Name Track Templates:, extrawidth=300","nameTrackTemplates");
+    if retval == false or pathTemplates:gsub(" ","") == "" then no_undo()return end;
+      
     
     
-    local templateWithExt,templateWithoutExt,Saved_TrackTemplates,i,ext;
-    while(not j) do;
-        i = (i or 0) + 1;
-        templateWithExt = reaper.EnumerateFiles(pathTemplates,i-1);
-        if templateWithExt then;
-            if templateWithExt:match("%.")then;
-                ext = string.reverse(templateWithExt):match(".-%."):reverse();
-                if ext and ext == string.match(ext,"%.RTrackTemplate") then;
-                    templateWithoutExt = string.reverse(templateWithExt):gsub(".-%.","",1):reverse();
-                end;
-            end;     
-            if templateWithExt == retvals_csv or templateWithoutExt == retvals_csv then;
-                Saved_TrackTemplates = retvals_csv;
-            end;
-        end;
-        if not templateWithExt or Saved_TrackTemplates then i = nil goto exit1 end;
-    end
-    ::exit1::
+    local Path1 = reaper.GetResourcePath().."/TrackTemplates/"..pathTemplates..".RTrackTemplate";
+    local Path2 = reaper.GetResourcePath().."/TrackTemplates/"..pathTemplates;
+    local Path3 = pathTemplates..".RTrackTemplate";
+    local Path4 = pathTemplates;
     
-    
-    if not Saved_TrackTemplates then;
+    IO = io.open(Path1,"r");
+    local 
+    PathTrackTemplate = Path1;
+    if not IO then;
+       IO = io.open(Path2,"r");
+       PathTrackTemplate = Path2;
+    end;
+    if not IO then;
+       IO = io.open(Path3,"r");
+       PathTrackTemplate = Path3;
+    end;
+    if not IO then;
+       IO = io.open(Path4,"r");
+       PathTrackTemplate = Path4;
+    end;
+    if not IO then;
         local MB = reaper.MB("Rus:\n"
                    .." * Отсутствует  шаблон дорожки с таким Именем!\n"
                    .." * Введите правильное Имя.\n\n"
@@ -101,16 +97,13 @@ ScriptBeginning = [[
         no_undo() return;
     end;
     
-    
-    if Saved_TrackTemplates:match("%.")then;
-        if string.reverse(Saved_TrackTemplates):match(".-%."):reverse()== ".RTrackTemplate" then;
-            Saved_TrackTemplates = Saved_TrackTemplates:reverse():gsub(".-%.","",1):reverse();
-        end;
-    end;
+    IO:close();
     
     
     local
-    Name_TrTemplate = Saved_TrackTemplates;
+    Path_Track_Template = PathTrackTemplate:gsub('\\','/');
+    local
+    Name_Track_Template = Path_Track_Template:match('^.+[/\\](.+).RTrackTemplate$');
     
     
     ----
@@ -126,26 +119,28 @@ ScriptBeginning = [[
                "Help!",1);
     if MB == 2 then no_undo() return end;
     
-    local ret,SELECTED = reaper.GetUserInputs( "Smart template - Load Track templates by name.", 1,
-                        " How add template, extrawidth=50",-1);
+    local ret,SELECTED = reaper.GetUserInputs( "S.T. - Load Track templates by name.", 1,
+                        " How add template",-1);
     if not ret then no_undo() return end;
     if SELECTED ~= "0" and SELECTED ~= "1" then goto goto_SELECTED end;
     SELECTED = tonumber(SELECTED);
     ----
     
-    local NameScrNEXT;
+    local Name_Script_NEW;
     if SELECTED == 0 then;
-        NameScrNEXT = "Archie_Track;  Load Track template with name - "..Name_TrTemplate;
+        Name_Script_NEW = "Archie_Track;  Load Track template with name - "..Name_Track_Template;
     elseif SELECTED == 1 then;
-        NameScrNEXT = "Archie_Track;  Load Track template for selected tracks with name - "..Name_TrTemplate;
+        Name_Script_NEW = "Archie_Track;  Load Track template for selected tracks with name - "..Name_Track_Template;
     end
     ----
     
     
     
     
+    
+    
     -----------
-    local SCR = "--[[\n   * Description: "..NameScrNEXT.."\n   * Author:      Archie\n"..
+    local SCR = "--[[\n   * Description: "..Name_Script_NEW.."\n   * Author:      Archie\n"..
     "   * Website:     http://forum.cockos.com/showthread.php?t=212819 \n"..
     "   *              http://rmmedia.ru/threads/134701/ \n"..
     "   * DONATION:    http://money.yandex.ru/to/410018003906628 \n"..
@@ -158,7 +153,7 @@ ScriptBeginning = [[
     ------------------------------------------------------------------------------
     
     
-    local function LoadTrackTemplateByName(Name_TrTemplate,NameScrNEXT,SELECTED);
+    local function LoadTrackTemplateByName(Path_Track_Template, Name_Script_NEW, SELECTED);
         
         
         local function replaceAllGuid(str);
@@ -177,7 +172,7 @@ ScriptBeginning = [[
         
             
         local IO; do;
-            local Path = reaper.GetResourcePath().."/TrackTemplates/"..Name_TrTemplate..".RTrackTemplate";
+            local Path = Path_Track_Template;
             IO = io.open(Path,"r");
             if not IO then goto MB end;
             local textTemplates = IO:read("a");
@@ -199,6 +194,7 @@ ScriptBeginning = [[
                 local trNumb;
                 if LastTouchedTrack then;
                     trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
+                    if trNumb < 0 then trNumb = 0 end;
                 else;
                     trNumb = reaper.CountTracks(0);
                 end;
@@ -241,7 +237,7 @@ ScriptBeginning = [[
 
             --reaper.ShowConsoleMsg( var2 )
 
-            local Undo = NameScrNEXT:gsub("Archie_Track;  ","");
+            local Undo = Name_Script_NEW:gsub("Archie_Track;  ","");
             reaper.PreventUIRefresh(-1);
             reaper.Undo_EndBlock(Undo,-1);
         end;
@@ -255,13 +251,13 @@ ScriptBeginning = [[
             MB = reaper.MB(
             "Rus:\n"..
             " * Не существует шаблона дорожки с именем - \n"..
-            "    "..Name_TrTemplate.."\n\n"..
+            "    "..Name_Script_NEW..".lua\n\n"..
             " * Создайте новый скрипт с помощью\n"..
             "    Archie_Track;  Smart template - Load Track template by name.lua\n"..
             "    И существующего шаблона дорожек! \n\n\n"..
             "Eng:\n"..
             " * There is no track template named - \n"..
-            "    "..Name_TrTemplate.."\n\n"..
+            "    "..Name_Script_NEW..".lua\n\n"..
             " * Create a new script using\n"..
             "    Archie_Track;  Smart template - Load Track template by name.lua\n"..
             "    And existing track template! \n\n"..
@@ -270,7 +266,7 @@ ScriptBeginning = [[
             " * REMOVE THIS SCRIPT ? - OK\n",
             scrName,1);
             
-            if MB == 1 then;   
+            if MB == 1 then;
                 reaper.AddRemoveReaScript(false,0,filename.."/"..scrName,true);
                 os.remove(filename.."/"..scrName);
             end;
@@ -278,19 +274,23 @@ ScriptBeginning = [[
         end;
     end;
     
-    LoadTrackTemplateByName("]]..Name_TrTemplate..[[","]]..NameScrNEXT..[[",]]..SELECTED..[[);]]
+    LoadTrackTemplateByName("]]..Path_Track_Template..[[","]]..Name_Script_NEW..[[",]]..SELECTED..[[);]]
     -----------
     
     
     
-    local filename = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)"); 
+    
+    
+    
+    
+    local filePath = ({reaper.get_action_context()})[2]:match("(.+)[/\\]"); 
     
     
     local FileStop,i;
     while(not wh1)do;
         i = (i or 0)+1;
-        local Files = reaper.EnumerateFiles(filename,i-1);
-        if Files == NameScrNEXT or Files == NameScrNEXT..".lua" then;
+        local Files = reaper.EnumerateFiles(filePath,i-1);
+        if Files == Name_Script_NEW or Files == Name_Script_NEW..".lua" then;
             FileStop = true end;
         if FileStop or not Files then break end;
     end;
@@ -304,7 +304,7 @@ ScriptBeginning = [[
                              " * This script already exists !\n"..
                              " * Overwrite it ? OK\n\n"..
                              " Script: \n"..
-                             " * "..NameScrNEXT,
+                             " * "..Name_Script_NEW..'.lua',
                              "Error !",1);
         if MB == 2 then no_undo() return end;
     end;
@@ -312,20 +312,21 @@ ScriptBeginning = [[
     
     
     local
-    newScript = io.open(filename.."/"..NameScrNEXT..".lua",'w');
+    newScript = io.open(filePath.."/"..Name_Script_NEW..".lua",'w');
     newScript:write(SCR);
     newScript:close();
-    reaper.AddRemoveReaScript(true,0,filename.."/"..NameScrNEXT..".lua",true);
+    reaper.AddRemoveReaScript(true,0,filePath.."/"..Name_Script_NEW..".lua",true);
     
     
     reaper.ClearConsole();
+    
     reaper.ShowConsoleMsg("Rus:\n"..
                           " * Скрипт создан \n"..
-                          "   "..NameScrNEXT..".lua\n"..
+                          "   "..Name_Script_NEW..".lua\n"..
                           " * Ищите в экшен листе \n\n"..
                           "Eng:\n"..
                           " * Script created \n"..
-                          "   "..NameScrNEXT..".lua\n"..
+                          "   "..Name_Script_NEW..".lua\n"..
                           " * Search the action list"); 
                           -----------------------------
     no_undo();
