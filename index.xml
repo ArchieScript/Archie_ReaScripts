@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0742b04f43c763c8f27b128cfacde825dc45ef17">
+<index version="1" name="Archie-ReaScripts" commit="b01c84b209b22a04b7dbf29c40a65a9f5e301c6a">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3237,6 +3237,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.05 [29.01.20]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-01-29T07:32:23Z">
+        <changelog><![CDATA[v.1.05 [29.01.20]
+    + Fixed: Path MacOs]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b01c84b209b22a04b7dbf29c40a65a9f5e301c6a/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
