@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b01c84b209b22a04b7dbf29c40a65a9f5e301c6a">
+<index version="1" name="Archie-ReaScripts" commit="9a00c23510e4f3ba8e8fe5afed9e31dec83eba10">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2538,6 +2538,18 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-03-31T19:05:32Z">
         <changelog><![CDATA[+  initialе / v.1.0 [01042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7463eb7b5466c60b58d53bd1e95e64257a44e84b/MAIN/Item/Archie_Item;%20%20Unselect%20all%20items%20to%20rigth%20of%20time%20selection(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Unselect items if track not selected.lua" type="script" desc="Unselect items if track not selected">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-01-29T14:30:28Z">
+        <changelog><![CDATA[v.1.0 [29.01.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9a00c23510e4f3ba8e8fe5afed9e31dec83eba10/MAIN/Item/Archie_Item;%20%20Unselect%20items%20if%20track%20not%20selected.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  ↑Move selected items up one track.lua" type="script" desc="Move selected items up one track">
