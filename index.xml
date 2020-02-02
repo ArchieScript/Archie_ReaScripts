@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9a00c23510e4f3ba8e8fe5afed9e31dec83eba10">
+<index version="1" name="Archie-ReaScripts" commit="e9d62a1014cb9a3e7bccf9a55ec0237f0385d1c5">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2242,6 +2242,11 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-08-07T09:52:03Z">
         <changelog><![CDATA[+  initialе / v.1.0 [07082019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/92cc6b6c59e560ee1ed6b7d3ec7726b3464688f6/MAIN/Item/Archie_Item;%20%20Smart%20Template%20-%20Add%20media%20file(item)%20by%20name%20on%20track(s).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-02-02T18:13:41Z">
+        <changelog><![CDATA[+ v.1.02 [02022020]
+    Fix bug: add item to cursor]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9d62a1014cb9a3e7bccf9a55ec0237f0385d1c5/MAIN/Item/Archie_Item;%20%20Smart%20Template%20-%20Add%20media%20file(item)%20by%20name%20on%20track(s).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
