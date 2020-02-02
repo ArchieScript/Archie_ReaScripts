@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Smart Template - Add media file(item) by name on track(s)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Умный шаблон - добавить медиа-файл(элемент) по имени на трек(и)         
    * GIF:         ---
@@ -12,6 +12,9 @@
    * Customer:    Maestro Sound[RMM]
    * Gave idea:   Maestro Sound[RMM]
    * Changelog:   
+   *              + v.1.02 [02022020]
+   *                  Fix bug: add item to cursor
+   
    *              +  initialе / v.1.0 [07082019]
    
    
@@ -170,7 +173,7 @@
 		  if NumChannels > 0 then;
 			 for i = 1,CountSelTrack do;
 				local Track_Sel = reaper.GetSelectedTrack(0,i-1);
-				local NewItem = reaper.CreateNewMIDIItemInProj(Track_Sel,CursorPosition,CursorPosition+0.5,true);
+				local NewItem = reaper.CreateNewMIDIItemInProj(Track_Sel,CursorPosition,CursorPosition+0.5,false);
 				local Take = reaper.GetActiveTake(NewItem);
 				local retval,lengthIsQN = reaper.GetMediaSourceLength(source);
 				if lengthIsQN then;
