@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Move selected items up one track   
    * Author:      Archie   
-   * Version:     1.01
+   * Version:     1.0
    * AboutScript: Move selected items up one track 
    * О скрипте:   Переместить выбранные элементы на одну дорожку вверх 
    * GIF:         http://clck.ru/Eddx2
@@ -10,7 +10,7 @@
    * Donation:    http://money.yandex.ru/to/410018003906628   
    * customer:    Maestro Sound[RMM Forum] 
    * gave idea:   Maestro Sound[RMM Forum] 
-   * Changelog:   + initialе / v.1.01    
+   * Changelog:   + initialе / v.1.0  
 --=======================================]]  
 
  
