@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e9d62a1014cb9a3e7bccf9a55ec0237f0385d1c5">
+<index version="1" name="Archie-ReaScripts" commit="aaf25f4332a45e9d9194b07d39929fc0bfa8ce9f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1941,6 +1941,16 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Move all notes in selected midi items one semitone up.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/e24fea364959ba4632c4fddcaa25afaf18eb00e0/MAIN/Item/Archie_Item;%20%20Move%20all%20notes%20in%20selected%20midi%20items%20one%20(...).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Move selected items down one track.lua" type="script" desc="Move selected items Down one track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-04T06:16:35Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aaf25f4332a45e9d9194b07d39929fc0bfa8ce9f/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20down%20one%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Move selected items to a track with name n(`).lua" type="script" desc="Move selected items to a track with name &quot;n&quot;">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1963,6 +1973,16 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.03" author="Archie" time="2019-02-16T10:14:59Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1efa431f1f7fadc5ddf3352498afabbd45fc303c/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Move selected items up one track.lua" type="script" desc="Move selected items up one track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-04T06:16:35Z">
+        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aaf25f4332a45e9d9194b07d39929fc0bfa8ce9f/MAIN/Item/Archie_Item;%20%20Move%20selected%20items%20up%20one%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Nudge right edge of selected items to left one grid unit.lua" type="script" desc="Nudge right edge of selected items to left one grid unit">
@@ -2555,26 +2575,6 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [29.01.20]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9a00c23510e4f3ba8e8fe5afed9e31dec83eba10/MAIN/Item/Archie_Item;%20%20Unselect%20items%20if%20track%20not%20selected.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  ↑Move selected items up one track.lua" type="script" desc="Move selected items up one track">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
-        <changelog><![CDATA[+ initialе / v.1.01]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20%E2%86%91Move%20selected%20items%20up%20one%20track.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  ↓Move selected items down one track.lua" type="script" desc="Move selected items Down one track">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
-        <changelog><![CDATA[+ initialе / v.1.0]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Item/Archie_Item;%20%20%E2%86%93Move%20selected%20items%20down%20one%20track.lua</source>
       </version>
     </reapack>
   </category>
