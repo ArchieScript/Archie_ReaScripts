@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -17,8 +17,10 @@
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua
    *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua
    * Changelog:   
-   *              No change / v.1.08 [12.10.19]
+   *              v.1.09 [04.02.20]
+   *                  no change
    
+   *              No change / v.1.08 [12.10.19] 
    *              + Fixed bug when moving from folder to folder / from folder - skip folder / v.1.07 [29042019]
    *              + Scrolling Mixer / v.1.06 [11042019]
    *              + Scrolling in place / v.1.05 [09042019]
@@ -103,6 +105,15 @@
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
     
     
+    
+    --==== / dofile / ===============================================================================================
+    if Script_Name == 'Archie_Cont;  Move tracks down or items down depending on focus(skip minimized track).lua' then;
+        Script_Name = "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua";     
+    end;
+    --===============================================================================================================
+    
+    
+    
     if not Arc.If_Equals(Script_Name,
                          "Archie_Track;  Move selected tracks down by one visible(`).lua",
                          "Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua",
@@ -148,7 +159,7 @@
                                   "or disable scroll in place");
         end;
     end;
-     
+    
     
     
     local function SetScrollTrack(track, numbPix);
