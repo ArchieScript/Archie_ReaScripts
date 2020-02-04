@@ -29,7 +29,7 @@
     local Item_Scr = Grp..'/Item/Archie_Item;  Move selected items up by one visible track(skip minimized track).lua';
     
     
-    local CursorContext = reaper.GetCursorContext2(false);
+    local CursorContext = reaper.GetCursorContext2(true);
     
     if CursorContext == 0 then; -- tr
         dofile(TrackScr);
