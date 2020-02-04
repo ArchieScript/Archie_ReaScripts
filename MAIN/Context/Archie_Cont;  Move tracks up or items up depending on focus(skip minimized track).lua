@@ -33,9 +33,11 @@
     
     if CursorContext == 0 then; -- tr
         dofile(TrackScr);
+        reaper.SetCursorContext(0,nil);
         -- loadfile(TrackScr)();
     elseif CursorContext == 1 then; -- it
         dofile(Item_Scr);
+        reaper.SetCursorContext(1,nil);
     else;
         reaper.defer(function()end);
     end;

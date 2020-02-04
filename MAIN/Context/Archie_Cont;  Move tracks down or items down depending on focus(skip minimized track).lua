@@ -6,7 +6,7 @@
    * Category:    Context
    * Description: Move tracks down or items down depending on focus(skip minimized track)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Переместить дорожки вниз или элементы вниз в зависимости от фокуса (пропустить свернутую дорожку)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -33,9 +33,11 @@
     
     if CursorContext == 0 then; -- tr
         dofile(TrackScr);
+        reaper.SetCursorContext(0,nil);
         -- loadfile(TrackScr)();
     elseif CursorContext == 1 then; -- it
         dofile(Item_Scr);
+        reaper.SetCursorContext(1,nil);
     else;
         reaper.defer(function()end);
     end;
