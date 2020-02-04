@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="eb46c31071cde4cd93d86b7acc481c4fb70ab578">
+<index version="1" name="Archie-ReaScripts" commit="2276d8b65959434c593d4559f3ea06664009485d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -321,16 +321,16 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MAIN/Context">
-    <reapack name="Archie_Cont;  Move tracks down or items down depending on focus(skip minimized track).lua.lua" type="script" desc="Move tracks down or items down depending on focus(skip minimized track)">
+    <reapack name="Archie_Cont;  Move tracks down or items down depending on focus(skip minimized track).lua" type="script" desc="Move tracks down or items down depending on focus(skip minimized track)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-02-04T09:27:52Z">
+      <version name="1.0" author="Archie" time="2020-02-04T09:37:21Z">
         <changelog><![CDATA[v.1.0 [04.02.20]
 + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Context/Archie_Cont;%20%20Move%20tracks%20down%20or%20items%20down%20depending%20on%20focus(skip%20minimized%20track).lua.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2276d8b65959434c593d4559f3ea06664009485d/MAIN/Context/Archie_Cont;%20%20Move%20tracks%20down%20or%20items%20down%20depending%20on%20focus(skip%20minimized%20track).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Cont;  Move tracks up or items up depending on focus(skip minimized track).lua" type="script" desc="Move tracks up or items up depending on focus(skip minimized track)">
