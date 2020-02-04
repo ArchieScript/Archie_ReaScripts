@@ -6,7 +6,7 @@
    * Category:    Context
    * Description: Move tracks up or items up depending on focus(skip minimized track)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Переместить дорожки вверх или элементы вверх в зависимости от фокуса (пропустить свернутую дорожку)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
