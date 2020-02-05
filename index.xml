@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e5896f04ebe6736fd5ee56cda5346e55a99490b2">
+<index version="1" name="Archie-ReaScripts" commit="b59e57ea2d2b8c2e863797c95cd55f2cd06deec1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -353,6 +353,30 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [04.02.20]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9de34cd33fea780ca5b119703f1a597f0492d9e6/MAIN/Context/Archie_Cont;%20%20Move%20tracks%20up%20or%20items%20up%20depending%20on%20focus(skip%20minimized%20track).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Cont;  Set focus on items - arrange.lua" type="script" desc="Set focus on items - arrange">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-05T06:51:07Z">
+        <changelog><![CDATA[v.1.0 [05.02.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b59e57ea2d2b8c2e863797c95cd55f2cd06deec1/MAIN/Context/Archie_Cont;%20%20Set%20focus%20on%20items%20-%20arrange.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Cont;  Set focus on track panels.lua" type="script" desc="Set focus on track panels">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-05T06:51:07Z">
+        <changelog><![CDATA[v.1.0 [05.02.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b59e57ea2d2b8c2e863797c95cd55f2cd06deec1/MAIN/Context/Archie_Cont;%20%20Set%20focus%20on%20track%20panels.lua</source>
       </version>
     </reapack>
   </category>
