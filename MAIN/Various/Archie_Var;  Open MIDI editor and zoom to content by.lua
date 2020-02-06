@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Open MIDI editor and zoom to content by
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Откройте MIDI-редактор и увеличьте масштаб содержимого
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -20,11 +20,17 @@
    *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by source.lua
    *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by item.lua
    *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by source.lua
+   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by item(Time Selection).lua
+   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by source(Time Selection).lua
+   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by item(Time Selection).lua
+   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by source(Time Selection).lua
    *         
    * Changelog:   
+   *              v.1.03 [06.02.20]
+   *                  + Time Selection
+   
    *              v.1.02 [06.02.20]
    *                  + Toggle
-   
    *              v.1.0 [06.02.20]
    *                  + initialе
 --]]
@@ -34,7 +40,7 @@
     --======================================================================================
     
     
-    local Indent = 0.40;  -- Отступ
+    local Indent = 0.10;  -- Отступ
     
     local Vertically_Zoom = false -- true/false
     
@@ -42,7 +48,6 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
     
     
     
@@ -62,11 +67,17 @@
     if filename:match('.+[/\\](.+)'):match('^ARCHIE_VAR;%s-%s-TOGGLE')then;
         TOGGLE = true;
     end;
+    
+    local TimeSel;
+    if filename:match('%(%s-TIME%s-SELECTION%s-%)%s-%.%s-LUA%s-$')then;
+        TimeSel = true;
+    end;
+    
     --==============================================================
     
     
     --==============================================================
-    local function OpenMIDI_editor_and_zoom_to_content(itemF_SourceT)-- itemLen-false/SourceLen-true
+    local function OpenMIDI_editor_and_zoom_to_content(itemF_SourceT,TimeSel)-- itemF_SourceT=itemLen-false/SourceLen-true
         local ZoomProj = 40726;
         local OpenMIDI = 40153;
         local ZoomCont = 40466
@@ -98,18 +109,34 @@
         end;
         
         
-        if itemF_SourceT == true then;
-           local EndPosSrc = (posItem+TimeFromQN);
-           if EndPosSrc > endPosItem then EndPosSrc = endPosItem end;
-           if Indent >= (EndPosSrc-posItem)/2 then Indent = 0 end;
-           reaper.GetSet_LoopTimeRange(1,1,posItem+Indent,EndPosSrc-Indent,0);
-        else;
-            if Indent >= lenItem/2 then Indent = 0 end;
-            reaper.GetSet_LoopTimeRange(1,1,posItem+Indent,endPosItem-Indent,0);
+        local TimeSelTRUE;
+        if TimeSel == true then;
+            if posItem < EndLoop and endPosItem > StartLoop then;
+                if posItem >= StartLoop then Spos = posItem else Spos = StartLoop end;
+                if endPosItem <= EndLoop then Epos = endPosItem else Epos = EndLoop end;
+                if Indent >= (Epos-Spos)/2 then Indent = 0 end;
+                reaper.GetSet_LoopTimeRange(1,1,Spos+Indent,Epos-Indent,0);
+                TimeSelTRUE = true;
+            end;
         end;
+        
+        
+        if not TimeSelTRUE then
+            if itemF_SourceT == true then;
+               local EndPosSrc = (posItem+TimeFromQN);
+               if EndPosSrc > endPosItem then EndPosSrc = endPosItem end;
+               if Indent >= (EndPosSrc-posItem)/2 then Indent = 0 end;
+               reaper.GetSet_LoopTimeRange(1,1,posItem+Indent,EndPosSrc-Indent,0);
+            else;
+                if Indent >= lenItem/2 then Indent = 0 end;
+                reaper.GetSet_LoopTimeRange(1,1,posItem+Indent,endPosItem-Indent,0);
+            end;
+        end;
+        
         
         reaper.MIDIEditor_OnCommand(MIDIEditor,ZoomProj);
         reaper.GetSet_LoopTimeRange(1,1,StartLoop,EndLoop,0);
+        
         
         reaper.PreventUIRefresh(-1);
         reaper.UpdateTimeline();
@@ -125,9 +152,9 @@
         if MIDIEditor then;
             reaper.MIDIEditor_OnCommand(MIDIEditor,2);
         else;
-            OpenMIDI_editor_and_zoom_to_content(itemF_SourceT);
+            OpenMIDI_editor_and_zoom_to_content(itemF_SourceT,TimeSel);
         end;
     else;
-        OpenMIDI_editor_and_zoom_to_content(itemF_SourceT);
+        OpenMIDI_editor_and_zoom_to_content(itemF_SourceT,TimeSel);
     end;
     --------------------------------------------------------
