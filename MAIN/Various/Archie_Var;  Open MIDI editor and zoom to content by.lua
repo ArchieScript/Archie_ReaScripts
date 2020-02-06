@@ -151,6 +151,7 @@
         local MIDIEditor = reaper.MIDIEditor_GetActive();
         if MIDIEditor then;
             reaper.MIDIEditor_OnCommand(MIDIEditor,2);
+			no_undo();
         else;
             OpenMIDI_editor_and_zoom_to_content(itemF_SourceT,TimeSel);
         end;
