@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="323e668e6326c3f4d59270e5526d4f885549fff8">
+<index version="1" name="Archie-ReaScripts" commit="a3fc69c54b6b0e2f38348ddd04904f3374c23e89">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3536,6 +3536,11 @@ v.1.0 [28.08.19]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b01c84b209b22a04b7dbf29c40a65a9f5e301c6a/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
+      <version name="1.06" author="Archie" time="2020-02-07T14:32:30Z">
+        <changelog><![CDATA[v.1.06 [29.01.20]
+    + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3fc69c54b6b0e2f38348ddd04904f3374c23e89/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
       <metadata>
@@ -3562,6 +3567,11 @@ v.1.0 [28.08.19]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-02-07T14:32:30Z">
+        <changelog><![CDATA[v.1.03 [29.01.20]
+    + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3fc69c54b6b0e2f38348ddd04904f3374c23e89/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
@@ -3573,6 +3583,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [29.01.20]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-02-07T14:32:30Z">
+        <changelog><![CDATA[v.1.03 [29.01.20]
+    + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3fc69c54b6b0e2f38348ddd04904f3374c23e89/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -3586,6 +3601,11 @@ v.1.0 [28.08.19]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-02-07T14:32:30Z">
+        <changelog><![CDATA[v.1.03 [29.01.20]
+    + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3fc69c54b6b0e2f38348ddd04904f3374c23e89/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
@@ -3597,6 +3617,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [29.01.20]
     + Fixed: Path MacOs]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0742b04f43c763c8f27b128cfacde825dc45ef17/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-02-07T14:32:30Z">
+        <changelog><![CDATA[v.1.03 [29.01.20]
+    + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3fc69c54b6b0e2f38348ddd04904f3374c23e89/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
   </category>
