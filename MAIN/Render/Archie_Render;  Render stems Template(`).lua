@@ -17,7 +17,7 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.06 [29.01.20]
+   *              v.1.06 [07.02.20]
    *                  + Fixed bug: No signal when render in single track when route is disabled
    
    *              v.1.05 [29.01.20]
