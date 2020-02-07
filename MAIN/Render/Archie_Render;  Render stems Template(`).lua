@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,9 +17,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.06 [29.01.20]
+   *                  + Fixed bug: No signal when render in single track when route is disabled
+   
    *              v.1.05 [29.01.20]
    *                  + Fixed: Path MacOs
-   
    *              v.1.04 [26.12.19]
    *                  + Add: tail length matches time selection
    *                  + Add: Name of the track/file from the clipboard
@@ -567,6 +569,17 @@
             --
             reaper.SetMediaTrackInfo_Value(Track,"D_VOL",1);
             reaper.SetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH",1);
+            ---
+            ---
+            for iSnd = 1,reaper.CountSelectedTracks(0) do;
+                local TrSnd = reaper.GetSelectedTrack(0,iSnd-1);
+                local mastSnd = reaper.GetMediaTrackInfo_Value(TrSnd,'B_MAINSEND');
+                if mastSnd == 0 then;
+                    reaper.SetMediaTrackInfo_Value(TrSnd,'B_MAINSEND',1);
+                end;
+            end
+            ---
+            ---
             reaper.SetOnlyTrackSelected(Track);
             local LPreTrack = reaper.GetTrack(0,reaper.CountTracks(0)-1);
             reaper.Main_OnCommand(42230,0);--проект рендер,самые последние настройки
