@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c17047112a0113cdacb1eb12b9b66c1231cebc2a">
+<index version="1" name="Archie-ReaScripts" commit="323e668e6326c3f4d59270e5526d4f885549fff8">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1147,16 +1147,16 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/FX/Archie_FX;%20%20Toggle%20Auto%20open%20VSTi%20in%20selected%20tracks%20and%20close%20in%20the%20rest(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Toggle Bypass Fx by name in tracks by name(Template).lua" type="script" desc="Toggle Bypass Fx by name in tracks by name(Template)">
+    <reapack name="Archie_FX;  Toggle Bypass Fx by name in tracks by name(Template)(`).lua" type="script" desc="Toggle Bypass Fx by name in tracks by name(Template)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-02-07T09:36:59Z">
+      <version name="1.0" author="Archie" time="2020-02-07T09:39:25Z">
         <changelog><![CDATA[v.1.0 [07.02.20]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c17047112a0113cdacb1eb12b9b66c1231cebc2a/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/323e668e6326c3f4d59270e5526d4f885549fff8/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle FX 9 online,offline for selected tracks(`).lua" type="script" desc="Toggle FX 9 online/offline for selected tracks">
