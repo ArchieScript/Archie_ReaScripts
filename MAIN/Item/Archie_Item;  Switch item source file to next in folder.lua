@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Switch item source file to next in folder
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Switch item source file to next in folder
    * О скрипте:   Переключить исходный файл элемента на следующий в папке
    *              НЕ СПОТЫКАЕТСЯ(ЛОМАЕТСЯ) НА МИДИ ФАЙЛАХ КАК В SWS
@@ -20,9 +20,11 @@
    *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua
    *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua
    * Changelog:   
+   *              v.1.02 [08.02.20] 
+   *                  + no change
+   
    *              v.1.01 [19.07.19] 
    *                  + "WAVPACK"(.wv),.flac,...
-   
    *              v.1.0 [19.07.19] 
    *                  initial
    
@@ -96,7 +98,9 @@
                 "Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua",
                 "Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua"
                };
-    local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
+    --local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
+    local ScrName = debug.getinfo(1,'S').source:match(".+[/\\](.+)");
+    
     local ScrNameUndo = ScrName:match("Archie.-%s%s*(.+)%.lua$");
     
     
