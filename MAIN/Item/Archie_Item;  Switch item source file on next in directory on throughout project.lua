@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Switch item source file on next in directory on throughout project
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Переключить исходный файл элемента на следующий в каталоге на протяжении всего проекта
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -18,9 +18,11 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              Arc_Function_lua v.2.7.4+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.02 [08.02.20]
-   *                  + Ability to disable warning window
+   *              v.1.03 [08.02.20]
+   *                  + Fix bug
    
+   *              v.1.02 [08.02.20]
+   *                  + Ability to disable warning window  
    *              v.1.0 [08.02.20]
    *                  + initialе
 --]]
@@ -31,8 +33,8 @@
     
     
     local WARNING_WINDOW = true
-                     -- = true   |on warning window
-                     -- = false  |off warning window (Not recommend / Не рекомендуется)
+                      -- = true   |on warning window
+                      -- = false  |off warning window (Not recommend / Не рекомендуется)
                        
     
     --======================================================================================
@@ -81,7 +83,9 @@
         if Path and Name then;
             local PathName2 = Path..'/'..Name;
             if PathNameT[PathName2] then;
-                reaper.SetMediaItemInfo_Value(item,'B_UISEL',1);
+                if reaper.GetMediaItemInfo_Value(item,'B_UISEL')==0 then;
+                    reaper.SetMediaItemInfo_Value(item,'B_UISEL',1);
+                end;
             end;
         end;
     end;
@@ -89,7 +93,7 @@
     
     local x = 0;
     for i = 1, reaper.CountSelectedMediaItems(0)do;
-        local item = reaper.GetMediaItem(0,i-1);
+        local item = reaper.GetSelectedMediaItem(0,i-1);
         local take = reaper.GetActiveTake(item);
         local Midi_take = reaper.TakeIsMIDI(take);
         if not Midi_take then;
