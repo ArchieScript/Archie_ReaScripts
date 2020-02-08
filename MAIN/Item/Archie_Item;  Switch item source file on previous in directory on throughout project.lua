@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Switch item source file on previous in directory on throughout project
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переключить исходный файл элемента на предыдущий в каталоге на протяжении всего проекта
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -18,13 +18,26 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              Arc_Function_lua v.2.7.4+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [08.02.20]
+   *                  + Ability to disable warning window
+   
    *              v.1.0 [08.02.20]
    *                  + initialе
---]]
+--]] 
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    local WARNING_WINDOW = true
+                     -- = true   |on warning window
+                     -- = false  |off warning window (Not recommend / Не рекомендуется)
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-
+    
     
     
     
@@ -35,14 +48,12 @@
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
-    
-    
     local NEXT_PATH = reaper.GetResourcePath()..[[/Scripts/Archie-ReaScripts/MAIN/Item/]]..
     'Archie_Item;  Switch item source file to previous in folder.lua';
     
     
     local UNDO = 'Previous file dir. All project';
-      
+    
     local Count_sel_item = reaper.CountSelectedMediaItems(0);
     if Count_sel_item == 0 then Arc.no_undo() return end;
     
@@ -86,12 +97,16 @@
     end;
     
     
-    local Pcall,Error;
+    local Pcall,Error,MB;
     if x > 0 then;
-        local MB = reaper.MB('The replacement will be made in - '..x..' - items to the previous file in the directory:\n'..
-                             'Replace it exactly? -  Ok\n\n\n'..
-                             'Замена будет произведена в - '..x..' - элементах на предыдущий файл в директории:\n'..
-                             'Точно заменить ?  -  OK','Warning',1);
+        if WARNING_WINDOW == true then;
+            MB = reaper.MB('The replacement will be made in - '..x..' - items to the previous file in the directory:\n'..
+                           'Replace it exactly? -  Ok\n\n\n'..
+                           'Замена будет произведена в - '..x..' - элементах на предыдущий файл в директории:\n'..
+                           'Точно заменить ?  -  OK','Warning',1);
+        else;
+            MB = 1;
+        end;
         if MB == 1 then; --1 ok
             Pcall,Error = pcall(dofile,NEXT_PATH);
         else;
