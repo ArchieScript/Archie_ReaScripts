@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="38428a126a60c78156a1405079d323804aaaba55">
+<index version="1" name="Archie-ReaScripts" commit="9ef952c5d9c7896efb11d6088a0403e3e546c38d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3924,6 +3924,30 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.05" author="Archie" time="2019-03-25T12:36:46Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0cd6bf3605cfa7c3fd7ae86b594764633ad45dd8/MAIN/Take/Archie_Take;%20%20Paste%20Name%20to%20selected%20items%20active%20take(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Render active takes, into new items in place.lua" type="script" desc="Render active takes, into new items in place">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-10T05:50:50Z">
+        <changelog><![CDATA[v.1.0 [09.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9ef952c5d9c7896efb11d6088a0403e3e546c38d/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20in%20place.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Render active takes, into new items to new tracks.lua" type="script" desc="Render active takes, into new items to new tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-10T05:50:50Z">
+        <changelog><![CDATA[v.1.0 [09.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9ef952c5d9c7896efb11d6088a0403e3e546c38d/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20to%20new%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take;  Reset color default in all take in selected items .lua" type="script" desc="Reset color default in all take in selected items">
