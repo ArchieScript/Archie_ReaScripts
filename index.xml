@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="7317a5b0a132793f40c637595ac1bf9290ff367c">
+<index version="1" name="Archie-ReaScripts" commit="a826dc65c383d31dcc23317aab6538d044713bfc">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2518,6 +2518,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Bezier.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Bezier.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Set in selected items CC shape to Fast end.lua" type="script" desc="Set in selected items CC shape Fast end">
       <metadata>
@@ -2529,6 +2534,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [13.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Fast%20end.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Fast%20end.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Set in selected items CC shape to Fast start.lua" type="script" desc="Set in selected items CC shape Fast start">
@@ -2542,6 +2552,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Fast%20start.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Fast%20start.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Set in selected items CC shape to Linear.lua" type="script" desc="Set in selected items CC shape Linear">
       <metadata>
@@ -2553,6 +2568,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [13.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Linear.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Linear.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Set in selected items CC shape to Slow start-end.lua" type="script" desc="Set in selected items CC shape Slow start/end">
@@ -2566,6 +2586,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Slow%20start-end.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Slow%20start-end.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Set in selected items CC shape to Square.lua" type="script" desc="Set in selected items CC shape Square">
       <metadata>
@@ -2577,6 +2602,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [13.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7317a5b0a132793f40c637595ac1bf9290ff367c/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Square.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-02-13T12:49:34Z">
+        <changelog><![CDATA[v.1.0 [13.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a826dc65c383d31dcc23317aab6538d044713bfc/MAIN/Item/Archie_Item;%20%20Set%20in%20selected%20items%20CC%20shape%20to%20Square.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Set note ends to start of next note - in selected items (legato).lua" type="script" desc="Set note ends to start of next note - in selected items (legato)">
