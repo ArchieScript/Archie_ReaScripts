@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Set in selected items CC shape Slow start/end
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Установить в выбранных элементах CC форму Slow start/end
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Set in selected items CC shape Square
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Установить в выбранных элементах CC форму Square
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
