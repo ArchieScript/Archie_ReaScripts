@@ -24,7 +24,6 @@
     --======================================================================================
     
     
-    
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
@@ -33,8 +32,9 @@
     for it = 1,reaper.CountSelectedMediaItems(0) do;
         local item = reaper.GetSelectedMediaItem(0,it-1);
         local take = reaper.GetActiveTake(item);
+        local i = 0;
         while true do;
-            i=(i or 0)+1;
+            i=i+1;
             local retval, shape, beztension = reaper.MIDI_GetCCShape(take,i-1);
             if retval then;
                 reaper.MIDI_SetCCShape(take,i-1,0,beztension,true);
