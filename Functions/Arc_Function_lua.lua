@@ -1,15 +1,14 @@
-local VersionMod = "v.2.7.4"
+local VersionMod = "v.2.7.5"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.7.4
+   * Version:     2.7.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
    * 
-
    * Changelog:   
    * 
    *  REAPER_Lib
@@ -63,6 +62,7 @@ local VersionMod = "v.2.7.4"
    *      v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
    *      v.265   + SetStartupScript(nameAction,id,nameFun,Clean);
    *      v.265   + boolean, boolean = GetStartupScript(id,nameFun);
+   *      v.275   + GetSetTerminateAllInstancesOrStartNewOneKB_ini(set,newState,ScrPath,ScrName);
    *  LUA_Lib
    *      v.247   + If_Equals_Or(EqualsToThat,...);
    *      v.248   + If_Equals_OrEx(EqualsToThat,...);
@@ -1258,6 +1258,47 @@ local VersionMod = "v.2.7.4"
         return false, nameFun2;
     end;
     GetStartupScript = Arc_Module.GetStartupScript;
+    function Arc_Module.GetSetTerminateAllInstancesOrStartNewOneKB_ini(set,newState,ScrPath,ScrName);
+        local ResPath = reaper.GetResourcePath();
+        newState = tonumber(newState);
+        if not newState or (newState~=260 and newState~=516) then newState = 4 end;
+        local file = io.open(ResPath.."/reaper-kb.ini","r");
+        if file then;
+            local ScrNameX = ScrName:gsub("[%p]","%%%0");
+            local ScrPathX = ScrPath:gsub("[\\/]",""):gsub("[%p]","%%%0");
+            local ScrPth1 = (ScrPath:gsub("[\\/]",""));
+            local ScrPth2 = ((ResPath.."Scripts"):gsub("[\\/]","")):gsub("[%p]","%%%0");
+            local ScrPath2X = ScrPth1:gsub(ScrPth2,""):gsub("[%p]","%%%0");
+            local line_T, found,Stop,state = {};
+            for line in file:lines()do;
+                if not found then;
+                    if line:match(ScrNameX) then;
+                        if line:gsub("[\\/]",""):match(ScrPathX..ScrNameX)or
+                            line:gsub("[\\/]",""):match(ScrPath2X..ScrNameX) then;
+                            found = true;
+                            state = tonumber(line:match("^%S+%s+(%d+)"));
+                            if (set==0 or set==false)then;file:close();return true,state end;
+                            if state == newState then; file:close();return false,state end;
+                            line = line:gsub( line:match("^%S+%s+%d+"),line:match("^%S+%s+%d+"):gsub("%s%d+"," "..newState,1),1);
+                        end;
+                    end;
+                end;
+                table.insert(line_T,line);
+            end;
+            if (set==0 or set==false)then;file:close();return false end;
+            if found then;
+                file:close();
+                if #line_T > 0 then;
+                    local newLine = table.concat(line_T,"\n");
+                    local file = io.open(reaper.GetResourcePath().."/reaper-kb.ini","w");
+                    file:write(newLine);
+                    file:close();
+                    return true,state;
+                end;
+            end;
+        end;
+        return false;
+    end;
     function Arc_Module.If_Equals_Or(EqualsToThat,...);
         for _,v in pairs {...} do;
             if v == EqualsToThat then return true end;
