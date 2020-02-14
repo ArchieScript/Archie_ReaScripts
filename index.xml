@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33">
+<index version="1" name="Archie-ReaScripts" commit="b5e04102cc2f002e3f2f18e4fa202bde5fa01bdc">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -314,66 +314,7 @@ LUA_Lib
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/7d039ae3f9682996af36bb7041c9a107321a669a/Functions/Arc_Function_lua.lua</source>
       </version>
       <version name="2.7.5" author="Archie" time="2020-02-14T05:40:36Z">
-        <changelog><![CDATA[
-REAPER_Lib
-    v.108   + no_undo();
-    v.108   + Action(id,...);
-    v.268   + boolean = TrackFx_Rename(Track,idx_Fx,Rename);
-    v.268   + NameDefault,Name =  TrackFX_GetFXNameEx(Track,idx_fx);
-    v.229   + boolean = RemoveAllSendTr(track,category);
-    v.229   + boolean = RemoveAllItemTr_Sel(track,rem_Idx);
-    v.227   + SelectAllTracks(numb);
-    v.226   + SaveSoloMuteSelStateAllTracksGuidSlot_SWS(Slot);
-    v.226   + RestoreSoloMuteSelStateAllTracksGuidSlot_SWS(Slot,clean);
-    v.237   + boolean = js_ReaScriptAPI(boolean,numb__JS_API_Version);
-    v.225   + boolean = SWS_API(boolean); 
-    v.219   + SetCollapseFolderMCP(track,clickable,is_show);
-    v.216   + Path,Name = GetPathAndNameSourceMediaFile_Take_SWS(take);
-    v.242   + GetSetToggleButtonOnOff(numb,boolean set); numb:0 or 1;
-    v.220   + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
-    v.257   + HelpWindowWhenReRunning(BottonText,but,reset);
-    v.119   + DeleteMediaItem(item);
-    v.118   + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
-    v.117   + SetMediaItemLeftTrim2(position,item);
-    v.116   + Save_Selected_Items_GuidSlot_SWS(Slot);
-    v.116   + Restore_Selected_Items_GuidSlot_SWS(Slot,clean);
-    v.115   + SaveSoloMuteStateAllTracksGuidSlot_SWS(Slot);
-    v.115   + RestoreSoloMuteStateAllTracksGuidSlot_SWS(Slot,clean);
-    v.114   + SaveMuteStateAllItemsGuidSlot_SWS(Slot);
-    v.114   + RestoreMuteStateAllItemsGuidSlot_SWS(Slot,clean);
-    v.113   + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast();
-    v.112   + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast();
-    v.111   + RemoveStretchMarkersSavingTreatedWave_Render_SWS(Take);
-    v.110   + SaveSelTracksGuidSlot_SWS(Slot);
-    v.110   + RestoreSelTracksGuidSlot_SWS(Slot,clean);
-    v.109   + GetPreventSpectralPeaksInTrack(Track);
-    v.108   + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
-    v.107   + CloseAllFxInAllItemsAndAllTake(chain,float);
-    v.106   + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
-    v.105   + CloseAllFxInAllTracks(chain, float);
-    v.247   + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=]);
-    v.217   + GetMediaItemInfo_Value(item,parmname);/[D_END] 
-    v.217   + SetMediaItemInfo_Value(item,parmname,val);/[D_END] 
-    v.103   + Get_Format_ProjectGrid(divisionIn);
-    v.102   + CountTrackSelectedMediaItems(track);
-    v.101   + GetTrackSelectedMediaItems(track,idx);
-    v.244   + numb = GetSetHeigthMCPTrack(track,numb,set);
-    v.245   + openFileURL(pathUrl);
-    v.249   + GetIDByScriptName(scriptName,scriptPath); 
-    v.246   + GetScriptNameByID(id);
-    v.253   + GetTrackAutoRecArm(Track);
-    v.253   + SetTrackAutoRecArm(Track,val);
-    v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
-    v.265   + SetStartupScript(nameAction,id,nameFun,Clean);
-    v.265   + boolean, boolean = GetStartupScript(id,nameFun);
-    v.275   + GetSetTerminateAllInstancesOrStartNewOneKB_ini(set,newState,ScrPath,ScrName);
-LUA_Lib
-    v.247   + If_Equals_Or(EqualsToThat,...);
-    v.248   + If_Equals_OrEx(EqualsToThat,...);
-    v.215   + ValueFromMaxRepsIn_Table(array, min_max);
-    v.230   + randomOfVal(...);   
-    v.230   + invert_number(X);]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/Functions/Arc_Function_lua.lua</source>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/b5e04102cc2f002e3f2f18e4fa202bde5fa01bdc/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
