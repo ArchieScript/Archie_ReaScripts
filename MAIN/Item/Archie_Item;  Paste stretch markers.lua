@@ -5,7 +5,7 @@
    *
    * Category:    Item
    * Description: Paste stretch markers
-   * >>>          Archie_Item;  Copy stretch markers.lua
+   *              >>>          Archie_Item;  Copy stretch markers.lua
    * Author:      Archie
    * Version:     1.0
    * Описание:    Вставить маркеры растяжки
