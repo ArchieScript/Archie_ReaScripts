@@ -8,6 +8,7 @@ local VersionMod = "v.2.7.5"
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
+   
    * 
    * Changelog:   
    * 
