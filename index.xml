@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a826dc65c383d31dcc23317aab6538d044713bfc">
+<index version="1" name="Archie-ReaScripts" commit="0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -312,6 +312,68 @@ LUA_Lib
       </version>
       <version name="2.7.4" author="Archie" time="2019-10-02T14:09:33Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/7d039ae3f9682996af36bb7041c9a107321a669a/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.7.5" author="Archie" time="2020-02-14T05:40:36Z">
+        <changelog><![CDATA[
+REAPER_Lib
+    v.108   + no_undo();
+    v.108   + Action(id,...);
+    v.268   + boolean = TrackFx_Rename(Track,idx_Fx,Rename);
+    v.268   + NameDefault,Name =  TrackFX_GetFXNameEx(Track,idx_fx);
+    v.229   + boolean = RemoveAllSendTr(track,category);
+    v.229   + boolean = RemoveAllItemTr_Sel(track,rem_Idx);
+    v.227   + SelectAllTracks(numb);
+    v.226   + SaveSoloMuteSelStateAllTracksGuidSlot_SWS(Slot);
+    v.226   + RestoreSoloMuteSelStateAllTracksGuidSlot_SWS(Slot,clean);
+    v.237   + boolean = js_ReaScriptAPI(boolean,numb__JS_API_Version);
+    v.225   + boolean = SWS_API(boolean); 
+    v.219   + SetCollapseFolderMCP(track,clickable,is_show);
+    v.216   + Path,Name = GetPathAndNameSourceMediaFile_Take_SWS(take);
+    v.242   + GetSetToggleButtonOnOff(numb,boolean set); numb:0 or 1;
+    v.220   + _ = HelpWindow_WithOptionNotToShow(Text,Header,but,reset);
+    v.257   + HelpWindowWhenReRunning(BottonText,but,reset);
+    v.119   + DeleteMediaItem(item);
+    v.118   + GetSampleNumberPosValue(take,SkipNumberOfSamplesPerChannel,FeelVolumeOfItem);
+    v.117   + SetMediaItemLeftTrim2(position,item);
+    v.116   + Save_Selected_Items_GuidSlot_SWS(Slot);
+    v.116   + Restore_Selected_Items_GuidSlot_SWS(Slot,clean);
+    v.115   + SaveSoloMuteStateAllTracksGuidSlot_SWS(Slot);
+    v.115   + RestoreSoloMuteStateAllTracksGuidSlot_SWS(Slot,clean);
+    v.114   + SaveMuteStateAllItemsGuidSlot_SWS(Slot);
+    v.114   + RestoreMuteStateAllItemsGuidSlot_SWS(Slot,clean);
+    v.113   + PosFirstIt,EndLastIt = GetPositionOfFirstItemAndEndOfLast();
+    v.112   + PosFirstIt,EndLastIt = GetPositionOfFirstSelectedItemAndEndOfLast();
+    v.111   + RemoveStretchMarkersSavingTreatedWave_Render_SWS(Take);
+    v.110   + SaveSelTracksGuidSlot_SWS(Slot);
+    v.110   + RestoreSelTracksGuidSlot_SWS(Slot,clean);
+    v.109   + GetPreventSpectralPeaksInTrack(Track);
+    v.108   + SetPreventSpectralPeaksInTrack(Track,Perf);--[=[Perf = true;false]=]
+    v.107   + CloseAllFxInAllItemsAndAllTake(chain,float);
+    v.106   + SetShow_HideTrackMCP(Track,show_hide--[=[0;1]=]);
+    v.105   + CloseAllFxInAllTracks(chain, float);
+    v.247   + CloseToolbarByNumber(ToolbarNumber--[=[1-16]=]);
+    v.217   + GetMediaItemInfo_Value(item,parmname);/[D_END] 
+    v.217   + SetMediaItemInfo_Value(item,parmname,val);/[D_END] 
+    v.103   + Get_Format_ProjectGrid(divisionIn);
+    v.102   + CountTrackSelectedMediaItems(track);
+    v.101   + GetTrackSelectedMediaItems(track,idx);
+    v.244   + numb = GetSetHeigthMCPTrack(track,numb,set);
+    v.245   + openFileURL(pathUrl);
+    v.249   + GetIDByScriptName(scriptName,scriptPath); 
+    v.246   + GetScriptNameByID(id);
+    v.253   + GetTrackAutoRecArm(Track);
+    v.253   + SetTrackAutoRecArm(Track,val);
+    v.259   + boolean, numb = SetHeightTrack_Env_TCP(Track,Height,minHeigth,resetHeigthEnv,PercentageDefault);
+    v.265   + SetStartupScript(nameAction,id,nameFun,Clean);
+    v.265   + boolean, boolean = GetStartupScript(id,nameFun);
+    v.275   + GetSetTerminateAllInstancesOrStartNewOneKB_ini(set,newState,ScrPath,ScrName);
+LUA_Lib
+    v.247   + If_Equals_Or(EqualsToThat,...);
+    v.248   + If_Equals_OrEx(EqualsToThat,...);
+    v.215   + ValueFromMaxRepsIn_Table(array, min_max);
+    v.230   + randomOfVal(...);   
+    v.230   + invert_number(X);]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -1805,6 +1867,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/76849c0b52bd828c491dc99031b2b8a41c3b6fe3/MAIN/Item/Archie_Item;%20%20Copy%20source%20media%20file%20of%20selected%20items%20to%20project%20directory.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Copy stretch markers.lua" type="script" desc="Copy stretch markers">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-14T05:40:36Z">
+        <changelog><![CDATA[v.1.0 [14.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/MAIN/Item/Archie_Item;%20%20Copy%20stretch%20markers.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Cut silence by grid from selected items to created track under item(-80 db)(`).lua" type="script" desc="Cut silence by grid from selected items to created track under item">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2223,6 +2297,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [02.09.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0f85b475b58e81ca88ad3f1b010fb172afe38192/MAIN/Item/Archie_Item;%20%20Nudge%20right%20edge%20of%20selected%20items%20to%20right%20one%20grid%20unit.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Paste stretch markers.lua" type="script" desc="Paste stretch markers">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-14T05:40:36Z">
+        <changelog><![CDATA[v.1.0 [14.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/MAIN/Item/Archie_Item;%20%20Paste%20stretch%20markers.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Pitch down one semitone all midi items(all midi take).lua" type="script" desc="Pitch down one semitone all midi items(all midi take)">
