@@ -5,9 +5,9 @@
    *
    * Category:    Item
    * Description: Copy stretch markers
-   * >>>          Archie_Item;  Paste stretch markers.lua
+   *
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.0 
    * Описание:    Копирование маркеров растяжки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -19,7 +19,7 @@
    * Changelog:   
    *              v.1.0 [14.02.20]
    *                  + initialе
---]] 
+--]]
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -56,6 +56,8 @@
     
     local itemFirst = reaper.GetSelectedMediaItem(0,0);
     local take = reaper.GetActiveTake(itemFirst);
+    local playRate = reaper.GetMediaItemTakeInfo_Value(take,'D_PLAYRATE');
+    
     local numStretchMark = reaper.GetTakeNumStretchMarkers(take);
     if numStretchMark == 0 then;
         reaper.MB('Nothing to copy, no markers\n\n'..
@@ -68,7 +70,7 @@
     for i = 1,numStretchMark do; 
         local retval, pos, srcpos = reaper.GetTakeStretchMarker(take,i-1);
         local slope = reaper.GetTakeStretchMarkerSlope(take,i-1);
-        local str = tostring('{'..pos..' '..srcpos..' '..slope..'}');
+        local str = tostring('{'..pos/playRate..' '..srcpos/playRate..' '..slope..'}');
         reaper.SetExtState('ARCHIESTRETCHMARKCOPYPASTE',i,str,false);
     end;
     
