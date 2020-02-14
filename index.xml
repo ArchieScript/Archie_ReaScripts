@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d20d9997f4677355beb82d6ae27cdb01fe989806">
+<index version="1" name="Archie-ReaScripts" commit="cfdd841702e794e6e8f012b3c8f96c8d2305d8c3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1820,7 +1820,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2020-02-14T05:40:36Z">
         <changelog><![CDATA[v.1.0 [14.02.20]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/MAIN/Item/Archie_Item;%20%20Copy%20stretch%20markers.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cfdd841702e794e6e8f012b3c8f96c8d2305d8c3/MAIN/Item/Archie_Item;%20%20Copy%20stretch%20markers.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Cut silence by grid from selected items to created track under item(-80 db)(`).lua" type="script" desc="Cut silence by grid from selected items to created track under item">
@@ -2252,7 +2252,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2020-02-14T05:40:36Z">
         <changelog><![CDATA[v.1.0 [14.02.20]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0a4ca68e6c9a58cb1a0d462556ad4aa857cdbd33/MAIN/Item/Archie_Item;%20%20Paste%20stretch%20markers.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cfdd841702e794e6e8f012b3c8f96c8d2305d8c3/MAIN/Item/Archie_Item;%20%20Paste%20stretch%20markers.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Pitch down one semitone all midi items(all midi take).lua" type="script" desc="Pitch down one semitone all midi items(all midi take)">
