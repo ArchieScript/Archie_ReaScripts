@@ -47,9 +47,7 @@
         local take = reaper.GetActiveTake(itemSel);
         local numStretchMark = reaper.GetTakeNumStretchMarkers(take);
         
-        for sm = numStretchMark-1,0,-1 do;
-            reaper.DeleteTakeStretchMarkers(take,sm,1);
-        end;
+        reaper.DeleteTakeStretchMarkers(take,0,numStretchMark);
         
         local slp={};
         local i=0;
