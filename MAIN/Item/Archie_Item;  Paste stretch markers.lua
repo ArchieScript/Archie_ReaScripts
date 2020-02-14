@@ -5,7 +5,7 @@
    *
    * Category:    Item
    * Description: Paste stretch markers
-   * >>>          Archie_Item;  Copy stretch markers.lua
+   *              >>>                  Archie_Item;  Copy stretch markers.lua                               
    * Author:      Archie
    * Version:     1.0
    * Описание:    Вставить маркеры растяжки
@@ -45,11 +45,10 @@
     for it = 1,CountSelItem do;
         local itemSel = reaper.GetSelectedMediaItem(0,it-1);
         local take = reaper.GetActiveTake(itemSel);
+        local playRate = reaper.GetMediaItemTakeInfo_Value(take,'D_PLAYRATE');
         local numStretchMark = reaper.GetTakeNumStretchMarkers(take);
         
-        for sm = numStretchMark-1,0,-1 do;
-            reaper.DeleteTakeStretchMarkers(take,sm,1);
-        end;
+        reaper.DeleteTakeStretchMarkers(take,0,numStretchMark);
         
         local slp={};
         local i=0;
@@ -59,7 +58,7 @@
             local pos,srcpos,slope = ExtState:match('{(%S-)%s-(%S-)%s-(%S-)}');
             local t = tonumber;
             if t(pos) and t(srcpos) and t(slope)then;
-                reaper.SetTakeStretchMarker(take,-1,pos,srcpos);
+                reaper.SetTakeStretchMarker(take,-1,pos*playRate,srcpos*playRate);
                 slp[i]= t(slope);  
             else;
                 break;
