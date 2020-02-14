@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5504b98d39a1ece18ac7dfd40a4070f475c79e9a">
+<index version="1" name="Archie-ReaScripts" commit="e0bf614e0aee0a9ccc28571c551a34409dea37ad">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2241,6 +2241,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [02.09.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0f85b475b58e81ca88ad3f1b010fb172afe38192/MAIN/Item/Archie_Item;%20%20Nudge%20right%20edge%20of%20selected%20items%20to%20right%20one%20grid%20unit.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Paste stretch markers (by playback rate).lua" type="script" desc="Paste stretch markers (by playback rate)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-14T11:40:09Z">
+        <changelog><![CDATA[v.1.0 [14.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e0bf614e0aee0a9ccc28571c551a34409dea37ad/MAIN/Item/Archie_Item;%20%20Paste%20stretch%20markers%20(by%20playback%20rate).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Paste stretch markers.lua" type="script" desc="Paste stretch markers">
