@@ -9,7 +9,7 @@
    * Author:      Archie
    * Version:     1.0
    * Описание:    Счетчик времени проекта
-   * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
+   * GIF:         https://avatars.mds.yandex.net/get-pdb/2836759/57383ee6-49e1-470f-9e52-dd5a3639e496/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1500
