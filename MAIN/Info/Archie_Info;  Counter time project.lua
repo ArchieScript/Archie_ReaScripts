@@ -139,12 +139,13 @@
     local function RestoreWinState();
         local wind = reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW');
         local D,X,Y,W,H = wind:match('^(%d+)&&&(%d+)&&&(%d+)&&&(%d+)&&&(%d+)');
+        local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,1);
         return
         tonumber(W) or 250,
         tonumber(H) or 100,
         tonumber(D) or 0,
-        tonumber(X) or 15,
-        tonumber(Y) or 15
+        tonumber(X) or (scr_x/2)-(250/2),
+        tonumber(Y) or (scr_y/2)-(100/2);
     end;
     -----------------------------
     
