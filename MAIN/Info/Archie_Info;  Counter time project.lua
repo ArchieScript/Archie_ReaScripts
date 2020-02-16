@@ -7,9 +7,9 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Счетчик времени проекта
-   * GIF:         https://avatars.mds.yandex.net/get-pdb/2836759/57383ee6-49e1-470f-9e52-dd5a3639e496/orig
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1500
@@ -19,6 +19,9 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [16.02.20]
+   *                  + Reduced CPU load when window is open
+   
    *              v.1.0 [15.02.20]
    *                  + initialе
 --]]
@@ -281,6 +284,8 @@
             
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'||#Item Count:  '.. reaper.CountMediaItems(0);
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count:  '.. reaper.CountTracks(0);
+            
+            PROJSTART = t.PROJ_STARTED:gsub('|#',''):gsub('Project%s-started','Proj start');
             --- / t.PROJ_STARTED / -------------------------------------------------
             ------------------------------------------------------------------------
             
@@ -288,65 +293,80 @@
             ----------------------------
             if (GUI==true or GUI==1) and gfx.getchar()>=0 then;
                 
-                -----------------------------------------------------------------------------------------
-                if t.MODE_TOTAL == 0 and t.MODE_AFK == 0 and t.MODE_RESET == 0 then t.MODE_TOTAL = 1 end;
                 
-                local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1);
-                if projUsDt_glb~=t.projUsDt2_glb or projfn_glb~=t.projfn2_glb then;
-                    t.projUsDt2_glb = projUsDt_glb;
-                    t.projfn2_glb = projfn_glb;
-                    t.MODE_TOTAL = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL',1);
-                    t.MODE_AFK   = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'  ,1);
-                    t.MODE_RESET = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET',1);
-                    t.PREFIX     = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'    ,1);
-                    t.COUNTBACK  = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK' ,1);
+                local _,_,_,Wwnd,Hwnd = gfx.dock(-1,-1,-1,-1,-1);
+                if  (t.Wwnd2 or -1)     ~= Wwnd       or
+                    (t.Hwnd2 or -1)     ~= Hwnd       or
+                    (t.TIME_ttl2 or -1) ~= t.TIME_ttl or
+                    (t.TIME_akf2 or -1) ~= t.TIME_akf or
+                    (t.TIME_rst2 or -1) ~= t.TIME_rst then;
+                    
+                    t.Wwnd2     =       Wwnd;
+                    t.Hwnd2     =       Hwnd;
+                    t.TIME_ttl2 = t.TIME_ttl;
+                    t.TIME_akf2 = t.TIME_akf;
+                    t.TIME_rst2 = t.TIME_rst;
+                    --GG=(GG or 0)+1
+                
+                
+                    -----------------------------------------------------------------------------------------
+                    if t.MODE_TOTAL == 0 and t.MODE_AFK == 0 and t.MODE_RESET == 0 then t.MODE_TOTAL = 1 end;
+                    
+                    local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1);
+                    if projUsDt_glb~=t.projUsDt2_glb or projfn_glb~=t.projfn2_glb then;
+                        t.projUsDt2_glb = projUsDt_glb;
+                        t.projfn2_glb = projfn_glb;
+                        t.MODE_TOTAL = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL',1);
+                        t.MODE_AFK   = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'  ,1);
+                        t.MODE_RESET = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET',1);
+                        t.PREFIX     = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'    ,1);
+                        t.COUNTBACK  = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK' ,1);
+                    end;
+                    
+                    
+                    gfx.gradrect(0,0,gfx.w,gfx.h,.2,.2,.2,1);--background
+                    
+                    ----------
+                    t.MODE = 0;
+                    t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET;
+                    
+                    
+                    gfx.set(.7,.7,.7,.2);
+                    gfx.roundrect(-1,gfx.h/t.MODE,gfx.w+2,gfx.h/t.MODE, 0,1);--Separate
+                    
+                    ---/Logo/---
+                    gfx.x,gfx.y = gfx.w-50,gfx.h-15
+                    gfx.setfont(1,"Arial",15,105);
+                    gfx.drawstr('Archie');
+                    ------------
+                    
+                    
+                    gfx.set(.7,.7,.7,1);
+                    
+                    if t.MODE_TOTAL == 1 then;
+                        local prf = '';
+                        if t.PREFIX == 1 then prf = 'Total: 'end;
+                        local string = prf..sectotime(t.TIME_ttl);
+                        TextByCenterAndResize(string, 0,0,100,100/t.MODE, ZoomInOn,nil);
+                    end;
+                     
+                    if t.MODE_AFK == 1 then;
+                        if t.COUNTBACK == 0 then t.countBack = '' end;
+                        local prf = '';
+                        if t.PREFIX == 1 then prf = 'Afk: 'end;
+                        local string = prf..sectotime(t.TIME_akf)..t.countBack;
+                        TextByCenterAndResize(string, 0,(100/t.MODE)*t.MODE_TOTAL,100,100/t.MODE, ZoomInOn,nil);
+                    end
+                    
+                    if t.MODE_RESET == 1 then;
+                        local prf = '';
+                        if t.PREFIX == 1 then prf = 'Reset: 'end;
+                        local string = prf..sectotime(t.TIME_rst);
+                        TextByCenterAndResize(string, 0,(100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK),100,100/t.MODE, ZoomInOn,nil);
+                    end;
+                    ---
+                
                 end;
-                
-                gfx.gradrect(0,0,gfx.w,gfx.h,.2,.2,.2,1);--background
-                
-                
-                
-                ----------
-                t.MODE = 0;
-                t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET;
-                
-                
-                gfx.set(.7,.7,.7,.2);
-                gfx.roundrect(-1,gfx.h/t.MODE,gfx.w+2,gfx.h/t.MODE, 0,1);--Separate
-                
-                ---/Logo/---
-                gfx.x,gfx.y = gfx.w-50,gfx.h-15
-                gfx.setfont(1,"Arial",15,105);
-                gfx.drawstr('Archie');
-                ------------
-                
-                
-                gfx.set(.7,.7,.7,1);
-                
-                if t.MODE_TOTAL == 1 then;
-                    local prf = '';
-                    if t.PREFIX == 1 then prf = 'Total: 'end;
-                    local string = prf..sectotime(t.TIME_ttl);
-                    TextByCenterAndResize(string, 0,0,100,100/t.MODE, ZoomInOn,nil);
-                end;
-                 
-                if t.MODE_AFK == 1 then;
-                    if t.COUNTBACK == 0 then t.countBack = '' end;
-                    local prf = '';
-                    if t.PREFIX == 1 then prf = 'Afk: 'end;
-                    local string = prf..sectotime(t.TIME_akf)..t.countBack;
-                    TextByCenterAndResize(string, 0,(100/t.MODE)*t.MODE_TOTAL,100,100/t.MODE, ZoomInOn,nil);
-                end
-                
-                if t.MODE_RESET == 1 then;
-                    local prf = '';
-                    if t.PREFIX == 1 then prf = 'Reset: 'end;
-                    local string = prf..sectotime(t.TIME_rst);
-                    TextByCenterAndResize(string, 0,(100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK),100,100/t.MODE, ZoomInOn,nil);
-                end;
-                ---
-                
-                
                 
                 if gfx.mouse_cap == 2 then;
                     gfx.x = gfx.mouse_x;
@@ -400,7 +420,8 @@
                 ----------------------------
             end;
             -----------------------------------------------------------------------------
-            if gfx.getchar()< 0 then;
+            if gfx.getchar()< 0 and not t.show_winClose then;
+                t.show_winClose = true;
                 local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
                 if show_win ~= 0 then;
                     reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,false);
@@ -408,7 +429,7 @@
             end;
             --[[-------------------------------------------------------------------------
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW' ,'',false);
-            --reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW' '',false);
+            --reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW','',false);
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL'   ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'     ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET'   ,'',true );
@@ -466,7 +487,9 @@
     if not FirstRun then;
         main(true);
     elseif FirstRun then;
+        reaper.Undo_BeginBlock();
         main(nil);
+        reaper.Undo_EndBlock((PROJSTART or ''),-1);
     end;
     
     
