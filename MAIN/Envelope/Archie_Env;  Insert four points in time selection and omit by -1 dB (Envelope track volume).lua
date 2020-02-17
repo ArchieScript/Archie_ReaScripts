@@ -6,7 +6,7 @@
    * Category:    Envelope
    * Description: Insert four points in time selection and omit by -1 dB (Envelope track volume)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Вставьте четыре точки в выбор времени и опустите на -1 дБ (огибающая громкости трека)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -15,7 +15,11 @@
    * Gave idea:   HDVulcan(RMM)$
    * Extension:   Reaper 5.984+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [11.11.19]
+   * Changelog:   
+   *              v.1.02 [17.02.20]
+   *                  + Continue work with remote time selection
+   
+   *              v.1.0 [11.11.19]
    *                  + initialе
 --]]
     
@@ -44,7 +48,8 @@
     local Only_Sel_Track = true -- | true/false --Только на выбранном треке
     local NoItemInTimeSel = true-- | true/false; false - В выборе времени должен быть выделенный итем / true не обязательно
     
-	
+    local SaveTimeSel = false; --работает только при UnLoop = true (v.1.02)
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -89,7 +94,27 @@
     
     
     local StartLoop, EndLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
-    if StartLoop == EndLoop then no_undo() return end;
+    local resTimeSel = 9^9;
+    if StartLoop == EndLoop and (UnLoop ~= true or SaveTimeSel ~= true) then;
+        no_undo() return;
+    elseif StartLoop == EndLoop and UnLoop == true and SaveTimeSel == true then;
+        local ExtState = reaper.GetExtState('HDVulcan_InsertFourPointsTake','TIMESEL');
+        local StartL, EndL = ExtState:match('^(.-)&&&(.-)$');
+        StartL = tonumber(StartL);
+        EndL = tonumber(EndL);
+        if StartL and EndL then;
+            
+            if StartLoop == resTimeSel and EndLoop == resTimeSel then;
+                StartLoop = StartL;
+                EndLoop = EndL;
+            else;
+                reaper.DeleteExtState('HDVulcan_InsertFourPointsTake','TIMESEL',false);
+                no_undo() return;
+            end;
+        else;
+            no_undo() return;
+        end;
+    end;
     
     local EnvChun;
     if Envelope == 1 then Envelope=41865 EnvChun="<VOLENV" else Envelope = 41866 EnvChun="<VOLENV2" end;
@@ -219,7 +244,16 @@
     
     if undo then;
         if UnLoop == true then;
-            reaper.GetSet_LoopTimeRange(1,0,0,0,0);
+            
+            if SaveTimeSel == true then;
+                local StartLoop, EndLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
+                if StartLoop~=EndLoop then;
+                    reaper.SetExtState('HDVulcan_InsertFourPointsTake','TIMESEL',StartLoop..'&&&'..EndLoop,false);
+                end;
+            end;
+            
+            reaper.GetSet_LoopTimeRange(1,0,resTimeSel,resTimeSel,0);
+            
         end;
         reaper.Undo_EndBlock(titleUndo or "",-1);
     else;
