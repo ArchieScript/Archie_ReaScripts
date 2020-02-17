@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,10 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.02 [16.02.20]
-   *                  + Reduced CPU load when window is open
+   *              v.1.03 [17.02.20]
    
+   *              v.1.02 [16.02.20]
+   *                  + Reduced CPU load when window is open 
    *              v.1.0 [15.02.20]
    *                  + initialе
 --]]
@@ -120,6 +121,25 @@
     -----------------------------
     
     
+    -----------------------------
+    local function CountFXAllTrack();
+        local X = 0;
+        for i = 1, reaper.CountTracks(0)do;
+            local track = reaper.GetTrack(0,i-1);
+            local FXCountTr = reaper.TrackFX_GetCount(track);
+            X = X+FXCountTr;
+        end;
+        return X;
+    end;
+    -----------------------------
+    
+    -----------------------------
+    local function CountFXMasterTrack();
+        local MasterTrack = reaper.GetMasterTrack(0)
+        return reaper.TrackFX_GetCount(MasterTrack);
+    end;
+    -----------------------------
+    
     
     -----------------------------
     local sWCW;
@@ -148,6 +168,20 @@
         tonumber(Y) or (scr_y/2)-(100/2);
     end;
     -----------------------------
+    
+    
+    -----------------------------
+    local function Arc_roundrect(x,y,w,h,r,g,b,a);
+        local rr,gg,bb,aa=gfx.r,gfx.g,gfx.b,gfx.a;
+        gfx.set(r,g,b,a);
+        gfx.roundrect(gfx.w/100*x,gfx.h/100*y,gfx.w/100*w,gfx.h/100*h,0);
+        gfx.r,gfx.g,gfx.b,gfx.a=rr,gg,bb,aa;
+    end;
+    -----------------------------
+    
+    
+    
+    
     
     
     
@@ -226,6 +260,24 @@
             
             
             ------------------------------------------------------------------------
+            --- / t.TIME_ses / -----------------------------------------------------
+            local projUsDt_ses,projfn_ses = reaper.EnumProjects(-1);
+            local TIME_SEC_ses = GetExtStateArc(tostring(projUsDt_ses),'TIME_SEC_SESSION');
+            if projUsDt_ses~=t.projUsDt2_ses or projfn_ses~=t.projfn2_ses then;
+                t.projUsDt2_ses,t.projfn2_ses=projUsDt_ses,projfn_ses;
+                t.time1_ses = false;
+                local TIME_SEC_ses = GetExtStateArc(tostring(projUsDt_ses),'TIME_SEC_SESSION');
+            end;
+            
+            if not t.time1_ses then t.time1_ses = os.time()-TIME_SEC_ses end;
+            t.TIME_ses = (os.time()-t.time1_ses);
+            
+            reaper.SetExtState(tostring(projUsDt_ses),'TIME_SEC_SESSION',t.TIME_ses,false);
+            --- / t.TIME_ses / -----------------------------------------------------
+            ------------------------------------------------------------------------
+            
+            
+            ------------------------------------------------------------------------
             --- / t.TIME_akf / -----------------------------------------------------
             local TIME_SEC_akf = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK');
             local ProjectState_akf = reaper.GetProjectStateChangeCount(0);
@@ -269,6 +321,51 @@
             
             
             ------------------------------------------------------------------------
+            --- / t.TIME_akf_ses / -----------------------------------------------------
+            local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
+            local TIME_SEC_akf_ses = GetExtStateArc(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION');
+            
+            local ProjectState_akf_ses = reaper.GetProjectStateChangeCount(0);
+            local TranspoState_akf_ses = GetTransportStateChange();
+            
+            if ProjectState_akf_ses == t.ProjectState2_akf_ses and not TranspoState_akf_ses then;
+                if not t.tm_akf_ses then t.tm_akf_ses = os.time()end;
+                t.tm2_akf_ses = (os.time()-t.tm_akf_ses);
+            else;
+                t.tm_akf_ses = false;
+            end;
+            t.ProjectState2_akf_ses=ProjectState_akf_ses;
+            
+            if not t.tm2_akf_ses or t.tm2_akf_ses < AFK then;
+                --local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
+                if projUsDt_akf_ses~=t.projUsDt2_akf_ses or projfn_akf_ses~=t.projfn2_akf_ses then;
+                    t.projUsDt2_akf_ses,t.projfn2_akf_ses=projUsDt_akf_ses,projfn_akf_ses;
+                    t.ProjectState2_akf_ses=-1;
+                    t.time1_akf_ses = false;
+                    TIME_SEC_akf_ses = GetExtStateArc(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION');
+                end;
+                
+                if not t.time1_akf_ses then t.time1_akf_ses = os.time()-TIME_SEC_akf_ses end;
+                t.TIME_akf_ses = (os.time()-t.time1_akf_ses);
+                reaper.SetExtState(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION',t.TIME_akf_ses,false);
+            else;
+                t.time1_akf_ses = false;
+            end;
+            
+            local countB_ses = AFK-(t.tm2_akf_ses or 0);
+            if countB_ses <= 0 then;
+                t.countBack_ses = ' (S)'
+            elseif countB_ses > 60 then;
+                t.countBack_ses = '';
+            else;
+                t.countBack_ses = ' ('..string.format("%02d",countB_ses)..')';
+            end;
+            --- / t.TIME_akf_ses / -----------------------------------------------------
+            ------------------------------------------------------------------------
+            
+            
+            
+            ------------------------------------------------------------------------
             --- / t.PROJ_STARTED / -------------------------------------------------
             t.PROJ_STARTED = (({reaper.GetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED')})[2]);
             if #t.PROJ_STARTED:gsub('%s','')==0 then;
@@ -281,10 +378,16 @@
             if projpath and projnane then t.PROJ_STARTPATH = '||#'..projpath..'|#'..projnane end;
             
             if t.TIME_ttl then t.TIME_ttlInfo = '||#Time Total: '..sectotime(t.TIME_ttl)..'  (D:H:M:S)' end;
-            if t.TIME_akf then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time AKF '..sectotime(t.TIME_akf)..'  (D:H:M:S)' end;
+            if t.TIME_akf then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time AKF: '..sectotime(t.TIME_akf)..'  (D:H:M:S)' end;
+            if t.TIME_ses then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Session: '..sectotime(t.TIME_ses)..'  (D:H:M:S)' end;
+            if t.TIME_akf_ses then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Session AFK: '..sectotime(t.TIME_akf_ses)..'  (D:H:M:S)' end;
+            if t.TIME_rst then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Reset: '..sectotime(t.TIME_rst)..'  (D:H:M:S)' end;
             
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'||#Item Count:  '.. reaper.CountMediaItems(0);
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count:  '.. reaper.CountTracks(0);
+            t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count Fx:  '.. CountFXAllTrack();
+            t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Mster Track Count Fx:  '.. CountFXMasterTrack();
+            
             
             PROJSTART = t.PROJ_STARTED:gsub('|#',''):gsub('Project%s-started','Proj start');
             --- / t.PROJ_STARTED / -------------------------------------------------
@@ -311,17 +414,19 @@
                 
                 
                     -----------------------------------------------------------------------------------------
-                    if t.MODE_TOTAL == 0 and t.MODE_AFK == 0 and t.MODE_RESET == 0 then t.MODE_TOTAL = 1 end;
+                    if t.MODE_TOTAL == 0 and t.MODE_AFK == 0 and t.MODE_RESET == 0 and t.MODE_SESSION == 0 and t.MODE_SES_AFK == 0 then t.MODE_TOTAL = 1 end;
                     
                     local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1);
                     if projUsDt_glb~=t.projUsDt2_glb or projfn_glb~=t.projfn2_glb then;
                         t.projUsDt2_glb = projUsDt_glb;
-                        t.projfn2_glb = projfn_glb;
-                        t.MODE_TOTAL = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL',1);
-                        t.MODE_AFK   = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'  ,1);
-                        t.MODE_RESET = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET',1);
-                        t.PREFIX     = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'    ,1);
-                        t.COUNTBACK  = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK' ,1);
+                        t.projfn2_glb  = projfn_glb;
+                        t.MODE_TOTAL   = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL'  ,1);
+                        t.MODE_AFK     = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'    ,1);
+                        t.MODE_SESSION = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SESSION',1);
+                        t.MODE_SES_AFK = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SES_AFK',1);
+                        t.MODE_RESET   = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET'  ,1);
+                        t.PREFIX       = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'      ,1);
+                        t.COUNTBACK    = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK'   ,1);
                     end;
                     
                     
@@ -329,17 +434,18 @@
                     
                     ----------
                     t.MODE = 0;
-                    t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET;
+                    t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET+t.MODE_SESSION+t.MODE_SES_AFK;
                     
                     
-                    gfx.set(.7,.7,.7,.2);
-                    gfx.roundrect(-1,gfx.h/t.MODE,gfx.w+2,gfx.h/t.MODE, 0,1);--Separate
+                    
                     
                     ---/Logo/---
+                    gfx.set(.7,.7,.7,.2);
                     gfx.x,gfx.y = gfx.w-50,gfx.h-15
                     gfx.setfont(1,"Arial",15,105);
                     gfx.drawstr('Archie');
                     ------------
+                    
                     
                     
                     gfx.set(.7,.7,.7,1);
@@ -349,6 +455,7 @@
                         if t.PREFIX == 1 then prf = 'Total: 'end;
                         local string = prf..sectotime(t.TIME_ttl);
                         TextByCenterAndResize(string, 0,0,100,100/t.MODE, ZoomInOn,nil);
+                        Arc_roundrect(0,0,100,100/t.MODE, .7,.7,.7,.1);--Separate
                     end;
                      
                     if t.MODE_AFK == 1 then;
@@ -356,14 +463,38 @@
                         local prf = '';
                         if t.PREFIX == 1 then prf = 'Afk: 'end;
                         local string = prf..sectotime(t.TIME_akf)..t.countBack;
-                        TextByCenterAndResize(string, 0,(100/t.MODE)*t.MODE_TOTAL,100,100/t.MODE, ZoomInOn,nil);
+                        local Y = (100/t.MODE)*t.MODE_TOTAL;
+                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
                     end
+                    
+                    
+                    if t.MODE_SESSION == 1 then;
+                        local prf = '';
+                        if t.PREFIX == 1 then prf = 'Session: 'end;
+                        local string = prf..sectotime(t.TIME_ses);
+                        local Y = (100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK);
+                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                    end;
+                    
+                    if t.MODE_SES_AFK == 1 then;
+                        if t.COUNTBACK == 0 then t.countBack_ses = '' end;
+                        local prf = '';
+                        if t.PREFIX == 1 then prf = 'Ses.Afk: 'end;
+                        local string = prf..sectotime(t.TIME_akf_ses)..t.countBack_ses;
+                        local Y = (100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION);
+                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                    end;
                     
                     if t.MODE_RESET == 1 then;
                         local prf = '';
                         if t.PREFIX == 1 then prf = 'Reset: 'end;
                         local string = prf..sectotime(t.TIME_rst);
-                        TextByCenterAndResize(string, 0,(100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK),100,100/t.MODE, ZoomInOn,nil);
+                        local Y = (100/t.MODE)*(t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION+t.MODE_SES_AFK);
+                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
                     end;
                     ---
                 
@@ -373,17 +504,21 @@
                     gfx.x = gfx.mouse_x;
                     gfx.y = gfx.mouse_y;
                     
-                    local mTtl,mAfk,mRst,mpfx,mCnB;
-                    if t.MODE_TOTAL == 1 then mTtl = '!' else mTtl = ''end;
-                    if t.MODE_AFK   == 1 then mAfk = '!' else mAfk = ''end;
-                    if t.MODE_RESET == 1 then mRst = '!' else mRst = ''end;
-                    if t.PREFIX     == 1 then mpfx = '!' else mpfx = ''end;
-                    if t.COUNTBACK  == 1 then mCnB = '!' else mCnB = ''end;
+                    local mTtl,mAfk,mRst,mpfx,mCnB,mSsAfk,mSsn;
+                    if t.MODE_TOTAL   == 1 then mTtl   = '!' else mTtl   = ''end;
+                    if t.MODE_AFK     == 1 then mAfk   = '!' else mAfk   = ''end;
+                    if t.MODE_SESSION == 1 then mSsn   = '!' else mSsn   = ''end;
+                    if t.MODE_SES_AFK == 1 then mSsAfk = '!' else mSsAfk = ''end;
+                    if t.MODE_RESET   == 1 then mRst   = '!' else mRst   = ''end;
+                    if t.PREFIX       == 1 then mpfx   = '!' else mpfx   = ''end;
+                    if t.COUNTBACK    == 1 then mCnB   = '!' else mCnB   = ''end;
                     
                     
                     local
                     showmenu = gfx.showmenu(mTtl..'Time Total |'..
                                             mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
+                                            mSsn..'Time Session |'..
+                                            mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
                                             mRst..'Time Reset||'..
                                             mpfx..'Prefix:|'..
                                             mCnB..'AKF - Count Back '..t.countBack..
@@ -400,17 +535,23 @@
                         t.MODE_AFK = math.abs(t.MODE_AFK-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK',t.MODE_AFK,true);
                     elseif showmenu == 3 then;
+                        t.MODE_SESSION = math.abs(t.MODE_SESSION-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SESSION',t.MODE_SESSION,true);
+                    elseif showmenu == 4 then;
+                        t.MODE_SES_AFK = math.abs(t.MODE_SES_AFK-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SES_AFK',t.MODE_SES_AFK,true);
+                    elseif showmenu == 5 then;
                         t.MODE_RESET = math.abs(t.MODE_RESET-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET',t.MODE_RESET,true);
-                    elseif showmenu == 4 then;
+                    elseif showmenu == 6 then;
                         t.PREFIX = math.abs(t.PREFIX-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX',t.PREFIX,true);
-                    elseif showmenu == 5 then;
+                    elseif showmenu == 7 then;
                         t.COUNTBACK = math.abs(t.COUNTBACK-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK',t.COUNTBACK,true);
-                    elseif showmenu == 6 then;
+                    elseif showmenu == 8 then;
                         reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET','');
-                    elseif showmenu == 7 then;
+                    elseif showmenu == 9 then;
                     
                     end
                 end;
@@ -434,6 +575,7 @@
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL'   ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'     ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET'   ,'',true );
+            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SESSION' ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'       ,'',true );
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK'    ,'',true );
             reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET' ,'');
