@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="881064fff3cc5b80f31a6a5e765156866f3cb271">
+<index version="1" name="Archie-ReaScripts" commit="25805d912a1cc017958d783482a4a2de04f6e290">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3268,6 +3268,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Mixer/Archie_Mixer;%20%20Mute%20all%20visible%20track%20in%20MCP(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Reset view all tracks MCP by master track.lua" type="script" desc="Mixer;  Reset view all tracks MCP by master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-17T09:50:36Z">
+        <changelog><![CDATA[v.1.0 [17.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/25805d912a1cc017958d783482a4a2de04f6e290/MAIN/Mixer/Archie_Mixer;%20%20Reset%20view%20all%20tracks%20MCP%20by%20master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of all tracks MCP to height master track.lua" type="script" desc="Set height of all tracks MCP to height master track">
