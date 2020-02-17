@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="33d8523eafa57e444a914eed922348e3b07a9a54">
+<index version="1" name="Archie-ReaScripts" commit="881064fff3cc5b80f31a6a5e765156866f3cb271">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -584,6 +584,11 @@ LUA_Lib
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-02-17T06:14:04Z">
+        <changelog><![CDATA[v.1.02 [17.02.20]
+    + Continue work with remote time selection]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/881064fff3cc5b80f31a6a5e765156866f3cb271/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Env;  Restore envelope point selection, slot 01.lua" type="script" desc="Restore envelope point selection, slot 01">
       <metadata>
@@ -697,6 +702,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [11.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11d5bdda2fe7672d812b6f86da230d633a7acb06/MAIN/Envelope%20Take/Archie_EnvT;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20take%20volume).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-02-17T06:14:04Z">
+        <changelog><![CDATA[v.1.02 [17.02.20]
+    + Continue work with remote time selection]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/881064fff3cc5b80f31a6a5e765156866f3cb271/MAIN/Envelope%20Take/Archie_EnvT;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20take%20volume).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_EnvT;  Volume selected items-take in time selection(Mouse wheel).lua" type="script" desc="Volume selected items-take in time selection(Mouse wheel)">
