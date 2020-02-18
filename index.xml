@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e087af3c3a1be973acf3ca495c35a833463cd360">
+<index version="1" name="Archie-ReaScripts" commit="15d9f55fe766e903bf75a3aef00d6131636fa043">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3284,6 +3284,30 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [17.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/25805d912a1cc017958d783482a4a2de04f6e290/MAIN/Mixer/Archie_Mixer;%20%20Reset%20view%20all%20tracks%20MCP%20by%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Reset view selected tracks MCP by master track.lua" type="script" desc="Mixer;  Reset view selected tracks MCP by master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-18T06:47:52Z">
+        <changelog><![CDATA[v.1.0 [18.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/15d9f55fe766e903bf75a3aef00d6131636fa043/MAIN/Mixer/Archie_Mixer;%20%20Reset%20view%20selected%20tracks%20MCP%20by%20master%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Mixer;  Reset view unselected tracks MCP by master track.lua" type="script" desc="Mixer;  Reset view selected tracks MCP by master track">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-18T06:47:52Z">
+        <changelog><![CDATA[v.1.0 [18.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/15d9f55fe766e903bf75a3aef00d6131636fa043/MAIN/Mixer/Archie_Mixer;%20%20Reset%20view%20unselected%20tracks%20MCP%20by%20master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of all tracks MCP to height master track.lua" type="script" desc="Set height of all tracks MCP to height master track">
