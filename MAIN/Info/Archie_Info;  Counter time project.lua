@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,10 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.03 [18.02.20]
+   *              v.1.05 [18.02.20]
    
-   *              v.1.03 [17.02.20]  
+   *              v.1.04 [18.02.20]
+   *              v.1.03 [17.02.20]
    *              v.1.02 [16.02.20]
    *                  + Reduced CPU load when window is open 
    *              v.1.0 [15.02.20]
@@ -77,15 +78,15 @@
     local function TextByCenterAndResize(string,x,y,w,h,ZoomInOn,flags);
         local gfx_w = gfx.w/100*w;
         local gfx_h = gfx.h/100*h;
-        
-        gfx.setfont(1,"Arial",10000);
+        local Fnt = 'Verdana';  --Tahoma  Verdana Georgia
+        gfx.setfont(1,Fnt,10000);
         local lengthFontW,heightFontH = gfx.measurestr(string);
         
         local F_sizeW = gfx_w/lengthFontW*gfx.texth;
         local F_sizeH = gfx_h/heightFontH*gfx.texth;
         local F_size = math.min(F_sizeW+ZoomInOn,F_sizeH+ZoomInOn);
         if F_size < 1 then F_size = 1 end;
-        gfx.setfont(1,"Arial",F_size,flags);--BOLD=98,ITALIC=105,UNDERLINE=117
+        gfx.setfont(1,Fnt,F_size,flags);--BOLD=98,ITALIC=105,UNDERLINE=117
         
         local lengthFont,heightFont = gfx.measurestr(string);
         gfx.x = gfx.w/100*x + (gfx_w - lengthFont)/2;
@@ -448,11 +449,13 @@
             local projpath,projnane = (t.PROJ_STARTPATH):gsub('\\','/'):match('(.+)[/\\](.+)')
             if projpath and projnane then t.PROJ_STARTPATH = '||#'..projpath..'|#'..projnane end;
             
-            if t.TIME_ttl then t.TIME_ttlInfo = '||#Time Total: '..sectotime(t.TIME_ttl)..'  (D:H:M:S)' end;
-            if t.TIME_akf then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time AKF: '..sectotime(t.TIME_akf)..'  (D:H:M:S)' end;
-            if t.TIME_ses then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Session: '..sectotime(t.TIME_ses)..'  (D:H:M:S)' end;
-            if t.TIME_akf_ses then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Session AFK: '..sectotime(t.TIME_akf_ses)..'  (D:H:M:S)' end;
-            if t.TIME_rst then t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Time Reset: '..sectotime(t.TIME_rst)..'  (D:H:M:S)' end;
+            t.TIME_ttlInfo = ''
+            if t.TIME_REAPER_RUN then t.TIME_ttlInfo = t.TIME_ttlInfo..'||#Time Reaper Started: '..sectotime(t.TIME_REAPER_RUN)..'  (D:H:M:S)' end;
+            if t.TIME_ttl then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time Total: '..sectotime(t.TIME_ttl)..'  (D:H:M:S)' end;
+            if t.TIME_akf then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time AKF: '..sectotime(t.TIME_akf)..'  (D:H:M:S)' end;
+            if t.TIME_ses then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time Session: '..sectotime(t.TIME_ses)..'  (D:H:M:S)' end;
+            if t.TIME_akf_ses then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time Session AFK: '..sectotime(t.TIME_akf_ses)..'  (D:H:M:S)' end;
+            if t.TIME_rst then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time Reset: '..sectotime(t.TIME_rst)..'  (D:H:M:S)' end;
             
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'||#Item Count:  '.. reaper.CountMediaItems(0);
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count:  '.. reaper.CountTracks(0);
