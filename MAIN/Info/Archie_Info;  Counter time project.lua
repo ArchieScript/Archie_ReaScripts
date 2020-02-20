@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,14 +19,14 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.05 [18.02.20]
+   *              v.1.06 [20.02.20]
    
+   *              v.1.05 [18.02.20]
    *              v.1.04 [18.02.20]
    *              v.1.03 [17.02.20]
    *              v.1.02 [16.02.20]
-   *                  + Reduced CPU load when window is open 
-   *              v.1.0 [15.02.20]
-   *                  + initialе
+   *              v.1.0  [15.02.20]
+   *                  +   initialе
 --]]
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
@@ -35,7 +35,27 @@
     
     local AFK = 60; -- sec: away from keyboard
     
-    local ZoomInOn = 0; -- zoom text
+    
+    local ZoomInOn = 0; -- zoom text (theme 2)
+    
+    
+    local SaveDockPosWin = true
+                      -- = true  | Save position dock and window
+                      -- = false | Open window by center screen
+                                 -------------------------------
+                      -- = true  | сохранить позицию дока и окна
+                      -- = false | открыть окно по центру экрана
+    
+    
+    
+    local OpenWinStartReaper = 2
+                          -- = 0 | Do not open the window when starting the Reaper
+                          -- = 1 | Open Always Window When Starts Reaper
+                          -- = 2 | Remember previous state when closing Reaper
+                                   -------------------------------------------
+                          -- = 0 | Не открывайте окно при запуске Reaper
+                          -- = 1 | Всегда открывать окно при запуске Reaper
+                          -- = 2 | Запомнить предыдущее состояние при закрытии Reaper
     
     
     --======================================================================================
@@ -167,10 +187,14 @@
     local function saveWinState_CloseWin(close);
         sWCW=(sWCW or 0)+1;
         if sWCW >= 30 then; sWCW=0;
-            local wind = string.format("%d&&&%d&&&%d&&&%d&&&%d",gfx.dock(-1,-1,-1,-1,-1));
-            if reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW')~= wind then;
-                reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW',wind,false);
+            ---
+            if SaveDockPosWin == true then;
+                local wind = string.format("%d&&&%d&&&%d&&&%d&&&%d",gfx.dock(-1,-1,-1,-1,-1));
+                if reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW')~= wind then;
+                    reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW',wind,true);
+                end;
             end;
+            ---
         end;
         if close == true or close == 1 then;
             gfx.quit();
@@ -179,14 +203,20 @@
     
     local function RestoreWinState();
         local wind = reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW');
+        if wind ~= '' and SaveDockPosWin ~= true then;
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW',true);
+        end;
         local D,X,Y,W,H = wind:match('^(%d+)&&&(%d+)&&&(%d+)&&&(%d+)&&&(%d+)');
         local _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,1);
+        local THEME_1 = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1',0);
+        local wDef,hDef;
+        if THEME_1 == 1 then wDef=560 hDef=400 else wDef=300 hDef=280 end;
         return
-        tonumber(W) or 300,
-        tonumber(H) or 280,
+        tonumber(W) or wDef,
+        tonumber(H) or hDef,
         tonumber(D) or 0,
-        tonumber(X) or (scr_x/2)-(300/2),
-        tonumber(Y) or (scr_y/2)-(280/2);
+        tonumber(X) or (scr_x/2)-(wDef/2),
+        tonumber(Y) or (scr_y/2)-(hDef/2);
     end;
     -----------------------------
     
@@ -237,7 +267,15 @@
     -----------------------------------------
     
     
-    
+    -----------------------------------------
+    local function ArcLine(x,y,x2,y2,r,g,b,a);
+        local r2,g2,b2,a2 = gfx.r,gfx.g,gfx.b,gfx.a;
+        gfx.r,gfx.g,gfx.b,gfx.a=r or gfx.r,g or gfx.g,b or gfx.b,a or gfx.a;
+        gfx.line(x,y,x2,y2);
+        gfx.r,gfx.g,gfx.b,gfx.a=r2,g2,b2,a2;
+        return r2,g2,b2,a2;
+    end;
+    -----------------------------------------
     
     
     
@@ -254,12 +292,12 @@
             local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
             if show_win == 0 then;
                 gfx.init("Info: Counter time project",RestoreWinState());
-                reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',1,false);
+                reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',1,true);
                 local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,'Info: Counter time project',true);
                 if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;   
             else;
                 saveWinState_CloseWin(true);
-                reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,false);
+                reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,true);
             end;
         end;
         
@@ -441,7 +479,7 @@
             --- / t.PROJ_STARTED / -------------------------------------------------
             t.PROJ_STARTED = (({reaper.GetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED')})[2]);
             if #t.PROJ_STARTED:gsub('%s','')==0 then;
-                t.PROJ_STARTED = '|#Project started:|#'..os.date('%d %b %Y / %X',os.time());
+                t.PROJ_STARTED = os.date('%x / %X',os.time());
                 reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED',t.PROJ_STARTED);
             end;
             
@@ -463,7 +501,7 @@
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Master Track Count Fx:  '.. CountFXMasterTrack();
             
             
-            PROJSTART = t.PROJ_STARTED:gsub('|#',''):gsub('Project%s-started','Proj start');
+            PROJSTART = 'Proj creat: '..t.PROJ_STARTED
             --- / t.PROJ_STARTED / -------------------------------------------------
             ------------------------------------------------------------------------
             
@@ -497,15 +535,6 @@
                     --->
                 
                     -----------------------------------------------------------------------------------------
-                    if t.MODE_REAPER_RUN == 0 and 
-                       t.MODE_TOTAL      == 0 and 
-                       t.MODE_AFK        == 0 and 
-                       t.MODE_RESET      == 0 and 
-                       t.MODE_SESSION    == 0 and 
-                       t.MODE_SES_AFK    == 0 then;
-                       t.MODE_REAPER_RUN = 1;
-                    end;
-                    
                     local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1);
                     if projUsDt_glb~=t.projUsDt2_glb or projfn_glb~=t.projfn2_glb then;
                         t.projUsDt2_glb = projUsDt_glb;
@@ -519,17 +548,15 @@
                         t.PREFIX          = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'         ,1);
                         t.COUNTBACK       = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK'      ,1);
                         t.TOOLTIP         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TOOLTIP'        ,1);
+                        --
+                        t.THEME_1         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1'        ,0);
+                        t.THEME_2         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2'        ,1);
                     end;
+                    
+                    if t.THEME_1 == 0 and t.THEME_2 == 0 then t.THEME_2 = 1 end;
                     
                     
                     gfx.gradrect(0,0,gfx.w,gfx.h,.2,.2,.2,1);--background
-                    
-                    
-                    
-                    ----------
-                    t.MODE = 0;
-                    t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET+t.MODE_SESSION+t.MODE_SES_AFK+t.MODE_REAPER_RUN;
-                    
                     
                     
                     
@@ -540,87 +567,323 @@
                     gfx.drawstr('Archie');
                     ------------
                     
+                    ---------------------------------
+                    if t.THEME_2 == 1 then;
                     
-                    
-                    gfx.set(.7,.7,.7,1);
-                    
-                    
-                    
-                    if t.MODE_REAPER_RUN == 1 then;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Reaper: 'end;
-                        local string = prf..sectotime(t.TIME_REAPER_RUN);
-                        local Y = (100/t.MODE)*0;
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,0,100,100/t.MODE, .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                            SetToolTip(TOOL_TIP_REAPER_E..'\n'..TOOL_TIP_REAPER_R,0,0,gfx.w,gfx.h/t.MODE,1,'REAPER');
+                        -------------------
+                        ----THEME_2--open--
+                        -------------------
+                        if t.MODE_REAPER_RUN == 0 and 
+                           t.MODE_TOTAL      == 0 and 
+                           t.MODE_AFK        == 0 and 
+                           t.MODE_RESET      == 0 and 
+                           t.MODE_SESSION    == 0 and 
+                           t.MODE_SES_AFK    == 0 then;
+                           t.MODE_REAPER_RUN = 1;
                         end;
+                        
+                        
+                        ----------
+                        t.MODE = 0;
+                        t.MODE = t.MODE_TOTAL+t.MODE_AFK+t.MODE_RESET+t.MODE_SESSION+t.MODE_SES_AFK+t.MODE_REAPER_RUN;
+                        
+                        
+                        
+                        gfx.set(.7,.7,.7,1);
+                        
+                        
+                        
+                        if t.MODE_REAPER_RUN == 1 then;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Reaper: 'end;
+                            local string = prf..sectotime(t.TIME_REAPER_RUN);
+                            local Y = (100/t.MODE)*0;
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,0,100,100/t.MODE, .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                                SetToolTip(TOOL_TIP_REAPER_E..'\n'..TOOL_TIP_REAPER_R,0,0,gfx.w,gfx.h/t.MODE,1,'REAPER');
+                            end;
+                        end;
+                        
+                        if t.MODE_TOTAL == 1 then;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Total: 'end;
+                            local string = prf..sectotime(t.TIME_ttl);
+                            local Y = (100/t.MODE)*t.MODE_REAPER_RUN;
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,Y,100,100/t.MODE, .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                                SetToolTip(TOOL_TIP_TOTAL_E..'\n'..TOOL_TIP_TOTAL_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'TOTAL');
+                            end;
+                        end;
+                        
+                        if t.MODE_AFK == 1 then;
+                            if t.COUNTBACK == 0 then t.countBack = '' end;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Afk: 'end;
+                            local string = prf..sectotime(t.TIME_akf)..t.countBack;
+                            local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL);
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                                SetToolTip(TOOL_TIP_AFK_E..'\n'..TOOL_TIP_AFK_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'AFK');
+                            end;
+                        end
+                         
+                        if t.MODE_SESSION == 1 then;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Session: 'end;
+                            local string = prf..sectotime(t.TIME_ses);
+                            local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK);
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                               SetToolTip(TOOL_TIP_SESSION_E..'\n'..TOOL_TIP_SESSION_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'SESSION');
+                            end;
+                        end;
+                        
+                        if t.MODE_SES_AFK == 1 then;
+                            if t.COUNTBACK == 0 then t.countBack_ses = '' end;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Ses.Afk: 'end;
+                            local string = prf..sectotime(t.TIME_akf_ses)..t.countBack_ses;
+                            local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION);
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                               SetToolTip(TOOL_TIP_SES_AFK_E..'\n'..TOOL_TIP_SES_AFK_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'SES_AFK');
+                            end;
+                        end;
+                        
+                        if t.MODE_RESET == 1 then;
+                            local prf = '';
+                            if t.PREFIX == 1 then prf = 'Reset: 'end;
+                            local string = prf..sectotime(t.TIME_rst);
+                            local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION+t.MODE_SES_AFK);
+                            TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
+                            Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
+                            if t.TOOLTIP == 1 then;
+                               SetToolTip(TOOL_TIP_RESET_E..'\n'..TOOL_TIP_RESET_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'RESET');
+                            end;
+                        end;
+                        -------------------
+                        ----THEME_2--end---
+                        -------------------
+                        
+                    elseif t.THEME_1 == 1 then;
+                        
+                        -------------------
+                        ----THEME_1--open--
+                        -------------------                        
+                        
+                        gfx.setfont(1,'Verdana',15,0);--BOLD=98,ITALIC=105,UNDERLINE=117
+                        gfx.set(.7,.7,.7,1);
+                        local HHH = 25;
+                        local X2 = 0;
+                        local YYY = 163;
+                        
+                        if gfx.w > 190 and t.PREFIX == 1 then;
+                        
+                            local pref = {'Reaper Started','Time Total','Work time Afk','Time Ttl Session','Session Afk','Reset'};
+                            
+                            gfx.x = 5;
+                            if gfx.h < YYY then gfx.y = 5 else gfx.y = HHH end;
+                             
+                            for i = 1,#pref do;
+                                gfx.drawstr(pref[i]);
+                                gfx.x = 5;
+                                gfx.y = gfx.y+HHH;
+                                local lengthFont,heightFont = gfx.measurestr(pref[i]);
+                                if lengthFont > X2 then X2 = lengthFont end;
+                            end;
+                            
+                            X2 = X2+10;
+                            gfx.x = X2;
+                            if gfx.h < YYY then gfx.y = 5 else gfx.y = HHH end;
+                            for i = 1,#pref do;
+                                gfx.drawstr(':');
+                                gfx.x = X2;
+                                gfx.y = gfx.y+HHH;
+                            end;
+                        end;
+                        
+                        
+                        if gfx.h >= YYY then;
+                            if X2 == 0 then gfx.x = 5 else gfx.x = X2+10 end;
+                            gfx.y = 5;
+                            gfx.drawstr('d:  h: m: s');
+                            gfx.y = HHH-5;
+                            ArcLine(0,gfx.y,gfx.w,gfx.y, nil,nil,nil,.4);  
+                        end;
+                        
+                        
+                        local timeT = {sectotime(t.TIME_REAPER_RUN),
+                                       sectotime(t.TIME_ttl),
+                                       sectotime(t.TIME_akf)..t.countBack,
+                                       sectotime(t.TIME_ses),
+                                       sectotime(t.TIME_akf_ses)..t.countBack_ses,
+                                       sectotime(t.TIME_rst)};
+                        
+                        if X2 == 0 then X2 = 5 else X2 = X2+10 end;
+                        gfx.x = X2;
+                        if gfx.h < YYY then gfx.y = 5 else gfx.y = HHH end;
+                        local X3 = 0;
+                        for i = 1,#timeT do;
+                            gfx.drawstr(timeT[i]);
+                            gfx.x = X2;
+                            gfx.y = gfx.y+HHH;
+                            local lengthFont,heightFont = gfx.measurestr(timeT[i]);
+                            if lengthFont > X3 then X3 = lengthFont end;
+                        end;
+                        X2 = X2+X3;
+                        
+                        
+                        local descE = {
+                                      'Time from Reaper launch',
+                                      'Project open in active state since his creation',
+                                      'Time spent only work since project created',
+                                      'Project open in active state since opened reaper',
+                                      'Time spent only work since opened reaper',
+                                      'Reset time to notch from now on',
+                                     };
+                        local X3 = 0;
+                        gfx.x = X2;
+                        if gfx.h < YYY then gfx.y = 5 else gfx.y = HHH end;
+                        for i = 1,#timeT do;
+                            gfx.drawstr('  -  '..descE[i]);
+                            gfx.x = X2;
+                            gfx.y = gfx.y+HHH;
+                            local lengthFont,heightFont = gfx.measurestr(descE[i]);
+                            if lengthFont > X3 then X3 = lengthFont end;
+                        end;
+                        X2 = X2+X3;
+                        
+                        local descR = {
+                                      'Время от запуска Жнеца',
+                                      'Проект открыт в активном состоянии с момента его создания',
+                                      'Время потраченное только на работу с момента создания проекта',
+                                      'Проект открыт в активном состоянии с момента открытия Жнеца',
+                                      'Время потрачено только на работу с момента открытия жнеца',
+                                      'Сбросить время, чтобы засечь с этого момента',
+                                      };
+                        X2 = X2+20;
+                        gfx.x = X2;
+                        if gfx.h < YYY then gfx.y = 5 else gfx.y = HHH end;
+                        for i = 1,#timeT do;
+                            gfx.drawstr('  -  '..descR[i]);
+                            gfx.x = X2;
+                            gfx.y = gfx.y+HHH;
+                        end;
+                        
+                        
+                        --separate--
+                        gfx.x = 0;
+                        if gfx.h < YYY then gfx.y = HHH else gfx.y = HHH*2-5 end;
+                        for i = 1,#timeT do;
+                           ArcLine(0,gfx.y,gfx.w,gfx.y, nil,nil,nil,.2);
+                            gfx.y = gfx.y+HHH;
+                        end;
+                        -----------
+                        
+                        
+                        --toolTip--
+                        if t.TOOLTIP == 1 then;
+                            if gfx.h >= YYY then gfx.y = HHH-5 else gfx.y = 0 end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_REAPER_E..'\n'..TOOL_TIP_REAPER_R, x,y,w,h ,1,'REAPER');
+                            ---
+                            if gfx.h >= YYY then gfx.y = (HHH*2)-5 else gfx.y = HHH end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_TOTAL_E..'\n'..TOOL_TIP_TOTAL_R,x,y,w,h,1,'TOTAL');
+                            ---
+                            if gfx.h >= YYY then gfx.y = (HHH*3)-5 else gfx.y = HHH*2 end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_AFK_E..'\n'..TOOL_TIP_AFK_R,x,y,w,h,1,'AFK');
+                            --- 
+                            if gfx.h >= YYY then gfx.y = (HHH*4)-5 else gfx.y = HHH*3 end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_SESSION_E..'\n'..TOOL_TIP_SESSION_R,x,y,w,h,1,'SESSION');
+                            --- 
+                            if gfx.h >= YYY then gfx.y = (HHH*5)-5 else gfx.y = HHH*4 end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_SES_AFK_E..'\n'..TOOL_TIP_SES_AFK_R,x,y,w,h,1,'SES_AFK');
+                            --- 
+                            if gfx.h >= YYY then gfx.y = (HHH*6)-5 else gfx.y = HHH*5 end;
+                            local x,y,w,h = 0,gfx.y,gfx.w,HHH;
+                            SetToolTip(TOOL_TIP_RESET_E..'\n'..TOOL_TIP_RESET_R,x,y,w,h,1,'RESET');
+                            --gfx.gradrect(x,y,w,h,1,0,0,.5);--backTest
+                        end;
+                        -----------
+                        
+                        
+                        -----------
+                        gfx.x = 5
+                        gfx.y = HHH*8;
+                        gfx.drawstr('Project created');
+                        gfx.x = 5
+                        gfx.y = HHH*9;
+                        gfx.drawstr('Project path');
+                        gfx.x = 5
+                        gfx.y = HHH*10;
+                        gfx.drawstr('Project name');
+                        gfx.x = 5
+                        gfx.y = HHH*11;
+                        gfx.drawstr('Item count');
+                        gfx.x = 5
+                        gfx.y = HHH*12;
+                        gfx.drawstr('Track count');
+                        gfx.x = 5
+                        gfx.y = HHH*13;
+                        gfx.drawstr('Track count Fx');
+                        gfx.x = 5
+                        gfx.y = HHH*14;
+                        gfx.drawstr('Master Track count Fx');
+                        local lengthFont,heightFont = gfx.measurestr('Master Track count Fx:');
+                        -----------
+                        
+                        local str = '- : - ';
+                        for i = 1,7 do;
+                            gfx.x = lengthFont+10;
+                            gfx.y = HHH*(7+i);
+                            gfx.drawstr(str);
+                        end;
+                        -----------
+                        
+                        
+                        local X = gfx.x+10;
+                        gfx.x = X;
+                        gfx.y = HHH*8;
+                        gfx.drawstr(t.PROJ_STARTED);
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*9;
+                        local Path,Name = ({reaper.EnumProjects(-1)})[2]:gsub('\\','/'):match('(.+)[/\\](.+)');
+                        if Path == '' or not Path then Path = 'Not saved' end;
+                        gfx.drawstr(Path);
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*10;
+                        gfx.drawstr(tostring(Name));
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*11;
+                        gfx.drawstr(reaper.CountMediaItems(0));
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*12;
+                        gfx.drawstr(reaper.CountTracks(0));
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*13;
+                        gfx.drawstr(CountFXAllTrack());
+                        
+                        gfx.x = X;
+                        gfx.y = HHH*14;
+                        gfx.drawstr(CountFXMasterTrack());
+                        -------------------
+                        ----THEME_1--end---
+                        -------------------
                     end;
-                    
-                    if t.MODE_TOTAL == 1 then;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Total: 'end;
-                        local string = prf..sectotime(t.TIME_ttl);
-                        local Y = (100/t.MODE)*t.MODE_REAPER_RUN;
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,Y,100,100/t.MODE, .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                            SetToolTip(TOOL_TIP_TOTAL_E..'\n'..TOOL_TIP_TOTAL_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'TOTAL');
-                        end;
-                    end;
-                    
-                    if t.MODE_AFK == 1 then;
-                        if t.COUNTBACK == 0 then t.countBack = '' end;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Afk: 'end;
-                        local string = prf..sectotime(t.TIME_akf)..t.countBack;
-                        local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL);
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                            SetToolTip(TOOL_TIP_AFK_E..'\n'..TOOL_TIP_AFK_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'AFK');
-                        end;
-                    end
-                     
-                    if t.MODE_SESSION == 1 then;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Session: 'end;
-                        local string = prf..sectotime(t.TIME_ses);
-                        local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK);
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                           SetToolTip(TOOL_TIP_SESSION_E..'\n'..TOOL_TIP_SESSION_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'SESSION');
-                        end;
-                    end;
-                    
-                    if t.MODE_SES_AFK == 1 then;
-                        if t.COUNTBACK == 0 then t.countBack_ses = '' end;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Ses.Afk: 'end;
-                        local string = prf..sectotime(t.TIME_akf_ses)..t.countBack_ses;
-                        local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION);
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                           SetToolTip(TOOL_TIP_SES_AFK_E..'\n'..TOOL_TIP_SES_AFK_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'SES_AFK');
-                        end;
-                    end;
-                    
-                    if t.MODE_RESET == 1 then;
-                        local prf = '';
-                        if t.PREFIX == 1 then prf = 'Reset: 'end;
-                        local string = prf..sectotime(t.TIME_rst);
-                        local Y = (100/t.MODE)*(t.MODE_REAPER_RUN+t.MODE_TOTAL+t.MODE_AFK+t.MODE_SESSION+t.MODE_SES_AFK);
-                        TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
-                        Arc_roundrect(0,Y,100,100/t.MODE , .7,.7,.7,.1);--Separate
-                        if t.TOOLTIP == 1 then;
-                           SetToolTip(TOOL_TIP_RESET_E..'\n'..TOOL_TIP_RESET_R,0,gfx.h/100*Y,gfx.w,gfx.h/t.MODE,1,'RESET');
-                        end;
-                    end;
-                    ---
-                    
                     
                     
                     ---TOOL-----------------------
@@ -637,7 +900,7 @@
                     gfx.x = gfx.mouse_x;
                     gfx.y = gfx.mouse_y;
                     
-                    local mTtl,mAfk,mRst,mpfx,mCnB,mSsAfk,mSsn,rprR,tolT;
+                    local mTtl,mAfk,mRst,mpfx,mCnB,mSsAfk,mSsn,rprR,tolT,thm1,thm2,tm1B;
                     if t.MODE_TOTAL      == 1 then mTtl   = '!' else mTtl   = ''end;
                     if t.MODE_AFK        == 1 then mAfk   = '!' else mAfk   = ''end;
                     if t.MODE_SESSION    == 1 then mSsn   = '!' else mSsn   = ''end;
@@ -647,56 +910,71 @@
                     if t.COUNTBACK       == 1 then mCnB   = '!' else mCnB   = ''end;
                     if t.TOOLTIP         == 1 then tolT   = '!' else tolT   = ''end;
                     if t.MODE_REAPER_RUN == 1 then rprR   = '!' else rprR   = ''end;
-                    
+                    if t.THEME_1         == 1 then thm1   = '!' else thm1   = ''end;
+                    if t.THEME_2         == 1 then thm2   = '!' else thm2   = ''end;
+                    if t.THEME_1         == 1 then tm1B   = '#' else tm1B   = ''end;
                     
                     local
                     showmenu = gfx.showmenu('>View|'..
-                                            rprR..'Reaper Started |'..
-                                            mTtl..'Time Total |'..
-                                            mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
-                                            mSsn..'Time Session |'..
-                                            mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
-                                            mRst..'Time Reset||'..
+                                            thm1..'Theme 1|'..
+                                            thm2..'>Theme 2|'..
+                                            thm2..'Theme 2||'..
+                                            tm1B..rprR..'Reaper Started |'..
+                                            tm1B..mTtl..'Time Total |'..
+                                            tm1B..mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
+                                            tm1B..mSsn..'Time Session |'..
+                                            tm1B..mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
+                                            tm1B..mRst..'Time Reset||'..             
+                                            tm1B..mCnB..'AKF - Count Back '..t.countBack..'|<||'..
                                             mpfx..'Prefix:|'..
-                                            mCnB..'AKF - Count Back '..t.countBack..'||'..
-                                            tolT..'Tool tip'..
-                                            '|<|Time Reset: Reset  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
+                                            tolT..'Tool tip|<|'..
+                                            'Time Reset: Reset  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
                                             '>???|???|<'..
                                             '||#INFO PROJECT:|'..
-                                            t.PROJ_STARTED..
+                                            '#Project created:  '..t.PROJ_STARTED..
                                             t.PROJ_STARTPATH..
                                             t.TIME_ttlInfo or '');
                     
                     if showmenu == 1 then;
+                        t.THEME_2 = 0;
+                        t.THEME_1 = math.abs(t.THEME_1-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2',t.THEME_2,true);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1',t.THEME_1,true);
+                    elseif showmenu == 2 then;
+                        t.THEME_2 = math.abs(t.THEME_2-1);
+                        t.THEME_1 = 0;
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2',t.THEME_2,true);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1',t.THEME_1,true);
+                    elseif showmenu == 3 then;
                         t.MODE_REAPER_RUN = math.abs(t.MODE_REAPER_RUN-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_REAPER_RUN',t.MODE_REAPER_RUN,true);
-                    elseif showmenu == 2 then;
+                    elseif showmenu == 4 then;
                         t.MODE_TOTAL = math.abs(t.MODE_TOTAL-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL',t.MODE_TOTAL,true);
-                    elseif showmenu == 3 then;
+                    elseif showmenu == 5 then;
                         t.MODE_AFK = math.abs(t.MODE_AFK-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK',t.MODE_AFK,true);
-                    elseif showmenu == 4 then;
+                    elseif showmenu == 6 then;
                         t.MODE_SESSION = math.abs(t.MODE_SESSION-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SESSION',t.MODE_SESSION,true);
-                    elseif showmenu == 5 then;
+                    elseif showmenu == 7 then;
                         t.MODE_SES_AFK = math.abs(t.MODE_SES_AFK-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SES_AFK',t.MODE_SES_AFK,true);
-                    elseif showmenu == 6 then;
+                    elseif showmenu == 8 then;
                         t.MODE_RESET = math.abs(t.MODE_RESET-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET',t.MODE_RESET,true);
-                    elseif showmenu == 7 then;
-                        t.PREFIX = math.abs(t.PREFIX-1);
-                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX',t.PREFIX,true);
-                    elseif showmenu == 8 then;
+                    elseif showmenu == 9 then;
                         t.COUNTBACK = math.abs(t.COUNTBACK-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK',t.COUNTBACK,true);
-                    elseif showmenu == 9 then;
+                    elseif showmenu == 10 then;
+                        t.PREFIX = math.abs(t.PREFIX-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX',t.PREFIX,true);
+                    elseif showmenu == 11 then;
                         t.TOOLTIP = math.abs(t.TOOLTIP-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TOOLTIP',t.TOOLTIP,true);
-                    elseif showmenu == 10 then;
+                    elseif showmenu == 12 then;
                         reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET','');
-                    elseif showmenu == 11 then;
+                    elseif showmenu == 13 then;
                         --reaper.ShowConsoleMsg('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R);
                         reaper.MB('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R,'HELP',0);
                     end
@@ -716,6 +994,8 @@
                 end;
             end;
             --[[-------------------------------------------------------------------------
+            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2','',true);
+            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1','',true);
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW' ,'',false);
             --reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW','',false);
             reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL'   ,'',true );
@@ -773,13 +1053,35 @@
     -----------------------------------------------------
     
     
+    
+    if OpenWinStartReaper ~= 2 and FirstRun then;
+        local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
+        if show_win == 1 then;
+            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,true);
+        end;
+        if OpenWinStartReaper == 1 and FirstRun then;
+            FirstRun = nil;
+        end;
+    end;
+      
+    if OpenWinStartReaper == 2 and FirstRun then;
+        FirstRun = nil;
+        local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
+        show_win = math.abs(show_win-1);
+        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',show_win,true);  
+    end;
+    
+    
+    
+    
+    reaper.Undo_BeginBlock();
     if not FirstRun then;
         main(true);
     elseif FirstRun then;
-        reaper.Undo_BeginBlock();
         main(nil);
-        reaper.Undo_EndBlock((PROJSTART or ''),-1);
     end;
+    reaper.Undo_EndBlock((PROJSTART or ''),-1);
+    
     
     
     ---___-----------------------------------------------
