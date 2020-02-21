@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,8 +19,9 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.06 [20.02.20]
+   *              v.1.07 [21.02.20]
    
+   *              v.1.06 [20.02.20]
    *              v.1.05 [18.02.20]
    *              v.1.04 [18.02.20]
    *              v.1.03 [17.02.20]
@@ -140,6 +141,7 @@
         if GTSC['Rpt2'..buf]~=GTSC['Rpt'..buf]then GTSC['Rpt2'..buf]=GTSC['Rpt'..buf]GTSC['X'..buf]=1 end;
         if GTSC['Pstn2'..buf]~=GTSC['Pstn'..buf]then GTSC['Pstn2'..buf]=GTSC['Pstn'..buf]GTSC['X'..buf]=1 end;
         if GTSC['plst2'..buf]~=GTSC['plst'..buf]then GTSC['plst2'..buf]=GTSC['plst'..buf]GTSC['X'..buf]=1 end;
+        if GTSC['plst'..buf]==1 or GTSC['plst'..buf]==5 then GTSC['X'..buf]=1 end;
         if GTSC['X'..buf]==1 then GTSC['X'..buf]=nil return true end;
         return false;
     end;
@@ -398,6 +400,7 @@
                 t.tm2_akf = (os.time()-t.tm_akf);
             else;
                 t.tm_akf = false;
+                t.tm2_akf = false;---v1.07
             end;
             t.ProjectState2_akf=ProjectState_akf;
             
@@ -443,6 +446,7 @@
                 t.tm2_akf_ses = (os.time()-t.tm_akf_ses);
             else;
                 t.tm_akf_ses = false;
+                t.tm2_akf_ses = false;---v1.07
             end;
             t.ProjectState2_akf_ses=ProjectState_akf_ses;
             
