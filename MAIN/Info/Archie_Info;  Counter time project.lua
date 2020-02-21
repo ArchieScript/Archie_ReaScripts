@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,6 +21,7 @@
    * Changelog:   
    *              v.1.07 [21.02.20]
    
+   *              v.1.07 [21.02.20]
    *              v.1.06 [20.02.20]
    *              v.1.05 [18.02.20]
    *              v.1.04 [18.02.20]
@@ -994,7 +995,7 @@
                 t.show_winClose = true;
                 local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
                 if show_win ~= 0 then;
-                    reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,false);
+                    reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,true);
                 end;
             end;
             --[[-------------------------------------------------------------------------
