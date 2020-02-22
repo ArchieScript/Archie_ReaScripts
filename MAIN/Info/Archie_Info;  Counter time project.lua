@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.10
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -16,11 +16,13 @@
    * Customer:    Archie(---)
    * Gave idea:   Alexey Razumov(Slick)http://www.youtube.com/user/cjslickmusic/videos
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
-   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.07 [21.02.20]
+   *              v.1.10 [22.02.20]
    
+   *              v.1.09 [21.02.20]
+   *              v.1.08 [21.02.20]
    *              v.1.07 [21.02.20]
    *              v.1.06 [20.02.20]
    *              v.1.05 [18.02.20]
@@ -282,6 +284,27 @@
     
     
     
+    ---- / Remove focus from window (useful when switching Screenset) / -----------
+    local RemFocusWin = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"RemFocusWin"))or 0;
+    local function RemoveFocusWindow(RemFocusWin);
+        if RemFocusWin == 1 then;
+            --- / Снять фокус с окна / ---
+            local winGuiFocus = gfx.getchar(65536)&2;
+            if winGuiFocus ~= 0 then;
+                if gfx.mouse_cap == 0 then;
+                    local Context = reaper.GetCursorContext2(true);
+                    if Context == 2 then ENV = reaper.GetSelectedTrackEnvelope(0)else ENV = nil end;
+                    reaper.SetCursorContext(Context,ENV);
+                    --t=(t or 0)+1;
+                end;
+            end;
+        end;
+    end;
+    -------------------------------------------------------------------------------
+    
+    
+    
+    
     -----------------------------
     local function main(GUI);
         
@@ -337,7 +360,7 @@
             ------------------------------------------------------------------------
             --- / t.TIME_rst / ------------reset 0----------------------------------
             local TIME_SEC_rst = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET');
-            if TIME_SEC_rst == 0 then t.time1_rst = false end;
+            if TIME_SEC_rst == 0 then t.time1_rst = false TIME_SEC_rst = .1 end;
             local projUsDt_rst,projfn_rst = reaper.EnumProjects(-1);
             if projUsDt_rst~=t.projUsDt2_rst or projfn_rst~=t.projfn2_rst then;
                 t.projUsDt2_rst,t.projfn2_rst=projUsDt_rst,projfn_rst;
@@ -348,7 +371,6 @@
             if not t.time1_rst then t.time1_rst = os.time()-TIME_SEC_rst end;
             t.TIME_rst = (os.time()-t.time1_rst);
             
-            if t.TIME_rst == 0 then t.TIME_rst = .01 end;
             reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET',t.TIME_rst);
             --- / t.TIME_rst / -----------------------------------------------------
             ------------------------------------------------------------------------
@@ -357,6 +379,7 @@
             ------------------------------------------------------------------------
             --- / t.TIME_ttl / -----------------------------------------------------
             local TIME_SEC_ttl = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_TOTAL');
+            if TIME_SEC_ttl == 0 then t.time1_ttl = false TIME_SEC_ttl = .1 end;---v1.10
             local projUsDt_ttl,projfn_ttl = reaper.EnumProjects(-1);
             if projUsDt_ttl~=t.projUsDt2_ttl or projfn_ttl~=t.projfn2_ttl then;
                 t.projUsDt2_ttl,t.projfn2_ttl=projUsDt_ttl,projfn_ttl;
@@ -374,18 +397,29 @@
             
             ------------------------------------------------------------------------
             --- / t.TIME_ses / -----------------------------------------------------
+            -----v.1.10-------<
+            if not t.SESSIONTTL then;
+                t.SESSIONTTL = GetExtStateArc('SESSIONTTL','TIME_SESSIONTTL');
+                if t.SESSIONTTL == 0 then;
+                    reaper.SetExtState('SESSIONTTL','TIME_SESSIONTTL',1,false);
+                    reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION','');
+                end;
+            end;
+            ------------------>
+            local TIME_SEC_ses = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION');
+            if TIME_SEC_ses == 0 then t.time1_ses = false TIME_SEC_ses = .1 end;---v1.10
+            
             local projUsDt_ses,projfn_ses = reaper.EnumProjects(-1);
-            local TIME_SEC_ses = GetExtStateArc(tostring(projUsDt_ses),'TIME_SEC_SESSION');
             if projUsDt_ses~=t.projUsDt2_ses or projfn_ses~=t.projfn2_ses then;
                 t.projUsDt2_ses,t.projfn2_ses=projUsDt_ses,projfn_ses;
                 t.time1_ses = false;
-                local TIME_SEC_ses = GetExtStateArc(tostring(projUsDt_ses),'TIME_SEC_SESSION');
+                local TIME_SEC_ses = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION');
             end;
             
             if not t.time1_ses then t.time1_ses = os.time()-TIME_SEC_ses end;
             t.TIME_ses = (os.time()-t.time1_ses);
             
-            reaper.SetExtState(tostring(projUsDt_ses),'TIME_SEC_SESSION',t.TIME_ses,false);
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION',t.TIME_ses);
             --- / t.TIME_ses / -----------------------------------------------------
             ------------------------------------------------------------------------
             
@@ -393,6 +427,7 @@
             ------------------------------------------------------------------------
             --- / t.TIME_akf / -----------------------------------------------------
             local TIME_SEC_akf = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK');
+            if TIME_SEC_akf == 0 then t.time1_akf = false TIME_SEC_akf = .1 end;---v1.10
             local ProjectState_akf = reaper.GetProjectStateChangeCount(0);
             local TranspoState_akf = GetTransportStateChange('akf');
             
@@ -431,13 +466,23 @@
             end;
             --- / t.TIME_akf / -----------------------------------------------------
             ------------------------------------------------------------------------
+
             
             
             
             ------------------------------------------------------------------------
-            --- / t.TIME_akf_ses / -----------------------------------------------------
-            local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
-            local TIME_SEC_akf_ses = GetExtStateArc(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION');
+            --- / t.TIME_akf_ses / -------------------------------------------------
+            -----v.1.10-------<
+            if not t.SESSIONAFK then;
+                t.SESSIONAFK = GetExtStateArc('SESSIONAFK','TIME_SESSIONAFK');
+                if t.SESSIONAFK == 0 then;
+                    reaper.SetExtState('SESSIONAFK','TIME_SESSIONAFK',1,false);
+                    reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK_SESSION','');
+                end;
+            end;
+            ------------------> 
+            local TIME_SEC_akf_ses = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK_SESSION');
+            if TIME_SEC_akf_ses == 0 then t.time1_akf_ses = false TIME_SEC_akf_ses = .1 end;---v1.10
             
             local ProjectState_akf_ses = reaper.GetProjectStateChangeCount(0);
             local TranspoState_akf_ses = GetTransportStateChange('akf_ses');
@@ -452,17 +497,18 @@
             t.ProjectState2_akf_ses=ProjectState_akf_ses;
             
             if not t.tm2_akf_ses or t.tm2_akf_ses < AFK then;
-                --local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
+                local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
                 if projUsDt_akf_ses~=t.projUsDt2_akf_ses or projfn_akf_ses~=t.projfn2_akf_ses then;
                     t.projUsDt2_akf_ses,t.projfn2_akf_ses=projUsDt_akf_ses,projfn_akf_ses;
                     t.ProjectState2_akf_ses=-1;
                     t.time1_akf_ses = false;
-                    TIME_SEC_akf_ses = GetExtStateArc(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION');
+                    TIME_SEC_akf = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK_SESSION');
                 end;
                 
                 if not t.time1_akf_ses then t.time1_akf_ses = os.time()-TIME_SEC_akf_ses end;
                 t.TIME_akf_ses = (os.time()-t.time1_akf_ses);
-                reaper.SetExtState(tostring(projUsDt_akf_ses),'TIME_SEC_AFK_SESSION',t.TIME_akf_ses,false);
+                
+                reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK_SESSION',t.TIME_akf_ses);
             else;
                 t.time1_akf_ses = false;
             end;
@@ -475,7 +521,7 @@
             else;
                 t.countBack_ses = ' ('..string.format("%02d",countB_ses)..')';
             end;
-            --- / t.TIME_akf_ses / -----------------------------------------------------
+            --- / t.TIME_akf_ses / -------------------------------------------------
             ------------------------------------------------------------------------
             
             
@@ -513,6 +559,8 @@
             
             ----------------------------
             if (GUI==true or GUI==1) and gfx.getchar()>=0 then;
+                
+                RemoveFocusWindow(RemFocusWin);
                 
                 -----<
                 t.cntLoop = (t.cntLoop or 0)+1
@@ -892,7 +940,7 @@
                     
                     
                     ---TOOL-----------------------
-                    gfx.gradrect(0,0,7,7,1,0,0,.3);
+                    gfx.gradrect(0,0,7,7,.4,.4,.4,.5);
                     if gfx.mouse_x <= 7 and gfx.mouse_y <= 7 then;
                         SetToolTip('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R,0,0,7,7,1,'ALL');
                     end; 
@@ -905,7 +953,7 @@
                     gfx.x = gfx.mouse_x;
                     gfx.y = gfx.mouse_y;
                     
-                    local mTtl,mAfk,mRst,mpfx,mCnB,mSsAfk,mSsn,rprR,tolT,thm1,thm2,tm1B;
+                    local mTtl,mAfk,mRst,mpfx,mCnB,mSsAfk,mSsn,rprR,tolT,thm1,thm2,tm1B,rmvF;
                     if t.MODE_TOTAL      == 1 then mTtl   = '!' else mTtl   = ''end;
                     if t.MODE_AFK        == 1 then mAfk   = '!' else mAfk   = ''end;
                     if t.MODE_SESSION    == 1 then mSsn   = '!' else mSsn   = ''end;
@@ -918,6 +966,7 @@
                     if t.THEME_1         == 1 then thm1   = '!' else thm1   = ''end;
                     if t.THEME_2         == 1 then thm2   = '!' else thm2   = ''end;
                     if t.THEME_1         == 1 then tm1B   = '#' else tm1B   = ''end;
+                    if RemFocusWin       == 1 then rmvF   = '!' else rmvF   = ''end;
                     
                     local
                     showmenu = gfx.showmenu('>View|'..
@@ -932,8 +981,9 @@
                                             tm1B..mRst..'Time Reset||'..             
                                             tm1B..mCnB..'AKF - Count Back '..t.countBack..'|<||'..
                                             mpfx..'Prefix:|'..
-                                            tolT..'Tool tip|<|'..
-                                            'Time Reset: Reset  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
+                                            tolT..'Tool tip||'..
+                                            rmvF..'Remove Focus Win. |<|'..
+                                            'Time Reset: RESET  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
                                             '>???|???|<'..
                                             '||#INFO PROJECT:|'..
                                             '#Project created:  '..t.PROJ_STARTED..
@@ -978,8 +1028,11 @@
                         t.TOOLTIP = math.abs(t.TOOLTIP-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TOOLTIP',t.TOOLTIP,true);
                     elseif showmenu == 12 then;
-                        reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET','');
+                        RemFocusWin = math.abs(RemFocusWin-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"RemFocusWin",RemFocusWin,true);
                     elseif showmenu == 13 then;
+                        reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET','');
+                    elseif showmenu == 14 then;
                         --reaper.ShowConsoleMsg('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R);
                         reaper.MB('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R,'HELP',0);
                     end
