@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -418,7 +418,7 @@
             --- / t.TIME_rst / ------------reset 0----------------------------------
             local TIME_SEC_rst = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET');
             if TIME_SEC_rst == 0 then t.time1_rst = false TIME_SEC_rst = .1 end;
-            local projUsDt_rst,projfn_rst = reaper.EnumProjects(-1);
+            local projUsDt_rst,projfn_rst = reaper.EnumProjects(-1,'');
             if projUsDt_rst~=t.projUsDt2_rst or projfn_rst~=t.projfn2_rst then;
                 t.projUsDt2_rst,t.projfn2_rst=projUsDt_rst,projfn_rst;
                 t.time1_rst = false;
