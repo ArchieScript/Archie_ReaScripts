@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ffc99d7dfb50dd3aacc69a9726b5e028d1e60a1f">
+<index version="1" name="Archie-ReaScripts" commit="9d2f5fbb9160a9d8d3944b7069746a1756753ab9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1654,6 +1654,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.11 [23.02.20]
     + add reset all timers]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffc99d7dfb50dd3aacc69a9726b5e028d1e60a1f/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
+      </version>
+      <version name="1.12" author="Archie" time="2020-02-23T17:38:11Z">
+        <changelog><![CDATA[v.1.11 [23.02.20]
+    + add reset all timers]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9d2f5fbb9160a9d8d3944b7069746a1756753ab9/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Info;  Learn what script are used in custom actions and cycle action.lua" type="script" desc="Learn what script are used in custom actions and cycle action">
