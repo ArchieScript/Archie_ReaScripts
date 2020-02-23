@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5f4428a062cc0520e068a76d36e3da3211609700">
+<index version="1" name="Archie-ReaScripts" commit="addb51639fef39be19dad41f1e1d6577084a1c2e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -573,6 +573,18 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b4ef3121c4443221d2eaced37853a84eb7e725e9/MAIN/Envelope/Archie_Env;%20%20Glue%20automation%20items%20(Clean).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Env;  Insert four points in time selection and omit by -1 dB (Env track).lua" type="script" desc="Insert four points in time selection and omit by -1 dB (Env track)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-23T09:34:58Z">
+        <changelog><![CDATA[v.1.03 [23.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/addb51639fef39be19dad41f1e1d6577084a1c2e/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Env%20track).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Env;  Insert four points in time selection and omit by -1 dB (Envelope track volume).lua" type="script" desc="Insert four points in time selection and omit by -1 dB (Envelope track volume)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -588,6 +600,12 @@ LUA_Lib
         <changelog><![CDATA[v.1.02 [17.02.20]
     + Continue work with remote time selection]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/881064fff3cc5b80f31a6a5e765156866f3cb271/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-02-23T09:34:58Z">
+        <changelog><![CDATA[v.1.03 [23.02.20]
+    + Remove dependency on selected items.
+      Now the script works only on selected tracks.]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/addb51639fef39be19dad41f1e1d6577084a1c2e/MAIN/Envelope/Archie_Env;%20%20Insert%20four%20points%20in%20time%20selection%20and%20omit%20by%20-1%20dB%20(Envelope%20track%20volume).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env;  Restore envelope point selection, slot 01.lua" type="script" desc="Restore envelope point selection, slot 01">
