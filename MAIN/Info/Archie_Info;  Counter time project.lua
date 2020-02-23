@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,8 +19,10 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.10 [22.02.20]
+   *              v.1.11 [23.02.20]
+   *                  + add reset all timers
    
+   *              v.1.10 [22.02.20]
    *              v.1.09 [21.02.20]
    *              v.1.08 [21.02.20]
    *              v.1.07 [21.02.20]
@@ -93,10 +95,11 @@
     local TL_TP_HELP_R = TOOL_TIP_REAPER_R..TOOL_TIP_TOTAL_R..TOOL_TIP_AFK_R..TOOL_TIP_SESSION_R..TOOL_TIP_SES_AFK_R..TOOL_TIP_RESET_R;
     
     
-    
+        
     local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     local extname = scriptName;
-    
+    local 
+    t = {};
     
     -----------------------------
     local function TextByCenterAndResize(string,x,y,w,h,ZoomInOn,flags);
@@ -304,14 +307,67 @@
     
     
     
+    -------------------------------------------------------------------------------
+    local function ResetExtState(AllSetting,Timer,RaaStartTimer);
+        if AllSetting == true or AllSetting == 1 then;
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW'    , false);
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'     , false);
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2'         , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1'         , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_REAPER_RUN', true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_TOTAL'     , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_AFK'       , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_SESSION'   , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_SES_AFK'   , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN', 'MODE_RESET'     , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK'       , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'          , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TOOLTIP'         , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"RemFocusWin"     , true );
+        end;
+        if Timer == true or Timer == 1 then;
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_TOTAL'      ,'');
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK'        ,'');
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION'    ,'');
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK_SESSION','');
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET'      ,'');
+            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED'     ,'');
+            t.tm_akf,t.tm_akf_ses = false;
+        end;
+        if RaaStartTimer == true or RaaStartTimer == 1 then; 
+            reaper.DeleteExtState('REAPER_RUN','TIME_REAPER_RUN',false);
+        end;
+    end;
+    -------------------------------------------------------------------------------
+    
+    
+    -------------------------------------------------------------------------------
+    t.strResetAllProjTimer = 
+                          'Eng:\n\n'..
+                          'All project timers will be reset!\n'..
+                          'Are you sure you want to reset all project timers?\n'..
+                          'If yes, then in the next window, enter 1\n\n\n'..
+                          'Rus:\n\n'..
+                          'Все таймеры проекта будут сброшены!\n'..
+                          'Вы уверены, что хотите сбросить все таймеры проекта?\n'..
+                          'Если да, то в следующем окне введите 1'
+    
+    t.strResetTimerReaStart = 
+                          'Eng:\n\n'..
+                          'Reaper start timer will be reset!\n'..
+                          'Are you sure you want to reset it?\n\n\n'..
+                          'Rus:\n\n'..
+                          'Таймер запуска жнеца будет сброшен!\n'..
+                          'Вы действительно хотите его сбросить?\n'
+    -------------------------------------------------------------------------------
+    
     
     -----------------------------
     local function main(GUI);
         
         AFK = math.abs(tonumber(AFK)or 60);
         local TIME_SEC,time1,time2;
-        local 
-        t = {};
+        
          
         if GUI == true or GUI==1 then;
             
@@ -348,6 +404,7 @@
             ------------------------------------------------------------------------
             --- / t.REAPER_RUN / ---------------------------------------------------
             local TIME_REAPER_RUN = GetExtStateArc('REAPER_RUN','TIME_REAPER_RUN');
+            if TIME_REAPER_RUN == 0 then t.time1_reaRun = false TIME_REAPER_RUN = .1 end;
             
             if not t.time1_reaRun then t.time1_reaRun = os.time()-TIME_REAPER_RUN end;
             t.TIME_REAPER_RUN = (os.time()-t.time1_reaRun);
@@ -970,21 +1027,25 @@
                     
                     local
                     showmenu = gfx.showmenu('>View|'..
-                                            thm1..'Theme 1|'..
-                                            thm2..'>Theme 2|'..
-                                            thm2..'Theme 2||'..
-                                            tm1B..rprR..'Reaper Started |'..
-                                            tm1B..mTtl..'Time Total |'..
-                                            tm1B..mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
-                                            tm1B..mSsn..'Time Session |'..
-                                            tm1B..mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
-                                            tm1B..mRst..'Time Reset||'..             
-                                            tm1B..mCnB..'AKF - Count Back '..t.countBack..'|<||'..
-                                            mpfx..'Prefix:|'..
-                                            tolT..'Tool tip||'..
-                                            rmvF..'Remove Focus Win. |<|'..
-                                            'Time Reset: RESET  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
-                                            '>???|???|<'..
+                                --[[01]]    thm1..'Theme 1|'..
+                                --[[--]]    thm2..'>Theme 2|'..
+                                --[[02]]    thm2..'Theme 2||'..
+                                --[[03]]    tm1B..rprR..'Reaper Started |'..
+                                --[[04]]    tm1B..mTtl..'Time Total |'..
+                                --[[05]]    tm1B..mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
+                                --[[06]]    tm1B..mSsn..'Time Session |'..
+                                --[[07]]    tm1B..mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
+                                --[[08]]    tm1B..mRst..'Time Reset||'..             
+                                --[[09]]    tm1B..mCnB..'AKF - Count Back '..t.countBack..'|<||'..
+                                --[[10]]    mpfx..'Prefix:|'..
+                                --[[11]]    tolT..'Tool tip||'..
+                                --[[12]]    rmvF..'Remove Focus Win. |<|'..
+                                --[[13]]    'Time Reset: RESET  ('..sectotime(t.TIME_rst)..' > 0:00:00:00)|'..
+                                --[[14]]    '>???|???|<||'..
+                                --[[--]]    '>Reset all timers|'..
+                                --[[15]]    'Reset all project timers ||'..
+                                --[[16]]    '#Reset timer Reaper started |'..
+                                            '<'..
                                             '||#INFO PROJECT:|'..
                                             '#Project created:  '..t.PROJ_STARTED..
                                             t.PROJ_STARTPATH..
@@ -1035,7 +1096,24 @@
                     elseif showmenu == 14 then;
                         --reaper.ShowConsoleMsg('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R);
                         reaper.MB('ENG:\n\n'..TL_TP_HELP_E..'\n\nRUS:\n\n'..TL_TP_HELP_R,'HELP',0);
-                    end
+                    elseif showmenu == 15 then;
+                        local MB = reaper.MB(t.strResetAllProjTimer,'Reset Timer',1);
+                        if MB == 1 then;
+                            local _, ret_csv = reaper.GetUserInputs('Key',1,'Enter key','');
+                            if ret_csv == '1' then;
+                                ResetExtState(nil,true,nil);
+                            end;
+                        end;
+                    elseif showmenu == 16 then;
+                        local MB = reaper.MB(t.strResetTimerReaStart,'Reset Timer Started',1);
+                        if MB == 1 then;
+                            ResetExtState(nil,nil,true);
+                        end;
+                    elseif showmenu == 17 then;
+                        
+                    elseif showmenu == 18 then;
+                        
+                    end;
                 end;
                 ----------------------------
                 --if gfx.getchar()>=0 then;
@@ -1051,23 +1129,7 @@
                     reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,true);
                 end;
             end;
-            --[[-------------------------------------------------------------------------
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2','',true);
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1','',true);
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','STATE_WINDOW' ,'',false);
-            --reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW','',false);
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_TOTAL'   ,'',true );
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_AFK'     ,'',true );
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_RESET'   ,'',true );
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','MODE_SESSION' ,'',true );
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'       ,'',true );
-            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','COUNTBACK'    ,'',true );
-            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_RESET' ,'');
-            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_TOTAL' ,'');
-            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_AFK'   ,'');
-            reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED','');
-            --]]--------------------------------------------------------------------------
-            ---------
+            ---------------------------------------------------------------------------
             reaper.defer(loop);
         end;
         loop();
