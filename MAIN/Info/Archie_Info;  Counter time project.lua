@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,11 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.11 [23.02.20]
-   *                  + add reset all timers
+   *              v.1.14 [24.02.20]
    
+   *              v.1.12 [23.02.20]
+   *              v.1.11 [23.02.20]
+   *                  + add reset all timers  
    *              v.1.10 [22.02.20]
    *              v.1.09 [21.02.20]
    *              v.1.08 [21.02.20]
@@ -437,7 +439,7 @@
             --- / t.TIME_ttl / -----------------------------------------------------
             local TIME_SEC_ttl = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_TOTAL');
             if TIME_SEC_ttl == 0 then t.time1_ttl = false TIME_SEC_ttl = .1 end;---v1.10
-            local projUsDt_ttl,projfn_ttl = reaper.EnumProjects(-1);
+            local projUsDt_ttl,projfn_ttl = reaper.EnumProjects(-1,'');
             if projUsDt_ttl~=t.projUsDt2_ttl or projfn_ttl~=t.projfn2_ttl then;
                 t.projUsDt2_ttl,t.projfn2_ttl=projUsDt_ttl,projfn_ttl;
                 t.time1_ttl = false;
@@ -466,7 +468,7 @@
             local TIME_SEC_ses = GetProjExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_SESSION');
             if TIME_SEC_ses == 0 then t.time1_ses = false TIME_SEC_ses = .1 end;---v1.10
             
-            local projUsDt_ses,projfn_ses = reaper.EnumProjects(-1);
+            local projUsDt_ses,projfn_ses = reaper.EnumProjects(-1,'');
             if projUsDt_ses~=t.projUsDt2_ses or projfn_ses~=t.projfn2_ses then;
                 t.projUsDt2_ses,t.projfn2_ses=projUsDt_ses,projfn_ses;
                 t.time1_ses = false;
@@ -498,7 +500,7 @@
             t.ProjectState2_akf=ProjectState_akf;
             
             if not t.tm2_akf or t.tm2_akf < AFK then;
-                local projUsDt_akf,projfn_akf = reaper.EnumProjects(-1);
+                local projUsDt_akf,projfn_akf = reaper.EnumProjects(-1,'');
                 if projUsDt_akf~=t.projUsDt2_akf or projfn_akf~=t.projfn2_akf then;
                     t.projUsDt2_akf,t.projfn2_akf=projUsDt_akf,projfn_akf;
                     t.ProjectState2_akf=-1;
@@ -554,7 +556,7 @@
             t.ProjectState2_akf_ses=ProjectState_akf_ses;
             
             if not t.tm2_akf_ses or t.tm2_akf_ses < AFK then;
-                local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1);
+                local projUsDt_akf_ses,projfn_akf_ses = reaper.EnumProjects(-1,'');
                 if projUsDt_akf_ses~=t.projUsDt2_akf_ses or projfn_akf_ses~=t.projfn2_akf_ses then;
                     t.projUsDt2_akf_ses,t.projfn2_akf_ses=projUsDt_akf_ses,projfn_akf_ses;
                     t.ProjectState2_akf_ses=-1;
@@ -591,7 +593,7 @@
                 reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','PROJECT_STARTED',t.PROJ_STARTED);
             end;
             
-            t.PROJ_STARTPATH = ({reaper.EnumProjects(-1)})[2];
+            t.PROJ_STARTPATH = ({reaper.EnumProjects(-1,'')})[2];
             local projpath,projnane = (t.PROJ_STARTPATH):gsub('\\','/'):match('(.+)[/\\](.+)')
             if projpath and projnane then t.PROJ_STARTPATH = '||#'..projpath..'|#'..projnane end;
             
@@ -645,7 +647,7 @@
                     --->
                 
                     -----------------------------------------------------------------------------------------
-                    local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1);
+                    local projUsDt_glb,projfn_glb = reaper.EnumProjects(-1,'');
                     if projUsDt_glb~=t.projUsDt2_glb or projfn_glb~=t.projfn2_glb then;
                         t.projUsDt2_glb = projUsDt_glb;
                         t.projfn2_glb  = projfn_glb;
@@ -967,7 +969,7 @@
                         
                         gfx.x = X;
                         gfx.y = HHH*9;
-                        local Path,Name = ({reaper.EnumProjects(-1)})[2]:gsub('\\','/'):match('(.+)[/\\](.+)');
+                        local Path,Name = ({reaper.EnumProjects(-1,'')})[2]:gsub('\\','/'):match('(.+)[/\\](.+)');
                         if Path == '' or not Path then Path = 'Not saved' end;
                         gfx.drawstr(Path);
                         
