@@ -6,26 +6,36 @@
    * Category:    FX
    * Description: Bypass instrument all tracks - save previous
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
-   * Changelog:   v.1.0 [15.01.20]
+   * Changelog:   
+   *              v.1.02 [24.02.20]
+   *                  + Tool Tip
+   
+   *              v.1.0 [15.01.20]
    *                  + initialе
 --]]
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================  
+    --======================================================================================
     
     
     
     --======================================================================
     local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
     --======================================================================
+    
+    
+    local function Tip(fmt);
+        local x,y = reaper.GetMousePosition();
+        reaper.TrackCtl_SetToolTip(fmt,x+10,y-30,false);
+    end;
     
     
     --=========================================================
@@ -113,11 +123,13 @@
     --=========================================================
     local toggle = tonumber(reaper.GetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE'))or 0;
     if toggle == 0 then;
-         Bypass();
-         reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',1,true);
+        Tip('BUPASS');
+        Bypass();
+        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',1,true);
     else;
-         UnBypass();
-         reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',0,true);
+        Tip('RESTORE');
+        UnBypass();
+        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',0,true);
     end;
     --=========================================================
     
