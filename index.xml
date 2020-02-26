@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="92e0619d08850f6fa41b94149d9f766077a950c6">
+<index version="1" name="Archie-ReaScripts" commit="97a42b88c84b829e60fdd27e0a718d147e704010">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -383,6 +383,18 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [05.02.20]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b59e57ea2d2b8c2e863797c95cd55f2cd06deec1/MAIN/Context/Archie_Cont;%20%20Set%20focus%20on%20track%20panels.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Track;  TTTSRRLock selected tracks and them items.lua" type="script" desc="Track;  SSSTTTSRRLock selected tracks and them items">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-02-26T13:55:30Z">
+        <changelog><![CDATA[v.1.0 [26.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/97a42b88c84b829e60fdd27e0a718d147e704010/MAIN/Context/Track;%20%20TTTSRRLock%20selected%20tracks%20and%20them%20items.lua</source>
       </version>
     </reapack>
   </category>
