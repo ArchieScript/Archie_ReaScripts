@@ -4,8 +4,8 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Track
-   * Description: Track;  RRLock selected tracks and them items
-   *                      (Unlock selected tracks and restore them items)
+   * Description: Track;  SRRLock selected tracks and them items
+   * @                    (Unlock selected tracks and restore them items)
    * Author:      Archie
    * Version:     1.0
    * Описание:    Блокировка выбранных треков и их элементов
