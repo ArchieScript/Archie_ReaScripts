@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,10 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.15 [03.03.20]
+   
    *              v.1.15 [24.02.20]
    *                  + Added: playing Time since inception of project
-   
    *              v.1.14 [24.02.20]
    *              v.1.12 [23.02.20]
    *              v.1.11 [23.02.20]
@@ -1114,7 +1115,7 @@
                                 --[[05]]    tm1B..mAfk..'Time AFK (time stop when you idle '..AFK..' seconds)|'..
                                 --[[06]]    tm1B..mSsn..'Time Session |'..
                                 --[[07]]    tm1B..mSsAfk..'Time Session AFK (time stop when you idle '..AFK..' seconds)|'..
-                                --[[08]]    mply..'Time Play |'..
+                                --[[08]]    tm1B..mply..'Time Play |'..
                                 --[[09]]    tm1B..mRst..'Time Reset||'..             
                                 --[[10]]    tm1B..mCnB..'AKF - Count Back '..t.countBack..'|<||'..
                                 --[[11]]    mpfx..'Prefix:|'..
