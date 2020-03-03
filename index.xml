@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ce90c77ae1676bb3bccc08676c963a8946674a98">
+<index version="1" name="Archie-ReaScripts" commit="bd5070d1e3b0834474c1c56d38566edbd273c1fb">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4375,6 +4375,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9ef952c5d9c7896efb11d6088a0403e3e546c38d/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20in%20place.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-03T15:43:29Z">
+        <changelog><![CDATA[v.1.02 [030320]
+    Ignore track Fx]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bd5070d1e3b0834474c1c56d38566edbd273c1fb/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20in%20place.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Take;  Render active takes, into new items to new tracks.lua" type="script" desc="Render active takes, into new items to new tracks">
       <metadata>
@@ -4386,6 +4391,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [09.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9ef952c5d9c7896efb11d6088a0403e3e546c38d/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20to%20new%20tracks.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-03T15:43:29Z">
+        <changelog><![CDATA[v.1.02 [030320]
+    Ignore track Fx]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bd5070d1e3b0834474c1c56d38566edbd273c1fb/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20to%20new%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take;  Reset color default in all take in selected items .lua" type="script" desc="Reset color default in all take in selected items">
