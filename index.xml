@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bd5070d1e3b0834474c1c56d38566edbd273c1fb">
+<index version="1" name="Archie-ReaScripts" commit="424e2548c237f6f19952aed94351b9750076d5a2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4379,6 +4379,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [030320]
     Ignore track Fx]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bd5070d1e3b0834474c1c56d38566edbd273c1fb/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20in%20place.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Render active takes, into new items to new tracks (Track Fx).lua" type="script" desc="Take;  Render active takes, into new items to new tracks (Track Fx)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-03T15:59:56Z">
+        <changelog><![CDATA[v.1.0 [030320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/424e2548c237f6f19952aed94351b9750076d5a2/MAIN/Take/Archie_Take;%20%20Render%20active%20takes,%20into%20new%20items%20to%20new%20tracks%20(Track%20Fx).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take;  Render active takes, into new items to new tracks.lua" type="script" desc="Render active takes, into new items to new tracks">
