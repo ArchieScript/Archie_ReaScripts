@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="fc86fc49a975cc3b34df4870bc96ad73b11dcad1">
+<index version="1" name="Archie-ReaScripts" commit="13d0f5379cb994f2f56a459210201002a8a9705b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4635,6 +4635,18 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Copy%20selected%20track%20name.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Copy track color.lua" type="script" desc="Track;  Copy track color">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-03T12:57:10Z">
+        <changelog><![CDATA[v.1.0 [030320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/13d0f5379cb994f2f56a459210201002a8a9705b/MAIN/Track/Archie_Track;%20%20Copy%20track%20color.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Copy track icon(Ctrl+Script Paste).lua" type="script" desc="Copy track icon(Ctrl+Script Paste)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -5189,6 +5201,18 @@ v.1.0 [28.08.19]
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Paste%20selected%20track%20name%20%20%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Paste track color.lua" type="script" desc="Track;  Paste track color">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-03T12:57:10Z">
+        <changelog><![CDATA[v.1.0 [030320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/13d0f5379cb994f2f56a459210201002a8a9705b/MAIN/Track/Archie_Track;%20%20Paste%20track%20color.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Remove from end of name of selected track _ARCHIVE(`).lua" type="script" desc="Remove from end of name of selected track _ARCHIVE">
