@@ -6,7 +6,7 @@
    * Category:    Take
    * Description: Render active takes, into new items in place
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Рендер активных тейков в новые элементы на месте
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,6 +16,9 @@
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.02 [030320]
+   *                  Ignore track Fx
+   
    *              v.1.0 [09.02.20]
    *                  + initialе
 --]]
@@ -81,7 +84,7 @@
         reaper.SNM_SetIntConfigVar('itemfxtail',Tail_FX);
     end;
      
-    reaper.Main_OnCommand(40209,0) -- Render items to new take
+    reaper.Main_OnCommand(41999,0) -- Render items to new take
     
     local NEW_IT = {};
     for i = 1,CountSelItem do;
@@ -93,7 +96,7 @@
         reaper.SetItemStateChunk(newItem,itChunk,false);
         table.insert(NEW_IT,newItem);
         reaper.SetMediaItemSelected(newItem,false);
-    reaper.UpdateItemInProject(newItem);
+        reaper.UpdateItemInProject(newItem);
     end;
     
     reaper.Main_OnCommand(40129,0); -- Delete active take from items
