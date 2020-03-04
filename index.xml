@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="424e2548c237f6f19952aed94351b9750076d5a2">
+<index version="1" name="Archie-ReaScripts" commit="42497a6e4e6b7e1bf3143242db20aabb6ce288bd">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2501,7 +2501,7 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2020-03-03T09:10:54Z">
         <changelog><![CDATA[v.1.0 [03.03.20]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fc86fc49a975cc3b34df4870bc96ad73b11dcad1/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20(by%20tracks).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/42497a6e4e6b7e1bf3143242db20aabb6ce288bd/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20(by%20tracks).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected overlapped items in selected tracks.lua" type="script" desc="Item;  Remove selected overlapped items in selected tracks">
