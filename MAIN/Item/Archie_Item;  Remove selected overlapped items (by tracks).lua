@@ -41,7 +41,10 @@
     for i = 1, CountSelItem do;
         local item = reaper.GetSelectedMediaItem(0,i-1);
         local track = reaper.GetMediaItem_Track(item);
-        tblTrack[#tblTrack+1]=track;
+        if not t[tostring(track)]then;
+            t[tostring(track)] = track;
+            tblTrack[#tblTrack+1] = track;
+        end;
     end;
     
     
