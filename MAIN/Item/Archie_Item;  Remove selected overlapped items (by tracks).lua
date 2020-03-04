@@ -6,19 +6,22 @@
    * Category:    Item
    * Description: Item;  Remove selected overlapped items (by tracks)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Удалить выбранные перекрывающиеся элементы (по дорожкам)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    Maxim Kokarev(VK)
-   * Gave idea:   Maxim Kokarev(VK)
+   * Customer:    Maxim Kokarev(VK)$
+   * Gave idea:   Maxim Kokarev(VK)$
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.02 [040320]
+   *                  + Performance improvement
+   
    *              v.1.0 [03.03.20]
    *                  + initialе
---]] 
+--]]
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -34,6 +37,7 @@
     if CountSelItem == 0 then no_undo() return end;
     
     
+    local t = {};
     local tblTrack = {};
     local UNDO;
     
@@ -48,66 +52,51 @@
     end;
     
     
-    for iTrt = 1, #tblTrack do;
+    for iTr = 1, #tblTrack do;
         
-        local tbl = {};
-        local tblRemove = {};
+        local t = {};
+        local rem = {};
         
-        
-        local CountTrItem = reaper.CountTrackMediaItems(tblTrack[iTrt]);
-        for iItt = 1, CountTrItem do;
-            
-            local itemTr = reaper.GetTrackMediaItem(tblTrack[iTrt],iItt-1);
+        local CountTrItem = reaper.CountTrackMediaItems(tblTrack[iTr]);
+        for iIt = 1, CountTrItem do;
+            local itemTr = reaper.GetTrackMediaItem(tblTrack[iTr],iIt-1);
             local sel = reaper.IsMediaItemSelected(itemTr);
             if sel then;
-                local posIT = reaper.GetMediaItemInfo_Value(itemTr,'D_POSITION');
-                local guidIT = reaper.BR_GetMediaItemGUID(itemTr);
-                tbl[#tbl+1] = {};
-                tbl[#tbl].pos = posIT;
-                tbl[#tbl].guid = guidIT;
-            end; 
-        end;
-        
-        
-        for i = 1, #tbl do;
-            
-            local mainPos = tbl[i].pos;
-            for i2 = 1, #tbl do;
                 
-                if tbl[i].guid ~= tbl[i2].guid and not tblRemove[tbl[i].guid] then;
-                    
-                    local checkPos = tbl[i2].pos;
-                    
-                    if math.abs(checkPos-mainPos) < 0.001 then;
-                        
-                        tblRemove[tbl[i2].guid] = tbl[i2].guid;
-                    end;
+                local posIt = reaper.GetMediaItemInfo_Value(itemTr,'D_POSITION');
+                posIt = math.floor(posIt*1000)/1000;
+                
+                if not t[posIt] then;
+                    t[posIt] = posIt;
+                else;
+                    rem[#rem+1] = {};
+                    rem[#rem].track = tblTrack[iTr];
+                    rem[#rem].item = itemTr;
                 end;
             end;
         end;
         
-        
-        for val in pairs(tblRemove)do;
-            local item = reaper.BR_GetMediaItemByGUID(0,val);
-            if item then;
-                local tr = reaper.GetMediaItem_Track(item,item);
-                if not UNDO then;
-                    reaper.Undo_BeginBlock();
-                    UNDO = true;
-                end;
-                reaper.DeleteTrackMediaItem(tr,item);
+        for iDel = 1, #rem do;
+            local Del = reaper.DeleteTrackMediaItem(rem[iDel].track,rem[iDel].item);
+            if not UNDO and Del then;
+                reaper.Undo_BeginBlock();
+                reaper.PreventUIRefresh(1);
+                UNDO = true;
             end;
         end;
-          
     end;
     
     
     if UNDO then;
+        reaper.PreventUIRefresh(-1);
         reaper.Undo_EndBlock("Remove selected overlapped items (by tracks)",-1);
     else;
         no_undo();
     end;
     
     reaper.UpdateArrange();
+    
+    
+    
     
     
