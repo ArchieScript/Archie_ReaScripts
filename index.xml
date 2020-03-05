@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="256d10206ef6611c7792aedcb3032448be75091a">
+<index version="1" name="Archie-ReaScripts" commit="0644c678595f7ba27382adac6e84b7dd94aef6fa">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2500,6 +2500,42 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/256d10206ef6611c7792aedcb3032448be75091a/MAIN/Item/Archie_Item;%20%20Remove%20final%20selected%20item%20in%20tracks.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Remove items except first in one position (by tracks).lua" type="script" desc="Item;  Remove items except first in one position (by tracks)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20items%20except%20first%20in%20one%20position%20(by%20tracks).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove items except first in one position in selected tracks.lua" type="script" desc="Item;  Remove items except first in one position in selected tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20items%20except%20first%20in%20one%20position%20in%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove items except first in one position.lua" type="script" desc="Item;  Remove items except first in one position">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20items%20except%20first%20in%20one%20position.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Remove last selected item in tracks.lua" type="script" desc="Item;  Remove last selected item in tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2521,55 +2557,40 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Item/Archie_Item;%20%20Remove%20selected%20items%20outside%20regions(time%20selection)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Remove selected overlapped items (by tracks).lua" type="script" desc="Item;  Remove selected overlapped items (by tracks)">
+    <reapack name="Archie_Item;  Remove selected overlap items (by tracks).lua" type="script" desc="Item;  Remove selected overlap items (by tracks)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-03-03T09:10:54Z">
-        <changelog><![CDATA[v.1.0 [03.03.20]
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050320]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/42497a6e4e6b7e1bf3143242db20aabb6ce288bd/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20(by%20tracks).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-04T09:08:11Z">
-        <changelog><![CDATA[v.1.02 [040320]
-    + Performance improvement]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7609d5109d42b0bfee2f8165f731e7a09127e2f0/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20(by%20tracks).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlap%20items%20(by%20tracks).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Remove selected overlapped items in selected tracks.lua" type="script" desc="Item;  Remove selected overlapped items in selected tracks">
+    <reapack name="Archie_Item;  Remove selected overlap items in selected tracks.lua" type="script" desc="Item;  Remove selected overlap items in selected tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-03-03T09:10:54Z">
-        <changelog><![CDATA[v.1.0 [03.03.20]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fc86fc49a975cc3b34df4870bc96ad73b11dcad1/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20in%20selected%20tracks.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-04T09:08:11Z">
-        <changelog><![CDATA[v.1.02 [040320]
-    + Performance improvement]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7609d5109d42b0bfee2f8165f731e7a09127e2f0/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items%20in%20selected%20tracks.lua</source>
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050320]
+    + initial]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlap%20items%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Remove selected overlapped items.lua" type="script" desc="Item;  Remove selected overlapped items">
+    <reapack name="Archie_Item;  Remove selected overlap items.lua" type="script" desc="Item;  Remove selected overlap items">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-03-03T09:10:54Z">
-        <changelog><![CDATA[v.1.0 [03.03.20]
+      <version name="1.0" author="Archie" time="2020-03-05T18:10:38Z">
+        <changelog><![CDATA[v.1.0 [050520]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fc86fc49a975cc3b34df4870bc96ad73b11dcad1/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-04T09:08:11Z">
-        <changelog><![CDATA[v.1.02 [040320]
-    + Performance improvement]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7609d5109d42b0bfee2f8165f731e7a09127e2f0/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlapped%20items.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0644c678595f7ba27382adac6e84b7dd94aef6fa/MAIN/Item/Archie_Item;%20%20Remove%20selected%20overlap%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence by grid in selected media items (-60 db)(`).lua" type="script" desc="Remove silence by grid in selected media items (-60 db)">
