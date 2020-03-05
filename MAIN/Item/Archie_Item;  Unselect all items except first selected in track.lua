@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item;  Unselect all items except first selected in track
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Отменить выбор всех элементов, кроме первого выбранного в треке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -100,8 +100,9 @@
                 
                 local itemTr = reaper.GetTrackMediaItem(tblTrack[i],it-1);
                 local posIt = reaper.GetMediaItemInfo_Value(itemTr,'D_POSITION');
+                local lenIt = reaper.GetMediaItemInfo_Value(itemTr,'D_LENGTH');
                 
-                if posIt < timeSelEnd and posIt >= timeSelStart then;
+                if posIt < timeSelEnd and posIt+lenIt > timeSelStart then;
                     if unsel then;
                         reaper.SetMediaItemInfo_Value(itemTr,'B_UISEL',0);
                         if not UNDO then;
