@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0a0599d2a86b6efb77fe677624a66f41f13466cf">
+<index version="1" name="Archie-ReaScripts" commit="906c936631b8d73d8827ebd92f38846d0e24b16e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2481,6 +2481,18 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-01-20T15:26:55Z">
         <changelog><![CDATA[+ initialе / v.1.0 [14.11.18]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove final selected item in tracks.lua" type="script" desc="Item;  Remove final selected item in tracks">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-05T16:21:55Z">
+        <changelog><![CDATA[v.1.0 [050320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/906c936631b8d73d8827ebd92f38846d0e24b16e/MAIN/Item/Archie_Item;%20%20Remove%20final%20selected%20item%20in%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove last selected item in tracks.lua" type="script" desc="Item;  Remove last selected item in tracks">
