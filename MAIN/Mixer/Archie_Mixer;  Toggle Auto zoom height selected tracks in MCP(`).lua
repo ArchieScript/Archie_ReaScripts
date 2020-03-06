@@ -5,7 +5,7 @@
    * Category:    Mixer
    * Description: Toggle Auto zoom height selected tracks in MCP
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Toggle Auto zoom height selected tracks in MCP
    *              CTRL + CLICK:         SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
    *              SHIFT + CLICK:        SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
@@ -21,12 +21,15 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
-   * Customer:    YuriOl(RMM)
-   * Gave idea:   YuriOl(RMM)
+   * Customer:    YuriOl(RMM) / Алексей Левин(VK)
+   * Gave idea:   YuriOl(RMM) / Алексей Левин(VK)
    * Changelog:   
+   *              v.1.02 [060320]
+   *                 + Added scroll shift
+   *                 ! Fixed bug
+   
    *              v.1.01 [13.06.19]
    *                 ---
-   
    *              v.1.0 [12.06.19]
    *                  +  initialе
 
@@ -52,12 +55,13 @@
     
     
     
-    local HEIGHT = 50
+    local HEIGHT = 100
               -- = Увеличеть на
               -- = Zoom in on
               ---------------
     
     
+    local MIX_Track_SHIFT = 0 -- Сдвинуть на кол-во треков 0...20
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -72,7 +76,8 @@
     --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
     
     
-    
+    if not tonumber(MIX_Track_SHIFT) then MIX_Track_SHIFT = 0 end;
+    if MIX_Track_SHIFT < 0 or MIX_Track_SHIFT > 20 then MIX_Track_SHIFT = 0 end;
     
     local Api_sws = Arc.SWS_API(true);
     if not Api_sws then Arc.no_undo()return end;
@@ -130,8 +135,10 @@
                 end;
                 
                 if not stop then;
+                    local Sel = reaper.GetMediaTrackInfo_Value(Track,"I_SELECTED");
                     local height = Arc.GetSetHeigthMCPTrack(Track,nil,0);
                     Arc.GetSetHeigthMCPTrack(Track,height-HEIGHT,1);
+                    reaper.defer(function() reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",Sel) end);
                     TrT[#TrT+1] = GUID;
                     changes = 1;
                 end;
@@ -163,6 +170,35 @@
             changes = nil;
             --t=(t or 0)+1;
         end;
+        
+        
+        if MIX_Track_SHIFT > 0 then;
+            local Toggle = reaper.GetToggleCommandStateEx(0,40221);--Mixer scroll
+            if Toggle == 1 then;
+                local CountSelTrack_ = reaper.CountSelectedTracks(0);
+                if CountSelTrack_ == 1 then;
+                    local TrMix = reaper.GetMixerScroll()
+                    if TrMix then
+                        local Sel = reaper.GetMediaTrackInfo_Value(TrMix,"I_SELECTED");
+                        if Sel == 1 then;
+                            numb = reaper.GetMediaTrackInfo_Value(TrMix,"IP_TRACKNUMBER")-1;
+                            for imix = MIX_Track_SHIFT,0,-1 do;
+                                TrShift = reaper.GetTrack(0,numb-imix);
+                                if TrShift then
+                                    Vis = reaper.IsTrackVisible( TrShift, true )
+                                    if Vis then
+                                        --reaper.SetMixerScroll(TrShift)
+                                        reaper.defer(function()reaper.SetMixerScroll(TrShift);end);
+                                        break 
+                                    end
+                                end
+                            end
+                        end;
+                    end;
+                end;
+            end;
+        end;
+        
         reaper.defer(loop);
     end;
     
