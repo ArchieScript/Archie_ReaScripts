@@ -6,7 +6,7 @@
    * Category:    Envelope
    * Description: Glue automation items (Clean)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Склеить элементы автоматизации (очистить огибающую от лишних точек)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,7 +16,7 @@
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.03 [15.02.20]
+   *              v.1.04 [060320]
    *                  + initialе
 --]] 
     --======================================================================================
@@ -30,6 +30,22 @@
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
+    
+    
+    local function Convert_EnvVOLUME_InPercent_DB_SWS(env,value,PerVal);
+        local _,_,_,_,_,_,min,max,_,_,faderS = reaper.BR_EnvGetProperties(reaper.BR_EnvAlloc(env,true));
+        reaper.BR_EnvFree(reaper.BR_EnvAlloc(env,true),true);
+        local DBmin = math.floor((20*math.log(min+3e-8,10))+.5);
+        local DBmax = math.floor((20*math.log(max-3e-8,10))+.5);
+        local DB_total = math.abs(DBmin)+math.abs(DBmax);
+        if PerVal == 0 then;
+            local val = ((20*math.log(value+3e-8,10))-DBmin);
+            value = val/(DB_total/100);
+            return math.floor(value);
+        elseif PerVal == 1 then;
+            return DBmin+(DB_total/100*value);
+        end;
+    end;
     
     
     
@@ -49,7 +65,7 @@
     if VALUE < 1e-10 or VALUE > 100 then VALUE = 1e-10 end;
     
     
-    local Env = reaper.GetSelectedEnvelope(0);
+    local Env = reaper.GetSelectedTrackEnvelope(0);
     if Env then;
         
         reaper.PreventUIRefresh(1);
@@ -70,7 +86,14 @@
                 if ScalingPre == 1 then;
                      value = reaper.ScaleFromEnvelopeMode(1,value);
                 end;
-                local Percent = Convert_Env_ValueInValueAndInPercent_SWS(Env,value,0);
+                
+                local Percent;
+                local retval,env_name = reaper.GetEnvelopeName(Env);
+                if env_name == "Volume" or env_name == "Trim Volume" then;
+                    Percent = Convert_EnvVOLUME_InPercent_DB_SWS(Env,value,0);
+                else;
+                    Percent = Convert_Env_ValueInValueAndInPercent_SWS(Env,value,0);
+                end;
                 
                 -- do return end;
                 if time2 and Percent2 then;
