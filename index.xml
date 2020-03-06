@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0644c678595f7ba27382adac6e84b7dd94aef6fa">
+<index version="1" name="Archie-ReaScripts" commit="10b62aa2f8e752e4e8aab8d917b077b57b6a5b40">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -571,6 +571,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.03 [15.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b4ef3121c4443221d2eaced37853a84eb7e725e9/MAIN/Envelope/Archie_Env;%20%20Glue%20automation%20items%20(Clean).lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-03-06T16:08:29Z">
+        <changelog><![CDATA[v.1.04 [060320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10b62aa2f8e752e4e8aab8d917b077b57b6a5b40/MAIN/Envelope/Archie_Env;%20%20Glue%20automation%20items%20(Clean).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env;  Insert four points in time selection and omit by -1 dB (Env track).lua" type="script" desc="Insert four points in time selection and omit by -1 dB (Env track)">
@@ -3638,6 +3643,12 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [13.06.19]
    ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/679fb86d8937b3714c8236bc4a2537020dc91060/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-06T12:46:23Z">
+        <changelog><![CDATA[v.1.02 [060320]
+   + Added scroll shift
+   ! Fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ef911c7a34e7e7c11b0b5adf451b2e8371cb0f78/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Toggle Auto zoom height tracks rec-armed in MCP(`).lua" type="script" desc="Toggle Auto zoom height tracks rec-armed in MCP">
