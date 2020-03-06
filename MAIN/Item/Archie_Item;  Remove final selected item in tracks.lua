@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item;  Remove final selected item in tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Удалить завершающий выбранный элемент в треках
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,9 +16,11 @@
    * Extension:   Reaper 6.04+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.02 [050320]
+   *              v.1.03 [060320]
    *                  ! fix bug
    
+   *              v.1.02 [050320]
+   *                  ! fix bug 
    *              v.1.0 [050320]
    *                  + initialе
 --]]
@@ -106,13 +108,13 @@
                 local posIt = reaper.GetMediaItemInfo_Value(itemTr,'D_POSITION');
                 local lenIt = reaper.GetMediaItemInfo_Value(itemTr,'D_LENGTH');
                 
-                if posIt < timeSelEnd and posIt+lenIt >= timeSelStart then;
+                if posIt < timeSelEnd and posIt+lenIt > timeSelStart then;
                     
                     local sel = reaper.IsMediaItemSelected(itemTr);
                     if sel then;
                         
-                    if lenIt+posIt > X then;
-                        X = lenIt+posIt;
+                        if lenIt+posIt > X then;
+                            X = lenIt+posIt;
                             ItX = itemTr;
                             TrX = tblTrack[i];
                         end;
