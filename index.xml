@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="10b62aa2f8e752e4e8aab8d917b077b57b6a5b40">
+<index version="1" name="Archie-ReaScripts" commit="bd6b0e28064c17f72a64888658571bea5c77200d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2503,6 +2503,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [050320]
     ! fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/256d10206ef6611c7792aedcb3032448be75091a/MAIN/Item/Archie_Item;%20%20Remove%20final%20selected%20item%20in%20tracks.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-06T16:47:32Z">
+        <changelog><![CDATA[v.1.03 [060320]
+    ! fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bd6b0e28064c17f72a64888658571bea5c77200d/MAIN/Item/Archie_Item;%20%20Remove%20final%20selected%20item%20in%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove items except first in one position (by tracks).lua" type="script" desc="Item;  Remove items except first in one position (by tracks)">
