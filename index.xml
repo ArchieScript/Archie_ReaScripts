@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bd6b0e28064c17f72a64888658571bea5c77200d">
+<index version="1" name="Archie-ReaScripts" commit="96a4a8025bd79584f43b44d9c6e64e8db02424b6">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4129,6 +4129,7 @@ v.1.0 [28.08.19]
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-12-03T16:54:05Z">
@@ -4164,6 +4165,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.06 [07.02.20]
     + Fixed bug: No signal when render in single track when route is disabled]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f6e893fddf9b0ddb43189267e3ecedbc05028b1/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
+      <version name="1.07" author="Archie" time="2020-03-08T07:22:26Z">
+        <changelog><![CDATA[v.1.07 [080320]
+    + Secondary output format -- (Vax)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/96a4a8025bd79584f43b44d9c6e64e8db02424b6/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
