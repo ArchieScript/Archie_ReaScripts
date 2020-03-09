@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="96a4a8025bd79584f43b44d9c6e64e8db02424b6">
+<index version="1" name="Archie-ReaScripts" commit="ed74fa2f6b12fffd1b235b378273affe2f1ea857">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3436,6 +3436,19 @@ v.1.0 [28.08.19]
       <version name="1.01" author="Archie" time="2019-03-27T07:55:12Z">
         <changelog><![CDATA[+  Added window to enter the name/ v.1.01 [27032019]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a21ab9f937f8986141ff049afad154711dca78c5/MAIN/Markers/Archie_Markers;%20%20Create%20region%20by%20borders%20of%20selected%20items(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers;  Delete region in time selection.lua" type="script" desc="Markers;  Delete region in time selection">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-09T16:54:42Z">
+        <changelog><![CDATA[v.1.0 [090320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ed74fa2f6b12fffd1b235b378273affe2f1ea857/MAIN/Markers/Archie_Markers;%20%20Delete%20region%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Markers;  Insert markers by time selection.lua" type="script" desc="Markers;  Insert markers by time selection">
