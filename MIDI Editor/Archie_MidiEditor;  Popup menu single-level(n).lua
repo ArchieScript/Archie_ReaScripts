@@ -17,22 +17,22 @@
    * Gave idea:   Maestro Sound(Rmm)
    * Provides:    
    *              [nomain] .
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(1).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(2).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(3).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(4).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(5).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(6).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(7).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(8).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(9).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(10).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(11).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(12).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(13).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(14).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(15).lua
-   *              [midi_editor] . > Archie_MidiEditor;  Popup menu single-level(16).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(1).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(2).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(3).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(4).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(5).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(6).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(7).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(8).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(9).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(10).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(11).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(12).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(13).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(14).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(15).lua
+   *              [main] . > Archie_MidiEditor;  Popup menu single-level(16).lua
    * Extension:   
    *              Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
