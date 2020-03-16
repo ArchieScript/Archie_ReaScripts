@@ -6,9 +6,9 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Всплывающее меню одноуровневое
-   * GIF:         http://avatars.mds.yandex.net/get-pdb/2885096/39490682-2e30-41c8-bbbb-5ef30cfa1972/orig
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -39,9 +39,18 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.02 [160320]
+   *                  + Redesigned 'Add Menu'
+   
    *              v.1.0 [150320]
    *                  + initialе
 --]]
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    local ADD_UP_DOWN = 1; -- 0/1
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================  
@@ -99,88 +108,56 @@
     
     
     ---------------------------------------------------
-    local sep; if #idT > 0 then sep = '|'else  sep = '' end;
-    local showMenu = gfx.showmenu("> > > >|Add||Remove|Remove All||Rename|<|"..sep..table.concat(nameT,'|'));
+    if ADD_UP_DOWN ~= 0 and ADD_UP_DOWN ~= 1 then ADD_UP_DOWN = 1 end;
+    local showMenu,numbUpDown;
+    local AddListCount;
+    local AddList = "> > > >|Add||Remove|Remove All||Rename||Move|<|";
+    if ADD_UP_DOWN == 0 then;--Up
+        local sep; if #idT > 0 then sep = '|'else  sep = '' end;
+        showMenu = gfx.showmenu(AddList..sep..table.concat(nameT,'|'));
+        numbUpDown = 0;
+        AddListCount = 5;
+    elseif ADD_UP_DOWN == 1 then;--Down
+        local sep; if #idT > 0 then sep = '||'else  sep = '' end;
+        showMenu = gfx.showmenu(table.concat(nameT,'|')..sep..AddList);
+        numbUpDown = #idT;
+        AddListCount = 0;
+    end;
+    ---------------------------------------------------
+    
+    
+    
     
     if showMenu == 0 then;
         --======================
         gfx.quit();
         no_undo();
         --======================
-    elseif showMenu == 1 then;--Add
+    elseif showMenu == numbUpDown+1 then;--Add
         --======================
-        local act,idCheck,id;
-        ::restart::;
-        if not idCheck or idCheck == 0 or not id then id = '' end;
-        local retval,retvals_csv = reaper.GetUserInputs('Add action',2,'Add  ID  Action:,'..
-                                                                       'Add  Name  Action:,'..
-                                                                       'extrawidth=350,'..
-                                                                       'separator==',id..'='..(act or ''));
-        if not retval then no_undo() return end;
         
-        id = retvals_csv:match('(.-)='):gsub('%s','');
-        if not tonumber(id)then;
-            idCheck = reaper.NamedCommandLookup(id);
+        local x,y = reaper.GetMousePosition();
+        local x,y = gfx.screentoclient(x,y);
+        gfx.x,gfx.y = x-50,y-20;
+        
+        local showMenu;
+        if #nameTRem > 0 then;
+            showMenu = gfx.showmenu('#Add action. Over||'..table.concat(nameTRem,'|')..'|+');
         else;
-            idCheck = tonumber(id);
-        end;
-        
-        act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','')--:gsub('|','');
-        if act:gsub('%s','')=='' or idCheck == 0 then goto restart end;
-        
-        local LIST = ExtState..'{&&'..id..'='..act..'&&}'; 
-        reaper.SetExtState(section,'LIST',LIST,true);
-        gfx.quit();
-        no_undo();
-       --======================
-    elseif showMenu == 2 then;--Remove
-        --======================
-        local x,y = reaper.GetMousePosition();
-        local x,y = gfx.screentoclient(x,y);
-        gfx.x,gfx.y = x-150,y-20;
-        local showMenu = gfx.showmenu(table.concat(nameTRem,'|'));
+            showMenu = 2;
+        end;  
+            
         if showMenu > 0 then;
-            local MB = reaper.MB('Remove Action from List ?','Remove',1);
-            if MB == 2 then no_undo() return end;
-            local x = 0;
+            local x = 1;
             local strT = {};
-            for val in string.gmatch(ExtState,"{&&.-&&}") do;
-                x=x+1;
-                if x == showMenu then val = '' end;
-                strT[#strT+1] = val;
-            end;
-            reaper.SetExtState(section,'LIST',table.concat(strT),true);
-        end;
-        gfx.quit();
-        no_undo();
-        --======================
-    elseif showMenu == 3 then;--Remove All
-        --======================
-        local MB = reaper.MB('Remove All List ?','Remove',1);
-        if MB == 2 then no_undo() return end;
-        reaper.DeleteExtState(section,'LIST',true);
-        gfx.quit();
-        no_undo();
-        --======================
-    elseif showMenu == 4 then;--Rename
-        --======================
-        local x,y = reaper.GetMousePosition();
-        local x,y = gfx.screentoclient(x,y);
-        gfx.x,gfx.y = x-150,y-20;
-        local showMenu = gfx.showmenu(table.concat(nameTRem,'|'));
-        if showMenu > 0 then;
-            local x = 0;
-            local strT = {};
-            for val in string.gmatch(ExtState,"{&&.-&&}") do;
+            for val in string.gmatch(ExtState..'{&&=x=&&}',"{&&.-&&}") do;
+                if val == '{&&=x=&&}' then val = '' end;
                 x=x+1;
                 if x == showMenu then;
                     ----
                     local act,idCheck,id;
-                    ::restartRename::;
-                    
-                    if not id  then id  = val:match('^[{&&]*(.-)=')end;
-                    if not act then act = val:match('^.*=(.-)[&&}]*$')end;
-                    
+                    ::restart::;
+                    if not idCheck or idCheck == 0 or not id then id = '' end;
                     local retval,retvals_csv = reaper.GetUserInputs('Add action',2,'Add  ID  Action:,'..
                                                                                    'Add  Name  Action:,'..
                                                                                    'extrawidth=350,'..
@@ -194,24 +171,135 @@
                         idCheck = tonumber(id);
                     end;
                     
-                    act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','')--:gsub('|','');
-                    if act:gsub('%s','')=='' or idCheck == 0 then goto restartRename end;
+                    act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','');
+                    if act:gsub('%s','')=='' or idCheck == 0 then goto restart end;
                     
-                    val = '{&&'..id..'='..act..'&&}'; 
-                    ----
-                end; 
+                    val = '{&&'..id..'='..act..'&&}'..val;
+                end;
+                
                 strT[#strT+1] = val;
             end;
             reaper.SetExtState(section,'LIST',table.concat(strT),true);
         end;
         gfx.quit();
         no_undo();
+       --======================
+    elseif showMenu == numbUpDown+2 then;--Remove
         --======================
-    elseif showMenu >= 5 then;--Action
+        if #nameTRem > 0 then;
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            local showMenu = gfx.showmenu('#Remove||'..table.concat(nameTRem,'|'));
+            if showMenu > 0 then;
+                local MB = reaper.MB('Remove Action from List ?','Remove',1);
+                if MB == 2 then no_undo() return end;
+                local x = 1;
+                local strT = {};
+                for val in string.gmatch(ExtState,"{&&.-&&}") do;
+                    x=x+1;
+                    if x == showMenu then val = nil end;
+                    strT[#strT+1] = val;
+                end;
+                reaper.SetExtState(section,'LIST',table.concat(strT),true);
+            end;
+        end;
+        gfx.quit();
+        no_undo();
         --======================
-        reaper.defer(function();
+    elseif showMenu == numbUpDown+3 then;--Remove All
+        --======================
+        if #nameTRem > 0 then;
+            local MB = reaper.MB('Remove All List ?','Remove',1);
+            if MB == 2 then no_undo() return end;
+            reaper.DeleteExtState(section,'LIST',true);
+        end;
+        gfx.quit();
+        no_undo();
+        --======================
+    elseif showMenu == numbUpDown+4 then;--Rename
+        --======================
+        if #nameTRem > 0 then;
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            local showMenu = gfx.showmenu('#Rename||'..table.concat(nameTRem,'|'));
+            if showMenu > 0 then;
+                local x = 1;
+                local strT = {};
+                for val in string.gmatch(ExtState,"{&&.-&&}") do;
+                    x=x+1;
+                    if x == showMenu then;
+                        ----
+                        local act,idCheck,id;
+                        ::restartRename::;
+                        
+                        if not id  then id  = val:match('^[{&&]*(.-)=')end;
+                        if not act then act = val:match('^.*=(.-)[&&}]*$')end;
+                        
+                        local retval,retvals_csv = reaper.GetUserInputs('Rename action',2,'Rename  ID  Action:,'..
+                                                                                       'Rename  Name  Action:,'..
+                                                                                       'extrawidth=350,'..
+                                                                                       'separator==',id..'='..(act or ''));
+                        if not retval then no_undo() return end;
+                        
+                        id = retvals_csv:match('(.-)='):gsub('%s','');
+                        if not tonumber(id)then;
+                            idCheck = reaper.NamedCommandLookup(id);
+                        else;
+                            idCheck = tonumber(id);
+                        end;
+                        
+                        act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','');
+                        if act:gsub('%s','')=='' or idCheck == 0 then goto restartRename end;
+                        
+                        val = '{&&'..id..'='..act..'&&}'; 
+                        ----
+                    end; 
+                    strT[#strT+1] = val;
+                end;
+                reaper.SetExtState(section,'LIST',table.concat(strT),true);
+            end;
+        end;
+        gfx.quit();
+        no_undo();
+        --======================
+    elseif showMenu == numbUpDown+5 then;--Move
+        --======================
+        if #nameTRem > 1 then;
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            local showMenu = gfx.showmenu('#What to Move||'..table.concat(nameTRem,'|'));
+            if showMenu > 0 then;
+                table.remove(nameTRem,showMenu-1); 
+                local x = 1;
+                local strT = {};
+                local moveX;
+                for val in string.gmatch(ExtState,"{&&.-&&}") do;
+                    x=x+1;
+                    if x == showMenu then moveX = val; val = nil end;
+                    strT[#strT+1] = val;
+                end;
+                ---
+                local showMenu = gfx.showmenu('#Where to Move. Over||'..table.concat(nameTRem,'|')..'|+');
+                if showMenu == 0 then no_undo() return end;
+                
+                for i = 1,#strT +1 do;
+                    if showMenu-1 == i then strT[i] = moveX..(strT[i]or'') end;
+                end;
+                reaper.SetExtState(section,'LIST',table.concat(strT),true);
+            end;
+            gfx.quit();
+            no_undo();
+        end;
+        --======================           -- / Down /                             -- / Up /
+    elseif showMenu > 0 and (showMenu <= #idT and ADD_UP_DOWN == 1) or (showMenu > AddListCount and ADD_UP_DOWN == 0) then;--Action
+        --======================
+        local function Action();
+            reaper.defer(function();
                          gfx.quit();
-                         local id = idT[showMenu-4];
+                         local id = idT[showMenu-AddListCount];
                          
                          if tonumber(id) then;
                              reaper.MIDIEditor_OnCommand(MIDIEditor,id);
@@ -219,11 +307,9 @@
                              reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id));
                          end;
                      end);
+        end; Action();
         --======================
     end;
-    
-    
-    
     
     
     
