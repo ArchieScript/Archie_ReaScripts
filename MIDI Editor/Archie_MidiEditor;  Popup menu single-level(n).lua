@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -37,11 +37,14 @@
    *              Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
-   *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
+   *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
+   *              v.1.03 [170320]
+   *                  ! Fixed bug
+   *                  + Protection from spec characters
+   
    *              v.1.02 [160320]
    *                  + Redesigned 'Add Menu'
-   
    *              v.1.0 [150320]
    *                  + initialе
 --]]
@@ -68,12 +71,10 @@
     ---------------------------------------------------
     
     
-    
     ---------------------------------------------------
     local MIDIEditor = reaper.MIDIEditor_GetActive();
     if not MIDIEditor then no_undo()return end;
     ---------------------------------------------------
-    
     
     
     ---------------------------------------------------
@@ -88,35 +89,64 @@
         end;
     end;
     ---------------------------------------------------
-     
+    
     
     
     ---------------------------------------------------
     local ExtState = reaper.GetExtState(section,'LIST');
-    local nameT = {};
-    local idT   = {};
+    local t        = {};
+    local nameT    = {};
+    local idT      = {};
     local nameTRem = {};
+    local stop;
     for val in string.gmatch(ExtState, "{&&(.-)&&}") do;
         idT[#idT+1] = val:match('^(.+)=');
         nameT[#idT] = val:match('.*=(.+)$');
-        local tog = reaper.GetToggleCommandStateEx(0,reaper.NamedCommandLookup(idT[#idT]));
-        if tog == 1 then nameT[#idT] = '!'..nameT[#idT] end;
-        nameTRem[#idT] = val:match('.*=(.+)$'):gsub('#','@');
+        local nmXS = nameT[#idT]:match('^[|#!<>]+')or'';
+        nameT[#idT] = nameT[#idT]:gsub('^[|#!<>]+','');
+        local nmXE = nameT[#idT]:match('.(|)%s-$')or'';
+        nameT[#idT] = nameT[#idT]:gsub('|','');
+        if nameT[#idT]:match('^[<>|#!]+')then nameT[#idT]=' '..nameT[#idT]end;
+        if nameT[#idT]==''then stop=true end;
+        if nmXS:match('#')then nameT[#idT] = '#'..(nameT[#idT]or '')end;
+        if nmXS:match('|')then nameT[#idT] = '|'..(nameT[#idT]or '')end;
+        nameT[#idT] = nameT[#idT]..nmXE;
+        
+        if stop then;
+            nameT[#idT] = nil;
+            idT[#idT] = nil;
+        else;
+            nameTRem[#idT] = nameT[#idT];
+            if nmXS:match('#')then nameTRem[#idT] = nameT[#idT]:gsub('#','@',1)end;
+            local nameT2 = nameT[#idT];
+            local tog = reaper.GetToggleCommandStateEx(0,reaper.NamedCommandLookup(idT[#idT]));
+            if tog == 1 then;
+                nameT[#idT] = nameT[#idT]:gsub('^[#|]*','%0!');
+            end;
+            
+            t[#t+1]="{&&"..idT[#idT]..'='..nameT2.."&&}";
+        end; 
+        stop=nil;  
     end;
+    ExtState = table.concat(t);
+    t = nil;
     ---------------------------------------------------
     
     
     
     ---------------------------------------------------
     if ADD_UP_DOWN ~= 0 and ADD_UP_DOWN ~= 1 then ADD_UP_DOWN = 1 end;
+    local LCK,LCK2;
+    if #nameTRem==0 then LCK  = '#'else LCK  = ''end;
+    if #nameTRem <2 then LCK2 = '#'else LCK2 = ''end;
     local showMenu,numbUpDown;
     local AddListCount;
-    local AddList = "> > > >|Add||Remove|Remove All||Rename||Move|<|";
+    local AddList = "> > > >|Add||"..LCK.."Remove|"..LCK2.."Remove All||"..LCK.."Rename||"..LCK2.."Move||> script|#"..section.."|<|<|";
     if ADD_UP_DOWN == 0 then;--Up
         local sep; if #idT > 0 then sep = '|'else  sep = '' end;
         showMenu = gfx.showmenu(AddList..sep..table.concat(nameT,'|'));
         numbUpDown = 0;
-        AddListCount = 5;
+        AddListCount = 6;
     elseif ADD_UP_DOWN == 1 then;--Down
         local sep; if #idT > 0 then sep = '||'else  sep = '' end;
         showMenu = gfx.showmenu(table.concat(nameT,'|')..sep..AddList);
@@ -145,8 +175,8 @@
             showMenu = gfx.showmenu('#Add action. Over||'..table.concat(nameTRem,'|')..'|+');
         else;
             showMenu = 2;
-        end;  
-            
+        end;
+        
         if showMenu > 0 then;
             local x = 1;
             local strT = {};
@@ -171,8 +201,8 @@
                         idCheck = tonumber(id);
                     end;
                     
-                    act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','');
-                    if act:gsub('%s','')=='' or idCheck == 0 then goto restart end;
+                    act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
+                    if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' or idCheck == 0 then goto restart end;
                     
                     val = '{&&'..id..'='..act..'&&}'..val;
                 end;
@@ -250,10 +280,9 @@
                             idCheck = tonumber(id);
                         end;
                         
-                        act = (retvals_csv:match('^.*=(.-)$')):gsub('[!<>]+$',''):gsub('^[!<>]+','');
-                        if act:gsub('%s','')=='' or idCheck == 0 then goto restartRename end;
-                        
-                        val = '{&&'..id..'='..act..'&&}'; 
+                        act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
+                        if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' or idCheck == 0 then goto restartRename end;
+                        val = '{&&'..id..'='..act..'&&}';
                         ----
                     end; 
                     strT[#strT+1] = val;
