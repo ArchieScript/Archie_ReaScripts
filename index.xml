@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a975a10a01d3c60b21ef549a6808216049bbcdcf">
+<index version="1" name="Archie-ReaScripts" commit="3b68200a4670a45144b8f8746189175e770a4878">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3216,7 +3216,8 @@ v.1.0 [28.08.19]
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-07-19T12:31:38Z">
         <changelog><![CDATA[v.1.0 [19.07.19] 
@@ -3248,12 +3249,25 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-20T14:38:26Z">
+        <changelog><![CDATA[v.1.03 [200320]
+    +RPP(.rpp-PROX)]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file to previous in folder.lua" type="script" desc="Switch item source file to previous in folder">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
       </metadata>
       <version name="1.0" author="Archie" time="2019-07-19T12:31:38Z">
         <changelog><![CDATA[v.1.0 [19.07.19] 
@@ -3284,6 +3298,18 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-20T14:38:26Z">
+        <changelog><![CDATA[v.1.03 [200320]
+    +RPP(.rpp-PROX)]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Toggle (Loop source OFF) - (SWS Loop section of selected item(s)).lua" type="script" desc="Toggle (Loop source OFF) - (SWS Loop section of selected item(s))">
