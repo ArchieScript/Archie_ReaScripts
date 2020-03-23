@@ -46,7 +46,8 @@
     SLOT = tonumber(SLOT)or 1;
     if SLOT < 1 or SLOT > 100 then slot = 1 end;
     
-      
+    reaper.PreventUIRefresh(1);
+    
     local i=0;
     while true do;
         i = i + 1;
@@ -60,6 +61,7 @@
         end;
     end;
     
+    reaper.PreventUIRefresh(-1);
     
     if CLEAN then;
         local countExSt = countExState(extname);
