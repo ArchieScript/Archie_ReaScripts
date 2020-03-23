@@ -61,11 +61,6 @@
     end;
     
     
-    local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
-    reaper.SetToggleCommandState(sec,cmd,0);
-    reaper.RefreshToolbar2(sec,cmd);
-    
-    
     if CLEAN then;
         local countExSt = countExState(extname);
         for i = countExSt-1,0,-1 do;

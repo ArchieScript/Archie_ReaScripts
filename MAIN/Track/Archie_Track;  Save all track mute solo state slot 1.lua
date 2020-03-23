@@ -56,10 +56,6 @@
             local mute = math.floor((reaper.GetMediaTrackInfo_Value(track,'B_MUTE'))+.5);
             reaper.SetProjExtState(0,extname,guid,mute..' '..solo);
         end;
-        
-        local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
-        reaper.SetToggleCommandState(sec,cmd,1);
-        reaper.RefreshToolbar2(sec,cmd);
     end;
     
     
