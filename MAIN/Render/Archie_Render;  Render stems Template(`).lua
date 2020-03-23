@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -18,9 +18,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.08 [240320]
+   *                  + Path from the project settings
+   
    *              v.1.07 [080320]
    *                  + Secondary output format -- (Vax)
-   
    *              v.1.06 [07.02.20]
    *                  + Fixed bug: No signal when render in single track when route is disabled
    *              v.1.05 [29.01.20]
@@ -59,13 +61,14 @@
           --------------------------------------------------------------
           
     
-    local Render_Directory = 'XXRPP/Render-stem'
-            -- путь может быть пустым    = ''
-            -- или относительным путем   = '-stem-'
-            -- или впишите полный путь   = 'C:/Users/...'
-            -- Взять путь с окна рендера = -1
-            -- Путь .rpp файла           = "XXRPP"
-            -- Или продолжите путь       = "XXRPP/My Render/MULTI"
+    local Render_Directory = -2
+            -- путь может быть пустым              -|= ''
+            -- или относительным путем             -|= '-stem-'
+            -- или впишите полный путь             -|= 'C:/Users/...'
+            -- Взять путь с окна рендера           -|= -1
+            -- Взять путь из окна настроек проекта -|= -2
+            -- Путь .rpp файла                     -|= "XXRPP"
+            -- Или продолжите путь                 -|= "XXRPP/My Render/MULTI"
             ------------------------------------------------------
           
     
@@ -883,9 +886,13 @@
      
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
+        if Render_Directory == -2 then;
+            Render_Directory = reaper.GetProjectPath('');
+        end;
+        
         if type(Render_Directory)~='string' then Render_Directory=''end;
         local projfn = ({reaper.EnumProjects(-1,"")})[2]:match("(.+)[/\\]")or "";
-        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or"";
+        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or""; 
         reaper.GetSetProjectInfo_String(0,"RENDER_FILE",Render_Directory,1);
     end;
     ------------------------------------------

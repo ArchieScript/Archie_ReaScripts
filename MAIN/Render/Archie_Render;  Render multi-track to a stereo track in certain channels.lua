@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render multi-track to a stereo track in certain channels
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Рендер мульти-трека в стерео-трек на определенных каналах
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,9 +18,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.02 [29.01.20]
-   *                  + Fixed: Path MacOs
+   *              v.1.03 [240320]
+   *                  + Path from the project settings
    
+   *              v.1.02 [29.01.20]
+   *                  + Fixed: Path MacOs 
    *              v.1.0 [20.01.20]
    *                  + initialе
 --]]
@@ -56,10 +58,11 @@
     
     
     
-    local Render_Directory = 'XXRPP/Render-stem'
+    local Render_Directory = -2
             -- путь может быть относительным путем   = '-stem-'
             -- или впишите полный путь   = 'C:/Users/...'
             -- Взять путь с окна рендера = -1
+            -- Взять путь из окна настроек проекта -|= -2
             -- Путь .rpp файла           = "XXRPP"
             -- Или продолжите путь       = "XXRPP/My Render/MULTI"
             ------------------------------------------------------
@@ -332,19 +335,20 @@
     -------------------------------------------------------------------------------------------
     -- / Save render / ------------------------------------------------------------------------
     local S = {};
-    S.RENDER_SETTINGS    = reaper.GetSetProjectInfo       (0,"RENDER_SETTINGS"    ,0,0);--Sourse
-    S.RENDER_BOUNDSFLAG  = reaper.GetSetProjectInfo       (0,"RENDER_BOUNDSFLAG"  ,0,0);--Bounds
-    S.RENDER_TAILFLAG    = reaper.GetSetProjectInfo       (0,"RENDER_TAILFLAG"    ,0,0);--Tail
-    S.RENDER_TAILMS      = reaper.GetSetProjectInfo       (0,"RENDER_TAILMS"      ,0,0);--Tail ms
-    S.RENDER_SRATE       = reaper.GetSetProjectInfo       (0,"RENDER_SRATE"       ,0,0);--Sample rate
-    S.RENDER_CHANNELS    = reaper.GetSetProjectInfo       (0,"RENDER_CHANNELS"    ,0,0);--channels
-    S.RENDER_SPEED       = reaper.SNM_GetIntConfigVar     (  "projrenderlimit"      ,0);--speed
-    S.RENDER_RESAMPLE    = reaper.SNM_GetIntConfigVar     (  "projrenderresample"   ,0);--resample
-    S._, S.RENDER_FORMAT = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT"      ,0,0);--render_format
-    S.RENDER_ADDTOPROJ   = reaper.GetSetProjectInfo       (0,"RENDER_ADDTOPROJ"   ,0,0);--add rendered files to project
-    S.SILENTLY_iNCREMENT = reaper.SNM_GetIntConfigVar     (  "renderclosewhendone"  ,0);--Silently increment filenames to avoid overwriting 1 of / 17 on
-    S._, S.RENDER_FILE   = reaper.GetSetProjectInfo_String(0,"RENDER_FILE"        ,0,0); -- render directory
-    S._, S.RENDER_NAME   = reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",""    ,0);-- Render Name
+    S.RENDER_SETTINGS     = reaper.GetSetProjectInfo       (0,"RENDER_SETTINGS"    ,0,0);--Sourse
+    S.RENDER_BOUNDSFLAG   = reaper.GetSetProjectInfo       (0,"RENDER_BOUNDSFLAG"  ,0,0);--Bounds
+    S.RENDER_TAILFLAG     = reaper.GetSetProjectInfo       (0,"RENDER_TAILFLAG"    ,0,0);--Tail
+    S.RENDER_TAILMS       = reaper.GetSetProjectInfo       (0,"RENDER_TAILMS"      ,0,0);--Tail ms
+    S.RENDER_SRATE        = reaper.GetSetProjectInfo       (0,"RENDER_SRATE"       ,0,0);--Sample rate
+    S.RENDER_CHANNELS     = reaper.GetSetProjectInfo       (0,"RENDER_CHANNELS"    ,0,0);--channels
+    S.RENDER_SPEED        = reaper.SNM_GetIntConfigVar     (  "projrenderlimit"      ,0);--speed
+    S.RENDER_RESAMPLE     = reaper.SNM_GetIntConfigVar     (  "projrenderresample"   ,0);--resample
+    S._, S.RENDER_FORMAT  = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT"      ,0,0);--render_format
+    S._, S.RENDER_FORMAT2 = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2"     ,0,0);
+    S.RENDER_ADDTOPROJ    = reaper.GetSetProjectInfo       (0,"RENDER_ADDTOPROJ"   ,0,0);--add rendered files to project
+    S.SILENTLY_iNCREMENT  = reaper.SNM_GetIntConfigVar     (  "renderclosewhendone"  ,0);--Silently increment filenames to avoid overwriting 1 of / 17 on
+    S._, S.RENDER_FILE    = reaper.GetSetProjectInfo_String(0,"RENDER_FILE"        ,0,0); -- render directory
+    S._, S.RENDER_NAME    = reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",""    ,0);-- Render Name
     -------------------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------
@@ -377,6 +381,11 @@
     
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
+        
+        if Render_Directory == -2 then;
+            Render_Directory = reaper.GetProjectPath('');
+        end;
+        
         if type(Render_Directory)~='string' then Render_Directory=''end;
         local projfn = ({reaper.EnumProjects(-1,"")})[2]:match("(.+)[/\\]")or "";
         Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or"";
@@ -455,6 +464,10 @@
     reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT",render_format,1);
     ------------------------------------------
     
+    ------------------------------------------
+    reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2",'',1);
+    ------------------------------------------
+    
     
     
     -- / add rendered files to project / -----
@@ -516,6 +529,7 @@
     reaper.GetSetProjectInfo(0,"RENDER_ADDTOPROJ"     ,S.RENDER_ADDTOPROJ ,1);
     ---
     reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT" ,S.RENDER_FORMAT    ,1);
+    reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2",S.RENDER_FORMAT2   ,1);
     reaper.GetSetProjectInfo_String(0,"RENDER_FILE"   ,S.RENDER_FILE      ,1);
     reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",S.RENDER_NAME      ,1);
     ---

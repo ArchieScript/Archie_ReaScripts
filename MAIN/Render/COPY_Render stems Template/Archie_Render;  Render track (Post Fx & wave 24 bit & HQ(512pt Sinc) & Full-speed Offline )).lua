@@ -7,7 +7,7 @@
    * Description: Render track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,6 +16,9 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.04 [240320]
+   *                  + Path from the project settings
+   
    *              v.1.03 [07.02.20]
    *                  + Fixed bug: No signal when render in single track when route is disabled
    
@@ -43,13 +46,14 @@
           -----------------------------------------------------------------------
           
     
-    local Render_Directory = 'XXRPP/Render-stem'
-            -- путь может быть пустым    = ''
-            -- или относительным путем   = '-stem-'
-            -- или впишите полный путь   = 'C:/Users/...'
-            -- Взять путь с окна рендера = -1
-            -- Путь .rpp файла           = "XXRPP"
-            -- Или продолжите путь       = "XXRPP/My Render/MULTI"
+    local Render_Directory = -2
+            -- путь может быть пустым              -|= ''
+            -- или относительным путем             -|= '-stem-'
+            -- или впишите полный путь             -|= 'C:/Users/...'
+            -- Взять путь с окна рендера           -|= -1
+            -- Взять путь из окна настроек проекта -|= -2
+            -- Путь .rpp файла                     -|= "XXRPP"
+            -- Или продолжите путь                 -|= "XXRPP/My Render/MULTI"
             ------------------------------------------------------
           
     
@@ -256,8 +260,64 @@
     local TITLE = "Render track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )" 
              -- = "Строка истории отмены, если хотите изменить"
              --------------------------------------------------
-       
-      
+    
+    
+    
+    ---- / Secondary output format / ---------------------------------
+    local OutputFormat2 = -1;
+                    -- = -1 Off
+                    -- =  0 Wave
+                    -- =  1 AIFF
+                    -- =  2 FLAC
+                    -- =  3 MP3
+                    -- =  4 WavPack
+                    ---------------
+          
+          
+    local bit2 = 0;
+        -- Wave
+        --    = 8  |  8 bit PCM 
+        --    = 16 | 16 bit PCM 
+        --    = 24 | 24 bit PCM 
+        --    = 32 | 32 bit FP 
+        --    = 64 | 64 bit FP 
+        --    =  4 |  4 bit IMA ADPCM 
+        --    =  2 |  2 bit adpcm
+        -- AIFF 
+        --    =  8 |  8 bit PCM 
+        --    = 16 | 16 bit PCM 
+        --    = 24 | 24 bit PCM 
+        --    = 32 | 32 bit PCM
+        -- FLAC
+        --    = 24 | 24 bit
+        --    = 23 | 23/24 bit
+        --    = 22 | 22/24 bit
+        --    = 21 | 21/24 bit
+        --    = 20 | 20/24 bit
+        --    = 19 | 19/24 bit
+        --    = 18 | 18/24 bit
+        --    = 17 | 17/24 bit
+        --    = 16 | 16 bit
+        -- MP3
+        --    =  0 | Maximum bitrate/quality
+        -- WavPack
+        --    =  0 |    16 bit
+        --    =  1 |    24 bit
+        --    =  2 |    32 bit integer
+        --    =  3 |    32 bit FP
+        --    =  4 | 23/24 bit
+        --    =  5 | 22/24 bit
+        --    =  6 | 21/24 bit
+        --    =  7 | 20/24 bit
+        --    =  8 | 19/24 bit
+        --    =  9 | 18/24 bit
+        --    = 10 | 17/24 bit
+        --    = 11 |    32 bit FP - 144db floor
+        --    = 12 |    32 bit FP - 120db floor
+        --    = 13 |    32 bit FP - 96db floor
+        --------------------------------------
+    ------------------------------------------------------------------
+    
     
     
     
@@ -762,19 +822,20 @@
     -------------------------------------------------------------------------------------------
     -- / Save render / ------------------------------------------------------------------------
     local S = {};
-    S.RENDER_SETTINGS    = reaper.GetSetProjectInfo       (0,"RENDER_SETTINGS"    ,0,0);--Sourse
-    S.RENDER_BOUNDSFLAG  = reaper.GetSetProjectInfo       (0,"RENDER_BOUNDSFLAG"  ,0,0);--Bounds
-    S.RENDER_TAILFLAG    = reaper.GetSetProjectInfo       (0,"RENDER_TAILFLAG"    ,0,0);--Tail
-    S.RENDER_TAILMS      = reaper.GetSetProjectInfo       (0,"RENDER_TAILMS"      ,0,0);--Tail ms
-    S.RENDER_SRATE       = reaper.GetSetProjectInfo       (0,"RENDER_SRATE"       ,0,0);--Sample rate
-    S.RENDER_CHANNELS    = reaper.GetSetProjectInfo       (0,"RENDER_CHANNELS"    ,0,0);--channels
-    S.RENDER_SPEED       = reaper.SNM_GetIntConfigVar     (  "projrenderlimit"      ,0);--speed
-    S.RENDER_RESAMPLE    = reaper.SNM_GetIntConfigVar     (  "projrenderresample"   ,0);--resample
-    S._, S.RENDER_FORMAT = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT"      ,0,0);--render_format
-    S.RENDER_ADDTOPROJ   = reaper.GetSetProjectInfo       (0,"RENDER_ADDTOPROJ"   ,0,0);--add rendered files to project
-    S.SILENTLY_iNCREMENT = reaper.SNM_GetIntConfigVar     (  "renderclosewhendone"  ,0);--Silently increment filenames to avoid overwriting 1 of / 17 on
-    S._, S.RENDER_FILE   = reaper.GetSetProjectInfo_String(0,"RENDER_FILE"        ,0,0); -- render directory
-    S._, S.RENDER_NAME   = reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",""    ,0);-- Render Name
+    S.RENDER_SETTINGS      = reaper.GetSetProjectInfo       (0,"RENDER_SETTINGS"    ,0,0);--Sourse
+    S.RENDER_BOUNDSFLAG    = reaper.GetSetProjectInfo       (0,"RENDER_BOUNDSFLAG"  ,0,0);--Bounds
+    S.RENDER_TAILFLAG      = reaper.GetSetProjectInfo       (0,"RENDER_TAILFLAG"    ,0,0);--Tail
+    S.RENDER_TAILMS        = reaper.GetSetProjectInfo       (0,"RENDER_TAILMS"      ,0,0);--Tail ms
+    S.RENDER_SRATE         = reaper.GetSetProjectInfo       (0,"RENDER_SRATE"       ,0,0);--Sample rate
+    S.RENDER_CHANNELS      = reaper.GetSetProjectInfo       (0,"RENDER_CHANNELS"    ,0,0);--channels
+    S.RENDER_SPEED         = reaper.SNM_GetIntConfigVar     (  "projrenderlimit"      ,0);--speed
+    S.RENDER_RESAMPLE      = reaper.SNM_GetIntConfigVar     (  "projrenderresample"   ,0);--resample
+    S._, S.RENDER_FORMAT   = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT"      ,0,0);--render_format
+    S._2, S.RENDER_FORMAT2 = reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2"     ,0,0);--render_format2
+    S.RENDER_ADDTOPROJ     = reaper.GetSetProjectInfo       (0,"RENDER_ADDTOPROJ"   ,0,0);--add rendered files to project
+    S.SILENTLY_iNCREMENT   = reaper.SNM_GetIntConfigVar     (  "renderclosewhendone"  ,0);--Silently increment filenames to avoid overwriting 1 of / 17 on
+    S._, S.RENDER_FILE     = reaper.GetSetProjectInfo_String(0,"RENDER_FILE"        ,0,0); -- render directory
+    S._, S.RENDER_NAME     = reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",""    ,0);-- Render Name
     -------------------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------
     -------------------------------------------------------------------------------------------
@@ -805,9 +866,13 @@
      
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
+        if Render_Directory == -2 then;
+            Render_Directory = reaper.GetProjectPath('');
+        end;
+        
         if type(Render_Directory)~='string' then Render_Directory=''end;
         local projfn = ({reaper.EnumProjects(-1,"")})[2]:match("(.+)[/\\]")or "";
-        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or"";
+        Render_Directory = (Render_Directory:gsub("^XXRPP",projfn):gsub("\\","/"):gsub("/$",""))or""; 
         reaper.GetSetProjectInfo_String(0,"RENDER_FILE",Render_Directory,1);
     end;
     ------------------------------------------
@@ -888,6 +953,40 @@
     ------------------------------------------
     
     
+    
+    -- / Format_2 | bit / -- /Experimental/---
+    if not If_Equals_Or(OutputFormat2,0,1,2,3,4)then OutputFormat2 = -1 end;
+    if OutputFormat2 == -1 then;
+        reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2",'',1);
+    else;
+        
+        local render_format;
+        if OutputFormat2 == 0 then; -- wave
+            if not If_Equals_Or(bit2,8,16,24,32,64,4,2) then bit2 = 16 end;
+            render_format = string.char(101,118,97,119,bit2,0,0);
+        elseif OutputFormat2 == 1 then; -- AIFF
+            if not If_Equals_Or(bit2,8,16,24,32) then bit2 = 16 end;
+            render_format = string.char(102,102,105,97,bit2,0,0);
+        elseif OutputFormat2 == 2 then; -- FLAC
+            if not If_Equals_Or(bit2,16,17,18,19,20,21,22,23,24) then bit2 = 24 end;
+            render_format = string.char(99,97,108,102,bit2,0,0,0,5,0,0,0);
+        elseif OutputFormat2 == 3 then; -- MP3  
+            render_format = string.char(108,51,112,109,64,1,0,0,0,0,0,0,10,0,0,0,
+                                        255,255,255,255,4,0,0,0,64,1,0,0,0,0,0,0);
+        elseif OutputFormat2 == 4 then; -- WavPack
+            if not If_Equals_Or(bit2,0,1,2,3,4,5,6,7,8,9,10,11,12,13) then bit2 = 1 end;
+            render_format = string.char(107,112,118,119,0,0,0,0,bit2,0,0,0,0,0,0,0,0,0,0,0);
+        end;
+        render_format = enc(render_format);
+        
+        reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2",render_format,1);
+    end;
+    ------------------------------------------
+    
+    
+    
+    
+    
     -- / add rendered files to project / -----
     if not If_Equals_Or(AddRendFileInProj,0,1)then AddRendFileInProj = 1 end;
     reaper.GetSetProjectInfo(0,"RENDER_ADDTOPROJ",AddRendFileInProj,1);
@@ -959,6 +1058,7 @@
     reaper.GetSetProjectInfo(0,"RENDER_ADDTOPROJ"     ,S.RENDER_ADDTOPROJ ,1);
     ---
     reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT" ,S.RENDER_FORMAT    ,1);
+    reaper.GetSetProjectInfo_String(0,"RENDER_FORMAT2",S.RENDER_FORMAT2   ,1);
     reaper.GetSetProjectInfo_String(0,"RENDER_FILE"   ,S.RENDER_FILE      ,1);
     reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",S.RENDER_NAME      ,1);
     ---
