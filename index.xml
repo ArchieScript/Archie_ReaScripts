@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f9e0f39c497994427598f6cc144be5d3a436f13d">
+<index version="1" name="Archie-ReaScripts" commit="726e4ed0fa1a23ee29a44d41726d433b9d885b70">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5452,6 +5452,32 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/Track/Archie_Track;%20%20Removes%208%20characters%20from%20the%20end%20of%20the%20selected%20track%20name(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Restore all track mute solo state slot 1.lua" type="script" desc="Restore all track mute solo state slot 1">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-23T12:36:38Z">
+        <changelog><![CDATA[v.1.0 [230320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/726e4ed0fa1a23ee29a44d41726d433b9d885b70/MAIN/Track/Archie_Track;%20%20Restore%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Save all track mute solo state slot 1.lua" type="script" desc="Save all track mute solo state slot 1">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-23T12:36:38Z">
+        <changelog><![CDATA[v.1.0 [230320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/726e4ed0fa1a23ee29a44d41726d433b9d885b70/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input)(`).lua" type="script" desc="Select a track by name(abbreviated input)">
