@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track;  Toggle Hide tiny tracks - restore back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    скрыть крошечные треки - восстановить обратно
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -57,10 +57,16 @@
           local GUID = reaper.GetTrackGUID(track);
           reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',0);
           reaper.SetProjExtState(0,extname,GUID,0);
+          if not ButtonOn then;
+            local state = reaper.GetToggleCommandStateEx(sec,cmd);
+            if state ~= 1 then;
+              reaper.SetToggleCommandState(sec,cmd,1);
+            end;
+            ButtonOn = true;
+          end;
         end;
       end;
     end;
-    reaper.SetToggleCommandState(sec,cmd,1);
     
   else;
     
@@ -82,7 +88,10 @@
       reaper.SetProjExtState(0,extname,key,'');
     end;
     ----
-    reaper.SetToggleCommandState(sec,cmd,0);
+    local state = reaper.GetToggleCommandStateEx(sec,cmd);
+    if state ~= 0 then;
+      reaper.SetToggleCommandState(sec,cmd,0);
+    end;
     
   end;
   
