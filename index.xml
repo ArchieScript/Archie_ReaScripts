@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="12669f933f4299d9de1a8cb04d73989755e39354">
+<index version="1" name="Archie-ReaScripts" commit="4a8c7a9a8ecf261494013cc8bb2c27f6643fd697">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5803,6 +5803,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/85199130fd47d2553482ec3b3ca9cc8f5c5c8ee3/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Toggle Hide tiny tracks - restore back.lua" type="script" desc="Track;  Toggle Hide tiny tracks - restore back">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-25T17:07:35Z">
+        <changelog><![CDATA[v.1.0 [260320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4a8c7a9a8ecf261494013cc8bb2c27f6643fd697/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20tiny%20tracks%20-%20restore%20back.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -6870,6 +6883,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [15.09.2019]
   + Scroll selected tracks to the center]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-25T17:07:35Z">
+        <changelog><![CDATA[v.1.02 [260320]
+  + Scroll up is enabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4a8c7a9a8ecf261494013cc8bb2c27f6643fd697/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
   </category>
