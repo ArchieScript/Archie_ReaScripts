@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="4a8c7a9a8ecf261494013cc8bb2c27f6643fd697">
+<index version="1" name="Archie-ReaScripts" commit="82ad8a69b6e117ab1048a6566956876c77dcbbf1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5814,6 +5814,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [260320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4a8c7a9a8ecf261494013cc8bb2c27f6643fd697/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20tiny%20tracks%20-%20restore%20back.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2020-03-25T17:53:13Z">
+        <changelog><![CDATA[v.1.0 [260320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/82ad8a69b6e117ab1048a6566956876c77dcbbf1/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20tiny%20tracks%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
