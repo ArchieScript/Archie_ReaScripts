@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Zoom TCP to fit screen
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Масштабирование TCP по размеру экрана
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,9 +17,11 @@
    * Extension:   Reaper 5.983+ http://www.reaper.fm/
    *              Arc_Function_lua v.2.6.1+  (Repository Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [260320]
+   *                + Scroll up is enabled
+   
    *              v.1.01 [15.09.2019]
    *                + Scroll selected tracks to the center
-   
    *              v.1.0 [14.09.2019]
    *                + initialе
 --]]
@@ -31,8 +33,8 @@
     
     
     
-    local shrink = 255
-    local shrink_FullScreen = 180
+    local shrink = 210
+    local shrink_FullScreen = 150
                  -- | Отрегулируйте отступ снизу как вам удобно
                  -- | shrink = 0 / shrink = 100 / shrink = 200 и т.д.
                           -----------------------------------------
@@ -42,7 +44,7 @@
     
     
     
-    local ScrollTop = 0
+    local ScrollTop = 1
                  -- = 0 | Отключить прокрутку вверх
                  -- = 1 | Включить прокрутку вверх
                           ------------------------
