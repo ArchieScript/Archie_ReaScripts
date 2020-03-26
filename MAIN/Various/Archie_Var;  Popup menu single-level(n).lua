@@ -380,6 +380,7 @@
         if MB == 1 then;
             reaper.SetExtState(H.sect,'State',1,true);
         end;
+		no_undo();
         --======================
     --elseif showMenu == numbUpDown+7 then;
         --====================== 
