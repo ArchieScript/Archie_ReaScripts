@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -33,16 +33,32 @@
    *              [main] . > Archie_Var;  Popup menu single-level(14).lua
    *              [main] . > Archie_Var;  Popup menu single-level(15).lua
    *              [main] . > Archie_Var;  Popup menu single-level(16).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(17).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(18).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(19).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(20).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(21).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(22).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(23).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(24).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(25).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(26).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(27).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(28).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(29).lua
+   *              [main] . > Archie_Var;  Popup menu single-level(30).lua
    * Extension:   
    *              Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.04 [260320]
+   *                  + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
+   
    *              v.1.03 [170320]
    *                  ! Fixed bug
-   *                  + Protection from spec characters
-   
+   *                  + Protection from spec characters 
    *              v.1.02 [160320]
    *                  + Redesigned 'Add Menu'
    *              v.1.0 [150320]
@@ -52,7 +68,18 @@
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
     
-    local ADD_UP_DOWN = 1; -- 0/1
+    local ADD_UP_DOWN = 1; -- 0/1  
+                   -- = 0 | Меню добавления вверху
+                   -- = 1 | Меню добавления внизу
+                   ------------------------------
+    
+    
+    local HIDE_ADD = nil;
+            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var;  Hide Show add menu (popup menu single-level).lua"
+            -- = 0   | Показать 'add menu'
+            -- = 1   | Скрыть 'add menu'
+            ------------------------------
+    
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -71,13 +98,21 @@
     ---------------------------------------------------
     
     
+    ---------------------------------------------------
+    if not tonumber(HIDE_ADD) or (HIDE_ADD ~= 0 and HIDE_ADD ~= 1) then;-- v.1.04
+        local sect = 'Popup menu single-level_HIDE ADD MENU_STATE';
+        HIDE_ADD = tonumber(reaper.GetExtState(sect,'State'))or 0;-- v.1.04
+    end;-- v.1.04
+    ---------------------------------------------------
+    
     
     ---------------------------------------------------
     local x,y = reaper.GetMousePosition();
     gfx.init('',0,0,0,x,y);
     gfx.x,gfx.y = gfx.screentoclient(x,y);
     
-    if reaper.JS_Window_GetFocus then;
+    local API_JS = reaper.APIExists('JS_Window_GetFocus');
+    if API_JS then;
         local Win = reaper.JS_Window_GetFocus();
         if Win then;
             reaper.JS_Window_SetOpacity(Win,'ALPHA',0);
@@ -137,13 +172,14 @@
     local showMenu,numbUpDown;
     local AddListCount;
     local AddList = "> > > >|Add||"..LCK.."Remove|"..LCK2.."Remove All||"..LCK.."Rename||"..LCK2.."Move||> script|#"..section.."|<|<|";
+    if #idT > 0 and HIDE_ADD == 1 then AddList = '' end;-- v.1.04
     if ADD_UP_DOWN == 0 then;--Up
-        local sep; if #idT > 0 then sep = '|'else  sep = '' end;
+        local sep; if #idT > 0 and AddList ~= '' then sep = '|'else  sep = '' end;
         showMenu = gfx.showmenu(AddList..sep..table.concat(nameT,'|'));
         numbUpDown = 0;
         AddListCount = 6;
     elseif ADD_UP_DOWN == 1 then;--Down
-        local sep; if #idT > 0 then sep = '||'else  sep = '' end;
+        local sep; if #idT > 0 and AddList ~= '' then sep = '||'else  sep = '' end;
         showMenu = gfx.showmenu(table.concat(nameT,'|')..sep..AddList);
         numbUpDown = #idT;
         AddListCount = 0;
