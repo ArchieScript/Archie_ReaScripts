@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.05
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -39,6 +39,10 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
+   *              v.1.05 [260320]
+   *                  ! Fixed bug
+   *                  + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
+     
    *              v.1.03 [170320]
    *                  ! Fixed bug
    *                  + Protection from spec characters
@@ -52,7 +56,17 @@
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
     
-    local ADD_UP_DOWN = 1; -- 0/1
+    local ADD_UP_DOWN = 1; -- 0/1  
+                   -- = 0 | Меню добавления вверху
+                   -- = 1 | Меню добавления внизу
+                   ------------------------------
+    
+    
+    local HIDE_ADD = nil;
+            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var;  Hide Show add menu (popup menu single-level).lua"
+            -- = 0   | Показать 'add menu'
+            -- = 1   | Скрыть 'add menu'
+            ------------------------------
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -78,11 +92,23 @@
     
     
     ---------------------------------------------------
+    local H = {};
+    local hdblock = '#';
+    if not tonumber(HIDE_ADD) or (HIDE_ADD ~= 0 and HIDE_ADD ~= 1) then;-- v.1.04
+        H.sect = 'Popup menu single-level_HIDE ADD MENU_STATE';
+        HIDE_ADD = tonumber(reaper.GetExtState(H.sect,'State'))or 0;-- v.1.04
+        hdblock = '';
+    end;-- v.1.04
+    ---------------------------------------------------
+    
+    
+    ---------------------------------------------------
     local x,y = reaper.GetMousePosition();
     gfx.init('',0,0,0,x,y);
     gfx.x,gfx.y = gfx.screentoclient(x,y);
     
-    if reaper.JS_Window_GetFocus then;
+    local API_JS = reaper.APIExists('JS_Window_GetFocus');
+    if API_JS then;
         local Win = reaper.JS_Window_GetFocus();
         if Win then;
             reaper.JS_Window_SetOpacity(Win,'ALPHA',0);
@@ -140,15 +166,23 @@
     if #nameTRem==0 then LCK  = '#'else LCK  = ''end;
     if #nameTRem <2 then LCK2 = '#'else LCK2 = ''end;
     local showMenu,numbUpDown;
-    local AddListCount;
-    local AddList = "> > > >|Add||"..LCK.."Remove|"..LCK2.."Remove All||"..LCK.."Rename||"..LCK2.."Move||> script|#"..section.."|<|<|";
+    ------
+    local AddList = "> > > >|Add||"..LCK.."Remove|"..LCK2.."Remove All||"..LCK.."Rename||"..LCK2.."Move||>• script|"..hdblock.."Hide Add Menu||#"..section.."|<|<|";--7
+    local AddListCount = 7; -- AddList Count
+    ------
+    if #idT > 0 and HIDE_ADD == 1 then AddList = '' end;-- v.1.04
     if ADD_UP_DOWN == 0 then;--Up
-        local sep; if #idT > 0 then sep = '|'else  sep = '' end;
+        local sep; if #idT > 0 and AddList ~= '' then sep = '|'else  sep = '' end;
         showMenu = gfx.showmenu(AddList..sep..table.concat(nameT,'|'));
-        numbUpDown = 0;
-        AddListCount = 6;
+        if AddList == '' then;
+            numbUpDown = #idT;
+            AddListCount = 0;
+        else;
+            numbUpDown = 0;
+            AddListCount = AddListCount;
+        end;
     elseif ADD_UP_DOWN == 1 then;--Down
-        local sep; if #idT > 0 then sep = '||'else  sep = '' end;
+        local sep; if #idT > 0 and AddList ~= '' then sep = '||'else  sep = '' end;
         showMenu = gfx.showmenu(table.concat(nameT,'|')..sep..AddList);
         numbUpDown = #idT;
         AddListCount = 0;
@@ -322,6 +356,25 @@
             gfx.quit();
             no_undo();
         end;
+        --======================
+    elseif showMenu == numbUpDown+6 then;--Hide Add Menu
+        --======================
+        local MB = reaper.MB('Eng:\n'..
+                       'Hide the add Menu ?  - Ok\n'..
+                       'You can restore the menu using a script\n'..
+                       'Archie_Var;  Hide Show add menu (popup menu single-level).lua\n\n'..
+                       'Rus:\n'..
+                       'Скрыть Меню добавления ? - Ok\n'..
+                       'Восстановить меню можно будет с помощью скрипта\n'..
+                       'Archie_Var;  Hide Show add menu (popup menu single-level).lua'
+                       ,'Help',1);
+        if MB == 1 then;
+            reaper.SetExtState(H.sect,'State',1,true);
+        end;
+        --======================
+    --elseif showMenu == numbUpDown+7 then;
+        --====================== 
+        
         --======================           -- / Down /                             -- / Up /
     elseif showMenu > 0 and (showMenu <= #idT and ADD_UP_DOWN == 1) or (showMenu > AddListCount and ADD_UP_DOWN == 0) then;--Action
         --======================
@@ -333,15 +386,12 @@
                          if tonumber(id) then;
                              reaper.MIDIEditor_OnCommand(MIDIEditor,id);
                          else;
-                             reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id));
+                             reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id)); 
                          end;
                      end);
         end; Action();
         --======================
     end;
-    
-    
-    
     
     
     
