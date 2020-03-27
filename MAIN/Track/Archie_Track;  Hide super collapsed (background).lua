@@ -1,0 +1,202 @@
+--[[
+   * Тест только на windows  /  Test only on windows.
+   * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
+   * Bug Reports: If you find any errors, please report one of the links below (*Website)
+   *
+   * Category:    Track
+   * Description: Track;  Hide super collapsed (background).lua
+   * Author:      Archie
+   * Version:     1.0
+   * Описание:    Трек; скрыть супер свернутые (фон)
+   * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
+   *              http://vk.com/reaarchie
+   * DONATION:    http://money.yandex.ru/to/410018003906628/1500
+   * Customer:    Archie(---)
+   * Gave idea:   Archie(---)
+   * Extension:   Reaper 6.05+ http://www.reaper.fm/
+   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   * Changelog:   
+   *              v.1.0 [270320]
+   *                  + initialе
+--]] 
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    
+    --=========================================
+    local extname = 'ARCHIE_HIDE_SUPER_COLLAPSE_BACKGROUND';
+    local _,ScriptWay,sec,cmd,_,_,_ = reaper.get_action_context();
+    --=========================================
+    
+    
+    
+    local StateHelp = reaper.GetExtState(extname..'State','State')=='';
+    if StateHelp then;
+        local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
+                       'ставим галку "Remember my answer for this script"\n'..
+                       'и жмем "Terminate instances"\n\n'..
+                       'Не показывать это окно - Ok\n\n\n'..
+                       'Eng:\n'..
+                       'When the "ReaScript task control"\n'..
+                       'window appears, tick "Remember my answer for this script"\n'..
+                       'and click "Terminate instances"\n\n'..
+                       'Do not show this window-Ok'
+                       ,'Help',1);
+        if MB == 1 then;
+            local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
+                           'TERMINATE INSTANCES !!!\n\n'..
+                           'TERMINATE INSTANCES !!!\n\n\n'..
+                           'Eng:\nImportant: REMEMBER!!!\n\n'..
+                           'TERMINATE INSTANCES !!!\n\n'..
+                           'TERMINATE INSTANCES !!!\n\n\n'
+                           ,'TERMINATE INSTANCES !!!',1);
+            if MB == 1 then;
+                reaper.SetExtState(extname..'State','State',1,true);
+            end;
+        end;
+    end;
+    
+    
+    
+    --=========================================
+    local function Clear_ifNoTrack(extname);
+        local i = 0;
+        while 0 do;
+            i=i+1;
+            local retval,key,val = reaper.EnumProjExtState(0,extname,i-1);
+            if not retval then break end;
+            local track = reaper.BR_GetMediaTrackByGUID(0,key);
+            if not track then;
+                reaper.SetProjExtState(0,extname,key,'');
+                i = i-1;
+            end;
+        end;
+    end;
+    --=========================================
+    
+    
+    --=========================================
+    local ProjState2;
+    local function ChangesInProject();
+        local ret;
+        local ProjState = reaper.GetProjectStateChangeCount(0);
+        if not ProjState2 or ProjState2 ~= ProjState then ret = true end;
+        ProjState2 = ProjState;
+        return ret == true;
+    end;
+    --=========================================
+    
+    
+    --=========================================
+    local function Exit();
+        local Ref;
+        local i = 0;
+        while 0 do;
+            i=i+1;
+            local retval,key,val = reaper.EnumProjExtState(0,extname,i-1);
+            if not retval then break end;
+            local track = reaper.BR_GetMediaTrackByGUID(0,key);
+            if track then;
+                local visible = reaper.IsTrackVisible(track,false);
+                if not visible then;
+                    reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',1);
+                    Ref = true;
+                end;
+                reaper.SetProjExtState(0,extname,key,'');
+                i = i-1;
+            end;
+        end;
+        if Ref then;
+            reaper.TrackList_AdjustWindows(true);
+        end;
+        reaper.SetToggleCommandState(sec,cmd,0);
+    end;
+    --=========================================
+    
+    
+    
+    --=========================================
+    --=========================================
+    local function loop();
+        
+        local ChanInProj = ChangesInProject();
+        if ChanInProj then;
+            
+            local Refresh;
+            --local scr_x,scr_y = reaper.GetMousePosition();
+            --local track,info = reaper.GetTrackFromPoint(scr_x,scr_y);
+            --if info == 0 and track then;
+            for i = 1,reaper.CountTracks(0) do;
+                local track = reaper.GetTrack(0,i-1);
+                --======================
+                local fold = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERDEPTH')==1);
+                if fold then;
+                    local numb = reaper.GetMediaTrackInfo_Value(track,'IP_TRACKNUMBER');
+                    local depth = reaper.GetTrackDepth(track);
+                    local collaps = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT')==2);
+                    if collaps then;
+                        ------------------------------------------
+                        for i2 = numb,reaper.CountTracks(0)-1 do;
+                            local track2 = reaper.GetTrack(0,i2);
+                            local depth2 = reaper.GetTrackDepth(track2);
+                            if depth2 > depth then;
+                                local visible = reaper.IsTrackVisible(track2,false);
+                                if visible then;
+                                    local GUID = reaper.GetTrackGUID(track2);
+                                    reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',0);
+                                    reaper.SetProjExtState(0,extname,GUID,0);
+                                    Refresh = true;
+                                end;
+                            else;
+                                break;
+                            end;
+                        end;
+                        ------------------------------------------
+                    else;
+                        ------------------------------------------
+                        for i2 = numb,reaper.CountTracks(0)-1 do;
+                            local track2 = reaper.GetTrack(0,i2);
+                            local depth2 = reaper.GetTrackDepth(track2);
+                            if depth2 > depth then;
+                                local GUID = reaper.GetTrackGUID(track2);
+                                local retval,val = reaper.GetProjExtState(0,extname,GUID);
+                                if retval == 1 and val ~= '' then;
+                                    reaper.SetProjExtState(0,extname,GUID,'');
+                                    local visible = reaper.IsTrackVisible(track2,false);
+                                    if not visible then;
+                                        reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',1);
+                                        Refresh = true;
+                                    end;
+                                end;
+                            else;
+                                break;
+                            end;
+                        end;
+                        ------------------------------------------
+                    end;
+                end;
+               --======================
+            end;
+            --=========================================
+            if Refresh then;
+                reaper.TrackList_AdjustWindows(true);
+                Refresh = nil;
+                Clear_ifNoTrack(extname);
+            end;
+            --=========================================
+        end;
+        reaper.defer(loop);
+    end;
+    --=========================================
+    --=========================================
+    reaper.defer(loop);
+    reaper.SetToggleCommandState(sec,cmd,1);
+    reaper.atexit(Exit);
+    --=========================================
+    
+    
+    
+    
