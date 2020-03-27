@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="837fc4c8d11a3b2c4f568f26423f4e9fc478bd67">
+<index version="1" name="Archie-ReaScripts" commit="55d772c772312686cb6aa0a4590ca97305845c00">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5038,6 +5038,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Go%20to%20previous%20track%20-%20track%20solo%20in%20solo%20exclusive.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Hide super collapsed (background).lua" type="script" desc="Track;  Hide super collapsed (background).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-27T13:11:09Z">
+        <changelog><![CDATA[v.1.0 [270320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/55d772c772312686cb6aa0a4590ca97305845c00/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Insert new track with height last track touched.lua" type="script" desc="Insert new track with height last track touched">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -5803,22 +5816,17 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/85199130fd47d2553482ec3b3ca9cc8f5c5c8ee3/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Toggle Hide tiny tracks - restore back.lua" type="script" desc="Track;  Toggle Hide tiny tracks - restore back">
+    <reapack name="Archie_Track;  Toggle Hide super collapsed - restore back.lua" type="script" desc="Track;  Toggle Hide super collapsed - restore back.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-03-25T17:07:35Z">
+      <version name="1.0" author="Archie" time="2020-03-27T13:11:09Z">
         <changelog><![CDATA[v.1.0 [260320]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4a8c7a9a8ecf261494013cc8bb2c27f6643fd697/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20tiny%20tracks%20-%20restore%20back.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2020-03-25T17:53:13Z">
-        <changelog><![CDATA[v.1.0 [260320]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/82ad8a69b6e117ab1048a6566956876c77dcbbf1/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20tiny%20tracks%20-%20restore%20back.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/55d772c772312686cb6aa0a4590ca97305845c00/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
