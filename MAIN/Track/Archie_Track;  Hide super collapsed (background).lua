@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track;  Hide super collapsed (background).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Трек; скрыть супер свернутые (фон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,6 +17,9 @@
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.02 [290320]
+   *                  ! Fixed bug
+   
    *              v.1.0 [270320]
    *                  + initialе
 --]] 
@@ -33,7 +36,7 @@
     
     
     
-    local StateHelp = reaper.GetExtState(extname..'State','State')=='';
+    local StateHelp = reaper.GetExtState(extname..'_STATE','State')=='';
     if StateHelp then;
         local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
                        'ставим галку "Remember my answer for this script"\n'..
@@ -54,7 +57,7 @@
                            'TERMINATE INSTANCES !!!\n\n\n'
                            ,'TERMINATE INSTANCES !!!',1);
             if MB == 1 then;
-                reaper.SetExtState(extname..'State','State',1,true);
+                reaper.SetExtState(extname..'_STATE','State','true',true);
             end;
         end;
     end;
@@ -123,22 +126,26 @@
     local function loop();
         
         local ChanInProj = ChangesInProject();
-        if ChanInProj then;
+        if ChanInProj then;--CHANGES_PROJ
             
-            local Refresh;
+            local Refresh,stopInside,foldX,stopX,depthX;
+            ----
             --local scr_x,scr_y = reaper.GetMousePosition();
             --local track,info = reaper.GetTrackFromPoint(scr_x,scr_y);
-            --if info == 0 and track then;
-            for i = 1,reaper.CountTracks(0) do;
+            --if info == 0 and track then; 
+            local i = 0;
+            while true do;
+                i=i+1;
                 local track = reaper.GetTrack(0,i-1);
+                if not track then break end;
                 --======================
                 local fold = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERDEPTH')==1);
-                if fold then;
+                if fold then;--FOLD
                     local numb = reaper.GetMediaTrackInfo_Value(track,'IP_TRACKNUMBER');
                     local depth = reaper.GetTrackDepth(track);
                     local collaps = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT')==2);
-                    if collaps then;
-                        ------------------------------------------
+                    if collaps then;--COLLAPS
+                        -- hide start ----------------------------
                         for i2 = numb,reaper.CountTracks(0)-1 do;
                             local track2 = reaper.GetTrack(0,i2);
                             local depth2 = reaper.GetTrackDepth(track2);
@@ -151,35 +158,77 @@
                                     Refresh = true;
                                 end;
                             else;
+                                i = reaper.GetMediaTrackInfo_Value(track2,'IP_TRACKNUMBER')-1;
                                 break;
                             end;
                         end;
-                        ------------------------------------------
+                        -- hide END ------------------------------
                     else;
-                        ------------------------------------------
-                        for i2 = numb,reaper.CountTracks(0)-1 do;
-                            local track2 = reaper.GetTrack(0,i2);
-                            local depth2 = reaper.GetTrackDepth(track2);
-                            if depth2 > depth then;
-                                local GUID = reaper.GetTrackGUID(track2);
-                                local retval,val = reaper.GetProjExtState(0,extname,GUID);
-                                if retval == 1 and val ~= '' then;
-                                    reaper.SetProjExtState(0,extname,GUID,'');
-                                    local visible = reaper.IsTrackVisible(track2,false);
-                                    if not visible then;
-                                        reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',1);
-                                        Refresh = true;
+                        -- show start ----------------------------
+                        if depth > 0 then;
+                            for i3 = numb-2,0,-1 do;
+                                local tr = reaper.GetTrack(0,i3);
+                                local fld = (reaper.GetMediaTrackInfo_Value(tr,'I_FOLDERDEPTH')==1);
+                                if fld then;
+                                    local clps = (reaper.GetMediaTrackInfo_Value(tr,'I_FOLDERCOMPACT')==2);
+                                    if clps then;
+                                        stopInside = true;
                                     end;
+                                    local dpth = reaper.GetTrackDepth(tr);
+                                    if dpth == 0 then break end;
                                 end;
-                            else;
-                                break;
                             end;
                         end;
-                        ------------------------------------------
-                    end;
-                end;
+                        
+                        if not stopInside then;
+                            
+                            for i2 = numb,reaper.CountTracks(0)-1 do;
+                                local track2 = reaper.GetTrack(0,i2);
+                                local depth2 = reaper.GetTrackDepth(track2);
+                                if depth2 > depth then;
+                                    
+                                    if not depthX or depth2 <= depthX then;
+                                        stopX = nil;
+                                        depthX = nil;
+                                        local fold2 = (reaper.GetMediaTrackInfo_Value(track2,'I_FOLDERDEPTH')==1);
+                                        if fold2 then;
+                                            local collaps2 = (reaper.GetMediaTrackInfo_Value(track2,'I_FOLDERCOMPACT')==2);
+                                            if collaps2 then;
+                                                foldX = fold2;
+                                                stopX = true;
+                                                depthX = reaper.GetTrackDepth(track2);
+                                            end;
+                                        end;
+                                    end;
+                                     
+                                    if not stopX or (stopX and foldX) then;
+                                        foldX = nil;
+                                        local GUID = reaper.GetTrackGUID(track2);
+                                        local retval,val = reaper.GetProjExtState(0,extname,GUID);
+                                        if retval == 1 and val ~= '' then;
+                                            reaper.SetProjExtState(0,extname,GUID,'');
+                                            local visible = reaper.IsTrackVisible(track2,false);
+                                            if not visible then;
+                                                reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',1);
+                                                Refresh = true;
+                                            end;
+                                        end;
+                                    end;
+                                else;
+                                    break;
+                                end;
+                            end;
+                        end;
+                        ----
+                        stopInside = nil;
+                        depthX = nil;
+                        stopX = nil;
+                        foldX = nil;
+                        -- show END ------------------------------
+                    end;--COLLAPS END
+                end;--FOLD END
                --======================
-            end;
+            end;--
             --=========================================
             if Refresh then;
                 reaper.TrackList_AdjustWindows(true);
@@ -187,7 +236,7 @@
                 Clear_ifNoTrack(extname);
             end;
             --=========================================
-        end;
+        end;--CHANGES_PROJ END
         reaper.defer(loop);
     end;
     --=========================================
