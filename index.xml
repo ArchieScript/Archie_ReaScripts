@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="1628908fb0eacae3d1eac1e107d743370b2bd477">
+<index version="1" name="Archie-ReaScripts" commit="5a2c02f1575efe353143047b09ef60b216b99262">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5131,6 +5131,32 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Go%20to%20previous%20track%20-%20track%20solo%20in%20solo%20exclusive.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Hide child tracks of selected folders in MCP.lua" type="script" desc="Track;  Hide child tracks of selected folders in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-29T14:30:43Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20child%20tracks%20of%20selected%20folders%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide child tracks of selected folders in TCP.lua" type="script" desc="Track;  Hide child tracks of selected folders in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-29T14:30:43Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20child%20tracks%20of%20selected%20folders%20in%20TCP.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Hide super collapsed (background).lua" type="script" desc="Track;  Hide super collapsed (background).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -5142,6 +5168,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [270320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/55d772c772312686cb6aa0a4590ca97305845c00/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-29T14:30:43Z">
+        <changelog><![CDATA[v.1.02 [290320]
+    ! Fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Insert new track with height last track touched.lua" type="script" desc="Insert new track with height last track touched">
@@ -5800,6 +5831,32 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-04-01T20:09:16Z">
         <changelog><![CDATA[+  initialе / v.1.0 [02042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d5c8d0e03ecdce6b8cf18030825e20f227fbd95/MAIN/Track/Archie_Track;%20%20Set%20Volume%20selected%20tracks%20to%20-6.0%20dB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show child tracks of selected folders in MCP.lua" type="script" desc="Track;  Show child tracks of selected folders in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-29T14:30:43Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Show%20child%20tracks%20of%20selected%20folders%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show child tracks of selected folders in TCP.lua" type="script" desc="Track;  Show child tracks of selected folders in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-03-29T14:30:43Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Show%20child%20tracks%20of%20selected%20folders%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Show only send of selected track(s).lua" type="script" desc="Show only send of selected track(s)">
