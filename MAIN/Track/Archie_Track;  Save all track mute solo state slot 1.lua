@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Save all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,6 +16,7 @@
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   
    *              v.1.0 [230320]
    *                  + initialе
 --]]
@@ -25,10 +26,43 @@
     
     local SLOT = 1; -- 1..100
     
+    local Buttonllumination = 1 -- 0/1 Подсветка кнопки
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
+    
+    
+    --=========================================
+    local function Help(extname);
+        local StateHelp = reaper.GetExtState(extname..'_STATE','State')=='';
+        if StateHelp then;
+            local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
+                           'ставим галку "Remember my answer for this script"\n'..
+                           'и жмем "NEW INSTANCE"\n\n'..
+                           'Не показывать это окно - Ok\n\n\n'..
+                           'Eng:\n'..
+                           'When the "ReaScript task control"\n'..
+                           'window appears, tick "Remember my answer for this script"\n'..
+                           'and click "NEW INSTANCE"\n\n'..
+                           'Do not show this window-Ok'
+                           ,'Help',1);
+            if MB == 1 then;
+                local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
+                               'NEW INSTANCE !!!\n\n'..
+                               'NEW INSTANCE !!!\n\n\n'..
+                               'Eng:\nImportant: REMEMBER!!!\n\n'..
+                               'NEW INSTANCE !!!\n\n'..
+                               'NEW INSTANCE !!!\n\n\n'
+                               ,'NEW INSTANCE !!!',1);
+                if MB == 1 then;
+                    reaper.SetExtState(extname..'_STATE','State','true',true);
+                end;
+            end;
+        end;
+    end;    
+    --=========================================
     
     
     -------------------------------------
@@ -55,6 +89,7 @@
             local solo = math.floor((reaper.GetMediaTrackInfo_Value(track,'I_SOLO'))+.5);
             local mute = math.floor((reaper.GetMediaTrackInfo_Value(track,'B_MUTE'))+.5);
             reaper.SetProjExtState(0,extname,guid,mute..' '..solo);
+            reaper.SetExtState('ArchieSoloMuteStateAllTrack'..SLOT,'SlMtState'..SLOT,1,false);
         end;
     end;
     
@@ -67,6 +102,62 @@
             reaper.SetProjExtState(0,extname,key,'');
         end;
     end;
-    reaper.defer(function()end);
+    
+    
+    --t=0
+    local x;
+    local function tmr(ckl);
+        x=(x or 0)+1;
+        if x>=ckl then x=0 return true end;return false;   
+    end;
+    
+    
+    
+    if Buttonllumination ~= 1 then;
+        reaper.defer(function()end);
+    else;
+        --===========================
+        local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
+        local extnameProj = NP:match('.+[/\\](.+)');
+        local ActiveDoubleScr,stopDoubleScr;
+        
+        Help(extnameProj);
+        
+        local function loop();
+            local tm = tmr(15);
+            if tm then;
+                ----- stop Double Script -------
+                if not ActiveDoubleScr then;
+                    stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
+                    reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
+                    ActiveDoubleScr = true;
+                end;
+                
+                local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
+                if stopDoubleScr2 > stopDoubleScr then return end;
+                --------------------------------
+                
+                local but = tonumber(reaper.GetExtState('ArchieSoloMuteStateAllTrack'..SLOT,'SlMtState'..SLOT))or 0;
+                if but == 1 then;
+                    if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
+                        reaper.SetToggleCommandState(sec,cmd,1);
+                        reaper.RefreshToolbar2(sec,cmd);
+                    end;
+                else;
+                    if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
+                        reaper.SetToggleCommandState(sec,cmd,0);
+                        reaper.RefreshToolbar2(sec,cmd);
+                    end;
+                    return;
+                end;
+                --t=t+1
+            end;
+            reaper.defer(loop);
+        end;
+        reaper.defer(loop);
+        --===========================
+    end;
+    
+    
     
     

@@ -1,10 +1,10 @@
 --[[
    * Category:    Track
-   * Description: Mute all visible track in TCP and MCP
+   * Description: Unarm all tracks for recording
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
-   * О скрипте:   Отключить звук на всех видимых дорожках в TCP и MCP
+   * О скрипте:   Снять запись со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,6 +12,9 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   
+   *              v.1.01 [27.06.2019]
+   *                  +! fixed bug auto record arm
    *              v.1.0 [26.06.2019]
    *                  + initialе
     
@@ -38,6 +41,7 @@
     --======================================================================================
     
     
+    
     local button_illum = 1
                     -- = 0 Отключить подсветку кнопки
                     -- = 1 включить подсветку кнопки **
@@ -57,10 +61,10 @@
                     -------------------------
                     
     
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================  
-    
+    --====================================================================================== 
     
     
     
@@ -98,8 +102,8 @@
         end;
     end;    
     --=========================================
-    
-    
+     
+     
     --=========================================
     local ProjState2;
     local function ChangesInProject();
@@ -110,80 +114,43 @@
         return ret == true;
     end;
     --=========================================
-    
-    
+     
+     
     --=========================================
-    local function GetLockTrackState(track);
-        local _,TrackChunk = reaper.GetTrackStateChunk(track,'',false);
-        local bracket = 0;
-        for var in string.gmatch(TrackChunk,".-\n") do;
-            if var:match('^%s-%S')=='<'or var:match('^%s-%S')=='>'then;
-                bracket = bracket+1;
-            end;
-            local ret = tonumber(var:match('^%s-LOCK%s+(%d*).-$'));
-            if ret then return ret end;
-            if bracket >= 2 then return 0 end;
-        end;
-    end;
-    --=========================================
-    
-    
-    --=========================================
-    local function AnyTrackMute(proj);
+    local function AnyTrackRecArm(proj);
         for i = 1,reaper.CountTracks(proj)do;
             local Track = reaper.GetTrack(proj,i-1);
-            local Visible = reaper.IsTrackVisible(Track,true);
-            if Visible then;
-                local Visible = reaper.IsTrackVisible(Track,false);
-                if Visible then;
-                    local lock = GetLockTrackState(Track);
-                    if lock ~= 1 then;
-                        local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                        if mute == 0 then return true end;
-                    end;
-                end;
-            end;
+            local Rec = reaper.GetMediaTrackInfo_Value(Track,"I_RECARM");
+            if Rec > 0 then return true end;  
         end;
         return false;
     end;
     --=========================================
-    
-    
+      
+     
     --=========================================
     local CountTrack = reaper.CountTracks(0);
     if CountTrack == 0 then no_undo() return end;
     
     local UNDO;
-    
-    
     for i = 1,CountTrack do;
         local Track = reaper.GetTrack(0,i-1);
-        local Visible = reaper.IsTrackVisible(Track,true);
-        if Visible then;
-            local Visible = reaper.IsTrackVisible(Track,false);
-            if Visible then;
-                local lock = GetLockTrackState(Track);
-                if lock ~= 1 then;
-                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 then;
-                        if not UNDO then;
-                            reaper.Undo_BeginBlock();
-                            UNDO = true;
-                        end;
-                        reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",1);
-                    end;
-                end;
+        local Rec = reaper.GetMediaTrackInfo_Value(Track,"I_RECARM");
+        if Rec > 0 then;
+            if not UNDO then;
+                reaper.Undo_BeginBlock();
+                UNDO = true;
             end;
+            reaper.SetMediaTrackInfo_Value(Track,"I_RECARM",0);
         end;
     end;
     
     if UNDO then;
-        reaper.Undo_EndBlock("Mute all visible track in MCP",-1);
+        reaper.Undo_EndBlock("Unarm all tracks for recording",-1);
     else;
         no_undo();
     end;
     --=========================================
-    
     
     
     --=========================================
@@ -193,7 +160,6 @@
         if x>=ckl then x=0 return true end;return false;   
     end;
     --=========================================
-    
     
     
     --=========================================
@@ -225,19 +191,23 @@
                 
                     local Repeat_Off,Repeat_On,On; 
                     local On = nil;
-                    local AnyTrMute = AnyTrackMute(0);
-                    if not AnyTrMute then;
+                    local AnyTrRecArm = AnyTrackRecArm(0);
+                    if AnyTrRecArm then;
                         On = 1;
                     end;
-                     
+                    
                     if On == 1 and not Repeat_On then;
-                        reaper.SetToggleCommandState(sec,cmd,1);
-                        reaper.RefreshToolbar2(sec,cmd);
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
+                            reaper.SetToggleCommandState(sec,cmd,1);
+                            reaper.RefreshToolbar2(sec,cmd);
+                        end;
                         Repeat_On = true;
                         Repeat_Off = nil;
                     elseif not On and not Repeat_Off then;
-                        reaper.SetToggleCommandState(sec,cmd,0);
-                        reaper.RefreshToolbar2(sec,cmd);
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
+                            reaper.SetToggleCommandState(sec,cmd,0);
+                            reaper.RefreshToolbar2(sec,cmd);
+                        end;
                         Repeat_Off = true;
                         Repeat_On = nil;
                     end;
@@ -249,3 +219,5 @@
         reaper.defer(loop);
     end;
     --=========================================
+    
+    

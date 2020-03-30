@@ -178,6 +178,14 @@
     
     
     
+    --=========================================
+    local x;
+    local function tmr(ckl);
+        x=(x or 0)+1;
+        if x>=ckl then x=0 return true end;return false;   
+    end;
+    --=========================================
+    
     
     
     --=========================================
@@ -190,40 +198,43 @@
         Help(extnameProj);
         
         local function loop();
-            ----- stop Double Script -------
-            if not ActiveDoubleScr then;
-                stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
-                reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
-                ActiveDoubleScr = true;
-            end;
-            
-            local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
-            if stopDoubleScr2 > stopDoubleScr then return end;
-            --------------------------------
-            
-            
-            local ProjtState = ChangesInProject();
-            if ProjtState then;
-            
-                local Repeat_Off,Repeat_On,On; 
-                local On = nil;
-                local AnyTrMute = AnyTrackMute(0);
-                if not AnyTrMute then;
-                    On = 1;
+            local tm = tmr(15);
+            if tm then;
+                ----- stop Double Script -------
+                if not ActiveDoubleScr then;
+                    stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
+                    reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
+                    ActiveDoubleScr = true;
                 end;
-                 
-                if On == 1 and not Repeat_On then;
-                    reaper.SetToggleCommandState(sec,cmd,1);
-                    reaper.RefreshToolbar2(sec,cmd);
-                    Repeat_On = true;
-                    Repeat_Off = nil;
-                elseif not On and not Repeat_Off then;
-                    reaper.SetToggleCommandState(sec,cmd,0);
-                    reaper.RefreshToolbar2(sec,cmd);
-                    Repeat_Off = true;
-                    Repeat_On = nil;
+                
+                local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
+                if stopDoubleScr2 > stopDoubleScr then return end;
+                --------------------------------
+                
+                
+                local ProjtState = ChangesInProject();
+                if ProjtState then;
+                
+                    local Repeat_Off,Repeat_On,On; 
+                    local On = nil;
+                    local AnyTrMute = AnyTrackMute(0);
+                    if not AnyTrMute then;
+                        On = 1;
+                    end;
+                     
+                    if On == 1 and not Repeat_On then;
+                        reaper.SetToggleCommandState(sec,cmd,1);
+                        reaper.RefreshToolbar2(sec,cmd);
+                        Repeat_On = true;
+                        Repeat_Off = nil;
+                    elseif not On and not Repeat_Off then;
+                        reaper.SetToggleCommandState(sec,cmd,0);
+                        reaper.RefreshToolbar2(sec,cmd);
+                        Repeat_Off = true;
+                        Repeat_On = nil;
+                    end;
+                    --t=(t or 0)+1
                 end;
-                --t=(t or 0)+1
             end;
             reaper.defer(loop);
         end;

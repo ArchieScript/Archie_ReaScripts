@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Restore all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,6 +16,7 @@
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   
    *              v.1.0 [230320]
    *                  + initialе
 --]]
@@ -70,6 +71,8 @@
             reaper.SetProjExtState(0,extname,key,'');
         end;
     end;
+    
+    reaper.DeleteExtState('ArchieSoloMuteStateAllTrack'..SLOT,'SlMtState'..SLOT,false);
     
     reaper.defer(function()end);
     
