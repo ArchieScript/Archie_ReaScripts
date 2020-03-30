@@ -191,5 +191,5 @@
             end;
             reaper.defer(loop);
         end;
-        loop();
+        reaper.defer(loop);
     end;
