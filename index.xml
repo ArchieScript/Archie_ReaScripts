@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3ea9abec047264e54ec244f342b525ea4693e2e1">
+<index version="1" name="Archie-ReaScripts" commit="fccdf01cfbe6c907e10627f6d09a057bf1c08116">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5662,6 +5662,9 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f3292de179e645aa7f0b1f201b99f7f09f317f19/MAIN/Track/Archie_Track;%20%20Restore%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Restore%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Save all track mute solo state slot 1.lua" type="script" desc="Save all track mute solo state slot 1">
       <metadata>
@@ -5679,6 +5682,9 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [230320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f3292de179e645aa7f0b1f201b99f7f09f317f19/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select a track by name(abbreviated input)(`).lua" type="script" desc="Select a track by name(abbreviated input)">
@@ -6104,21 +6110,14 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Unarm record of all visible tracks in TCP(`).lua" type="script" desc="Unarm record of all visible tracks in TCP">
+    <reapack name="Archie_Track;  Unarm all tracks for recording(`).lua" type="script" desc="Unarm all tracks for recording">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-06-26T17:39:32Z">
-        <changelog><![CDATA[v.1.0 [26.06.2019]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Track/Archie_Track;%20%20Unarm%20record%20of%20all%20visible%20tracks%20in%20TCP(%60).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-07-02T09:06:26Z">
-        <changelog><![CDATA[v.1.01 [27.06.2019]
-    +! fixed bug auto record arm]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/01616f2dd4cb7e1cb3ea507177e6362abd0a0df1/MAIN/Track/Archie_Track;%20%20Unarm%20record%20of%20all%20visible%20tracks%20in%20TCP(%60).lua</source>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unlock selected tracks and restore them items.lua" type="script" desc="Track;  Unlock selected tracks and restore them items">
@@ -6147,6 +6146,9 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2020-03-30T14:24:25Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f147e287d6d7021a07c4770e4697c1ee364c0b21/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in MCP(`).lua" type="script" desc="Track;  Unmute all visible track in MCP">
       <metadata>
@@ -6156,6 +6158,9 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-03-30T14:24:25Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f147e287d6d7021a07c4770e4697c1ee364c0b21/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20MCP(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in TCP and MCP(`).lua" type="script" desc="Unmute all visible track in TCP and MCP">
@@ -6174,6 +6179,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f147e287d6d7021a07c4770e4697c1ee364c0b21/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <changelog><![CDATA[v.1.0 [26.06.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in TCP(`).lua" type="script" desc="Unmute all visible track in TCP">
       <metadata>
@@ -6188,6 +6198,9 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.02" author="Archie" time="2020-03-30T14:24:25Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f147e287d6d7021a07c4770e4697c1ee364c0b21/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  UnSolo all tracks(`).lua" type="script" desc="UnSolo all track">
@@ -6204,6 +6217,9 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
       <metadata>
@@ -6213,6 +6229,9 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20MCP(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in TCP and MCP(`).lua" type="script" desc="Unsolo all visible track in TCP and MCP">
@@ -6229,6 +6248,9 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in TCP(`).lua" type="script" desc="Unsolo all visible track in TCP">
       <metadata>
@@ -6243,6 +6265,9 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Volume down on all tracks (-inf).lua" type="script" desc="Volume down on all tracks (-inf)">
