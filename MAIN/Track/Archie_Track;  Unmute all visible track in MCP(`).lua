@@ -1,10 +1,10 @@
---[[
+--[[ NEW INSTANCE
    * Category:    Track
-   * Description: Mute all visible track in TCP and MCP
+   * Description: Track;  Unmute all visible track in MCP
    * Author:      Archie
    * Version:     1.02
    * AboutScript: ---
-   * О скрипте:   Отключить звук на всех видимых дорожках в TCP и MCP
+   * О скрипте:   Включить звук на всех видимых дорожках в MCP
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -12,6 +12,7 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   
    *              v.1.0 [26.06.2019]
    *                  + initialе
     
@@ -59,7 +60,7 @@
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================  
+    --====================================================================================== 
     
     
     
@@ -134,15 +135,12 @@
             local Track = reaper.GetTrack(proj,i-1);
             local Visible = reaper.IsTrackVisible(Track,true);
             if Visible then;
-                local Visible = reaper.IsTrackVisible(Track,false);
-                if Visible then;
-                    local lock = GetLockTrackState(Track);
-                    if lock ~= 1 then;
-                        local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                        if mute == 0 then return true end;
-                    end;
+                local lock = GetLockTrackState(Track);
+                if lock ~= 1 then;
+                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                    if mute > 0 then return true end;
                 end;
-            end;
+           end;
         end;
         return false;
     end;
@@ -154,31 +152,26 @@
     if CountTrack == 0 then no_undo() return end;
     
     local UNDO;
-    
-    
     for i = 1,CountTrack do;
         local Track = reaper.GetTrack(0,i-1);
         local Visible = reaper.IsTrackVisible(Track,true);
         if Visible then;
-            local Visible = reaper.IsTrackVisible(Track,false);
-            if Visible then;
-                local lock = GetLockTrackState(Track);
-                if lock ~= 1 then;
-                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 then;
-                        if not UNDO then;
-                            reaper.Undo_BeginBlock();
-                            UNDO = true;
-                        end;
-                        reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",1);
+            local lock = GetLockTrackState(Track);
+            if lock ~= 1 then;
+                local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                if mute == 1 then;
+                    if not UNDO then;
+                        reaper.Undo_BeginBlock();
+                        UNDO = true;
                     end;
+                    reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",0);
                 end;
             end;
         end;
     end;
     
     if UNDO then;
-        reaper.Undo_EndBlock("Mute all visible track in MCP",-1);
+        reaper.Undo_EndBlock("Unmute all visible track in MCP",-1);
     else;
         no_undo();
     end;
@@ -215,8 +208,8 @@
             
                 local Repeat_Off,Repeat_On,On; 
                 local On = nil;
-                local AnyTrMute = AnyTrackMute(0);
-                if not AnyTrMute then;
+                  AnyTrMute = AnyTrackMute(0);
+                if AnyTrMute then;
                     On = 1;
                 end;
                  
