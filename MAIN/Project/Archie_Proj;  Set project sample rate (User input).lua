@@ -6,7 +6,7 @@
    * Category:    Project
    * Description: Proj;  Set project sample rate (User input)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -36,6 +36,9 @@
     
     if retvals_csv ~= retval then;
         reaper.GetSetProjectInfo(0,'PROJECT_SRATE',retvals_csv,1);
+        reaper.Audio_Quit();
+        reaper.Audio_Init();
+        reaper.UpdateArrange();
     end;
     
     no_undo();

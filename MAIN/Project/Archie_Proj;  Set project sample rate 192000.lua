@@ -6,7 +6,7 @@
    * Category:    Project
    * Description: Proj;  Set project sample rate 192000
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -31,6 +31,9 @@
         local retval = reaper.GetSetProjectInfo(0,'PROJECT_SRATE',0,0);
         if retval ~= SAMPLERATE then;
             reaper.GetSetProjectInfo(0,'PROJECT_SRATE',SAMPLERATE,1);
+            reaper.Audio_Quit();
+            reaper.Audio_Init();
+            reaper.UpdateArrange();
         end;
     end);
     
