@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5a2c02f1575efe353143047b09ef60b216b99262">
+<index version="1" name="Archie-ReaScripts" commit="4d09ce198704a92520a0679e6651ad085630cab1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4170,6 +4170,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20(User%20input).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20(User%20input).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 176400.lua" type="script" desc="Proj;  Set project sample rate 176400">
       <metadata>
@@ -4182,6 +4187,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [290320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20176400.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20176400.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 192000.lua" type="script" desc="Proj;  Set project sample rate 192000">
@@ -4196,6 +4206,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20192000.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%20192000.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 44100.lua" type="script" desc="Proj;  Set project sample rate 44100">
       <metadata>
@@ -4208,6 +4223,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [290320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2044100.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2044100.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 48000.lua" type="script" desc="Proj;  Set project sample rate 48000">
@@ -4222,6 +4242,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2048000.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2048000.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 88200.lua" type="script" desc="Proj;  Set project sample rate 88200">
       <metadata>
@@ -4235,6 +4260,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2088200.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2088200.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Proj;  Set project sample rate 96000.lua" type="script" desc="Proj;  Set project sample rate 96000">
       <metadata>
@@ -4247,6 +4277,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [290320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1628908fb0eacae3d1eac1e107d743370b2bd477/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2096000.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-30T06:49:04Z">
+        <changelog><![CDATA[v.1.0 [290320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4d09ce198704a92520a0679e6651ad085630cab1/MAIN/Project/Archie_Proj;%20%20Set%20project%20sample%20rate%2096000.lua</source>
       </version>
     </reapack>
   </category>
