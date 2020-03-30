@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f147e287d6d7021a07c4770e4697c1ee364c0b21">
+<index version="1" name="Archie-ReaScripts" commit="3ea9abec047264e54ec244f342b525ea4693e2e1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3757,18 +3757,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20MCP.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Mixer;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-06-26T17:39:32Z">
-        <changelog><![CDATA[v.1.0 [26.06.2019]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Mixer/Archie_Mixer;%20%20Unsolo%20all%20visible%20track%20in%20MCP(%60).lua</source>
-      </version>
-    </reapack>
   </category>
   <category name="MAIN/Monitoring">
     <reapack name="Archie_MonitorFx;  Smart template monitoring Toggle Open Fx in float.lua" type="script" desc="Smart template monitoring Toggle Open Fx in float">
@@ -6213,6 +6201,19 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20MCP(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in TCP and MCP(`).lua" type="script" desc="Unsolo all visible track in TCP and MCP">
       <metadata>
@@ -6225,6 +6226,9 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP%20and%20MCP(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in TCP(`).lua" type="script" desc="Unsolo all visible track in TCP">
       <metadata>
@@ -6236,6 +6240,9 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/65944c61da148ea8975ff205ebce66f1f9cd2445/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Volume down on all tracks (-inf).lua" type="script" desc="Volume down on all tracks (-inf)">
