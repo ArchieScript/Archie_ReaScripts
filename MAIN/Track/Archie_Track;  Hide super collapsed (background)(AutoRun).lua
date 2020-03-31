@@ -4,9 +4,10 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Track
-   * Description: Track;  Hide super collapsed (background).lua
+   * Features:    Startup
+   * Description: Track;  Hide super collapsed (background)(AutoRun).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.04
    * Описание:    Трек; скрыть супер свернутые (фон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,16 +17,33 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.02 [290320]
-   *                  ! Fixed bug
+   *              v.1.04 [31.03.20]
+   *                  + AutoRun
    
+   *              v.1.02 [290320]
+   *                  ! Fixed bug  
    *              v.1.0 [270320]
    *                  + initialе
---]] 
+--]]
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
+    
+    local STARTUP = 1;  -- 0/1
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --====================================================================================== 
+    
+     
+     
+    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
+    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
+    return end; if not Arc.VersionArc_Function_lua("2.6.5",Fun,"")then Arc.no_undo() return end;--=====================================================
+    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     
     
     
@@ -35,33 +53,46 @@
     --=========================================
     
     
-    
-    local StateHelp = reaper.GetExtState(extname..'_STATE','State')=='';
-    if StateHelp then;
-        local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
-                       'ставим галку "Remember my answer for this script"\n'..
-                       'и жмем "Terminate instances"\n\n'..
-                       'Не показывать это окно - Ok\n\n\n'..
-                       'Eng:\n'..
-                       'When the "ReaScript task control"\n'..
-                       'window appears, tick "Remember my answer for this script"\n'..
-                       'and click "Terminate instances"\n\n'..
-                       'Do not show this window-Ok'
-                       ,'Help',1);
-        if MB == 1 then;
-            local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
-                           'TERMINATE INSTANCES !!!\n\n'..
-                           'TERMINATE INSTANCES !!!\n\n\n'..
-                           'Eng:\nImportant: REMEMBER!!!\n\n'..
-                           'TERMINATE INSTANCES !!!\n\n'..
-                           'TERMINATE INSTANCES !!!\n\n\n'
-                           ,'TERMINATE INSTANCES !!!',1);
+    --=========================================
+    local function Help(extname);
+        local StateHelp = reaper.GetExtState(extname..'_STATE','State_Help')=='';
+        if StateHelp then;
+            local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
+                           'ставим галку "Remember my answer for this script"\n'..
+                           'и жмем "Terminate instances"\n\n'..
+                           'Не показывать это окно - Ok\n\n\n'..
+                           'Eng:\n'..
+                           'When the "ReaScript task control"\n'..
+                           'window appears, tick "Remember my answer for this script"\n'..
+                           'and click "Terminate instances"\n\n'..
+                           'Do not show this window-Ok'
+                           ,'Help',1);
             if MB == 1 then;
-                reaper.SetExtState(extname..'_STATE','State','true',true);
+                local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
+                               'TERMINATE INSTANCES !!!\n\n'..
+                               'TERMINATE INSTANCES !!!\n\n\n'..
+                               'Eng:\nImportant: REMEMBER!!!\n\n'..
+                               'TERMINATE INSTANCES !!!\n\n'..
+                               'TERMINATE INSTANCES !!!\n\n\n'
+                               ,'TERMINATE INSTANCES !!!',1);
+                if MB == 1 then;
+                    reaper.SetExtState(extname..'_STATE','State_Help','true',true);
+                end;
             end;
         end;
     end;
+    --=========================================
     
+    
+    --=========================================
+    local function GetSetStateOnOff(set,state);
+        local Get = tonumber(reaper.GetExtState(extname..'_STATE','ToggleState'))or 0;
+        if set ~= 1 then return Get end;
+        if Get ~= state and set == 1 then;
+            reaper.SetExtState(extname..'_STATE','ToggleState',state,true);
+        end;
+    end;
+    --=========================================
     
     
     --=========================================
@@ -93,6 +124,7 @@
     --=========================================
     
     
+    local t = {};
     --=========================================
     local function Exit();
         local Ref;
@@ -116,15 +148,16 @@
             reaper.TrackList_AdjustWindows(true);
         end;
         reaper.SetToggleCommandState(sec,cmd,0);
+        GetSetStateOnOff(1,0);
+        t.Exit_STOP = true;
     end;
     --=========================================
-    
     
     
     --=========================================
     --=========================================
     local function loop();
-        
+        if t.Exit_STOP == true then --[[reaper.atexit(Exit)]] return end;
         local ChanInProj = ChangesInProject();
         if ChanInProj then;--CHANGES_PROJ
             
@@ -241,11 +274,74 @@
     end;
     --=========================================
     --=========================================
-    reaper.defer(loop);
-    reaper.SetToggleCommandState(sec,cmd,1);
-    reaper.atexit(Exit);
+    
+    --reaper.defer(loop);
+    --reaper.SetToggleCommandState(sec,cmd,1);
+    --reaper.atexit(Exit);
     --=========================================
     
     
     
     
+    -------------------------------------------
+    --=========================================
+    -------------------------------------------
+    local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
+    local extname2 = scriptName;
+    
+    
+    ---___-----------------------------------------------
+    local FirstRun;
+    if STARTUP == 1 then;
+        --reaper.DeleteExtState(extname2,"FirstRun",false);
+        FirstRun = reaper.GetExtState(extname2,"FirstRun")=="";
+        if FirstRun then;
+            reaper.SetExtState(extname2,"FirstRun",1,false);
+        end;
+    end;
+    -----------------------------------------------------
+    
+    
+    ---------------------
+    if not FirstRun then;
+        reaper.atexit(Exit);
+        Help(extname);
+        loop();
+        reaper.SetToggleCommandState(sec,cmd,1);
+        GetSetStateOnOff(1,1);
+    elseif FirstRun then;
+        local StateOnOff = GetSetStateOnOff(0,0);
+        if StateOnOff == 0 then;
+            --reaper.PreventUIRefresh(1);
+            --loop();
+            --Exit();
+            --reaper.PreventUIRefresh(-1);
+        else;
+            reaper.atexit(Exit);
+            loop();
+            reaper.SetToggleCommandState(sec,cmd,1);
+        end;
+    end;
+    ---------------------
+    
+    
+    ---___-----------------------------------------------
+    local function SetStartupScriptWrite();
+        local id = Arc.GetIDByScriptName(scriptName,scriptPath);
+        if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
+        local check_Id, check_Fun = Arc.GetStartupScript(id);
+        if STARTUP == 1 then;
+            if not check_Id then;
+                Arc.SetStartupScript(scriptName,id);
+            end;
+        elseif STARTUP ~= 1 then;
+            if check_Id then;
+                Arc.SetStartupScript(scriptName,id,nil,"ONE");
+            end;
+        end;
+    end;
+    reaper.defer(SetStartupScriptWrite);
+    -----------------------------------------------------
+    
+	
+	

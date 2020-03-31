@@ -5,7 +5,7 @@
    *
    * Category:    Info
    * Features:    Startup
-   * Description: Info;  Counter time project
+   * Description: Info;  Counter time project(AutoRun)
    * Author:      Archie
    * Version:     1.16
    * Описание:    Счетчик времени проекта

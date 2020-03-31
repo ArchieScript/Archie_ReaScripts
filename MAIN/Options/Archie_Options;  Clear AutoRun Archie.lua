@@ -1,8 +1,8 @@
 --[[
    * Category:    Options
-   * Description: Clear Auto Startup Archie
+   * Description: Options;  Clear AutoRun Archie.lua
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.0
    * Описание:    Очистить автозагрузку Арчи
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
