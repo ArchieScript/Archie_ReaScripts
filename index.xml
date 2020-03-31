@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="fccdf01cfbe6c907e10627f6d09a057bf1c08116">
+<index version="1" name="Archie-ReaScripts" commit="79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1658,72 +1658,15 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Info">
-    <reapack name="Archie_Info;  Counter time project.lua" type="script" desc="Info;  Counter time project">
+    <reapack name="Archie_Info;  Counter time project(AutoRun).lua" type="script" desc="Info;  Counter time project(AutoRun)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-02-15T16:00:07Z">
-        <changelog><![CDATA[v.1.0 [15.02.20]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/aa33e8cbbe1ae50b932b127f867b7fcca9ec4562/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-02-16T11:51:37Z">
-        <changelog><![CDATA[v.1.02 [16.02.20]
-    + Reduced CPU load when window is open]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/33d8523eafa57e444a914eed922348e3b07a9a54/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2020-02-17T15:33:49Z">
-        <changelog><![CDATA[v.1.03 [17.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e087af3c3a1be973acf3ca495c35a833463cd360/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.04" author="Archie" time="2020-02-18T12:28:56Z">
-        <changelog><![CDATA[v.1.03 [18.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b246d0a7300eac449b93739ffbd3f4793410d69b/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.05" author="Archie" time="2020-02-19T07:09:47Z">
-        <changelog><![CDATA[v.1.05 [18.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/035e4efde15834ccf44206aee29f859a96d553fc/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.06" author="Archie" time="2020-02-20T15:57:20Z">
-        <changelog><![CDATA[v.1.06 [20.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f1ac47becd2891c8690d2128255dc149183a3bf8/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.07" author="Archie" time="2020-02-21T07:21:51Z">
-        <changelog><![CDATA[v.1.07 [21.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f78b2d70f51223d99501d8c90d37f570ddd6ac8/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.08" author="Archie" time="2020-02-21T10:11:36Z">
-        <changelog><![CDATA[v.1.07 [21.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e4bdda3d4dabb31d6b54684381313e4e69be3425/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.10" author="Archie" time="2020-02-22T07:11:00Z">
-        <changelog><![CDATA[v.1.10 [22.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5f4428a062cc0520e068a76d36e3da3211609700/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.11" author="Archie" time="2020-02-23T15:39:07Z">
-        <changelog><![CDATA[v.1.11 [23.02.20]
-    + add reset all timers]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ffc99d7dfb50dd3aacc69a9726b5e028d1e60a1f/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.12" author="Archie" time="2020-02-23T17:38:11Z">
-        <changelog><![CDATA[v.1.11 [23.02.20]
-    + add reset all timers]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9d2f5fbb9160a9d8d3944b7069746a1756753ab9/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.14" author="Archie" time="2020-02-24T04:46:08Z">
-        <changelog><![CDATA[v.1.14 [24.02.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0fdc1356e51b3345740b5a1acf53fe3caf9f823f/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.15" author="Archie" time="2020-02-24T11:39:36Z">
-        <changelog><![CDATA[v.1.15 [24.02.20]
-    + Added: playing Time since inception of project]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c451edd7c302a8b2270cb0b706e0230afbbce5c7/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
-      </version>
-      <version name="1.16" author="Archie" time="2020-03-02T17:11:31Z">
+      <version name="1.16" author="Archie" time="2020-03-31T13:54:56Z">
         <changelog><![CDATA[v.1.15 [03.03.20]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7f63c0ae888c3b5be8f729803975456e7e93cd0f/MAIN/Info/Archie_Info;%20%20Counter%20time%20project.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Info/Archie_Info;%20%20Counter%20time%20project(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Info;  Learn what script are used in custom actions and cycle action.lua" type="script" desc="Learn what script are used in custom actions and cycle action">
@@ -3782,17 +3725,14 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Options">
-    <reapack name="Arc_ Options;  Clear Auto Startup Archie.lua" type="script" desc="Clear Auto Startup Archie">
+    <reapack name="Archie_Options;  Clear AutoRun Archie.lua" type="script" desc="Options;  Clear AutoRun Archie.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-09-26T09:46:03Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4bf90effb7ee9f8efcce8adf5615ff2fd991be49/MAIN/Options/Arc_%20Options;%20%20Clear%20Auto%20Startup%20Archie.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-26T12:41:17Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a3f4f90268b21d48e094750bfca050c26df23fa0/MAIN/Options/Arc_%20Options;%20%20Clear%20Auto%20Startup%20Archie.lua</source>
+      <version name="1.0" author="Archie" time="2020-03-31T13:54:56Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Options/Archie_Options;%20%20Clear%20AutoRun%20Archie.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
@@ -5156,22 +5096,17 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20child%20tracks%20of%20selected%20folders%20in%20TCP.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Hide super collapsed (background).lua" type="script" desc="Track;  Hide super collapsed (background).lua">
+    <reapack name="Archie_Track;  Hide super collapsed (background)(AutoRun).lua" type="script" desc="Track;  Hide super collapsed (background)(AutoRun).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-03-27T13:11:09Z">
-        <changelog><![CDATA[v.1.0 [270320]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/55d772c772312686cb6aa0a4590ca97305845c00/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-29T14:30:43Z">
-        <changelog><![CDATA[v.1.02 [290320]
-    ! Fixed bug]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background).lua</source>
+      <version name="1.04" author="Archie" time="2020-03-31T13:54:56Z">
+        <changelog><![CDATA[v.1.04 [31.03.20]
+    + AutoRun]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Insert new track with height last track touched.lua" type="script" desc="Insert new track with height last track touched">
@@ -6110,14 +6045,16 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Unarm all tracks for recording(`).lua" type="script" desc="Unarm all tracks for recording">
+    <reapack name="Archie_Track;  Unarm all tracks for recording(AutoRun)(`).lua" type="script" desc="Track;  Unarm all tracks for recording(AutoRun)(`).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(%60).lua</source>
+      <version name="1.04" author="Archie" time="2020-03-31T13:54:56Z">
+        <changelog><![CDATA[v.1.04 [31.03.20]
+    + AutoRun]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unlock selected tracks and restore them items.lua" type="script" desc="Track;  Unlock selected tracks and restore them items">
@@ -6132,22 +6069,16 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3e38142b2ed4ef3c10be6773f36f961ef3fff678/MAIN/Track/Archie_Track;%20%20Unlock%20selected%20tracks%20and%20restore%20them%20items.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  UnMute all tracks(`).lua" type="script" desc="UnMute all track">
+    <reapack name="Archie_Track;  UnMute all track(AutoRun)(`).lua" type="script" desc="Track;  UnMute all track(AutoRun)(`).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
-        <changelog><![CDATA[v.1.0 [25.01.20]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-30T14:24:25Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f147e287d6d7021a07c4770e4697c1ee364c0b21/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20UnMute%20all%20tracks(%60).lua</source>
+      <version name="1.04" author="Archie" time="2020-03-31T13:54:56Z">
+        <changelog><![CDATA[v.1.04 [31.03.20]
+    + AutoRun]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in MCP(`).lua" type="script" desc="Track;  Unmute all visible track in MCP">
@@ -6203,22 +6134,16 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unmute%20all%20visible%20track%20in%20TCP(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  UnSolo all tracks(`).lua" type="script" desc="UnSolo all track">
+    <reapack name="Archie_Track;  UnSolo all track(AutoRun)(`).lua" type="script" desc="Track;  UnSolo all track(AutoRun)(`).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-01-25T13:05:47Z">
-        <changelog><![CDATA[v.1.0 [25.01.20]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2668381daf91a2dd5645bd9c1bd32c1d2801c0df/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-30T15:33:53Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ea9abec047264e54ec244f342b525ea4693e2e1/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20tracks(%60).lua</source>
+      <version name="1.04" author="Archie" time="2020-03-31T13:54:56Z">
+        <changelog><![CDATA[v.1.04 [31.03.20]
+    + AutoRun]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
