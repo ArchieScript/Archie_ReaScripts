@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  Hide super collapsed (background)(AutoRun).lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Трек; скрыть супер свернутые (фон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -19,7 +19,7 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.04 [31.03.20]
+   *              v.1.05 [31.03.20]
    *                  + AutoRun
    
    *              v.1.02 [290320]
@@ -55,7 +55,7 @@
     
     --=========================================
     local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname..'_STATE','State_Help')=='';
+        local StateHelp = reaper.GetExtState(extname,'State_Help')=='';
         if StateHelp then;
             local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
                            'ставим галку "Remember my answer for this script"\n'..
@@ -76,7 +76,7 @@
                                'TERMINATE INSTANCES !!!\n\n\n'
                                ,'TERMINATE INSTANCES !!!',1);
                 if MB == 1 then;
-                    reaper.SetExtState(extname..'_STATE','State_Help','true',true);
+                    reaper.SetExtState(extname,'State_Help','true',true);
                 end;
             end;
         end;
@@ -86,10 +86,10 @@
     
     --=========================================
     local function GetSetStateOnOff(set,state);
-        local Get = tonumber(reaper.GetExtState(extname..'_STATE','ToggleState'))or 0;
+        local Get = tonumber(reaper.GetExtState(extname,'ToggleState'))or 0;
         if set ~= 1 then return Get end;
         if Get ~= state and set == 1 then;
-            reaper.SetExtState(extname..'_STATE','ToggleState',state,true);
+            reaper.SetExtState(extname,'ToggleState',state,true);
         end;
     end;
     --=========================================
@@ -343,5 +343,5 @@
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------
     
-	
-	
+  
+  

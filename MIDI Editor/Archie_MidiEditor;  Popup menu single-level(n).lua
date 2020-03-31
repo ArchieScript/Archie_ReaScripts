@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -39,7 +39,7 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
-   *              v.1.07 [310320]
+   *              v.1.08 [310320]
    *                  No change
    
    *              v.1.05 [260320]
@@ -96,7 +96,7 @@
     local H = {};
     local hdblock = '#';
     if not tonumber(HIDE_ADD) or (HIDE_ADD ~= 0 and HIDE_ADD ~= 1) then;-- v.1.04
-        H.sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU__STATE';
+        H.sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU';
         HIDE_ADD = tonumber(reaper.GetExtState(H.sect,'State'))or 0;-- v.1.04
         hdblock = '';
     end;-- v.1.04

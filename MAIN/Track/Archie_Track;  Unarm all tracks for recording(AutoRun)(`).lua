@@ -3,7 +3,7 @@
    * Features:    Startup
    * Description: Track;  Unarm all tracks for recording(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Снять запись со всех треков
    * GIF:         ---
@@ -90,7 +90,7 @@
     
     --=========================================
     local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname..'_STATE','State')=='';
+        local StateHelp = reaper.GetExtState(extname,'StateHelp')=='';
         if StateHelp then;
             local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
                            'ставим галку "Remember my answer for this script"\n'..
@@ -111,7 +111,7 @@
                                'NEW INSTANCE !!!\n\n\n'
                                ,'NEW INSTANCE !!!',1);
                 if MB == 1 then;
-                    reaper.SetExtState(extname..'_STATE','State','true',true);
+                    reaper.SetExtState(extname,'StateHelp','true',true);
                 end;
             end;
         end;

@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Restore all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -35,17 +35,23 @@
     
     -------------------------------------
     local function countExState(extname);
-        local i=-1;while 0 do;
-            i=i+1;local retval=reaper.EnumProjExtState(0,extname,i);
-            if not retval then return i end;
+        local i=0;
+        while 1 do;
+            i=i+1;local retval=reaper.EnumProjExtState(0,extname,i-1);
+            if not retval then return i-1 end;
         end;
     end;
     -------------------------------------
     
     
-    local extname = 'ARCHIE_TRACK_MUTE_SOLO_STATE_SLOT '..SLOT;
+    
+    --=========================================
     SLOT = tonumber(SLOT)or 1;
     if SLOT < 1 or SLOT > 100 then slot = 1 end;
+    local extname = 'ARCHIE_TRACK_MUTE_SOLO_STATE_SLOT '..SLOT;
+    --=========================================
+    
+    
     
     reaper.PreventUIRefresh(1);
     
@@ -72,7 +78,7 @@
         end;
     end;
     
-    reaper.DeleteExtState('ArchieSoloMuteStateAllTrack'..SLOT,'SlMtState'..SLOT,false);
+    reaper.DeleteExtState(extname,'SaveState',false);
     
     reaper.defer(function()end);
     

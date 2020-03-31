@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnSolo all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -74,7 +74,7 @@
     
     -------------------------------------------------------
     local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname..'_STATE','State')=='';
+        local StateHelp = reaper.GetExtState(extname,'StateHelp')=='';
         if StateHelp then;
             local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
                            'ставим галку "Remember my answer for this script"\n'..
@@ -95,7 +95,7 @@
                                'NEW INSTANCE !!!\n\n\n'
                                ,'NEW INSTANCE !!!',1);
                 if MB == 1 then;
-                    reaper.SetExtState(extname..'_STATE','State','true',true);
+                    reaper.SetExtState(extname,'StateHelp','true',true);
                 end;
             end;
         end;
