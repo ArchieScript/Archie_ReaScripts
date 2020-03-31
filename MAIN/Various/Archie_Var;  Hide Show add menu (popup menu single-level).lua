@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Hide Show add menu (popup menu single-level).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Скрыть показать 'меню добавления'
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,6 +16,9 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    * Changelog:   
+   *              v.1.02 [310320]
+   *                  No change
+   
    *              v.1.0 [260320]
    *                  + initialе
 --]]
@@ -26,7 +29,7 @@
     
     
     
-    local sect = 'Popup menu single-level_HIDE ADD MENU_STATE';
+    local sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU__STATE';
     local HIDE_ADD = tonumber(reaper.GetExtState(sect,'State'))or 0;
     
     
