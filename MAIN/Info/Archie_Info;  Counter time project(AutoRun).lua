@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.16
+   * Version:     1.17
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -1225,17 +1225,15 @@
     local function TerminateAllInstances();
         local ret,val = Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,scriptPath,scriptName);
         if val ~= 516 then;
-            ::restart::;
-            reaper.MB('Reaper restart is required for the script to work!\n'..
-                      'Save all projects!!!\n'..
-                      'Reaper will now complete the work to configure the script.\n\n\n'..
-                      'Для работы скрипта требуется перезагрузка Reaper!\n'..
-                      'Сохраните все проекты!!!\n'..
-                      'Reaper сейчас завершит работу для настройки скрипта.',
-                      'Script Query',0);
+            --::restart::;
+            reaper.MB('Eng:\nReaper restart is required for correctly script to work!\n'..
+                      'Save all projects and restart Reaper!!!\n\n'..
+                      'Rus:\nДля корректной работы скрипта требуется перезагрузка Reaper!\n'..
+                      'Сохраните все проекты и перезапустите Reaper!!!\n'
+                      ,'Script Query',0);
             reaper.MarkProjectDirty(0);
             reaper.Main_OnCommand(40004,0);--File: Quit REAPER
-            goto restart;
+            --goto restart;
         end;
     end;
     -----------------------------
@@ -1306,5 +1304,32 @@
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    --Time_clearing-------------------
+    reaper.defer(function()
+        scriptName = 'Archie_Info;  Counter time project.lua'
+        local id = Arc.GetIDByScriptName(scriptName,scriptPath);
+        if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
+        local check_Id, check_Fun = Arc.GetStartupScript(id);
+        if check_Id then;
+            Arc.SetStartupScript(scriptName,id,nil,"ONE");
+    end;end);
+    -----------------------------------
+    
+    
+    
+    
+    
     
     
