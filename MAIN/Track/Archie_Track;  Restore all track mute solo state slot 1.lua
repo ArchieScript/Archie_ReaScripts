@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Restore all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -52,7 +52,7 @@
     --=========================================
     
     
-    
+    local UNDO;
     reaper.PreventUIRefresh(1);
     
     local i=0;
@@ -62,6 +62,9 @@
         if not retval or i>1e+4 then break end;
         local track = reaper.BR_GetMediaTrackByGUID(0,key);
         if track then;
+            if not UNDO then;
+                reaper.Undo_BeginBlock();UNDO=true;
+            end;
             local mute,solo = val:match('(%S+)%s+(%S+)');
             reaper.SetMediaTrackInfo_Value(track,'B_MUTE',mute or 0);
             reaper.SetMediaTrackInfo_Value(track,'I_SOLO',solo or 0);
@@ -78,9 +81,15 @@
         end;
     end;
     
-    reaper.DeleteExtState(extname,'SaveState',false);
+    reaper.DeleteExtState(extname,'SaveState',false);--button
     
-    reaper.defer(function()end);
+    if UNDO then;
+        reaper.Undo_EndBlock('Restore mute solo slot '..SLOT,-1);
+    else;
+        reaper.defer(function()end);
+    end;
+    
+    
     
     
     
