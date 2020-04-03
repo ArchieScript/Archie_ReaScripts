@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b155b08f7bf4ee92f4d3ca9b47a04c320a1483a7">
+<index version="1" name="Archie-ReaScripts" commit="2fa6d9329b60b8d6e08f1d604d1854b97945d9c7">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7612,6 +7612,33 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.0 [13.01.2020]
 + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/863b17787b65b78b9bf3aa9f47c587b9f93a7e5b/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20length%20selected%20notes%20to%20(Show%20popup%20menu).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Set selected notes velocity to(n).lua" type="script" desc="MidiEditor;  Set selected notes velocity to(n).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-03T06:59:51Z">
+        <changelog><![CDATA[v.1.0 [030420]
+    + initialе]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 0.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 10.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 20.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 30.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 40.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 50.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 60.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 70.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 80.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 90.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 100.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 110.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 120.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 127.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2fa6d9329b60b8d6e08f1d604d1854b97945d9c7/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Show Instrument.lua" type="script" desc="Show Instrument">
