@@ -68,10 +68,10 @@
                 reaper.PreventUIRefresh(1);
                 UNDO = true;
             end;
-            reaper.MIDI_SetNote(take,i-1,sel,mut,startppqpos,endppqpos,chan,pitch,VELOCITY,false);--true 
+            reaper.MIDI_SetNote(take,i-1,sel,mut,startppqpos,endppqpos,chan,pitch,VELOCITY,true); 
         end;
     end;
-    
+    reaper.MIDI_Sort(take);
     
     if UNDO then;
         reaper.Undo_EndBlock('Set selected notes velocity to '..VELOCITY,-1);
@@ -81,6 +81,3 @@
     end;
     
     reaper.UpdateArrange();
-    
-    
-    
