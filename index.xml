@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8d0580d564b6d8e19eab9f3c65e89aeab0f106b4">
+<index version="1" name="Archie-ReaScripts" commit="a2ee790d74aa24cbfa42d437713fbb1c4b93aa20">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7803,6 +7803,18 @@ Performance: Script completely rewritten]]></changelog>
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Unselect left wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Unselect right wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Velocity note under mouse cursor (mouse wheel).lua" type="script" desc="MIDI Editor;  Velocity note under mouse cursor (mouse wheel).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-04T08:43:04Z">
+        <changelog><![CDATA[v.1.0 [040420]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/a2ee790d74aa24cbfa42d437713fbb1c4b93aa20/MIDI%20Editor/Archie_MidiEditor;%20%20Velocity%20note%20under%20mouse%20cursor%20(mouse%20wheel).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Set note ends to start of next note (legato) - All notes.lua" type="script" desc="Set note ends to start of next note (legato) - All notes">
