@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a2ee790d74aa24cbfa42d437713fbb1c4b93aa20">
+<index version="1" name="Archie-ReaScripts" commit="d0b2dacaf1d56dd624cfe413d91651506620d503">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1671,6 +1671,11 @@ v.1.0 [28.08.19]
       <version name="1.17" author="Archie" time="2020-04-01T10:15:10Z">
         <changelog><![CDATA[v.1.15 [03.03.20]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2c26dd024167439eb58d0be56b6b071840fb0610/MAIN/Info/Archie_Info;%20%20Counter%20time%20project(AutoRun).lua</source>
+      </version>
+      <version name="1.18" author="Archie" time="2020-04-05T08:52:30Z">
+        <changelog><![CDATA[v.1.18 [05.04.20]
+    No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d0b2dacaf1d56dd624cfe413d91651506620d503/MAIN/Info/Archie_Info;%20%20Counter%20time%20project(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Info;  Learn what script are used in custom actions and cycle action.lua" type="script" desc="Learn what script are used in custom actions and cycle action">
@@ -7154,6 +7159,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[initialе
    + v.1.0 [19.10.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/View/Archie_View;%20%20Toggle%20auto-view-scroll%20during%20playback%20go%20to%20play%20position.lua</source>
+      </version>
+      <version name="1.02" author="Archie / borisuperful" time="2020-04-05T08:52:30Z">
+        <changelog><![CDATA[initialе
+   + v.1.0 [19.10.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d0b2dacaf1d56dd624cfe413d91651506620d503/MAIN/View/Archie_View;%20%20Toggle%20auto-view-scroll%20during%20playback%20go%20to%20play%20position.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Toggle prevention of spectral peaks / spectrogram on all tracks">
