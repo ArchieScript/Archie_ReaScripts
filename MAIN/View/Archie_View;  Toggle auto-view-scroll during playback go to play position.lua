@@ -6,7 +6,7 @@
    * Category:    View
    * Description: Toggle auto-view-scroll during playback go to play position
    * Author:      Archie / borisuperful
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: It works identically to the "Toggle auto-view-scroll during playback go to play position" script, only when turned on it scrolls the scroll to the play cursor
    * О скрипте:   Работает идентично скрипту "Toggle auto-view-scroll during playback go to play position", только при включении прокручивает скролл к плей курсору
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -24,6 +24,11 @@
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
+    local action = 'View: Toggle auto-view-scroll during playback'
+    str = "Rus:\nСкрипт устарел, Используйте экшен\n"..action..'\n\n'..
+          "Eng:\nThe script is outdated, Use action\n"..action
+    
+    reaper.MB(str,'Woops',0)
     
     
     local Toggle = reaper.GetToggleCommandStateEx(0,40036);--auto-view-scroll during playback
@@ -39,3 +44,4 @@
     local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
     reaper.SetToggleCommandState(sectionID,cmdID,math.abs(Toggle-1));
     reaper.RefreshToolbar(cmdID); reaper.defer(function()end);
+    

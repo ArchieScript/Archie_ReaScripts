@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.17
+   * Version:     1.18
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,8 +19,10 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.15 [03.03.20]
+   *              v.1.18 [05.04.20]
+   *                  No change
    
+   *              v.1.15 [03.03.20]
    *              v.1.15 [24.02.20]
    *                  + Added: playing Time since inception of project
    *              v.1.14 [24.02.20]
@@ -1315,7 +1317,7 @@
     
     
     
-    
+    --[[
     --Time_clearing-------------------
     reaper.defer(function()
         scriptName = 'Archie_Info;  Counter time project.lua'
@@ -1326,7 +1328,7 @@
             Arc.SetStartupScript(scriptName,id,nil,"ONE");
     end;end);
     -----------------------------------
-    
+    --]]
     
     
     
