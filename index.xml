@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ce7fb046d9c511c311d0d4b27c1950fb88265c18">
+<index version="1" name="Archie-ReaScripts" commit="11f16b9a14276f4d577e45d58feddbf031e259b2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2137,19 +2137,6 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [13.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c9a94e2efd1132320f3818984e025444b57dcca2/MAIN/Item/Archie_Item;%20%20Duplicate%20selected%20area%20of%20items%20back.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_Item;  Glue cracks in items.lua" type="script" desc="Item;  Glue cracks in items.lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-04-06T08:25:31Z">
-        <changelog><![CDATA[v.1.0 [060420]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ce7fb046d9c511c311d0d4b27c1950fb88265c18/MAIN/Item/Archie_Item;%20%20Glue%20cracks%20in%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
