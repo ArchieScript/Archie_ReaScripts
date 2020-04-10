@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="035ea00f2057ad1334f5d905cc86afeca9df6afb">
+<index version="1" name="Archie-ReaScripts" commit="5ef7763bd97c2bcf63fac7d15e418a498cbaee98">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6759,7 +6759,7 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Var;  Popup menu single-level(30).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Pre-reverb">
+    <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -6769,6 +6769,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [11.12.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0f5a8a4b032fcdac7e184033992b7d5744e319b9/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-04-10T07:13:12Z">
+        <changelog><![CDATA[v.1.02 [11.04.20]
+    + Possibility of arithmetic operations in the input field
+    + Cleaning up intermediate files in a directory
+    + Fixed bug when working with multiple items at the same time
+    + automatic channel detection
+    + -----
+    + Возможность арифметических действий в поле ввода
+    + Зачистка от промежуточных файлов в директории
+    + Исправлена ошибка при работе с несколькими элементами одновременно
+    + автоопределение каналов]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ef7763bd97c2bcf63fac7d15e418a498cbaee98/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
