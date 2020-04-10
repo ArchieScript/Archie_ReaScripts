@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Various
-   * Description: Pre-reverb
+   * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -16,7 +16,20 @@
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.01+ http://www.reaper.fm/
-   * Changelog:   v.1.0 [11.12.19]
+   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   * Changelog:   
+   *              v.1.02 [11.04.20]
+   *                  + Possibility of arithmetic operations in the input field
+   *                  + Cleaning up intermediate files in a directory
+   *                  + Fixed bug when working with multiple items at the same time
+   *                  + automatic channel detection
+   *                  + -----
+   *                  + Возможность арифметических действий в поле ввода
+   *                  + Зачистка от промежуточных файлов в директории
+   *                  + Исправлена ошибка при работе с несколькими элементами одновременно
+   *                  + автоопределение каналов
+   
+   *              v.1.0 [11.12.19]
    *                  + initialе
 --]]
     
@@ -33,59 +46,59 @@
     
     
     
-    local NameTemplates = "ArchiePreVerb"  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
+    local NameTemplates = "ArchiePreVerb";  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
     
     
     
-    local PreFxTrack = false
+    local PreFxTrack = false;
                   -- = true  Перед эффектами на треке
                   -- = false После эффектов на треке
     
     
     
-    local Channel = 2
-               -- = 1 Track: Render selected area of tracks to mono post-fader stem tracks (and mute originals)
-               -- = 2 Track: Render selected area of tracks to stereo post-fader stem tracks (and mute originals)
-               -- = 3 Track: Render selected area of tracks to multichannel post-fader stem tracks (and mute originals)
+    local Channel = 4;
+               -- = 1 mono         / Track: Render selected area of tracks to mono post-fader stem tracks (and mute originals)
+               -- = 2 stereo       / Track: Render selected area of tracks to stereo post-fader stem tracks (and mute originals)
+               -- = 3 multichannel / Track: Render selected area of tracks to multichannel post-fader stem tracks (and mute originals)
+               -- = 4 Определи автоматически / Detect it automatically
     
     
-    
-    local snapToGrid = true
+    local snapToGrid = true;
                   -- = true  | Ровнять по ближайшей сетке
                   -- = false | Не ровнять по сетке, рендерить четко по времени (Tail_Rever) 
     
     
-    local FADEIN  = true
+    local FADEIN  = true;
               --  = true  | on fade in
               --  = false | off fade in
     
     
-    local FADEOUT = true
+    local FADEOUT = true;
              --  = true  |  on fade out
              --  = false | off fade out
     
     
-    local IN_SHAPE  = 0  -- 0..6, 0=linear, -1 default
-    local OUT_SHAPE = 2  -- 0..6, 0=linear, -1 default
+    local IN_SHAPE  = 0;  -- 0..6, 0=linear, -1 default
+    local OUT_SHAPE = 2;  -- 0..6, 0=linear, -1 default
     
     
     
-    local Pre_Vol_Track = true
+    local Pre_Vol_Track = true;
                      -- = true  | Перед громкостью на треке
                      -- = false | После громкости на треке
     
     
-    local Pre_Pan_Track = true
+    local Pre_Pan_Track = true;
                      -- = true  | Перед панорамой на треке
                      -- = false | После панорамой на треке
     
     
-    local Remove_Time_Silection = true
+    local Remove_Time_Silection = true;
                              -- = true  | Удалить выбор времени
                              -- = false | Не удалять выбор времени
     
     
-    local Name_Track = 'Pre Reverb'
+    local Name_Track = 'Pre Reverb';
                   -- = 'Имя трека'
     
     
@@ -166,19 +179,23 @@
     --=====================================================
     if not tonumber(Tail_Rever) and Tail_Rever ~= true then Tail_Rever = false end;
     if Tail_Rever == true then;
-        local val = tonumber(({reaper.GetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec")})[2])or(endLoop-startLoop);
-        
-        local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection)",val);
+        --local val = tonumber(({reaper.GetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec")})[2])or(endLoop-startLoop);
+        local val = tonumber(string.format("%.4f", endLoop-startLoop));--v.1.02
+        local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection),extrawidth=60",val);
         if not retval then no_undo() return end;
+        if retvals_csv:match('^[%+%-%*%/]')then;--v.1.02
+            retvals_csv = val..retvals_csv--v.1.02
+        end;--v.1.02
+        retvals_csv = retvals_csv:gsub('[,;]','.');--v.1.02
+        local _,retvals_csv = pcall(load('return '..retvals_csv));--v.1.02
         retvals_csv = tonumber(retvals_csv);
-        
         if not retvals_csv or retvals_csv <= 0 then;
             retvals_csv = (endLoop-startLoop);
         end;
-        reaper.SetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec",retvals_csv);
+        --reaper.SetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec",retvals_csv);
         Tail_Rever=retvals_csv;
     elseif not Tail_Rever or Tail_Rever <= 0 then;
-        Tail_Rever = (endLoop-startLoop); 
+        Tail_Rever = (endLoop-startLoop);
     end;
     --=====================================================
     
@@ -205,6 +222,37 @@
     if ShowStatusWindow == 1 then;
         reaper.SNM_SetIntConfigVar("showpeaksbuild",0);
     end;
+    --=====================================================
+    
+    
+    
+    --=====================================================
+    ---(v.1.02
+    if Channel == 4 then;
+        local retChan = -1;
+        local ChanSrc; 
+        for i = 1, #SelItemT do;
+            local take = reaper.GetActiveTake(SelItemT[i]);
+            local isMidi = reaper.TakeIsMIDI(take);
+            if not isMidi then;
+                local source = reaper.GetMediaItemTake_Source(take);
+                source = reaper.GetMediaSourceParent(source)or source;
+                ChanSrc = reaper.GetMediaSourceNumChannels(source);
+                local chan = reaper.GetMediaItemTakeInfo_Value(take,"I_CHANMODE");
+                if chan == 1 then ChanSrc = 2 end;
+                if chan > 1 and chan < 5 then ChanSrc = 1 end;
+            else;
+                ChanSrc = 2;
+            end;
+            if ChanSrc > retChan then retChan = ChanSrc end;
+            if retChan > 2 then break end;
+        end;   
+        if retChan <= 0 then retChan = 2 end;
+        Channel = retChan;
+        if Channel < 1 then Channel = 1 end;
+        if Channel > 3 then Channel = 3 end;
+    end;
+    --- v.1.02)
     --=====================================================
     
     
@@ -305,22 +353,36 @@
     for i = reaper.CountSelectedTracks(0)-1,0,-1 do;
         local SelTrack = reaper.GetSelectedTrack(0,i);
         local CountTrItems = reaper.CountTrackMediaItems(SelTrack);
-        for ii = 1,CountTrItems do;
-            local item = reaper.GetTrackMediaItem(SelTrack,ii-1);
+        for ii = CountTrItems-1,0,-1 do;
+            local item = reaper.GetTrackMediaItem(SelTrack,ii);
             reaper.MoveMediaItemToTrack(item,TrackPreVerb);
         end;
     end;
-    reaper.Main_OnCommand(40005,0);--Track: Remove tracks 
+    reaper.Main_OnCommand(40005,0);--Track: Remove tracks
     --=====================================================
     
     
     
     --=====================================================
+    reaper.SelectAllMediaItems(0,0);
+    local remfileT = {};
     local CountTrItems = reaper.CountTrackMediaItems(TrackPreVerb);
     for i = 1,CountTrItems do;
         local item = reaper.GetTrackMediaItem(TrackPreVerb,i-1);
         reaper.SetMediaItemInfo_Value(item,"B_UISEL",1);
+        ---(v.1.02
+        local take = reaper.GetActiveTake(item);
+        local source = reaper.GetMediaItemTake_Source(take);
+        local source = reaper.GetMediaSourceParent(source)or source;
+        local filenamebuf = reaper.GetMediaSourceFileName(source,'');
+        if type(filenamebuf)=='string'and filenamebuf ~= '' then;
+            remfileT[#remfileT+1] = filenamebuf;
+        end;
+        ---v.1.02)
     end;
+    ---(v.1.02
+    reaper.Main_OnCommand(40919,0); -- Set item mix behavior to always mix
+    ---v.1.02)
     reaper.Main_OnCommand(41051,0); -- Toggle take reverse
     --=====================================================
     
@@ -342,17 +404,15 @@
     
     
     --=====================================================
+    if type(Name_Track)~='string'or #Name_Track:gsub('[%s.,;"]','')==0 then Name_Track='Pre Reverb'end;
     reaper.SetOnlyTrackSelected(TrackPreVerb);
+    reaper.GetSetMediaTrackInfo_String(TrackPreVerb,"P_NAME",Name_Track,1);
     reaper.Main_OnCommand(ChanT[Channel],0);--render
     local TrackPreVerbReady = reaper.GetSelectedTrack(0,0);
-    
-    reaper.defer(function()
-        if type(Name_Track)~='string'or #Name_Track:gsub('[%s.,;"]','')==0 then Name_Track='Pre Reverb'end;
-        reaper.GetSetMediaTrackInfo_String(TrackPreVerbReady,"P_NAME",Name_Track,1);
-    end);
+    reaper.GetSetMediaTrackInfo_String(TrackPreVerbReady,"P_NAME",Name_Track,1);
     
     reaper.SetOnlyTrackSelected(TrackPreVerb);
-    reaper.Main_OnCommand(40005,0);--Track: Remove tracks 
+    reaper.Main_OnCommand(40005,0);--Track: Remove tracks
     reaper.SetOnlyTrackSelected(TrackPreVerbReady);
     
     reaper.GetSet_LoopTimeRange(1,0,startLoop,endLoop,0);
@@ -368,6 +428,10 @@
         end;
         reaper.SetMediaItemInfo_Value(item,"D_POSITION",pos-((pos+len)-endLoop));
         reaper.SetMediaItemInfo_Value(item,"B_UISEL",1);
+        ---(v.1.02
+        local tk = reaper.GetActiveTake(item);
+        reaper.GetSetMediaItemTakeInfo_String(tk,'P_NAME',Name_Track,1); 
+        ---v.1.02)
     end;
     reaper.Main_OnCommand(41051,0); -- Toggle take reverse
     --=====================================================
@@ -435,6 +499,13 @@
     end;
     --=====================================================
     
+    
+    ---(v.1.02---------------------------
+    reaper.defer(function();
+                 for i = 1,#remfileT do;
+                     os.remove(remfileT[i]);
+                 end;end);
+    ---v.1.02)---------------------------
     
     
     --=========================
