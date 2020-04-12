@@ -2,12 +2,42 @@
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
-   *
+   * 
+   * 
+   * 
+   * ВАЖНО:
+   * ПРИ ИСПОЛЬЗОВАНИИ ОТМЕНЫ СКРИПТ РАБОТАЕТ НЕКОРРЕКТНО, 
+   * Т.Е. ЕСЛИ ВЫ СВЕРНУЛИ,РАЗВЕРНУЛИ ПАПКУ ИЛИ СКОПИРОВАЛИ 
+   * ТРЕК В СВЕРНУТУЮ ПАПКУ ИЛИ СОЗДАЛИ ТРЕК В СВЕРНУТУЮ ПАПКУ
+   * И ПОСЛЕ ЭТОГО НАЖАЛИ ОТМЕНУ, ТО ТРЕКИ МОГУТ ПЕРЕСТАТЬ 
+   * ОТОБРАЖАТЬСЯ, Т.Е. ОНИ ОСТАЮТСЯ СКРЫТЫМИ И НУЖНО ЛИБО 
+   * ЧЕРЕЗ ТРЕК МЭНЭДЖЭР ОТОБРАЗИТЬ ИХ ЛИБО ПРЕМЕНИТЬ ЭКШЕН
+   * "SWS: Show all tracks in TCP"
+   * ЛИБО ПРИМЕНИТЬ СКРИПТ 
+   * "Script: Archie_Track;  Show child tracks of selected folders in TCP.lua"
+   * 
+   * IMPORTANT:
+   * WHEN USING UNDO, THE SCRIPT WORKS INCORRECTLY,
+   * i.e. IF YOU DECLINED, DEPLOYED THE FOLDER OR SCOPE 
+   * A TRACK TO THE FOLDED FOLDER OR CREATED A TRACK TO 
+   * THE FOLDED FOLDER AND AFTER THIS, UNDO, THEN THE 
+   * TRACKS MAY STOP DISPLAYED, T. THEY REMAIN HIDDEN AND 
+   * NEEDS EITHER THROUGH THE TRACK MANAGER TO DISPLAY THEM 
+   * OR TO CHANGE THE ACTION 
+   * "SWS: Show all tracks in TCP" 
+   * OR TO APPLY THE SCRIPT 
+   * "Script: Archie_Track;  Show child tracks of selected folders in TCP.lua"
+   * 
+   * 
+   * 
+   * 
+   * 
+   * 
    * Category:    Track
    * Features:    Startup
    * Description: Track;  Hide super collapsed (background)(AutoRun).lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Трек; скрыть супер свернутые (фон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -19,9 +49,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.06 [110420]
+   *                  ! Fixed bug when copying to a collapsed folder
+   
    *              v.1.05 [31.03.20]
    *                  + AutoRun
-   
    *              v.1.02 [290320]
    *                  ! Fixed bug  
    *              v.1.0 [270320]
@@ -154,12 +186,45 @@
     --=========================================
     
     
+    
+    --=========================================
+    local cpT;
+    local function showNewCopyTrack();
+        if not cpT then;
+            cpT = {};
+            for i = 1,reaper.CountTracks(0)do;
+                local track = reaper.GetTrack(0,i-1);
+                cpT[tostring(track)] = track;
+            end;
+        end;
+        for i = 1,reaper.CountTracks(0)do;
+            local track = reaper.GetTrack(0,i-1);
+            if not cpT[tostring(track)] then;
+                cpT[tostring(track)] = track;
+                local GUID = reaper.GetTrackGUID(track);
+                reaper.SetProjExtState(0,extname,GUID,0);
+            end;
+        end;
+        
+        for var,key in pairs(cpT)do;  
+           local retval,buf = pcall(reaper.GetTrackName,key);
+           if not retval then;
+               cpT[tostring(key)] = nil;
+           end;
+        end;
+    end; 
+    --=========================================
+    
+    
+    
     --=========================================
     --=========================================
     local function loop();
         if t.Exit_STOP == true then --[[reaper.atexit(Exit)]] return end;
         local ChanInProj = ChangesInProject();
         if ChanInProj then;--CHANGES_PROJ
+            
+            showNewCopyTrack();
             
             local Refresh,stopInside,foldX,stopX,depthX;
             ----
