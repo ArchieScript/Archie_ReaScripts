@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5f320fab1491e1f4c1c542b70cd66562b90e9b6b">
+<index version="1" name="Archie-ReaScripts" commit="49f5ef5b1689f0833507e1897568164eedf7bdcd">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5142,6 +5142,45 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5a2c02f1575efe353143047b09ef60b216b99262/MAIN/Track/Archie_Track;%20%20Hide%20child%20tracks%20of%20selected%20folders%20in%20TCP.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Hide selected tracks in MCP.lua" type="script" desc="Track;  Hide selected tracks in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20selected%20tracks%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide selected tracks in TCP and MCP.lua" type="script" desc="Track;  Hide selected tracks in TCP and MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20selected%20tracks%20in%20TCP%20and%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide selected tracks in TCP.lua" type="script" desc="Track;  Hide selected tracks in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20selected%20tracks%20in%20TCP.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Hide super collapsed (background)(AutoRun).lua" type="script" desc="Track;  Hide super collapsed (background)(AutoRun).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -5163,6 +5202,45 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.06 [110420]
     ! Fixed bug when copying to a collapsed folder]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5f320fab1491e1f4c1c542b70cd66562b90e9b6b/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide unselected tracks in MCP.lua" type="script" desc="Track;  Hide unselected tracks in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20unselected%20tracks%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide unselected tracks in TCP and MCP.lua" type="script" desc="Track;  Hide unselected tracks in TCP and MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20unselected%20tracks%20in%20TCP%20and%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Hide unselected tracks in TCP.lua" type="script" desc="Track;  Hide unselected tracks in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Hide%20unselected%20tracks%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Insert new track with height last track touched.lua" type="script" desc="Insert new track with height last track touched">
@@ -5911,6 +5989,84 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [10.12.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ccdfef82e874fc23db8d1b0143f621d6411ca6f2/MAIN/Track/Archie_Track;%20%20Show%20only%20send%20selected%20track(s)%20matching%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show selected tracks in MCP.lua" type="script" desc="Track;  Show selected tracks in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20selected%20tracks%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show selected tracks in TCP and MCP.lua" type="script" desc="Track;  Show selected tracks in TCP and MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20selected%20tracks%20in%20TCP%20and%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show selected tracks in TCP.lua" type="script" desc="Track;  Show selected tracks in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20selected%20tracks%20in%20TCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show unselected tracks in MCP.lua" type="script" desc="Track;  Show unselected tracks in MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20unselected%20tracks%20in%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show unselected tracks in TCP and MCP.lua" type="script" desc="Track;  Show unselected tracks in TCP and MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20unselected%20tracks%20in%20TCP%20and%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Show unselected tracks in TCP.lua" type="script" desc="Track;  Show unselected tracks in TCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-12T16:18:29Z">
+        <changelog><![CDATA[v.1.0 [120420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/49f5ef5b1689f0833507e1897568164eedf7bdcd/MAIN/Track/Archie_Track;%20%20Show%20unselected%20tracks%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Show-Hide tracks receives (created by script - Insert track receive from all tracks).lua" type="script" desc="Show-Hide tracks receives (created by script - Insert track receive from all tracks)">
