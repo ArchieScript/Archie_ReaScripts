@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,9 +21,11 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
+   *              v.1.11 [130420]
+   *                  + Add multiple actions at once
+    
    *              v.1.10 [130420]
    *                  AutoFill the form when adding an action (before clicking add, select an action in the actions list)
-   
    *              v.1.09 [120420]
    *                  + Automatically creating copies with the desired label in the script name
    *              v.1.08 [310320]
@@ -70,43 +72,44 @@
         
         
         
-        -- (v.1.10    -------------------------------------
-        local function GetSelActionsActList();
-            --http://forum.cockos.com/showthread.php?p=2270516#post2270516
-            local function GetSelectedActionsFromActionList()
-              local hWnd_action = reaper.JS_Window_Find("Actions", true)
-              if not hWnd_action then return end
-              local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action, 1323)
-              if reaper.JS_ListView_GetItemText(hWnd_LV, 0, 3) == "" then
-                --reaper.MB("Please, enable 'Show action IDs' in Actions list", "Right-click Action List window", 0)
-                return
-              end
-              -- get selected count & selected indexes
-              local sel_count, sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV)
-              if sel_count == 0 then
-                --reaper.MB("Please select one or more actions.", "No actions are selected", 0)
-                return
-              end
-              local selected_actions = {}
-              local i = 0
-              for index in string.gmatch(sel_indexes, '[^,]+') do
-                i = i + 1
-                local desc = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 1)
-                local cmd = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 3)
-                selected_actions[i] = {cmd = cmd, name = desc:gsub(".+: ", "", 1)}
-              end
-              return selected_actions
-            end
-            -----
-            local cmd,name;
-            if reaper.APIExists('JS_Window_Find')then;
-                local selected_actions = GetSelectedActionsFromActionList()or {};
-                if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
-                if selected_actions[1]then name = selected_actions[1].name end;
-            end;
-            return cmd or '', name or ''
-        end;
-        -- v.1.10)    -------------------------------------
+    -- (v.1.10    -------------------------------------
+     local function GetSelActionsActList();
+         --http://forum.cockos.com/showthread.php?p=2270516#post2270516
+         local function GetSelectedActionsFromActionList()
+           local hWnd_action = reaper.JS_Window_Find("Actions", true)
+           if not hWnd_action then return end
+           local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action, 1323)
+           if reaper.JS_ListView_GetItemText(hWnd_LV, 0, 3) == "" then
+             --reaper.MB("Please, enable 'Show action IDs' in Actions list", "Right-click Action List window", 0)
+             return
+           end
+           -- get selected count & selected indexes
+           local sel_count, sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV)
+           if sel_count == 0 then
+             --reaper.MB("Please select one or more actions.", "No actions are selected", 0)
+             return
+           end
+           local selected_actions = {}
+           local i = 0
+           for index in string.gmatch(sel_indexes, '[^,]+') do
+             i = i + 1
+             local desc = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 1)
+             local cmd = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 3)
+             selected_actions[i] = {cmd = cmd, name = desc:gsub(".+: ", "", 1)}
+           end
+           return selected_actions
+         end
+         -----
+         local cmd,name,selected_actions;
+         if reaper.APIExists('JS_Window_Find')then;
+             selected_actions = GetSelectedActionsFromActionList()or {};
+             if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
+             if selected_actions[1]then name = selected_actions[1].name end;
+         end;
+         return cmd or '', name or '', selected_actions;
+     end;
+     -- v.1.10)    -------------------------------------
+        
         
         
         
@@ -250,30 +253,49 @@
                     x=x+1;
                     if x == showMenu then;
                         ----
-                        local act,idCheck,id;
+                        local act,idCheck,id,tblAct,tblAutoAct;
                         ---
-                        id,act  = GetSelActionsActList();--1.10
-                        ---
-                        ::restart::;
-                        if idCheck == 0 or not id then id = '' end;
-                        local retval,retvals_csv = reaper.GetUserInputs('Add action',2,'Add  ID  Action:,'..
-                                                                                       'Add  Name  Action:,'..
-                                                                                       'extrawidth=350,'..
-                                                                                       'separator==',id..'='..(act or ''));
-                        if not retval then no_undo() return end;
-                        
-                        id = retvals_csv:match('(.-)='):gsub('%s','');
-                        if not tonumber(id)then;
-                            idCheck = reaper.NamedCommandLookup(id);
-                        else;
-                            idCheck = tonumber(id);
+                        id,act,tblAct  = GetSelActionsActList();--1.10
+                        if type(tblAct)=='table' and #tblAct > 1 then;--1.11
+                            local MB = reaper.MB(
+                            'Eng:\nShow window for entering action - OK\n'..
+                            'Add selected actions to List - Cancel\n\n'..
+                            'Rus:\nПоказать окно для ввода действия - ОК\n'..
+                            'Добавить выделенные действия в Список - Отмена'
+                            ,'help Add action Popup Menu',1);--1.11
+                            if MB == 2 then tblAutoAct = tblAct end;--1.11
                         end;
-                        
-                        act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
-                        if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' then act = nil end;
-                        if not act or idCheck == 0 then goto restart end;
-                        
-                        val = '{&&'..id..'='..act..'&&}'..val;
+                        ---
+                        if not tblAutoAct then;--1.11
+                        --- ---- --- --- ---
+                            ::restart::;
+                            if idCheck == 0 or not id then id = '' end;
+                            local retval,retvals_csv = reaper.GetUserInputs('Add action',2,'Add  ID  Action:,'..
+                                                                                           'Add  Name  Action:,'..
+                                                                                           'extrawidth=350,'..
+                                                                                           'separator==',id..'='..(act or ''));
+                            if not retval then no_undo() return end;
+                            
+                            id = retvals_csv:match('(.-)='):gsub('%s','');
+                            if not tonumber(id)then;
+                                idCheck = reaper.NamedCommandLookup(id);
+                            else;
+                                idCheck = tonumber(id);
+                            end;
+                            
+                            act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
+                            if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' then act = nil end;
+                            if not act or idCheck == 0 then goto restart end;
+                            
+                            val = '{&&'..id..'='..act..'&&}'..val;
+                            ---- --- --- ---
+                        else;--(1.11
+                            local strAct;
+                            for t = 1,#tblAutoAct do;
+                                strAct = (strAct or '')..'{&&'..tblAutoAct[t].cmd..'='..tblAutoAct[t].name..'&&}'
+                            end;
+                            val = strAct..val;
+                        end;--1.11)
                     end;
                     
                     strT[#strT+1] = val;
