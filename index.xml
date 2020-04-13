@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3af3553e296fce0a25c9a088ea6070ca7aa3c473">
+<index version="1" name="Archie-ReaScripts" commit="bfccc4ad0c166abbe44c3e5e4a19faf55f798e47">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7007,6 +7007,11 @@ v.1.0 [28.08.19]
     AutoFill the form when adding an action (before clicking add, select an action in the actions list)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3af3553e296fce0a25c9a088ea6070ca7aa3c473/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-04-13T12:13:32Z">
+        <changelog><![CDATA[v.1.11 [130420]
+    + Add multiple actions at once]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bfccc4ad0c166abbe44c3e5e4a19faf55f798e47/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
       <metadata>
@@ -7907,6 +7912,11 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.10 [130420]
     AutoFill the form when adding an action (before clicking add, select an action in the actions list)]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/3af3553e296fce0a25c9a088ea6070ca7aa3c473/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-04-13T12:13:32Z">
+        <changelog><![CDATA[v.1.11 [130420]
+    + Add multiple actions at once]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/bfccc4ad0c166abbe44c3e5e4a19faf55f798e47/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
