@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,6 +14,9 @@
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
    * Changelog:   
+   *              v.1.0 [150420]
+   *                  + Bypass / Unbypass all effects
+   
    *              v.1.0 [19.01.20]
    *                  + initialе
 --]]
@@ -28,6 +31,7 @@
     
         local msg = 
         "Rus:\n\n"..
+        'v.1.03 - "*0" или "all" - вкл / выкл все эффекты\n\n'..
         "Скрипт: "..
         "Переключатель - байпас необходимых Fx в выбранных треках\n"..
         "(пользовательский ввод  через запятую или точка с запятой)\n"..
@@ -44,6 +48,7 @@
         "Mode: Mode 1 - байпас всех Fx в одно состояние, Mode 2 - переключать зеркально\n"..
         "т.е. если один fx включен, а второй выключен, то они поменяются местами.\n\n\n\n"..
         "Eng:\n\n"..
+        'V. 1. 03 - "*0 " or "all" - Bypass / Unbypass all effects\n\n'..
         "Script: "..
         "Toggle-bypass required Fx in selected tracks\n"..
         "(user input separated by a comma or semicolon)\n"..
@@ -78,6 +83,19 @@
     end;
     --============================================================
     
+    
+    
+    --=================================
+    ---------------------------------
+    local function CountTable(table);
+        local x = 0;
+        for k,v in pairs(table)do;
+            x = x + 1;
+        end;
+        return x;
+    end;  
+    ---------------------------------
+    --=================================
     
     
     
@@ -116,7 +134,7 @@
         ------------------------------------------------------------------------------------------
         if retT(numT) > 0 then NameNumb = 'NUMB' elseif retT(strT) > 0 then NameNumb = 'NAME' end;
         ------------------------------------------------------------------------------------------
-        
+        --RR=numT
         
         local GetEnabled, SetEnabled, Undo, strU;
         
@@ -156,7 +174,10 @@
                                 for key,val in pairs(strT)do;
                                 
                                     nameFx = nameFx:upper();
-                                    if nameFx:match(SC(strT[key])) and #strT[key]>=1 then;
+                                    
+                                    if strT[key]:gsub('%s','')=='ALL'and #strT==1 then ALL_B = true end;--v.1.03
+                                    
+                                    if (nameFx:match(SC(strT[key])) and #strT[key]>=1)or ALL_B then;
                                         
                                         if not GetEnabled then;
                                             GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
@@ -181,12 +202,13 @@
                                         break;
                                     end; 
                                 end;
+                                ALL_B = nil;--v.1.03
                                 ---------
                                 -----------
                             elseif NameNumb == 'NUMB' then;
                                 -----------
                                 ---------
-                                if numT[ifx] then;
+                                if numT[ifx] or (CountTable(numT)==1 and numT[0]==0) then;
                                     
                                     if not GetEnabled then;
                                         GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
@@ -475,7 +497,7 @@
         
         if gfx.mouse_cap == 2 or PresetButton == 2 then;
              
-            local presetList = reaper.GetExtState(section,"presetList");
+            local presetList = 'ALL&&&'..reaper.GetExtState(section,"presetList");
             ---
             local T_repetition = {};
             local presetList2 = '';
