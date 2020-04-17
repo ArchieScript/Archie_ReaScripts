@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="caa9fd593bcdd4e1ce3859f302922a6d88f8d938">
+<index version="1" name="Archie-ReaScripts" commit="c2ed2acc6b311999f6001981e1ec946099a3625e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7079,6 +7079,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [22.10.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Various/Archie_Var;%20%20Remove%20items%20outside%20time%20selection%20in%20selected%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Var;  Remove items tracks env points (depending on focus) select next.lua" type="script" desc="Var;  Remove items tracks env points (depending on focus) select next.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-17T13:33:09Z">
+        <changelog><![CDATA[v.1.0 [170420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c2ed2acc6b311999f6001981e1ec946099a3625e/MAIN/Various/Archie_Var;%20%20Remove%20items%20tracks%20env%20points%20(depending%20on%20focus)%20select%20next.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Save time selection when record - Copy selected items after recording In place.lua" type="script" desc="Var;  Save time selection when record - Copy selected items after recording In place">
