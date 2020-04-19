@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.12 [190420]
+   *                  + Storing the list directly in the script (relevant for newly created scripts)
+   
    *              v.1.11 [130420]
    *                  + Add multiple actions at once
-   
    *              v.1.10 [130420]
    *                  AutoFill the form when adding an action (before clicking add, select an action in the actions list)
    *              v.1.09 [120420]
@@ -66,6 +68,66 @@
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
+    
+    
+    
+    --============================================================= 
+    --===(v.1.12 | Ext State | ====================================
+    local function GetStrFile();
+        local scriptFile = debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/');
+        local file = io.open(scriptFile,'r');
+        local str = file:read('a');
+        file:close();
+        return str,scriptFile;
+    end;
+    ---
+    local function GetList(key);
+        key=tostring(key)
+        if not key or key:gsub(' ','') == '' then return '' end;
+        return(GetStrFile():match('%-%-%[%=%[%s-'..key..'%s-%=%s-%[%s-%[(.-)%]%=%]')or''):gsub('\n','');
+    end;
+    ---
+    local function SetList(key,value);
+        key=tostring(key)value=tostring(value);local StrNew;
+        if not key   or   key:gsub(' ','') == '' then return false end;
+        if not value or value:gsub(' ','') == '' then return false end;
+        local StrFile,scriptFile = GetStrFile();
+        local list = (StrFile:match('%-%-%[%=%[%s-'..key..'%s-%=%s-%[%s-%[.-%]%=%]'));
+        if list then;
+            StrNew = StrFile:gsub(list:gsub('%p','%%%0'),'--[=['..key..'=[['..value..']=]',1);
+        else;
+            StrNew = '--[=['..key..'=[['..value..']=]\n'..StrFile;
+        end;
+        if StrFile ~= StrNew then;
+            local file = io.open(scriptFile,'w');
+            file:write(StrNew);
+            file:close();
+            return true;
+        else;
+            return false;
+        end;
+    end;
+    ---
+    local function DelList(key);
+        key=tostring(key);local StrNew;
+        if not key or key:gsub(' ','') == '' then return false end;
+        local StrFile,scriptFile = GetStrFile();
+        local list = (StrFile:match('%-%-%[%=%[%s-'..key..'%s-%=%s-%[%s-%[.-%]%=%]%s*\n-'));
+        if list then;
+            StrNew = StrFile:gsub(list:gsub('%p','%%%0'),'',1);
+        end;
+        if StrNew and StrNew ~= StrFile then;
+            local file = io.open(scriptFile,'w');
+            file:write(StrNew);
+            file:close();
+            return true;
+        else;
+            return false;
+        end;
+    end;
+    --=== | Ext State | v.1.12)====================================
+    --=============================================================
+    
     
     
     local function main();
@@ -144,7 +206,8 @@
         
         
         ---------------------------------------------------
-        local ExtState = reaper.GetExtState(section,'LIST');
+        --local ExtState = reaper.GetExtState(section,'LIST');
+        local ExtState = GetList('LIST');--v.1.12;
         local t        = {};
         local nameT    = {};
         local idT      = {};
@@ -291,7 +354,8 @@
                     
                     strT[#strT+1] = val;
                 end;
-                reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                --reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                SetList('LIST',table.concat(strT));-- v.1.12;
             end;
             gfx.quit();
             no_undo();
@@ -313,7 +377,8 @@
                         if x == showMenu then val = nil end;
                         strT[#strT+1] = val;
                     end;
-                    reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    --reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    SetList('LIST',table.concat(strT));-- v.1.12;
                 end;
             end;
             gfx.quit();
@@ -324,7 +389,8 @@
             if #nameTRem > 0 then;
                 local MB = reaper.MB('Remove All List ?','Remove',1);
                 if MB == 2 then gfx.quit()no_undo()return end;
-                reaper.DeleteExtState(section,'LIST',true);
+                --reaper.DeleteExtState(section,'LIST',true);
+                DelList('LIST');-- v.1.12;
             end;
             ----
             local MB = reaper.MB('Remove Script ?','Remove Script',1);
@@ -376,7 +442,8 @@
                         end; 
                         strT[#strT+1] = val;
                     end;
-                    reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    --reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    SetList('LIST',table.concat(strT));-- v.1.12;
                 end;
             end;
             gfx.quit();
@@ -406,7 +473,8 @@
                     for i = 1,#strT +1 do;
                         if showMenu-1 == i then strT[i] = moveX..(strT[i]or'') end;
                     end;
-                    reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    --reaper.SetExtState(section,'LIST',table.concat(strT),true);
+                    SetList('LIST',table.concat(strT));-- v.1.12;
                 end;
                 gfx.quit();
                 no_undo();
@@ -426,7 +494,8 @@
             if MB == 1 then;
                 reaper.SetExtState(H.sect,'State',1,true);
             end;
-        no_undo();
+            gfx.quit();
+            no_undo();
             --======================
         --elseif showMenu == numbUpDown+7 then;
             --====================== 
