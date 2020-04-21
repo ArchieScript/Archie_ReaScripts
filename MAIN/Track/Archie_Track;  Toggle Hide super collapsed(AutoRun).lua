@@ -11,7 +11,7 @@
    * ТРЕК В СВЕРНУТУЮ ПАПКУ ИЛИ СОЗДАЛИ ТРЕК В СВЕРНУТУЮ ПАПКУ
    * И ПОСЛЕ ЭТОГО НАЖАЛИ ОТМЕНУ, ТО ТРЕКИ МОГУТ ПЕРЕСТАТЬ 
    * ОТОБРАЖАТЬСЯ, Т.Е. ОНИ ОСТАЮТСЯ СКРЫТЫМИ И НУЖНО ЛИБО 
-   * ЧЕРЕЗ ТРЕК МЭНЭДЖЭР ОТОБРАЗИТЬ ИХ ЛИБО ПРЕМЕНИТЬ ЭКШЕН
+   * ЧЕРЕЗ ТРЕК МЕНЕДЖЕР ОТОБРАЗИТЬ ИХ ЛИБО ПРЕМЕНИТЬ ЭКШЕН
    * "SWS: Show all tracks in TCP"
    * ЛИБО ПРИМЕНИТЬ СКРИПТ 
    * "Script: Archie_Track;  Show child tracks of selected folders in TCP.lua"
@@ -35,10 +35,10 @@
    * 
    * Category:    Track
    * Features:    Startup
-   * Description: Track;  Hide super collapsed (background)(AutoRun).lua
+   * Description: Track;  Toggle Hide super collapsed(AutoRun).lua
    * Author:      Archie
-   * Version:     1.08
-   * Описание:    Трек; скрыть супер свернутые (фон)
+   * Version:     1.0
+   * Описание:    Трек; скрыть супер свернутые
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -48,33 +48,17 @@
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:   
-   *              v.1.08 [210420]
-   *                  + OUT OF DATE
-   
-   *              v.1.07 [210420]
-   *                 + Recheck every 2 seconds (in addition to changing the project)
-   *              v.1.06 [110420]
-   *                  ! Fixed bug when copying to a collapsed folder
-   *              v.1.05 [31.03.20]
-   *                  + AutoRun
-   *              v.1.02 [290320]
-   *                  ! Fixed bug  
-   *              v.1.0 [270320]
+   * Changelog:    
+   *              v.1.0 [210420]
    *                  + initialе
 --]]
-    --======================================================================================
-    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
-    --======================================================================================
-    
-    local STARTUP = 1;  -- 0/1
-    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
     
-     
-     
+    
+    
+    local STARTUP = 1; -- (Not recommended change)
     --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
     local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
     if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
@@ -83,43 +67,22 @@
     
     
     
-    --=========================================
-   -- local extname = 'ARCHIE_HIDE_SUPER_COLLAPSE_BACKGROUND';
-   -- local _,ScriptWay,sec,cmd,_,_,_ = reaper.get_action_context();
-    --=========================================
+    local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+    local extname = ScriptWay:match(".+[/\\](.+)"):upper();
+    local extnameProj = 'ARCHIE_HIDE_SUPER_COLLAPSE_AUTORUN';
     
-    --[===[
+    
+    
     --=========================================
-    local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname,'State_Help')=='';
-        if StateHelp then;
-            local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
-                           'ставим галку "Remember my answer for this script"\n'..
-                           'и жмем "Terminate instances"\n\n'..
-                           'Не показывать это окно - Ok\n\n\n'..
-                           'Eng:\n'..
-                           'When the "ReaScript task control"\n'..
-                           'window appears, tick "Remember my answer for this script"\n'..
-                           'and click "Terminate instances"\n\n'..
-                           'Do not show this window-Ok'
-                           ,'Help',1);
-            if MB == 1 then;
-                local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
-                               'TERMINATE INSTANCES !!!\n\n'..
-                               'TERMINATE INSTANCES !!!\n\n\n'..
-                               'Eng:\nImportant: REMEMBER!!!\n\n'..
-                               'TERMINATE INSTANCES !!!\n\n'..
-                               'TERMINATE INSTANCES !!!\n\n\n'
-                               ,'TERMINATE INSTANCES !!!',1);
-                if MB == 1 then;
-                    reaper.SetExtState(extname,'State_Help','true',true);
-                end;
-            end;
-        end;
+    local function SetToggleButtonOnOff(numb);
+        --local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+        reaper.SetToggleCommandState(sec,cmd,numb or 0);
+        reaper.RefreshToolbar2(sec,cmd);
     end;
     --=========================================
     
-    --[===[
+    
+    
     --=========================================
     local function GetSetStateOnOff(set,state);
         local Get = tonumber(reaper.GetExtState(extname,'ToggleState'))or 0;
@@ -130,24 +93,26 @@
     end;
     --=========================================
     
-    --[===[
+    
+    
     --=========================================
-    local function Clear_ifNoTrack(extname);
+    local function Clear_ifNoTrack(extnameProj);
         local i = 0;
         while 0 do;
             i=i+1;
-            local retval,key,val = reaper.EnumProjExtState(0,extname,i-1);
+            local retval,key,val = reaper.EnumProjExtState(0,extnameProj,i-1);
             if not retval then break end;
             local track = reaper.BR_GetMediaTrackByGUID(0,key);
             if not track then;
-                reaper.SetProjExtState(0,extname,key,'');
+                reaper.SetProjExtState(0,extnameProj,key,'');
                 i = i-1;
             end;
         end;
     end;
     --=========================================
     
-    --[===[
+    
+    
     --=========================================
     local ProjState2;
     local function ChangesInProject();
@@ -160,7 +125,7 @@
     --=========================================
     
     
-    --[===[
+    
     --=========================================
     local tm2;
     local function timer(tmr);--sec
@@ -174,15 +139,14 @@
     --=========================================
     
     
-    --[===[
+    
     --=========================================
-    local t = {};
     local function Exit();
         local Ref;
         local i = 0;
         while 0 do;
             i=i+1;
-            local retval,key,val = reaper.EnumProjExtState(0,extname,i-1);
+            local retval,key,val = reaper.EnumProjExtState(0,extnameProj,i-1);
             if not retval then break end;
             local track = reaper.BR_GetMediaTrackByGUID(0,key);
             if track then;
@@ -191,21 +155,18 @@
                     reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',1);
                     Ref = true;
                 end;
-                reaper.SetProjExtState(0,extname,key,'');
+                reaper.SetProjExtState(0,extnameProj,key,'');
                 i = i-1;
             end;
         end;
         if Ref then;
             reaper.TrackList_AdjustWindows(true);
         end;
-        reaper.SetToggleCommandState(sec,cmd,0);
-        GetSetStateOnOff(1,0);
-        t.Exit_STOP = true;
     end;
     --=========================================
     
     
-    --[===[
+    
     --=========================================
     local cpT;
     local function showNewCopyTrack();
@@ -221,7 +182,7 @@
             if not cpT[tostring(track)] then;
                 cpT[tostring(track)] = track;
                 local GUID = reaper.GetTrackGUID(track);
-                reaper.SetProjExtState(0,extname,GUID,0);
+                reaper.SetProjExtState(0,extnameProj,GUID,0);
             end;
         end;
         
@@ -235,14 +196,30 @@
     --=========================================
     
     
-    --[===[
+    
+    
     --=========================================
     --=========================================
+    local ActiveDoubleScr,stopDoubleScr;
+    local DOUBLE = 0;
     local function loop();
-        if t.Exit_STOP == true then --[[reaper.atexit(Exit)]] return end;
+        --reaper.ShowConsoleMsg( '1' );
+        ----- stop Double Script -------
+        if not ActiveDoubleScr then;
+            stopDoubleScr = (tonumber(reaper.GetExtState(ScriptWay,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(ScriptWay,"stopDoubleScr",stopDoubleScr,false);
+            ActiveDoubleScr = true;
+        end;
+        
+        local stopDoubleScr2 = tonumber(reaper.GetExtState(ScriptWay,"stopDoubleScr"));
+        if stopDoubleScr2 > stopDoubleScr then return end;
+        --------------------------------
+        
         local ChanInProj = ChangesInProject();
-        local tmr = timer(2);
-        if ChanInProj or tmr then;--CHANGES_PROJ
+        local tmr = timer(5);
+        if ChanInProj or tmr or DOUBLE == 1 then;
+            
+            DOUBLE = math.abs(DOUBLE-1);
             
             showNewCopyTrack();
             
@@ -272,7 +249,7 @@
                                 if visible then;
                                     local GUID = reaper.GetTrackGUID(track2);
                                     reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',0);
-                                    reaper.SetProjExtState(0,extname,GUID,0);
+                                    reaper.SetProjExtState(0,extnameProj,GUID,0);
                                     Refresh = true;
                                 end;
                             else;
@@ -322,9 +299,9 @@
                                     if not stopX or (stopX and foldX) then;
                                         foldX = nil;
                                         local GUID = reaper.GetTrackGUID(track2);
-                                        local retval,val = reaper.GetProjExtState(0,extname,GUID);
+                                        local retval,val = reaper.GetProjExtState(0,extnameProj,GUID);
                                         if retval == 1 and val ~= '' then;
-                                            reaper.SetProjExtState(0,extname,GUID,'');
+                                            reaper.SetProjExtState(0,extnameProj,GUID,'');
                                             local visible = reaper.IsTrackVisible(track2,false);
                                             if not visible then;
                                                 reaper.SetMediaTrackInfo_Value(track2,'B_SHOWINTCP',1);
@@ -351,7 +328,7 @@
             if Refresh then;
                 reaper.TrackList_AdjustWindows(true);
                 Refresh = nil;
-                Clear_ifNoTrack(extname);
+                Clear_ifNoTrack(extnameProj);
             end;
             --=========================================
         end;--CHANGES_PROJ END
@@ -359,11 +336,8 @@
     end;
     --=========================================
     --=========================================
-    --[===[
-    --reaper.defer(loop);
-    --reaper.SetToggleCommandState(sec,cmd,1);
-    --reaper.atexit(Exit);
-    --=========================================
+    
+    
     
     
     
@@ -374,7 +348,7 @@
     local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     local extname2 = scriptName;
     
-    --[===[
+    
     ---___-----------------------------------------------
     local FirstRun;
     if STARTUP == 1 then;
@@ -386,30 +360,35 @@
     end;
     -----------------------------------------------------
     
-    --[===[
+    
     ---------------------
     if not FirstRun then;
-        reaper.atexit(Exit);
-        Help(extname);
-        loop();
-        reaper.SetToggleCommandState(sec,cmd,1);
-        GetSetStateOnOff(1,1);
-    elseif FirstRun then;
+        Arc.HelpWindowWhenReRunning(2,'',false,'!');
         local StateOnOff = GetSetStateOnOff(0,0);
         if StateOnOff == 0 then;
-            --reaper.PreventUIRefresh(1);
-            --loop();
-            --Exit();
-            --reaper.PreventUIRefresh(-1);
-        else;
-            reaper.atexit(Exit);
             loop();
-            reaper.SetToggleCommandState(sec,cmd,1);
+            GetSetStateOnOff(1,1);
+            SetToggleButtonOnOff(1);
+        else;
+            local stopDoubleScr = (tonumber(reaper.GetExtState(ScriptWay,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(ScriptWay,"stopDoubleScr",stopDoubleScr+1,false);
+            Exit();
+            GetSetStateOnOff(1,0);
+            SetToggleButtonOnOff(0);
+        end;
+    elseif FirstRun then;
+        local StateOnOff = GetSetStateOnOff(0,0);
+        if StateOnOff == 1 then;
+            loop();
+            SetToggleButtonOnOff(1);
+            --GetSetStateOnOff(1,1);
         end;
     end;
     ---------------------
     
-    --[===[
+    
+    
+    
     ---___-----------------------------------------------
     local function SetStartupScriptWrite();
         local id = Arc.GetIDByScriptName(scriptName,scriptPath);
@@ -427,30 +406,8 @@
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------
-    --]===]
-    
-    str = "Rus:\nСкрипт устарел, используйте вместо него\n"..
-          "Archie_Track;  Toggle Hide super collapsed(AutoRun).lua\n\n\n"..
-          "Eng:\nThe script is outdated, use it instead\n"..
-          "Archie_Track;  Toggle Hide super collapsed(AutoRun).lua";
-    local MB = reaper.MB(str,'warning',0)
-    
-    
-    
-    local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
-    --[--------------------------------
-    reaper.defer(function()
-        local id = Arc.GetIDByScriptName(scriptName,scriptPath);
-        if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
-        local check_Id, check_Fun = Arc.GetStartupScript(id);
-        if check_Id then;
-            Arc.SetStartupScript(scriptName,id,nil,"ONE");
-    end;end);
-    --]]---------------------------------
     
     
     
     
     
-    
-  
