@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e7b9b9018eee950451a36b243d7af6752a3b78dc">
+<index version="1" name="Archie-ReaScripts" commit="336ff20a3a6a7bad4f033c56c67527d16cd7394f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5258,6 +5258,11 @@ v.1.0 [28.08.19]
    + Recheck every 2 seconds (in addition to changing the project)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e7b9b9018eee950451a36b243d7af6752a3b78dc/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-04-21T11:37:39Z">
+        <changelog><![CDATA[v.1.08 [210420]
+    + OUT OF DATE]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/336ff20a3a6a7bad4f033c56c67527d16cd7394f/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Hide unselected tracks in MCP.lua" type="script" desc="Track;  Hide unselected tracks in MCP.lua">
       <metadata>
@@ -6280,6 +6285,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/55d772c772312686cb6aa0a4590ca97305845c00/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed%20-%20restore%20back.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Toggle Hide super collapsed(AutoRun).lua" type="script" desc="Track;  Toggle Hide super collapsed(AutoRun).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-21T11:37:39Z">
+        <changelog><![CDATA[v.1.0 [210420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/336ff20a3a6a7bad4f033c56c67527d16cd7394f/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed(AutoRun).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -6344,6 +6362,19 @@ v.1.0 [28.08.19]
     +! Fixed bug when deleting a track
     +! Исправлена ошибка при удалении трека]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20TCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle Off medium mode collapse folder(AutoRun).lua" type="script" desc="Track;  Toggle Off medium mode collapse folder(AutoRun).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-21T11:37:39Z">
+        <changelog><![CDATA[v.1.0 [210420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/336ff20a3a6a7bad4f033c56c67527d16cd7394f/MAIN/Track/Archie_Track;%20%20Toggle%20Off%20medium%20mode%20collapse%20folder(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor(`).lua" type="script" desc="Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor">
@@ -7550,23 +7581,6 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-03-14T18:32:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [15032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f4e6236e2bbee1f53c0e5201d013c1e8e947b59/MAIN/View/Archie_View;%20%20Toggle%20arrange%20in%20center%20relative%20to%20edit%20cursor%20when%20change%20BPM.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_View;  Toggle auto-view-scroll during playback go to play position.lua" type="script" desc="Toggle auto-view-scroll during playback go to play position">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie / borisuperful" time="2019-10-19T06:18:49Z">
-        <changelog><![CDATA[initialе
-   + v.1.0 [19.10.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/393f9785864c233d92c31938ce004fe78afe3b79/MAIN/View/Archie_View;%20%20Toggle%20auto-view-scroll%20during%20playback%20go%20to%20play%20position.lua</source>
-      </version>
-      <version name="1.02" author="Archie / borisuperful" time="2020-04-05T08:52:30Z">
-        <changelog><![CDATA[initialе
-   + v.1.0 [19.10.19]]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d0b2dacaf1d56dd624cfe413d91651506620d503/MAIN/View/Archie_View;%20%20Toggle%20auto-view-scroll%20during%20playback%20go%20to%20play%20position.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Toggle prevention of spectral peaks / spectrogram on all tracks">
