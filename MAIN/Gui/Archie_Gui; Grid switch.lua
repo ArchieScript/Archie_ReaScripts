@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -24,7 +24,7 @@
    *              v.1.0 [10.10.19]
    *                  + initialе
 --]]
-    
+    local Version = 'v.1.05';
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -344,6 +344,12 @@
     -----
     
     
+    -----
+    local PIN_ON_TOP = tonumber(reaper.GetExtState(section,"PIN_ON_TOP"))or 1;
+    -----
+    
+    
+    
     ---- / Remove focus from window (useful when switching Screenset) / -----------
     local RemFocusWin = tonumber(reaper.GetExtState(section,"RemFocusWin"))or 0;
     local function RemoveFocusWindow(RemFocusWin);
@@ -388,11 +394,12 @@
     -------------------------------------------------------------------------------
     
     
-    
-    gfx.init("Grid switch",SizeW or 800,SizeH or 45,PositionDock,PosX or 150,PosY or 100);
-    local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,"Grid switch",true);
-    if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
-    
+    Version = Version or '';
+    gfx.init("Grid switch "..Version,SizeW or 800,SizeH or 45,PositionDock,PosX or 150,PosY or 100);
+    if PIN_ON_TOP == 1 then;
+        local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,"Grid switch",true);
+        if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
+    end;
     
     ---- / Рисуем основу / ----
     local function Start_GUI();
@@ -525,10 +532,12 @@
         ----/ Удалить Фокус с Окна /----
         RemoveFocusWindow(RemFocusWin);
         ---/ Закрыть окно при потере фокуса / ---
-        if FOCUS_LOST_CLOSE == 1 and Counter(5,"focus_lost_close")== 0 then;
+        if FOCUS_LOST_CLOSE == 1 and gfx.dock(-1)&1==0 and Counter(5,"focus_lost_close")== 0 then;
             if gfx.getchar(65536)&2 ~= 2 then reaper.atexit(exit) return end;
         end;
         --------------------------------------------------------
+        
+        
         
         -- body --
         gfxRestScrin_buf(1,0,0,gfx.w,gfx.h);
@@ -672,7 +681,7 @@
                         reaper.GetSetProjectGrid(0,1,4,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -707,7 +716,7 @@
                         reaper.GetSetProjectGrid(0,1,2,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -742,7 +751,7 @@
                         reaper.GetSetProjectGrid(0,1,1,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -777,7 +786,7 @@
                         reaper.GetSetProjectGrid(0,1,0.5,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -812,7 +821,7 @@
                         reaper.GetSetProjectGrid(0,1,0.25,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end; 
                 
@@ -848,7 +857,7 @@
                         reaper.GetSetProjectGrid(0,1,0.125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -883,7 +892,7 @@
                         reaper.GetSetProjectGrid(0,1,0.0625,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -918,7 +927,7 @@
                         reaper.GetSetProjectGrid(0,1,0.03125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -953,7 +962,7 @@
                         reaper.GetSetProjectGrid(0,1,0.015625,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -988,7 +997,7 @@
                         reaper.GetSetProjectGrid(0,1,0.0078125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1157,7 +1166,7 @@
                         reaper.GetSetProjectGrid(0,1,4,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -1192,7 +1201,7 @@
                         reaper.GetSetProjectGrid(0,1,2,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -1227,7 +1236,7 @@
                         reaper.GetSetProjectGrid(0,1,1,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -1262,7 +1271,7 @@
                         reaper.GetSetProjectGrid(0,1,0.5,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end;
@@ -1297,7 +1306,7 @@
                         reaper.GetSetProjectGrid(0,1,0.25,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
                 
@@ -1333,7 +1342,7 @@
                         reaper.GetSetProjectGrid(0,1,0.125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1368,7 +1377,7 @@
                         reaper.GetSetProjectGrid(0,1,0.0625,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1403,7 +1412,7 @@
                         reaper.GetSetProjectGrid(0,1,0.03125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1438,7 +1447,7 @@
                         reaper.GetSetProjectGrid(0,1,0.015625,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1473,7 +1482,7 @@
                         reaper.GetSetProjectGrid(0,1,0.0078125,swingmodeF,swingshiftF);
                     end;
                     ---
-                    if CLICK_BUT_CLOSE_WIN == 1 then reaper.atexit(exit)return end;
+                    if CLICK_BUT_CLOSE_WIN == 1 and gfx.dock(-1)&1==0 then reaper.atexit(exit)return end;
                     ---
                 end;
             end; 
@@ -1533,11 +1542,15 @@
             local checkZoomInOn;
             if FontSize ~= 0 then checkZoomInOn = "!" else checkZoomInOn = "" end;
             
+            local grayedLClose;
             local checkedLClose;
             if FOCUS_LOST_CLOSE == 1 then checkedLClose = "!" else checkedLClose = "" end;
+            if Dock&1 ~= 0 then grayedLClose  = "#" else grayedLClose = "" end;
             
+            local grayedButWClose;
             local checkedButWClose;
             if CLICK_BUT_CLOSE_WIN == 1 then checkedButWClose = "!" else checkedButWClose = "" end;
+            if Dock&1 ~= 0 then grayedButWClose  = "#" else grayedButWClose = "" end;
             
             local checkRemFocWin;
             if RemFocusWin == 1 then checkRemFocWin = "!" else checkRemFocWin = "" end;
@@ -1545,17 +1558,22 @@
             local checkedTTip;
             if TOOL_TIP == 1 then checkedTTip = "!" else checkedTTip = "" end;
             
+            local grayedPTop;
+            local checkedPTop;
+            if PIN_ON_TOP == 1 then checkedPTop = "!" else checkedPTop = "" end;
+            if Dock&1 ~= 0 then grayedPTop  = "#" else grayedPTop = "" end;
+            
             local
             showmenu = gfx.showmenu(--[[ 1]]checkedDock.."Dock Grid switch in Docker||"..
                                     --[[ 2]]"⚙ Snap / Grid Settings|"..
                                     --[[ 3]]checkedTTip.."Tool Tip|"..
-                                    --[[ 4]]"# #|"..
+                                    --[[ 4]]grayedPTop..checkedPTop.."pin on top|"..
                                     --[[ 5]]"# #|"..
                                     --[[ 6]]"# #||"..
                                     --[[->]]">Window|"..
                                     --[[ 7]]"#Close Window||"..
-                                    --[[ 8]]checkedLClose.."Close window when focus is lost|"..
-                                    --[[ 9]]checkedButWClose.."When click button close window||"..
+                                    --[[ 8]]grayedLClose..checkedLClose.."Close window when focus is lost|"..
+                                    --[[ 9]]grayedButWClose..checkedButWClose.."When click button close window||"..
                                     --[[10]]"<"..checkRemFocWin.."Remove focus from window (useful when switching Screenset)|"..
                                     --[[->]]">View|"..
                                     --[[->]]">Color|"..
@@ -1599,7 +1617,12 @@
                 ----
             elseif showmenu == 4 then;
                 ----
-                
+                if PIN_ON_TOP == 1 then PIN_ON_TOP = 0 else PIN_ON_TOP = 1 end;
+                reaper.SetExtState(section,"PIN_ON_TOP",PIN_ON_TOP,true);
+                --
+                exit(); 
+                dofile(filename:gsub('\\','/'));
+                return;
                 ----
             elseif showmenu == 5 then;
                 ----

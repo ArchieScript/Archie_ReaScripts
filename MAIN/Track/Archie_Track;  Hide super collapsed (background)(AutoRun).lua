@@ -37,7 +37,7 @@
    * Features:    Startup
    * Description: Track;  Hide super collapsed (background)(AutoRun).lua
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * Описание:    Трек; скрыть супер свернутые (фон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -49,9 +49,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.07 [210420]
+   *                 + Recheck every 2 seconds (in addition to changing the project)
+   
    *              v.1.06 [110420]
    *                  ! Fixed bug when copying to a collapsed folder
-   
    *              v.1.05 [31.03.20]
    *                  + AutoRun
    *              v.1.02 [290320]
@@ -156,8 +158,23 @@
     --=========================================
     
     
-    local t = {};
+    
     --=========================================
+    local tm2;
+    local function timer(tmr);--sec
+        if not tonumber(tmr)then return false end;
+        local ret;
+        local tm = os.clock();
+        if not tm2 then tm2 = tm end;
+        if tm >= tm2+math.abs(tmr)then tm2 = nil ret = true end;
+        return ret == true; 
+    end;
+    --=========================================
+    
+    
+    
+    --=========================================
+    local t = {};
     local function Exit();
         local Ref;
         local i = 0;
@@ -222,7 +239,8 @@
     local function loop();
         if t.Exit_STOP == true then --[[reaper.atexit(Exit)]] return end;
         local ChanInProj = ChangesInProject();
-        if ChanInProj then;--CHANGES_PROJ
+        local tmr = timer(2);
+        if ChanInProj or tmr then;--CHANGES_PROJ
             
             showNewCopyTrack();
             
