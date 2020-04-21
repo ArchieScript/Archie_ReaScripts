@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ec9ea1ba7aa2d911a232e2bd58cb91f3d2197167">
+<index version="1" name="Archie-ReaScripts" commit="e7b9b9018eee950451a36b243d7af6752a3b78dc">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1638,6 +1638,12 @@ v.1.0 [28.08.19]
     + Close window when focus is lost
     + When click button close window]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f9e0f39c497994427598f6cc144be5d3a436f13d/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-04-21T06:41:45Z">
+        <changelog><![CDATA[v.1.02 [12.10.19]
+    + Close window when focus is lost
+    + When click button close window]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e7b9b9018eee950451a36b243d7af6752a3b78dc/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Gui; Toggle Bypass necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Bypass necessary Fx in selected tracks(user input)">
@@ -5246,6 +5252,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.06 [110420]
     ! Fixed bug when copying to a collapsed folder]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5f320fab1491e1f4c1c542b70cd66562b90e9b6b/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
+      </version>
+      <version name="1.07" author="Archie" time="2020-04-21T06:41:45Z">
+        <changelog><![CDATA[v.1.07 [210420]
+   + Recheck every 2 seconds (in addition to changing the project)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e7b9b9018eee950451a36b243d7af6752a3b78dc/MAIN/Track/Archie_Track;%20%20Hide%20super%20collapsed%20(background)(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Hide unselected tracks in MCP.lua" type="script" desc="Track;  Hide unselected tracks in MCP.lua">
