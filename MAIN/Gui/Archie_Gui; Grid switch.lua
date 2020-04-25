@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,14 +17,16 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.06 [230420]
+   *                  + No changе
+   
    *              v.1.02 [12.10.19]
    *                  + Close window when focus is lost
    *                  + When click button close window
-   
    *              v.1.0 [10.10.19]
    *                  + initialе
 --]]
-    local Version = 'v.1.05';
+    local Version = 'v.1.06';
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -125,7 +127,7 @@
     
     
     -----------------------------------------
-    local function gfxSaveScrin_buf( buf,w,h);   
+    local function gfxSaveScrin_buf( buf,w,h);
         gfx.dest = buf;
         gfx.setimgdim(buf, -1, -1);  
         gfx.setimgdim(buf, w, h);  
@@ -394,12 +396,19 @@
     -------------------------------------------------------------------------------
     
     
+    
+    
     Version = Version or '';
-    gfx.init("Grid switch "..Version,SizeW or 800,SizeH or 45,PositionDock,PosX or 150,PosY or 100);
+    local titleWin = "Grid switch "..Version;
+    gfx.init(titleWin,SizeW or 700,SizeH or 35,PositionDock,PosX or 150,PosY or 100);
     if PIN_ON_TOP == 1 then;
-        local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,"Grid switch",true);
+        local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,titleWin,true);
         if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;
     end;
+    
+    
+    
+    
     
     ---- / Рисуем основу / ----
     local function Start_GUI();
