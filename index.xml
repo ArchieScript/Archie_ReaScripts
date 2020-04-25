@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="17d00fc3729940e95eb055880704df87054a3f9e">
+<index version="1" name="Archie-ReaScripts" commit="72a3f180768a5621d819d44ef708e855379cfb95">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2489,17 +2489,17 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Remove even items from the selected items in track.lua" type="script" desc="Item;  Remove even items from the selected items in track.lua">
+    <reapack name="Archie_Item;  Remove even items from selected items in track.lua" type="script" desc="Item;  Remove even items from selected items in track.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-04-25T09:43:20Z">
+      <version name="1.0" author="Archie" time="2020-04-25T12:28:15Z">
         <changelog><![CDATA[v.1.0 [250420]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Item/Archie_Item;%20%20Remove%20even%20items%20from%20the%20selected%20items%20in%20track.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/72a3f180768a5621d819d44ef708e855379cfb95/MAIN/Item/Archie_Item;%20%20Remove%20even%20items%20from%20selected%20items%20in%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove final selected item in tracks.lua" type="script" desc="Item;  Remove final selected item in tracks">
@@ -2572,17 +2572,17 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0344117d8b58f81d59f1120af3112ec4834fb1ec/MAIN/Item/Archie_Item;%20%20Remove%20last%20selected%20item%20in%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Remove non even items from the selected items in track.lua" type="script" desc="Item;  Remove non even items from the selected items in track.lua">
+    <reapack name="Archie_Item;  Remove non even items from selected items in track.lua" type="script" desc="Item;  Remove non even items from selected items in track.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-04-25T09:43:20Z">
+      <version name="1.0" author="Archie" time="2020-04-25T12:28:15Z">
         <changelog><![CDATA[v.1.0 [250420]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Item/Archie_Item;%20%20Remove%20non%20even%20items%20from%20the%20selected%20items%20in%20track.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/72a3f180768a5621d819d44ef708e855379cfb95/MAIN/Item/Archie_Item;%20%20Remove%20non%20even%20items%20from%20selected%20items%20in%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected items outside regions(time selection)(`).lua" type="script" desc="Remove selected items outside regions(time selection)">
