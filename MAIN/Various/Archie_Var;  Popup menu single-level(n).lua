@@ -45,6 +45,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
+    Version = 1.14;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -263,7 +264,8 @@
         if #nameTRem <2 then LCK2 = '#'else LCK2 = ''end;
         local showMenu,numbUpDown;
         ------
-        local AddList = "> > > >|Add||"..LCK.."Remove|".."Remove All / Script||"..LCK.."Rename||"..LCK2.."Move||>• script|"..hdblock.."Hide Add Menu||#"..section.."|<|<|";--7
+        Version = ' - v.'..(Version or '?.??');
+        local AddList = "> > > >|Add||"..LCK.."Remove|".."Remove All / Script||"..LCK.."Rename||"..LCK2.."Move||>• script|"..hdblock.."Hide Add Menu||#"..section..' '..Version.."|<|<|";--7
         local AddListCount = 7; -- AddList Count
         ------
         if #idT > 0 and HIDE_ADD == 1 then AddList = '' end;-- v.1.04
