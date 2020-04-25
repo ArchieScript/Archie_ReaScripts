@@ -4,10 +4,10 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Item;  Remove non even items from the selected items in track.lua
+   * Description: Item;  Remove even items from selected items in track.lua
    * Author:      Archie
    * Version:     1.0
-   * Описание:    Удаление нечетных элементов из выбранных элементов в треке
+   * Описание:    Удаление четных элементов из выбранных элементов в треке
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -43,7 +43,7 @@
         local track = reaper.GetMediaItem_Track(item);
         if track2 ~= track then x = 0 end;
         x = x + 1;
-        if x%2 ~= 0 then;
+        if x%2 == 0 then;
             t[#t+1] = item;
         end;
         track2 = track;  
@@ -61,7 +61,7 @@
     end;
     
     reaper.PreventUIRefresh(-1);
-    reaper.Undo_EndBlock("Remove non even items from the selected items in track",-1);
+    reaper.Undo_EndBlock("Remove even items from the selected items in track",-1);
     
     reaper.UpdateArrange();
     
