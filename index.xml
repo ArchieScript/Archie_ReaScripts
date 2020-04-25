@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="336ff20a3a6a7bad4f033c56c67527d16cd7394f">
+<index version="1" name="Archie-ReaScripts" commit="dc0c7bc40c5ab831b4476789278f99f40c7aac86">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1645,6 +1645,11 @@ v.1.0 [28.08.19]
     + When click button close window]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e7b9b9018eee950451a36b243d7af6752a3b78dc/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
       </version>
+      <version name="1.06" author="Archie" time="2020-04-25T09:43:20Z">
+        <changelog><![CDATA[v.1.06 [230420]
+    + No changе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Gui/Archie_Gui;%20Grid%20switch.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Gui; Toggle Bypass necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Bypass necessary Fx in selected tracks(user input)">
       <metadata>
@@ -2484,6 +2489,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/18142cf6753c19af80c4221ca4bface75532d03a/MAIN/Item/Archie_Item;%20%20Remove%20all%20items,%20envelopes%20from%20project%20(including%20master%20track).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Item;  Remove even items from the selected items in track.lua" type="script" desc="Item;  Remove even items from the selected items in track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-25T09:43:20Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Item/Archie_Item;%20%20Remove%20even%20items%20from%20the%20selected%20items%20in%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Item;  Remove final selected item in tracks.lua" type="script" desc="Item;  Remove final selected item in tracks">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -2552,6 +2570,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [050320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0344117d8b58f81d59f1120af3112ec4834fb1ec/MAIN/Item/Archie_Item;%20%20Remove%20last%20selected%20item%20in%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Remove non even items from the selected items in track.lua" type="script" desc="Item;  Remove non even items from the selected items in track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-25T09:43:20Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Item/Archie_Item;%20%20Remove%20non%20even%20items%20from%20the%20selected%20items%20in%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove selected items outside regions(time selection)(`).lua" type="script" desc="Remove selected items outside regions(time selection)">
@@ -7089,6 +7120,32 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.12 [190420]
     + Storing the list directly in the script (relevant for newly created scripts)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec9ea1ba7aa2d911a232e2bd58cb91f3d2197167/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.14" author="Archie" time="2020-04-25T09:43:20Z">
+        <changelog><![CDATA[v.1.14 [250420]
+    ! Fixed bug Ext State
+v.1.12 [190420]
+    + Storing the list directly in the script (relevant for newly created scripts)
+v.1.11 [130420]
+    + Add multiple actions at once
+v.1.10 [130420]
+    AutoFill the form when adding an action (before clicking add, select an action in the actions list)
+v.1.09 [120420]
+    + Automatically creating copies with the desired label in the script name
+v.1.08 [310320]
+    No change  
+v.1.05 [260320]
+    ! Fixed bug
+v.1.04 [260320]
+    + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
+v.1.03 [170320]
+    ! Fixed bug
+    + Protection from spec characters 
+v.1.02 [160320]
+    + Redesigned 'Add Menu'
+v.1.0 [150320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/dc0c7bc40c5ab831b4476789278f99f40c7aac86/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
