@@ -22,6 +22,7 @@
    * Changelog:   
    *              v.1.14 [250420]
    *                  ! Fixed bug Ext State
+   
    *              v.1.12 [190420]
    *                  + Storing the list directly in the script (relevant for newly created scripts)
    *              v.1.11 [130420]
