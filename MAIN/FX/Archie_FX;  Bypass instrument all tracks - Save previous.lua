@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: FX;  Bypass all FX all tracks except instruments-restore previous.lua
+   * Description: FX;  Bypass instrument all tracks - Save previous.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -23,50 +23,43 @@
     
     
     
-    local ProjExtState = ('BYPASS ALL FX ALL TRACKS EXCEPT INSTRUMENTS-SAVE OR RESTORE PREVIOUS');
+    local ProjExtState = ('BYPASS INSTRUMENT ALL TRACKS-SAVE OR RESTORE PREVIOUS');
     
-    local ret,str = reaper.GetProjExtState(0,ProjExtState,'FXGUID_STATE');
-    if ret == 1 and str ~= '' then;
+    
+    local CountTrack = reaper.CountTracks(0);
+    --if CountTrack > 0 then;
         
         reaper.Undo_BeginBlock();
         reaper.PreventUIRefresh(1);
-        
-        local T = {};
-        
-        for var in str:gmatch('{.-}%d*') do;
-            local GuidFx,bypass = var:match('({.*})(%d*)');
-            T[GuidFx] = tonumber(bypass);
-        end;
-        
-        local Track;
+        local str;
+        ---------
         for itr = 0, reaper.CountTracks(0) do;
             
+            local Track;
             if itr == 0 then;
                 Track = reaper.GetMasterTrack(0);
             else;
                 Track = reaper.GetTrack(0,itr-1);
             end;
             
-            for ifx = 1, reaper.TrackFX_GetCount(Track) do;
-                local GUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
-                if T[GUID] then;
-                    reaper.TrackFX_SetEnabled(Track,ifx-1,T[GUID]);
+            ---------------------------------------------
+            local Instrument = reaper.TrackFX_GetInstrument(Track);
+            if Instrument >= 0 then;
+                local Enabled = reaper.TrackFX_GetEnabled(Track,Instrument)and 1 or 0;
+                if Enabled == 1 then;
+                    reaper.TrackFX_SetEnabled(Track,Instrument,false);
                 end;
-            end;
-            
-            for ifx = 1, reaper.TrackFX_GetCount(Track) do;
-                local GUID = reaper.TrackFX_GetFXGUID(Track,0x1000000+ifx-1);
-                if T[GUID] then;
-                    reaper.TrackFX_SetEnabled(Track,0x1000000+ifx-1,T[GUID]);
-                end;
+                
+                local FxGUID = reaper.TrackFX_GetFXGUID(Track,Instrument);
+                
+                str = (str or '')..FxGUID..Enabled;  
             end;
         end;
-        
-        --reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE','');
+        -------------
+        reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE',str or '');
+        -------------
         reaper.PreventUIRefresh(-1);
-        reaper.Undo_EndBlock('Restory Bypass all FX all track Except Instruments',-1);
-    end;
-    
-    
+        reaper.Undo_EndBlock('Bypass instrument all tracks-save previous',-1);    
+    --end;
     
     

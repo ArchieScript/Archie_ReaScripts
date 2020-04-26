@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: FX;  Toggle Bypass all FX all tracks except instruments - save restore previous.lua
+   * Description: FX;  Toggle Bypass all FX all tracks except instruments - Save restore previous.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819

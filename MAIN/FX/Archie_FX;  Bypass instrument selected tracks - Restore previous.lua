@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: FX;  Bypass all FX selected tracks except instruments-restore previous.lua
+   * Description: FX;  Bypass instrument selected tracks - Restore previous.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -14,7 +14,7 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
    * Changelog:   
-   *              v.1.0 [250420]
+   *              v.1.0 [260420]
    *                  + initialе
 --]]
     --======================================================================================
@@ -22,7 +22,7 @@
     --======================================================================================
     
     
-    local ProjExtState = ('BYPASS ALL FX SELECTED TRACKS EXCEPT INSTRUMENTS-SAVE OR RESTORE PREVIOUS');
+    local ProjExtState = ('BYPASS INSTRUMENTS SELECT TRACKS-SAVE OR RESTORE PREVIOUS');
     
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
@@ -71,7 +71,7 @@
     end;
     
     reaper.PreventUIRefresh(-1);
-    reaper.Undo_EndBlock('Restory Bypass all FX selected track except instruments',-1);
+    reaper.Undo_EndBlock('Restory Bypass instrument selected track',-1);
     
     
     

@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: FX;  Bypass instrument all tracks-restore previous.lua
+   * Description: FX;  Bypass instrument all tracks - Restore previous.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819

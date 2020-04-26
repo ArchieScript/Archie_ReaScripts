@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: FX;  Bypass instrument selected tracks-save previous.lua
+   * Description: FX;  Bypass all FX selected tracks - Save previous.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -14,7 +14,7 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
    * Changelog:   
-   *              v.1.0 [260420]
+   *              v.1.0 [250420]
    *                  + initialе
 --]]
     --======================================================================================
@@ -22,7 +22,7 @@
     --======================================================================================
     
     
-    local ProjExtState = ('BYPASS INSTRUMENTS SELECT TRACKS-SAVE OR RESTORE PREVIOUS');
+    local ProjExtState = ('BYPASS ALL FX SELECTED TRACKS - SAVE OR RESTORE PREVIOUS');
     
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
@@ -42,16 +42,24 @@
         -----
         if Track then;
             local GUID = reaper.GetTrackGUID(Track);
-            -----------------
-            local Instrument = reaper.TrackFX_GetInstrument(Track);
-            if Instrument >= 0 then;
-                local Enabled = reaper.TrackFX_GetEnabled(Track,Instrument)and 1 or 0;
-                if Enabled == 1 then;
-                    reaper.TrackFX_SetEnabled(Track,Instrument,false);
+            
+            for ifx = 1,reaper.TrackFX_GetCount(Track) do; 
+                local bypass = reaper.TrackFX_GetEnabled(Track,ifx-1)and 1 or 0;
+                if bypass == 1 then;
+                    reaper.TrackFX_SetEnabled(Track,ifx-1,false);
                 end;
-                
-                local FxGUID = reaper.TrackFX_GetFXGUID(Track,Instrument);
-                str = (str or '')..FxGUID..Enabled;
+                local FxGUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
+                str = (str or '')..FxGUID..bypass;
+            end;
+            
+            for ifx = 1,reaper.TrackFX_GetRecCount(Track)do;
+                local bypass = reaper.TrackFX_GetEnabled(Track,0x1000000+ifx-1)and 1 or 0;
+                if bypass == 1 then;
+                    reaper.TrackFX_SetEnabled(Track,0x1000000+ifx-1,false);
+                end;
+                local FxGUID = reaper.TrackFX_GetFXGUID(Track,0x1000000+ifx-1);
+                local GUID = reaper.GetTrackGUID(Track);
+                str = (str or '')..FxGUID..bypass;
             end;
             reaper.SetProjExtState(0,ProjExtState,GUID,str or '');
             ---------------------------------------------
@@ -59,7 +67,8 @@
     end;
     
     reaper.PreventUIRefresh(-1);
-    reaper.Undo_EndBlock('Bypass instrument select tracks-save previous',-1);
+    reaper.Undo_EndBlock('Bypass all FX selected track Save previous',-1);
+    
     
     
     
