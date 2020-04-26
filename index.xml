@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="72a3f180768a5621d819d44ef708e855379cfb95">
+<index version="1" name="Archie-ReaScripts" commit="9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -939,23 +939,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Bypass all FX - save previous.lua" type="script" desc="Bypass all FX - save previous">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-12-11T13:10:54Z">
-        <changelog><![CDATA[v.1.0 [10.12.19]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/59b0299b0a88197dfe14115812cc37a6ceba0b77/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20-%20save%20previous.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-02-24T13:24:54Z">
-        <changelog><![CDATA[v.1.02 [24.02.20]
-    + Tool Tip]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10c0aa2904f79471b2c9c1bf43c9533bd7909d94/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20-%20save%20previous.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_FX;  Bypass all FX all track.lua" type="script" desc="Bypass all FX all track">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -968,38 +951,148 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/52ecb2b7c6ddb9991caad5a4c8ea493aabb9f021/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20all%20track.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Bypass all FX except instruments - save previous.lua" type="script" desc="Bypass all FX except instruments - save previous">
+    <reapack name="Archie_FX;  Bypass all FX all tracks except instruments-restore previous.lua" type="script" desc="FX;  Bypass all FX all tracks except instruments-restore previous.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-12-11T13:10:54Z">
-        <changelog><![CDATA[v.1.0 [11.12.19]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/59b0299b0a88197dfe14115812cc37a6ceba0b77/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20except%20instruments%20-%20save%20previous.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-02-24T13:24:54Z">
-        <changelog><![CDATA[v.1.02 [24.02.20]
-    + Tool Tip]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10c0aa2904f79471b2c9c1bf43c9533bd7909d94/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20except%20instruments%20-%20save%20previous.lua</source>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20all%20tracks%20except%20instruments-restore%20previous.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_FX;  Bypass instrument all tracks - save previous.lua" type="script" desc="Bypass instrument all tracks - save previous">
+    <reapack name="Archie_FX;  Bypass all FX all tracks except instruments-save previous.lua" type="script" desc="FX;  Bypass all FX all tracks except instruments-save previous.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-01-14T16:50:26Z">
-        <changelog><![CDATA[v.1.0 [15.01.20]
-+ initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/455b94989755cbfe5977ee3cbe47d70e1f305750/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20all%20tracks%20-%20save%20previous.lua</source>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20all%20tracks%20except%20instruments-save%20previous.lua</source>
       </version>
-      <version name="1.02" author="Archie" time="2020-02-24T13:24:54Z">
-        <changelog><![CDATA[v.1.02 [24.02.20]
-    + Tool Tip]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10c0aa2904f79471b2c9c1bf43c9533bd7909d94/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20all%20tracks%20-%20save%20previous.lua</source>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX all tracks-restore previous.lua" type="script" desc="FX;  Bypass all FX all tracks-restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20all%20tracks-restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX all tracks-save previous.lua" type="script" desc="FX;  Bypass all FX all tracks-save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20all%20tracks-save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX selected tracks except instruments-restore previous.lua" type="script" desc="FX;  Bypass all FX selected tracks except instruments-restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20selected%20tracks%20except%20instruments-restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all Fx selected tracks except instruments-save previous.lua" type="script" desc="FX;  Bypass all Fx selected tracks except instruments-save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20Fx%20selected%20tracks%20except%20instruments-save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX selected tracks-restore previous.lua" type="script" desc="FX;  Bypass all FX selected tracks-restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20selected%20tracks-restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass all FX selected tracks-save previous.lua" type="script" desc="FX;  Bypass all FX selected tracks-save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20all%20FX%20selected%20tracks-save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass instrument all tracks-restore previous.lua" type="script" desc="FX;  Bypass instrument all tracks-restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20all%20tracks-restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass instrument all tracks-save previous.lua" type="script" desc="FX;  Bypass instrument all tracks-save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20all%20tracks-save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass instrument selected tracks-restore previous.lua" type="script" desc="FX;  Bypass instrument selected tracks-restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20selected%20tracks-restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Bypass instrument selected tracks-save previous.lua" type="script" desc="FX;  Bypass instrument selected tracks-save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [260420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Bypass%20instrument%20selected%20tracks-save%20previous.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Bypass necessary Fx in selected tracks(user input through  space).lua" type="script" desc="Bypass necessary Fx in selected tracks(user input through  space)">
@@ -1225,6 +1318,30 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MAIN/FX/Archie_FX;%20%20Toggle%20Auto%20open%20VSTi%20in%20selected%20tracks%20and%20close%20in%20the%20rest(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_FX;  Toggle Bypass all FX all tracks - save restore previous.lua" type="script" desc="FX;  Toggle Bypass all FX all tracks - save restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20all%20FX%20all%20tracks%20-%20save%20restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Toggle Bypass all FX all tracks except instruments - save restore previous.lua" type="script" desc="FX;  Toggle Bypass all FX all tracks except instruments - save restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20all%20FX%20all%20tracks%20except%20instruments%20-%20save%20restore%20previous.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Fx;  Toggle Bypass Focused FX.lua" type="script" desc="Fx;  Toggle Bypass Focused FX.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1248,6 +1365,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [07.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/323e668e6326c3f4d59270e5526d4f885549fff8/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX;  Toggle Bypass instrument all tracks - save restore previous.lua" type="script" desc="FX;  Toggle Bypass instrument all tracks - save restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-04-26T06:03:48Z">
+        <changelog><![CDATA[v.1.0 [250420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e41f7a35d1bab5b2bcac3c00f5f8dcb9393ba18/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20instrument%20all%20tracks%20-%20save%20restore%20previous.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle FX 9 online,offline for selected tracks(`).lua" type="script" desc="Toggle FX 9 online/offline for selected tracks">
