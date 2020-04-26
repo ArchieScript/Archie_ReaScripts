@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: Bypass instrument all tracks - save previous
+   * Description: FX;  Toggle Bypass all FX all tracks - save restore previous.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -14,22 +14,14 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
    * Changelog:   
-   *              v.1.02 [24.02.20]
-   *                  + Tool Tip
-   
-   *              v.1.0 [15.01.20]
+   *              v.1.0 [250420]
    *                  + initialе
 --]]
-    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================
+    --======================================================================================  
     
     
-    
-    --======================================================================
-    local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
-    --======================================================================
     
     
     local function Tip(fmt);
@@ -38,7 +30,10 @@
     end;
     
     
-    --=========================================================
+    local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+    local ProjExtState = ('Toggle Bypass all FX all tracks - save restore previous'):upper();
+    
+    
     local function Bypass();
         reaper.Undo_BeginBlock();
         reaper.PreventUIRefresh(1);
@@ -54,36 +49,46 @@
             end;
             
             ---------------------------------------------
-            local Instrument = reaper.TrackFX_GetInstrument(Track);
-            if Instrument >= 0 then;
-                local Enabled = reaper.TrackFX_GetEnabled(Track,Instrument)and 1 or 0;
-                if Enabled == 1 then;
-                    reaper.TrackFX_SetEnabled(Track,Instrument,false);
+            for ifx = 1,reaper.TrackFX_GetCount(Track) do;
+                
+                local bypass = reaper.TrackFX_GetEnabled(Track,ifx-1)and 1 or 0;
+                if bypass == 1 then;
+                    reaper.TrackFX_SetEnabled(Track,ifx-1,false);
                 end;
                 
-                local FxGUID = reaper.TrackFX_GetFXGUID(Track,Instrument);
+                local FxGUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
+                str = (str or '')..FxGUID..bypass; 
+            end;
+            
+            
+            for ifx = 1,reaper.TrackFX_GetRecCount(Track)do;
+                local bypass = reaper.TrackFX_GetEnabled(Track,0x1000000+ifx-1)and 1 or 0;
+                if bypass == 1 then;
+                    reaper.TrackFX_SetEnabled(Track,0x1000000+ifx-1,false);
+                end;
                 
-                str = (str or '')..FxGUID..Enabled;  
+                local FxGUID = reaper.TrackFX_GetFXGUID(Track,0x1000000+ifx-1);
+                str = (str or '')..FxGUID..bypass;
             end;
         end;
         -------------
-        reaper.SetProjExtState(0,'ArchieBypass_INSTRUMENT_SavePrevExceptInstruments','FXGUID_STATE',str or '');
+        reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE',str or '');
         reaper.SetToggleCommandState(sec,cmd,1);
         reaper.RefreshToolbar2(sec,cmd);
         -------------
         reaper.PreventUIRefresh(-1);
-        reaper.Undo_EndBlock('Bypass instrument all tracks - save previous',-1);    
+        reaper.Undo_EndBlock('Toggle Bypass all FX save previous',-1);    
     end;
-    --=========================================================
     
     
     
     
     
-    --=========================================================
+    
+    
     local function UnBypass();
         reaper.Undo_BeginBlock();
-        local ret,str = reaper.GetProjExtState(0,'ArchieBypass_INSTRUMENT_SavePrevExceptInstruments','FXGUID_STATE');
+        local ret,str = reaper.GetProjExtState(0,ProjExtState,'FXGUID_STATE');
         local T = {};
         
         for var in str:gmatch('{.-}%d*') do;
@@ -106,33 +111,31 @@
                     reaper.TrackFX_SetEnabled(Track,ifx-1,T[GUID]);
                 end;
             end;
+            
+            for ifx = 1, reaper.TrackFX_GetCount(Track) do;
+                local GUID = reaper.TrackFX_GetFXGUID(Track,0x1000000+ifx-1);
+                if T[GUID] then;
+                    reaper.TrackFX_SetEnabled(Track,0x1000000+ifx-1,T[GUID]);
+                end;
+            end;
         end;
         
-        reaper.SetProjExtState(0,'ArchieBypass_INSTRUMENT_SavePrevExceptInstruments','FXGUID_STATE','');
+        reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE','');
         reaper.SetToggleCommandState(sec,cmd,0);
         reaper.RefreshToolbar2(sec,cmd);
-        reaper.Undo_EndBlock('Restory Bypass instrument all tracks',-1);
+        reaper.Undo_EndBlock('Toggle Restory Bypass all FX',-1);
     end;
-    --=========================================================
     
     
     
     
-    
-    
-    --=========================================================
-    local toggle = tonumber(reaper.GetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE'))or 0;
+    local toggle = tonumber(reaper.GetExtState(ProjExtState,'STATE'))or 0;
     if toggle == 0 then;
         Tip('BUPASS');
         Bypass();
-        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',1,true);
+        reaper.SetExtState(ProjExtState,'STATE',1,true);
     else;
         Tip('RESTORE');
         UnBypass();
-        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASS_INSTRUMENT_allTrack','STATE',0,true);
+        reaper.SetExtState(ProjExtState,'STATE',0,true);
     end;
-    --=========================================================
-    
-    
-    
-    

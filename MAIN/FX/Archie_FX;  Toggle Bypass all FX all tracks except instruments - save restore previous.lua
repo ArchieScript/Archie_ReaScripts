@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    FX
-   * Description: Bypass all FX - save previous
+   * Description: FX;  Toggle Bypass all FX all tracks except instruments - save restore previous.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -14,17 +14,13 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/
    * Changelog:   
-   *              v.1.02 [24.02.20]
-   *                  + Tool Tip
-   
-   *              v.1.0 [10.12.19]
+   *              v.1.0 [250420]
    *                  + initialе
 --]]
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================  
-    
     
     
     
@@ -35,6 +31,7 @@
     
     
     local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
+    local ProjExtState = ('Toggle Bypass all FX all tracks except instruments - save restore previous'):upper();
     
     
     local function Bypass();
@@ -52,15 +49,17 @@
             end;
             
             ---------------------------------------------
+            local Instrument = reaper.TrackFX_GetInstrument(Track);
             for ifx = 1,reaper.TrackFX_GetCount(Track) do;
-                
-                local bypass = reaper.TrackFX_GetEnabled(Track,ifx-1)and 1 or 0;
-                if bypass == 1 then;
-                    reaper.TrackFX_SetEnabled(Track,ifx-1,false);
+                if ifx-1 ~= Instrument then;
+                    local bypass = reaper.TrackFX_GetEnabled(Track,ifx-1)and 1 or 0;
+                    if bypass == 1 then;
+                        reaper.TrackFX_SetEnabled(Track,ifx-1,false);
+                    end;
+                    
+                    local FxGUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
+                    str = (str or '')..FxGUID..bypass; 
                 end;
-                
-                local FxGUID = reaper.TrackFX_GetFXGUID(Track,ifx-1);
-                str = (str or '')..FxGUID..bypass; 
             end;
             
             
@@ -75,12 +74,12 @@
             end;
         end;
         -------------
-        reaper.SetProjExtState(0,'ArchieBypassAllFXSavePrev','FXGUID_STATE',str or '');
+        reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE',str or '');
         reaper.SetToggleCommandState(sec,cmd,1);
         reaper.RefreshToolbar2(sec,cmd);
         -------------
         reaper.PreventUIRefresh(-1);
-        reaper.Undo_EndBlock('Bypass all FX save previous',-1);    
+        reaper.Undo_EndBlock('Toggle Bypass all FX Except Instruments save previous',-1);    
     end;
     
     
@@ -91,7 +90,7 @@
     
     local function UnBypass();
         reaper.Undo_BeginBlock();
-        local ret,str = reaper.GetProjExtState(0,'ArchieBypassAllFXSavePrev','FXGUID_STATE');
+        local ret,str = reaper.GetProjExtState(0,ProjExtState,'FXGUID_STATE');
         local T = {};
         
         for var in str:gmatch('{.-}%d*') do;
@@ -123,22 +122,22 @@
             end;
         end;
         
-        reaper.SetProjExtState(0,'ArchieBypassAllFXSavePrev','FXGUID_STATE','');
+        reaper.SetProjExtState(0,ProjExtState,'FXGUID_STATE','');
         reaper.SetToggleCommandState(sec,cmd,0);
         reaper.RefreshToolbar2(sec,cmd);
-        reaper.Undo_EndBlock('Restory Bypass all FX',-1);
+        reaper.Undo_EndBlock('Toggle Restory Bypass all FX Except Instruments',-1);
     end;
     
     
     
     
-    local toggle = tonumber(reaper.GetExtState('ARCHIE_TOGGLESTATE_BYPASSALLFX','STATE'))or 0;
+    local toggle = tonumber(reaper.GetExtState(ProjExtState,'STATE'))or 0;
     if toggle == 0 then;
-        Tip('BUPASS');
+        Tip('BUPASS FX');
         Bypass();
-        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASSALLFX','STATE',1,true);
+        reaper.SetExtState(ProjExtState,'STATE',1,true);
     else;
-        Tip('RESTORE');
+        Tip('RESTORE FX');
         UnBypass();
-        reaper.SetExtState('ARCHIE_TOGGLESTATE_BYPASSALLFX','STATE',0,true);
+        reaper.SetExtState(ProjExtState,'STATE',0,true);
     end;
