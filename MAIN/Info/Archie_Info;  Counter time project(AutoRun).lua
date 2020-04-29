@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info;  Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.19
+   * Version:     1.20
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,9 +19,12 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   
+   *              v.1.20 [290420]
+   *                  + add checkbox to hide the time '(:d)'
+   
    *              v.1.19 [220420]
    *                  + Current time
-   
    *              v.1.18 [05.04.20]
    *                  No change
    *              v.1.15 [03.03.20]
@@ -43,7 +46,7 @@
    *              v.1.0  [15.02.20]
    *                  +   initialе
 --]]
-    local Version = ' - v.1.19';
+    local Version = ' - v.1.20';
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -389,9 +392,10 @@
             
             local show_win = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW'))or 0;
             if show_win == 0 then;
-                gfx.init("Info: Counter time project"..Version,RestoreWinState());
+                local title = "Counter time project"..Version;
+                gfx.init(title,RestoreWinState());
                 reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',1,true);
-                local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,'Info: Counter time project',true);
+                local PcallWindScr,ShowWindScr = pcall(reaper.JS_Window_Find,title,true);
                 if PcallWindScr and type(ShowWindScr)=="userdata" then reaper.JS_Window_AttachTopmostPin(ShowWindScr)end;   
             else;
                 saveWinState_CloseWin(true);
@@ -708,6 +712,9 @@
                         --
                         t.THEME_1         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1'        ,0);
                         t.THEME_2         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2'        ,1);
+                        --
+                        t.TIME_D         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D'          ,1);
+                        ---
                     end;
                     
                     if t.THEME_1 == 0 and t.THEME_2 == 0 then t.THEME_2 = 1 end;
@@ -752,12 +759,18 @@
                         
                         if t.MODE_TIME == 1 then;
                             ---
-                            local dn = tonumber(os.date('%w'))or'';
-                            if dn == 0 then dn = 7 end;
+                            local dn;
+                            if t.TIME_D == 1 then;
+                                dn = tonumber(os.date('%w'))or'';
+                                if dn == 0 then dn = 7 end;
+                                dn = dn..':';
+                            else;
+                                dn = '';
+                            end;
                             ---
                             local prf = '';
                             if t.PREFIX == 1 then prf = 'Time: 'end;
-                            local string = prf..dn..':'..os.date('%X');
+                            local string = prf..dn..os.date('%X');
                             local Y = (100/t.MODE)*0;
                             TextByCenterAndResize(string, 0,Y,100,100/t.MODE, ZoomInOn,nil);
                             Arc_roundrect(0,0,100,100/t.MODE, .7,.7,.7,.1);--Separate
@@ -907,10 +920,16 @@
                         end; 
                         ------
                         ------
-                        local dn = tonumber(os.date('%w'))or'';
-                        if dn == 0 then dn = 7 end;
+                        local dn
+                        if t.TIME_D == 1 then;
+                            dn = tonumber(os.date('%w'))or'';
+                            if dn == 0 then dn = 7 end;
+                            dn = dn..':';
+                        else;
+                            dn = '- :';
+                        end;
                         
-                        local timeT = {dn..':'..os.date('%X'),
+                        local timeT = {dn..os.date('%X'),
                                        sectotime(t.TIME_REAPER_RUN),
                                        sectotime(t.TIME_ttl),
                                        sectotime(t.TIME_akf)..t.countBack,
@@ -1127,7 +1146,7 @@
                     gfx.x = gfx.mouse_x;
                     gfx.y = gfx.mouse_y;
                     
-                    local time,mTtl,mAfk,mRst,mpfx,mCnB,mply,mSsAfk,mSsn,rprR,tolT,thm1,thm2,tm1B,rmvF;
+                    local time,mTtl,mAfk,mRst,mpfx,mCnB,mply,mSsAfk,mSsn,rprR,tolT,thm1,thm2,tm1B,rmvF,tmD;
                     if t.MODE_TIME       == 1 then time   = '!' else time   = ''end;
                     if t.MODE_REAPER_RUN == 1 then rprR   = '!' else rprR   = ''end;
                     if t.MODE_TOTAL      == 1 then mTtl   = '!' else mTtl   = ''end;
@@ -1144,6 +1163,8 @@
                     if t.THEME_2         == 1 then thm2   = '!' else thm2   = ''end;
                     if t.THEME_1         == 1 then tm1B   = '#' else tm1B   = ''end;
                     if RemFocusWin       == 1 then rmvF   = '!' else rmvF   = ''end;
+                    
+                    if t.TIME_D          == 1 then tmD    = '!' else tmD    = ''end;
                     
                     local
                     showmenu = gfx.showmenu('>View|'..
@@ -1167,7 +1188,9 @@
                                 --[[--]]    '>Reset all timers|'..
                                 --[[17]]    'Reset all project timers ||'..
                                 --[[18]]    '#Reset timer Reaper started |'..
-                                            '<'..
+                                            '<|'..
+                                --[[19]]    tmD..'Time (d:)'..
+                                            
                                             '||#INFO PROJECT:|'..
                                             '#Project created:  '..t.PROJ_STARTED..
                                             t.PROJ_STARTPATH..
@@ -1238,6 +1261,8 @@
                             ResetExtState(nil,nil,true);
                         end;
                     elseif showmenu == 19 then;
+                        t.TIME_D = math.abs(t.TIME_D-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D',t.TIME_D,true);
                         
                     elseif showmenu == 20 then;
                         
