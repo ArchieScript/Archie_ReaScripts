@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="75086ad570a69e37c95b0fb877bc568cca6aa360">
+<index version="1" name="Archie-ReaScripts" commit="8f6f288a7cd20d0a9122447e77be5c0c13dcc33d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6894,6 +6894,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [090520]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/75086ad570a69e37c95b0fb877bc568cca6aa360/MAIN/Various/Archie_Var;%20%20Apply%20track-take%20FX%20to%20active%20take.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-05-09T14:44:55Z">
+        <changelog><![CDATA[v.1.02 [090520]
+    ! fixed - Delete on cancellation]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8f6f288a7cd20d0a9122447e77be5c0c13dcc33d/MAIN/Various/Archie_Var;%20%20Apply%20track-take%20FX%20to%20active%20take.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Copy selected files from media explorer to project subdirectory.lua" type="script" desc="Copy selected files from media explorer to project subdirectory">
