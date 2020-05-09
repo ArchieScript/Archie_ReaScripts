@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Apply track-take FX to active take.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Примените track-take FX к активному take
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,6 +16,9 @@
    * Gave idea:   smrz1(Rmm)
    * Extension:   Reaper 6.09+ http://www.reaper.fm/
    * Changelog:   
+   *              v.1.02 [090520]
+   *                  ! fixed - Delete on cancellation
+   
    *              v.1.0 [090520]
    *                  + initialе
 --]]
@@ -38,7 +41,7 @@
     local CountSelItem = reaper.CountSelectedMediaItems(0);
     if CountSelItem == 0 then no_undo() return end;
     
-    
+    local ti = {};
     local t1 = {};
     local t2 = {};
     local chanX,chan;
@@ -46,6 +49,7 @@
     for i = 1,CountSelItem do;
         
         local item = reaper.GetSelectedMediaItem(0,i-1);
+        ti[#ti+1] = item;
         local take = reaper.GetActiveTake(item);
         
         local chanMode = reaper.GetMediaItemTakeInfo_Value(take,'I_CHANMODE');
@@ -61,7 +65,7 @@
         if midi and chan <= 1 then chan = 2 end;
         
         chanX = math.max(chanX or 0,chan);
-        t1[#t1+1] = take;
+        t1[tostring(take)] = take;
     end;
     
     ----
@@ -84,22 +88,35 @@
     for i = 1,reaper.CountSelectedMediaItems(0)do;
         local item = reaper.GetSelectedMediaItem(0,i-1);
         local take = reaper.GetActiveTake(item);
-        t2[#t2+1] = take;
+        if not t1[tostring(take)]then;
+            t2[tostring(take)] = take;
+        end;
     end;
     
-    for i = 1,#t1 do;
-        reaper.SetActiveTake(t1[i]);
+    
+    for k,v in pairs(t1) do;
+        local item = reaper.GetMediaItemTake_Item(v);
+        local take = reaper.GetActiveTake(item);
+        if take == v then;
+            reaper.SetMediaItemSelected(item,false);
+        else;
+            ---
+            reaper.SetActiveTake(v);
+        end;
     end;
     
     reaper.Main_OnCommand(40129,0);--Delete active take from items
     
-    for i = 1,#t2 do;
-        reaper.SetActiveTake(t2[i]);
+    for i = 1,#ti do;
+        reaper.SetMediaItemSelected(ti[i],true);
+    end;
+    
+    for k,v in pairs(t2) do;
+        reaper.SetActiveTake(v);
     end;
     
     reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock('Apply track-take FX to active take',-1);
-    
     
     
     
