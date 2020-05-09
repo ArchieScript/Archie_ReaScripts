@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8e25d2839726c19e3a1032ea98bef591a51774ae">
+<index version="1" name="Archie-ReaScripts" commit="75086ad570a69e37c95b0fb877bc568cca6aa360">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6883,6 +6883,19 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Various">
+    <reapack name="Archie_Var;  Apply track-take FX to active take.lua" type="script" desc="Var;  Apply track-take FX to active take.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-09T12:13:38Z">
+        <changelog><![CDATA[v.1.0 [090520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/75086ad570a69e37c95b0fb877bc568cca6aa360/MAIN/Various/Archie_Var;%20%20Apply%20track-take%20FX%20to%20active%20take.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Var;  Copy selected files from media explorer to project subdirectory.lua" type="script" desc="Copy selected files from media explorer to project subdirectory">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
