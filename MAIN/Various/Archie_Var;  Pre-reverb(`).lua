@@ -279,7 +279,7 @@
     
     --=====================================================
     if startLoop - Tail_Rever < 0 then;
-        reaper.MB("The tail does not fit, there is too little space at the beginning !\n\nХвост не влазит, слишком мало место в начале !","Woops !!!",0);
+        reaper.MB("The tail does not fit, there is too little space at the beginning !\n\nХвост не помещается, слишком мало место в начале !","Woops !!!",0);
         no_undo() return;
     end;
     --=====================================================
