@@ -182,7 +182,11 @@
         --==================================================
     end;
     
-    reaper.defer(function()showUIOfAllFXInSend_n_OfSelectedTracks(send_idx,showHide)end);
+    reaper.defer(function();
+         reaper.PreventUIRefresh(1);
+         showUIOfAllFXInSend_n_OfSelectedTracks(send_idx,showHide);
+         reaper.PreventUIRefresh(-1);
+         end);
     
     
     
