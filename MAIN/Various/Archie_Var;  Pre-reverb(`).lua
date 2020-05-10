@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -18,6 +18,11 @@
    * Extension:   Reaper 6.01+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.03 [100520]
+   *                  + Ability to save the track template in a subdirectory
+   *                  + -----
+   *                  + Возможность сохранения шаблона трека в подкаталоге
+   
    *              v.1.02 [11.04.20]
    *                  + Possibility of arithmetic operations in the input field
    *                  + Cleaning up intermediate files in a directory
@@ -28,7 +33,6 @@
    *                  + Зачистка от промежуточных файлов в директории
    *                  + Исправлена ошибка при работе с несколькими элементами одновременно
    *                  + автоопределение каналов
-   
    *              v.1.0 [11.12.19]
    *                  + initialе
 --]]
@@ -47,6 +51,10 @@
     
     
     local NameTemplates = "ArchiePreVerb";  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
+    
+    
+    
+    local PathTemplates = [[]]; -- Путь шаблона без файла (Необязятельно). Например: PathTemplates = [[c:\bla\bla\bla]];
     
     
     
@@ -108,6 +116,45 @@
     
     
     
+    --------------------------------------------------------------
+    local function EnumerateAllDirectoriesAndSubdirectories(path);
+        local T = {};
+        path = path:gsub('\\','/');
+        for i = 0,math.huge do;
+            local Subdirectories = reaper.EnumerateSubdirectories(path,i);
+            if Subdirectories then;
+                T[#T+1] = path..'/'..Subdirectories;
+            else;
+                break;
+            end;
+        end;
+        ::REPEAT::;
+        local X = #T;
+        for i = 1,#T do;
+            for i2 = 0,math.huge do;
+                local Subdirectories = reaper.EnumerateSubdirectories(T[i],i2);
+                if Subdirectories then;
+                    local SKIP = nil;
+                    for i3 = 1,#T do;
+                        if T[i3]==T[i]..'/'..Subdirectories then SKIP = true break end;    
+                    end;
+                    if not SKIP then;
+                        T[#T+1] = T[i]..'/'..Subdirectories;
+                    end;
+                else;
+                    break;
+                end;
+            end;
+        end;
+        if #T ~= X then goto REPEAT end;
+        table.insert(T,1,path);
+        return T;
+    end;
+    --------------------------------------------------------------
+    
+    
+    
+    
     
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
@@ -117,15 +164,44 @@
     
     --==================================================================================================================
     if type(NameTemplates)~="string" or #NameTemplates:gsub("%s","")==0 then NameTemplates = "ArchiePreVerb" end;
-    local TemplatesPath = reaper.GetResourcePath():gsub("\\","/").."/TrackTemplates/"..NameTemplates..".RTrackTemplate";
-    local file = io.open(TemplatesPath);
+    
+    local file = io.open(PathTemplates..'/'..NameTemplates..'.RTrackTemplate');
+    if not file then;
+        local ResPath = reaper.GetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path - '..NameTemplates);
+        file = io.open(ResPath..'/'..NameTemplates..'.RTrackTemplate');
+        if not file then;
+            ResPath = reaper.GetResourcePath()..'/TrackTemplates';
+            file = io.open(ResPath..'/'..NameTemplates..'.RTrackTemplate');
+            if not file then;
+                local Subdir = EnumerateAllDirectoriesAndSubdirectories(ResPath);
+                for i = 1,#Subdir do;
+                    for i2 = 1,math.huge do;
+                        local Files = reaper.EnumerateFiles(Subdir[i],i2-1);
+                        if Files then;
+                            local FilesX = Files:upper();
+                            if FilesX == (NameTemplates..".RTrackTemplate"):upper()then;
+                                file = io.open(Subdir[i]..'/'..Files);
+                                if file then;
+                                    reaper.SetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path - '..NameTemplates,Subdir[i],true);
+                                    break;
+                                end;
+                            end;
+                        else;
+                            break;
+                        end;
+                    end;
+                end;
+            end;
+        end;
+    end;
+    ----
     local strTemplate;
     if not file then;
         reaper.MB("Eng:\n\nThe script did not find a track template named '"..NameTemplates.."' \n"..
                   "Save a track template with a customized reverb named '"..NameTemplates.."'\n\n\n"..
                   "Rus:\n\nСкрипт не нашел шаблон трека с именем '"..NameTemplates.."' \n"..
                   "Сохраните шаблон трека с настроенным ревербератором с именем '"..NameTemplates.."'"
-                  ,"Woops",0);
+                  ,"Woops - (Track Templates)",0);
         no_undo() return;
     else;
         strTemplate = file:read("a");
