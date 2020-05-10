@@ -6,7 +6,7 @@
    * Category:    Archie
    * Description: UI of all FX in send n of selected tracks.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Показать пользовательский интерфейс всех FX в send 1 из выбранных треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
