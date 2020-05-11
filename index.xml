@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f562f490e7816fed30bea83b87f7ceebea8f5cb0">
+<index version="1" name="Archie-ReaScripts" commit="967c36e57c587d24b3a8e0f2378d7ba269f6121d">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7455,6 +7455,13 @@ v.1.0 [28.08.19]
     + -----
     + Возможность сохранения шаблона трека в подкаталоге]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0e2c2745ee0a78ee4bcb49f1ff600933476e6e7a/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-05-11T12:36:16Z">
+        <changelog><![CDATA[v.1.04 [110520]
+    + The script was converted to a template
+    + ----
+    + Скрипт переделан в шаблон]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/967c36e57c587d24b3a8e0f2378d7ba269f6121d/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
