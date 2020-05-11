@@ -6,7 +6,7 @@
    * Category:    Archie
    * Description: UI of all FX in all send of selected tracks.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Показать пользовательский интерфейс всех FX во всех send из выбранных треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -21,13 +21,26 @@
    *              [main] . > Archie_FX;  Hide UI of all FX in all send of selected tracks.lua
    * Extension:   Reaper 6.09+ http://www.reaper.fm/
    * Changelog:   
+   *              v.1.02 [110520]
+   *                  + Invert Fx Window (Shico(rmm))
+   
    *              v.1.0 [100520]
    *                  + initialе
 --]]
     --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    local InvertFxWindow = false; -- true / false
+    
+    
+    --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
     
+    
+    if type(InvertFxWindow)~='boolean'then InvertFxWindow = false end;
     
     
     local scrName = debug.getinfo(1,"S").source:match('.+[/\\](.+)');
@@ -93,13 +106,29 @@
                         if TrackSend and type(TrackSend) == 'userdata' then;            
                             local CountFx = reaper.TrackFX_GetCount(TrackSend);
                             if CountFx > 0 then;
-                                for i3 = 1,CountFx do;
-                                    local OpenFx = reaper.TrackFX_GetOpen(TrackSend,i3-1);
-                                    if not OpenFx then;
-                                        reaper.TrackFX_Show(TrackSend,i3-1,3);
-                                        OPEN = true;
+                                ---
+                                if InvertFxWindow ~= true then;
+                                    ---
+                                    for i3 = 1,CountFx do;
+                                        local OpenFx = reaper.TrackFX_GetOpen(TrackSend,i3-1);
+                                        if not OpenFx then;
+                                            reaper.TrackFX_Show(TrackSend,i3-1,3);
+                                            OPEN = true;
+                                        end;
                                     end;
+                                    ---
+                                else;
+                                    ---
+                                    for i3 = CountFx-1,0,-1 do;
+                                        local OpenFx = reaper.TrackFX_GetOpen(TrackSend,i3);
+                                        if not OpenFx then;
+                                            reaper.TrackFX_Show(TrackSend,i3,3);
+                                            OPEN = true;
+                                        end;
+                                    end;
+                                    ---
                                 end;
+                                ---
                             end;
                         end;
                     end;
