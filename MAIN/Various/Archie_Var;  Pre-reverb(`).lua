@@ -617,7 +617,7 @@
     
     
     local function msgGui(msg);
-        gfx.init("Help",580,290,0,50,50);
+        gfx.init("Help",580,350,0,50,50);
         local function def();
             gfx.x,gfx.y = 10,5;
             gfx.gradrect(0,0,gfx.w,gfx.h,.2,.2,.2,1);
@@ -681,9 +681,9 @@
     local scr = NewScript:match('.+[/\\](.+)');
     
     msgGui(
-    'Скрипт успешно создан\nИщите в экшен листе\n'..scr..'\nСохраните трек темплейт с настроенным ревербератором с именем\n'..retvals_csv..'\n\n\n\n'..
-    'Script was successfully created\nSearch in the action list\n'..scr..'\nSave the track template with the reverb set up with the name\n'..retvals_csv);
-    
+    'Скрипт успешно создан\nИщите в экшен листе\n'..scr..'\nСохраните трек темплейт с настроенным ревербератором с именем\n'..retvals_csv..'\n\nИмя скрипта скопировано в буфер обмена\n\n\n\n'..
+    'Script was successfully created\nSearch in the action list\n'..scr..'\nSave the track template with the reverb set up with the name\n'..retvals_csv..'\n\nScript name is copied to the clipboard');
+    reaper.CF_SetClipboard(scr);
     
     
     
