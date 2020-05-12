@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -174,7 +174,7 @@
         
         local file = io.open(PathTemplates..'/'..NameTemplates..'.RTrackTemplate');
         if not file then;
-            local ResPath = reaper.GetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path - '..NameTemplates);
+            local ResPath = reaper.GetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates);
             file = io.open(ResPath..'/'..NameTemplates..'.RTrackTemplate');
             if not file then;
                 ResPath = reaper.GetResourcePath()..'/TrackTemplates';
@@ -189,7 +189,7 @@
                                 if FilesX == (NameTemplates..".RTrackTemplate"):upper()then;
                                     file = io.open(Subdir[i]..'/'..Files);
                                     if file then;
-                                        reaper.SetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path - '..NameTemplates,Subdir[i],true);
+                                        reaper.SetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,Subdir[i],true);
                                         break;
                                     end;
                                 end;
@@ -215,6 +215,7 @@
                 local _,filename,_,_,_,_,_ = reaper.get_action_context();
                 os.remove (filename);
                 reaper.AddRemoveReaScript(false,0,filename,true);
+                reaper.DeleteExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,true);
             end;
             --]]
             no_undo() return;
