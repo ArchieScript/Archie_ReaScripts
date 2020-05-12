@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f7512e4e7b9795e78628663a1cc092b301ff0be1">
+<index version="1" name="Archie-ReaScripts" commit="58cd4672921f9923bd73c852e77006472024b893">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7943,6 +7943,35 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-03-14T18:32:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [15032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f4e6236e2bbee1f53c0e5201d013c1e8e947b59/MAIN/View/Archie_View;%20%20Toggle%20arrange%20in%20center%20relative%20to%20edit%20cursor%20when%20change%20BPM.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_View;  Toggle Open toolbar n at mouse cursor - close.lua" type="script" desc="View;  Toggle Open toolbar n at mouse cursor - close.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-12T15:56:45Z">
+        <changelog><![CDATA[v.1.0 [120520]
+    + initialе]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 1 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 2 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 3 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 4 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 5 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 6 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 7 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 8 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 9 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 10 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 11 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 12 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 13 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 14 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 15 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
+        <source main="main" file="Archie_View;  Toggle Open toolbar 16 at mouse cursor - close.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/58cd4672921f9923bd73c852e77006472024b893/MAIN/View/Archie_View;%20%20Toggle%20Open%20toolbar%20n%20at%20mouse%20cursor%20-%20close.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Toggle prevention of spectral peaks / spectrogram on all tracks">
