@@ -1,9 +1,9 @@
-local VersionMod = "v.2.7.7"
+local VersionMod = "v.2.7.8"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.7.7
+   * Version:     2.7.8
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
