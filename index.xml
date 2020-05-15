@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9934641a9a6a36eb8d7af6be2545841a013ac843">
+<index version="1" name="Archie-ReaScripts" commit="926180868d8ff9caa92759c033f97d7ea522b457">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5675,6 +5675,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6b353e49f52e441536f3027b766c9c0e2afff109/MAIN/Track/Archie_Track;%20%20Insert%20new%20track%20with%20send%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Insert prefix name of selected track.lua" type="script" desc="Track;  Insert prefix name of selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-15T17:48:13Z">
+        <changelog><![CDATA[v.1.0 [160520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Insert%20prefix%20name%20of%20selected%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Insert track double middle click in empty TCP and random color,rename.lua" type="script" desc="Insert track double middle click in empty TCP and random color,rename">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -6134,6 +6147,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2530daf15bc01770f5be99e93a38ecc3f5815d4f/MAIN/Track/Archie_Track;%20%20Remove%20icon%20selected%20tracks.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Remove prefix name of selected track.lua" type="script" desc="Track;  Remove prefix name of selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-15T17:48:13Z">
+        <changelog><![CDATA[v.1.0 [160520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Remove%20prefix%20name%20of%20selected%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Removes 8 characters from the end of the selected track name(`).lua" type="script" desc="Removes 8 characters from the end of the selected track name">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -6251,6 +6277,19 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Track;  Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f2c58f19e57e469ade0a3087e8aa94aedd3ae1c/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track;  Select next tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f2c58f19e57e469ade0a3087e8aa94aedd3ae1c/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track;  Select previous tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f2c58f19e57e469ade0a3087e8aa94aedd3ae1c/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Select track with prefix name.lua" type="script" desc="Track;  Select track with prefix name.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-15T17:48:13Z">
+        <changelog><![CDATA[v.1.0 [160520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Select%20track%20with%20prefix%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select tracks that have at end of name _ARCHIVE(`).lua" type="script" desc="Select tracks that have at end of name _ARCHIVE">
