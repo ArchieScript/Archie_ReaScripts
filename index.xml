@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="926180868d8ff9caa92759c033f97d7ea522b457">
+<index version="1" name="Archie-ReaScripts" commit="cf80250ca0ca7954a7c70a61ba896bf9f44157e2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5687,6 +5687,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Insert%20prefix%20name%20of%20selected%20track.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-05-16T09:07:43Z">
+        <changelog><![CDATA[v.1.02 [160520]
+    + Case sensitivity]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf80250ca0ca7954a7c70a61ba896bf9f44157e2/MAIN/Track/Archie_Track;%20%20Insert%20prefix%20name%20of%20selected%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Insert track double middle click in empty TCP and random color,rename.lua" type="script" desc="Insert track double middle click in empty TCP and random color,rename">
       <metadata>
@@ -6159,6 +6164,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Remove%20prefix%20name%20of%20selected%20track.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-05-16T09:07:43Z">
+        <changelog><![CDATA[v.1.02 [160520]
+    + Case sensitivity]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf80250ca0ca7954a7c70a61ba896bf9f44157e2/MAIN/Track/Archie_Track;%20%20Remove%20prefix%20name%20of%20selected%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Removes 8 characters from the end of the selected track name(`).lua" type="script" desc="Removes 8 characters from the end of the selected track name">
       <metadata>
@@ -6290,6 +6300,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [160520]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/926180868d8ff9caa92759c033f97d7ea522b457/MAIN/Track/Archie_Track;%20%20Select%20track%20with%20prefix%20name.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-05-16T09:07:43Z">
+        <changelog><![CDATA[v.1.02 [160520]
+    + Case sensitivity]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf80250ca0ca7954a7c70a61ba896bf9f44157e2/MAIN/Track/Archie_Track;%20%20Select%20track%20with%20prefix%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Select tracks that have at end of name _ARCHIVE(`).lua" type="script" desc="Select tracks that have at end of name _ARCHIVE">
