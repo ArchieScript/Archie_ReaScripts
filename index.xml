@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="cf80250ca0ca7954a7c70a61ba896bf9f44157e2">
+<index version="1" name="Archie-ReaScripts" commit="67f9b978a82e863c8fcff933efa84bc98787c3cf">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -324,6 +324,9 @@ LUA_Lib
       </version>
       <version name="2.7.8" author="Archie" time="2020-05-15T15:20:44Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/9934641a9a6a36eb8d7af6be2545841a013ac843/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.7.9" author="Archie" time="2020-05-16T14:29:09Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/67f9b978a82e863c8fcff933efa84bc98787c3cf/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -4120,6 +4123,9 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2020-03-31T13:54:56Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/79d655ab0d426fe19d7c78a3a649bfb64bd5c8f0/MAIN/Options/Archie_Options;%20%20Clear%20AutoRun%20Archie.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-05-16T14:29:09Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/67f9b978a82e863c8fcff933efa84bc98787c3cf/MAIN/Options/Archie_Options;%20%20Clear%20AutoRun%20Archie.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
