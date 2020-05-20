@@ -1,9 +1,9 @@
-local VersionMod = "v.2.7.9"
+local VersionMod = "v.2.8.0"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.7.9
+   * Version:     2.8.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -184,4 +184,5 @@ for line in file:lines()do; table.insert(t,line); end; file:close(); local remT 
 do; table.remove(t,remT[i]); end; if #remT > 0 then; file = io.open(iniFile,'w'); wrt = file:write(table.concat(t,'\n')); file:close(); return type(wrt)=='userdata'; end; return false; end; iniFileRemoveSection = Arc_Module.iniFileRemoveSection function Arc_Module.iniFileEnum(section,idx,iniFile,lua);
 if not tonumber(idx)then error('param 2(idx) - expected number',2)end; if lua==true then lua='--'else lua=''end; section = section:gsub('\n',''); local file = io.open(iniFile,'r'); if not file then return false,'','' end; local t = {}; for line in file:lines()do; table.insert(t,line); end; file:close();
 for i = 1, #t do; if t[i]:match('^%s-'..lua..'%[%s-'..section..'%s-%]')then; local j = 0; for i2 = i+1,#t do; if t[i2]:match('^%s-'..lua..'%[')then break end; local key,val = t[i2]:match('(.+)=(.*)'); if key and val then; key = key:gsub( ('^%s-'..lua:gsub('%p','%%%0')),''); if j == tonumber(idx) then
-return true,key,val end; j = j + 1; end; end; break; end; end; return false,'',''; end; iniFileEnum = Arc_Module.iniFileEnum return Arc_Module;
+return true,key,val end; j = j + 1; end; end; break; end; end; return false,'',''; end; iniFileEnum = Arc_Module.iniFileEnum local function local_ChangesInProject(); local ProjState2 = {}; function Arc_Module.ChangesInProject(buf); buf = buf or ''; local ret; local ProjState = reaper.GetProjectStateChangeCount(0);
+if not ProjState2[buf] or ProjState2[buf] ~= ProjState then ret = true end; ProjState2[buf] = ProjState; return ret == true; end; end;local_ChangesInProject(); return Arc_Module;
