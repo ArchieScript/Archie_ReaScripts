@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Item;  Select only odd items from the selected items in the track.lua
+   * Description: Item;  Select only odd items from  selected items in track.lua
    * Author:      Archie
    * Version:     1.0
    * Описание:    Выберите только нечетные элементы из выбранных элементов в треке
@@ -63,7 +63,7 @@
     end;
     
     reaper.PreventUIRefresh(-1);
-    reaper.Undo_EndBlock("Select only odd items from the selected items in the track",-1);
+    reaper.Undo_EndBlock("Select only odd items from selected items in track",-1);
     
     reaper.UpdateArrange();
     
