@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="729dbb771a50993069a457de77e0ce810d682805">
+<index version="1" name="Archie-ReaScripts" commit="57daed1ca7c5a7b483058c103269310bf37f6977">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -327,6 +327,9 @@ LUA_Lib
       </version>
       <version name="2.7.9" author="Archie" time="2020-05-16T14:29:09Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/67f9b978a82e863c8fcff933efa84bc98787c3cf/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.8.0" author="Archie" time="2020-05-20T18:31:32Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/57daed1ca7c5a7b483058c103269310bf37f6977/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
     <reapack name="SpeedTestModule.lua" type="script">
@@ -3350,6 +3353,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [130320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0707cf5c21e29288dc8535a5e4dfd4f7f4d3cf51/MAIN/Item/Archie_Item;%20%20Snap%20stretch%20markers%20to%20grid.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Solo selected item - Restore back.lua" type="script" desc="Item;  Solo selected item - Restore back.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-20T18:31:32Z">
+        <changelog><![CDATA[v.1.0 [180520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/57daed1ca7c5a7b483058c103269310bf37f6977/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
@@ -8740,6 +8756,19 @@ Performance: Script completely rewritten]]></changelog>
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Unselect left wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Unselect right wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Velocity for note(mousewheel).lua" type="script" desc="MidiEditor;  Velocity for note(mousewheel).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-20T18:31:32Z">
+        <changelog><![CDATA[v.1.0 [180520]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/57daed1ca7c5a7b483058c103269310bf37f6977/MIDI%20Editor/Archie_MidiEditor;%20%20Velocity%20for%20note(mousewheel).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Velocity note under mouse cursor (mouse wheel).lua" type="script" desc="MIDI Editor;  Velocity note under mouse cursor (mouse wheel).lua">
