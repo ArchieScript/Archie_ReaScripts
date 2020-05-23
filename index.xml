@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3854e8e38f87de0102aa07ef86dd1ecf4899c699">
+<index version="1" name="Archie-ReaScripts" commit="3f98c01b05d20f825bc7079368e6ad7954cbf4a6">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2483,6 +2483,32 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [060420]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/13ed6b9c204b4d42b1c435f95ac9fb3827cdf58b/MAIN/Item/Archie_Item;%20%20Glue%20selected%20items%20each%20individually.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-23T10:27:10Z">
+        <changelog><![CDATA[v.1.0 [230520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f98c01b05d20f825bc7079368e6ad7954cbf4a6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-23T10:27:10Z">
+        <changelog><![CDATA[v.1.0 [230520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f98c01b05d20f825bc7079368e6ad7954cbf4a6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
