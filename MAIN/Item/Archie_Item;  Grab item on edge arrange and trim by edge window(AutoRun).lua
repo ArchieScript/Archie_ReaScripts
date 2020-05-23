@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
@@ -23,6 +23,9 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [240520]
+   *                  + No changeе
+   
    *              v.1.0 [230520]
    *                  + initialе
 --]] 
@@ -44,9 +47,9 @@
     local STARTUP = 1; -- (Not recommended change)
     --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
     local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
-    reaper.RecursiveCreateDirectory(P,0);reaper.MB('Missing file / Отсутствует файл!\n\n'..P..F,"Error - "..debug.getinfo(1,'S').source:match--
-    ('.*[/\\](.+)'),0);return;end; if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--====================
-    --==== FUNCTION MODULE FUNCTION =================================▲=▲=▲========================= FUNCTION MODULE FUNCTION ==================
+    reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
+    '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
+    --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
     
     
     local section = 'Archie_GRAB_ITEM_ON_EDGE_ARRANGE';

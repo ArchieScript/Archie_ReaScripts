@@ -3,7 +3,7 @@
    * Features:    Startup
    * Description: Track;  Unarm all tracks for recording(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: ---
    * О скрипте:   Снять запись со всех треков
    * GIF:         ---
@@ -13,9 +13,11 @@
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:   
+   *              v.1.06 [240520]
+   *                  + No changeе
+   
    *              v.1.04 [31.03.20]
    *                  + AutoRun
-   
    *              v.1.01 [27.06.2019]
    *                  +! fixed bug auto record arm
    *              v.1.0 [26.06.2019]
@@ -65,9 +67,9 @@
      
      
      
-     local STARTUP = 1;  -- 0/1
      
-    
+     
+    local STARTUP = 1;  -- 0/1
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
@@ -75,11 +77,11 @@
     
     if button_illum ~= 1 then STARTUP = 0 end;
     
-    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
-    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
-    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.6.5",Fun,"")then Arc.no_undo() return end;--=====================================================
-    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
+    --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
+    local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
+    reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
+    '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
+    --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
     
     
     
