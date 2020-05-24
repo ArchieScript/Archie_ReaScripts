@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
@@ -23,9 +23,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.03 [240520]
+   *                  + Cancel selection item
+   
    *              v.1.02 [240520]
    *                  + No changeе
-   
    *              v.1.0 [230520]
    *                  + initialе
 --]] 
@@ -34,10 +36,13 @@
     --======================================================================================
     
     
-    local PixelsToCapture = 5 -- Пикселей скраю для захвата (5)
+    local PixelsToCapture = 10 -- Пикселей скраю для захвата (5)
     local offset = 2 -- pixel отступ (2)
     local ScrollBar = 19 -- pixel Полоса прокрутки справа (19)
     
+    local DesSelItem = true  -- Отменить выделение элемента
+                  -- = true  отменить
+                  -- = false не отменять
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -67,10 +72,16 @@
             local t={};return function(x,b)b=b or 1 t[b]=(t[b]or 0)+1 if t[b]>(x or math.huge)then t[b]=0 end return t[b]end;  
         end;Counter = Counter(); -- Counter(x,buf); x=reset
         
-        local itemX,_;
+        local function GetProjStateChangeCount(run);
+            if run == true then;
+                return reaper.GetProjectStateChangeCount(0);
+            end;
+        end;
+        
+        local itemX,_,ProjStateCount;
         
         local function loop();
-            if Counter(2,1) == 0 then;
+            if Counter(0,1) == 0 then;
                 ------------------
                 local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
                 local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
@@ -97,8 +108,10 @@
                         ----
                         if PosMCur <= start_time+edge and pos < start_time then;
                             reaper.JS_Mouse_SetCursor(reaper.JS_Mouse_LoadCursor(32649));
+                            ProjStateCount = GetProjStateChangeCount(DesSelItem);
                         elseif PosMCur>=(end_time-ScrollBarL-edge)and endPos > end_time then;
                             reaper.JS_Mouse_SetCursor(reaper.JS_Mouse_LoadCursor(32649));
+                            ProjStateCount = GetProjStateChangeCount(DesSelItem);
                         end;
                     end;
                 end;
@@ -113,20 +126,42 @@
                         if PosMCur <= start_time+edge then;
                             ----
                             if (pos < start_time) and (endPos > (start_time+edge)) then;
+                                reaper.PreventUIRefresh(1);
+                                
+                                local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
+                                if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
+                                    local LastAction = reaper.Undo_CanUndo2(0):upper();
+                                    if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
+                                        reaper.Undo_DoUndo2(0);
+                                    end;
+                                end;
+                                
                                 reaper.Undo_BeginBlock();
                                 local posNew = start_time + offsetL;
                                 Arc.SetMediaItemLeftTrim2(posNew,item);
                                 reaper.Undo_EndBlock('Trim Left',-1);
+                                reaper.PreventUIRefresh(-1);
                                 reaper.UpdateTimeline();
                                 itemX = nil;
                             end;
                             ----
                         elseif PosMCur>=(end_time-ScrollBarL-edge)then;
                             ----
+                            reaper.PreventUIRefresh(1);
+                            
+                            local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
+                            if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
+                                local LastAction = reaper.Undo_CanUndo2(0):upper();
+                                if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
+                                    reaper.Undo_DoUndo2(0);
+                                end;
+                            end;
+                            
                             reaper.Undo_BeginBlock();
                             local lenNew = (end_time - pos)-ScrollBarL-offsetL;
                             reaper.SetMediaItemLength(item,lenNew,true);
                             reaper.Undo_EndBlock('Trim Right',-1);
+                            reaper.PreventUIRefresh(-1);
                             reaper.UpdateTimeline();
                             itemX = nil;
                             ----
