@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
@@ -22,9 +22,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.04 [240520]
+   *                  + Fixed Bug
+   
    *              v.1.03 [240520]
    *                  + Cancel selection item
-   
    *              v.1.02 [240520]
    *                  + No changeе
    *              v.1.0 [230520]
@@ -54,6 +56,33 @@
     reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
     '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
     --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
+    
+    
+    local function  checkUndoItem();
+        if DesSelItem == true then;
+            local buf = reaper.SNM_GetIntConfigVar('undomask',0);
+            if buf&1 == 0 then;
+                local MB = 
+                reaper.MB('Rus:\n\n'..
+                          'Для корректной работы скрипта нужно включить отмену для элементов.\n'..
+                          'Для того чтобы не выделялся элемент.\n\n'..
+                          'Preferences > General > Include selection: > item (галка)\n\n'..
+                          'Включить отмену для элементов ? - Ok\n\n'..
+                          'Иначе внутри скрипта поменяйте значения у параметра DesSelItem на false\n\n\n'..
+                          '----------------------------------\n\n\n'..
+                          'Eng:\n\n'..
+                          'For the script to work correctly, you need to enable undo for items.\n'..
+                          'That the item not highlighted.\n\n'..
+                          'Preferences> General> Include selection:> item (tick)\n\n'..
+                          'Enable undo for items? - Ok\n\n'..
+                          'Otherwise, inside the script, change the values ​​of the DesSelItem parameter to false\n'
+                          ,'Warning',1);
+                if MB == 1 then;
+                    reaper.SNM_SetIntConfigVar('undomask',buf|(buf|1));
+                end;
+            end;
+        end;
+    end;
     
     
     local section = 'Archie_GRAB_ITEM_ON_EDGE_ARRANGE';
@@ -129,7 +158,7 @@
                                 
                                 local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
                                 if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
-                                    local LastAction = reaper.Undo_CanUndo2(0):upper();
+                                    local LastAction = (reaper.Undo_CanUndo2(0)or''):upper();
                                     if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
                                         reaper.Undo_DoUndo2(0);
                                     end;
@@ -149,7 +178,7 @@
                                 
                                 local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
                                 if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
-                                    local LastAction = reaper.Undo_CanUndo2(0):upper();
+                                    local LastAction = (reaper.Undo_CanUndo2(0)or''):upper();
                                     if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
                                         reaper.Undo_DoUndo2(0);
                                     end;
@@ -180,6 +209,7 @@
     local function run();
         local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_SCROLL'))or 0;
         if ExtStTGL == 0 then;
+            checkUndoItem();
             Arc.GetSetToggleButtonOnOff(1,1);
             reaper.SetExtState(section,'TGL_SWITCH','SCROLL',true);
             reaper.SetExtState(section,'TOGGLE_SCROLL',1,true);
