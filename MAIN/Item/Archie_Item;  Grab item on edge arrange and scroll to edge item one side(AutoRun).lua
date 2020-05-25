@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and scroll to edge item one side(AutoRun).lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента с одной стороны
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
@@ -22,9 +22,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.06 [250520]
+   *                  + refresh State Action List
+   
    *              v.1.05 [250520]
    *                  + Fixed Bug (Offset of item)
-   
    *              v.1.04 [240520]
    *                  + Fixed Bug
    *              v.1.03 [240520]
@@ -108,6 +110,21 @@
         end;
     end;
     -------------------------------------------------------
+    
+    
+    -------------------------------------------------------
+    local refActLst=0;
+    local function refreshActionList(X);
+        refActLst=refActLst+1;
+        if refActLst == X then;
+            local actionList = reaper.GetToggleCommandStateEx(0,40605);
+            if actionList == 1 then;
+                Action(40605,40605);
+            end;
+        end;
+    end;
+    -------------------------------------------------------
+    
     
     local section = 'Archie_GRAB_ITEM_ON_EDGE_ARRANGE';
     local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
@@ -231,6 +248,7 @@
                 end;
             end;
             ------------------
+            refreshActionList(3);
             reaper.defer(loop);
         end;
         reaper.defer(loop);
