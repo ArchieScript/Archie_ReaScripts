@@ -5,13 +5,12 @@
    *
    * Category:    Item
    * Features:    Startup
-   * Description: Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua
+   * Description: Item;  Grab item on edge arrange and scroll to edge item one side(AutoRun).lua
    * Author:      Archie
    * Version:     1.05
    * AboutScript: ---
-   * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
-   * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
-   *              http://avatars.mds.yandex.net/get-pdb/2423768/3d18d682-49c3-4a64-a4cd-4df56377c0db/orig
+   * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента с одной стороны
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -24,7 +23,7 @@
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
    *              v.1.05 [250520]
-   *                  + Fixed Bug
+   *                  + Fixed Bug (Offset of item)
    
    *              v.1.04 [240520]
    *                  + Fixed Bug
@@ -40,9 +39,9 @@
     --======================================================================================
     
     
-    local PixelsToCapture = 10 -- Пикселей скраю для захвата (5)
-    local offset = 2 -- pixel отступ (2)
-    local ScrollBar = 19 -- pixel Полоса прокрутки справа (19)
+    local PixelsToCapture = 10 -- Пикселей скраю для захвата (default 5)
+    local offset = 2 -- pixel отступ (default 2)
+    local ScrollBar = 25 -- pixel Полоса прокрутки справа (default 19)
     
     local DesSelItem = true  -- Отменить выделение элемента
                   -- = true  отменить
@@ -110,7 +109,6 @@
     end;
     -------------------------------------------------------
     
-    
     local section = 'Archie_GRAB_ITEM_ON_EDGE_ARRANGE';
     local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     local extname = scriptName;
@@ -118,7 +116,7 @@
     
     ----------------------------------------------------------------
     local function main();
-    
+        
         Arc.HelpWindowWhenReRunning(2,'',false,' - '..extname);
         
         --- / Счетчик для пропуска / ---
@@ -138,9 +136,9 @@
             if Counter(0,1) == 0 then;
                 ------------------
                 local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
-                local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
-                if ExtState ~= 'TRIM' or ExtStTGL == 0 then;
-                    reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+                local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_SCROLL_OSD'))or 0;
+                if ExtState ~= 'SCROLL_OSD' or ExtStTGL == 0 then;
+                    reaper.SetExtState(section,'TOGGLE_SCROLL_OSD',0,true);
                     Arc.GetSetToggleButtonOnOff(0,1);
                     return;
                 end;
@@ -151,8 +149,8 @@
                 local edge = PixelsToCapture/reaper.GetHZoomLevel();--Пиксели в секунды
                 local start_time,end_time = reaper.GetSet_ArrangeView2(0,0,0,0);
                 local PosMCur = reaper.BR_PositionAtMouseCursor(false);
+                ----- 
                 local ms_x,ms_y = reaper.GetMousePosition();
-                ----
                 if MouseState == 0 then;
                     itemX,_ = reaper.GetItemFromPoint(ms_x,ms_y,false);
                     if itemX then;
@@ -175,14 +173,14 @@
                         restoryMM();
                     end;
                 end;
-                ----
+                -----
                 if MouseState == 1 then;
                     local item,take = reaper.GetItemFromPoint(ms_x,ms_y,false);
                     if item and item == itemX then;
-                        local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION');
-                        local len = reaper.GetMediaItemInfo_Value(item,'D_LENGTH');
+                        local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION')
+                        local len = reaper.GetMediaItemInfo_Value(item,'D_LENGTH')
                         local endPos = pos+len;
-                        ----
+                        ---- 
                         if PosMCur <= start_time+edge then;
                             ----
                             if (pos < start_time) and (endPos > (start_time+edge)) then;
@@ -196,11 +194,9 @@
                                             reaper.Undo_DoUndo2(0);
                                         end;
                                     end;
-                                    
-                                    reaper.Undo_BeginBlock();
-                                    local posNew = start_time + offsetL;
-                                    Arc.SetMediaItemLeftTrim2(posNew,item);
-                                    reaper.Undo_EndBlock('Trim Left',-1);
+                                    local shift = (start_time-pos)+offsetL;
+                                    reaper.GetSet_ArrangeView2(0,1,0,0,start_time-shift,end_time);
+                                     
                                     reaper.PreventUIRefresh(-1);
                                     reaper.UpdateTimeline();
                                     itemX = nil;
@@ -209,26 +205,26 @@
                             ----
                         elseif PosMCur>=(end_time-ScrollBarL-edge)then;
                             ----
-                            if #tMM > 0 then;
-                                reaper.PreventUIRefresh(1);
-                                
-                                local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
-                                if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
-                                    local LastAction = (reaper.Undo_CanUndo2(0)or''):upper();
-                                    if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
-                                        reaper.Undo_DoUndo2(0);
+                            if endPos > (end_time-ScrollBarL) and pos < (end_time-ScrollBarL-edge)then;
+                                if #tMM > 0 then;
+                                    reaper.PreventUIRefresh(1);
+                                    
+                                    local ProjStateCount2 = GetProjStateChangeCount(DesSelItem);
+                                    if ProjStateCount and ProjStateCount ~= ProjStateCount2 then;
+                                        local LastAction = (reaper.Undo_CanUndo2(0)or''):upper();
+                                        if LastAction:match('MEDIA%s-ITEM%s-SELECTION')then;
+                                            reaper.Undo_DoUndo2(0);
+                                        end;
                                     end;
+                                    local shift = (endPos-end_time)+ScrollBarL+offsetL;
+                                    reaper.GetSet_ArrangeView2(0,1,0,0,start_time,end_time+shift);
+                                    
+                                    reaper.PreventUIRefresh(-1);
+                                    reaper.UpdateTimeline();
+                                    itemX = nil;
                                 end;
-                                
-                                reaper.Undo_BeginBlock();
-                                local lenNew = (end_time - pos)-ScrollBarL-offsetL;
-                                reaper.SetMediaItemLength(item,lenNew,true);
-                                reaper.Undo_EndBlock('Trim Right',-1);
-                                reaper.PreventUIRefresh(-1);
-                                reaper.UpdateTimeline();
-                                itemX = nil;
-                                ----
                             end;
+                            ----
                         end;
                         itemX = nil;
                     end;
@@ -245,24 +241,24 @@
     
     ----------------------------------------------------------------
     local function run();
-        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_SCROLL_OSD'))or 0;
         if ExtStTGL == 0 then;
             checkUndoItem();
-            reaper.SetExtState(section,'TGL_SWITCH','TRIM',true);
-            reaper.SetExtState(section,'TOGGLE_TRIM',1,true);
             Arc.GetSetToggleButtonOnOff(1,1);
+            reaper.SetExtState(section,'TGL_SWITCH','SCROLL_OSD',true);
+            reaper.SetExtState(section,'TOGGLE_SCROLL_OSD',1,true);
             reaper.defer(main);
         else;
             Arc.GetSetToggleButtonOnOff(0,1);
-            reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+            reaper.SetExtState(section,'TOGGLE_SCROLL_OSD',0,true);
         end;
     end;
     
     
     local function runFirst();
         local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
-        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
-        if ExtState == 'TRIM' and ExtStTGL == 1 then;
+        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_SCROLL_OSD'))or 0;
+        if ExtState == 'SCROLL_OSD' and ExtStTGL == 1 then;
             Arc.GetSetToggleButtonOnOff(1,1);
             reaper.defer(main);
         end;
@@ -270,7 +266,7 @@
     ----------------------------------------------------------------
     
     
-     
+    
     ---___-----------------------------------------------
     local FirstRun;
     if STARTUP == 1 then;
@@ -309,6 +305,7 @@
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------
+    
     
     
     
