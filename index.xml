@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bebb0370d183e3dcd0d38ef5df411139029b4af2">
+<index version="1" name="Archie-ReaScripts" commit="b4e505f166a04e29308b53d9de4131b977fd9696">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4368,17 +4368,17 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Preferences">
-    <reapack name="Archie_General-Undo seting-Include selection-Item.lua" type="script" desc="General-Undo seting-Include selection-Item.lua">
+    <reapack name="Archie_General-Undo settings-Include selection-Item.lua" type="script" desc="General-Undo settings-Include selection-Item.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-05-25T11:56:58Z">
+      <version name="1.0" author="Archie" time="2020-05-25T12:02:20Z">
         <changelog><![CDATA[v.1.0 [250520]
     + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bebb0370d183e3dcd0d38ef5df411139029b4af2/MAIN/Preferences/Archie_General-Undo%20seting-Include%20selection-Item.lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b4e505f166a04e29308b53d9de4131b977fd9696/MAIN/Preferences/Archie_General-Undo%20settings-Include%20selection-Item.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Antialiased peak and waveform drawing.lua" type="script" desc="Antialiased peak and waveform drawing">
