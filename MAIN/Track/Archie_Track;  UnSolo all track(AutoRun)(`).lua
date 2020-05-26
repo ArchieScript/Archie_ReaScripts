@@ -18,7 +18,7 @@
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
    *              v.1.07 [260520]
-   *                  + Restore Mute track (works with locked tracks)
+   *                  + Restore Solo track (works with locked tracks)
    
    *              v.1.06 [240520]
    *                  + No changeе
