@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnMute all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -17,50 +17,23 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.07 [260520]
+   *                  + Restore Mute track (Doesn't pay attention to blocked tracks)
+   
    *              v.1.06 [240520]
    *                  + No changeе
-   
    *              v.1.04 [31.03.20]
    *                  + AutoRun
    *              v.1.0 [25.01.20]
    *                  + initialе
 --]]
-    
-    --======================================================================================
-    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
-    --======================================================================================
-    
-    
-    local button_illum = 1
-                    -- = 0 Отключить подсветку кнопки
-                    -- = 1 включить подсветку кнопки **
-                         ---------------------------
-                    -- = 0 To disable the backlight buttons
-                    -- = 1 to turn on the backlight button **
-                    --------------------------------------
-                    
-                    -- ** При отключении скрипта появится окно "Reascript task control:"
-                    --    Для коректной работы скрипта ставим галку(Remember my answer for this script)
-                    --    Нажимаем: 'NEW INSTANCE
-                          -----------------------
-                    -- ** When you disable script window will appear (Reascript task controll,
-                    --    For correct work of the script put the check
-                    --    (Remember my answer for this script)
-                    --    Click: NEW INSTANCE
-                    -------------------------
-     
-     
-     
-     local STARTUP = 1;  -- 0/1
-     
-    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
     
     
-    if button_illum ~= 1 then STARTUP = 0 end;
     
+    local STARTUP = 1;  -- 0/1  -- (Not recommended change)
     --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
     local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
     reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
@@ -68,10 +41,6 @@
     --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
     
     
-    
-    -------------------------------------------------------
-    local function no_undo()reaper.defer(function()end)end;
-    -------------------------------------------------------
     
     
     -------------------------------------------------------
@@ -105,6 +74,7 @@
     -------------------------------------------------------
     
      
+     
     --=========================================
     local ProjState2;
     local function ChangesInProject();
@@ -115,6 +85,7 @@
         return ret == true;
     end;
     --=========================================
+    
     
     
     --=========================================
@@ -133,6 +104,7 @@
     --=========================================
     
     
+    
     -------------------------------------------------------
     local function AnyTrackMute(proj);
         for i = 1,reaper.CountTracks(proj)do;
@@ -141,29 +113,77 @@
             if lock ~= 1 then;
                 local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
                 if mute > 0 then return true end;
-            end; 
+            end;
         end;
         return false;
     end;
     -------------------------------------------------------
     
     
+    
     --=========================================
     local function body();
         local CountTrack = reaper.CountTracks(0);
         if CountTrack == 0 then no_undo() return end;
-        
+        local extname = 'ARCHIE_UNMUTE_ALL_TRACK_AUTORUN';
         
         local AnyTrMute = AnyTrackMute(0);
         if AnyTrMute then;
+            ----
+            for i = 1, math.huge do;
+                local retval,key,val = reaper.EnumProjExtState(0,extname,0);
+                if retval then;
+                    reaper.SetProjExtState(0,extname,key,'');
+                else;
+                    break;
+                end;
+            end;
+            ---- 
             reaper.Undo_BeginBlock();
-            reaper.MuteAllTracks(0);
+            reaper.PreventUIRefresh(1);
+            for i = 1,reaper.CountTracks(0)do;
+                local Track = reaper.GetTrack(0,i-1);
+                local lock = GetLockTrackState(Track);
+                if lock ~= 1 then;
+                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                    if mute > 0 then;
+                        local GUID = reaper.GetTrackGUID(Track);
+                        reaper.SetProjExtState(0,extname,GUID,mute);
+                        reaper.SetMediaTrackInfo_Value(Track,"B_MUTE",0);
+                    end;
+                end;
+            end;
+            reaper.PreventUIRefresh(-1);
             reaper.Undo_EndBlock("UnMute all track",-1);
+            ----
         else;
-            no_undo();
+            for i = 1, math.huge do;
+                local retval,key,val = reaper.EnumProjExtState(0,extname,0);
+                if retval then;
+                    reaper.SetProjExtState(0,extname,key,'');
+                    local track = reaper.BR_GetMediaTrackByGUID(0,key);
+                    if track then;
+                        reaper.SetMediaTrackInfo_Value(track,"B_MUTE",val);
+                        if not UNDO then;
+                            reaper.Undo_BeginBlock();
+                            reaper.PreventUIRefresh(1);
+                            UNDO = true;
+                        end;
+                    end;
+                else;
+                    break;
+                end;
+            end;
+            ----
+            if UNDO then;
+                UNDO = nil;
+                reaper.PreventUIRefresh(-1);
+                reaper.Undo_EndBlock("Restore Mute track",-1);
+            end;
         end;
     end;
     --=========================================
+    
     
     
     --=========================================
@@ -175,65 +195,76 @@
     --=========================================
     
     
+    -------------------------------------------------------
+    local function refreshActionList();
+        local actionList = reaper.GetToggleCommandStateEx(0,40605);
+        if actionList == 1 then;
+            Action(40605,40605);
+        end;
+    end;
+    -------------------------------------------------------
+    
+    
     
     --=========================================
     local function background();
-        if button_illum == 1 then;
         
-            local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
-            local extnameProj = NP:match('.+[/\\](.+)');
-            local ActiveDoubleScr,stopDoubleScr;
-            
-            Help(extnameProj);
-            
-            local function loop();
-                local tm = tmr(15);
-                if tm then;
-                    ----- stop Double Script -------
-                    if not ActiveDoubleScr then;
-                        stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
-                        reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
-                        ActiveDoubleScr = true;
-                    end;
-                    
-                    local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
-                    if stopDoubleScr2 > stopDoubleScr then return end;
-                    --------------------------------
-                    
-                    
-                    
-                    local ProjtState = ChangesInProject();
-                    if ProjtState then;
-                        
-                        local Repeat_Off,Repeat_On,On; 
-                        local On = nil;
-                        local AnyTrMute = AnyTrackMute(0);
-                        if AnyTrMute then;
-                            On = 1;
-                        end;
-                        
-                        if On == 1 and not Repeat_On then;
-                            if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
-                                reaper.SetToggleCommandState(sec,cmd,1);
-                                reaper.RefreshToolbar2(sec,cmd);
-                            end;
-                            Repeat_On = true;
-                            Repeat_Off = nil;
-                        elseif not On and not Repeat_Off then;
-                            if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
-                                reaper.SetToggleCommandState(sec,cmd,0);
-                                reaper.RefreshToolbar2(sec,cmd);
-                            end;
-                            Repeat_Off = true;
-                            Repeat_On = nil;
-                        end;
-                        --t=(t or 0)+1
-                    end;
+        local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
+        local extnameProj = NP:match('.+[/\\](.+)');
+        local ActiveDoubleScr,stopDoubleScr;
+        
+        Help(extnameProj);
+        
+        local function loop();
+            local tm = tmr(15);
+            if tm then;
+                ----- stop Double Script -------
+                if not ActiveDoubleScr then;
+                    stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
+                    reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
+                    ActiveDoubleScr = true;
                 end;
-                reaper.defer(loop);
+                
+                local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
+                if stopDoubleScr2 > stopDoubleScr then return end;
+                --------------------------------
+                
+                
+                local ProjtState = ChangesInProject();
+                if ProjtState then;
+                    
+                    local Repeat_Off,Repeat_On,On; 
+                    local On = nil;
+                    local AnyTrMute = AnyTrackMute(0);
+                    if AnyTrMute then;
+                        On = 1;
+                    end;
+                    
+                    if On == 1 and not Repeat_On then;
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
+                            reaper.SetToggleCommandState(sec,cmd,1);
+                            reaper.RefreshToolbar2(sec,cmd);
+                            refreshActionList();
+                            reaper.SetCursorContext(0,nil);
+                        end;
+                        Repeat_On = true;
+                        Repeat_Off = nil;
+                    elseif not On and not Repeat_Off then;
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
+                            reaper.SetToggleCommandState(sec,cmd,0);
+                            reaper.RefreshToolbar2(sec,cmd);
+                            refreshActionList();
+                            reaper.SetCursorContext(0,nil);
+                        end;
+                        Repeat_Off = true;
+                        Repeat_On = nil;
+                    end;
+                    --t=(t or 0)+1
+                end;
             end;
             reaper.defer(loop);
         end;
+        reaper.defer(loop);
     end;
     --=========================================
     

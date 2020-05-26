@@ -1,9 +1,13 @@
 --[[ NEW INSTANCE
+   * Тест только на windows  /  Test only on windows.
+   * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
+   * Bug Reports: If you find any errors, please report one of the links below (*Website)
+   *
    * Category:    Track
    * Features:    Startup
    * Description: Track;  Unarm all tracks for recording(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: ---
    * О скрипте:   Снять запись со всех треков
    * GIF:         ---
@@ -12,82 +16,35 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
+   * Extension:   Reaper 6.05+ http://www.reaper.fm/
+   *              SWS v.2.12.0 http://www.sws-extension.org/index.php
+   *              Arc_Function_lua v.2.8.0+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.07 [260520]
+   *                  + Restore Arm track (works with locked tracks)
+   
    *              v.1.06 [240520]
    *                  + No changeе
-   
    *              v.1.04 [31.03.20]
    *                  + AutoRun
    *              v.1.01 [27.06.2019]
    *                  +! fixed bug auto record arm
    *              v.1.0 [26.06.2019]
    *                  + initialе
-    
-    
-    -- Тест только на windows  /  Test only on windows.
-    --=======================================================================================
-       SYSTEM REQUIREMENTS:           |  СИСТЕМНЫЕ ТРЕБОВАНИЯ:         
-    (+) - required for installation      | (+) - обязательно для установки
-    (-) - not necessary for installation | (-) - не обязательно для установки
-    -----------------------------------------------------------------------------------------
-    (+) Reaper v.5.978 +            --| http://www.reaper.fm/download.php
-    (-) SWS v.2.10.0 +              --| http://www.sws-extension.org/index.php
-    (-) ReaPack v.1.2.2 +           --| http://reapack.com/repos
-    (+) Arc_Function_lua v.2.7.6 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc  
-    (-) reaper_js_ReaScriptAPI64    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
-    (-) Visual Studio С++ 2015      --|  http://clck.ru/Eq5o6
-    =======================================================================================]] 
-    
-    
-    
-    
-    --======================================================================================
-    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
-    --======================================================================================
-    
-    
-    
-    local button_illum = 1
-                    -- = 0 Отключить подсветку кнопки
-                    -- = 1 включить подсветку кнопки **
-                         ---------------------------
-                    -- = 0 To disable the backlight buttons
-                    -- = 1 to turn on the backlight button **
-                    --------------------------------------
-                    
-                    -- ** При отключении скрипта появится окно "Reascript task control:"
-                    --    Для коректной работы скрипта ставим галку(Remember my answer for this script)
-                    --    Нажимаем: 'NEW INSTANCE
-                          -----------------------
-                    -- ** When you disable script window will appear (Reascript task controll,
-                    --    For correct work of the script put the check
-                    --    (Remember my answer for this script)
-                    --    Click: NEW INSTANCE
-                    -------------------------
-     
-     
-     
-     
-     
-    local STARTUP = 1;  -- 0/1
+--]] 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
     
     
-    if button_illum ~= 1 then STARTUP = 0 end;
     
+    local STARTUP = 1;  -- 0/1  -- (Not recommended change)
     --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
     local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
     reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
     '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
     --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
     
-    
-    
-    -------------------------------------------------------
-    local function no_undo()reaper.defer(function()end)end;
-    -------------------------------------------------------
     
     
     --=========================================
@@ -119,8 +76,9 @@
         end;
     end;    
     --=========================================
-     
-     
+    
+    
+    
     --=========================================
     local ProjState2;
     local function ChangesInProject();
@@ -131,42 +89,112 @@
         return ret == true;
     end;
     --=========================================
-     
-     
+    
+    
+    
     --=========================================
     local function AnyTrackRecArm(proj);
         for i = 1,reaper.CountTracks(proj)do;
             local Track = reaper.GetTrack(proj,i-1);
             local Rec = reaper.GetMediaTrackInfo_Value(Track,"I_RECARM");
-            if Rec > 0 then return true end;  
+            if Rec > 0 then return true end;
         end;
         return false;
     end;
     --=========================================
-      
-     
+    
+    
+    
+    --=========================================
+    local function GetSetArmTrackState(set,track,state);
+        if not set or set == 0 then;
+            return reaper.GetMediaTrackInfo_Value(track,"I_RECARM");
+        else;
+            local _,TrackChunk = reaper.GetTrackStateChunk(track,'',false);
+            local bracket,ret = 0,nil;
+            for var in string.gmatch(TrackChunk..'\n',".-\n") do;
+                if var:match('^%s-%S')=='<'or var:match('^%s-%S')=='>'then;
+                    bracket = bracket+1;
+                end;
+                ret = tonumber(var:match('^%s-LOCK%s+(%d*).-$'));
+                if ret or (bracket >= 2) then break end;
+            end;
+            if ret and ret >= 1 then;
+                local x,t,arg1,arg2 = 0,{},nil,nil;
+                for var in string.gmatch(TrackChunk..'\n',".-\n") do;
+                    if not arg1 and not arg2 then;
+                        arg1,arg2 = var:match('^%s-(REC%s+)(%d*).-$');
+                        if arg1 and arg2 then;
+                            var = var:gsub(arg1..arg2,arg1..state);
+                        end;
+                    end;
+                    x=x+1;t[x]=var;
+                end;
+                reaper.SetTrackStateChunk(track,table.concat(t),false);
+            else;
+               reaper.SetMediaTrackInfo_Value(track,"I_RECARM",state);
+            end;
+        end;
+    end;
+    --=========================================
+    
+    
+    
     --=========================================
     local function body();
         local CountTrack = reaper.CountTracks(0);
         if CountTrack == 0 then no_undo() return end;
+        local extname = 'ARCHIE_UNARM_ALL_TRACK_AUTORUN';
         
-        local UNDO;
-        for i = 1,CountTrack do;
-            local Track = reaper.GetTrack(0,i-1);
-            local Rec = reaper.GetMediaTrackInfo_Value(Track,"I_RECARM");
-            if Rec > 0 then;
-                if not UNDO then;
-                    reaper.Undo_BeginBlock();
-                    UNDO = true;
+        local AnyTrRecArm = AnyTrackRecArm(0);
+        if AnyTrRecArm then;
+            ----
+            for i = 1, math.huge do;
+                local retval,key,val = reaper.EnumProjExtState(0,extname,0);
+                if retval then;
+                    reaper.SetProjExtState(0,extname,key,'');
+                else;
+                    break;
                 end;
-                reaper.SetMediaTrackInfo_Value(Track,"I_RECARM",0);
             end;
-        end;
-        
-        if UNDO then;
-            reaper.Undo_EndBlock("Unarm all tracks for recording",-1);
+            ---- 
+            reaper.Undo_BeginBlock();
+            reaper.PreventUIRefresh(1);
+            for i = 1,reaper.CountTracks(0)do;
+                local Track = reaper.GetTrack(0,i-1);
+                local Arm = GetSetArmTrackState(0,Track);
+                if Arm > 0 then;
+                    local GUID = reaper.GetTrackGUID(Track);
+                    reaper.SetProjExtState(0,extname,GUID,Arm);
+                    GetSetArmTrackState(1,Track,0);
+                end;
+            end;
+            reaper.PreventUIRefresh(-1);
+            reaper.Undo_EndBlock("UnArm all track",-1);
         else;
-            no_undo();
+            for i = 1, math.huge do;
+                local retval,key,val = reaper.EnumProjExtState(0,extname,0);
+                if retval then;
+                    reaper.SetProjExtState(0,extname,key,'');
+                    local track = reaper.BR_GetMediaTrackByGUID(0,key);
+                    if track then;
+                        GetSetArmTrackState(1,track,val);
+                        if not UNDO then;
+                            reaper.Undo_BeginBlock();
+                            reaper.PreventUIRefresh(1);
+                            UNDO = true;
+                        end;
+                    end;
+                else;
+                    break;
+                end; 
+            end;
+            ----
+            if UNDO then;
+                UNDO = nil;
+                reaper.PreventUIRefresh(-1);
+                reaper.Undo_EndBlock("Restore Arm track",-1);
+            end; 
         end;
     end;
     --=========================================
@@ -181,63 +209,75 @@
     --=========================================
     
     
+    -------------------------------------------------------
+    local function refreshActionList();
+        local actionList = reaper.GetToggleCommandStateEx(0,40605);
+        if actionList == 1 then;
+            Action(40605,40605);
+        end;
+    end;
+    -------------------------------------------------------
+    
+    
     --=========================================
     local function background();
-        if button_illum == 1 then;
-            
-            local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
-            local extnameProj = NP:match('.+[/\\](.+)');
-            local ActiveDoubleScr,stopDoubleScr;
-            
-            Help(extnameProj);
-            
-            local function loop();
-                local tm = tmr(15);
-                if tm then;
-                    ----- stop Double Script -------
-                    if not ActiveDoubleScr then;
-                        stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
-                        reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
-                        ActiveDoubleScr = true;
-                    end;
-                    
-                    local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
-                    if stopDoubleScr2 > stopDoubleScr then return end;
-                    --------------------------------
-                    
-                    
-                    local ProjtState = ChangesInProject();
-                    if ProjtState then;
-                    
-                        local Repeat_Off,Repeat_On,On; 
-                        local On = nil;
-                        local AnyTrRecArm = AnyTrackRecArm(0);
-                        if AnyTrRecArm then;
-                            On = 1;
-                        end;
-                        
-                        if On == 1 and not Repeat_On then;
-                            if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
-                                reaper.SetToggleCommandState(sec,cmd,1);
-                                reaper.RefreshToolbar2(sec,cmd);
-                            end;
-                            Repeat_On = true;
-                            Repeat_Off = nil;
-                        elseif not On and not Repeat_Off then;
-                            if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
-                                reaper.SetToggleCommandState(sec,cmd,0);
-                                reaper.RefreshToolbar2(sec,cmd);
-                            end;
-                            Repeat_Off = true;
-                            Repeat_On = nil;
-                        end;
-                        --t=(t or 0)+1
-                    end;
+        
+        local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
+        local extnameProj = NP:match('.+[/\\](.+)');
+        local ActiveDoubleScr,stopDoubleScr;
+        
+        Help(extnameProj);
+        
+        local function loop();
+            local tm = tmr(15);
+            if tm then;
+                ----- stop Double Script -------
+                if not ActiveDoubleScr then;
+                    stopDoubleScr = (tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"))or 0)+1;
+                    reaper.SetExtState(extnameProj,"stopDoubleScr",stopDoubleScr,false);
+                    ActiveDoubleScr = true;
                 end;
-                reaper.defer(loop);
+                
+                local stopDoubleScr2 = tonumber(reaper.GetExtState(extnameProj,"stopDoubleScr"));
+                if stopDoubleScr2 > stopDoubleScr then return end;
+                --------------------------------
+                
+                
+                local ProjtState = ChangesInProject();
+                if ProjtState then;
+                
+                    local Repeat_Off,Repeat_On,On; 
+                    local On = nil;
+                    local AnyTrRecArm = AnyTrackRecArm(0);
+                    if AnyTrRecArm then;
+                        On = 1;
+                    end;
+                    
+                    if On == 1 and not Repeat_On then;
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
+                            reaper.SetToggleCommandState(sec,cmd,1);
+                            reaper.RefreshToolbar2(sec,cmd);
+                            refreshActionList();
+                            reaper.SetCursorContext(0,nil);
+                        end;
+                        Repeat_On = true;
+                        Repeat_Off = nil;
+                    elseif not On and not Repeat_Off then;
+                        if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
+                            reaper.SetToggleCommandState(sec,cmd,0);
+                            reaper.RefreshToolbar2(sec,cmd);
+                            refreshActionList();
+                            reaper.SetCursorContext(0,nil);
+                        end;
+                        Repeat_Off = true;
+                        Repeat_On = nil;
+                    end;
+                    --t=(t or 0)+1
+                end;
             end;
             reaper.defer(loop);
         end;
+        reaper.defer(loop);
     end;
     --=========================================
     
