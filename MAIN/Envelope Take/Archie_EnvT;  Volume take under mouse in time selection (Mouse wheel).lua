@@ -5,7 +5,7 @@
    * Category:    Envelope Take
    * Description: Volume take under mouse in time selection (Mouse wheel)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -15,12 +15,14 @@
    * Customer:    AlexLazer($) / Maestro Sound - (Rmm)
    * Gave idea:   AlexLazer($) / Maestro Sound - (Rmm)
    * Changelog:   
-   *              v.1.02 [16.08.09]
-   *                  + Envelope Reset with Inactive Envelope
+   *              v.1.03 [280520]
+   *                  + INVERT MOUSE
    
-   *              v.1.01 [15.08.09]
+   *              v.1.02 [16.08.19]
+   *                  + Envelope Reset with Inactive Envelope
+   *              v.1.01 [15.08.19]
    *                  Do not respond to midi take
-   *              v.1.0 [14.08.09]
+   *              v.1.0 [14.08.19]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -45,6 +47,9 @@
     
     
     local VOLUME_DB = 0.5;
+    
+    
+    local INVERT_MOUSE = false  -- true / false
     
     
     --======================================================================================
@@ -207,6 +212,11 @@
         VOLUME_DB = 1;
     end;
     local MouseWheel = ({reaper.get_action_context()})[7];
+    
+    if INVERT_MOUSE == true then;
+        MouseWheel = (MouseWheel-MouseWheel*2);
+    end;
+    
     if MouseWheel < 0 then;
         VOLUME_DB = (-VOLUME_DB);
     end;
