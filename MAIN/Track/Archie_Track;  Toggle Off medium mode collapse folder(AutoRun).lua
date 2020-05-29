@@ -1,4 +1,4 @@
---[[
+--[[ NEW INSTANCE
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  Toggle Off medium mode collapse folder(AutoRun).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Переключатель  Выключите средний режим сворачивания папки(АвтоЗапуск).lua
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.03 [290520]
+   *                  + Fix bug
+   
    *              v.1.02 [240520]
    *                  + No changeе
-   
    *              v.1.0 [210420]
    *                  + initialе
 --]]
@@ -133,9 +135,11 @@
                 reaper.defer(function();
                     for i = 1,CountTracks do;
                         local track = reaper.GetTrack(0,i-1);
-                        local compact = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT')==1);
-                        if compact then;
-                            reaper.SetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT',2);
+                        if track then;
+                            local compact = (reaper.GetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT')==1);
+                            if compact then;
+                                reaper.SetMediaTrackInfo_Value(track,'I_FOLDERCOMPACT',2);
+                            end;
                         end;
                     end;
                 end);

@@ -1,11 +1,12 @@
--- New instance
 --[[
+   *     NEW INSTANCE (ReaScript task control)
+   *
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Preferences
-   * Description: General-Undo settings-Include selection-Item.lua
+   * Description: Pref;  General-Undo settings-Include selection-Item.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
