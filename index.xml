@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b56a4410f81e404751aa0a3b580187c4375a7f31">
+<index version="1" name="Archie-ReaScripts" commit="bac3e59eba7763c0f94db644a74e599ab2380021">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3979,6 +3979,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a21ab9f937f8986141ff049afad154711dca78c5/MAIN/Markers/Archie_Markers;%20%20Create%20region%20by%20borders%20of%20selected%20items(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Markers;  Create region by time selection or borders of selected items.lua" type="script" desc="Markers;  Create region by time selection or borders of selected items.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-30T17:08:20Z">
+        <changelog><![CDATA[v.1.0 [310520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bac3e59eba7763c0f94db644a74e599ab2380021/MAIN/Markers/Archie_Markers;%20%20Create%20region%20by%20time%20selection%20or%20borders%20of%20selected%20items.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Markers;  Delete region in time selection.lua" type="script" desc="Markers;  Delete region in time selection">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -7195,6 +7208,19 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.03" author="Archie" time="2020-03-30T17:35:45Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fccdf01cfbe6c907e10627f6d09a057bf1c08116/MAIN/Track/Archie_Track;%20%20Unsolo%20all%20visible%20track%20in%20TCP(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Visible only selected tracks and their children - restore back.lua" type="script" desc="Track;  Visible only selected tracks and their children - restore back.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-05-30T17:08:20Z">
+        <changelog><![CDATA[v.1.0 [310520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bac3e59eba7763c0f94db644a74e599ab2380021/MAIN/Track/Archie_Track;%20%20Visible%20only%20selected%20tracks%20and%20their%20children%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Volume down on all tracks (-inf).lua" type="script" desc="Volume down on all tracks (-inf)">
