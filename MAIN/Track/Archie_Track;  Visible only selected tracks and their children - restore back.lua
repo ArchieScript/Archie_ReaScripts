@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track;  Visible only selected tracks and their children - restore back.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * О скрипте:   Видны только выделенные треки и их потомки-восстановить обратно
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -104,7 +104,6 @@
             reaper.PreventUIRefresh(-1);
             reaper.TrackList_AdjustWindows(false);
             reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
-    
         else;
             reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
             no_undo();
@@ -146,14 +145,18 @@
             local valSetProj = visibTcp..'&&&'..visibMcp..'&&&'..(collapse or '');
             ----------
             local sel = reaper.GetMediaTrackInfo_Value(track,"I_SELECTED")>0;
-            if sel and folder and not Depth then;
-                Depth = reaper.GetTrackDepth(track);
-            end;
+            
             if Depth_On then;
                 local Depth2 = reaper.GetTrackDepth(track);
                 if Depth2 <= Depth then Depth = nil Depth_On = nil end;
-            end;  
+            end; 
+            
+            if sel and folder and not Depth then;
+                Depth = reaper.GetTrackDepth(track);
+            end;
+            
             if Depth then Depth_On = Depth end;
+            
             if not sel and not Depth and (visibTcp~=0 or visibMcp~=0) then;
                 UNDO(1);
                 reaper.SetMediaTrackInfo_Value(track,"B_SHOWINTCP",0);
@@ -163,6 +166,7 @@
                 UNDO(1);
                 reaper.SetMediaTrackInfo_Value(track,"I_FOLDERCOMPACT",0);
             end;
+            
             valSetProj = (Hide or '')..'&&&'..valSetProj;
             Hide = nil;
             reaper.SetProjExtState(0,ProjExtState,guid,valSetProj);
