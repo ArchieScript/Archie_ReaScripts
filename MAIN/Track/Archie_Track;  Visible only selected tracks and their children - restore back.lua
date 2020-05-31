@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track;  Visible only selected tracks and their children - restore back.lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * О скрипте:   Видны только выделенные треки и их потомки-восстановить обратно
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2840305/805ce2b9-aa8c-40d0-afc3-970b7d59df56/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -17,10 +17,13 @@
    * Gave idea:   Shico(Rmm)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
+   *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.04 [310520]
+   *                  + Reset saving (ctrl+click)
+   
    *              v.1.03 [310520]
    *                  + Fixed bugs Scroll
-   
    *              v.1.0 [310520]
    *                  + initialе
 --]] 
@@ -29,6 +32,8 @@
     --======================================================================================
     
     local IGNORE_COLLAPSE = true; --true / false
+    
+    local RESET_CTRL = true; --true / false --ctrl+клик сбросить сохранение
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -78,8 +83,37 @@
     -----------------------------
     
     
-    
     local ProjExtState = 'ARCHIE_VISIBLE_ONLY_SELECTED_TRACKS_AND_THEIR_CHILDREN_RESTORE_BACK';
+    
+    
+    ---------------------------
+    if RESET_CTRL == true then;
+        local APIJS = reaper.APIExists('JS_Mouse_GetState');
+        if APIJS then;
+            local retval,key,value = reaper.EnumProjExtState(0,ProjExtState,0);
+            if retval then;
+                local GetStateMouse = reaper.JS_Mouse_GetState(127);
+                if GetStateMouse == 4 or GetStateMouse == 5 then;
+                    local MB = reaper.MB('Rus:\nСбросить сохранение ?\n\nEng:\nReset save ?','Reset',1);
+                    if MB == 1 then;
+                        reaper.SetProjExtState(0,ProjExtState,"","");
+                        SetToggleButtonOnOff(0);
+                        return;
+                    else;
+                        return;
+                    end;
+                end;
+            end;
+        else;
+            reaper.MB("Rus:\nОтсутствует расширение 'reaper_js_ReaScriptAPI'\n\n"..
+                      "Eng:\nMissing extension 'reaper_js_ReaScriptAPI'",'Woops',0);
+        end;
+    end;
+    --reaper.ShowConsoleMsg('');
+    ---------------------------
+    
+    
+    
     local retval,key,value = reaper.EnumProjExtState(0,ProjExtState,0);
     if retval then;
     --------------------
