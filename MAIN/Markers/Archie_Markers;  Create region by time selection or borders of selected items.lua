@@ -6,7 +6,7 @@
    * Category:    Markers
    * Description: Markers;  Create region by time selection or borders of selected items.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -54,7 +54,7 @@
     
     
     -------------------------------------------------------
-    local function no_Undo()reaper.defer(function()end)end;
+    local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
     
     

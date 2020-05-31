@@ -6,8 +6,9 @@
    * Category:    Track
    * Description: Track;  Visible only selected tracks and their children - restore back.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * О скрипте:   Видны только выделенные треки и их потомки-восстановить обратно
+   * GIF:         http://avatars.mds.yandex.net/get-pdb/2840305/805ce2b9-aa8c-40d0-afc3-970b7d59df56/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -17,6 +18,9 @@
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.03 [310520]
+   *                  + Fixed bugs Scroll
+   
    *              v.1.0 [310520]
    *                  + initialе
 --]] 
@@ -51,12 +55,44 @@
         reaper.RefreshToolbar2(sec,cmd);
     end;
     -----------------------------
+    local function SetScrollMixer(track);
+        local trackSel = reaper.GetSelectedTrack(0,0);
+        if not trackSel then;
+            trackSel = track or reaper.GetMixerScroll();
+        end;
+        if trackSel then;
+            reaper.defer(function()
+                reaper.SetMixerScroll(trackSel)
+            end);
+        end;
+    end;
+    -----------------------------
+    local function GetFirstVisibleTrackTCP();
+        local CountTrack = reaper.CountTracks(0);
+        for i = 1, CountTrack do;
+            local track = reaper.GetTrack(0,i-1);
+            local visibTcp = reaper.GetMediaTrackInfo_Value(track,"B_SHOWINTCP")>0;
+            if visibTcp then return track end;
+        end;
+    end;
+    -----------------------------
+    
     
     
     local ProjExtState = 'ARCHIE_VISIBLE_ONLY_SELECTED_TRACKS_AND_THEIR_CHILDREN_RESTORE_BACK';
     local retval,key,value = reaper.EnumProjExtState(0,ProjExtState,0);
     if retval then;
     --------------------
+        local GetMixScroll = reaper.GetMixerScroll();
+        local GetFirstVisTrTCP;
+        local CountSelTrack = reaper.CountSelectedTracks(0);
+        if CountSelTrack == 0 then;
+            GetFirstVisTrTCP = GetFirstVisibleTrackTCP();
+            if not GetFirstVisTrTCP then;
+                GetFirstVisTrTCP = GetMixScroll;
+            end;
+        end;
+        ----
         for i = 1, math.huge do;
             local retval,key,value = reaper.EnumProjExtState(0,ProjExtState,i-1);
             if retval then;
@@ -103,9 +139,17 @@
             reaper.Undo_EndBlock('Restore visible track',-1);
             reaper.PreventUIRefresh(-1);
             reaper.TrackList_AdjustWindows(false);
-            reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
+            if GetFirstVisTrTCP then;
+                reaper.SetMediaTrackInfo_Value(GetFirstVisTrTCP,"I_SELECTED",1);
+                reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
+                reaper.SetMediaTrackInfo_Value(GetFirstVisTrTCP,"I_SELECTED",0);
+            else;
+                reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
+            end;
+            SetScrollMixer(GetMixScroll);
         else;
             reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
+            SetScrollMixer(GetMixScroll);
             no_undo();
         end;
         SetToggleButtonOnOff(0);
@@ -177,6 +221,7 @@
             reaper.PreventUIRefresh(-1);
             reaper.TrackList_AdjustWindows(false);
             reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks
+            SetScrollMixer();
             SetToggleButtonOnOff(1);
         else;
             reaper.SetProjExtState(0,ProjExtState,"","");
