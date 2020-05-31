@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="871f79d6e2963288510c4915fb9a7a18ee5a4901">
+<index version="1" name="Archie-ReaScripts" commit="37a259b919b19e2f6354d905faad76cbc6bf6474">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3991,6 +3991,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bac3e59eba7763c0f94db644a74e599ab2380021/MAIN/Markers/Archie_Markers;%20%20Create%20region%20by%20time%20selection%20or%20borders%20of%20selected%20items.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-05-31T06:45:23Z">
+        <changelog><![CDATA[v.1.0 [310520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/37a259b919b19e2f6354d905faad76cbc6bf6474/MAIN/Markers/Archie_Markers;%20%20Create%20region%20by%20time%20selection%20or%20borders%20of%20selected%20items.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Markers;  Delete region in time selection.lua" type="script" desc="Markers;  Delete region in time selection">
       <metadata>
@@ -7226,6 +7231,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [310520]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/871f79d6e2963288510c4915fb9a7a18ee5a4901/MAIN/Track/Archie_Track;%20%20Visible%20only%20selected%20tracks%20and%20their%20children%20-%20restore%20back.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-05-31T06:45:23Z">
+        <changelog><![CDATA[v.1.03 [310520]
+    + Fixed bugs Scroll]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/37a259b919b19e2f6354d905faad76cbc6bf6474/MAIN/Track/Archie_Track;%20%20Visible%20only%20selected%20tracks%20and%20their%20children%20-%20restore%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Volume down on all tracks (-inf).lua" type="script" desc="Volume down on all tracks (-inf)">
