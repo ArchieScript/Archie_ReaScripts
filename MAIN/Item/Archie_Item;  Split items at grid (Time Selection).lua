@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Split items at grid (Time Selection)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Разделение элементов по сетке (выбор времени)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,11 +14,14 @@
    * Customer:    Archie(---)$
    * Gave idea:   Archie(---)$
    * Extension:   Reaper 6.01+ http://www.reaper.fm/
-   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:   v.1.0 [26.01.20]
+   *              SWS v.2.12.0 http://www.sws-extension.org/index.php
+   * Changelog:   
+   *              v.1.0 [010620]
+   *                  + fixed bug
+   
+   *              v.1.0 [26.01.20]
    *                  + initialе
---]]
-    
+--]] 
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -33,7 +36,6 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
-    
     
     
     
@@ -95,7 +97,7 @@
         end;
         if not selItemTimeSel then;
             local MB = reaper.MB('No selected items in time selection\nSplit items out of time selection? - Ok\n\n'..
-                           'Нет выбранных элементов в выборе времени \nВыделить элементы вне выбора времени? - Ok','Woops',1);
+                           'Нет выбранных элементов в выборе времени \nРазделить элементы вне выбора времени? - Ok','Woops',1);
             if MB == 1 then;
                 reaper.Main_OnCommand(40932,0);-- Split items at timeline grid
             end; --1ok --2cancel
