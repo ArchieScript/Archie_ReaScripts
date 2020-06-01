@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="1571cf67bddccd8d921e1b739687ce20cd445939">
+<index version="1" name="Archie-ReaScripts" commit="2ebbbe90c7f7d976480bfe757b2141c045ea5111">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5096,6 +5096,32 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.05" author="Archie" time="2019-03-25T12:36:46Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0cd6bf3605cfa7c3fd7ae86b594764633ad45dd8/MAIN/Take/Archie_Take;%20%20Copy%20Name%20item%20active%20take.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Crop to active take - ignore lock items.lua" type="script" desc="Take;  Crop to active take - ignore lock items.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-01T17:22:57Z">
+        <changelog><![CDATA[v.1.0 [020620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2ebbbe90c7f7d976480bfe757b2141c045ea5111/MAIN/Take/Archie_Take;%20%20Crop%20to%20active%20take%20-%20ignore%20lock%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Take;  Crop to active take all items in selected tracks.lua" type="script" desc="Take;  Crop to active take all items in selected tracks.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-01T17:22:57Z">
+        <changelog><![CDATA[v.1.0 [020620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2ebbbe90c7f7d976480bfe757b2141c045ea5111/MAIN/Take/Archie_Take;%20%20Crop%20to%20active%20take%20all%20items%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take;  Delete name in selected items in active take.lua" type="script" desc="Delete name in selected items in active take">
