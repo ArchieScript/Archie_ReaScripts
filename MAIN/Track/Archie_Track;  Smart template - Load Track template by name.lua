@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
@@ -11,39 +11,32 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---
    * Gave idea:   Ahmed5599887744112233[RMM]
+   * Extension:   Reaper 5.981+ http://www.reaper.fm/
+   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.03 [010620]
+   *                  +! Rewritten algorithm
+   
    *              v.1.03 [28.01.2020]
    *                  + Ability to enter the full path to the track template
    *                  + Возможность вписать полный путь к шаблону трека
-   
    *              v.1.02 [30.07.2019]
    *                  + Added - Add a template to the selected track 
    *              v.1.01 [26.06.2019]
    *                  +! fixed bug when adding a template as the first track in the project
    *                  +! Исправлена ошибка при добавлении шаблона в качестве первого трека в проекте
    *              v.1.0 [04.03.2019]
-   *                  +  initialе 
-   
-
-   --========================================================================================
-   --///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\\
-   ----------------------------------------------------------------------------------------||
-   + Reaper v.5.967 +           --| http://www.reaper.fm/download.php                      ||
-   - SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php                 ||
-   - ReaPack v.1.2.2 +          --| http://reapack.com/repos                               ||
-   - Arc_Function_lua v.2.3.0 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc   ||
-   - reaper_js_ReaScriptAPI64   --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr   ||
-                                                                    http://clck.ru/Eo5Lw   ||
-   - Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6                                  ||
-   ----------------------------------------------------------------------------------------||
-   --\\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: /////
-   ========================================================================================]]
-
+   *                  +  initialе
+--]]
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --====================================================================================== 
+    
 
 
 
 local
-ScriptBeginning = [[    
+ScriptBeginning = [[
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
@@ -70,6 +63,7 @@ ScriptBeginning = [[
     local Path3 = pathTemplates..".RTrackTemplate";
     local Path4 = pathTemplates;
     
+    local
     IO = io.open(Path1,"r");
     local 
     PathTrackTemplate = Path1;
@@ -104,35 +98,9 @@ ScriptBeginning = [[
     Path_Track_Template = PathTrackTemplate:gsub('\\','/');
     local
     Name_Track_Template = Path_Track_Template:match('^.+[/\\](.+).RTrackTemplate$');
-    
-    
-    ----
-    ::goto_SELECTED::
-    local MB = reaper.MB("Rus:\n\n"
-               .." * В следующем окне введите:\n"
-               .."   0 - чтобы трек шаблон добавить как новый трек\n"
-               .."   1 - чтобы заменить выделенные треки\n\n"
-               .."Eng\n\n"
-               .." * In the next window, enter:\n"
-               .."   0 - to add the track template as a new track\n"
-               .."   1 - to replace selected tracks\n",
-               "Help!",1);
-    if MB == 2 then no_undo() return end;
-    
-    local ret,SELECTED = reaper.GetUserInputs( "S.T. - Load Track templates by name.", 1,
-                        " How add template",-1);
-    if not ret then no_undo() return end;
-    if SELECTED ~= "0" and SELECTED ~= "1" then goto goto_SELECTED end;
-    SELECTED = tonumber(SELECTED);
-    ----
-    
-    local Name_Script_NEW;
-    if SELECTED == 0 then;
-        Name_Script_NEW = "Archie_Track;  Load Track template with name - "..Name_Track_Template;
-    elseif SELECTED == 1 then;
-        Name_Script_NEW = "Archie_Track;  Load Track template for selected tracks with name - "..Name_Track_Template;
-    end
-    ----
+    local
+    Name_Script_NEW = "Archie_Track;  Load Track template with name - "..Name_Track_Template;
+
     
     
     
@@ -156,92 +124,95 @@ ScriptBeginning = [[
     local function LoadTrackTemplateByName(Path_Track_Template, Name_Script_NEW, SELECTED);
         
         
-        local function replaceAllGuid(str);
-            local var2;
-            for var in str:gmatch(".-\n") do;
-                local t;
-                for x in var:gmatch("{.-}")do t = (t or 0)+1 end;
-                for i = (t or 1), 1, -1 do;
-                    var = var:gsub("{.-}",reaper.genGuid(),i);
-                end;
-                var2 = (var2 or "")..var;
-            end;
-            return var2;
-        end;
-        
-        
-            
         local IO; do;
+            
+            local N = ('\n'):rep(6);
             local Path = Path_Track_Template;
             IO = io.open(Path,"r");
             if not IO then goto MB end;
-            local textTemplates = IO:read("a");
+            local textTemplates = IO:read("a")..N;
             IO:close();
-        
-        
+            
             reaper.Undo_BeginBlock();
             reaper.PreventUIRefresh(1);
             
+            local trackX = reaper.GetLastTouchedTrack();
+            if not trackX then;
+                trackX = reaper.GetTrack(0,reaper.CountTracks(0)-1);
+            end;
+            --
+            local tbl = {};
+            for var in string.gmatch(textTemplates,".-\n") do;
+                if var:match('^%s-<TRACK.-')then;
+                    var = N..var;
+                end;
+                tbl[#tbl+1] = var;
+            end;
+            textTemplates = table.concat(tbl);
             
-            local str = string.gsub(textTemplates,"<TRACK","\n\n<TRACK").."\n\n";
-                        
+            reaper.SelectAllMediaItems(0,0);
             
-            if SELECTED == 0 then;
-                -----------------
-                local
-                LastTouchedTrack = reaper.GetLastTouchedTrack();
-                
-                local trNumb;
-                if LastTouchedTrack then;
-                    trNumb = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"IP_TRACKNUMBER");
-                    if trNumb < 0 then trNumb = 0 end;
+            local tbl = {};
+            local trNumb = 0;
+            local several;
+            for var in string.gmatch(textTemplates,"<TRACK.-"..N)do;
+                reaper.InsertTrackAtIndex(trNumb,false);
+                local Track = reaper.GetTrack(0,trNumb);
+                tbl[#tbl+1] = {};
+                tbl[#tbl].track = Track;
+                tbl[#tbl].str = var;
+                trNumb = trNumb+1;
+                if not several then;
+                    reaper.SetOnlyTrackSelected(Track);
+                    several = true;
                 else;
-                    trNumb = reaper.CountTracks(0);
+                    reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
                 end;
-                
-                reaper.SelectAllMediaItems(0,0);
-                str = replaceAllGuid(str);
-                
-                local several;
-                for var in string.gmatch(str,"<TRACK.-\n\n") do;
-                    reaper.InsertTrackAtIndex(trNumb,false);
-                    local Track = reaper.GetTrack(0,trNumb);
-
-                    str = var:gsub("\n\n","\n");
-                    reaper.SetTrackStateChunk(Track,str,false);
-                    
-                    if not several then;
-                        reaper.SetOnlyTrackSelected(Track);
-                        several = true;
-                    else;
-                        reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
-                    end; 
-                    trNumb = trNumb+1;
-                end;
-                -----------------
-            elseif SELECTED == 1 then;
-                ----
-                str = str:match("<TRACK.-\n\n");
-                local CountSelTrack = reaper.CountSelectedTracks(0);
-                if CountSelTrack > 0 then;
-                    reaper.SelectAllMediaItems(0,0);
-                    
-                    for i = 1,CountSelTrack do;
-                        local SelTrack = reaper.GetSelectedTrack(0,i-1);
-                        str = replaceAllGuid(str);
-                        reaper.SetTrackStateChunk(SelTrack,str,false);
+            end;
+            
+            local guidNum = math.random(1000,9999);
+            for i = 1,#tbl do;
+                reaper.SetTrackStateChunk(tbl[i].track,tbl[i].str,false);
+                local _,guid = reaper.GetSetMediaTrackInfo_String(tbl[i].track,'GUID','',false);
+                local guid = guid:gsub('....%}',guidNum..'}');
+                reaper.GetSetMediaTrackInfo_String(tbl[i].track,'GUID',guid,true);
+                ---
+                for i = 1,reaper.CountTrackMediaItems(tbl[#tbl].track) do;
+                    item = reaper.GetTrackMediaItem(tbl[#tbl].track,i-1);
+                    _,itemGuid = reaper.GetSetMediaItemInfo_String(item,'GUID','',0);
+                    local itemGuid = itemGuid:gsub('....%}',guidNum..'}');
+                    reaper.GetSetMediaItemInfo_String(item,'GUID',itemGuid,1);
+                    for i2 = 1,reaper.CountTakes(item) do;
+                        local take = reaper.GetMediaItemTake(item,i2-1);
+                        local _,takeGuid = reaper.GetSetMediaItemTakeInfo_String(take,'GUID','',0);
+                        local takeGuid = takeGuid:gsub('....%}',guidNum..'}');
+                        reaper.GetSetMediaItemTakeInfo_String(take,'GUID',takeGuid,1);
                     end;
                 end;
-                ----
             end;
-
-            --reaper.ShowConsoleMsg( var2 )
-
+            
+            local Depth = reaper.GetTrackDepth(tbl[#tbl].track);
+            if Depth > 0 then;
+                reaper.SetMediaTrackInfo_Value(tbl[#tbl].track,'I_FOLDERDEPTH',Depth-Depth*2);
+            end;
+            
+            local numbX;
+            if trackX then;
+                numbX = reaper.GetMediaTrackInfo_Value(trackX,'IP_TRACKNUMBER');
+            end;
+            if not numbX then;
+                numbX = reaper.CountTracks(0);
+            end;
+            
+            if numbX~=0 then;
+                reaper.ReorderSelectedTracks(numbX,0);
+            end;
+            
             local Undo = Name_Script_NEW:gsub("Archie_Track;  ","");
             reaper.PreventUIRefresh(-1);
             reaper.Undo_EndBlock(Undo,-1);
         end;
-        
+        -----------
         
         ::MB:: 
         if not IO then;
@@ -274,7 +245,7 @@ ScriptBeginning = [[
         end;
     end;
     
-    LoadTrackTemplateByName("]]..Path_Track_Template..[[","]]..Name_Script_NEW..[[",]]..SELECTED..[[);]]
+    LoadTrackTemplateByName("]]..Path_Track_Template..[[","]]..Name_Script_NEW..[[");]];
     -----------
     
     
