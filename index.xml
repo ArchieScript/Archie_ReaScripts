@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="1ef4e8b3e1dc6abbb6a28f9b89b57eab9cff8952">
+<index version="1" name="Archie-ReaScripts" commit="fb04da85a9624aebba41231da8090a04aeedfcf2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1412,6 +1412,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [020620]
     + MASTER TRACK]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1ef4e8b3e1dc6abbb6a28f9b89b57eab9cff8952/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-02T05:11:50Z">
+        <changelog><![CDATA[v.1.02/1.03 [020620]
+    + MASTER TRACK]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fb04da85a9624aebba41231da8090a04aeedfcf2/MAIN/FX/Archie_FX;%20%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Toggle Bypass instrument all tracks - save restore previous.lua" type="script" desc="FX;  Toggle Bypass instrument all tracks - Save restore previous.lua">
