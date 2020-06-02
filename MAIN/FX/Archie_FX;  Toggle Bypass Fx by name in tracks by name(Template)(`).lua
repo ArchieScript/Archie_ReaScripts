@@ -6,7 +6,7 @@
    * Category:    Fx
    * Description: Toggle Bypass Fx by name in tracks by name(Template)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Байпас Fx по имени в треках по имени (Шаблон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,6 +16,9 @@
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.02 [020620]
+   *                  + MASTER TRACK
+   
    *              v.1.0 [07.02.20]
    *                  + initialе
 --]]
@@ -29,12 +32,15 @@
     local NAME_TRACK = 'drums;track2;track8' 
                   --    Введите имена треков через точку с запятой
                   -- =  'drums;track2;track8' 
-                  -- = '' |треки без имени
+                  -- = '' - треки без имени
                   --     если нужно добавить треки без имени и с именем то в начало строки добавить точку с запятой
                   -- = ';drums;track2;track8'
     
     
     local NAME_FX = 'Nexu;EQ;eos' -- Введите часть имени Fx через точку с запятой без префикса 'Vst:/Vsti:'
+    
+    
+    local MASTER_TRACK = false  -- true/false
     
     
     --======================================================================================
@@ -68,6 +74,39 @@
     local GetEnabled, SetEnabled;
     
     local Undo;
+    
+    
+    --( MASTER ---------------------------
+    if MASTER_TRACK == true then;
+        
+        local masterTrack = reaper.GetMasterTrack(0);
+        local FX_Count = reaper.TrackFX_GetCount(masterTrack);
+        for ifx = 1, FX_Count do;
+            local _, nameFx = reaper.TrackFX_GetFXName(masterTrack,ifx-1,'');
+            nameFx = nameFx:upper();
+            for inm = 1, #NT do;
+                if nameFx:match(SC(NT[inm])) then;
+                    if not GetEnabled then;
+                        GetEnabled = reaper.TrackFX_GetEnabled(masterTrack,ifx-1);
+                        if GetEnabled then SetEnabled = false else SetEnabled = true GetEnabled = true end;
+                    end;
+                    
+                    if not Undo then;
+                        reaper.Undo_BeginBlock();
+                        reaper.PreventUIRefresh(1);
+                        Undo = true;
+                    end;
+                    
+                    reaper.TrackFX_SetEnabled(masterTrack,ifx-1,SetEnabled);
+                    
+                    if SetEnabled == true then strU = "Unbypass Fx" else strU = "Bypass Fx" end;
+                    break;
+                end;
+            end;
+        end;
+    end;
+    -- MASTER )---------------------------
+    
     
     local CountTrack = reaper.CountTracks(0);
     
