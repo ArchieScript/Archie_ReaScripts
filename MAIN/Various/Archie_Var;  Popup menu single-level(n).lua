@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.14
+   * Version:     1.15
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.15 [020620]
+   *                  + Open again
+   
    *              v.1.14 [250420]
    *                  ! Fixed bug Ext State
-   
    *              v.1.12 [190420]
    *                  + Storing the list directly in the script (relevant for newly created scripts)
    *              v.1.11 [130420]
@@ -45,7 +47,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.14;
+    Version = 1.15;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -61,6 +63,20 @@
             -- = 0   | Показать 'add menu'
             -- = 1   | Скрыть 'add menu'
             ------------------------------
+    
+    
+    local OPEN_AGAIN = true;
+                  -- = true  повторно открыться  (ctrl+click)
+                  -- = false повторно неоткрываться
+                  ---------------------------------
+    local CTRL = true;
+            -- = true  повтор через (ctrl+click)
+            -- = false повтор без (ctrl+click)
+            ---------------------------------
+    
+    
+    local SHIFT_X = -50;
+    local SHIFT_Y = 15;
     
     
     --======================================================================================
@@ -141,44 +157,43 @@
     
     local function main();
         
-        
-     -- (v.1.10    -------------------------------------
-     local function GetSelActionsActList();
-         --http://forum.cockos.com/showthread.php?p=2270516#post2270516
-         local function GetSelectedActionsFromActionList()
-           local hWnd_action = reaper.JS_Window_Find("Actions", true)
-           if not hWnd_action then return end
-           local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action, 1323)
-           if reaper.JS_ListView_GetItemText(hWnd_LV, 0, 3) == "" then
-             --reaper.MB("Please, enable 'Show action IDs' in Actions list", "Right-click Action List window", 0)
-             return
-           end
-           -- get selected count & selected indexes
-           local sel_count, sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV)
-           if sel_count == 0 then
-             --reaper.MB("Please select one or more actions.", "No actions are selected", 0)
-             return
-           end
-           local selected_actions = {}
-           local i = 0
-           for index in string.gmatch(sel_indexes, '[^,]+') do
-             i = i + 1
-             local desc = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 1)
-             local cmd = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 3)
-             selected_actions[i] = {cmd = cmd, name = desc:gsub(".+: ", "", 1)}
-           end
-           return selected_actions
-         end
-         -----
-         local cmd,name,selected_actions;
-         if reaper.APIExists('JS_Window_Find')then;
-             selected_actions = GetSelectedActionsFromActionList()or {};
-             if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
-             if selected_actions[1]then name = selected_actions[1].name end;
-         end;
-         return cmd or '', name or '', selected_actions;
-     end;
-     -- v.1.10)    -------------------------------------
+        -- (v.1.10-------------------------------------
+        local function GetSelActionsActList();
+            --http://forum.cockos.com/showthread.php?p=2270516#post2270516
+            local function GetSelectedActionsFromActionList()
+                local hWnd_action = reaper.JS_Window_Find("Actions", true)
+                if not hWnd_action then return end
+                local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action, 1323)
+                if reaper.JS_ListView_GetItemText(hWnd_LV, 0, 3) == "" then
+                    --reaper.MB("Please, enable 'Show action IDs' in Actions list", "Right-click Action List window", 0)
+                    return
+                end
+                -- get selected count & selected indexes
+                local sel_count, sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV)
+                if sel_count == 0 then
+                    --reaper.MB("Please select one or more actions.", "No actions are selected", 0)
+                    return
+                end
+                local selected_actions = {}
+                local i = 0
+                for index in string.gmatch(sel_indexes, '[^,]+') do
+                    i = i + 1
+                    local desc = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 1)
+                    local cmd = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 3)
+                    selected_actions[i] = {cmd = cmd, name = desc:gsub(".+: ", "", 1)}
+                end
+                return selected_actions
+            end
+            -----
+            local cmd,name,selected_actions;
+            if reaper.APIExists('JS_Window_Find')then;
+                selected_actions = GetSelectedActionsFromActionList()or {};
+                if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
+                if selected_actions[1]then name = selected_actions[1].name end;
+            end;
+            return cmd or '', name or '', selected_actions;
+        end;
+        -- v.1.10)-------------------------------------
         
         
         ---------------------------------------------------
@@ -200,6 +215,28 @@
         
         ---------------------------------------------------
         local x,y = reaper.GetMousePosition();
+        local x,y =  x+(SHIFT_X or 0),y+(SHIFT_Y or 0);
+        ---
+        local clk1 = tonumber(reaper.GetExtState(section,'TGL_DBL'))or 0;
+        local clk2 = os.clock();
+        if math.abs(clk2-clk1) < 0.25 then no_undo() return end;
+        ---
+        local Ext_x,Ext_y,autocloseWNDS;
+        if OPEN_AGAIN == true then;
+            local ExtState_x_y = reaper.GetExtState(section,'Ext_x_y');
+            Ext_x,Ext_y = ExtState_x_y:match('(%S+)%s*(%S+)');
+            if Ext_x and Ext_y then;
+                x,y = Ext_x,Ext_y;
+            else;
+                Ext_x,Ext_y = x,y;
+            end;
+            ----
+            autocloseWNDS = reaper.SNM_GetIntConfigVar('autoclosetrackwnds',0);--0-it is allowed(on)-checked
+            if autocloseWNDS ~= 0 then;
+                reaper.SNM_SetIntConfigVar('autoclosetrackwnds',0);
+            end;
+        end;
+        ---
         gfx.init('',0,0,0,x,y);
         gfx.x,gfx.y = gfx.screentoclient(x,y);
         
@@ -265,8 +302,8 @@
         local showMenu,numbUpDown;
         ------
         Version = ' - v.'..(Version or '?.??');
-        local AddList = "> > > >|Add||"..LCK.."Remove|".."Remove All / Script||"..LCK.."Rename||"..LCK2.."Move||>• script|"..hdblock.."Hide Add Menu||#"..section..' '..Version.."|<|<|";--7
-        local AddListCount = 7; -- AddList Count
+        local AddList = "> > > >|Add||"..LCK.."Remove|".."Remove All / Script||"..LCK.."Rename||"..LCK2.."Move||>• script|"..hdblock.."Hide Add Menu||# Ctrl+click - OPEN AGAIN - (New instance)||#"..section..' '..Version.."|<|<|";--8
+        local AddListCount = 8; -- AddList Count
         ------
         if #idT > 0 and HIDE_ADD == 1 then AddList = '' end;-- v.1.04
         if ADD_UP_DOWN == 0 then;--Up
@@ -288,11 +325,22 @@
         ---------------------------------------------------
         
         
+        if OPEN_AGAIN == true then;
+            if autocloseWNDS and autocloseWNDS ~= 0 then;
+                reaper.SNM_SetIntConfigVar('autoclosetrackwnds',autocloseWNDS);
+            end;
+        end;
         
         
         if showMenu == 0 then;
             --======================
             gfx.quit();
+            ----
+            reaper.SetExtState(section,'TGL_DBL',os.clock(),false);
+            if OPEN_AGAIN == true then;
+                reaper.DeleteExtState(section,'Ext_x_y',false);
+            end;
+            ----
             no_undo();
             --======================
         elseif showMenu == numbUpDown+1 then;--Add
@@ -523,6 +571,21 @@
                              else;
                                  reaper.Main_OnCommand(reaper.NamedCommandLookup(id),0);
                              end;
+                             ----
+                             if CTRL == true then;
+                                 if reaper.APIExists('JS_Mouse_GetState')then;
+                                     local Mouse_GetState = reaper.JS_Mouse_GetState(127);
+                                     if Mouse_GetState ~= 4 and Mouse_GetState ~= 5 then;
+                                         OPEN_AGAIN = nil;
+                                     end;
+                                 end;
+                             end;
+                             if OPEN_AGAIN == true then;
+                                 reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false);
+                                 reaper.Main_OnCommand(reaper.NamedCommandLookup(({reaper.get_action_context()})[4]),0);
+                                 --dofile(({reaper.get_action_context()})[2]);
+                             end;
+                             ----
                          end);
             end; Action();
             --======================
@@ -601,5 +664,6 @@
     end;
     
     no_undo();
+	
     
     
