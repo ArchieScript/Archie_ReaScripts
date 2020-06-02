@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="fb04da85a9624aebba41231da8090a04aeedfcf2">
+<index version="1" name="Archie-ReaScripts" commit="8ec5e824d86bf9caf97e58d403ace199c054bb4b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7832,6 +7832,11 @@ v.1.0 [28.08.19]
     ! Fixed bug Ext State]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/17d00fc3729940e95eb055880704df87054a3f9e/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
+      <version name="1.15" author="Archie" time="2020-06-02T14:57:24Z">
+        <changelog><![CDATA[v.1.15 [020620]
+    + Open again]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ec5e824d86bf9caf97e58d403ace199c054bb4b/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
       <metadata>
@@ -8829,6 +8834,32 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.11 [130420]
     + Add multiple actions at once]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/bfccc4ad0c166abbe44c3e5e4a19faf55f798e47/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2020-06-02T14:57:24Z">
+        <changelog><![CDATA[v.1.15 [020620]
+    + Open again
+    ! Fixed bug Ext State
+    + Storing the list directly in the script (relevant for newly created scripts)
+v.1.11 [130420]
+    + Add multiple actions at once
+v.1.10 [130420]
+    AutoFill the form when adding an action (before clicking add, select an action in the actions list)
+v.1.09 [120420]
+    + Automatically creating copies with the desired label in the script name
+v.1.08 [310320]
+    No change  
+v.1.05 [260320]
+    ! Fixed bug
+v.1.04 [260320]
+    + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
+v.1.03 [170320]
+    ! Fixed bug
+    + Protection from spec characters 
+v.1.02 [160320]
+    + Redesigned 'Add Menu'
+v.1.0 [150320]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ec5e824d86bf9caf97e58d403ace199c054bb4b/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
