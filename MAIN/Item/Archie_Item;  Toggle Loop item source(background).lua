@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Item;  Loop item source.lua
+   * Description: Item;  Toggle Loop item source(background).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -18,6 +18,9 @@
    *              SWS v.2.13.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.0+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [030620]
+   *                  + Update Arrange
+   
    *              v.1.0 [030620]
    *                  + initialе
 --]]
@@ -49,6 +52,7 @@
             end;
         end;
     end;
+    reaper.UpdateArrange();
     ------------------------------------------------------------
     
     
