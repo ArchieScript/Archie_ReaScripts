@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b">
+<index version="1" name="Archie-ReaScripts" commit="ad3e11c54f2aa809dfd2b7b2368b08af2cec4362">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2664,19 +2664,6 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Item/Archie_Item;%20%20Invert%20items%20selection%20on%20selected%20tracks.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Loop item source.lua" type="script" desc="Item;  Loop item source.lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-06-03T11:40:48Z">
-        <changelog><![CDATA[v.1.0 [030620]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b/MAIN/Item/Archie_Item;%20%20Loop%20item%20source.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3869,6 +3856,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [27.01.20]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbbf1a85858eb9402a3eb30ec46a07646883d205/MAIN/Item/Archie_Item;%20%20Toggle%20Loop%20item%20source%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Toggle Loop item source(background).lua" type="script" desc="Item;  Toggle Loop item source(background).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-06-03T12:13:42Z">
+        <changelog><![CDATA[v.1.02 [030620]
+    + Update Arrange]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ad3e11c54f2aa809dfd2b7b2368b08af2cec4362/MAIN/Item/Archie_Item;%20%20Toggle%20Loop%20item%20source(background).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Trim Extend selected of items to time selection(`).lua" type="script" desc="Trim Extend selected of items to time selection">
