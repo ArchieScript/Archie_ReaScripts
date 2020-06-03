@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3d80a06a2a52b2565c0adf658fed16501b37f6dd">
+<index version="1" name="Archie-ReaScripts" commit="a02de2977e3b27a3b6ec6f1a8f7c426bca812b8e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6922,6 +6922,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [24.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c451edd7c302a8b2270cb0b706e0230afbbce5c7/MAIN/Track/Archie_Track;%20%20Solo%20track%20under%20mouse%20cursor%20-%20unsolo%20previous%20solo%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle Arm Selected track.lua" type="script" desc="Track;  Toggle Arm Selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-03T18:14:31Z">
+        <changelog><![CDATA[v.1.0 [030620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a02de2977e3b27a3b6ec6f1a8f7c426bca812b8e/MAIN/Track/Archie_Track;%20%20Toggle%20Arm%20Selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle height selected tracks in 24 pixel - revert to average values(`).lua" type="script" desc="Toggle height selected tracks in 24 pixel/revert to average values">
