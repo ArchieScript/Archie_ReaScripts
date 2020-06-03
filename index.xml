@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="526a88ebe5e9ba23a582d108bfc025d00c4d2c72">
+<index version="1" name="Archie-ReaScripts" commit="3d80a06a2a52b2565c0adf658fed16501b37f6dd">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5517,6 +5517,19 @@ v.1.0 [28.08.19]
     + fixed bug - Remove - make the project dirty at the start of the script
     + исправлена ошибка - Убрать - сделать проект грязный при старте скрипта]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f737497313df487dfc4b734a938da5677dfad8f4/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Arm only Selected tracks.lua" type="script" desc="Track;  Arm only Selected tracks.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-03T17:38:34Z">
+        <changelog><![CDATA[v.1.0 [030620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3d80a06a2a52b2565c0adf658fed16501b37f6dd/MAIN/Track/Archie_Track;%20%20Arm%20only%20Selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Arm Selected track.lua" type="script" desc="Track;  Arm Selected track.lua">
