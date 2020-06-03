@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8ec5e824d86bf9caf97e58d403ace199c054bb4b">
+<index version="1" name="Archie-ReaScripts" commit="f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -427,6 +427,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [130520]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddc95123ea12b38f9d2a4deaabbf085b410336ab/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Auto%20edit%20cursor%20under%20mouse.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-03T11:40:48Z">
+        <changelog><![CDATA[v.1.02 [030620]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Auto%20edit%20cursor%20under%20mouse.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor;  Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
@@ -2657,6 +2662,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [22.10.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c7dce04393dc5ae60b7a8dd3af685c5a64b54ab2/MAIN/Item/Archie_Item;%20%20Invert%20items%20selection%20on%20selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item;  Loop item source.lua" type="script" desc="Item;  Loop item source.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-03T11:40:48Z">
+        <changelog><![CDATA[v.1.0 [030620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b/MAIN/Item/Archie_Item;%20%20Loop%20item%20source.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
