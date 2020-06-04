@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="136e2b897fc0e298a402e25449371a7503d7e0d1">
+<index version="1" name="Archie-ReaScripts" commit="225a5dba1843c6b306c9b85fdb6c305dcad3081c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7951,6 +7951,11 @@ v.1.0 [28.08.19]
     + Open again]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ec5e824d86bf9caf97e58d403ace199c054bb4b/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
+      <version name="1.16" author="Archie" time="2020-06-04T15:53:36Z">
+        <changelog><![CDATA[v.1.16 [040620]
+    + Fixed bug when opening plugin windows]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/225a5dba1843c6b306c9b85fdb6c305dcad3081c/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
       <metadata>
@@ -8974,6 +8979,11 @@ v.1.02 [160320]
 v.1.0 [150320]
     + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ec5e824d86bf9caf97e58d403ace199c054bb4b/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.16" author="Archie" time="2020-06-04T15:53:36Z">
+        <changelog><![CDATA[v.1.16 [040620]
+    + Fixed bug when opening plugin windows]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/225a5dba1843c6b306c9b85fdb6c305dcad3081c/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
