@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="a02de2977e3b27a3b6ec6f1a8f7c426bca812b8e">
+<index version="1" name="Archie-ReaScripts" commit="9fabaa565a6fc3c7daf1587204d01d9b8d8db127">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -5457,6 +5457,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.04 [26.09.19]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/99d8d41fddcefe8362e209f22b37b46faefaa4e1/MAIN/Track/Arc_Track;%20%20Insert%20track%20receive%20from%20all%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Arcgie_Track;  Toggle Rec Arm exclusive(`).lua" type="script" desc="Track;  Toggle Rec Arm exclusive(`).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-04T07:58:01Z">
+        <changelog><![CDATA[v.1.0 [040620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9fabaa565a6fc3c7daf1587204d01d9b8d8db127/MAIN/Track/Arcgie_Track;%20%20Toggle%20Rec%20Arm%20exclusive(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks(`).lua" type="script" desc="Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks">
