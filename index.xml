@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9a3d761de5a25f949f9429006a8c924b44a08fa9">
+<index version="1" name="Archie-ReaScripts" commit="3ff558325f3fc6fd910cbe19a95d5afa5e12dcd2">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6017,6 +6017,19 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c8929006f19ee2b92e1f8c5ddffbda614ee9b65a/MAIN/Track/Archie_Track;%20%20Minimize%20selected%20tracks%20-%20restore%20back.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track;  Monitoring track exclusive.lua" type="script" desc="Track;  Monitoring track exclusive.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-04T12:32:24Z">
+        <changelog><![CDATA[v.1.0 [040620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ff558325f3fc6fd910cbe19a95d5afa5e12dcd2/MAIN/Track/Archie_Track;%20%20Monitoring%20track%20exclusive.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track;  Move all selected tracks to first selected folder(`).lua" type="script" desc="Move all selected tracks to the first selected folder">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -7022,6 +7035,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3e38142b2ed4ef3c10be6773f36f961ef3fff678/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20selected%20tracks%20and%20them%20items%20-%20Unlock%20tracks%20restore%20them%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Toggle Monitoring track exclusive.lua" type="script" desc="Track;  Toggle Monitoring track exclusive.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-04T12:32:24Z">
+        <changelog><![CDATA[v.1.0 [040620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3ff558325f3fc6fd910cbe19a95d5afa5e12dcd2/MAIN/Track/Archie_Track;%20%20Toggle%20Monitoring%20track%20exclusive.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Mute unmute all visible track in TCP and MCP.lua" type="script" desc="Toggle Mute unmute all visible track in TCP and MCP">
