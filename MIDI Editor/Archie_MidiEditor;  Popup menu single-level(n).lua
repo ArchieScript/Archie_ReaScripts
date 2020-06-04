@@ -1,4 +1,4 @@
---[[
+--[[    NEW INSTANCE
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,6 +21,9 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
+   *              v.1.16 [040620]
+   *                  + Fixed bug when opening plugin windows
+   
    *              v.1.15 [020620]
    *                  + Open again
    *                  ! Fixed bug Ext State
@@ -45,7 +48,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.15;
+    Version = 1.16;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -224,7 +227,7 @@
         ---
         local clk1 = tonumber(reaper.GetExtState(section,'TGL_DBL'))or 0;
         local clk2 = os.clock();
-        if math.abs(clk2-clk1) < 0.25 then no_undo() return end;
+        if math.abs(clk2-clk1) < 0.35 then no_undo() return end;
         ---
         local Ext_x,Ext_y,autocloseWNDS;
         if OPEN_AGAIN == true then;
@@ -587,8 +590,10 @@
                              end;
                              if OPEN_AGAIN == true then;
                                  reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false);
-                                 reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(({reaper.get_action_context()})[4])); 
-                                 --dofile(({reaper.get_action_context()})[2]);
+                                 reaper.defer(function();
+                                   reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(({reaper.get_action_context()})[4])); 
+                                   --dofile(({reaper.get_action_context()})[2]);
+                                 end);
                              end;
                              ----
                          end);

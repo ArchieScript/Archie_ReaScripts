@@ -1,4 +1,4 @@
---[[
+--[[    NEW INSTANCE
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.16 [040620]
+   *                  + Fixed bug when opening plugin windows
+   
    *              v.1.15 [020620]
    *                  + Open again
-   
    *              v.1.14 [250420]
    *                  ! Fixed bug Ext State
    *              v.1.12 [190420]
@@ -47,7 +49,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.15;
+    Version = 1.16;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -219,7 +221,7 @@
         ---
         local clk1 = tonumber(reaper.GetExtState(section,'TGL_DBL'))or 0;
         local clk2 = os.clock();
-        if math.abs(clk2-clk1) < 0.25 then no_undo() return end;
+        if math.abs(clk2-clk1) < 0.35 then no_undo() return end;
         ---
         local Ext_x,Ext_y,autocloseWNDS;
         if OPEN_AGAIN == true then;
@@ -582,8 +584,10 @@
                              end;
                              if OPEN_AGAIN == true then;
                                  reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false);
-                                 reaper.Main_OnCommand(reaper.NamedCommandLookup(({reaper.get_action_context()})[4]),0);
-                                 --dofile(({reaper.get_action_context()})[2]);
+                                 reaper.defer(function();
+                                   reaper.Main_OnCommand(reaper.NamedCommandLookup(({reaper.get_action_context()})[4]),0);
+                                   --dofile(({reaper.get_action_context()})[2]);
+                                 end);
                              end;
                              ----
                          end);
@@ -664,6 +668,6 @@
     end;
     
     no_undo();
-	
+  
     
     
