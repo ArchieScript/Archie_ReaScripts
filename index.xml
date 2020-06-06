@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f04998df817cbf157b0b24c37b9e18cfbc43ebe6">
+<index version="1" name="Archie-ReaScripts" commit="ec19a69864e3715b002c385f23930d3492ec63e7">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8720,6 +8720,19 @@ Performance: Script completely rewritten]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_MidiEditor;  Move chords to grid while keeping lively(unevenness interval is 1-16).lua" type="script" desc="MidiEditor;  Move chords to grid while keeping lively(unevenness interval is 1/16).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-06T18:40:01Z">
+        <changelog><![CDATA[v.1.0 [060620]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec19a69864e3715b002c385f23930d3492ec63e7/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20chords%20to%20grid%20while%20keeping%20lively(unevenness%20interval%20is%201-16).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_MidiEditor;  Move selected events to mouse cursor(snap relative).lua" type="script" desc="Move selected events to mouse cursor(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -9000,6 +9013,19 @@ v.1.0 [150320]
       "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
       Only relevant if the list was created in version 1.15+]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/f04998df817cbf157b0b24c37b9e18cfbc43ebe6/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Select only chords (unevenness interval is 1-16).lua" type="script" desc="MidiEditor;  Select only chords (unevenness interval is 1/16).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-06T18:40:01Z">
+        <changelog><![CDATA[v.1.0 [060620]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec19a69864e3715b002c385f23930d3492ec63e7/MIDI%20Editor/Archie_MidiEditor;%20%20Select%20only%20chords%20(unevenness%20interval%20is%201-16).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
