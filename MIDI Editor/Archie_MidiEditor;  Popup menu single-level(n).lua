@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.16
+   * Version:     1.17
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2984303/fc420987-583d-4059-b3fe-33f7d5dfd1e8/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,9 +21,14 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw 
    * Changelog:   
+   *              v.1.17 [060620]
+   *                  + Fixed a bug reopen, if ctrl let go before what completed action
+   *                  + Saving the list when updating the script (just create a new script using 
+   *                    "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
+   *                    Only relevant if the list was created in version 1.15+
+
    *              v.1.16 [040620]
    *                  + Fixed bug when opening plugin windows
-   
    *              v.1.15 [020620]
    *                  + Open again
    *                  ! Fixed bug Ext State
@@ -48,7 +53,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.16;
+    Version = 1.17;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -92,27 +97,31 @@
     
     
     
-    --======================================================|v.1.12
-    --===(v.1.14 | Ext State | ====================================
-    local function GetStrFile();
-        local scriptFile = debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/');
+    --=============================================================
+    --========== | Ext State | ====================================
+    local function GetStrFile(scrFile);
+        local scriptFile = scrFile or (debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/'));
         local file = io.open(scriptFile,'r');
+        if not file then;
+            io.open(scriptFile,'w'):close();
+            file = io.open(scriptFile,'r');
+        end;
         local str = file:read('a');
         file:close();
         return str,scriptFile;
     end;
     ---
-    local function GetList(key);
+    local function GetList(key,scrFile);
         key=tostring(key);
         if not key or key:gsub(' ','') == '' then return '' end;
-        return(GetStrFile():match('%-%-%[%=%[%s-'..key..'%s-%=%s-%{%s-%[%s-%[(.-)%]%s-%]%s-%}%s-%]%s-%=%s-%]')or''):gsub("\n",'');
+        return(GetStrFile(scrFile):match('%-%-%[%=%[%s-'..key..'%s-%=%s-%{%s-%[%s-%[(.-)%]%s-%]%s-%}%s-%]%s-%=%s-%]')or''):gsub("\n",'');
     end;
     ---
-    local function SetList(key,value);
+    local function SetList(key,value,scrFile);
         key=tostring(key)value=tostring(value);local StrNew;
         if not key or key:gsub(' ','') == '' then return false end;
         if not value then return false end;
-        local StrFile,scriptFile = GetStrFile();
+        local StrFile,scriptFile = GetStrFile(scrFile);
         local list = (StrFile:match('%-%-%[%=%[%s-'..key..'%s-%=%s-%{%s-%[%s-%[.-%]%s-%]%s-%}%s-%]%s-%=%s-%]'));
         if list then;
             if value:gsub(' ','') == '' then;
@@ -135,10 +144,10 @@
         end;
     end; 
     ---
-    local function DelList(key);
+    local function DelList(key,scrFile);
         key=tostring(key);local StrNew;
         if not key or key:gsub(' ','') == '' then return false end;
-        local StrFile,scriptFile = GetStrFile();
+        local StrFile,scriptFile = GetStrFile(scrFile);
         local list = (StrFile:match('%-%-%[%=%[%s-'..key..'%s-%=%s-%{%s-%[%s-%[.-%]%s-%]%s-%}%s-%]%s-%=%s-%]%s*\n*'));
         if list then;
             StrNew = StrFile:gsub(list:gsub('%p','%%%0'),'',1);
@@ -152,7 +161,7 @@
             return false;
         end;
     end;
-    --=== | Ext State | v.1.14)====================================
+    --=== | Ext State | ===========================================
     --=============================================================
     
     
@@ -574,11 +583,6 @@
                              gfx.quit();
                              local id = idT[showMenu-AddListCount];
                              
-                             if tonumber(id) then;
-                                 reaper.MIDIEditor_OnCommand(MIDIEditor,id);
-                             else;
-                                 reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id)); 
-                             end;
                              ----
                              if CTRL == true then;
                                  if reaper.APIExists('JS_Mouse_GetState')then;
@@ -588,6 +592,13 @@
                                      end;
                                  end;
                              end;
+                             -----
+                             if tonumber(id) then;
+                                 reaper.MIDIEditor_OnCommand(MIDIEditor,id);
+                             else;
+                                 reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id)); 
+                             end;
+                             -----
                              if OPEN_AGAIN == true then;
                                  reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false);
                                  reaper.defer(function();
@@ -610,6 +621,7 @@
     --======================================================================
     
     
+    
     local scriptFile = debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/');
     local file = io.open(scriptFile,'r');
     local str;
@@ -617,7 +629,7 @@
         str = file:read('*a');
         file:close();
     end;
-    
+    ---- 
     if str then;
         local t = {};
         for S in string.gmatch(str,".-\n")do;
@@ -627,7 +639,6 @@
         end;
         str = table.concat(t);
         -----
-        
         local path = scriptFile:match('(.+)[/\\]');
         ::res::
         local retval,retvals_csv = reaper.GetUserInputs('Generate name of script',1,'Enter Tag (of least 1 symbols),extrawidth=250','');
@@ -637,42 +648,43 @@
         local newScript = 'Archie_MidiEditor;  Popup menu single-level('..retvals_csv..').lua'
         local newFile = path..'/'..newScript;
         str = '--'..newScript..'\n'..str;
-        ---
+        ------
+        local LIST,MB_W;
         local file = io.open(newFile,'r');
         if file then;
-            local
-            er = 'Rus:\nСкрипт с именем \n'..newScript..'\nуже существует,\nдля удаления '..
-                 'данного скрипта нажмите\nв скрипте\n'..newScript..'\nна\nRemove All / Script\n\n\n'..
-                 'Eng:\nScript with the name\n'..newScript..'\nalready exists,\n to delete '..
-                 'this script, click\nin the script\n'..newScript..'\non\nRemove All / Script';
-            reaper.MB(er,'Woops',0);
             file:close();
-            return;
-        else;
-            
-            local file = io.open(newFile,'w');
-            local wr = file:write(str);
-            file:close();
-            if type(wr)=='userdata'then;
-                reaper.AddRemoveReaScript(true,32060,newFile,true);
-                local
-                msg = 'Скрипт\n'..newScript..'\nСоздан успешно.\n\n'..
-                      'Script\n'..newScript..'\nwas Created successfully.';
-                reaper.ClearConsole();
-                reaper.ShowConsoleMsg(msg);
-                -----------
-                if reaper.APIExists('JS_Window_Find')then;
-                    local winHWND = reaper.JS_Window_Find("ReaScript console output",true);
-                    if winHWND then;
-                       reaper.JS_Window_SetPosition(winHWND,50,50,500,250);
-                       reaper.JS_Window_SetForeground(winHWND);
-                    end;
-                end;
-                -----------
+            LIST = GetList('LIST',newFile);
+            if LIST ~= "" then;
+                local strMb =
+                "Rus:\nОбновить скрипт сохраняя список - Да\nОбновить скрипт Не сохраняя список - Нет\n\n"..
+                "Eng:\nUpdate script by saving the list - Yes\nUpdate script Without saving the list - No\n";
+                MB_W = reaper.MB(strMb,'Update popup list - '..retvals_csv,3);
+                if MB_W == 2 then;no_undo()return;end;
             end;
         end;
+        -----
+        local file = io.open(newFile,'w');
+        local wr = file:write(str);
+        file:close();
+        if MB_W == 6 then;
+            SetList('LIST',LIST,newFile);
+        end;
+        if type(wr)=='userdata'then;
+            reaper.AddRemoveReaScript(true,32060,newFile,true);
+            local
+            msg = 'Скрипт\n'..newScript..'\nСоздан успешно.\n\n'..
+                  'Script\n'..newScript..'\nwas Created successfully.';
+            reaper.ClearConsole();
+            reaper.ShowConsoleMsg(msg);
+            -----------
+            if reaper.APIExists('JS_Window_Find')then;
+                local winHWND = reaper.JS_Window_Find("ReaScript console output",true);
+                if winHWND then;
+                   reaper.JS_Window_SetPosition(winHWND,50,50,500,250);
+                   reaper.JS_Window_SetForeground(winHWND);
+                end;
+            end;
+            -----------
+        end;
     end;
-    
     no_undo();
-    
-    
