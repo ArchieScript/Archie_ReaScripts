@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ec19a69864e3715b002c385f23930d3492ec63e7">
+<index version="1" name="Archie-ReaScripts" commit="f078f9abebaec2702402d672f6700ba00721ae8e">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6289,7 +6289,7 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Track;  Mute all children tracks  in selected folders.lua" type="script" desc="Track;  Mute all children tracks  in selected folders.lua">
+    <reapack name="Archie_Track;  Mute all children tracks  in selected folders.lua" type="script" desc="Track;  Mute all children tracks in selected folders.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
@@ -6300,6 +6300,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [150420]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f07546b1cf41207fdbc35340b865fc9845e9e941/MAIN/Track/Archie_Track;%20%20Mute%20all%20children%20tracks%20%20in%20selected%20folders.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-08T06:33:42Z">
+        <changelog><![CDATA[v.1.0 [150420]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f078f9abebaec2702402d672f6700ba00721ae8e/MAIN/Track/Archie_Track;%20%20Mute%20all%20children%20tracks%20%20in%20selected%20folders.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Mute all selected tracks except selected folders.lua" type="script" desc="Track;  Mute all selected tracks except selected folders.lua">
@@ -7217,6 +7222,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3e38142b2ed4ef3c10be6773f36f961ef3fff678/MAIN/Track/Archie_Track;%20%20Unlock%20selected%20tracks%20and%20restore%20them%20items.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  UnMute all children tracks  in selected folders.lua" type="script" desc="Track;  UnMute all children tracks in selected folders.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-08T06:33:42Z">
+        <changelog><![CDATA[v.1.0 [080620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f078f9abebaec2702402d672f6700ba00721ae8e/MAIN/Track/Archie_Track;%20%20UnMute%20all%20children%20tracks%20%20in%20selected%20folders.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  UnMute all track(AutoRun)(`).lua" type="script" desc="Track;  UnMute all track(AutoRun)(`).lua">
