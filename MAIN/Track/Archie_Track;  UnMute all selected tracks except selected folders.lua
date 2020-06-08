@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Track
-   * Description: Track;  Mute all selected tracks except selected folders.lua
+   * Description: Track;  UnMute all selected tracks except selected folders.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,7 +16,7 @@
    * Extension:   Reaper 6.08+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.0 [150420]
+   *              v.1.0 [080620]
    *                  + initialе
 --]]
     --======================================================================================
@@ -30,7 +30,6 @@
     -------------------------------------------------------
     
     
-    
     local CountSelTrack = reaper.CountSelectedTracks(0);
     if CountSelTrack == 0 then no_undo()return end;
     
@@ -40,13 +39,13 @@
         local fold = reaper.GetMediaTrackInfo_Value(TrackSel,"I_FOLDERDEPTH")==1;
         if not fold then;
             local mute = reaper.GetMediaTrackInfo_Value(TrackSel,"B_MUTE")==1;
-            if not mute then;
+            if mute then;
                 if not UNDO then;
                     reaper.Undo_BeginBlock();
                     reaper.PreventUIRefresh(1);
                     UNDO = true;
                 end;
-                reaper.SetMediaTrackInfo_Value(TrackSel,"B_MUTE",1);
+                reaper.SetMediaTrackInfo_Value(TrackSel,"B_MUTE",0);
             end;
             
         end;
@@ -54,7 +53,7 @@
     
     
     if UNDO then;
-        reaper.Undo_EndBlock("Mute all selected tracks except selected folders",-1);
+        reaper.Undo_EndBlock("UnMute all selected tracks except selected folders",-1);
         reaper.PreventUIRefresh(-1);
     else;
         no_undo();
