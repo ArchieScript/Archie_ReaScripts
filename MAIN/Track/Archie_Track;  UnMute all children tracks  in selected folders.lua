@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Track
-   * Description: Track;  Mute all children tracks in selected folders.lua
+   * Description: Track;  UnMute all children tracks in selected folders.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,16 +16,14 @@
    * Extension:   Reaper 6.08+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.0 [150420]
+   *              v.1.0 [080620]
    *                  + initialе
 --]]
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    
-    local MUTE_CHILD_FOLD = false;  -- true / false
-    
-    local PARENT_FOLDER_MUTE = false;  -- true / false
+     
+    local PARENT_FOLDER_UNMUTE = true;  -- true / false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -45,16 +43,16 @@
         local TrackSel = reaper.GetSelectedTrack(0,i-1);
         local fold = reaper.GetMediaTrackInfo_Value(TrackSel,"I_FOLDERDEPTH")==1;
         if fold then;
-            ---
-            if PARENT_FOLDER_MUTE == true then;
+            ----
+            if PARENT_FOLDER_UNMUTE == true then;
                 if not UNDO then;
                     reaper.Undo_BeginBlock();
                     reaper.PreventUIRefresh(1);
                     UNDO = true;
                 end;
-                reaper.SetMediaTrackInfo_Value(TrackSel,"B_MUTE",1);
+                reaper.SetMediaTrackInfo_Value(TrackSel,"B_MUTE",0);
             end;
-            ---
+            ----
             local Depth = reaper.GetTrackDepth(TrackSel);
             local numb = reaper.CSurf_TrackToID(TrackSel,false);
             for i2 = numb,reaper.CountTracks(0)-1 do;
@@ -62,18 +60,12 @@
                 if track then;
                     local depth2 = reaper.GetTrackDepth(track);
                     if depth2 > Depth then;
-                        local fold2;
-                        if MUTE_CHILD_FOLD ~= true then;
-                            fold2 = reaper.GetMediaTrackInfo_Value(track,"I_FOLDERDEPTH")==1;
+                        if not UNDO then;
+                            reaper.Undo_BeginBlock();
+                            reaper.PreventUIRefresh(1);
+                            UNDO = true;
                         end;
-                        if not fold2 then;
-                            if not UNDO then;
-                                reaper.Undo_BeginBlock();
-                                reaper.PreventUIRefresh(1);
-                                UNDO = true;
-                            end;
-                            reaper.SetMediaTrackInfo_Value(track,"B_MUTE",1);
-                        end;
+                        reaper.SetMediaTrackInfo_Value(track,"B_MUTE",0);
                     else;
                         break;
                     end;
@@ -84,7 +76,7 @@
     
     
     if UNDO then;
-        reaper.Undo_EndBlock("Mute all children tracks in selected folders",-1);
+        reaper.Undo_EndBlock("UnMute all children tracks in selected folders",-1);
         reaper.PreventUIRefresh(-1);
     else;
         no_undo();
