@@ -7,7 +7,7 @@
    * Description: Render track into one new track (Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
-   * Version:     1.09
+   * Version:     1.10
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,7 +16,7 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.09 [090620]
+   *              v.1.10 [090620]
    *                  + fixed conflict between parent and child tracks when rendering to a single track
    
    *              v.1.04 [240320]
@@ -613,6 +613,11 @@
                             end;
                         end;
                         ----
+                    else;
+                        local mute = reaper.GetMediaTrackInfo_Value(trackSel,"B_MUTE");
+                        if mute ~= 0 then;
+                            reaper.SetMediaTrackInfo_Value(trackSel,"B_MUTE",0);
+                        end;
                     end;
                 end;
             end;
