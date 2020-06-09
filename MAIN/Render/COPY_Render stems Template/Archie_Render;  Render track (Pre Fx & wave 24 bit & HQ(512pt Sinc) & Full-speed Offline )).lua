@@ -7,7 +7,7 @@
    * Description: Render track (Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,8 +16,8 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
-   *              v.1.10 [090620]
-   *                  + fixed conflict between parent and child tracks when rendering to a single track
+   *              v.1.11 [090620]
+   *                  + fixed bug
    
    *              v.1.04 [240320]
    *                  + Path from the project settings
@@ -532,6 +532,17 @@
             reaper.Undo_BeginBlock();
                 
             
+            local SOLO;
+            for i = 1, CountSelTrack do;
+                local trackSel = reaper.GetSelectedTrack(0,i-1);
+                local solo = reaper.GetMediaTrackInfo_Value(trackSel,"I_SOLO");
+                if solo > 0 then;
+                    SOLO = true;
+                    break;
+                end;
+            end;
+            
+            
             local NoSelT = {};
             local SelT   = {};
             
@@ -544,7 +555,9 @@
                     NoSelT[#NoSelT+1] = {};
                     NoSelT[#NoSelT].Track = Track;
                     NoSelT[#NoSelT].solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
-                    reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",0);
+                    if NoSelT[#NoSelT].solo ~= 0 then;
+                        reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",0);
+                    end;
                 else;
                     ---
                     if not nameTrck then;
@@ -555,14 +568,17 @@
                     SelT[#SelT+1] = {};
                     SelT[#SelT].Track = Track;
                     SelT[#SelT].solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
-                    mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 then;
+                    local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+                    if mute == 0 and not SOLO and SelT[#SelT].solo ~= 1 then;
+                        reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
+                    elseif SelT[#SelT].solo > 0 and SelT[#SelT].solo ~= 1 then;
                         reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
                     end;
+                    
+                    
                     local SOLO = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
                     if SOLO ~= 0 then SelT[1].RSOLO = true end;
                     ---
-                    
                     if PreFade == true then;
                         SelT[#SelT].VolTr = reaper.GetMediaTrackInfo_Value(Track,"D_VOL");
                         reaper.SetMediaTrackInfo_Value(Track,"D_VOL",1);
@@ -582,45 +598,12 @@
                                 reaper.TrackFX_SetEnabled(Track,ifx-1,false);
                             end;
                         end;
-                    end;  
-                end;  
-            end;
-            
-            
-            -----------------
-            for i = 1, reaper.CountSelectedTracks(0) do;
-                local trackSel = reaper.GetSelectedTrack(0,i-1);
-                local fold = reaper.GetMediaTrackInfo_Value(trackSel,"I_FOLDERDEPTH",1)==1;
-                if fold then;
-                    local solo = reaper.GetMediaTrackInfo_Value(trackSel,"I_SOLO");
-                    if solo > 0 then;
-                        local Depth = reaper.GetTrackDepth(trackSel);
-                        local numb = reaper.GetMediaTrackInfo_Value(trackSel,"IP_TRACKNUMBER");
-                        ----
-                        for i2 = numb, reaper.CountTracks(0)-1 do;
-                            local track = reaper.GetTrack(0,i2);
-                            if track then;
-                                local Depth2 = reaper.GetTrackDepth(track);
-                                if Depth2 > Depth then;
-                                    local solo = reaper.GetMediaTrackInfo_Value(track,"I_SOLO");
-                                    if solo > 0 then;
-                                        reaper.SetMediaTrackInfo_Value(track,"I_SOLO",0);
-                                    end;
-                                else;
-                                    break;
-                                end;
-                            end;
-                        end;
-                        ----
-                    else;
-                        local mute = reaper.GetMediaTrackInfo_Value(trackSel,"B_MUTE");
-                        if mute ~= 0 then;
-                            reaper.SetMediaTrackInfo_Value(trackSel,"B_MUTE",0);
-                        end;
                     end;
                 end;
             end;
-            -----------------
+            
+            
+            
             
             
             if type(SelT[1])~= 'table' then SelT[1] = {} end;
