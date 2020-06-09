@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5">
+<index version="1" name="Archie-ReaScripts" commit="0d6da9af515b07e77183d816cdbfec3b4d073b45">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4886,6 +4886,11 @@ v.1.0 [28.08.19]
     + fixed conflict between parent and child tracks when rendering to a single track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-09T13:57:16Z">
+        <changelog><![CDATA[v.1.11 [090620]
+    + fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d6da9af515b07e77183d816cdbfec3b4d073b45/MAIN/Render/Archie_Render;%20%20Render%20stems%20Template(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track to a Mono track in certain channels.lua" type="script" desc="Render track to a Mono track in certain channels">
       <metadata>
@@ -4937,6 +4942,11 @@ v.1.0 [28.08.19]
     + fixed conflict between parent and child tracks when rendering to a single track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-09T13:57:16Z">
+        <changelog><![CDATA[v.1.11 [090620]
+    + fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d6da9af515b07e77183d816cdbfec3b4d073b45/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
@@ -4968,6 +4978,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [090620]
     + fixed conflict between parent and child tracks when rendering to a single track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-09T13:57:16Z">
+        <changelog><![CDATA[v.1.11 [090620]
+    + fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d6da9af515b07e77183d816cdbfec3b4d073b45/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Post Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
@@ -5001,6 +5016,11 @@ v.1.0 [28.08.19]
     + fixed conflict between parent and child tracks when rendering to a single track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-09T13:57:16Z">
+        <changelog><![CDATA[v.1.11 [090620]
+    + fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d6da9af515b07e77183d816cdbfec3b4d073b45/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Post%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Render;  Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )).lua" type="script" desc="Render track into one new track (Pre Fx &amp; wave 24 bit &amp; HQ(512pt Sinc) &amp; Full-speed Offline )">
       <metadata>
@@ -5032,6 +5052,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [090620]
     + fixed conflict between parent and child tracks when rendering to a single track]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5d74e95bf9ed6c66ca337b2d1fe6aed019196ff5/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-09T13:57:16Z">
+        <changelog><![CDATA[v.1.11 [090620]
+    + fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0d6da9af515b07e77183d816cdbfec3b4d073b45/MAIN/Render/COPY_Render%20stems%20Template/Archie_Render;%20%20Render%20track%20into%20one%20new%20track%20(Pre%20Fx%20&amp;%20wave%2024%20bit%20&amp;%20HQ(512pt%20Sinc)%20&amp;%20Full-speed%20Offline%20)).lua</source>
       </version>
     </reapack>
   </category>
