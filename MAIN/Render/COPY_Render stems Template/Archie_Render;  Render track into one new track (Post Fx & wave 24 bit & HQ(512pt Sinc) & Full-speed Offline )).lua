@@ -7,7 +7,7 @@
    * Description: Render track into one new track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,9 +16,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.12 [090620]
+   *                  + Capture SEND (Render in one track)
+   
    *              v.1.11 [090620]
    *                  + fixed bug
-   
    *              v.1.04 [240320]
    *                  + Path from the project settings
    *              v.1.03 [07.02.20]
@@ -84,13 +86,15 @@
                       --------------------------------
                       
    
-   local OffTimeSelection = false
+     local OffTimeSelection = false
                        -- = true Отключить Выбор времени 
                        --        (рендерить только длину всего проекта)
                        -- = false Включить Выбор времени 
                        --         (рендерить по выбору времени если установлено, 
                        --          иначе  длину всего проекта)
-                       ---------------------------------------
+                       -- = -1 Рендерить только по выбору времени или показать запрос
+                       --------------------------------------------------------------
+    
     
     
     local SampleRate  = 0 -- = 0 default-сэмплрейт проекта или установите в виде = 44100 или 48000 и т.д.
@@ -203,8 +207,16 @@
                     -- = false рендерить только выделенные треки,
                     --         не обращая внимания на мастер трек
                     ---------------------------------------------
-                       
           
+    
+    
+    local IGNORE_SEND = true
+             -- = true  Если с трека отправлены посылы,то игнорировать их (Рендер в один трек)
+             -- = false Если с трека отправлены посылы,то Захватить их в новый файл (Рендер в один трек)
+             -- = -1    Если с трека отправлены посылы,то Показать запрос о выборе (Рендер в один трек)
+    
+    
+    
     local RenInOneTrMOVE = 0 
                       -- = 0 Создать трек НАД первым выделенным (Рендер в один трек)
                       -- = 1 Создать трек ПОД первым выделенным  (Рендер в один трек)
@@ -332,6 +344,28 @@
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
+    
+    
+    
+    ----------------------------------------
+    ----------------------------------------
+    if OffTimeSelection == -1 then;
+        local startLoop, endLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
+        if startLoop == endLoop then;
+            local MB = reaper.MB('Rus:\nНет выбора времени\nРендерить длину всего проекта ? - ОК\n\n'..
+                           'Eng:\nNo time selection\nRender length of entire project ? - OK'
+                           ,'Woops',1);
+            if MB == 1 then;
+                OffTimeSelection = true;
+            else;
+                no_undo()return;
+            end;
+        else;
+            OffTimeSelection = false;
+        end;
+    end;
+    ----------------------------------------
+    ----------------------------------------
     
     
     
@@ -534,15 +568,31 @@
             reaper.Undo_BeginBlock();
                 
             
+            ---------------
             local SOLO;
             for i = 1, CountSelTrack do;
                 local trackSel = reaper.GetSelectedTrack(0,i-1);
                 local solo = reaper.GetMediaTrackInfo_Value(trackSel,"I_SOLO");
                 if solo > 0 then;
                     SOLO = true;
+                end;
+                if IGNORE_SEND ~= true and not SEND then;
+                    local NumSends = reaper.GetTrackNumSends(trackSel,0);
+                    if NumSends > 0 then;
+                        SEND = true;
+                    end;
+                elseif IGNORE_SEND == true and SOLO == true then;
                     break;
                 end;
+                if SOLO==true and SEND==true then break end;
             end;
+            ----
+            if IGNORE_SEND == -1 and SEND == true then;
+                local MB = reaper.MB('Rus:\nС выделенных треков существуют посылы, Захватить их в новый файл ? - ОК\n\n'..
+                                     'Eng:\nSelected tracks have send. Capture them in a new file? - OK','SEND >>>',1);
+                if MB ~= 1 then; SEND = false; end;
+            end;
+            ---------------
             
             
             local NoSelT = {};
@@ -571,10 +621,20 @@
                     SelT[#SelT].Track = Track;
                     SelT[#SelT].solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
                     local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                    if mute == 0 and not SOLO and SelT[#SelT].solo ~= 1 then;
-                        reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
-                    elseif SelT[#SelT].solo > 0 and SelT[#SelT].solo ~= 1 then;
-                        reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
+                    
+                    
+                    if SEND == true then;
+                        if mute == 0 and not SOLO and SelT[#SelT].solo ~= 2 then;
+                            reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",2);
+                        elseif SelT[#SelT].solo > 0 and SelT[#SelT].solo ~= 2 then;
+                            reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",2);
+                        end;
+                    else;
+                        if mute == 0 and not SOLO and SelT[#SelT].solo ~= 1 then;
+                            reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
+                        elseif SelT[#SelT].solo > 0 and SelT[#SelT].solo ~= 1 then;
+                            reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",1);
+                        end;
                     end;
                     
                     
