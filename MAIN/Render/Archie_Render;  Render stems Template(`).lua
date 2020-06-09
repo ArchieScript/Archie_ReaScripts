@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -18,6 +18,9 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.09 [090620]
+   *                  + fixed conflict between parent and child tracks when rendering to a single track
+   
    *              v.1.08 [240320]
    *                  + Path from the project settings
    
@@ -39,7 +42,6 @@
    *              v.1.0 [03.12.19]
    *                  + initialе
 --]]
-    
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================    
@@ -606,6 +608,38 @@
                     end;  
                 end;  
             end;
+            
+            
+            -----------------
+            for i = 1, reaper.CountSelectedTracks(0) do;
+                local trackSel = reaper.GetSelectedTrack(0,i-1);
+                local fold = reaper.GetMediaTrackInfo_Value(trackSel,"I_FOLDERDEPTH",1)==1;
+                if fold then;
+                    local solo = reaper.GetMediaTrackInfo_Value(trackSel,"I_SOLO");
+                    if solo > 0 then;
+                        local Depth = reaper.GetTrackDepth(trackSel);
+                        local numb = reaper.GetMediaTrackInfo_Value(trackSel,"IP_TRACKNUMBER");
+                        ----
+                        for i2 = numb, reaper.CountTracks(0)-1 do;
+                            local track = reaper.GetTrack(0,i2);
+                            if track then;
+                                local Depth2 = reaper.GetTrackDepth(track);
+                                if Depth2 > Depth then;
+                                    local solo = reaper.GetMediaTrackInfo_Value(track,"I_SOLO");
+                                    if solo > 0 then;
+                                        reaper.SetMediaTrackInfo_Value(track,"I_SOLO",0);
+                                    end;
+                                else;
+                                    break;
+                                end;
+                            end;
+                        end;
+                        ----
+                    end;
+                end;
+            end;
+            -----------------
+            
             
             if type(SelT[1])~= 'table' then SelT[1] = {} end;
             if SelT[1].RSOLO ~= true then SelT[1].RSOLO = false end;
