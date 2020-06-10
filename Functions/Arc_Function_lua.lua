@@ -1,23 +1,23 @@
-local VersionMod = "v.2.8.0"
+local VersionMod = "v.2.8.1"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.8.0
+   * Version:     2.8.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
    * -----------------------]]
 
-local Arc_Module = {}; function Arc_Module.VersionArc_Function_lua(version); if not VersionMod then VersionMod = "0" else VersionMod = tostring(VersionMod);end; VersionMod = tonumber((VersionMod:gsub("%D",""))); if not VersionMod then VersionMod = (0) end; version = tonumber((tostring(version):gsub("%D","")));
-if not version then version = (999^999) end; if version > VersionMod then; local path = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/(Arc_Function_lua.lua)'; reaper.ClearConsole(); reaper.ShowConsoleMsg('ENG:\n\n'.. 'The file "Arc_Function_lua" is not relevant, Obsolete.\n'.. 'Download the Arc_Function_lua file at this URL:\n\n'..
-'https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'.. 'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n\n'.. 'And put it along the way:\n\n'..path..'\n\n\n\n'.. 'RUS:\n\n'.. 'Файл "Arc_Function_lua" не актуален, Устарел.\n'.. 'Скачайте файл "Arc_Function_lua" по этому URL:\n\n'..
-'https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'.. 'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua\n\n'.. 'И положите его по пути:\n\n'..path); return false; end; return true; end; VersionArc_Function_lua = Arc_Module.VersionArc_Function_lua;
-function Arc_Module.no_undo()reaper.defer(function()end)end; no_undo = Arc_Module.no_undo; function Arc_Module.Action(...); local Table = {...}; for i = 1, #Table do; reaper.Main_OnCommand(reaper.NamedCommandLookup(Table[i]),0); end; end; Action = Arc_Module.Action; function Arc_Module.TrackFx_Rename(Track,idx_fx,newName);
-local strT,found,slot = {}; local Pcall,FXGUID = pcall(reaper.TrackFX_GetFXGUID,Track,idx_fx); if not Pcall or not FXGUID then return false end; local retval,str = reaper.GetTrackStateChunk(Track,"",false); for l in (str.."\n"):gmatch(".-\n")do table.insert(strT,l)end; for i = #strT,1,-1 do; if strT[i]:match(FXGUID:gsub("%p","%%%0"))then
-found = true end; if strT[i]:match("^<")and found and not strT[i]:match("JS_SER")then; found = nil; local nStr = {}; for S in strT[i]:gmatch("%S+")do; if not X then nStr[#nStr+1] = S else nStr[#nStr] = nStr[#nStr].." "..S end; if S:match('"') and not S:match('""')and not S:match('".-"') then; if not
-X then;X = true;else;X = nil;end; end; end; if strT[i]:match("^<%s-JS")then; slot = 3; elseif strT[i]:match("^<%s-AU")then; slot = 4; elseif strT[i]:match("^<%s-VST")then; slot = 5; end; if not slot then error("Failed to rename",2)end; nStr[slot] = newName:gsub(newName:gsub("%p","%%%0"),'"%0"'); nStr[#nStr+1]="\n";
+local Arc_Module = {}; function Arc_Module.VersionArc_Function_lua(version,file,URL); if URL and #URL:gsub('%s','') < 1 then URL = nil end; local URL = (URL or 'https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'.. 'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua');
+if not VersionMod then VersionMod = "0" else VersionMod = tostring(VersionMod);end; VersionMod = tonumber((VersionMod:gsub("%D","")))or 0; version = tonumber((tostring(version):gsub("%D","")))or(999^999); if version > VersionMod then; reaper.ClearConsole(); reaper.ShowConsoleMsg('ENG:\n\n'.. 'The file\n'..(file
+or "???")..'\nNOT RELEVANT, OBSOLETE.\n'.. 'Download this file at this URL:\n\n'.. URL..'\n\n'.. 'And put it along the way:\n\n'..(file or "???")..'\n\n\n\n'.. 'RUS:\n\n'.. 'Файл \n'..(file or "???")..'\nНЕ АКТУАЛЕН, УСТАРЕЛ.\n'.. 'Скачайте данный файл по этому URL:\n\n'..
+URL..'\n\n'.. 'И положите его по пути:\n\n'..(file or "???")); return false; end; return true; end; VersionArc_Function_lua = Arc_Module.VersionArc_Function_lua; Arc_Module.VersArcFun = Arc_Module.VersionArc_Function_lua; VersArcFun = Arc_Module.VersionArc_Function_lua; function Arc_Module.no_undo()reaper.defer(function()end)end;
+no_undo = Arc_Module.no_undo; function Arc_Module.Action(...); local Table = {...}; for i = 1, #Table do; reaper.Main_OnCommand(reaper.NamedCommandLookup(Table[i]),0); end; end; Action = Arc_Module.Action; function Arc_Module.TrackFx_Rename(Track,idx_fx,newName); local strT,found,slot = {}; local Pcall,FXGUID
+= pcall(reaper.TrackFX_GetFXGUID,Track,idx_fx); if not Pcall or not FXGUID then return false end; local retval,str = reaper.GetTrackStateChunk(Track,"",false); for l in (str.."\n"):gmatch(".-\n")do table.insert(strT,l)end; for i = #strT,1,-1 do; if strT[i]:match(FXGUID:gsub("%p","%%%0"))then found =
+true end; if strT[i]:match("^<")and found and not strT[i]:match("JS_SER")then; found = nil; local nStr = {}; for S in strT[i]:gmatch("%S+")do; if not X then nStr[#nStr+1] = S else nStr[#nStr] = nStr[#nStr].." "..S end; if S:match('"') and not S:match('""')and not S:match('".-"') then; if not X then;X
+= true;else;X = nil;end; end; end; if strT[i]:match("^<%s-JS")then; slot = 3; elseif strT[i]:match("^<%s-AU")then; slot = 4; elseif strT[i]:match("^<%s-VST")then; slot = 5; end; if not slot then error("Failed to rename",2)end; nStr[slot] = newName:gsub(newName:gsub("%p","%%%0"),'"%0"'); nStr[#nStr+1]="\n";
 strT[i] = table.concat(nStr," "); break; end; end; return reaper.SetTrackStateChunk(Track,table.concat(strT),false); end; TrackFx_Rename = Arc_Module.TrackFx_Rename; function Arc_Module.TrackFX_GetFXNameEx(Track,idx_fx); local strT,found,Name,slot = {}; local Pcall,FXGUID = pcall(reaper.TrackFX_GetFXGUID,Track,idx_fx);
 if not Pcall or not FXGUID then return end; local retval,str = reaper.GetTrackStateChunk(Track,"",false); for l in (str.."\n"):gmatch(".-\n")do table.insert(strT,l)end; for i = #strT,1,-1 do; if strT[i]:match(FXGUID:gsub("%p","%%%0"))then found = true end; if strT[i]:match("^<")and found and not strT[i]:match("JS_SER")then;
 found = nil; local nStr = {}; for S in strT[i]:gmatch("%S+")do; if not X then nStr[#nStr+1] = S else nStr[#nStr] = nStr[#nStr].." "..S end; if S:match('"') and not S:match('""')and not S:match('".-"') then; if not X then;X = true;else;X = nil;end; end; end; if strT[i]:match("^<%s-JS")then; slot = 3;

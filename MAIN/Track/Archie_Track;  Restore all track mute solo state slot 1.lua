@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Restore all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.08
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,6 +16,8 @@
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.0 [100620]
+   *                  + ----
    
    *              v.1.0 [230320]
    *                  + initialе
@@ -30,18 +32,6 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
-    
-    
-    -------------------------------------
-    local function countExState(extname);
-        local i=0;
-        while 1 do;
-            i=i+1;local retval=reaper.EnumProjExtState(0,extname,i-1);
-            if not retval then return i-1 end;
-        end;
-    end;
-    -------------------------------------
     
     
     
@@ -74,11 +64,7 @@
     reaper.PreventUIRefresh(-1);
     
     if CLEAN then;
-        local countExSt = countExState(extname);
-        for i = countExSt-1,0,-1 do;
-            local retval,key,val = reaper.EnumProjExtState(0,extname,i);
-            reaper.SetProjExtState(0,extname,key,'');
-        end;
+        reaper.SetProjExtState(0,extname,'','');
     end;
     
     reaper.DeleteExtState(extname,'SaveState',false);--button

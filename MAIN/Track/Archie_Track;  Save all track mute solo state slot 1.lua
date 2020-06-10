@@ -1,4 +1,4 @@
---[[
+--[[   NEW INSTANCE !!!
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Save all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.08
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -15,7 +15,10 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   *              Arc_Function_lua v.2.8.1+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.0 [100620]
+   *                  + ----
    
    *              v.1.0 [230320]
    *                  + initialе
@@ -31,50 +34,15 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-        
+    
     
     
     --=========================================
-    local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname,'StateHelp')=='';
-        if StateHelp then;
-            local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
-                           'ставим галку "Remember my answer for this script"\n'..
-                           'и жмем "NEW INSTANCE"\n\n'..
-                           'Не показывать это окно - Ok\n\n\n'..
-                           'Eng:\n'..
-                           'When the "ReaScript task control"\n'..
-                           'window appears, tick "Remember my answer for this script"\n'..
-                           'and click "NEW INSTANCE"\n\n'..
-                           'Do not show this window-Ok'
-                           ,'Help',1);
-            if MB == 1 then;
-                local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
-                               'NEW INSTANCE !!!\n\n'..
-                               'NEW INSTANCE !!!\n\n\n'..
-                               'Eng:\nImportant: REMEMBER!!!\n\n'..
-                               'NEW INSTANCE !!!\n\n'..
-                               'NEW INSTANCE !!!\n\n\n'
-                               ,'NEW INSTANCE !!!',1);
-                if MB == 1 then;
-                    reaper.SetExtState(extname,'StateHelp','true',true);
-                end;
-            end;
-        end;
-    end;    
-    --=========================================
-    
-    
-    -------------------------------------
-    local function countExState(extname);
-        local i=0;
-        while 1 do;
-            i=i+1;local retval=reaper.EnumProjExtState(0,extname,i-1);
-            if not retval then return i-1 end;
-        end;
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.1",file,'')then A.no_undo()return;end;return A;
     end;
-    -------------------------------------
-    
+    --=========================================
     
     
     --=========================================
@@ -86,6 +54,8 @@
     
     
     --=========================================
+    reaper.SetProjExtState(0,extname,'','');
+    
     local CountTrack = reaper.CountTracks(0);
     if CountTrack > 0 then;
         
@@ -96,23 +66,17 @@
             local mute = math.floor((reaper.GetMediaTrackInfo_Value(track,'B_MUTE'))+.5);
             reaper.SetProjExtState(0,extname,guid,mute..' '..solo);
         end;
+        
         reaper.SetExtState(extname,'SaveState',1,false);
-    end;
-    
-    local countExSt = countExState(extname);
-    for i = countExSt-1,0,-1 do;
-        local retval,key,val = reaper.EnumProjExtState(0,extname,i);
-        local track = reaper.BR_GetMediaTrackByGUID(0,key);
-        if not track then;
-            reaper.SetProjExtState(0,extname,key,'');
-        end; 
+    else;    
+        reaper.DeleteExtState(extname,'SaveState',false);
     end;
     --=========================================
     
     
     
+    
     --=========================================
-    --t=0
     local x;
     local function tmr(ckl);
         x=(x or 0)+1;
@@ -122,17 +86,16 @@
     
     
     
-    
     --=========================================
     if Buttonllumination ~= 1 then;
         reaper.defer(function()end);
     else;
         --===========================
-        local _,_,sec,cmd,_,_,_ = reaper.get_action_context();
+        local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+        
+        local _,FILE,sec,cmd,_,_,_ = reaper.get_action_context();
         local ActiveDoubleScr,stopDoubleScr;
-        
-        Help(extname);
-        
+         
         local function loop();
             local tm = tmr(15);
             if tm then;
@@ -165,9 +128,15 @@
             reaper.defer(loop);
         end;
         reaper.defer(loop);
+        
+        reaper.defer(function()
+            local ScrPath,ScrName = FILE:match('(.+)[/\\](.+)')
+            Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,ScrPath,ScrName);
+        end);
         --===========================
     end;
-    --=========================================
+    --===============================
     
-    
-    
+	
+	
+	
