@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Restore all track mute solo state slot 1
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
