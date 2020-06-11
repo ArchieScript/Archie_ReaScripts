@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.10
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -15,14 +15,21 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
-   * Extension:   Reaper 6.01+ http://www.reaper.fm/
-   *              SWS v.2.10.0 http://www.sws-extension.org/index.php
+   * Extension:   Reaper 6.10+ http://www.reaper.fm/
+   *              SWS v.2.12.0 http://www.sws-extension.org/index.php
+   *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.10 [110620]
+   *                 !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
+   *                  + Add Trim right
+   *                  + ----
+   *                 !+ Исправить смещение сигнала при ненулевом значении 'Default tail length:'
+   *                  + Добавить обрезку справа
+   
    *              v.1.04 [110520]
    *                  + The script was converted to a template
    *                  + ----
    *                  + Скрипт переделан в шаблон
-   
    *              v.1.03 [100520]
    *                  + Ability to save the track template in a subdirectory
    *                  + -----
@@ -40,7 +47,6 @@
    *              v.1.0 [11.12.19]
    *                  + initialе
 --]]
-    
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -51,22 +57,69 @@
                  --  = true  | показать окно для ввода времени хвоста
                  --  = false | хвост по размеру выбора времени
                  --  = 1.50..| или введите время в сек
+                 -------------------------------------
     
     
-    -------------------------------------------------------------------
-    -- В шаблоне этот параметр не менять  (Archie_Var;  Pre-reverb(`).lua)
-    -- Do not change this parameter in the template (Archie_Var;  Pre-reverb(`).lua)
-    local NameTemplates = [[$ArchiePreVerb$]];  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
-    -------------------------------------------------------------------
+    
+    local FADEIN  = true;
+              --  = true  | on fade in
+              --  = false | off fade in
+              -------------------------
     
     
-    local PathTemplates = [[]]; -- Путь шаблона, без файла (Необязятельно). Например: PathTemplates = [[c:\bla\bla\bla]];
+    
+    local FADEOUT = true;
+             --  = true  |  on fade out
+             --  = false | off fade out
+             --------------------------
+    
+    
+    
+    local IN_SHAPE  = 0; -- 0..6, 0=linear, -1 default
+    local OUT_SHAPE = 2; -- 0..6, 0=linear, -1 default
+                         -----------------------------
+    
+    
+    
+    local TRIM_RIGHT = true
+                 --  = true  | Обрезка справа
+                 --  = false | Нет обрезки справа
+                 --------------------------------
+    
+    
+    
+    local snapToGrid = true;
+                  -- = true  | Ровнять по ближайшей сетке
+                  -- = false | Не ровнять по сетке, рендерить четко по времени (Tail_Rever) 
+                  -------------------------------------------------------------------------
+    
+    
+    
+    local Pre_Vol_Track = true;
+                     -- = true  | Перед громкостью на треке
+                     -- = false | После громкости на треке
+                     -------------------------------------
+    
+    
+    
+    local Pre_Pan_Track = true;
+                     -- = true  | Перед панорамой на треке
+                     -- = false | После панорамой на треке
+                     -------------------------------------
     
     
     
     local PreFxTrack = false;
                   -- = true  Перед эффектами на треке
                   -- = false После эффектов на треке
+                  ----------------------------------
+    
+    
+    
+    local Remove_Time_Silection = true;
+                             -- = true  | Удалить выбор времени
+                             -- = false | Не удалять выбор времени
+                             -------------------------------------
     
     
     
@@ -74,46 +127,31 @@
                -- = 1 mono         / Track: Render selected area of tracks to mono post-fader stem tracks (and mute originals)
                -- = 2 stereo       / Track: Render selected area of tracks to stereo post-fader stem tracks (and mute originals)
                -- = 3 multichannel / Track: Render selected area of tracks to multichannel post-fader stem tracks (and mute originals)
-               -- = 4 Определи автоматически / Detect it automatically
-    
-    
-    local snapToGrid = true;
-                  -- = true  | Ровнять по ближайшей сетке
-                  -- = false | Не ровнять по сетке, рендерить четко по времени (Tail_Rever) 
-    
-    
-    local FADEIN  = true;
-              --  = true  | on fade in
-              --  = false | off fade in
-    
-    
-    local FADEOUT = true;
-             --  = true  |  on fade out
-             --  = false | off fade out
-    
-    
-    local IN_SHAPE  = 0;  -- 0..6, 0=linear, -1 default
-    local OUT_SHAPE = 2;  -- 0..6, 0=linear, -1 default
+               -- = 4 Определить автоматически / Detect it automatically
+               ---------------------------------------------------------
     
     
     
-    local Pre_Vol_Track = true;
-                     -- = true  | Перед громкостью на треке
-                     -- = false | После громкости на треке
+    local PathTemplates = [[]]; -- Путь шаблона, без файла (Необязятельно). Например: PathTemplates = [[c:\bla\bla\bla]];
+                                -----------------------------------------------------------------------------------------
     
     
-    local Pre_Pan_Track = true;
-                     -- = true  | Перед панорамой на треке
-                     -- = false | После панорамой на треке
+    -------------------------------------------------------------------
+    -- В шаблоне (Archie_Var;  Pre-reverb(`).lua) этот параметр не менять
+    -- Do not change this parameter in the template (Archie_Var;  Pre-reverb(`).lua)
+    local NameTemplates = [[$ArchiePreVerb$]];  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
+    -------------------------------------------------------------------
     
     
-    local Remove_Time_Silection = true;
-                             -- = true  | Удалить выбор времени
-                             -- = false | Не удалять выбор времени
     
-    
-    local Name_Track = 'Pre Reverb '..'('..NameTemplates..')';
+    local Name_Track = nil
                   -- = 'Имя трека'
+                  -- По умолчанию Name_Track = nil
+                  -- или введите имя, например:
+                  -- Name_Track = 'мои трек';
+                  or 'Pre Reverb '..'('..NameTemplates..')';
+                  --------------------------------------------
+    
     
     
     --======================================================================================
@@ -122,15 +160,21 @@
     
     
     
-    -------------------------------------------------------
-    local function no_undo()reaper.defer(function()end)end;
-    -------------------------------------------------------
+    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.2",file,'')then A.no_undo()return;end;return A;
+    end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
+    
     
     
     local function PreReverbRun();
         
         
-        --------------------------------------------------------------
+        --==================================================================================================================
         local function EnumerateAllDirectoriesAndSubdirectories(path);
             local T = {};
             path = path:gsub('\\','/');
@@ -164,35 +208,40 @@
             table.insert(T,1,path);
             return T;
         end;
-        --------------------------------------------------------------
-        
-        
-        
-        
-        --==================================================================================================================
-        if type(NameTemplates)~="string" or #NameTemplates:gsub("%s","")==0 then NameTemplates = "ArchiePreVerb" end;
-        
+        ----------------
+        PathTemplates = PathTemplates:gsub('\\','/');
+        if type(NameTemplates)~="string" then NameTemplates = "ArchiePreVerb"end;
+        local NmTemp = NameTemplates:upper():match('RTRACKTEMPLATE%s-$');
+        if NmTemp then;
+            NameTemplates = NameTemplates:gsub(('.'):rep(#NmTemp)..'$','');
+        end;
+        if #NameTemplates:gsub("%s","")==0 then NameTemplates = "ArchiePreVerb"end;
+        ----
         local file = io.open(PathTemplates..'/'..NameTemplates..'.RTrackTemplate');
         if not file then;
-            local ResPath = reaper.GetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates);
-            file = io.open(ResPath..'/'..NameTemplates..'.RTrackTemplate');
+            local ResPath1 = reaper.GetResourcePath():gsub('\\','/')..'/TrackTemplates';
+            --local ResPath2 = reaper.GetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates);
+            local ResPath2 = Arc.iniFileReadLua('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,ArcFileIni,false);
+            file = io.open(ResPath1..ResPath2..'/'..NameTemplates..'.RTrackTemplate');
             if not file then;
-                ResPath = reaper.GetResourcePath()..'/TrackTemplates';
-                file = io.open(ResPath..'/'..NameTemplates..'.RTrackTemplate');
+                file = io.open(ResPath1..'/'..NameTemplates..'.RTrackTemplate');
                 if not file then;
-                    local Subdir = EnumerateAllDirectoriesAndSubdirectories(ResPath);
+                    local Subdir = EnumerateAllDirectoriesAndSubdirectories(ResPath1);
                     for i = 1,#Subdir do;
-                        for i2 = 1,math.huge do;
+                        for i2 = 1, math.huge do;
                             local Files = reaper.EnumerateFiles(Subdir[i],i2-1);
                             if Files then;
                                 local FilesX = Files:upper();
                                 if FilesX == (NameTemplates..".RTrackTemplate"):upper()then;
                                     file = io.open(Subdir[i]..'/'..Files);
                                     if file then;
-                                        reaper.SetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,Subdir[i],true);
+                                        dir = Subdir[i]:gsub('\\','/'):gsub(ResPath1:gsub('\\','/'),'');
+                                        --reaper.SetExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,dir,true);
+                                        Arc.iniFileWriteLua('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,dir,ArcFileIni,false,true);
                                         break;
                                     end;
                                 end;
+                                 
                             else;
                                 break;
                             end;
@@ -213,17 +262,28 @@
             --[ v1.04
             if MB==1 then;
                 local _,filename,_,_,_,_,_ = reaper.get_action_context();
-                os.remove (filename);
+                os.remove(filename);
                 reaper.AddRemoveReaScript(false,0,filename,true);
                 reaper.DeleteExtState('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,true);
+                Arc.iniFileWriteLua('ARCHIE_VAR_PRE-REVERB_LUA','Path-'..NameTemplates,'',ArcFileIni,false,true);
             end;
             --]]
-            no_undo() return;
+            Arc.no_undo()return;
         else;
             strTemplate = file:read("a");
             file:close();
         end;
         --==================================================================================================================
+        
+        
+        
+        
+        --===================================
+        local function compare(x,y);
+            return math.abs(x-y)<0.0000001;
+        end;
+        --===================================
+        
         
         
         
@@ -237,6 +297,7 @@
         
         
         
+        
         --=====================================================
         local startLoop, endLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
         if startLoop == endLoop then;
@@ -244,6 +305,7 @@
             no_undo() return;
         end;
         --=====================================================
+        
         
         
         
@@ -265,13 +327,13 @@
             no_undo() return;
         end;
         --=====================================================
+         
         
         
         
         --=====================================================
         if not tonumber(Tail_Rever) and Tail_Rever ~= true then Tail_Rever = false end;
         if Tail_Rever == true then;
-            --local val = tonumber(({reaper.GetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec")})[2])or(endLoop-startLoop);
             local val = tonumber(string.format("%.4f", endLoop-startLoop));--v.1.02
             local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection),extrawidth=60",val);
             if not retval then no_undo() return end;
@@ -284,12 +346,12 @@
             if not retvals_csv or retvals_csv <= 0 then;
                 retvals_csv = (endLoop-startLoop);
             end;
-            --reaper.SetProjExtState(0,"ArchiePreReverbScRiPt","valueTailSec",retvals_csv);
             Tail_Rever=retvals_csv;
         elseif not Tail_Rever or Tail_Rever <= 0 then;
             Tail_Rever = (endLoop-startLoop);
         end;
         --=====================================================
+        
         
         
         
@@ -302,6 +364,12 @@
         
         
         
+        
+        --=========================
+        
+        
+        
+        
         --=========================
         reaper.Undo_BeginBlock();
         reaper.PreventUIRefresh(1);
@@ -309,12 +377,26 @@
         
         
         
+        
         --=====================================================
+        --Waveform media peak caching settings
         local ShowStatusWindow = reaper.SNM_GetIntConfigVar("showpeaksbuild",0);
         if ShowStatusWindow == 1 then;
             reaper.SNM_SetIntConfigVar("showpeaksbuild",0);
         end;
         --=====================================================
+        
+        
+        
+        
+        --=====================================================
+        --Rendering > Rendering settings > Default tail length:
+        local rendertail_Var = reaper.SNM_GetIntConfigVar("rendertail",0);
+        if rendertail_Var ~= 0 then;
+            reaper.SNM_SetIntConfigVar("rendertail",0);
+        end;
+        --=====================================================
+        
         
         
         
@@ -349,14 +431,15 @@
         
         
         
+        
         --=====================================================
         reaper.Main_OnCommand(40297,0);-- Unselect all tracks
-        
         for i = 1,#SelItemT do;
             local Track = reaper.GetMediaItem_Track(SelItemT[i]);
             reaper.SetMediaTrackInfo_Value(Track,"I_SELECTED",1);
         end;
         --=====================================================
+        
         
         
         
@@ -396,12 +479,14 @@
         
         
         
+        
         --=====================================================
         if Channel~=1 and Channel~=2 and Channel~=3 then Channel=2 end;
         local ChanT = {41718,41716,41717};
         reaper.Main_OnCommand(ChanT[Channel],0);--render
         reaper.SelectAllMediaItems(0,0);
         --=====================================================
+        
         
         
         
@@ -417,13 +502,15 @@
         
         
         
+        
         --=====================================================
         local CountTrItems = reaper.CountTrackMediaItems(TrackPreVerb);
         for i = 1,CountTrItems do;
             local item = reaper.GetTrackMediaItem(TrackPreVerb,i-1);
             reaper.DeleteTrackMediaItem(TrackPreVerb,item);
-        end; 
+        end;
         --=====================================================
+        
         
         
         
@@ -441,6 +528,7 @@
         
         
         
+        
         --=====================================================
         for i = reaper.CountSelectedTracks(0)-1,0,-1 do;
             local SelTrack = reaper.GetSelectedTrack(0,i);
@@ -452,6 +540,7 @@
         end;
         reaper.Main_OnCommand(40005,0);--Track: Remove tracks
         --=====================================================
+        
         
         
         
@@ -480,11 +569,12 @@
         
         
         
+        
         --=====================================================
         local Tail;
         if snapToGrid == true then;
             Tail = reaper.SnapToGrid(0,endLoop+Tail_Rever);
-            if Tail == endLoop then;
+            if compare(Tail,endLoop)then;
                 Tail = endLoop+Tail_Rever;
             end;
         else;
@@ -495,6 +585,7 @@
         
         
         
+        
         --=====================================================
         if type(Name_Track)~='string'or #Name_Track:gsub('[%s.,;"]','')==0 then Name_Track='Pre Reverb'end;
         reaper.SetOnlyTrackSelected(TrackPreVerb);
@@ -502,13 +593,12 @@
         reaper.Main_OnCommand(ChanT[Channel],0);--render
         local TrackPreVerbReady = reaper.GetSelectedTrack(0,0);
         reaper.GetSetMediaTrackInfo_String(TrackPreVerbReady,"P_NAME",Name_Track,1);
-        
+        ----
         reaper.SetOnlyTrackSelected(TrackPreVerb);
         reaper.Main_OnCommand(40005,0);--Track: Remove tracks
         reaper.SetOnlyTrackSelected(TrackPreVerbReady);
-        
         reaper.GetSet_LoopTimeRange(1,0,startLoop,endLoop,0);
-        
+        ---
         local CountTrItems = reaper.CountTrackMediaItems(TrackPreVerbReady);
         for i = 1,CountTrItems do;
             local item = reaper.GetTrackMediaItem(TrackPreVerbReady,i-1);
@@ -530,18 +620,19 @@
         
         
         
+        
         --=====================================================
         for i = 1,#STrT do;
             reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"B_MUTE",STrT[i].Mute);
             reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"I_SOLO",STrT[i].Solo);
-            
+            ----
             if Pre_Vol_Track == true then;
                 reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_VOL",STrT[i].vol);
             end;
             if Pre_Pan_Track == true then;
                 reaper.SetMediaTrackInfo_Value(STrT[i].SelTrack,"D_PAN",STrT[i].pan);
             end;
-            
+            ----
             if PreFxTrack == true then;
                 for ifx = 1, #STrT[i].FxEnabled do;
                     reaper.TrackFX_SetEnabled(STrT[i].SelTrack,ifx-1,STrT[i].FxEnabled[ifx]);
@@ -552,9 +643,10 @@
         
         
         
+        
         --=====================================================
-        -- / fade in out / --
-        if FADEIN == true or FADEOUT == true then;
+        -- / fade in out / Trim / --
+        if FADEIN == true or FADEOUT == true or TRIM_RIGHT then;
             local CountSelItem = reaper.CountSelectedMediaItems(0);
             for i = 1,CountSelItem do;
                 local SelItem = reaper.GetSelectedMediaItem(0,i-1);
@@ -564,8 +656,11 @@
                     end;
                     reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",Tail-endLoop);
                 end;
-                
-                if FADEOUT == true then;
+                ----
+                if TRIM_RIGHT == true then;
+                    local pos = reaper.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                    reaper.SetMediaItemInfo_Value(SelItem,"D_LENGTH",startLoop-pos);
+                elseif TRIM_RIGHT ~= true and FADEOUT == true then; 
                     if tonumber(OUT_SHAPE)and OUT_SHAPE >= 0 and OUT_SHAPE <= 6 then;
                         reaper.SetMediaItemInfo_Value(SelItem,"C_FADEOUTSHAPE",OUT_SHAPE);
                     end;
@@ -577,12 +672,21 @@
         
         
         
+        
         --=====================================================
+        --Rendering > Rendering settings > Default tail length:
+        if rendertail_Var ~= 0 then;
+            reaper.defer(function()reaper.SNM_SetIntConfigVar("rendertail",rendertail_Var)end);
+        end;
+        --=====================================================
+        
+        
+        --=====================================================
+        --Waveform media peak caching settings
         if ShowStatusWindow == 1 then;
             reaper.defer(function()reaper.SNM_SetIntConfigVar("showpeaksbuild",1)end);
         end;
         --=====================================================
-        
         
         
         --=====================================================
@@ -601,11 +705,11 @@
         
         
         --=========================
-        reaper.Undo_EndBlock("Pre-reverb",-1);
         reaper.PreventUIRefresh(-1);
+        reaper.Undo_EndBlock("Pre-reverb ("..NameTemplates..')',-1);
         reaper.UpdateArrange();
         --=========================
-        
+        --=========================
     end;
     --RUN = PreReverbRun();
     -----------------------------------------------------------------
@@ -685,6 +789,10 @@
     'Скрипт успешно создан\nИщите в экшен листе\n'..scr..'\nСохраните трек темплейт с настроенным ревербератором с именем\n'..retvals_csv..'\n\nИмя скрипта скопировано в буфер обмена\n\n\n\n'..
     'Script was successfully created\nSearch in the action list\n'..scr..'\nSave the track template with the reverb set up with the name\n'..retvals_csv..'\n\nScript name is copied to the clipboard');
     reaper.CF_SetClipboard(scr);
+    
+    
+    
+    
     
     
     
