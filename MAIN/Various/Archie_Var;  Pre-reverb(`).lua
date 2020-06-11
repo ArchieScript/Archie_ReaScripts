@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -19,7 +19,7 @@
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.10 [110620]
+   *              v.1.11 [110620]
    *                 !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
    *                  + Add Trim right
    *                  + ----
@@ -657,14 +657,16 @@
                     reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",Tail-endLoop);
                 end;
                 ----
-                if TRIM_RIGHT == true then;
-                    local pos = reaper.GetMediaItemInfo_Value(SelItem,"D_POSITION");
-                    reaper.SetMediaItemInfo_Value(SelItem,"D_LENGTH",startLoop-pos);
-                elseif TRIM_RIGHT ~= true and FADEOUT == true then; 
+                if FADEOUT == true then; 
                     if tonumber(OUT_SHAPE)and OUT_SHAPE >= 0 and OUT_SHAPE <= 6 then;
                         reaper.SetMediaItemInfo_Value(SelItem,"C_FADEOUTSHAPE",OUT_SHAPE);
                     end;
                     reaper.SetMediaItemInfo_Value(SelItem,"D_FADEOUTLEN",endLoop-startLoop);
+                end;
+                ----
+                if TRIM_RIGHT == true then;
+                    local pos = reaper.GetMediaItemInfo_Value(SelItem,"D_POSITION");
+                    reaper.SetMediaItemInfo_Value(SelItem,"D_LENGTH",startLoop-pos);
                 end;
             end;
         end;
