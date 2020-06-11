@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b0670ee27b110c4278e53746f21f9866cc873499">
+<index version="1" name="Archie-ReaScripts" commit="2d0ea7e3e7763091ec8560696741e338d087cfad">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6589,6 +6589,11 @@ v.1.0 [28.08.19]
     + ----]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5661bbf393f706afc26719927c5a9f892e1d66c7/MAIN/Track/Archie_Track;%20%20Restore%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
+      <version name="1.09" author="Archie" time="2020-06-11T17:17:48Z">
+        <changelog><![CDATA[v.1.0 [100620]
+    + ----]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d0ea7e3e7763091ec8560696741e338d087cfad/MAIN/Track/Archie_Track;%20%20Restore%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Restore all tracks visible slot 1.lua" type="script" desc="Track;  Restore all tracks visible slot 1.lua">
       <metadata>
@@ -6630,6 +6635,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [100620]
     + ----]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5661bbf393f706afc26719927c5a9f892e1d66c7/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
+      <version name="1.09" author="Archie" time="2020-06-11T17:17:48Z">
+        <changelog><![CDATA[v.1.0 [100620]
+    + ----]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d0ea7e3e7763091ec8560696741e338d087cfad/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Save all tracks visible slot 1.lua" type="script" desc="Track;  Save all tracks visible slot 1.lua">
