@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="6f49d01a4959a9fb446f2f2cccc71c029147d2cb">
+<index version="1" name="Archie-ReaScripts" commit="b0670ee27b110c4278e53746f21f9866cc873499">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7733,6 +7733,11 @@ v.1.0 [28.08.19]
     No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MAIN/Various/Archie_Var;%20%20Hide%20Show%20add%20menu%20(popup%20menu%20single-level).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-11T16:58:56Z">
+        <changelog><![CDATA[v.1.03 [310320]
+    No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b0670ee27b110c4278e53746f21f9866cc873499/MAIN/Various/Archie_Var;%20%20Hide%20Show%20add%20menu%20(popup%20menu%20single-level).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Move cursor to next end-start of item, select item.lua" type="script" desc="Move cursor to next end-start of item, select item">
       <metadata>
@@ -8115,6 +8120,14 @@ v.1.0 [28.08.19]
       "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
       Only relevant if the list was created in version 1.15+]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f04998df817cbf157b0b24c37b9e18cfbc43ebe6/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.18" author="Archie" time="2020-06-11T16:58:56Z">
+        <changelog><![CDATA[v.1.17 [060620]
+    + Fixed a bug reopen, if ctrl let go before what completed action
+    + Saving the list when updating the script (just create a new script using 
+      "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
+      Only relevant if the list was created in version 1.15+]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b0670ee27b110c4278e53746f21f9866cc873499/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
