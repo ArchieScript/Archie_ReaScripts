@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.17
+   * Version:     1.18
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -19,6 +19,7 @@
    *              Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
+   *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
    *              v.1.17 [060620]
    *                  + Fixed a bug reopen, if ctrl let go before what completed action
@@ -54,7 +55,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.17;
+    Version = 1.18;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -89,6 +90,19 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================  
+    
+    
+    
+    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.2",file,'')then;A=nil;return;end;return A;
+    end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
+    
     
     
     -------------------------------------------------------
@@ -218,7 +232,8 @@
         local hdblock = '#';
         if not tonumber(HIDE_ADD) or (HIDE_ADD ~= 0 and HIDE_ADD ~= 1) then;-- v.1.04
             H.sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU';
-            HIDE_ADD = tonumber(reaper.GetExtState(H.sect,'State'))or 0;-- v.1.04
+            ----HIDE_ADD = tonumber(reaper.GetExtState(H.sect,'State'))or 0;-- v.1.04
+            HIDE_ADD = tonumber(Arc.iniFileReadLua(H.sect,'State',ArcFileIni))or 0;-- v.1.18;
             hdblock = '';
         end;-- v.1.04
         ---------------------------------------------------
@@ -561,7 +576,8 @@
                            'Archie_Var;  Hide Show add menu (popup menu single-level).lua'
                            ,'Help',1);
             if MB == 1 then;
-                reaper.SetExtState(H.sect,'State',1,true);
+                ----reaper.SetExtState(H.sect,'State',1,true);
+                Arc.iniFileWriteLua(H.sect,'State',1,ArcFileIni);--v.1.18.
             end;
             gfx.quit();
             no_undo();
@@ -605,6 +621,9 @@
             end; Action();
             --======================
         end;
+        reaper.defer(function();
+        local ScrPath,ScrName = debug.getinfo(1,'S').source:match('^[@](.+)[/\\](.+)');
+        Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,ScrPath,ScrName)end);
     end;
     --main();
     --======================================================================
@@ -649,8 +668,8 @@
             LIST = GetList('LIST',newFile);
             if LIST ~= "" then;
                 local strMb =
-                "Rus:\nОбновить скрипт сохраняя список - Да\nОбновить скрипт Не сохраняя список - Нет\n\n"..
-                "Eng:\nUpdate script by saving the list - Yes\nUpdate script Without saving the list - No\n";
+                "Rus:\nСкрипт с таким именем уже существует.\nОбновить скрипт сохраняя список - Да\nОбновить скрипт Не сохраняя список - Нет\nНе обновлять скрипт - Отмена\n\n"..
+                "Eng:\nScript with this name already exists.\nUpdate script by saving the list - Yes\nUpdate script Without saving the list - No\nNot update script - Cancel";
                 MB_W = reaper.MB(strMb,'Update popup list - '..retvals_csv,3);
                 if MB_W == 2 then;no_undo()return;end;
             end;
