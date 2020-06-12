@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2d0ea7e3e7763091ec8560696741e338d087cfad">
+<index version="1" name="Archie-ReaScripts" commit="d896159f3202424e0976790e9700aa9e2bfe08f9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -336,6 +336,9 @@ LUA_Lib
       </version>
       <version name="2.8.2" author="Archie" time="2020-06-11T14:32:24Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/c06bf9e8478ed58537e86e7da2a2fe4f775d6435/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.8.4" author="Archie" time="2020-06-12T07:22:43Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -7142,6 +7145,11 @@ v.1.0 [28.08.19]
     + No changeе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2a5802b17ad15cd669464ded5792d7c4a2ceeaf7/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed(AutoRun).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.02 [240520]
+    + No changeе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
       <metadata>
@@ -7244,6 +7252,11 @@ v.1.0 [28.08.19]
     + Fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f5c15e5cb80f9e7e48638341b4ac90492db1874/MAIN/Track/Archie_Track;%20%20Toggle%20Off%20medium%20mode%20collapse%20folder(AutoRun).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.03 [290520]
+    + Fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20Toggle%20Off%20medium%20mode%20collapse%20folder(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Rec Arm exclusive(`).lua" type="script" desc="Track;  Toggle Rec Arm exclusive(`).lua">
       <metadata>
@@ -7329,6 +7342,11 @@ v.1.0 [28.08.19]
     + Restore Arm track (works with locked tracks)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/adc7b881f45e968850bf4a77a4f887748536edd4/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(AutoRun)(%60).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + Restore Arm track (works with locked tracks)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(AutoRun)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  UnArm Selected track.lua" type="script" desc="Track;  UnArm Selected track.lua">
       <metadata>
@@ -7406,6 +7424,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.07 [260520]
     + Restore Mute track (Doesn't pay attention to blocked tracks)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/adc7b881f45e968850bf4a77a4f887748536edd4/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + Restore Mute track (Doesn't pay attention to blocked tracks)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in MCP(`).lua" type="script" desc="Track;  Unmute all visible track in MCP">
@@ -7486,6 +7509,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.07 [260520]
     + Restore Solo track (works with locked tracks)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f39eb3d8956f45874b8b665131b3dbc6c40d06e9/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20track(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + Restore Solo track (works with locked tracks)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
@@ -8209,6 +8237,15 @@ v.1.0 [28.08.19]
    !+ Исправить смещение сигнала при ненулевом значении 'Default tail length:'
     + Добавить обрезку справа]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6f49d01a4959a9fb446f2f2cccc71c029147d2cb/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
+      </version>
+      <version name="1.12" author="Archie" time="2020-06-12T07:22:43Z">
+        <changelog><![CDATA[v.1.11 [110620]
+   !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
+    + Add Trim right
+    + ----
+   !+ Исправить смещение сигнала при ненулевом значении 'Default tail length:'
+    + Добавить обрезку справа]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
