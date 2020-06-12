@@ -5,7 +5,7 @@
    *
    * Category:    Preferences
    * Description: Pref;  Allow keyboard commands even when mouse-editing.lua
-   *              Preferences > General > Advanced UI / ...
+   * ***          Preferences > General > Advanced UI / ...
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
