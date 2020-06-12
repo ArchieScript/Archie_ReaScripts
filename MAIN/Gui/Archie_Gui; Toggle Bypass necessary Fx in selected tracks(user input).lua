@@ -1,4 +1,4 @@
---[[
+--[[     TERMINATE INSTANCES
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -14,9 +14,10 @@
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
    * Changelog:   
+   
    *              v.1.0 [150420]
    *                  + Bypass / Unbypass all effects
-   
+
    *              v.1.0 [19.01.20]
    *                  + initialе
 --]]
@@ -26,10 +27,24 @@
     --======================================================================================
     
     
+    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+    end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
+    
+    
+    
+    
     --============================================================
     local function Help();
     
         local msg = 
+        '\n\nTERMINATE INSTANCES\n\n'..
         "Rus:\n\n"..
         'v.1.03 - "*0" или "all" - вкл / выкл все эффекты\n\n'..
         "Скрипт: "..
@@ -46,7 +61,8 @@
         "Например: *1, 3, 5\n"..
         "Правый клик или кнопка 'P' вызовет меню для сохранения пресетов.\n"..
         "Mode: Mode 1 - байпас всех Fx в одно состояние, Mode 2 - переключать зеркально\n"..
-        "т.е. если один fx включен, а второй выключен, то они поменяются местами.\n\n\n\n"..
+        "т.е. если один fx включен, а второй выключен, то они поменяются местами.\n\n"..
+        '\n\nTERMINATE INSTANCES\n\n\n'..
         "Eng:\n\n"..
         'V. 1. 03 - "*0 " or "all" - Bypass / Unbypass all effects\n\n'..
         "Script: "..
@@ -63,7 +79,8 @@
         "For example: *1, 3, 5\n"..
         "Right click or 'P' button will open the menu for saving presets.\n"..
         "Mode: Mode 1-bypass all Fx in one state, Mode 2 - switch mirror\n"..
-        "that is, if one fx is enabled and the other is bypassed they will switch places."
+        "that is, if one fx is enabled and the other is bypassed they will switch places."..
+        '\n\nTERMINATE INSTANCES\n\n'
         
         
         
@@ -248,6 +265,7 @@
     
     
     
+    
     --================================================================
     local function Mouse_Is_Inside(x, y, w, h);
         local mouse_x, mouse_y = gfx.mouse_x, gfx.mouse_y
@@ -289,7 +307,8 @@
     
     --===================================================================================
     local section = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
-    local PositionWind = reaper.GetExtState(section,"PositionWind");
+    --local PositionWind = reaper.GetExtState(section,"PositionWind");
+    local PositionWind = Arc.iniFileReadLua(section,"PositionWind",ArcFileIni);
     local xWinPos,yWinPos = PositionWind:match('(.-)&(.-)&');
     if not xWinPos or not yWinPos then;
         local  _,_, scr_x, scr_y = reaper.my_getViewport(0,0,0,0,0,0,0,0,1);
@@ -301,7 +320,9 @@
     local nameWin = 'Toggle Bypass fx in selected tracks by number or name';
     gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
     --reaper.DeleteExtState(section,"SaveUserInput",true);
-    local SaveUserInput = reaper.GetExtState(section,"SaveUserInput"); 
+    --Arc.iniFileWriteLua(section,"SaveUserInput",'',ArcFileIni);
+    --local SaveUserInput = reaper.GetExtState(section,"SaveUserInput"); 
+    local SaveUserInput = Arc.iniFileReadLua(section,"SaveUserInput",ArcFileIni);
     AttachTopmostPin(nameWin);
     --===================================================================================
     
@@ -309,7 +330,8 @@
     
     --===================================================================================
     local 
-    ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
+    --ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
+    ModeState = tonumber(Arc.iniFileReadLua(section,"ModeState",ArcFileIni))or 1;
     --===================================================================================
     
     
@@ -434,11 +456,13 @@
             gfx.set(.4,.7,0,.5);
             gfx.rect(155+1,10+1,235-2,25-2,0);
             if ButtonUser == 2 then;
-                SaveUserInput = reaper.GetExtState(section,"SaveUserInput");
+                --SaveUserInput = reaper.GetExtState(section,"SaveUserInput");
+                SaveUserInput = Arc.iniFileReadLua(section,"SaveUserInput",ArcFileIni);
                 local retval, str = reaper.GetUserInputs(nameWin,1,'Name Fx or *number (by comma),extrawidth=150',SaveUserInput);
                 if retval then;
                     str = str:gsub(',',';');
-                    reaper.SetExtState(section,'SaveUserInput',str,true);
+                    --reaper.SetExtState(section,'SaveUserInput',str,true);
+                    Arc.iniFileWriteLua(section,"SaveUserInput",str,ArcFileIni);
                     SaveUserInput = str;
                 end;  
             end;
@@ -452,7 +476,8 @@
             gfx.rect(20,0,30,10,0);
             if ButtonMode == 2 then;
                 ---
-                ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
+                --ModeState = tonumber(reaper.GetExtState(section,"ModeState"))or 1;
+                ModeState = tonumber(Arc.iniFileReadLua(section,"ModeState",ArcFileIni))or 1;
                 local M1,M2;
                 if ModeState==1 then M1='!'M2=''elseif ModeState==2 then M1=''M2='!'else M1=''M2=''end;
                 gfx.x,gfx.y = gfx.screentoclient(reaper.GetMousePosition());
@@ -460,7 +485,8 @@
                 local showmenuMode = gfx.showmenu("#Mode:||"..M1.."Mode 1 (Default)|"..M2.."Mode 2 (Reflect)");
                 if showmenuMode > 0 then;
                     ModeState = showmenuMode-1;
-                    reaper.SetExtState(section,"ModeState",ModeState,true);
+                    --reaper.SetExtState(section,"ModeState",ModeState,true);
+                    Arc.iniFileWriteLua(section,"ModeState",ModeState,ArcFileIni);
                 end;
                 ---
             end;
@@ -487,7 +513,7 @@
         
         --- / Preset / ---------------------------------------------------------------
         -- reaper.DeleteExtState(section,"presetList",true);
-        
+        -- Arc.iniFileWriteLua(section,"presetList",'',ArcFileIni);
         
         local PresetButton = LeftMouseButton(0,0,9,9,'PresetButton');
         if PresetButton >= 0 then;
@@ -497,7 +523,8 @@
         
         if gfx.mouse_cap == 2 or PresetButton == 2 then;
              
-            local presetList = 'ALL&&&'..reaper.GetExtState(section,"presetList");
+            --local presetList = 'ALL&&&'..reaper.GetExtState(section,"presetList");
+            local presetList = 'ALL&&&'..Arc.iniFileReadLua(section,"presetList",ArcFileIni);
             ---
             local T_repetition = {};
             local presetList2 = '';
@@ -514,7 +541,8 @@
             
             if presetList ~= presetList2 then;
                 presetList = presetList2;
-                reaper.SetExtState(section,'presetList',presetList,true);
+                --reaper.SetExtState(section,'presetList',presetList,true);
+                Arc.iniFileWriteLua(section,"presetList",presetList,ArcFileIni);
             end;
             ---
             
@@ -541,7 +569,8 @@
                 if retval and #str:gsub('%s','') > 0 then;
                     str = str:gsub(',',';');
                     if presetList == ''then presetList = str else presetList = presetList..'&&&'..str end;
-                    reaper.SetExtState(section,"presetList",presetList,true);
+                    --reaper.SetExtState(section,"presetList",presetList,true);
+                    Arc.iniFileWriteLua(section,"presetList",presetList,ArcFileIni);
                 end;
                 ---
                 ---
@@ -566,7 +595,8 @@
                     end;
                     --- 
                     remExStat = remExStat:gsub('&&&$','');
-                    reaper.SetExtState(section,"presetList",remExStat,true);
+                    --reaper.SetExtState(section,"presetList",remExStat,true);
+                    Arc.iniFileWriteLua(section,"presetList",remExStat,ArcFileIni);
                     remExStat = nil;
                end;
                ------------------
@@ -579,7 +609,8 @@
                    local MB = reaper.MB("Eng:\nAccurately Delete ALL Presets ???\n\n"..
                                         "Rus:\nТочно Удалить ВСЕ Пресеты???","Remove All",1);
                    if MB == 1 then;
-                       reaper.DeleteExtState(section,"presetList",true);
+                       --reaper.DeleteExtState(section,"presetList",true);
+                       Arc.iniFileWriteLua(section,"presetList",'',ArcFileIni);
                    end; 
                end;
                
@@ -595,7 +626,8 @@
                        t = t + 1;
                        if t == showmenu-4 then;
                            SaveUserInput = S;
-                           reaper.SetExtState(section,'SaveUserInput',SaveUserInput,true);
+                           --reaper.SetExtState(section,'SaveUserInput',SaveUserInput,true);
+                           Arc.iniFileWriteLua(section,"SaveUserInput",SaveUserInput,ArcFileIni);
                       end;
                    end;
                end;
@@ -641,12 +673,14 @@
     --=======================================================================
     function exit();
         local _,PosX,PosY,_,_ = gfx.dock(-1,-1,-1,-1,-1);
-        reaper.SetExtState(section,"PositionWind",PosX.."&"..PosY.."&",true);
+        --reaper.SetExtState(section,"PositionWind",PosX.."&"..PosY.."&",true);
+        Arc.iniFileWriteLua(section,"PositionWind",PosX.."&"..PosY.."&",ArcFileIni,false,true);
         gfx.quit();
     end;
     --=======================================================================
     
-    
+    local scriptPath,scriptName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     
     loop();
+    Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,260,scriptPath,scriptName);
     reaper.atexit(exit);
