@@ -1,4 +1,4 @@
---[[ NEW INSTANCE
+--[[      NEW INSTANCE
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
@@ -58,11 +58,16 @@
     
     
     local STARTUP = 1; -- (Not recommended change)
-    --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
-    local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
-    reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
-    '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
-    --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+    end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
+    
+    
     
     
     -------------------------------------------------------
@@ -138,8 +143,6 @@
     ----------------------------------------------------------------
     local function main();
     
-        Arc.HelpWindowWhenReRunning(2,'',false,' - '..extname);
-        
         --- / Счетчик для пропуска / ---
         local function Counter();
             local t={};return function(x,b)b=b or 1 t[b]=(t[b]or 0)+1 if t[b]>(x or math.huge)then t[b]=0 end return t[b]end;  
@@ -156,10 +159,13 @@
         local function loop();
             if Counter(0,1) == 0 then;
                 ------------------
-                local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
-                local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+                --local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
+                local ExtState = Arc.iniFileReadLua(section,'TGL_SWITCH',ArcFileIni);
+                --local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+                local ExtStTGL = tonumber(Arc.iniFileReadLua(section,'TOGGLE_TRIM',ArcFileIni))or 0;
                 if ExtState ~= 'TRIM' or ExtStTGL == 0 then;
-                    reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+                    --reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+                    Arc.iniFileWriteLua(section,'TOGGLE_TRIM',0,ArcFileIni);
                     Arc.GetSetToggleButtonOnOff(0,1);
                     return;
                 end;
@@ -265,24 +271,30 @@
     
     ----------------------------------------------------------------
     local function run();
-        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+        --local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+        local ExtStTGL = tonumber(Arc.iniFileReadLua(section,'TOGGLE_TRIM',ArcFileIni))or 0;
         if ExtStTGL == 0 then;
             checkUndoItem();
-            reaper.SetExtState(section,'TGL_SWITCH','TRIM',true);
-            reaper.SetExtState(section,'TOGGLE_TRIM',1,true);
+            --reaper.SetExtState(section,'TGL_SWITCH','TRIM',true);
+            Arc.iniFileWriteLua(section,'TGL_SWITCH','TRIM',ArcFileIni);
+            --reaper.SetExtState(section,'TOGGLE_TRIM',1,true);
+            Arc.iniFileWriteLua(section,'TOGGLE_TRIM',1,ArcFileIni);
             Arc.GetSetToggleButtonOnOff(1,1);
             reaper.defer(main);
         else;
             Arc.GetSetToggleButtonOnOff(0,1);
-            reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+            --reaper.SetExtState(section,'TOGGLE_TRIM',0,true);
+            Arc.iniFileWriteLua(section,'TOGGLE_TRIM',0,ArcFileIni);
             refreshActionList(1,true);
         end;
     end;
     
     
     local function runFirst();
-        local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
-        local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+        --local ExtState = reaper.GetExtState(section,'TGL_SWITCH');
+        local ExtState = Arc.iniFileReadLua(section,'TGL_SWITCH',ArcFileIni);
+        --local ExtStTGL = tonumber(reaper.GetExtState(section,'TOGGLE_TRIM'))or 0;
+        local ExtStTGL = tonumber(Arc.iniFileReadLua(section,'TOGGLE_TRIM',ArcFileIni))or 0;
         if ExtState == 'TRIM' and ExtStTGL == 1 then;
             Arc.GetSetToggleButtonOnOff(1,1);
             reaper.defer(main);
@@ -327,6 +339,8 @@
                 Arc.SetStartupScript(scriptName,id,nil,"ONE");
             end;
         end;
+        reaper.defer(function();
+        Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,scriptPath,scriptName)end);
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------
