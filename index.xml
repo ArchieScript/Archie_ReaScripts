@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ccd3b57fed95f2f62cfd8c10a82e88c599d74e8f">
+<index version="1" name="Archie-ReaScripts" commit="9c7b81bbdaf6942cb7b69c7dbe3f3deeef6b7403">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4483,6 +4483,19 @@ v.1.0 [28.08.19]
     </reapack>
   </category>
   <category name="MAIN/Preferences">
+    <reapack name="Archie_Pref;  Allow keyboard commands even when mouse-editing.lua" type="script" desc="Pref;  Allow keyboard commands even when mouse-editing.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-12T16:08:15Z">
+        <changelog><![CDATA[v.1.0 [230320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9c7b81bbdaf6942cb7b69c7dbe3f3deeef6b7403/MAIN/Preferences/Archie_Pref;%20%20Allow%20keyboard%20commands%20even%20when%20mouse-editing.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Pref;  Antialiased peak and waveform drawing.lua" type="script" desc="Antialiased peak and waveform drawing">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
