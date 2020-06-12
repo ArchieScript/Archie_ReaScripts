@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d896159f3202424e0976790e9700aa9e2bfe08f9">
+<index version="1" name="Archie-ReaScripts" commit="ccd3b57fed95f2f62cfd8c10a82e88c599d74e8f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2541,6 +2541,11 @@ v.1.0 [28.08.19]
     + No changeе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/adc7b881f45e968850bf4a77a4f887748536edd4/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-12T16:03:35Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + No changeе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ccd3b57fed95f2f62cfd8c10a82e88c599d74e8f/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua">
       <metadata>
@@ -2584,6 +2589,11 @@ v.1.0 [28.08.19]
     + No changeе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/adc7b881f45e968850bf4a77a4f887748536edd4/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-12T16:03:35Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + No changeе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ccd3b57fed95f2f62cfd8c10a82e88c599d74e8f/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua">
       <metadata>
@@ -2626,6 +2636,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.07 [260520]
     + No changeе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/adc7b881f45e968850bf4a77a4f887748536edd4/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-06-12T16:03:35Z">
+        <changelog><![CDATA[v.1.07 [260520]
+    + No changeе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ccd3b57fed95f2f62cfd8c10a82e88c599d74e8f/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
