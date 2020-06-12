@@ -1,4 +1,4 @@
---[[ NEW INSTANCE
+--[[ 		NEW INSTANCE
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  Toggle Off medium mode collapse folder(AutoRun).lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Переключатель  Выключите средний режим сворачивания папки(АвтоЗапуск).lua
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -35,11 +35,15 @@
     
     
     local STARTUP = 1; -- (Not recommended change)
-    --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
-    local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
-    reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
-    '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
-    --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+    end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
+    
     
     
     local value,ScriptWay,sec,cmd,mod,res,val = reaper.get_action_context();
@@ -55,12 +59,15 @@
     --=========================================
     
     
+    
     --=========================================
     local function GetSetStateOnOff(set,state);-- 0/1
-        local Get = tonumber(reaper.GetExtState(extname,'ToggleState'))or 0;
+        --local Get = tonumber(reaper.GetExtState(extname,'ToggleState'))or 0;
+        local Get = tonumber(Arc.iniFileReadLua(extname,'ToggleState',ArcFileIni,false))or 0;
         if set ~= 1 then return Get end;
         if Get ~= state and set == 1 then;
-            reaper.SetExtState(extname,'ToggleState',state,true);
+            --reaper.SetExtState(extname,'ToggleState',state,true);
+            Arc.iniFileWriteLua(extname,'ToggleState',state,ArcFileIni,false,true);
         end;
     end;
     --=========================================
@@ -121,7 +128,7 @@
         if ChanInProj or tmr then;--CHANGES_PROJ
             ---
             local CountTracks = reaper.CountTracks(0);
-            if CountTracks > 0 then;
+            if CountTracks > 1 then;
                 ----
                 local x,y = reaper.GetMousePosition();
                 local tr, info = reaper.GetTrackFromPoint(x,y);
@@ -180,7 +187,6 @@
     
     ---------------------
     if not FirstRun then;
-        Arc.HelpWindowWhenReRunning(2,'',false,'!');
         local StateOnOff = GetSetStateOnOff(0,0);
         if StateOnOff == 0 then;
             loop();
@@ -219,6 +225,8 @@
                 Arc.SetStartupScript(scriptName,id,nil,"ONE");
             end;
         end;
+        reaper.defer(function();
+        Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,scriptPath,scriptName)end);
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------

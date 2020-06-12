@@ -1,4 +1,4 @@
---[[   NEW INSTANCE !!!
+--[[      NEW INSTANCE !!!
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)

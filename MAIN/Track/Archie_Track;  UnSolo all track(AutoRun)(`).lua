@@ -1,4 +1,4 @@
---[[ NEW INSTANCE
+--[[      NEW INSTANCE !!!
    * Тест только на windows  /  Test only on windows.
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnSolo all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -30,47 +30,18 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --====================================================================================== 
-    
+    -- DIFFERENCES-LOCK TRACKS / ОТЛИЧИЯ-БЛОКИРОВКА ТРЕКОВ
     
     
     local STARTUP = 1;  -- 0/1  -- (Not recommended change)
-    --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==================
-    local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua';L,A=pcall(dofile,P..F);if not L then
-    reaper.RecursiveCreateDirectory(P,0);reaper.ShowConsoleMsg("Error - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMissing file'..
-    '/ Отсутствует файл!\n'..P..F..'\n\n')return;end;if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A;--==
-    --==== FUNCTION MODULE FUNCTION ===================================================▲=▲=▲======= FUNCTION MODULE FUNCTION ==================
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.2",file,'')then;A=nil;return;end;return A;
+    end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    --=========================================
     
-    
-    
-    -------------------------------------------------------
-    local function Help(extname);
-        local StateHelp = reaper.GetExtState(extname,'StateHelp')=='';
-        if StateHelp then;
-            local MB = reaper.MB('Rus:\nПри появлении окна "ReaScript task control"\n'..
-                           'ставим галку "Remember my answer for this script"\n'..
-                           'и жмем "NEW INSTANCE"\n\n'..
-                           'Не показывать это окно - Ok\n\n\n'..
-                           'Eng:\n'..
-                           'When the "ReaScript task control"\n'..
-                           'window appears, tick "Remember my answer for this script"\n'..
-                           'and click "NEW INSTANCE"\n\n'..
-                           'Do not show this window-Ok'
-                           ,'Help',1);
-            if MB == 1 then;
-                local MB = reaper.MB('Rus:\nВажно: ЗАПОМНИ!!!\n\n'..
-                               'NEW INSTANCE !!!\n\n'..
-                               'NEW INSTANCE !!!\n\n\n'..
-                               'Eng:\nImportant: REMEMBER!!!\n\n'..
-                               'NEW INSTANCE !!!\n\n'..
-                               'NEW INSTANCE !!!\n\n\n'
-                               ,'NEW INSTANCE !!!',1);
-                if MB == 1 then;
-                    reaper.SetExtState(extname,'StateHelp','true',true);
-                end;
-            end;
-        end;
-    end;    
-    -------------------------------------------------------
     
     
     
@@ -131,14 +102,7 @@
         local AnyTrSolo = reaper.AnyTrackSolo(0);
         if AnyTrSolo then;
             ----
-            for i = 1, math.huge do;
-                local retval,key,val = reaper.EnumProjExtState(0,extname,0);
-                if retval then;
-                    reaper.SetProjExtState(0,extname,key,'');
-                else;
-                    break;
-                end;
-            end;
+            reaper.SetProjExtState(0,extname,'','');
             ---- 
             reaper.Undo_BeginBlock();
             reaper.PreventUIRefresh(1);
@@ -160,12 +124,12 @@
                     reaper.SetProjExtState(0,extname,key,'');
                     local track = reaper.BR_GetMediaTrackByGUID(0,key);
                     if track then;
-                        GetSetSoloTrackState(1,track,val);
                         if not UNDO then;
                             reaper.Undo_BeginBlock();
                             reaper.PreventUIRefresh(1);
                             UNDO = true;
                         end;
+                        GetSetSoloTrackState(1,track,val);
                     end;
                 else;
                     break;
@@ -208,8 +172,6 @@
         local _,NP,sec,cmd,_,_,_ = reaper.get_action_context();
         local extnameProj = NP:match('.+[/\\](.+)');
         local ActiveDoubleScr,stopDoubleScr;
-        
-        Help(extnameProj);
         
         local function loop();
             local tm = tmr(15);
@@ -313,6 +275,8 @@
                 Arc.SetStartupScript(scriptName,id,nil,"ONE");
             end;
         end;
+        reaper.defer(function();
+        Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,scriptPath,scriptName)end);
     end;
     reaper.defer(SetStartupScriptWrite);
     -----------------------------------------------------

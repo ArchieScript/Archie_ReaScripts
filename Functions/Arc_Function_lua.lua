@@ -1,9 +1,9 @@
-local VersionMod = "v.2.8.2"
+local VersionMod = "v.2.8.4"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.8.2
+   * Version:     2.8.4
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -176,7 +176,7 @@ do; T[#T+1] = v2; end; else; T[#T+1] = v; end; end; for _,v in pairs(T) do; if v
 function Arc_Module.iniFileWrite(section,key,value,iniFile,lua,clean); if lua==true then lua='--'else lua=''end; key = key:gsub('^[%s%;]*',''):gsub('\n',''):gsub('%=',''); value = tostring(value):gsub('\n',''); section = section:gsub('\n',''); local file = io.open(iniFile,'r'); if not file then; file
 = io.open(iniFile,'w'); file:close(); file = io.open(iniFile,'r'); end; local t = {}; for line in file:lines()do; table.insert(t,line); end; local t2 = {table.unpack(t)}; file:close(); table.insert(t,lua..'[{3D0ini0C8File5E8dummyE7CWriteD9F}]'); local section_found; for i = 1, #t do; if t[i]:match('^%s-'..lua..'%[%s-'..section:gsub('%p','%%%0')..'%s-%]')then;
 section_found = true; for i2 = i+1,#t do; if t[i2]:match('^%s-'..lua..'%[')then; if value ~= '' then; table.insert(t,i2,lua..key..'='..value); end; break; end; if t[i2]:match('^%s-'..lua..key:gsub('%p','%%%0')..'%s-%=.*')then; if value == '' then; t[i2] = ''; else; t[i2] = lua..key..'='..value; end;
-break; end; end; break; end; end; table.remove(t,#t); if not section_found then; if value ~= '' then; table.insert(t,lua..'['..section..']'); table.insert(t,lua..key..'='..value); end; end; local write = table.concat(t,'\n'); if write ~= table.concat(t2,'\n')then; if clean==true then write=write:gsub('\n\n','\n'):gsub('\n\n','\n')end;
+break; end; end; break; end; end; table.remove(t,#t); if not section_found then; if value ~= '' then; table.insert(t,lua..'['..section..']'); table.insert(t,lua..key..'='..value); end; end; local write = table.concat(t,'\n'); if write ~= table.concat(t2,'\n')then; if clean==true then write=write:gsub('^[\n%s]*',''):gsub('\n%s-\n','\n'):gsub('\n%s-\n','\n')end;
 file = io.open(iniFile,'w'); local wrt = file:write(write); file:close(); return type(wrt)=='userdata'; end; return false; end; iniFileWrite = Arc_Module.iniFileWrite; Arc_Module.iniFileWriteLua = Arc_Module.iniFileWrite; iniFileWriteLua = Arc_Module.iniFileWrite; function Arc_Module.iniFileRead(section,key,iniFile,lua);
 if lua==true then lua='--'else lua=''end; key = key:gsub('^[%s%;]*',''):gsub('\n',''):gsub('%=',''); section = section:gsub('\n',''); local file = io.open(iniFile,'r'); if not file then return '' end; local t = {}; for line in file:lines()do; table.insert(t,line); end; file:close(); for i = 1, #t do;
 if t[i]:match('^%s-'..lua..'%[%s-'..section:gsub('%p','%%%0')..'%s-%]')then; for i2 = i+1,#t do; if t[i2]:match('^%s-'..lua..'%[')then;return''end; if t[i2]:match('^%s-'..lua..key:gsub('%p','%%%0')..'%s-%=.*')then; return t[i2]:match('^%s-'..lua..key:gsub('%p','%%%0')..'%s-%=(.*)'); end; end; break;

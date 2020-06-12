@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -166,6 +166,7 @@
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
         if not A.VersArcFun("2.8.2",file,'')then A.no_undo()return;end;return A;
     end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
     local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
     --=========================================
     
