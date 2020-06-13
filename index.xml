@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b8ac605d3c19f95144bde44f9902c0b9703de01e">
+<index version="1" name="Archie-ReaScripts" commit="46c3bf89dbba561684c1d20974fb21f1f4b74602">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3545,17 +3545,15 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0707cf5c21e29288dc8535a5e4dfd4f7f4d3cf51/MAIN/Item/Archie_Item;%20%20Snap%20stretch%20markers%20to%20grid.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Item;  Solo selected item - Restore back.lua" type="script" desc="Item;  Solo selected item - Restore back.lua">
+    <reapack name="Archie_Item;  Solo selected item - Restore back(ctrl).lua" type="script" desc="Item;  Solo selected item - Restore back(ctrl).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-05-20T18:31:32Z">
-        <changelog><![CDATA[v.1.0 [180520]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/57daed1ca7c5a7b483058c103269310bf37f6977/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back.lua</source>
+      <version name="1.02" author="Archie" time="2020-06-13T08:23:31Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/46c3bf89dbba561684c1d20974fb21f1f4b74602/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back(ctrl).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
