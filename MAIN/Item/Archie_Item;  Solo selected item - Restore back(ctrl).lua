@@ -4,9 +4,9 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Item
-   * Description: Item;  Solo selected item - Restore back.lua
+   * Description: Item;  Solo selected item - Restore back(ctrl).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -18,6 +18,7 @@
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   
    *              v.1.0 [180520]
    *                  + initialе
 --]]
@@ -37,24 +38,20 @@
     
     
     
-    --==== FUNCTION MODULE FUNCTION ======================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ======
-    local P,F,L,A=reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions','/Arc_Function_lua.lua'; L,A=pcall(dofile,P..F);
-    if not L then reaper.RecursiveCreateDirectory(P,0);reaper.MB('Missing file / Отсутствует файл!\n\n'..P..F,"Error",0);return;end;
-    if not A.VersionArc_Function_lua("2.8.0",P,"")then A.no_undo() return end;local Arc=A; -- =====================================
-    --==== FUNCTION MODULE FUNCTION ====▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ======
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+    end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';
+    --=========================================
     
     
     
     ------------------------------------------
     local function cleanProjExtState(extname);
-        for i = 1,math.huge do;
-            local retval,key,value = reaper.EnumProjExtState(0,extname,0);
-            if retval then;
-                reaper.SetProjExtState(0,extname,key,'');
-            else;
-                break;
-            end;
-        end;
+        reaper.SetProjExtState(0,extname,'','');
     end;
     ------------------------------------------
     local function anyItemMute();
@@ -71,12 +68,13 @@
     
     
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
-    local extname = filename:match('.*[\\/](.+)$');
+    local ScrPath,ScrName = filename:match('(.+)[\\/](.+)$');
+    local extname = ScrName;
     local title1 = 'Solo Item';
     local title2 = 'UnSolo Item';
     local UNDO = nil;
     
-    Arc.HelpWindowWhenReRunning(2,'',false,extname);
+    
     
     --------------------------------------------------
     local CountItem = reaper.CountMediaItems(0);
@@ -101,6 +99,21 @@
         retval = nil;
     end;
     if retval then;
+        -----
+        if reaper.APIExists('JS_Mouse_GetState')then;
+            local MouseState = reaper.JS_Mouse_GetState(127);
+            if MouseState == 4 or MouseState == 5 then;
+                local MB = reaper.MB('точно сбросить сохранения?\n\nexactly reset the save?','',1)
+                if MB == 1 then;
+                    cleanProjExtState(extname);
+                    if Arc.GetSetToggleButtonOnOff(0,0)==1 then;
+                        Arc.GetSetToggleButtonOnOff(0,1);
+                    end;
+                else;
+                    return;
+                end;
+            end;
+        end;
         -----
         for i = 1,math.huge do;
             local retval,key,value = reaper.EnumProjExtState(0,extname,0);
@@ -214,8 +227,11 @@
         end;
         reaper.defer(loop);
     end;
-    reaper.defer(loop);
     
+    reaper.defer(function();
+    loop();
+    Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,ScrPath,ScrName);
+    end);
     
     
     
