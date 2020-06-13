@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="46c3bf89dbba561684c1d20974fb21f1f4b74602">
+<index version="1" name="Archie-ReaScripts" commit="b75cc18fd56027dd2b5c753eb708dbf6359e6fbf">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3553,7 +3553,7 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
       <version name="1.02" author="Archie" time="2020-06-13T08:23:31Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/46c3bf89dbba561684c1d20974fb21f1f4b74602/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back(ctrl).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b75cc18fd56027dd2b5c753eb708dbf6359e6fbf/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back(ctrl).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
