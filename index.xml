@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d480da558a6eb8860cfd62b7a4d78428d729c676">
+<index version="1" name="Archie-ReaScripts" commit="f31d545c4ff9a9caf92166df924ecb8cac89de61">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2705,6 +2705,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [130620]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d480da558a6eb8860cfd62b7a4d78428d729c676/MAIN/Item/Archie_Item;%20%20invert%20select%20items%20on%20its%20tracks%20in%20time%20selection.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-14T12:20:16Z">
+        <changelog><![CDATA[v.1.02 [140620]
+    + fixes bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f31d545c4ff9a9caf92166df924ecb8cac89de61/MAIN/Item/Archie_Item;%20%20invert%20select%20items%20on%20its%20tracks%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Move all notes in all midi items in semitones(User Input).lua" type="script" desc="Move all notes in all midi items in semitones(User Input)">
