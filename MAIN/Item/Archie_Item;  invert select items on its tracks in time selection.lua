@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item;  invert select items on its tracks in time selection.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * О скрипте:   инвертировать выделенные элементы на своих дорожках во временном выделении
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,7 +17,10 @@
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.0 [130620]
+   *              v.1.02 [140620]
+   *                  + fixes bug
+   
+   *              v.1.0 [10620]
    *                  + initialе
 --]]
     --======================================================================================
@@ -46,6 +49,7 @@
     local CountSelItems = reaper.CountSelectedMediaItems(0);
     if CountSelItems == 0 then no_undo();return end;
     
+    local t = {};
     local tbl = {};
     for i = 1, CountSelItems do;
         local itemSel = reaper.GetSelectedMediaItem(0,i-1);
@@ -54,9 +58,13 @@
         if MODE == 1 then len = 0.000000001 end;
         if pos < timeSelEnd and pos+len > timeSelStart then;
             local track = reaper.GetMediaItem_Track(itemSel);
-            tbl[#tbl+1] = track;
+            if not t[tostring(track)]then;
+                t[tostring(track)]=track;
+                tbl[#tbl+1] = track;
+            end;
         end;
     end;
+    
     
     if #tbl > 0 then;
         
@@ -83,7 +91,6 @@
         reaper.Undo_EndBlock('invert select items on its tracks in time selection',-1);
         reaper.UpdateArrange();
     end;
-    
     
     
     
