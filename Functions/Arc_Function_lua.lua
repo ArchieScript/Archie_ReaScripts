@@ -1,9 +1,9 @@
-local VersionMod = "v.2.8.4"
+local VersionMod = "v.2.8.5"
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.8.4
+   * Version:     2.8.5
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -186,5 +186,8 @@ break end; remT[#remT+1]=i2; end; break; end; end; for i = #remT,1,-1 do; table.
 Arc_Module.iniFileRemoveSectionLua=Arc_Module.iniFileRemoveSection; iniFileRemoveSectionLua=Arc_Module.iniFileRemoveSection; function Arc_Module.iniFileEnum(section,idx,iniFile,lua); if not tonumber(idx)then error('param 2(idx) - expected number',2)end; if lua==true then lua='--'else lua=''end; section
 = section:gsub('\n',''); local file = io.open(iniFile,'r'); if not file then return false,'','' end; local t = {}; for line in file:lines()do; table.insert(t,line); end; file:close(); for i = 1, #t do; if t[i]:match('^%s-'..lua..'%[%s-'..section:gsub('%p','%%%0')..'%s-%]')then; local j = 0; for i2 =
 i+1,#t do; if t[i2]:match('^%s-'..lua..'%[')then break end; local key,val = t[i2]:match('(.+)=(.*)'); if key and val then; key = key:gsub( ('^%s-'..lua:gsub('%p','%%%0')),''); if j == tonumber(idx) then return true,key,val end; j = j + 1; end; end; break; end; end; return false,'',''; end; iniFileEnum
-= Arc_Module.iniFileEnum; Arc_Module.iniFileEnumLua=Arc_Module.iniFileEnum; iniFileEnumLua=Arc_Module.iniFileEnum; local function local_ChangesInProject(); local ProjState2 = {}; function Arc_Module.ChangesInProject(buf); buf = buf or ''; local ret; local ProjState = reaper.GetProjectStateChangeCount(0);
-if not ProjState2[buf] or ProjState2[buf] ~= ProjState then ret = true end; ProjState2[buf] = ProjState; return ret == true; end; end;local_ChangesInProject(); return Arc_Module;
+= Arc_Module.iniFileEnum; Arc_Module.iniFileEnumLua=Arc_Module.iniFileEnum; iniFileEnumLua=Arc_Module.iniFileEnum; function Arc_Module.iniFileReadSection(section,iniFile,lua); if lua==true then lua='--'else lua=''end; section = section:gsub('\n',''); local file = io.open(iniFile,'r'); if not file then
+return {} end; local t = {}; for line in file:lines()do; table.insert(t,line); end; file:close(); local tbl = {}; for i = 1,#t do; if t[i]:match('^%s-'..lua..'%[%s-'..section:gsub('%p','%%%0')..'%s-%]')then; for i2 = i+1,#t do; if t[i2]:match('^%s-'..lua..'%[')then;return tbl end; local key,val = t[i2]:match('(.+)=(.+)');
+if key and val then; tbl[#tbl+1]={}; tbl[#tbl].key=key; tbl[#tbl].val=val; end; end; break; end; end; return tbl; end; iniFileReadSection = Arc_Module.iniFileReadSection; Arc_Module.iniFileReadSectionLua = Arc_Module.iniFileReadSection; iniFileReadSectionLua = Arc_Module.iniFileReadSection; local function
+local_ChangesInProject(); local ProjState2 = {}; function Arc_Module.ChangesInProject(buf); buf = buf or ''; local ret; local ProjState = reaper.GetProjectStateChangeCount(0); if not ProjState2[buf] or ProjState2[buf] ~= ProjState then ret = true end; ProjState2[buf] = ProjState; return ret == true;
+end; end;local_ChangesInProject(); return Arc_Module;
