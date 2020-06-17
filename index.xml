@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d23a5ff408036e40f88d4ae369c30c0d9509cac6">
+<index version="1" name="Archie-ReaScripts" commit="ae6b3a9467d3cf5fe48cd513055d07847d7337d3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1260,6 +1260,19 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/FX/Archie_FX;%20%20Open%20first%20instrument%20in%20Selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fx;  Rename all fx in selected tracks with specific name in specific name.lua" type="script" desc="Fx;  Rename all fx in selected tracks with specific name in specific name.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-17T07:00:01Z">
+        <changelog><![CDATA[v.1.0 [170620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae6b3a9467d3cf5fe48cd513055d07847d7337d3/MAIN/FX/Archie_Fx;%20%20Rename%20all%20fx%20in%20selected%20tracks%20with%20specific%20name%20in%20specific%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Rename Fx in selected tracks to preset name.lua" type="script" desc="Rename Fx in selected tracks to preset name">
