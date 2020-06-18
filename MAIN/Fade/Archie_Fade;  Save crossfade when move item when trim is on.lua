@@ -6,7 +6,7 @@
    * Category:    Fade
    * Description: Save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
@@ -20,9 +20,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.05 [19.06.20]
+   *                  +  fixed bug (http://forum.cockos.com/showpost.php?p=2306049&postcount=20)
+   
    *              v.1.04 [28.08.19]
    *                  +  Remove Enable "Overlap and crossfade items when splitting-length"
-   
    *              v.1.03 [28.08.19]
    *                  +  Disable "Show overlapping media items in lanes" due to incompatibility
    *              v.1.02 [28.08.19]
@@ -251,7 +253,14 @@
                 if fadeOut == 0 then;
                     fadeOut = reaper.GetMediaItemInfo_Value(item,"D_FADEOUTLEN");    
                 end;
-                  
+                
+                ----(v.1.05
+                if DisableAutoCros then;
+                    reaper.Main_OnCommand(41118,0);--Enable auto-crossfades
+                    DisableAutoCros = nil;
+                end;
+                ----v.1.05)
+                
                 local trackIt = reaper.GetMediaItemInfo_Value(item, "P_TRACK");
                 local CountTracItem = reaper.CountTrackMediaItems(trackIt);
                 for i = 1,CountTracItem do;
@@ -269,10 +278,12 @@
                         Arc.SetMediaItemLeftTrim2(pos2-fadeOut,item2); 
                     end;
                 end;
+                --[[v.1.05
                 if DisableAutoCros then;
                     reaper.Main_OnCommand(41118,0);--Enable auto-crossfades
                     DisableAutoCros = nil;
                 end;
+                --]]
                 MousItActive = nil;
             end;
         end;
