@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Split (selected) item(s) under mouse cursor (select right)
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: Split selected item(s) under mouse cursor and all selected items 
                             in this position or item under mouse cursor (select right)
                             PLEASE NOTE THE SETTINGS BELOW
@@ -14,7 +14,9 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Customer:    HDVulcan(RMM Forum)
    * Gave idea:   Supa75  (RMM Forum)
-   * Changelog:   +! Fixed bugs when cutting at the point of zero / v.1.06
+   * Changelog:   
+                  +!Fixed bugs Empty Item
+                  +! Fixed bugs when cutting at the point of zero / v.1.06
                   + Added ability to smart deselect previous items / v. 1. 05
                   + Added ability to select, deselect previous items / v. 1. 05
                   + Added the Smart Split / v.1.04
@@ -262,7 +264,14 @@
 
 
     local take = reaper.GetActiveTake(item);
-    local TakeIsMIDI = reaper.TakeIsMIDI(take);
+    ---
+    local TakeIsMIDI;
+    if item and not take then;
+        TakeIsMIDI = true;
+    else;
+        TakeIsMIDI = reaper.TakeIsMIDI,take;
+    end;
+    ---
     if TakeIsMIDI == true then;
         if MIDI_item <= 0 then;
             SnapGrid = 0;
