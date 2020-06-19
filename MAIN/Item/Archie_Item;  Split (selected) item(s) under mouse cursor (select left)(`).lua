@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Split (selected) item(s) under mouse cursor (select left)
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Split selected item(s) under mouse cursor and all selected items 
                             in this position or item under mouse cursor(select left)
                             PLEASE NOTE THE SETTINGS BELOW
@@ -15,21 +15,23 @@
    * Customer:    Supa75(RMM Forum)
    * Gave idea:   Supa75(RMM Forum)
    * Changelog:   
-                  +!Fixed bugs Empty Item
-                  +! Fixed bugs when cutting at the point of zero / v.1.06
-                  + Added ability to smart deselect previous items / v. 1. 05
-                  + Added ability to select, deselect previous items / v. 1. 05
-                  + Added the Smart Split / v.1.04
-                  +! Fixed bugs with highlighting on last grid tick marks / v.1.03
-                  + added the ability to control crossfade and overlap / v.1.02
-                  + Added the ability to regulate fade-in / fade - out in the cut / v.1.01      
-                  +! Устранены ошибки при разрезании в точке нуля / v.1.06
-                  + Добавлена возможность умного снятия выделения с предыдущих айтемов / v.1.05
-                  + Добавлена возможность выбора снятия выделения с предыдущих айтемов / v.1.05
-                  + Добавлено умное разрезание / v.1.04
-                  +! Устранены ошибки с выделением на последних делениях сетки / v.1.03
-                  + добавлена возможность регулирования перекрестным затуханием с перекрытием / v.1.02                 
-                  + Добавлена возможность регулирования усилением затуханием при разрезе / v.1.01                                     
+   *              + REMOVE ITEM (LEFT / RIGHT) /  v.1.09
+   
+   *              +!Fixed bugs Empty Item /  v.1.08
+   *              +! Fixed bugs when cutting at the point of zero / v.1.06
+   *              + Added ability to smart deselect previous items / v. 1. 05
+   *              + Added ability to select, deselect previous items / v. 1. 05
+   *              + Added the Smart Split / v.1.04
+   *              +! Fixed bugs with highlighting on last grid tick marks / v.1.03
+   *              + added the ability to control crossfade and overlap / v.1.02
+   *              + Added the ability to regulate fade-in / fade - out in the cut / v.1.01      
+   *              +! Устранены ошибки при разрезании в точке нуля / v.1.06
+   *              + Добавлена возможность умного снятия выделения с предыдущих айтемов / v.1.05
+   *              + Добавлена возможность выбора снятия выделения с предыдущих айтемов / v.1.05
+   *              + Добавлено умное разрезание / v.1.04
+   *              +! Устранены ошибки с выделением на последних делениях сетки / v.1.03
+   *              + добавлена возможность регулирования перекрестным затуханием с перекрытием / v.1.02                 
+   *              + Добавлена возможность регулирования усилением затуханием при разрезе / v.1.01                                     
 --=============================================================================================]]
 
 
@@ -141,7 +143,14 @@
                -- Selected = 1 | THE SCRIPT WILL ONLY WORK ON THE SELECTED ITEM
                -- DOESN'T WORK IF "SmartSplit = 1"
                --==============================================================
-
+    
+    
+    local REMOVE_ITEM = -1;
+                  -- =  0; NOT REMOVE ITEM
+                  -- = -1; REMOVE LEFT ITEM
+                  -- =  1; REMOVE RIGHT ITEM
+                  --========================
+    
 
 
 
@@ -241,6 +250,15 @@
                 reaper.SetMediaItemInfo_Value(Split, "B_UISEL",0);
                 Set_fadeInOut_OverlapCrossFade(Split, "D_FADEINLEN" , Val_Fade_In_Out, 0);
                 Set_fadeInOut_OverlapCrossFade(item , "D_FADEOUTLEN", Val_Fade_In_Out, Length_Item);
+                ----
+                if REMOVE_ITEM == 1 then;
+                    reaper.DeleteTrackMediaItem(tr,Split);
+                    Split = item;
+                elseif REMOVE_ITEM == -1 then;
+                    reaper.DeleteTrackMediaItem(tr,item);
+                    item = Split;
+                end;
+                ----
             end;
         end;
         return TrackNumber,Split,item;
