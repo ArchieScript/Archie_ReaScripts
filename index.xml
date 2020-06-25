@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8df79bf5d352ef8e7f3d594a0393a0dd76a95c88">
+<index version="1" name="Archie-ReaScripts" commit="21f6b4bf46a6d44cf2ff7a654f8719318d2130c3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -9335,6 +9335,19 @@ v.1.0 [150320]
       "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
       Only relevant if the list was created in version 1.15+]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/f04998df817cbf157b0b24c37b9e18cfbc43ebe6/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor;  Scroll vertically (MIDI relativemousewheel)(3x).lua" type="script" desc="MidiEditor;  Scroll vertically (MIDI relative/mousewheel)(3x).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-25T12:10:56Z">
+        <changelog><![CDATA[v.1.0 [250620]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/21f6b4bf46a6d44cf2ff7a654f8719318d2130c3/MIDI%20Editor/Archie_MidiEditor;%20%20Scroll%20vertically%20(MIDI%20relativemousewheel)(3x).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Select only chords (unevenness interval is 1-16).lua" type="script" desc="MidiEditor;  Select only chords (unevenness interval is 1/16).lua">
