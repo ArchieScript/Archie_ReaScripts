@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Render
-   * Description: Render track into one new track (Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
+   * Description: Render track into one new track mono(Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
    * Version:     2.0
@@ -25,10 +25,12 @@
    *              v.1.04 [240320]
    *                  + Path from the project settings
    *              v.1.03 [07.02.20]
-   *                  + Fixed bug: No signal when render in single track when route is disabled 
+   *                  + Fixed bug: No signal when render in single track when route is disabled
    *              v.1.02 [29.01.20]
    *                  + Fixed: Path MacOs
 --]]
+    
+    
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================    
@@ -68,11 +70,11 @@
         --------------------------------------------------------------------------------
           
     
-    local channelsRend = 2  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
+    local channelsRend = 1  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
           ------------------------------------------------------------------
           
     
-    local monoInMono =  1
+    local monoInMono =  0
                   -- = -1  'моно в моно, мульти в мульти' Взависимости от галок из окна рендера
                   -- =  0  'моно в моно, мульти в мульти' Отключить
                   -- =  1  'моно в моно, мульти в мульти' Включить
@@ -188,7 +190,7 @@
                -----------------------------------
     
     
-    local PreFx = true
+    local PreFx = false
              -- = true  Перед Эффектами / PreFx
              -- = false После Эффектов  / PostFx
              -----------------------------------
@@ -206,7 +208,7 @@
                     -- = false рендерить только выделенные треки,
                     --         не обращая внимания на мастер трек
                     ---------------------------------------------
-                       
+          
     
     
     local IGNORE_SEND = true
@@ -269,11 +271,10 @@
                          ---------------------------------------------
                    
           
-    local TITLE = "Render track into one new track ((Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )" 
+    local TITLE = "Render track into one new track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )" 
              -- = "Строка истории отмены, если хотите изменить"
              --------------------------------------------------
-    
-    
+       
     
     
     
@@ -331,7 +332,7 @@
         --    = 13 |    32 bit FP - 96db floor
         --------------------------------------
     ------------------------------------------------------------------ 
-      
+    
     
     
     --======================================================================================

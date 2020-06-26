@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Render
-   * Description: Render track into one new track (Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
+   * Description: Render track into one new track mono(Pre Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
    * Version:     2.0
@@ -68,11 +68,11 @@
         --------------------------------------------------------------------------------
           
     
-    local channelsRend = 2  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
+    local channelsRend = 1  -- Рендер в =1 моно / =2 стерео /=4/=6/=8 и т.д.
           ------------------------------------------------------------------
           
     
-    local monoInMono =  1
+    local monoInMono =  0
                   -- = -1  'моно в моно, мульти в мульти' Взависимости от галок из окна рендера
                   -- =  0  'моно в моно, мульти в мульти' Отключить
                   -- =  1  'моно в моно, мульти в мульти' Включить

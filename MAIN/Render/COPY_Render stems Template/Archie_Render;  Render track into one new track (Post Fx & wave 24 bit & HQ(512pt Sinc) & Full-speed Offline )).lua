@@ -7,7 +7,7 @@
    * Description: Render track into one new track (Post Fx & wave 24 bit & HQ(512pt Sinc) & Full-speed Offline )
    * >>>          (COPY) >>> Render stems Template(`)
    * Author:      Archie
-   * Version:     1.12
+   * Version:     2.0
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,9 +16,10 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              ---
+   
    *              v.1.12 [090620]
    *                  + Capture SEND (Render in one track)
-   
    *              v.1.11 [090620]
    *                  + fixed bug
    *              v.1.04 [240320]
@@ -943,7 +944,7 @@
         reaper.GetSetProjectInfo_String(0,"RENDER_PATTERN",Render_Name,true);
     end;
     ------------------------------------------
-    
+
      
     -- / render directory / ------------------
     if Render_Directory ~= -1 then;
@@ -997,7 +998,7 @@
         reaper.GetSetProjectInfo(0,"RENDER_TAILMS",TailTime,1);
     end;
     ------------------------------------------
-    
+   
     
     -- / Sample rate / -----------------------
     reaper.GetSetProjectInfo(0,"RENDER_SRATE",tonumber(SampleRate) or 0,1);--Sample rate --0 default
@@ -1159,6 +1160,3 @@
     -----
     -------------------------------------------------------------------------------------------
     no_undo();
-    
-    
-    

@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     1.12
+   * Version:     2.0
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -18,9 +18,10 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              ----
+   
    *              v.1.12 [090620]
    *                  + Capture SEND (Render in one track)
-   
    *              v.1.11 [090620]
    *                  +! fixed bug
    *              v.1.08 [240320]
@@ -688,6 +689,15 @@
             end;
             
             
+            --(v.2.0 -----------
+            local ChanTr;
+            for i = 1, reaper.CountSelectedTracks(0) do;
+                local track = reaper.GetSelectedTrack(0,i-1);
+                local ChanTr1 = reaper.GetMediaTrackInfo_Value(track,"I_NCHAN");
+                local ChanTr2 = math.max(ChanTr1,(ChanTr2 or 0));
+                ChanTr = ChanTr2;
+            end
+            --v.2.0)------------
             
             
             
@@ -717,6 +727,11 @@
             reaper.SetMediaTrackInfo_Value(Track,"D_VOL",1);
             reaper.SetMediaTrackInfo_Value(Track,"I_FOLDERDEPTH",1);
             ---
+            
+            --(v.2.0 -----------
+            reaper.SetMediaTrackInfo_Value(Track,"I_NCHAN",ChanTr);
+            --v.2.0)------------
+            
             ---
             for iSnd = 1,reaper.CountSelectedTracks(0) do;
                 local TrSnd = reaper.GetSelectedTrack(0,iSnd-1);
