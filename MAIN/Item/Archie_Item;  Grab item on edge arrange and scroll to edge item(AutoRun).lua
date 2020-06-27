@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.10
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
@@ -22,9 +22,9 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   
    *              v.1.07 [260520]
    *                  + No changeе
-   
    *              v.1.06 [250520]
    *                  + refresh State Action List
    *              v.1.05 [250520]
@@ -56,7 +56,7 @@
     --======================================================================================
     
     
-    
+    local STARTUP = 1; -- (Not recommended change)
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
@@ -139,7 +139,7 @@
     
     
     ----------------------------------------------------------------
-    local function main();
+    local function main(FirstRn);
         
         --- / Счетчик для пропуска / ---
         local function Counter();
@@ -256,7 +256,9 @@
                 end;
             end;
             ------------------
-            refreshActionList(3);
+            if not FirstRn then;
+                refreshActionList(3);
+            end;
             reaper.defer(loop);
         end;
         reaper.defer(loop);
@@ -293,7 +295,7 @@
         local ExtStTGL = tonumber(Arc.iniFileReadLua(section,'TOGGLE_SCROLL',ArcFileIni))or 0;
         if ExtState == 'SCROLL' and ExtStTGL == 1 then;
             Arc.GetSetToggleButtonOnOff(1,1);
-            reaper.defer(main);
+            reaper.defer(function()main(true)end);
         end;
     end;
     ----------------------------------------------------------------

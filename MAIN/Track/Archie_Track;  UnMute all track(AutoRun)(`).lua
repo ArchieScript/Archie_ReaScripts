@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnMute all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.10
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -17,9 +17,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.10 [270620]
+   *                  + refresh Action List off
+   
    *              v.1.07 [260520]
    *                  + Restore Mute track (Doesn't pay attention to blocked tracks)
-   
    *              v.1.06 [240520]
    *                  + No changeе
    *              v.1.04 [31.03.20]
@@ -207,8 +209,8 @@
                         if reaper.GetToggleCommandStateEx(sec,cmd)~=1 then;
                             reaper.SetToggleCommandState(sec,cmd,1);
                             reaper.RefreshToolbar2(sec,cmd);
-                            refreshActionList();
-                            reaper.SetCursorContext(0,nil);
+                            --refreshActionList();
+                            --reaper.SetCursorContext(0,nil);
                         end;
                         Repeat_On = true;
                         Repeat_Off = nil;
@@ -216,8 +218,8 @@
                         if reaper.GetToggleCommandStateEx(sec,cmd)~=0 then;
                             reaper.SetToggleCommandState(sec,cmd,0);
                             reaper.RefreshToolbar2(sec,cmd);
-                            refreshActionList();
-                            reaper.SetCursorContext(0,nil);
+                            --refreshActionList();
+                            --reaper.SetCursorContext(0,nil);
                         end;
                         Repeat_Off = true;
                         Repeat_On = nil;
