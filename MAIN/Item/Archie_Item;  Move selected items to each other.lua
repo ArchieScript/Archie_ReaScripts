@@ -6,7 +6,8 @@
    * Category:    Item
    * Description: Item;  Move selected items to each other.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
+   * О скрипте:   Переместить выбранные элементы друг к другу
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -17,7 +18,7 @@
    * Extension:   Reaper 6.12+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    * Changelog:   
-   *              v.1.0 [270620]
+   *              v.1.01 [270620]
    *                  + initialе
 --]]
     --======================================================================================
