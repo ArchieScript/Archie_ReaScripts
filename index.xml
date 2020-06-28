@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f4e45e8eeced9140a826c864cc1c6c5e888bbe99">
+<index version="1" name="Archie-ReaScripts" commit="2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -439,6 +439,11 @@ LUA_Lib
     + ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4bf90effb7ee9f8efcce8adf5615ff2fd991be49/MAIN/Edit%20cursor/Arc_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20last%20start%20of%20play%20cursor.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [26.09.19]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Edit%20cursor/Arc_Edit%20cursor;%20%20Move%20edit%20cursor%20to%20last%20start%20of%20play%20cursor.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Edit cursor;  Auto edit cursor under mouse.lua" type="script" desc="Edit cursor;  Auto edit cursor under mouse.lua">
       <metadata>
@@ -456,6 +461,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.02 [030620]
     + ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f612f9fd2769c2013b8fbd6bbd73ef5be224ba2b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Auto%20edit%20cursor%20under%20mouse.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [030620]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20%20Auto%20edit%20cursor%20under%20mouse.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor;  Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
@@ -740,6 +750,11 @@ LUA_Lib
 +  Добавлена возможность выделения трека / v.1.02 [280219] ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/a96289494aa0ce5d146be0bd3aa23300b9a75baa/MAIN/Envelope/Archie_Env;%20%20Show%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Added the ability to select a track / v.1.02 [280219] 
++  Добавлена возможность выделения трека / v.1.02 [280219] ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Envelope/Archie_Env;%20%20Show%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Env;  Show-hide track envelope last touched FX parameter(add point in start of time selection)(`).lua" type="script" desc="Show-hide track envelope last touched FX parameter(add point in start of time selection)">
       <metadata>
@@ -760,6 +775,11 @@ LUA_Lib
         <changelog><![CDATA[+  Added the ability to select a track / v.1.03 [280219] 
 +  Добавлена возможность выделения трека / v.1.03 [280219] ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7408c4b1901bda52455005a27349c0af84505896/MAIN/Envelope/Archie_Env;%20%20Show-hide%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection)(%60).lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Added the ability to select a track / v.1.03 [280219] 
++  Добавлена возможность выделения трека / v.1.03 [280219] ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Envelope/Archie_Env;%20%20Show-hide%20track%20envelope%20last%20touched%20FX%20parameter(add%20point%20in%20start%20of%20time%20selection)(%60).lua</source>
       </version>
     </reapack>
   </category>
@@ -1006,6 +1026,10 @@ v.1.0 [28.08.19]
       <version name="1.04" author="Archie" time="2019-03-31T14:26:31Z">
         <changelog><![CDATA[+  Add Fx to Master Track / v.1.04 [30.03.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Add Fx to Master Track / v.1.04 [30.03.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Bypass all FX all track.lua" type="script" desc="Bypass all FX all track">
@@ -1308,6 +1332,11 @@ v.1.0 [28.08.19]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/497642ca1aa5e41fa17e45b15e17fcaba23b9277/MAIN/FX/Archie_FX;%20%20Rename%20Fx%20in%20selected%20tracks%20to%20preset%20name.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [28.09.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Rename%20Fx%20in%20selected%20tracks%20to%20preset%20name.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_FX;  Rename last selected FX in chain in selected tracks to preset name.lua" type="script" desc="Rename last selected FX in chain in selected tracks to preset name">
       <metadata>
@@ -1319,6 +1348,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [28.09.19]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/497642ca1aa5e41fa17e45b15e17fcaba23b9277/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20in%20selected%20tracks%20to%20preset%20name.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [28.09.19]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20in%20selected%20tracks%20to%20preset%20name.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Show all active floating FX windows for selected tracks.lua" type="script" desc="Show all active floating FX windows for selected tracks">
@@ -1345,6 +1379,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-03-31T14:26:31Z">
         <changelog><![CDATA[+  initialе / v.1.0 [31032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/461abd46d536f9f227074a642ab2964aef325aee/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20by%20name%20to%20selected%20tracks%20+%20Master%20track.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [31032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20by%20name%20to%20selected%20tracks%20+%20Master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua" type="script" desc="Smart template - Add Fx chain by name for selected items or in time selection">
@@ -1376,6 +1414,10 @@ v.1.0 [28.08.19]
       <version name="1.05" author="Archie" time="2019-11-25T06:22:24Z">
         <changelog><![CDATA[+  Add support for formats DDP,FLAC,MP3,OGG VORBIS,OGG OPUS,WV / v.1.05 [25112019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6ed7bc965166767e4387785e054da5aaa9db8ec4/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
+      </version>
+      <version name="1.06" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Add support for formats DDP,FLAC,MP3,OGG VORBIS,OGG OPUS,WV / v.1.05 [25112019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Smart template - Add Fx chain by name for selected tracks.lua" type="script" desc="Smart template - Add Fx chain by name for selected tracks">
@@ -1681,6 +1723,9 @@ v.1.0 [28.08.19]
       <version name="1.05" author="Archie" time="2019-02-16T09:48:14Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4e20074a448ab7769c2b0e70ebf49d9371a14106/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on(%60).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Grid/Archie_Grid;%20%20Free%20movement%20of%20item(s)%20when%20snap%20to%20grid%20is%20on(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Grid;  Move select items to next grid.lua" type="script" desc="Move select items to next grid">
       <metadata>
@@ -1835,6 +1880,41 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 31 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
         <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 32 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 01 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 02 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 03 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 04 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 05 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 06 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 07 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 08 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 09 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 10 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 11 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 12 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 13 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 14 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 15 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 16 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 17 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 18 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 19 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 20 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 21 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 22 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 23 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 24 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 25 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 26 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 27 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 28 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 29 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 30 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 31 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Mute Unmute all tracks in group 32 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Mute%20Unmute%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Group;  Toggle Solo Unsolo all tracks in group n (`).lua" type="script" desc="Toggle Solo Unsolo all tracks in group n">
       <metadata>
@@ -1876,6 +1956,41 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 30 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 31 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
         <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 32 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d39cd79d514191abcffd5490b7d58136dd15e6b/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [27.12.18]]]></changelog>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 01 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 02 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 03 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 04 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 05 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 06 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 07 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 08 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 09 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 10 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 11 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 12 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 13 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 14 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 15 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 16 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 17 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 18 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 19 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 20 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 21 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 22 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 23 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 24 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 25 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 26 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 27 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 28 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 29 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 30 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 31 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
+        <source main="main" file="Archie_Group;  Toggle Solo Unsolo all tracks in group 32 (`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Group/Archie_Group;%20%20Toggle%20Solo%20Unsolo%20all%20tracks%20in%20group%20n%20(%60).lua</source>
       </version>
     </reapack>
   </category>
@@ -2039,6 +2154,9 @@ v.1.0 [28.08.19]
       <version name="1.04" author="Archie" time="2020-06-12T17:35:01Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b8ac605d3c19f95144bde44f9902c0b9703de01e/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Gui; Toggle Remove necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Remove necessary Fx in selected tracks(user input)">
       <metadata>
@@ -2053,6 +2171,9 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.02" author="Archie" time="2020-06-12T17:35:01Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b8ac605d3c19f95144bde44f9902c0b9703de01e/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
     </reapack>
   </category>
@@ -2088,6 +2209,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.21 [240520]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2a5802b17ad15cd669464ded5792d7c4a2ceeaf7/MAIN/Info/Archie_Info;%20%20Counter%20time%20project(AutoRun).lua</source>
+      </version>
+      <version name="1.22" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.21 [240520]
+    + No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Info/Archie_Info;%20%20Counter%20time%20project(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Info;  Learn what script are used in custom actions and cycle action.lua" type="script" desc="Learn what script are used in custom actions and cycle action">
@@ -2293,6 +2419,11 @@ v.1.0 [28.08.19]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e24fea364959ba4632c4fddcaa25afaf18eb00e0/MAIN/Item/Archie_Item;%20%20Change%20volume%20items%20in%20time%20selection%20on%20selected%20tracks(ctrl+script%20to%20set%20the%20value).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [24072019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Change%20volume%20items%20in%20time%20selection%20on%20selected%20tracks(ctrl+script%20to%20set%20the%20value).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Change volume of selected items to (ctrl+script to set value).lua" type="script" desc="Change volume of selected items to (ctrl+script to set the value)">
       <metadata>
@@ -2309,6 +2440,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [07062019]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e24fea364959ba4632c4fddcaa25afaf18eb00e0/MAIN/Item/Archie_Item;%20%20Change%20volume%20of%20selected%20items%20to%20(ctrl+script%20to%20set%20value).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [07062019]
+    +  initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Change%20volume%20of%20selected%20items%20to%20(ctrl+script%20to%20set%20value).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Copy source media file of all items to project directory.lua" type="script" desc="Copy source media file of all items to project directory (all take)">
@@ -2367,6 +2503,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20grid%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db)(%60).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20grid%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Cut silence by measure from selected items to created track under item(-80 db)(`).lua" type="script" desc="Cut silence by measure from selected items to created track under item">
       <metadata>
@@ -2384,6 +2525,12 @@ v.1.0 [28.08.19]
 +  lock second run / v.1.01 [15.01.2019];]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20measure%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db)(%60).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  
++  lock second run / v.1.01 [15.01.2019];]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Cut%20silence%20by%20measure%20from%20selected%20items%20to%20created%20track%20under%20item(-80%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Cut silence from selected items to created track under item (-80 db)(`).lua" type="script" desc="Cut silence from selected items to created track under item">
       <metadata>
@@ -2399,6 +2546,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item%20(-80%20db)(%60).lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Cut%20silence%20from%20selected%20items%20to%20created%20track%20under%20item%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  De stutter 1.2 items.lua" type="script" desc="De stutter 1.2 items">
@@ -2441,6 +2593,12 @@ v.1.0 [28.08.19]
 +  initialе / v.1.0 [20.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20(time%20selection)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  
++  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20(time%20selection)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Delete selected items in time selection' if any (smart delete)(`).lua" type="script" desc="Delete selected items in time selection' if any(smart delete)">
       <metadata>
@@ -2457,6 +2615,12 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  
 +  initialе / v.1.0 [20.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20in%20time%20selection'%20if%20any%20(smart%20delete)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  
++  initialе / v.1.0 [20.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Delete%20selected%20items%20in%20time%20selection'%20if%20any%20(smart%20delete)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Delete selected items in time selection(`).lua" type="script" desc="Delete selected items in time selection">
@@ -2593,6 +2757,9 @@ v.1.0 [28.08.19]
       <version name="1.10" author="Archie" time="2020-06-27T07:26:24Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua">
       <metadata>
@@ -2643,6 +2810,9 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.10" author="Archie" time="2020-06-27T07:26:24Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua">
@@ -2695,6 +2865,9 @@ v.1.0 [28.08.19]
       <version name="1.10" author="Archie" time="2020-06-27T07:26:24Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
       <metadata>
@@ -2715,6 +2888,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-02-16T19:48:31Z">
         <changelog><![CDATA[+  initialе / v.1.0 [17022019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5ced598874400c09810bb27d30b77a8757375198/MAIN/Item/Archie_Item;%20%20Ignore%20item(s)%20lock%20with%20Ctrl%20Shift%20or%20Alt%20+%20left%20%20click.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [17022019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Ignore%20item(s)%20lock%20with%20Ctrl%20Shift%20or%20Alt%20+%20left%20%20click.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Insert item under mouse cursor.lua" type="script" desc="Insert item under mouse cursor">
@@ -3183,6 +3360,12 @@ v.1.0 [28.08.19]
 +  initialе / v.1.0 [16.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  
++  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence by grid in selected media items (-80 db)(`).lua" type="script" desc="Remove silence by grid in selected media items (-80 db)">
       <metadata>
@@ -3198,6 +3381,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20grid%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence by measure in selected media items (-60 db)(`).lua" type="script" desc="Remove silence by measure in selected media items (-60 db)">
@@ -3216,6 +3404,12 @@ v.1.0 [28.08.19]
 +  initialе / v.1.0 [16.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  
++  initialе / v.1.0 [16.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence by measure in selected media items (-80 db)(`).lua" type="script" desc="Remove silence by measure in selected media items (-80 db)">
       <metadata>
@@ -3231,6 +3425,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20by%20measure%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence in selected media items (-60 db)(`).lua" type="script" desc="Remove silence in selected media items (-60 db)">
@@ -3250,6 +3449,13 @@ v.1.0 [28.08.19]
 +  initialе / v.1.0 [10.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.01 [29.01.19]
++  Исправлены пути для Mac/ v.1.01 [29.01.19]  
+
++  initialе / v.1.0 [10.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-60%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Remove silence in selected media items (-80 db)(`).lua" type="script" desc="Remove silence in selected media items (-80 db)">
       <metadata>
@@ -3267,6 +3473,12 @@ v.1.0 [28.08.19]
 +  initialе / v.1.0 [10.01.2019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  
++  initialе / v.1.0 [10.01.2019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Remove%20silence%20in%20selected%20media%20items%20(-80%20db)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Select all items in project with sources of selected items.lua" type="script" desc="Select all items in project with sources of selected items">
       <metadata>
@@ -3278,6 +3490,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [08.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/eb376d4cfb1840417024586a316ac01f4578d286/MAIN/Item/Archie_Item;%20%20Select%20all%20items%20in%20project%20with%20sources%20of%20selected%20items.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [08.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Select%20all%20items%20in%20project%20with%20sources%20of%20selected%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Select first item from cursor position in all selected track,without removing selection from the previous items.lua" type="script" desc="Select first item from cursor position in all selected track,">
@@ -3564,6 +3781,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2100cb61d9bc29c7103c7d66b5afcc2852268542/MAIN/Item/Archie_Item;%20%20Set%20source%20for%20all%20of%20selected%20items.lua</source>
       </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [08.02.20]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Set%20source%20for%20all%20of%20selected%20items.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Set volume -6 dB.for selected media items.lua" type="script" desc="Set volume -6 dB.for selected media items">
       <metadata>
@@ -3622,6 +3844,9 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.02" author="Archie" time="2020-06-13T08:23:31Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b75cc18fd56027dd2b5c753eb708dbf6359e6fbf/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back(ctrl).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Solo%20selected%20item%20-%20Restore%20back(ctrl).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Split (selected) item(s) under mouse cursor (select left)(`).lua" type="script" desc="Split (selected) item(s) under mouse cursor (select left)">
@@ -3828,6 +4053,11 @@ v.1.0 [28.08.19]
     + Fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/38428a126a60c78156a1405079d323804aaaba55/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20on%20next%20in%20directory%20on%20throughout%20project.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [08.02.20]
+    + Fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20on%20next%20in%20directory%20on%20throughout%20project.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file on previous in directory on throughout project.lua" type="script" desc="Switch item source file on previous in directory on throughout project">
       <metadata>
@@ -3849,6 +4079,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.03 [08.02.20]
     + Fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/38428a126a60c78156a1405079d323804aaaba55/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20on%20previous%20in%20directory%20on%20throughout%20project.lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [08.02.20]
+    + Fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20on%20previous%20in%20directory%20on%20throughout%20project.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
@@ -3900,6 +4135,18 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [200320]
+    +RPP(.rpp-PROX)]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20next%20in%20folder.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Switch item source file to previous in folder.lua" type="script" desc="Switch item source file to previous in folder">
       <metadata>
@@ -3950,6 +4197,18 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
         <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3b68200a4670a45144b8f8746189175e770a4878/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [200320]
+    +RPP(.rpp-PROX)]]></changelog>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only RPP).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Audio).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+        <source main="main" file="Archie_Item;  Switch item source file to previous in folder restore original size(only Video).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Switch%20item%20source%20file%20to%20previous%20in%20folder.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Toggle (Loop source OFF) - (SWS Loop section of selected item(s)).lua" type="script" desc="Toggle (Loop source OFF) - (SWS Loop section of selected item(s))">
       <metadata>
@@ -3987,6 +4246,11 @@ v.1.0 [28.08.19]
     + Update Arrange]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ad3e11c54f2aa809dfd2b7b2368b08af2cec4362/MAIN/Item/Archie_Item;%20%20Toggle%20Loop%20item%20source(background).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [030620]
+    + Update Arrange]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Toggle%20Loop%20item%20source(background).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Trim Extend selected of items to time selection(`).lua" type="script" desc="Trim Extend selected of items to time selection">
       <metadata>
@@ -4002,6 +4266,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Trim%20Extend%20selected%20of%20items%20to%20time%20selection(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Trim%20Extend%20selected%20of%20items%20to%20time%20selection(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Ungroup item under mouse cursor.lua" type="script" desc="Ungroup item under mouse cursor">
@@ -4026,6 +4295,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Item/Archie_Item;%20%20Ungroup%20item%20under%20mouse%20cursor.lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Ungroup%20item%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Unquantize Selected items.lua" type="script" desc="Unquantize Selected item">
@@ -4204,6 +4478,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20no%20save%20processed%20wave.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20no%20save%20processed%20wave.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Markers;  Split selected items at stretch markers and remove markers, save processed wave(Render).lua" type="script" desc="Split selected items at stretch markers and remove markers, save processed wave(Render)">
       <metadata>
@@ -4224,6 +4503,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20save%20processed%20wave(Render).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers%20and%20remove%20markers,%20save%20processed%20wave(Render).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Markers;  Split selected items at stretch markers.lua" type="script" desc="Split selected items at stretch markers">
       <metadata>
@@ -4243,6 +4527,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
++  Исправлены пути для Mac/ v.1.02 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Markers/Archie_Markers;%20%20Split%20selected%20items%20at%20stretch%20markers.lua</source>
       </version>
     </reapack>
   </category>
@@ -4293,6 +4582,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of all unselected tracks MCP to height master track.lua" type="script" desc="Set height of all unselected tracks MCP to height master track">
       <metadata>
@@ -4303,6 +4596,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
         <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20unselected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20all%20unselected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of not rec-armed tracks MCP to height master track.lua" type="script" desc="Set height of not rec-armed tracks MCP to height master track">
@@ -4315,6 +4612,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20not%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20not%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of rec-armed tracks MCP to height master track.lua" type="script" desc="Set height of rec-armed tracks MCP to height master track">
       <metadata>
@@ -4326,6 +4627,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20rec-armed%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Set height of Selected tracks MCP to height master track.lua" type="script" desc="Set height of Selected tracks MCP to height master track">
       <metadata>
@@ -4336,6 +4641,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-06-11T17:54:26Z">
         <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b1c15fd6106b5b356bb9b037bd9793f181e6eac/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20Selected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12.06.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Set%20height%20of%20Selected%20tracks%20MCP%20to%20height%20master%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Toggle Auto zoom height selected tracks in MCP(`).lua" type="script" desc="Toggle Auto zoom height selected tracks in MCP">
@@ -4360,6 +4669,12 @@ v.1.0 [28.08.19]
    ! Fixed bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ef911c7a34e7e7c11b0b5adf451b2e8371cb0f78/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [060320]
+   + Added scroll shift
+   ! Fixed bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20selected%20tracks%20in%20MCP(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Toggle Auto zoom height tracks rec-armed in MCP(`).lua" type="script" desc="Toggle Auto zoom height tracks rec-armed in MCP">
       <metadata>
@@ -4376,6 +4691,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [13.06.19]
    ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/679fb86d8937b3714c8236bc4a2537020dc91060/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20tracks%20rec-armed%20in%20MCP(%60).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [13.06.19]
+   ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Auto%20zoom%20height%20tracks%20rec-armed%20in%20MCP(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Mixer;  Toggle Mute Unmute all visible track in MCP.lua" type="script" desc="Toggle Mute unmute all visible track in MCP">
@@ -4401,6 +4721,12 @@ v.1.0 [28.08.19]
     +! Исправлена ошибка при удалении трека]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20MCP.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [26.06.2019]
+    +! Fixed bug when deleting a track
+    +! Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20MCP.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Mixer;  Toggle Unmute mute all visible track in MCP.lua" type="script" desc="Toggle Unmute mute all visible track in MCP">
       <metadata>
@@ -4412,6 +4738,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20MCP.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [26.06.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Mixer/Archie_Mixer;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20MCP.lua</source>
       </version>
     </reapack>
   </category>
@@ -4451,6 +4782,9 @@ v.1.0 [28.08.19]
       <version name="1.02" author="Archie" time="2020-05-16T14:29:09Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/67f9b978a82e863c8fcff933efa84bc98787c3cf/MAIN/Options/Archie_Options;%20%20Clear%20AutoRun%20Archie.lua</source>
       </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Options/Archie_Options;%20%20Clear%20AutoRun%20Archie.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Options;  Open folder FX Chains.lua" type="script" desc="Open folder FX Chains">
       <metadata>
@@ -4477,6 +4811,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
         <changelog><![CDATA[+  initialе / v.1.0 [220219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Options/Archie_Options;%20%20Reset%20ReaScript%20task%20control%20for%20all%20scripts.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [220219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Options/Archie_Options;%20%20Reset%20ReaScript%20task%20control%20for%20all%20scripts.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Options;  Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
@@ -4568,6 +4906,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20end%20of%20time%20selection.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Playback/Archie_Playback;%20%20Toggle%20stop%20playback%20at%20end%20of%20time%20selection.lua</source>
+      </version>
     </reapack>
   </category>
   <category name="MAIN/Preferences">
@@ -4582,6 +4925,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [230320]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9c7b81bbdaf6942cb7b69c7dbe3f3deeef6b7403/MAIN/Preferences/Archie_Pref;%20%20Allow%20keyboard%20commands%20even%20when%20mouse-editing.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [230320]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Preferences/Archie_Pref;%20%20Allow%20keyboard%20commands%20even%20when%20mouse-editing.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Antialiased peak and waveform drawing.lua" type="script" desc="Antialiased peak and waveform drawing">
@@ -4643,6 +4991,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [250520]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f5c15e5cb80f9e7e48638341b4ac90492db1874/MAIN/Preferences/Archie_Pref;%20%20General-Undo%20settings-Include%20selection-Item.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [250520]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Preferences/Archie_Pref;%20%20General-Undo%20settings-Include%20selection-Item.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Pref;  Ignore mousewheel on all faders.lua" type="script" desc="Ignore mousewheel on all faders">
@@ -4801,6 +5154,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-04-07T17:28:18Z">
         <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/efa763cfc218b3013d905a9c1e3a28defeae8f02/MAIN/Preferences/Archie_Pref;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07042019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Preferences/Archie_Pref;%20%20Toggle%20Don't%20autosctoll%20view%20(when%20enable)%20when%20viewing%20other%20parts%20of%20project.lua</source>
       </version>
     </reapack>
   </category>
@@ -5484,6 +5841,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2ebbbe90c7f7d976480bfe757b2141c045ea5111/MAIN/Take/Archie_Take;%20%20Crop%20to%20active%20take%20all%20items%20in%20selected%20tracks.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [020620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Take/Archie_Take;%20%20Crop%20to%20active%20take%20all%20items%20in%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Take;  Delete name in selected items in active take.lua" type="script" desc="Delete name in selected items in active take">
       <metadata>
@@ -5851,6 +6213,12 @@ v.1.0 [28.08.19]
     + исправлена ошибка - Убрать - сделать проект грязный при старте скрипта]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f737497313df487dfc4b734a938da5677dfad8f4/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
       </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.04 [03062019]
+    + fixed bug - Remove - make the project dirty at the start of the script
+    + исправлена ошибка - Убрать - сделать проект грязный при старте скрипта]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Add%20tracks%20with%20locked%20height%20to%20collapsed%20folders-Restore%20when%20uncollapsed(background).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Arm only Selected tracks.lua" type="script" desc="Track;  Arm only Selected tracks.lua">
       <metadata>
@@ -5935,6 +6303,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [07062019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/71a0bf8ab2c7e14e7188cb2e6e011eed7cf3dfdb/MAIN/Track/Archie_Track;%20%20Copy%20track%20icon(Ctrl+Script%20Paste).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [07062019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Copy%20track%20icon(Ctrl+Script%20Paste).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Copy track icon.lua" type="script" desc="Copy track icon">
       <metadata>
@@ -5969,6 +6341,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20receive%20in%20selected%20tracks.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Delete%20all%20receive%20in%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Delete all send and receive in selected tracks.lua" type="script" desc="Delete all send and receive in selected tracks">
       <metadata>
@@ -5980,6 +6356,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20and%20receive%20in%20selected%20tracks.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20and%20receive%20in%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Delete all send in selected tracks.lua" type="script" desc="Delete all send in selected tracks">
       <metadata>
@@ -5990,6 +6370,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-02-21T19:46:56Z">
         <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/11abce28fe10d0731a2cc22c294adab7fd986f53/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20in%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [210219]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Delete%20all%20send%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Delete folder (request for removal of child tracks).lua" type="script" desc="Delete folder (request for removal of child tracks)">
@@ -6530,6 +6914,14 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
       </version>
+      <version name="1.10" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.09 [04.02.20]
+    no change]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20down%20by%20one%20visible(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Move selected tracks in folder with name (user input).lua" type="script" desc="Move selected tracks in folder with name (user input)">
       <metadata>
@@ -6620,6 +7012,14 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
         <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cf6a3772129ae5b2aa3938fe59312470a2156010/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+      </version>
+      <version name="1.10" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.09 [04.02.20]
+    no change]]></changelog>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
+        <source main="main" file="Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Move%20selected%20tracks%20up%20by%20one%20visible(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Mute all children tracks  in selected folders.lua" type="script" desc="Track;  Mute all children tracks in selected folders.lua">
@@ -6868,6 +7268,11 @@ v.1.0 [28.08.19]
     + ----]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d0ea7e3e7763091ec8560696741e338d087cfad/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
       </version>
+      <version name="1.10" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [100620]
+    + ----]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Save%20all%20track%20mute%20solo%20state%20slot%201.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Save all tracks visible slot 1.lua" type="script" desc="Track;  Save all tracks visible slot 1.lua">
       <metadata>
@@ -6940,6 +7345,14 @@ v.1.0 [28.08.19]
         <source main="main" file="Archie_Track;  Select next tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f2c58f19e57e469ade0a3087e8aa94aedd3ae1c/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track;  Select previous tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3f2c58f19e57e469ade0a3087e8aa94aedd3ae1c/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.06 [22.05.19]
+    + Add script ...(skip folders)]]></changelog>
+        <source main="main" file="Archie_Track;  Select next tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track;  Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track;  Select next tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track;  Select previous tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Select track with prefix name.lua" type="script" desc="Track;  Select track with prefix name.lua">
       <metadata>
@@ -6991,6 +7404,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Set selected tracks all MIDI input to n channels.lua" type="script" desc="Set selected tracks all MIDI input to n channels">
@@ -7338,6 +7756,14 @@ v.1.0 [28.08.19]
     +! ИСПРАВЛЕНЫ ОШИБКИ МАСШТАБИРОВАНИЯ ПРИ ВКЛЮЧЕННОЙ АВТОМАТИЧЕСКОЙ ЗАПИСИ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/85199130fd47d2553482ec3b3ca9cc8f5c5c8ee3/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values(%60).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.07 [13.05.19]
+    +  DISABLING SCALING MEDIUM FOLDED TRACKS
+    +! FIXED ERRORS ZOOM WHEN AUTOMATIC RECORDING IS ENABLED
+    +  ОТКЛЮЧЕНИЕ МАСШТАБИРОВАНИЕ СРЕДНЕ СВЕРНУТЫХ ТРЕКОВ
+    +! ИСПРАВЛЕНЫ ОШИБКИ МАСШТАБИРОВАНИЯ ПРИ ВКЛЮЧЕННОЙ АВТОМАТИЧЕСКОЙ ЗАПИСИ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20height%20selected%20tracks%20in%2024%20pixel%20-%20revert%20to%20average%20values(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Hide super collapsed - restore back.lua" type="script" desc="Track;  Toggle Hide super collapsed - restore back.lua">
       <metadata>
@@ -7374,6 +7800,11 @@ v.1.0 [28.08.19]
     + No changeе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed(AutoRun).lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [240520]
+    + No changeе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Hide%20super%20collapsed(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Lock height selected track.lua" type="script" desc="Toggle Lock height selected track">
       <metadata>
@@ -7391,6 +7822,12 @@ v.1.0 [28.08.19]
     + fixed bug when delete track
     + Исправлена ошибка при удалении трека]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/131bb075c2475bf11a544c4e988e48f1e6ac874e/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [17.05.19]
+    + fixed bug when delete track
+    + Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Lock%20height%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Lock selected tracks and them items - Unlock tracks restore them items.lua" type="script" desc="Track;  Toggle Lock selected tracks and them items - Unlock tracks restore them items">
@@ -7429,6 +7866,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20unmute%20all%20visible%20track%20in%20TCP%20and%20MCP.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [26.06.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20unmute%20all%20visible%20track%20in%20TCP%20and%20MCP.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Mute Unmute all visible track in TCP.lua" type="script" desc="Toggle Mute unmute all visible track in TCP">
       <metadata>
@@ -7452,6 +7894,12 @@ v.1.0 [28.08.19]
     +! Fixed bug when deleting a track
     +! Исправлена ошибка при удалении трека]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20TCP.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [26.06.2019]
+    +! Fixed bug when deleting a track
+    +! Исправлена ошибка при удалении трека]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Mute%20Unmute%20all%20visible%20track%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Off medium mode collapse folder(AutoRun).lua" type="script" desc="Track;  Toggle Off medium mode collapse folder(AutoRun).lua">
@@ -7480,6 +7928,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.03 [290520]
     + Fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Track/Archie_Track;%20%20Toggle%20Off%20medium%20mode%20collapse%20folder(AutoRun).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [290520]
+    + Fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Off%20medium%20mode%20collapse%20folder(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Rec Arm exclusive(`).lua" type="script" desc="Track;  Toggle Rec Arm exclusive(`).lua">
@@ -7515,6 +7968,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.01 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/Track/Archie_Track;%20%20Toggle%20Track%20height%20A-B%20Collapse%20Uncollapse%20Folder%20under%20mouse%20cursor(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.01 [29.01.19]
++  Исправлены пути для Mac/ v.1.01 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Track%20height%20A-B%20Collapse%20Uncollapse%20Folder%20under%20mouse%20cursor(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Unmute mute all visible track in TCP and MCP.lua" type="script" desc="Toggle Unmute mute all visible track in TCP and MCP">
       <metadata>
@@ -7527,6 +7985,11 @@ v.1.0 [28.08.19]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP%20and%20MCP.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [26.06.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP%20and%20MCP.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Toggle Unmute mute all visible track in TCP.lua" type="script" desc="Toggle Unmute mute all visible track in TCP">
       <metadata>
@@ -7538,6 +8001,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [26.06.2019]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e9015bc54d2f5573e80cc52216ae1373146c0d90/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [26.06.2019]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Toggle%20Unmute%20mute%20all%20visible%20track%20in%20TCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unarm all tracks for recording(AutoRun)(`).lua" type="script" desc="Track;  Unarm all tracks for recording(AutoRun)(`).lua">
@@ -7575,6 +8043,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [270620]
     + refresh Action List off]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.10 [270620]
+    + refresh Action List off]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Unarm%20all%20tracks%20for%20recording(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  UnArm Selected track.lua" type="script" desc="Track;  UnArm Selected track.lua">
@@ -7663,6 +8136,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [270620]
     + refresh Action List off]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.10 [270620]
+    + refresh Action List off]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in MCP(`).lua" type="script" desc="Track;  Unmute all visible track in MCP">
@@ -7753,6 +8231,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [270620]
     + refresh Action List off]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d793cfffc72ec39fe2a16e9424a51dc6e6a6ec20/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20track(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.10 [270620]
+    + refresh Action List off]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20UnSolo%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unsolo all visible track in MCP(`).lua" type="script" desc="Unsolo all visible track in MCP">
@@ -7975,6 +8458,11 @@ v.1.0 [28.08.19]
     ! Fixed bug copying the same file to a directory]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/28581636a9f2ef956432ff50665aed907e4f2bab/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20explorer%20to%20project%20subdirectory.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01[04.08.2019]
+    ! Fixed bug copying the same file to a directory]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Copy%20selected%20files%20from%20media%20explorer%20to%20project%20subdirectory.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Fade in-out auto both edges(Ctrl+fade,Shift+fade,+Alt+fade).lua" type="script" desc="Fade in-out auto both edges(Ctrl+fade,Shift+fade,*+Alt+fade)">
       <metadata>
@@ -8014,6 +8502,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.03 [310320]
     No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b0670ee27b110c4278e53746f21f9866cc873499/MAIN/Various/Archie_Var;%20%20Hide%20Show%20add%20menu%20(popup%20menu%20single-level).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [310320]
+    No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Hide%20Show%20add%20menu%20(popup%20menu%20single-level).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Move cursor to next end-start of item, select item.lua" type="script" desc="Move cursor to next end-start of item, select item">
@@ -8406,6 +8899,14 @@ v.1.0 [28.08.19]
       Only relevant if the list was created in version 1.15+]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b0670ee27b110c4278e53746f21f9866cc873499/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
+      <version name="1.19" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.17 [060620]
+    + Fixed a bug reopen, if ctrl let go before what completed action
+    + Saving the list when updating the script (just create a new script using 
+      "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
+      Only relevant if the list was created in version 1.15+]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
       <metadata>
@@ -8485,6 +8986,15 @@ v.1.0 [28.08.19]
    !+ Исправить смещение сигнала при ненулевом значении 'Default tail length:'
     + Добавить обрезку справа]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d896159f3202424e0976790e9700aa9e2bfe08f9/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.11 [110620]
+   !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
+    + Add Trim right
+    + ----
+   !+ Исправить смещение сигнала при ненулевом значении 'Default tail length:'
+    + Добавить обрезку справа]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
@@ -8601,6 +9111,11 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/51781afd7aa6da07f5192a579517ea468913c576/MAIN/Various/Archie_Var;%20%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/51781afd7aa6da07f5192a579517ea468913c576/MAIN/Various/Archie_Var;%20%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [21.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Various/Archie_Var;%20%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Var;  Toggle Select all items tracks envelope points (depending on focus)(Save previous).lua" type="script" desc="Toggle Select all items tracks envelope points (depending on focus)(Save previous)">
       <metadata>
@@ -8666,6 +9181,11 @@ v.1.0 [28.08.19]
     ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e8756dbfdb0f24f3063b307c52273e383dca1add/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.05 [25.09.19]
+    ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Arc_View;%20%20Zoom%20height%20full%20project%20-%20recover%20back.lua</source>
+      </version>
     </reapack>
     <reapack name="Arc_View;  Zoom width full project - recovery back.lua" type="script" desc="Zoom width full project - recovery back">
       <metadata>
@@ -8703,6 +9223,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.05 [25.09.19]
     ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e8756dbfdb0f24f3063b307c52273e383dca1add/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.05 [25.09.19]
+    ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Arc_View;%20%20Zoom%20width%20full%20project%20-%20recovery%20back.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Auto enable spectral peaks on selected tracks.lua" type="script" desc="Auto enable spectral peaks on selected tracks">
@@ -8772,6 +9297,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[!+ Fixed Scrolling Of The Mixer / v.1.12 [01.05.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2b28a2536dd17f445061e24397e151053a931869/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
+      <version name="1.15" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[!+ Fixed Scrolling Of The Mixer / v.1.12 [01.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Auto%20enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Close toolbar n.lua" type="script" desc="Close toolbar n">
       <metadata>
@@ -8824,6 +9353,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Disabled%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Disabled%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Enable prevention of spectral peaks  spectrogram on all tracks.lua" type="script" desc="Enable prevention of spectral peaks / spectrogram on all tracks">
       <metadata>
@@ -8846,6 +9380,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Enable%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Enable%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Enable spectral peaks on selected tracks.lua" type="script" desc="Enable spectral peaks on selected tracks">
@@ -8903,6 +9442,9 @@ v.1.0 [28.08.19]
       <version name="1.10" author="Archie" time="2019-02-16T12:46:38Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7fdb280ff3002168e4d215152737ae107480d291/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
       </version>
+      <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Enable%20spectral%20peaks%20on%20selected%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Show full mixer - Restore view back.lua" type="script" desc="Show full mixer - Restore view back">
       <metadata>
@@ -8930,6 +9472,11 @@ v.1.0 [28.08.19]
     ! Performance: Break previous copy "defer"]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cff7022c4e3f4d99a3b7863747412257d8fc88a2/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.03 [27.09.19]
+    ! Performance: Break previous copy "defer"]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Show%20full%20mixer%20-%20Restore%20view%20back.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Show hide mixer and master in docker.lua" type="script" desc="Show hide mixer and master in docker">
       <metadata>
@@ -8952,6 +9499,10 @@ v.1.0 [28.08.19]
       <version name="1.0" author="Archie" time="2019-03-14T18:32:10Z">
         <changelog><![CDATA[+  initialе / v.1.0 [15032019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9f4e6236e2bbee1f53c0e5201d013c1e8e947b59/MAIN/View/Archie_View;%20%20Toggle%20arrange%20in%20center%20relative%20to%20edit%20cursor%20when%20change%20BPM.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [15032019]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Toggle%20arrange%20in%20center%20relative%20to%20edit%20cursor%20when%20change%20BPM.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Toggle Open toolbar n at mouse cursor - close.lua" type="script" desc="View;  Toggle Open toolbar n at mouse cursor - close.lua">
@@ -9005,6 +9556,11 @@ v.1.0 [28.08.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/20f45f0e50b97e212083a371d80906e1a3060306/MAIN/View/Archie_View;%20%20Toggle%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
       </version>
+      <version name="1.04" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
++  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Toggle%20prevention%20of%20spectral%20peaks%20%20spectrogram%20on%20all%20tracks.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Zoom Arrange to fit screen.lua" type="script" desc="Zoom Arrange to fit screen">
       <metadata>
@@ -9016,6 +9572,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [14.09.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/175015b4b409abfef39a2f32aeede0d6d9d28f19/MAIN/View/Archie_View;%20%20Zoom%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.0 [14.09.2019]
+  + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Zoom%20Arrange%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Zoom horizontally - snap to playback cursor (mousewheel).lua" type="script" desc="Zoom horizontally - snap to playback cursor (mousewheel)">
@@ -9080,6 +9641,11 @@ v.1.0 [28.08.19]
   + Scroll selected tracks to the center]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MAIN/View/Archie_View;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [15.09.2019]
+  + Scroll selected tracks to the center]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Zoom%20TCP%20and%20Arrange%20to%20fit%20screen.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_View;  Zoom TCP or Arrange Depending on focus to fit screen.lua" type="script" desc="Zoom TCP or Arrange Depending on focus to fit screen">
       <metadata>
@@ -9096,6 +9662,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [14.09.2019]
   + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/29c0d1a300e88f3ecd3466567d791addb27132f1/MAIN/View/Archie_View;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.01 [15.09.2019]
+  + Scroll selected tracks to the center]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Zoom%20TCP%20or%20Arrange%20Depending%20on%20focus%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_View;  Zoom TCP to fit screen.lua" type="script" desc="Zoom TCP to fit screen">
@@ -9118,6 +9689,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.02 [260320]
   + Scroll up is enabled]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/4a8c7a9a8ecf261494013cc8bb2c27f6643fd697/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-06-28T07:10:50Z">
+        <changelog><![CDATA[v.1.02 [260320]
+  + Scroll up is enabled]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/View/Archie_View;%20%20Zoom%20TCP%20to%20fit%20screen.lua</source>
       </version>
     </reapack>
   </category>
