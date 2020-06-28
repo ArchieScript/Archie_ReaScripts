@@ -4,7 +4,7 @@
    * Category:    Mixer
    * Description: Set height of all unselected tracks MCP to height master track
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Set height of all unselected tracks MCP to height master track
    * О скрипте:   Установить высоту всех невыбранных треков MCP на высоту мастер-трека
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1946308/828d11bb-01b7-4a38-bdc9-dfafebf97349/orig
@@ -38,12 +38,15 @@
     
     
     
-    --============== FUNCTION MODULE FUNCTION ========================= FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ==============
-    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');--====
-    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.4.4",Fun,"")then Arc.no_undo() return end;--=====================================================
-    --============== FUNCTION MODULE FUNCTION ======▲=▲=▲============== FUNCTION MODULE FUNCTION ============== FUNCTION MODULE FUNCTION ============== 
-    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
+    end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    --=========================================
+	
+
     
     
     

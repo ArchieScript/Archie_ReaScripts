@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -31,7 +31,7 @@
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+        if not A.VersArcFun("2.8.5",file,'')then A.no_undo()return;end;return A;
     end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';

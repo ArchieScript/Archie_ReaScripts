@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Remove silence in selected media items (-60 db)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Remove silence in selected media items (-60 db)
    * О скрипте:   Удалить тишину в выбранных элементах мультимедиа (-60 дБ)
    * GIF:         ---
@@ -61,7 +61,7 @@
     reaper.GetResourcePath();package.path=Fun.."/?.lua"..";"..scr.."/?.lua"..";"..dir.."/?.lua"..";"..package.path;Load,Arc=pcall(require,"Arc_Function_lua");
     if not Load then reaper.MB('Missing file "Arc_Function_lua",\nDownload from repository Archie-ReaScript and put in\n'..Fun..'\n\n'..'Отсутствует '..--====
     'файл "Arc_Function_lua",\nСкачайте из репозитория Archie-ReaScript и поместите в \n'..Fun,"Error.",0)return end;--=======================================
-    if not Arc.VersionArc_Function_lua("2.2.2",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
+    if not Arc.VersionArc_Function_lua("2.8.5",Fun,"")then Arc.no_undo() return end;--==================================== FUNCTION MODULE FUNCTION ==========
     --==================================▲=▲=▲=================================================================================================================
 
 

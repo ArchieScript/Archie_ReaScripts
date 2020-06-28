@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
@@ -61,7 +61,7 @@
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.4",file,'')then A.no_undo()return;end;return A;
+        if not A.VersArcFun("2.8.5",file,'')then A.no_undo()return;end;return A;
     end;local Arc=MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';

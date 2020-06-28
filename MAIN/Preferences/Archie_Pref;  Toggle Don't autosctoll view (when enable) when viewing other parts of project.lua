@@ -2,7 +2,7 @@
    * Category:    Preferences
    * Description: Don't autosctoll view (when enable) when viewing other parts of project
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Preferences > Playback > Name Script
    * О скрипте:   ---
    * GIF:         http://clck.ru/FWaoF
@@ -37,12 +37,15 @@
     
     
     
-    --============== FUNCTION / MODULE: Arc_Function_lua ==============================================================================================
-    local Fun,Load,Arc = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions'; Load,Arc = pcall(dofile,Fun..'/Arc_Function_lua.lua');------
-    if not Load then reaper.RecursiveCreateDirectory(Fun,0);reaper.MB('Missing file / Отсутствует файл !\n\n'..Fun..'/Arc_Function_lua.lua',"Error",0);
-    return end; if not Arc.VersionArc_Function_lua("2.2.9",Fun,"")then Arc.no_undo() return end;-------------------------------------------------------
-    --==============================================▲=▲=▲====================================================== FUNCTION MODULE FUNCTION / My_Lib =====
-    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
+    end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    --=========================================
+	
+
     
     
     

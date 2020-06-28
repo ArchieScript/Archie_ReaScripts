@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.18
+   * Version:     1.19
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -97,7 +97,7 @@
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.2",file,'')then;A=nil;return;end;return A;
+        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini';

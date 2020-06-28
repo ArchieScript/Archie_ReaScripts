@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnMute all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -39,7 +39,7 @@
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.2",file,'')then;A=nil;return;end;return A;
+        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
