@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="5c68010709158da6414a7e06788f36152baecf4d">
+<index version="1" name="Archie-ReaScripts" commit="6f054170ed067d350470b124c4e707fb683108c9">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -6688,6 +6688,19 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.0 [28.11.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/714bfa622787b23da7c9b4bc15268ae6fc53b3ee/MAIN/Track/Archie_Track;%20%20Insert%20track%20holding%20the%20mouse%20into%20empty%20TCP%20and%20rename,%20random%20color.lua.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Insert track with folder (ctrl-up).lua" type="script" desc="Track;  Insert track with folder (ctrl-up).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-06-29T09:48:41Z">
+        <changelog><![CDATA[v.1.0 [290620]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6f054170ed067d350470b124c4e707fb683108c9/MAIN/Track/Archie_Track;%20%20Insert%20track%20with%20folder%20(ctrl-up).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Lock selected tracks and them items.lua" type="script" desc="Track;  Lock selected tracks and them items">
