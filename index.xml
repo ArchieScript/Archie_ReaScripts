@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="612634ed70a1bce4435dfcff3f77de8fa394aa95">
+<index version="1" name="Archie-ReaScripts" commit="3425d081e770dc4cddc80df6b85394e477f5a7d4">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -1003,6 +1003,21 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.06 [19.06.20]
     +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5955ac82615ec0e69354efd7d1b66fcf1bbe183a/MAIN/Fade/Archie_Fade;%20%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="MAIN/File">
+    <reapack name="Archie_File;  Clean current project directory(ctrl- user input path).lua" type="script" desc="File;  Clean current project directory(ctrl- user input path).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie / Meo-Ada Mespotine" time="2020-07-01T15:08:53Z">
+        <changelog><![CDATA[v.1.0 [010720]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3425d081e770dc4cddc80df6b85394e477f5a7d4/MAIN/File/Archie_File;%20%20Clean%20current%20project%20directory(ctrl-%20user%20input%20path).lua</source>
       </version>
     </reapack>
   </category>
