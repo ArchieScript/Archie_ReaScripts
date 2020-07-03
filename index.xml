@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3425d081e770dc4cddc80df6b85394e477f5a7d4">
+<index version="1" name="Archie-ReaScripts" commit="b33c43571be508d266cff00cef50343df4798009">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -1387,6 +1387,19 @@ v.1.0 [28.08.19]
       </metadata>
       <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/FX/Archie_FX;%20%20Open%20first%20instrument%20in%20Selected%20tracks.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fx;  Rename all fx in selected tracks in ...(`).lua" type="script" desc="Fx;  Rename all fx in selected tracks in ...(`).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-07-03T14:45:56Z">
+        <changelog><![CDATA[v.1.0 [030720]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b33c43571be508d266cff00cef50343df4798009/MAIN/FX/Archie_Fx;%20%20Rename%20all%20fx%20in%20selected%20tracks%20in%20...(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Fx;  Rename all fx in selected tracks with specific name in specific name.lua" type="script" desc="Fx;  Rename all fx in selected tracks with specific name in specific name.lua">
