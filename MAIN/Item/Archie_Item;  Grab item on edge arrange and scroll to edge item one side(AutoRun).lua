@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item;  Grab item on edge arrange and scroll to edge item one side(AutoRun).lua
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента с одной стороны
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
@@ -22,6 +22,8 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.0+ (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.12 [050720]
+   *                  + fix bug mouse modifiers (http://forum.cockos.com/showthread.php?p=2314292#post2314292)
    
    *              v.1.07 [260520]
    *                  + No changeе
@@ -99,7 +101,10 @@
     
     
     
-    -------------------------------------------------------
+    --==v.1.12============================================================
+    -- Ошибка модификатора мыши.
+    -- http://forum.cockos.com/showthread.php?p=2314292#post2314292
+    --[[-----------------------------------------------------
     local tMM = {};
     local function saveResetMM();
         if #tMM == 0 then;
@@ -117,7 +122,36 @@
             tMM = {};
         end;
     end;
+    --]]-----------------------------------------------------
+    -- Временное решение:
     -------------------------------------------------------
+    local tMM = {};
+    local function saveResetMM();
+        if #tMM == 0 then;
+            tMM[1] = reaper.GetMouseModifier('MM_CTX_ITEM',0,'');--item--leftdrag
+            ---------
+            local filePath = reaper.GetResourcePath()..'/reaper-mouse.ini';
+            local retval, str = reaper.BR_Win32_GetPrivateProfileString('MM_CTX_ITEMLOWER','mm_0','',filePath);
+            if retval > 0 and str ~= "" then;
+                tMM[2] = reaper.GetMouseModifier('MM_CTX_ITEMLOWER',0,'');--Media item bottom half--leftdrag
+            else;
+                tMM[2] = 0;
+            end;
+            ---------
+            reaper.SetMouseModifier('MM_CTX_ITEM',0,0);
+            reaper.SetMouseModifier('MM_CTX_ITEMLOWER',0,0);
+        end;
+    end;
+    
+    local function restoryMM();
+        if #tMM > 0 then;
+            reaper.SetMouseModifier('MM_CTX_ITEM',0,tMM[1]);
+            reaper.SetMouseModifier('MM_CTX_ITEMLOWER',0,tMM[2]);
+            tMM = {};
+        end;
+    end;
+    -------------------------------------------------------
+    --==v.1.12============================================================
     
     
     
