@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b33c43571be508d266cff00cef50343df4798009">
+<index version="1" name="Archie-ReaScripts" commit="80ad176a949d4ba04f75e2269b3223732c48d446">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -2867,6 +2867,11 @@ v.1.0 [28.08.19]
       <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
       </version>
+      <version name="1.12" author="Archie" time="2020-07-05T07:25:52Z">
+        <changelog><![CDATA[v.1.12 [050720]
+    + fix bug mouse modifiers (http://forum.cockos.com/showthread.php?p=2314292#post2314292)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/80ad176a949d4ba04f75e2269b3223732c48d446/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item%20one%20side(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and scroll to edge item(AutoRun).lua">
       <metadata>
@@ -2921,6 +2926,11 @@ v.1.0 [28.08.19]
       <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
       </version>
+      <version name="1.12" author="Archie" time="2020-07-05T07:25:52Z">
+        <changelog><![CDATA[v.1.12 [050720]
+    + fix bug mouse modifiers (http://forum.cockos.com/showthread.php?p=2314292#post2314292)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/80ad176a949d4ba04f75e2269b3223732c48d446/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20scroll%20to%20edge%20item(AutoRun).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua" type="script" desc="Item;  Grab item on edge arrange and trim by edge window(AutoRun).lua">
       <metadata>
@@ -2974,6 +2984,11 @@ v.1.0 [28.08.19]
       </version>
       <version name="1.11" author="Archie" time="2020-06-28T07:10:50Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
+      </version>
+      <version name="1.12" author="Archie" time="2020-07-05T07:25:52Z">
+        <changelog><![CDATA[v.1.12 [050720]
+    + fix bug mouse modifiers (http://forum.cockos.com/showthread.php?p=2314292#post2314292)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/80ad176a949d4ba04f75e2269b3223732c48d446/MAIN/Item/Archie_Item;%20%20Grab%20item%20on%20edge%20arrange%20and%20trim%20by%20edge%20window(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item;  Hide all visible envelopes in selected items.lua" type="script" desc="Hide all visible envelopes in selected items">
