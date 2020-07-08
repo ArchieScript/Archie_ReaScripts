@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Add Fx by Name in selected tracks (a description of settings inside script)
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.08
    * AboutScript: Add Fx by Name in selected track(s)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Добавить Fx по имени в выбранные трек(и)
@@ -188,7 +188,7 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
+  
 
     
     
@@ -257,11 +257,12 @@
         ----
             
             ----/ Insert Fx /----
+            local idx_closeFx = 0;--V.1.08
             if PlaceFxOn == 0 then 
                 IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
                 local CountFx = reaper.TrackFX_GetCount(SelTrack)
                 reaper.TrackFX_SetPreset(SelTrack,CountFx-1,NamePreset)
-                
+                idx_closeFx = CountFx-1;--V.1.08
             elseif PlaceFxOn == 1 then
                 
                 IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
@@ -279,7 +280,11 @@
                 end
                 IDX = reaper.TrackFX_AddByName(SelTrack,NameFX,false,-1)
                 reaper.TrackFX_SetPreset(SelTrack,0,NamePreset)
-            end------------------------------------------------
+            end;
+            
+            reaper.TrackFX_Show(SelTrack,idx_closeFx,0);--V.1.08
+            reaper.TrackFX_Show(SelTrack,idx_closeFx,2);--V.1.08
+            ------------------------------------------------
             ---------------------------------------------------
             
             
@@ -341,6 +346,8 @@
                     if IDX >= 0 then pos = 2 else pos = 1 end --(IDX ► Insert Fx)
                     local Idx = reaper.TrackFX_AddByName(SelTrack,AdditionalFxName,false,-1)
                     reaper.TrackFX_SetPreset(SelTrack,Idx,AdditionalNamePreset)
+                    reaper.TrackFX_Show(SelTrack,Idx,0);--V.1.08
+                    reaper.TrackFX_Show(SelTrack,Idx,2);--V.1.08
                     if Idx >= 0 then
                         if PlaceFxOn == 1 then
                             for i = Idx,pos,-1 do

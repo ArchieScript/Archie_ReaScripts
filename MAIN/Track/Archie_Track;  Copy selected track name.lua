@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Copy selected track name 
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Copy selected track name 
    * О скрипте:   копировать название выбранной дорожки
    * GIF:         http://clck.ru/Eey4e
@@ -26,19 +26,19 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
     
     
     
-    -----------------------------------------------------------------------------
-    local function No_Undo()end; local function no_undo()reaper.defer(No_Undo)end
-    -----------------------------------------------------------------------------
+    -------------------------------------------------------
+    local function no_undo()reaper.defer(function()end)end;
+    -------------------------------------------------------
 
 
 
-    local SelTrack = reaper.GetSelectedTrack(0,0)
-    if SelTrack == nil then no_undo()return end
+    local SelTrack = reaper.GetSelectedTrack(0,0);
+    if SelTrack == nil then no_undo()return end;
     
-    reaper.DeleteExtState("Archie_Copy_SelTrack_NameÈ", "Archie_Copy_NameÈ", true)
+    reaper.DeleteExtState("Archie_Copy selected track name","NAME",false);
     
-    local _,name = reaper.GetSetMediaTrackInfo_String(SelTrack,"P_NAME","",0)
-    if name == "" then name = " " end
-    reaper.SetExtState("Archie_Copy_SelTrack_NameÈ", "Archie_Copy_NameÈ", name, true)
+    local _,name = reaper.GetSetMediaTrackInfo_String(SelTrack,"P_NAME","",0);
+    if name == "" then name = " " end;
+    reaper.SetExtState("Archie_Copy selected track name","NAME",name,false);
     
-    no_undo()
+    no_undo();
