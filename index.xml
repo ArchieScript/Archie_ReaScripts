@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="80ad176a949d4ba04f75e2269b3223732c48d446">
+<index version="1" name="Archie-ReaScripts" commit="b2826961f523e80acd27925a52ae3966aa0d9401">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -1048,6 +1048,10 @@ v.1.0 [28.08.19]
       <version name="1.05" author="Archie" time="2020-06-28T07:10:50Z">
         <changelog><![CDATA[+  Add Fx to Master Track / v.1.04 [30.03.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-07-08T06:01:17Z">
+        <changelog><![CDATA[+  Add Fx to Master Track / v.1.04 [30.03.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b2826961f523e80acd27925a52ae3966aa0d9401/MAIN/FX/Archie_FX;%20%20Add%20Fx%20by%20Name%20in%20selected%20tracks%20(a%20description%20of%20settings%20inside%20script)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Bypass all FX all track.lua" type="script" desc="Bypass all FX all track">
@@ -6408,6 +6412,10 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Copy%20selected%20track%20name.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-07-08T06:01:17Z">
+        <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b2826961f523e80acd27925a52ae3966aa0d9401/MAIN/Track/Archie_Track;%20%20Copy%20selected%20track%20name.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Track;  Copy track color.lua" type="script" desc="Track;  Copy track color">
       <metadata>
@@ -7262,6 +7270,10 @@ v.1.0 [28.08.19]
       <version name="1.01" author="Archie" time="2018-11-13T11:55:51Z">
         <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MAIN/Track/Archie_Track;%20%20Paste%20selected%20track%20name%20%20%20.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-07-08T06:01:17Z">
+        <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/b2826961f523e80acd27925a52ae3966aa0d9401/MAIN/Track/Archie_Track;%20%20Paste%20selected%20track%20name%20%20%20.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Paste track color.lua" type="script" desc="Track;  Paste track color">
