@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b2826961f523e80acd27925a52ae3966aa0d9401">
+<index version="1" name="Archie-ReaScripts" commit="902122fd6b9c882dfbe69480518bfe8e8ca1d1ae">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -7562,6 +7562,32 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.03 [29.01.19]
 +  Исправлены пути для Mac/ v.1.03 [29.01.19]  ]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20Set%20pan%20on%20selected%20tracks%20by%20inverting%20every%20second%20track%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Set selected folder(s) collapsed MCP.lua" type="script" desc="Track;  Set selected folder(s) collapsed MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-07-09T07:24:13Z">
+        <changelog><![CDATA[v.1.0 [090720]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/902122fd6b9c882dfbe69480518bfe8e8ca1d1ae/MAIN/Track/Archie_Track;%20%20Set%20selected%20folder(s)%20collapsed%20MCP.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track;  Set selected folder(s) uncollapsed MCP.lua" type="script" desc="Track;  Set selected folder(s) uncollapsed MCP.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-07-09T07:24:13Z">
+        <changelog><![CDATA[v.1.0 [090720]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/902122fd6b9c882dfbe69480518bfe8e8ca1d1ae/MAIN/Track/Archie_Track;%20%20Set%20selected%20folder(s)%20uncollapsed%20MCP.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Set selected tracks all MIDI input to n channels.lua" type="script" desc="Set selected tracks all MIDI input to n channels">
