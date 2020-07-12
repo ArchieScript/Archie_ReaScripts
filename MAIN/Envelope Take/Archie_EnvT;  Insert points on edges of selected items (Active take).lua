@@ -6,7 +6,7 @@
    * Category:    Envelope Take
    * Description: EnvT;  Insert points on edges of selected items (Active take).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -20,6 +20,12 @@
    *                  + initialе
 --]]
     --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    local selPoint = false  -- bool or 0/1
+    
+    --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
@@ -31,6 +37,8 @@
     
     local CountSelIt = reaper.CountSelectedMediaItems(0);
     if CountSelIt == 0 then no_undo() return end;
+    
+    selPoint = (selPoint == true) or (selPoint == 1);
     
     reaper.PreventUIRefresh(1);
     
@@ -46,23 +54,29 @@
         for i2 = 1,CountTakeEnv do;
             local TakeEnv = reaper.GetTakeEnvelope(Take,i2-1);
             ---
-            local firstPoint1 = reaper.GetEnvelopePointByTime(TakeEnv,0);
-            local firstPoint2 = reaper.GetEnvelopePointByTime(TakeEnv,0.000000001);
-            ----
-            if firstPoint1 == firstPoint2 then;
-                if not UNDO then;reaper.Undo_BeginBlock();UNDO = true;end;
-                local retval,value,dVdS,ddVdS,dddVdS = reaper.Envelope_Evaluate(TakeEnv,0,0,0);
-                reaper.InsertEnvelopePoint(TakeEnv,0,value,0,0,1,false);
-            end;
-            ----
-            len = len*rate;
-            lastPoint1 = reaper.GetEnvelopePointByTime(TakeEnv,len);
-            lastPoint2 = reaper.GetEnvelopePointByTime(TakeEnv,len-0.01);
-            ----
-            if lastPoint1 == lastPoint2 then;
-                if not UNDO then;reaper.Undo_BeginBlock();UNDO = true;end;
-                local retval,value,dVdS,ddVdS,dddVdS = reaper.Envelope_Evaluate(TakeEnv,len,0,0);
-                reaper.InsertEnvelopePoint(TakeEnv,len,value,0,0,1,false);
+            local EnvAlloc = reaper.BR_EnvAlloc(TakeEnv,false);
+            local active,visible,_,_,_,_,_,_,_,_,_,_ = reaper.BR_EnvGetProperties(EnvAlloc);
+            reaper.BR_EnvFree(EnvAlloc,true);
+            ---
+            if active and visible then;
+                local firstPoint1 = reaper.GetEnvelopePointByTime(TakeEnv,-0.000000001);
+                local firstPoint2 = reaper.GetEnvelopePointByTime(TakeEnv, 0.000000001);
+                ----
+                if firstPoint1 == firstPoint2 then;
+                    if not UNDO then;reaper.Undo_BeginBlock();UNDO = true;end;
+                    local retval,value,dVdS,ddVdS,dddVdS = reaper.Envelope_Evaluate(TakeEnv,0,0,0);
+                    reaper.InsertEnvelopePoint(TakeEnv,0,value,0,0,selPoint,false);
+                end;
+                ----
+                len = len*rate;
+                lastPoint1 = reaper.GetEnvelopePointByTime(TakeEnv,len-0.000000001);
+                lastPoint2 = reaper.GetEnvelopePointByTime(TakeEnv,len+0.000000001);
+                ----
+                if lastPoint1 == lastPoint2 then;
+                    if not UNDO then;reaper.Undo_BeginBlock();UNDO = true;end;
+                    local retval,value,dVdS,ddVdS,dddVdS = reaper.Envelope_Evaluate(TakeEnv,len,0,0);
+                    reaper.InsertEnvelopePoint(TakeEnv,len,value,0,0,selPoint,false);
+                end;
             end;
         end;
     end;
