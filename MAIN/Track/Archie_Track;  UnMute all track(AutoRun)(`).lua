@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track;  UnMute all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -17,9 +17,11 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.12 [160720]
+   *                  +! productivity increase (повышение производительности)
+   
    *              v.1.10 [270620]
    *                  + refresh Action List off
-   
    *              v.1.07 [260520]
    *                  + Restore Mute track (Doesn't pay attention to blocked tracks)
    *              v.1.06 [240520]
@@ -82,10 +84,12 @@
     local function AnyTrackMute(proj);
         for i = 1,reaper.CountTracks(proj)do;
             local Track = reaper.GetTrack(proj,i-1);
-            local lock = GetLockTrackState(Track);
-            if lock ~= 1 then;
-                local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
-                if mute > 0 then return true end;
+            local mute = reaper.GetMediaTrackInfo_Value(Track,"B_MUTE");
+            if mute > 0 then;
+                local lock = GetLockTrackState(Track);
+                if lock ~= 1 then;
+                    return true;
+                end;
             end;
         end;
         return false;
