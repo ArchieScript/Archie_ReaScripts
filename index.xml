@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c634419c7317a7da8e868518f5b5800d81393fda">
+<index version="1" name="Archie-ReaScripts" commit="1f782b0453a9a179cd712af7eb05ab4a4e86fca0">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -8364,6 +8364,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.10 [270620]
     + refresh Action List off]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
+      </version>
+      <version name="1.12" author="Archie" time="2020-07-16T13:46:25Z">
+        <changelog><![CDATA[v.1.12 [160720]
+    +! productivity increase (повышение производительности)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/1f782b0453a9a179cd712af7eb05ab4a4e86fca0/MAIN/Track/Archie_Track;%20%20UnMute%20all%20track(AutoRun)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track;  Unmute all visible track in MCP(`).lua" type="script" desc="Track;  Unmute all visible track in MCP">
