@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="1f782b0453a9a179cd712af7eb05ab4a4e86fca0">
+<index version="1" name="Archie-ReaScripts" commit="edbd773f26a727060eaa6ace83a494f50751b00d">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -357,6 +357,9 @@ LUA_Lib
       </version>
       <version name="2.8.6" author="Archie" time="2020-06-30T17:14:11Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/60b4a3e9660de2198aa04f0499ab421db18a5a7a/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="2.8.7" author="Archie" time="2020-07-16T15:14:27Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/edbd773f26a727060eaa6ace83a494f50751b00d/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
