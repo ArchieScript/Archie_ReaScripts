@@ -6,21 +6,36 @@
    * Category:    Various
    * Description: Show hide Media explorer FX browser Track manager Region-marker manager
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Snjuk(Rmm) http://rmmedia.ru/threads/134701/post-2403405
    * Gave idea:   Snjuk(Rmm)
    * Changelog:   
+   *              v.1.04 [160720]
+   *                  additional Actions
+   
    *              v.1.03 [13.10.19]
    *                  -----
-   
    *              v.1.01 [10.10.19]
    *                  + The closure of the dock (Performance degradation):(
    *              v.1.0 [10.10.19]
    *                  + initialе
 --]]
+    
+    
+    
+    -------------------------------------------------------------
+    -- дополнительные действия в фигурных скобках через запятую
+    -- Например: = {id,id,id,id,id};
+    local additional_Actions_TOG = {};--дополнительное действие со статусом toggle (из секции Main)
+    
+    local additional_Actions_Open  = {};--дополнительное действие при открытии окон (из секции Main)
+    
+    local additional_Actions_Close = {};--дополнительное действие при закрытии окон (из секции Main)
+    -------------------------------------------------------------
+    
     
     
     --======================================================================================
@@ -45,7 +60,6 @@
     
     
     
-    
     local
     Focus_Reaper = 0
     
@@ -60,7 +74,7 @@
     
     if MediaExplorer == 1 or ShowFXBrowser == 1 or ShowTrackMana == 1 or ShowRegioMark == 1 then;
         
-        for i = 1, #Window do
+        for i = 1, #Window do--close
             
             --Двойное нажатие из-за не работы в доке
             if Window[i] == "Media_Explorer" then;
@@ -121,6 +135,19 @@
             
         end;
         
+        --(1.04----------------------------------------
+        for i = 1,#additional_Actions_TOG do;
+            local act = reaper.NamedCommandLookup(additional_Actions_TOG[i])or 0;
+            local tgl = reaper.GetToggleCommandStateEx(0,act);
+            if tgl == 1 then;
+                reaper.Main_OnCommand(act,0);
+            end;
+        end;
+        
+        for i = 1,#additional_Actions_Close do;
+            reaper.Main_OnCommand(reaper.NamedCommandLookup(additional_Actions_Close[i]),0);
+        end;
+        --1.04)----------------------------------------
     else;
         
         for i = 1, #Window do
@@ -148,6 +175,22 @@
             end;
             
         end;
+        
+        
+        --(1.04----------------------------------------
+        for i = 1,#additional_Actions_TOG do;
+            local act = reaper.NamedCommandLookup(additional_Actions_TOG[i])or 0;
+            local tgl = reaper.GetToggleCommandStateEx(0,act);
+            if tgl == 0 then;
+                reaper.Main_OnCommand(act,0);
+            end;
+        end;
+        
+        for i = 1,#additional_Actions_Open do;
+            reaper.Main_OnCommand(reaper.NamedCommandLookup(additional_Actions_Open[i]),0);
+        end;
+        --1.04)----------------------------------------
+        
         
         if Focus_Reaper == 1 then;
             local Context2 = reaper.GetCursorContext2(true);
