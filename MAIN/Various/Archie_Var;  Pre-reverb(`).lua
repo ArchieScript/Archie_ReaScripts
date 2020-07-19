@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.16
+   * Version:     1.17
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -748,7 +748,8 @@
                     reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",startLoop-Tail);
                 end;
                 ----
-                if FADEOUT == true and TRIM_RIGHT ~= true  then; 
+                if (FADEOUT == true and TRIM_RIGHT ~= true)or
+                   (FADEOUT == true and FADEIN == true) then;
                     if tonumber(OUT_SHAPE)and OUT_SHAPE >= 0 and OUT_SHAPE <= 6 then;
                         reaper.SetMediaItemInfo_Value(SelItem,"C_FADEOUTSHAPE",OUT_SHAPE);
                     end;
