@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -19,6 +19,9 @@
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.16 [180720]
+   *                 + Water in bars / Ввод в тактах http://forum.cockos.com/showpost.php?p=2320799&postcount=9
+   
    *              v.1.11 [110620]
    *                 !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
    *                  + Add Trim right
@@ -50,6 +53,13 @@
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
+    
+    
+    
+    local Takt = false;
+           --  = true  | время ввода в тактах
+           --  = false | время ввода в сек
+           -------------------------------
     
     
     
@@ -149,8 +159,8 @@
                   -- По умолчанию Name_Track = nil
                   -- или введите имя, например:
                   -- Name_Track = 'мои трек';
-                  or 'Pre Reverb '..'('..NameTemplates..')';
-                  --------------------------------------------
+                  or 'Pre Reverb '..'('..NameTemplates..')'..'$Track';
+                  ----------------------------------------------------
     
     
     
@@ -173,6 +183,49 @@
     
     
     local function PreReverbRun();
+        
+        --=================================================================
+        local function GetCountTactsForTimePeriod(startLoop,endLoop);
+            -- Получить Подсчет Тактов За Период Времени;
+            local Sbuf1 = reaper.format_timestr_pos(startLoop,'',2):match('%d+');--takt meas
+            local Sbuf2 = reaper.parse_timestr_pos(Sbuf1+0,2);--start takt sec
+            local Sbuf3 = reaper.parse_timestr_pos(Sbuf1+1,2);--end takt sec
+            local SFF1 = Sbuf3 - Sbuf2;--takt in sec
+            local SFF2 = startLoop - Sbuf2;--from start tact to time startLoop in sec
+            local SFF3 = SFF2 / SFF1;
+            local SBuf1 = Sbuf1;
+            ------------------------------
+            local Ebuf1 = reaper.format_timestr_pos(endLoop,'',2):match('%d+');
+            local Ebuf2 = reaper.parse_timestr_pos(Ebuf1+0,2);
+            local Ebuf3 = reaper.parse_timestr_pos(Ebuf1+1,2);
+            local EFF1 = Ebuf3 - Ebuf2;
+            local EFF2 = endLoop - Ebuf2;
+            local EFF3 = EFF2 / EFF1;
+            local EBuf1 = Ebuf1;
+            local RET = (EBuf1 + EFF3)-(SBuf1 + SFF3);
+            return RET;
+        end;
+        --====================================================
+        local function GetOppositeTimeBySizeOfTact(time,tact);
+            --Получите Противоположное Время По Размеру Такта
+            local Sbuf1 = reaper.format_timestr_pos(time,'',2):match('%d+');--takt meas
+            local Sbuf2 = reaper.parse_timestr_pos(Sbuf1+0,2);--start takt sec
+            local Sbuf3 = reaper.parse_timestr_pos(Sbuf1+1,2);--end takt sec
+            local SFF1 = Sbuf3 - Sbuf2;--takt in sec
+            local SFF2 = time - Sbuf2;--from(от) start tact to time startLoop in sec
+            local SFF3 = SFF2 / SFF1;
+            local SBuf1 = Sbuf1;
+            --------------
+            local TCT = SBuf1 + tact + SFF3;
+            --------------
+            local X1,X2 = math.modf(TCT);
+            local buf = reaper.parse_timestr_pos(X1,2);
+            local buf2 = reaper.parse_timestr_pos(X1+1,2);
+            local RET = ((buf2 - buf)* X2)+buf;
+            return RET;
+        end;
+        --=================================================================
+        
         
         
         --==================================================================================================================
@@ -335,25 +388,45 @@
         --=====================================================
         if not tonumber(Tail_Rever) and Tail_Rever ~= true then Tail_Rever = false end;
         if Tail_Rever == true then;
-            local val = tonumber(string.format("%.4f", endLoop-startLoop));--v.1.02
-            local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection),extrawidth=60",val);
-            if not retval then no_undo() return end;
-            if retvals_csv:match('^[%+%-%*%/]')then;--v.1.02
-                retvals_csv = val..retvals_csv--v.1.02
-            end;--v.1.02
-            retvals_csv = retvals_csv:gsub('[,;]','.');--v.1.02
-            local _,retvals_csv = pcall(load('return '..retvals_csv));--v.1.02
-            retvals_csv = tonumber(retvals_csv);
-            if not retvals_csv or retvals_csv <= 0 then;
-                retvals_csv = (endLoop-startLoop);
-            end;
-            Tail_Rever=retvals_csv;
+            if Takt == true then;--<<--v.1.16
+                --(v.1.16------------------
+                local val = GetCountTactsForTimePeriod(startLoop,endLoop);
+                val = tonumber(string.format("%.4f", val));
+                local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in Tact (0 = time selection),extrawidth=60",val);
+                if not retval then no_undo()return end; 
+                if retvals_csv:match('^[%+%-%*%/]')then;
+                    retvals_csv = val..retvals_csv;
+                end;
+                retvals_csv = retvals_csv:gsub('[,;]','.');
+                local _,retvals_csv = pcall(load('return '..retvals_csv));
+                retvals_csv = tonumber(retvals_csv);
+                if not retvals_csv or retvals_csv <= 0 then;
+                    retvals_csv = (endLoop-startLoop);
+                else;
+                    retvals_csv =  GetOppositeTimeBySizeOfTact(startLoop,invert_number(retvals_csv));
+                    retvals_csv = startLoop - retvals_csv;
+                end;
+                Tail_Rever=retvals_csv;
+                --v.1.16)------------------
+            else;--<<--v.1.16
+                local val = tonumber(string.format("%.4f", endLoop-startLoop));--v.1.02
+                local retval,retvals_csv = reaper.GetUserInputs("Pre Verb",1,"Value in sec. (0 = time selection),extrawidth=60",val);
+                if not retval then no_undo() return end;
+                if retvals_csv:match('^[%+%-%*%/]')then;--v.1.02
+                    retvals_csv = val..retvals_csv--v.1.02
+                end;--v.1.02
+                retvals_csv = retvals_csv:gsub('[,;]','.');--v.1.02
+                local _,retvals_csv = pcall(load('return '..retvals_csv));--v.1.02
+                retvals_csv = tonumber(retvals_csv);
+                if not retvals_csv or retvals_csv <= 0 then;
+                    retvals_csv = (endLoop-startLoop);
+                end;
+                Tail_Rever=retvals_csv;
+            end;--<<--v.1.16
         elseif not Tail_Rever or Tail_Rever <= 0 then;
             Tail_Rever = (endLoop-startLoop);
         end;
         --=====================================================
-        
-        
         
         
         --=====================================================
@@ -362,6 +435,7 @@
             no_undo() return;
         end;
         --=====================================================
+        
         
         
         
@@ -441,11 +515,12 @@
         end;
         --=====================================================
         
-        
+       
         
         
         --=====================================================
         -- / Save Mute Vol Pan Fx tr / -- 
+        --local NAME_X;
         local CountSelTrack = reaper.CountSelectedTracks(0);
         local STrT = {};
         for i = 1,CountSelTrack do;
@@ -475,6 +550,14 @@
                     end;
                 end;
             end;
+            -----
+            local _,name = reaper.GetSetMediaTrackInfo_String(STrT[i].SelTrack,"P_NAME",'',0);
+            if name ~= '' then name = name..'&'end;
+            NAME_X = (NAME_X or '')..name;
+            -----
+        end;
+        if NAME_X ~= '' then;
+            NAME_X = '('..NAME_X:gsub('&$','')..')';
         end;
         --=====================================================
         
@@ -523,8 +606,8 @@
             if str:match("ACT%s-(%d+)")~='0'then;
                  str = str:gsub("ACT%s-%d+","ACT 0");
                  reaper.SetEnvelopeStateChunk(TrackEnv,str,false);
-             end;
-         end;
+           end;
+        end;
         --=====================================================
         
         
@@ -546,11 +629,30 @@
         
         
         --=====================================================
+        local Tail;
+        if snapToGrid == true then;
+            Tail = reaper.SnapToGrid(0,startLoop-Tail_Rever);
+            if compare(Tail,startLoop)then;
+                Tail = startLoop-Tail_Rever;
+            end;
+        else;
+            Tail = startLoop - Tail_Rever
+        end;
+        reaper.GetSet_LoopTimeRange(1,0,Tail,endLoop,0);
+        --=====================================================
+        
+        
+        
+        --=====================================================
+        local strtLp, endLp = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
         reaper.SelectAllMediaItems(0,0);
         local remfileT = {};
         local CountTrItems = reaper.CountTrackMediaItems(TrackPreVerb);
         for i = 1,CountTrItems do;
             local item = reaper.GetTrackMediaItem(TrackPreVerb,i-1);
+            ---
+            reaper.SetMediaItemInfo_Value(item,"D_POSITION",strtLp);
+            ---
             reaper.SetMediaItemInfo_Value(item,"B_UISEL",1);
             ---(v.1.02
             local take = reaper.GetActiveTake(item);
@@ -571,26 +673,21 @@
         
         
         
-        --=====================================================
-        local Tail;
-        if snapToGrid == true then;
-            Tail = reaper.SnapToGrid(0,endLoop+Tail_Rever);
-            if compare(Tail,endLoop)then;
-                Tail = endLoop+Tail_Rever;
-            end;
-        else;
-            Tail = endLoop+Tail_Rever;
-        end;
-        reaper.GetSet_LoopTimeRange(1,0,startLoop,Tail,0);
-        --=====================================================
-        
-        
-        
         
         --=====================================================
         if type(Name_Track)~='string'or #Name_Track:gsub('[%s.,;"]','')==0 then Name_Track='Pre Reverb'end;
         reaper.SetOnlyTrackSelected(TrackPreVerb);
+        ---- 
+        ::TRK::
+        local Name_Track2 = Name_Track:upper();
+        local numF,numE = string.find(Name_Track2,"$TRACK");
+        if numF and numE then;
+            Name_Track = Name_Track:gsub((Name_Track:sub(numF,numE)),NAME_X);
+            goto TRK;
+        end;
+        ---- 
         reaper.GetSetMediaTrackInfo_String(TrackPreVerb,"P_NAME",Name_Track,1);
+        ----
         reaper.Main_OnCommand(ChanT[Channel],0);--render
         local TrackPreVerbReady = reaper.GetSelectedTrack(0,0);
         reaper.GetSetMediaTrackInfo_String(TrackPreVerbReady,"P_NAME",Name_Track,1);
@@ -599,17 +696,10 @@
         reaper.Main_OnCommand(40005,0);--Track: Remove tracks
         reaper.SetOnlyTrackSelected(TrackPreVerbReady);
         reaper.GetSet_LoopTimeRange(1,0,startLoop,endLoop,0);
-        ---
+        ----
         local CountTrItems = reaper.CountTrackMediaItems(TrackPreVerbReady);
         for i = 1,CountTrItems do;
             local item = reaper.GetTrackMediaItem(TrackPreVerbReady,i-1);
-            local pos = reaper.GetMediaItemInfo_Value(item,"D_POSITION");
-            local len = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
-            if pos+len ~= Tail then;
-                reaper.SetMediaItemInfo_Value(item,"D_LENGTH",Tail-pos);
-                len = Tail-pos;
-            end;
-            reaper.SetMediaItemInfo_Value(item,"D_POSITION",pos-((pos+len)-endLoop));
             reaper.SetMediaItemInfo_Value(item,"B_UISEL",1);
             ---(v.1.02
             local tk = reaper.GetActiveTake(item);
@@ -655,10 +745,10 @@
                     if tonumber(IN_SHAPE) and IN_SHAPE >= 0 and IN_SHAPE <= 6 then;
                         reaper.SetMediaItemInfo_Value(SelItem,"C_FADEINSHAPE",IN_SHAPE);
                     end;
-                    reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",Tail-endLoop);
+                    reaper.SetMediaItemInfo_Value(SelItem,"D_FADEINLEN",startLoop-Tail);
                 end;
                 ----
-                if FADEOUT == true then; 
+                if FADEOUT == true and TRIM_RIGHT ~= true  then; 
                     if tonumber(OUT_SHAPE)and OUT_SHAPE >= 0 and OUT_SHAPE <= 6 then;
                         reaper.SetMediaItemInfo_Value(SelItem,"C_FADEOUTSHAPE",OUT_SHAPE);
                     end;
@@ -705,6 +795,7 @@
                          os.remove(remfileT[i]);
                      end;end);
         ---v.1.02)---------------------------
+        
         
         
         --=========================
