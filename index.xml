@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="04a6b7a20cbe391e99ad60df71f2b97b101ae049">
+<index version="1" name="Archie-ReaScripts" commit="ddfffbeb0b5c0d0424d98237ce2d69d63a31f17f">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -1472,6 +1472,18 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.01 [28.09.19]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2cd76ce8fe60ea4b6c0453dd1d797dfce2067bf6/MAIN/FX/Archie_FX;%20%20Rename%20last%20selected%20FX%20in%20chain%20in%20selected%20tracks%20to%20preset%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fx;  Revers fade in-out.lua" type="script" desc="Fx;  Revers fade in-out.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-07-20T09:18:31Z">
+        <changelog><![CDATA[v.1.0 [20.07.20]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ddfffbeb0b5c0d0424d98237ce2d69d63a31f17f/MAIN/FX/Archie_Fx;%20%20Revers%20fade%20in-out.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX;  Show all active floating FX windows for selected tracks.lua" type="script" desc="Show all active floating FX windows for selected tracks">
