@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="85eaea03f2dca065b69febd6ca83a09b7b1e11c4">
+<index version="1" name="Archie-ReaScripts" commit="04a6b7a20cbe391e99ad60df71f2b97b101ae049">
   <category name="Archive - Outdated scripts">
     <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
       <metadata>
@@ -9249,6 +9249,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.16 [180720]
    + Water in bars / Ввод в тактах http://forum.cockos.com/showpost.php?p=2320799&postcount=9]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/85eaea03f2dca065b69febd6ca83a09b7b1e11c4/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
+      </version>
+      <version name="1.18" author="Archie" time="2020-07-20T06:08:25Z">
+        <changelog><![CDATA[v.1.18 [180720]
+   !+ Error correction]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/04a6b7a20cbe391e99ad60df71f2b97b101ae049/MAIN/Various/Archie_Var;%20%20Pre-reverb(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Remove items outside time selection in selected track.lua" type="script" desc="Remove items outside time selection in selected track">
