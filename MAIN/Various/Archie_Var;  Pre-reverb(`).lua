@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.17
+   * Version:     1.18
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -19,9 +19,11 @@
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
-   *              v.1.16 [180720]
-   *                 + Water in bars / Ввод в тактах http://forum.cockos.com/showpost.php?p=2320799&postcount=9
+   *              v.1.18 [180720]
+   *                 !+ Error correction
    
+   *              v.1.16/1.17 [180720]
+   *                 + Water in bars / Ввод в тактах http://forum.cockos.com/showpost.php?p=2320799&postcount=9
    *              v.1.11 [110620]
    *                 !+ Fixed bugs signal offset when the 'Default tail length' value is not zero:'
    *                  + Add Trim right
@@ -56,7 +58,7 @@
     
     
     
-    local Takt = false;
+    local MEASURE = false;
            --  = true  | время ввода в тактах
            --  = false | время ввода в сек
            -------------------------------
@@ -222,7 +224,7 @@
             local buf = reaper.parse_timestr_pos(X1,2);
             local buf2 = reaper.parse_timestr_pos(X1+1,2);
             local RET = ((buf2 - buf)* X2)+buf;
-            return RET;
+            return RET,TCT;
         end;
         --=================================================================
         
@@ -383,12 +385,13 @@
         --=====================================================
          
         
-        
+       
         
         --=====================================================
         if not tonumber(Tail_Rever) and Tail_Rever ~= true then Tail_Rever = false end;
+        local TktStart = math.huge;
         if Tail_Rever == true then;
-            if Takt == true then;--<<--v.1.16
+            if MEASURE == true then;--<<--v.1.16
                 --(v.1.16------------------
                 local val = GetCountTactsForTimePeriod(startLoop,endLoop);
                 val = tonumber(string.format("%.4f", val));
@@ -403,7 +406,7 @@
                 if not retvals_csv or retvals_csv <= 0 then;
                     retvals_csv = (endLoop-startLoop);
                 else;
-                    retvals_csv =  GetOppositeTimeBySizeOfTact(startLoop,invert_number(retvals_csv));
+                    retvals_csv,TktStart = GetOppositeTimeBySizeOfTact(startLoop,invert_number(retvals_csv));
                     retvals_csv = startLoop - retvals_csv;
                 end;
                 Tail_Rever=retvals_csv;
@@ -429,8 +432,9 @@
         --=====================================================
         
         
+        
         --=====================================================
-        if startLoop - Tail_Rever < 0 then;
+        if (startLoop - Tail_Rever < 0) or (TktStart < 1) then;
             reaper.MB("The tail does not fit, there is too little space at the beginning !\n\nХвост не помещается, слишком мало место в начале !","Woops !!!",0);
             no_undo() return;
         end;
@@ -606,7 +610,7 @@
             if str:match("ACT%s-(%d+)")~='0'then;
                  str = str:gsub("ACT%s-%d+","ACT 0");
                  reaper.SetEnvelopeStateChunk(TrackEnv,str,false);
-           end;
+            end;
         end;
         --=====================================================
         
