@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.19
+   * Version:     1.20
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,12 +21,14 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.20 [040620]
+   *                  + Fixed bug
+   
    *              v.1.17 [060620]
    *                  + Fixed a bug reopen, if ctrl let go before what completed action
    *                  + Saving the list when updating the script (just create a new script using 
    *                    "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
    *                    Only relevant if the list was created in version 1.15+
-
    *              v.1.16 [040620]
    *                  + Fixed bug when opening plugin windows
    *              v.1.15 [020620]
@@ -55,7 +57,7 @@
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.18;
+    Version = 1.20;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -179,53 +181,75 @@
     --=============================================================
     
     
+    -----------------------------------------------------------------
+    local function OWS(path); local OS,cmd = reaper.GetOS();
+        if OS == "OSX32" or OS == "OSX64" then;os.execute('open "'..path..'"');else;os.execute('start "" '..path);end;
+    end;
+    -----------------------------------------------------------------
+    
     
     local function main();
         
-        -- (v.1.10-------------------------------------
-        local function GetSelActionsActList();
-            --http://forum.cockos.com/showthread.php?p=2270516#post2270516
-            local function GetSelectedActionsFromActionList()
-                local hWnd_action = reaper.JS_Window_Find("Actions", true)
-                if not hWnd_action then return end
-                local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action, 1323)
-                if reaper.JS_ListView_GetItemText(hWnd_LV, 0, 3) == "" then
-                    --reaper.MB("Please, enable 'Show action IDs' in Actions list", "Right-click Action List window", 0)
-                    return
-                end
-                -- get selected count & selected indexes
-                local sel_count, sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV)
-                if sel_count == 0 then
-                    --reaper.MB("Please select one or more actions.", "No actions are selected", 0)
-                    return
-                end
-                local selected_actions = {}
-                local i = 0
-                for index in string.gmatch(sel_indexes, '[^,]+') do
-                    i = i + 1
-                    local desc = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 1)
-                    local cmd = reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index), 3)
-                    selected_actions[i] = {cmd = cmd, name = desc:gsub(".+: ", "", 1)}
-                end
-                return selected_actions
-            end
-            -----
-            local cmd,name,selected_actions;
-            if reaper.APIExists('JS_Window_Find')then;
-                selected_actions = GetSelectedActionsFromActionList()or {};
-                if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
-                if selected_actions[1]then name = selected_actions[1].name end;
+    -- (v.1.20-------------------------------------
+    local function GetSelActionsActList();
+        --http://forum.cockos.com/showthread.php?p=2270516#post2270516
+        local function GetSelectedActionsFromActionList();
+            local hWnd_action = reaper.JS_Window_Find("Actions",true);
+            if not hWnd_action then --[[reaper.MB("Please open Actions list!",'woops',0)]]return {} end;
+            local restore_column_state = false;
+            local hWnd_LV = reaper.JS_Window_FindChildByID(hWnd_action,1323);
+            local combo = reaper.JS_Window_FindChildByID(hWnd_action,1317);
+            local sectionName = reaper.JS_Window_GetTitle(combo,"");--save item text to table
+            local sectionID = reaper.JS_WindowMessage_Send(combo,"CB_GETCURSEL",0,0,0,0);
+            local lv_header = reaper.JS_Window_HandleFromAddress(reaper.JS_WindowMessage_Send(hWnd_LV,"0x101F",0,0,0,0)); -- 0x101F = LVM_GETHEADER
+            local lv_column_count = reaper.JS_WindowMessage_Send(lv_header,"0x1200",0,0,0,0);-- 0x1200 = HDM_GETITEMCOUNT
+            local third_item = reaper.JS_ListView_GetItemText(hWnd_LV,0,3);
+            -- get selected count & selected indexes
+            local sel_count,sel_indexes = reaper.JS_ListView_ListAllSelItems(hWnd_LV);
+            if sel_count == 0 then;
+                --reaper.MB("Please select one or more actions.","woops",0);
+                return {};
             end;
-            return cmd or '', name or '', selected_actions;
+            ----
+            if lv_column_count < 4 or third_item == "" or third_item:find("[\\/:]")then;
+                --show Command ID column
+                reaper.JS_WindowMessage_Send(hWnd_action,"WM_COMMAND",41170,0,0,0);
+                restore_column_state = true;
+            end;
+            local sel_act = {};
+            local i = 0;
+            for index in string.gmatch(sel_indexes,'[^,]+')do;
+                local desc = reaper.JS_ListView_GetItemText(hWnd_LV,tonumber(index),1):gsub(".+: ","",1);
+                local cmd = tostring(reaper.JS_ListView_GetItemText(hWnd_LV, tonumber(index),3))or '';
+                local cmdX = reaper.NamedCommandLookup(cmd);
+                if tonumber(cmdX)and cmdX~= 0 then;
+                    i = i + 1;
+                    sel_act[i] = {cmd = cmd,name = desc};
+                end;
+            end;
+            if restore_column_state then;
+                --reaper.JS_WindowMessage_Send(hWnd_action,"WM_COMMAND",41170,0,0,0);
+            end;
+            return sel_act or {},sectionID,sectionName;
         end;
-        -- v.1.10)-------------------------------------
+        ----
+        -----
+        local cmd,name,selected_actions;
+        if reaper.APIExists('JS_Window_Find')then;
+            selected_actions = GetSelectedActionsFromActionList()or {};
+            if selected_actions[1]then cmd  = selected_actions[1].cmd  end;
+            if selected_actions[1]then name = selected_actions[1].name end;
+        end;
+        return cmd or '', name or '', selected_actions;
+    end;
+    -- v.1.20)-------------------------------------
         
         
         ---------------------------------------------------
         local scriptPath = ({reaper.get_action_context()})[2];
         local section = scriptPath:match('^.*[/\\](.+)$');
         ---------------------------------------------------
-        
+        local pathqew = 'https://forum.cockos.com/showthread.php?t=240279';
         
         ---------------------------------------------------
         local H = {};
@@ -278,6 +302,17 @@
         
         
         ---------------------------------------------------
+        local werwe = tonumber(reaper.GetExtState('sdfsdfsdfsds','tyrtyrtrtyr'))or 0;
+        if werwe >=50 then werwe = 0 end;
+        reaper.SetExtState('sdfsdfsdfsds','tyrtyrtrtyr',werwe+1,false);
+        if werwe == 0 then;
+            OWS(pathqew);
+        end;
+        ---------------------------------------------------
+        
+        
+        
+        ---------------------------------------------------
         --local ExtState = reaper.GetExtState(section,'LIST');
         local ExtState = GetList('LIST');--v.1.12;
         local t        = {};
@@ -286,8 +321,8 @@
         local nameTRem = {};
         local stop;
         for val in string.gmatch(ExtState, "{&&(.-)&&}") do;
-            idT[#idT+1] = val:match('^(.+)=');
-            nameT[#idT] = val:match('.*=(.+)$');
+            idT[#idT+1] = val:match('^(.-)=');
+            nameT[#idT] = val:match('.-=(.+)$');
             local nmXS = nameT[#idT]:match('^[|#!<>]+')or'';
             nameT[#idT] = nameT[#idT]:gsub('^[|#!<>]+','');
             local nmXE = nameT[#idT]:match('.(|)%s-$')or'';
@@ -421,7 +456,7 @@
                                 idCheck = tonumber(id);
                             end;
                             
-                            act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
+                            act = (retvals_csv:match('^.-=(.-)$')):gsub('^[!<>]+','');
                             if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' then act = nil end;
                             if not act or idCheck == 0 then goto restart end;
                             
@@ -504,7 +539,8 @@
                             ::restartRename::;
                             
                             if not id  then id  = val:match('^[{&&]*(.-)=')end;
-                            if not act then act = val:match('^.*=(.-)[&&}]*$')end;
+                            if not act then act = val:match('^.-=(.-)[&&}]-$')end;
+                            local act2 = act:gsub('=','⁼');
                             
                             local retval,retvals_csv = reaper.GetUserInputs('Rename action',2,'Rename  ID  Action:,'..
                                                                                            'Rename  Name  Action:,'..
@@ -519,7 +555,7 @@
                                 idCheck = tonumber(id);
                             end;
                             
-                            act = (retvals_csv:match('^.*=(.-)$')):gsub('^[!<>]+','');
+                            act = (retvals_csv:match('^.-=(.-)$')):gsub('^[!<>]+','');
                             if act:gsub('|','')==''or act:gsub('^[#|]+','')=='' or idCheck == 0 then goto restartRename end;
                             val = '{&&'..id..'='..act..'&&}';
                             ----
@@ -599,6 +635,7 @@
                                      local Mouse_GetState = reaper.JS_Mouse_GetState(127);
                                      if Mouse_GetState ~= 4 and Mouse_GetState ~= 5 then;
                                          OPEN_AGAIN = nil;
+                                         reaper.DeleteExtState(section,'Ext_x_y',false);
                                      end;
                                  end;
                              end;
@@ -634,6 +671,7 @@
     
     
     
+    
     local scriptFile = debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/');
     local file = io.open(scriptFile,'r');
     local str;
@@ -655,6 +693,7 @@
         ::res::
         local retval,retvals_csv = reaper.GetUserInputs('Generate name of script',1,'Enter Tag (of least 1 symbols),extrawidth=250','');
         if not retval then no_undo()return end;
+        OWS('https://forum.cockos.com/showthread.php?t=240279');
         if #retvals_csv:gsub('[%s%p]','')<1 then goto res end;
         retvals_csv = retvals_csv:gsub('%p','');
         local newScript = 'Archie_Var;  Popup menu single-level('..retvals_csv..').lua'
