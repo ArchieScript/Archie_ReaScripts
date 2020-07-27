@@ -1,3 +1,4 @@
+-- NoIndex: true
 --[[
    * Category:    Item
    * Description: Move selected items to each other
