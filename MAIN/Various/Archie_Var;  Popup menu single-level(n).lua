@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var;  Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
