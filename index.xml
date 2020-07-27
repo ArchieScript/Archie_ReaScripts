@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="41964ec62c4909973f0f5f1e7e09b4477ffd9f60">
+<index version="1" name="Archie-ReaScripts" commit="35b57e9c93b2a0a5b5b968f0be1a641d980eddf3">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8932,12 +8932,9 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/41964ec62c4909973f0f5f1e7e09b4477ffd9f60/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
       <version name="1.17" author="Archie" time="2020-06-06T10:42:30Z">
-        <changelog><![CDATA[v.1.17 [060620]
-    + Fixed a bug reopen, if ctrl let go before what completed action
-    + Saving the list when updating the script (just create a new script using 
-      "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
-      Only relevant if the list was created in version 1.15+]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f04998df817cbf157b0b24c37b9e18cfbc43ebe6/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+        <changelog><![CDATA[v.1.20/1.21 [270720]
+    + Fixed bug (demo)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/35b57e9c93b2a0a5b5b968f0be1a641d980eddf3/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
       <version name="1.18" author="Archie" time="2020-06-11T16:58:56Z">
         <changelog><![CDATA[v.1.17 [060620]
