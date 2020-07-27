@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2583f4d9a17c793a69f4c97379cbb1c8327bbe21">
+<index version="1" name="Archie-ReaScripts" commit="8eb21bcd86f04e2e4c218769aaa8d64bbe084172">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8897,9 +8897,9 @@ v.1.0 [28.08.19]
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2583f4d9a17c793a69f4c97379cbb1c8327bbe21/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
       <version name="1.09" author="Archie" time="2020-04-12T06:09:42Z">
-        <changelog><![CDATA[v.1.09 [120420]
-    + Automatically creating copies with the desired label in the script name]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5f320fab1491e1f4c1c542b70cd66562b90e9b6b/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+        <changelog><![CDATA[v.1.20/1.21 [270720]
+    + Fixed bug (demo)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8eb21bcd86f04e2e4c218769aaa8d64bbe084172/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
       <version name="1.10" author="Archie" time="2020-04-13T05:37:14Z">
         <changelog><![CDATA[v.1.10 [130420]
