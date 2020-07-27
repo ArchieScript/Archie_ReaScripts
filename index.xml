@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="3d65cdb5e27c65111d81f47545f83defcd810b76">
-  <category name="Archive - Outdated scripts">
-    <reapack name="Archie_Item;  Move selected items to each other(`).lua" type="script" desc="Move selected items to each other">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.03" author="Archie" time="2020-06-27T06:11:22Z">
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e501ba99b1b80e1f0be6e187f2f2288e72de45b9/Archive%20-%20Outdated%20scripts/Archie_Item;%20%20Move%20selected%20items%20to%20each%20other(%60).lua</source>
-      </version>
-    </reapack>
-  </category>
+<index version="1" name="Archie-ReaScripts" commit="341275cf5ac893122cdd9feec6fffe8a6ce1d93b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8869,25 +8857,9 @@ v.1.0 [28.08.19]
         <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
       </metadata>
       <version name="1.0" author="Archie" time="2020-03-15T13:02:12Z">
-        <changelog><![CDATA[v.1.0 [150320]
-    + initialе]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="main" file="Archie_Var;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3fdc2a3158a99967f1dfd223f3a6aad4cdb59f9f/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+        <changelog><![CDATA[v.1.20/1.21 [270720]
+    + Fixed bug (demo)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/341275cf5ac893122cdd9feec6fffe8a6ce1d93b/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
       <version name="1.02" author="Archie" time="2020-03-16T08:07:18Z">
         <changelog><![CDATA[v.1.02 [160320]
@@ -9170,6 +9142,11 @@ v.1.0 [28.08.19]
         <changelog><![CDATA[v.1.20 [040620]
     + Fixed bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/3d65cdb5e27c65111d81f47545f83defcd810b76/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.21" author="Archie" time="2020-07-27T17:54:06Z">
+        <changelog><![CDATA[v.1.20/1.21 [270720]
+    + Fixed bug (demo)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/032f9b72796076a7796796a8483286f6e227c223/MAIN/Various/Archie_Var;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var;  Pre-reverb(`).lua" type="script" desc="Var;  Pre-reverb(`).lua">
@@ -10130,218 +10107,6 @@ Performance: Script completely rewritten]]></changelog>
       <version name="1.0" author="Archie" time="2018-11-25T15:30:29Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2664a6d6722dccdfe70a92690e0c6ecb796a9772/MIDI%20Editor/Archie_MidiEditor;%20%20Open-close%20Notes%20window.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Popup menu single-level(n).lua" type="script" desc="MidiEditor;  Popup menu single-level(n).lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-03-15T15:05:30Z">
-        <changelog><![CDATA[v.1.0 [150320]
-    + initialе]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1163792265c898b3c1d50b30eeb2e7378dd8daab/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-03-16T08:07:18Z">
-        <changelog><![CDATA[v.1.02 [160320]
-    + Redesigned 'Add Menu']]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bbe9f31e46ac2bb665a739cac3277a0583cf6764/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.03" author="Archie" time="2020-03-17T08:03:48Z">
-        <changelog><![CDATA[v.1.03 [170320]
-    ! Fixed bug
-    + Protection from spec characters]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/cb2acefe89bb81097616f047bf9dcf9d5e3f39d7/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.05" author="Archie" time="2020-03-26T13:10:54Z">
-        <changelog><![CDATA[v.1.05 [260320]
-    ! Fixed bug
-    + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/243d6f22ddf7da80ccff0f80873a14e21ea8d79a/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.06" author="Archie" time="2020-03-26T13:28:27Z">
-        <changelog><![CDATA[v.1.05 [260320]
-    ! Fixed bug
-    + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/837fc4c8d11a3b2c4f568f26423f4e9fc478bd67/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.07" author="Archie" time="2020-03-31T14:15:00Z">
-        <changelog><![CDATA[v.1.07 [310320]
-    No change]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/1cfdbeb2ee664eb63da320f10278080c9e17c498/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.08" author="Archie" time="2020-03-31T16:31:02Z">
-        <changelog><![CDATA[v.1.08 [310320]
-    No change]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(1).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(2).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(3).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(4).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(5).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(6).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(7).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(8).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(9).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Popup menu single-level(16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/bb95bf07e2cb4d859af829ed5ffafd562b2a74cc/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.09" author="Archie" time="2020-04-12T06:09:42Z">
-        <changelog><![CDATA[v.1.09 [120420]
-    + Automatically creating copies with the desired label in the script name]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/5f320fab1491e1f4c1c542b70cd66562b90e9b6b/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.10" author="Archie" time="2020-04-13T05:37:14Z">
-        <changelog><![CDATA[v.1.10 [130420]
-    AutoFill the form when adding an action (before clicking add, select an action in the actions list)]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/3af3553e296fce0a25c9a088ea6070ca7aa3c473/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.11" author="Archie" time="2020-04-13T12:13:32Z">
-        <changelog><![CDATA[v.1.11 [130420]
-    + Add multiple actions at once]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/bfccc4ad0c166abbe44c3e5e4a19faf55f798e47/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.15" author="Archie" time="2020-06-02T14:57:24Z">
-        <changelog><![CDATA[v.1.15 [020620]
-    + Open again
-    ! Fixed bug Ext State
-    + Storing the list directly in the script (relevant for newly created scripts)
-v.1.11 [130420]
-    + Add multiple actions at once
-v.1.10 [130420]
-    AutoFill the form when adding an action (before clicking add, select an action in the actions list)
-v.1.09 [120420]
-    + Automatically creating copies with the desired label in the script name
-v.1.08 [310320]
-    No change  
-v.1.05 [260320]
-    ! Fixed bug
-v.1.04 [260320]
-    + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
-v.1.03 [170320]
-    ! Fixed bug
-    + Protection from spec characters 
-v.1.02 [160320]
-    + Redesigned 'Add Menu'
-v.1.0 [150320]
-    + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/8ec5e824d86bf9caf97e58d403ace199c054bb4b/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.16" author="Archie" time="2020-06-04T15:53:36Z">
-        <changelog><![CDATA[v.1.16 [040620]
-    + Fixed bug when opening plugin windows]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/225a5dba1843c6b306c9b85fdb6c305dcad3081c/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
-      </version>
-      <version name="1.17" author="Archie" time="2020-06-06T10:42:30Z">
-        <changelog><![CDATA[v.1.17 [060620]
-    + Fixed a bug reopen, if ctrl let go before what completed action
-    + Saving the list when updating the script (just create a new script using 
-      "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
-      Only relevant if the list was created in version 1.15+]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/f04998df817cbf157b0b24c37b9e18cfbc43ebe6/MIDI%20Editor/Archie_MidiEditor;%20%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor;  Scroll vertically (MIDI relativemousewheel)(3x).lua" type="script" desc="MidiEditor;  Scroll vertically (MIDI relative/mousewheel)(3x).lua">
