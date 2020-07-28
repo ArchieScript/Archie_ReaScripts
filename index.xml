@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="fcf5c6b49858d5887cb2fa1cfee621b68d6dae7e">
+<index version="1" name="Archie-ReaScripts" commit="7a562a1f375924de5a128c79d08d38ad01513570">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1918,6 +1918,15 @@ LUA_Lib
       </metadata>
       <version name="1.0" author="Archie" time="2020-07-28T02:39:11Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/fcf5c6b49858d5887cb2fa1cfee621b68d6dae7e/MAIN/Item/Archie_Item;%20By%20frame%20move%20item,under%20mouse%20cursor.move%20cursor%20the%20to%20offset(mousewheel).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item; By samples move item,under mouse cursor move cursor the to offset(mousewheel).lua" type="script" desc="By samples move item,under mouse cursor move cursor the to offset(mousewheel)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-07-28T09:22:02Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7a562a1f375924de5a128c79d08d38ad01513570/MAIN/Item/Archie_Item;%20By%20samples%20move%20item,under%20mouse%20cursor%20move%20cursor%20the%20to%20offset(mousewheel).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; Change playback rate selected items to (ctrl-custom value).lua" type="script" desc="Change playback rate selected items to (ctrl-custom value)">
