@@ -2,7 +2,7 @@
    * Category:    Item 
    * Description: Split (selected) item(s) under mouse cursor (select left) 
    * Author:      Archie 
-   * Version:     1.09 
+   * Version:     1.10 
    * AboutScript: Split selected item(s) under mouse cursor and all selected items  
                             in this position or item under mouse cursor(select left) 
                             PLEASE NOTE THE SETTINGS BELOW 
