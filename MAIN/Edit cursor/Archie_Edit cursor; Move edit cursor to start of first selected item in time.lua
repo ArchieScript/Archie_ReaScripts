@@ -11,11 +11,11 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    ---
    * Gave idea:   HDVulcan[RMM]
-   * Changelog:   
+   * Changelog:
    *              +  initialе / v.1.0 [01042019]
-   
-   
-   
+
+
+
    -- Тест только на windows  /  Test only on windows.
    --========================================================================================
    --///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\\
@@ -35,30 +35,30 @@
    --\\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: /////
    ========================================================================================]]
 
-    
+
 
 
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================  
-    
-    
-    
+    --======================================================================================
+
+
+
     ---------------------------------------------------------
     local function no_undo();reaper.defer(function()end);end;
     ---------------------------------------------------------
-    
-    
+
+
     local CountSelItem = reaper.CountSelectedMediaItems(0);
     if CountSelItem == 0 then no_undo() return end;
-    
+
     local PosIt_X = 90^90;
     for i = 1, CountSelItem do;
 	   local SelItem = reaper.GetSelectedMediaItem(0,i-1);
 	   local PosIt_Y = reaper.GetMediaItemInfo_Value(SelItem,"D_POSITION");
 	   if PosIt_Y < PosIt_X then PosIt = PosIt_Y;PosIt_X = PosIt_Y end;
     end;
-    
+
     reaper.SetEditCurPos(PosIt,1,false);
     no_undo();

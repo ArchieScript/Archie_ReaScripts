@@ -15,20 +15,20 @@
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.12.0+ http://www.sws-extension.org/index.php
-   * Changelog:   
+   * Changelog:
    *              v.1.02 [030620]
    *                  + ---
-   
+
    *              v.1.0 [130520]
    *                  + initialе
 --]]
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
 	
-    
+
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
@@ -38,14 +38,14 @@
     --=========================================
 	
 
-    
-    
+
+
     local is_new_value,filename,sectionID,cmdID,mode,resolution,val = reaper.get_action_context();
     local extname = filename:match('.+[/\\](.+)'):upper();
     local ConfigVar = reaper.SNM_GetIntConfigVar('zoommode',0);
     reaper.SNM_SetIntConfigVar('zoommode',3);
-    
-    
+
+
     --=========================================
     local function loop();
         local window,segment,details = reaper.BR_GetMouseCursorContext();
@@ -59,8 +59,8 @@
         reaper.defer(loop);
     end;
     --=========================================
-    
-    
+
+
     --=========================================
     local function exit();
         reaper.SNM_SetIntConfigVar('zoommode',ConfigVar);
@@ -68,14 +68,13 @@
         reaper.RefreshToolbar2(sectionID,cmdID);
     end;
     --=========================================
-    
-    
+
+
     loop();
     reaper.SetToggleCommandState(sectionID,cmdID,1);
     reaper.RefreshToolbar2(sectionID,cmdID);
     reaper.atexit(exit);
     local ScrPath,ScrName = filename:match('(.+)[/\\](.+)');
     reaper.defer(function()A.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,260,ScrPath,ScrName)end);
-    
-    
-    
+
+

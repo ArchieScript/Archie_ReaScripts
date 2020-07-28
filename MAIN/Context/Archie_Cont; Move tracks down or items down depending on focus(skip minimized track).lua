@@ -21,15 +21,15 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
     local Grp = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/MAIN';
     local TrackScr = Grp..'/Track/Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua';
     local Item_Scr = Grp..'/Item/Archie_Item;  Move selected items down by one visible track(skip minimized track).lua';
-    
-    
+
+
     local CursorContext = reaper.GetCursorContext2(true);
-    
+
     if CursorContext == 0 then; -- tr
         dofile(TrackScr);
         reaper.SetCursorContext(0,nil);
@@ -40,4 +40,3 @@
     else;
         reaper.defer(function()end);
     end;
-    

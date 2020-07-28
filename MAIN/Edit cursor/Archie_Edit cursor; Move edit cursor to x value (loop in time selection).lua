@@ -13,14 +13,14 @@
    * Changelog:   v.1.0 [26.12.19]
    *                  + initialе
 --]]
-    
+
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
 	
-    
+
     local VALUE = true
              -- = true  | показать окно ввода
              -- = иначе введите значение (= 1/4; =1/2; =1; = -1/4; =-1/2; =-1 и т.д.)
@@ -28,20 +28,20 @@
              -- = true  | show the input box
              -- = else enter a value (= 1/4; =1/2; =1; = -1/4; =-1/2; =-1 etc)
              -----------------------------------------------------------------
-    
-    
+
+
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
-    
-    
-    
+
+
+
+
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
-    
-    
+
+
     -------------------------------------------------------
     local function tonumb(s);
         local function x(s);
@@ -50,14 +50,14 @@
         return tonumber((({pcall(x,s)})[2]));
     end;
     -------------------------------------------------------
-    
-    
+
+
     ---------------------------------------------
     if type(VALUE)=='boolean'then VALUE = '' end;
     VALUE = VALUE:gsub('^%++','');
     ------------------------------
-    
-    
+
+
     -------------------------------------------------------
     if not tonumb(VALUE)then;
         ::rest::;
@@ -79,41 +79,41 @@
         VALUE = tonumb(VALUE);
     end;
     -------------------------------------------------------
-    
-    
-    
+
+
+
     -------------------------------------------------------
     if VALUE == 0 then no_undo()return end;
     local CursorPosition = reaper.GetCursorPosition();
     local CursorPositionX = CursorPosition;
     local startLoop,endLoop = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
-    
+
     local beat = reaper.parse_timestr_pos(2,2);
-    
+
     local moveLen = math.abs(beat*VALUE);
-    
+
     if startLoop == endLoop then;
         startLoop = 0-math.huge;
         endLoop   =   math.huge;
     else;
         if (VALUE < 0 and CursorPosition < startLoop) or
            (VALUE > 0 and CursorPosition > endLoop  ) then;
-           
+
            if VALUE < 0 then mv = CursorPosition-moveLen end;
            if VALUE > 0 then mv = CursorPosition+moveLen end;
-           
+
            reaper.SetEditCurPos(mv,true,false);
            no_undo()return;
         end;
     end;
     -------------------------------------------------------
-       
-    
+
+
     -------------------------------------------------------
     local Move;
-    
+
     if VALUE > 0 then;
-    
+
         ::Res::
         if (CursorPosition + moveLen) > endLoop then;
             moveLen = moveLen - (endLoop-CursorPosition);
@@ -122,7 +122,7 @@
         end;
         Move = CursorPosition + moveLen;
     else;
-        
+
         ::Res2::
         if (CursorPosition - moveLen) < startLoop then;
             moveLen = moveLen - (CursorPosition-startLoop);
@@ -131,12 +131,12 @@
         end;
         Move = CursorPosition - moveLen;
     end;
-    
-    
+
+
     if Move < 0 then Move = CursorPositionX end;
-    
+
     if Move == CursorPositionX then no_undo() return end;
-    
+
     reaper.SetEditCurPos(Move,true,false);
     -------------------------------------------------------
     no_undo();

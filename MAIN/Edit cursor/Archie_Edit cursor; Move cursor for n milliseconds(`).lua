@@ -33,10 +33,10 @@
    *              [main] . > Archie_Edit cursor; Move cursor right for 800 milliseconds(`).lua
    *              [main] . > Archie_Edit cursor; Move cursor right for 900 milliseconds(`).lua
    *              [main] . > Archie_Edit cursor; Move cursor right for 1000 milliseconds(`).lua
-   * Changelog:   
+   * Changelog:
    *              +  initialе / v.1.0 [01042019]
-   
-   
+
+
    -- Тест только на windows  /  Test only on windows.
    --========================================================================================
    --///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\\
@@ -55,51 +55,51 @@
    ----------------------------------------------------------------------------------------||
    --\\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: ///// SYSTEM REQUIREMENTS: \\\\\ СИСТЕМНЫЕ ТРЕБОВАНИЯ: /////
    ========================================================================================]]
-    
-    
-    
-    
+
+
+
+
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
 	
-    
+
     local Move_Arrange = 1
                     -- = 0 Не перемещать вид за курсором редактирования
                     -- = 1 переместить вид за курсором редактирования
-                         -------------------------------------------- 
+                         --------------------------------------------
                     -- = 0 Do not move the view behind the edit cursor
                     -- = 1 move the view behind the edit cursor
                     -------------------------------------------
-    
-    
-    
+
+
+
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================  
-    
-    
-    
+    --======================================================================================
+
+
+
     ---------------------------------------------------------
     local function no_undo();reaper.defer(function()end);end;
     ---------------------------------------------------------
-    
-    
+
+
     local ScrName = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-    
+
 
     local left = tonumber(ScrName:match("left for (%d+)"));
     local right = tonumber(ScrName:match("right for (%d+)"));
-    
+
     if left then;
         moveTo = left-left*2;
     elseif right then;
         moveTo = right;
     end;
-    
-    
+
+
     if type(moveTo) == "number" then;
         local cur = reaper.GetCursorPosition();
         reaper.SetEditCurPos(cur+(moveTo/1000),Move_Arrange,false);

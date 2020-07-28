@@ -8,35 +8,35 @@
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
 --]]
-    
-    
+
+
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
 	
-    
+
     local SNAP = false
             -- = true  | реагировать на привязку к сетке
             -- = false | не реагировать на привязку к сетке
-    
-    
-    
+
+
+
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
-    
-    
+
+
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
-    
-    
+
+
     local function GetPrevNextGridArrange(time,nextPrev);
         local ToggleSnap = reaper.GetToggleCommandStateEx(0,1157);
         local ToggleEnab = reaper.GetToggleCommandStateEx(0,40145);
-        if ToggleSnap == 0 or ToggleEnab == 0 then;  
+        if ToggleSnap == 0 or ToggleEnab == 0 then;
             return time;
         end;
         local val;
@@ -51,9 +51,9 @@
         ::ret::;
         return val;
     end;
-    
-    
-    
+
+
+
     local function GetPrevNextGridArrange2(time,nextPrev);
         local ToggleSnap = reaper.GetToggleCommandStateEx(0,1157);
         if ToggleSnap == 0 then;reaper.Main_OnCommand(1157,0);end;
@@ -72,32 +72,32 @@
         if ToggleEnab == 0 then;reaper.Main_OnCommand(40145,0);end;
         return val;
     end;
-    
-    
+
+
     local GetGridLine;
     if SNAP == true then;
         GetGridLine = GetPrevNextGridArrange;
     else;
         GetGridLine = GetPrevNextGridArrange2;
     end;
-    
-    
+
+
     local CursorPosition = reaper.GetCursorPosition();
-    
-    
+
+
     local PrevLine = GetGridLine(CursorPosition,-1);
     if PrevLine == CursorPosition then no_undo() return end;
-    
+
     local NextLine = GetGridLine(CursorPosition, 1);
     if NextLine == CursorPosition then no_undo() return end;
-    
+
     local L = math.abs(CursorPosition-PrevLine);
     local R = math.abs(NextLine-CursorPosition);
-    
+
     if L <= R then;--<<<
          reaper.SetEditCurPos(PrevLine,true,false);
     else;
         reaper.SetEditCurPos(NextLine,true,false);
     end;
-    
+
     no_undo();
