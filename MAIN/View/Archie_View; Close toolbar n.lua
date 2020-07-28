@@ -13,23 +13,23 @@
    * Gave idea:   ---(---)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_View;  Close toolbar main.lua
-   *              [main] . > Archie_View;  Close toolbar 1.lua
-   *              [main] . > Archie_View;  Close toolbar 2.lua
-   *              [main] . > Archie_View;  Close toolbar 3.lua
-   *              [main] . > Archie_View;  Close toolbar 4.lua
-   *              [main] . > Archie_View;  Close toolbar 5.lua
-   *              [main] . > Archie_View;  Close toolbar 6.lua
-   *              [main] . > Archie_View;  Close toolbar 7.lua
-   *              [main] . > Archie_View;  Close toolbar 8.lua
-   *              [main] . > Archie_View;  Close toolbar 9.lua
-   *              [main] . > Archie_View;  Close toolbar 10.lua
-   *              [main] . > Archie_View;  Close toolbar 11.lua
-   *              [main] . > Archie_View;  Close toolbar 12.lua
-   *              [main] . > Archie_View;  Close toolbar 13.lua
-   *              [main] . > Archie_View;  Close toolbar 14.lua
-   *              [main] . > Archie_View;  Close toolbar 15.lua
-   *              [main] . > Archie_View;  Close toolbar 16.lua
+   *              [main] . > Archie_View; Close toolbar main.lua
+   *              [main] . > Archie_View; Close toolbar 1.lua
+   *              [main] . > Archie_View; Close toolbar 2.lua
+   *              [main] . > Archie_View; Close toolbar 3.lua
+   *              [main] . > Archie_View; Close toolbar 4.lua
+   *              [main] . > Archie_View; Close toolbar 5.lua
+   *              [main] . > Archie_View; Close toolbar 6.lua
+   *              [main] . > Archie_View; Close toolbar 7.lua
+   *              [main] . > Archie_View; Close toolbar 8.lua
+   *              [main] . > Archie_View; Close toolbar 9.lua
+   *              [main] . > Archie_View; Close toolbar 10.lua
+   *              [main] . > Archie_View; Close toolbar 11.lua
+   *              [main] . > Archie_View; Close toolbar 12.lua
+   *              [main] . > Archie_View; Close toolbar 13.lua
+   *              [main] . > Archie_View; Close toolbar 14.lua
+   *              [main] . > Archie_View; Close toolbar 15.lua
+   *              [main] . > Archie_View; Close toolbar 16.lua
    * Changelog:   v.1.0 [14.06.2019]
    *                  + initialе
     

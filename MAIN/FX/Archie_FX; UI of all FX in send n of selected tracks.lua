@@ -16,30 +16,30 @@
    * Gave idea:   YuriOl(Rmm)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 1 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 2 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 3 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 4 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 5 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 6 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 7 of selected tracks.lua
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in send 8 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 1 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 2 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 3 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 4 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 5 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 6 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 7 of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in send 8 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 1 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 2 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 3 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 4 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 5 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 6 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 7 of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in send 8 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 1 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 2 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 3 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 4 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 5 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 6 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 7 of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in send 8 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 1 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 2 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 3 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 4 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 5 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 6 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 7 of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in send 8 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 1 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 2 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 3 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 4 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 5 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 6 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 7 of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in send 8 of selected tracks.lua
    * Extension:   Reaper 6.09+ http://www.reaper.fm/
    * Changelog:   
    *              v.1.03 [110520]

@@ -13,26 +13,26 @@
    * Gave idea:   HDVulcan[RMM]
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 100 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 200 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 300 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 400 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 500 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 600 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 700 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 800 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 900 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor left for 1000 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 100 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 200 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 300 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 400 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 500 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 600 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 700 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 800 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 900 milliseconds(`).lua
-   *              [main] . > Archie_Edit cursor;  Move cursor right for 1000 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 100 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 200 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 300 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 400 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 500 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 600 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 700 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 800 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 900 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor left for 1000 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 100 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 200 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 300 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 400 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 500 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 600 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 700 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 800 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 900 milliseconds(`).lua
+   *              [main] . > Archie_Edit cursor; Move cursor right for 1000 milliseconds(`).lua
    * Changelog:   
    *              +  initialе / v.1.0 [01042019]
    

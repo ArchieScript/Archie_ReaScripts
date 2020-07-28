@@ -12,38 +12,38 @@
    * Customer:    Maestro Sound(RMM Forum)
    * Gave idea:   Maestro Sound(RMM Forum)
    * Provides:    
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 01 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 02 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 03 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 04 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 05 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 06 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 07 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 08 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 09 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 10 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 11 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 12 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 13 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 14 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 15 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 16 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 17 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 18 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 19 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 20 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 21 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 22 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 23 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 24 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 25 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 26 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 27 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 28 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 29 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 30 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 31 (`).lua
-   *              [main] . > Archie_Group;  Toggle Solo Unsolo all tracks in group 32 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 01 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 02 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 03 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 04 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 05 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 06 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 07 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 08 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 09 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 10 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 11 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 12 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 13 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 14 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 15 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 16 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 17 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 18 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 19 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 20 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 21 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 22 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 23 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 24 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 25 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 26 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 27 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 28 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 29 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 30 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 31 (`).lua
+   *              [main] . > Archie_Group; Toggle Solo Unsolo all tracks in group 32 (`).lua
    * Changelog:   
    *              +  initialе / v.1.0 [27.12.18]
    

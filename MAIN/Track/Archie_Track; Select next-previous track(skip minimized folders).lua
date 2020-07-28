@@ -12,10 +12,10 @@
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Provides:    
-   *              [main] . > Archie_Track;  Select next tracks(skip minimized folders)(`).lua
-   *              [main] . > Archie_Track;  Select previous tracks(skip minimized folders)(`).lua
-   *              [main] . > Archie_Track;  Select next tracks(skip folders)(`).lua
-   *              [main] . > Archie_Track;  Select previous tracks(skip folders)(`).lua
+   *              [main] . > Archie_Track; Select next tracks(skip minimized folders)(`).lua
+   *              [main] . > Archie_Track; Select previous tracks(skip minimized folders)(`).lua
+   *              [main] . > Archie_Track; Select next tracks(skip folders)(`).lua
+   *              [main] . > Archie_Track; Select previous tracks(skip folders)(`).lua
    * Changelog:   
    *              v.1.06 [22.05.19]
    *                  + Add script ...(skip folders)
@@ -91,10 +91,10 @@
     
     
     
-    local SelectPrev  = "Archie_Track;  Select previous tracks(skip minimized folders)(`).lua";
-    local SelectNext  = "Archie_Track;  Select next tracks(skip minimized folders)(`).lua";
-    local SelectPrev2 = "Archie_Track;  Select previous tracks(skip folders)(`).lua";
-    local SelectNext2 = "Archie_Track;  Select next tracks(skip folders)(`).lua";
+    local SelectPrev  = "Archie_Track; Select previous tracks(skip minimized folders)(`).lua";
+    local SelectNext  = "Archie_Track; Select next tracks(skip minimized folders)(`).lua";
+    local SelectPrev2 = "Archie_Track; Select previous tracks(skip folders)(`).lua";
+    local SelectNext2 = "Archie_Track; Select next tracks(skip folders)(`).lua";
     
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");

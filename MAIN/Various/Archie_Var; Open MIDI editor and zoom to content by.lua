@@ -16,14 +16,14 @@
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    * Provides:    
-   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by item.lua
-   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by source.lua
-   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by item.lua
-   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by source.lua
-   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by item(Time Selection).lua
-   *              [main] . > Archie_Var;  Open MIDI editor and zoom to content by source(Time Selection).lua
-   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by item(Time Selection).lua
-   *              [main] . > Archie_Var;  Toggle Open MIDI editor and zoom to content by source(Time Selection).lua
+   *              [main] . > Archie_Var; Open MIDI editor and zoom to content by item.lua
+   *              [main] . > Archie_Var; Open MIDI editor and zoom to content by source.lua
+   *              [main] . > Archie_Var; Toggle Open MIDI editor and zoom to content by item.lua
+   *              [main] . > Archie_Var; Toggle Open MIDI editor and zoom to content by source.lua
+   *              [main] . > Archie_Var; Open MIDI editor and zoom to content by item(Time Selection).lua
+   *              [main] . > Archie_Var; Open MIDI editor and zoom to content by source(Time Selection).lua
+   *              [main] . > Archie_Var; Toggle Open MIDI editor and zoom to content by item(Time Selection).lua
+   *              [main] . > Archie_Var; Toggle Open MIDI editor and zoom to content by source(Time Selection).lua
    *         
    * Changelog:   
    *              v.1.04 [130520]

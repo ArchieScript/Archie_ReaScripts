@@ -13,9 +13,9 @@
    * Gave idea:   Maestro Sound(RMM)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_FX;  Freeze track in mono, to specified FX (user input).lua
-   *              [main] . > Archie_FX;  Freeze track in stereo, to specified FX (user input).lua
-   *              [main] . > Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua
+   *              [main] . > Archie_FX; Freeze track in mono, to specified FX (user input).lua
+   *              [main] . > Archie_FX; Freeze track in stereo, to specified FX (user input).lua
+   *              [main] . > Archie_FX; Freeze track in multichannel, to specified FX (user input).lua
    * Changelog:   v.1.01 [09062019]
    *                  +  initialе
    
@@ -50,21 +50,21 @@
     local scrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
     
     local command_id,inf;
-    if scrName == "Archie_FX;  Freeze track in mono, to specified FX (user input).lua" then;
+    if scrName == "Archie_FX; Freeze track in mono, to specified FX (user input).lua" then;
         command_id = 40901;--freez
         inf = "mono"
-    elseif scrName == "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua" then;
+    elseif scrName == "Archie_FX; Freeze track in stereo, to specified FX (user input).lua" then;
         command_id = 41223;
         inf = "stereo"
-    elseif scrName == "Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua" then;
+    elseif scrName == "Archie_FX; Freeze track in multichannel, to specified FX (user input).lua" then;
         command_id = 40877;
         inf = "multichannel"
     else;
         reaper.MB("RUS:\nНеверное имя скрипта\nИмя должно быть одно из следующих ***\n\n\n"..
                   "ENG:\nInvalid script name\nThe name must be one of the following ***\n\n\n***\n"..
-                  "Archie_FX;  Freeze track in mono, to specified FX (user input).lua\n"..
-                  "Archie_FX;  Freeze track in stereo, to specified FX (user input).lua\n"..
-                  "Archie_FX;  Freeze track in multichannel, to specified FX (user input).lua","ERROR",0)
+                  "Archie_FX; Freeze track in mono, to specified FX (user input).lua\n"..
+                  "Archie_FX; Freeze track in stereo, to specified FX (user input).lua\n"..
+                  "Archie_FX; Freeze track in multichannel, to specified FX (user input).lua","ERROR",0)
         no_undo() return;
     end;
     

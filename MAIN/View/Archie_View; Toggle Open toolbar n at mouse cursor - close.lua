@@ -15,22 +15,22 @@
    * Gave idea:   Archie(---)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_View;  Toggle Open toolbar 1 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 2 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 3 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 4 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 5 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 6 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 7 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 8 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 9 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 10 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 11 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 12 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 13 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 14 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 15 at mouse cursor - close.lua
-   *              [main] . > Archie_View;  Toggle Open toolbar 16 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 1 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 2 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 3 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 4 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 5 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 6 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 7 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 8 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 9 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 10 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 11 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 12 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 13 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 14 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 15 at mouse cursor - close.lua
+   *              [main] . > Archie_View; Toggle Open toolbar 16 at mouse cursor - close.lua
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    * Changelog:   

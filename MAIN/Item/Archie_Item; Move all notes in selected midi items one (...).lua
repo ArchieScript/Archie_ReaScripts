@@ -12,10 +12,10 @@
    * Customer:    Krikets(Rmm/forum) 
    * Gave idea:   Krikets(Rmm/forum)
    * Provides:    
-   *              [main] . > Archie_Item;  Move all notes in selected midi items one octave down.lua
-   *              [main] . > Archie_Item;  Move all notes in selected midi items one octave up.lua
-   *              [main] . > Archie_Item;  Move all notes in selected midi items one semitone down.lua
-   *              [main] . > Archie_Item;  Move all notes in selected midi items one semitone up.lua
+   *              [main] . > Archie_Item; Move all notes in selected midi items one octave down.lua
+   *              [main] . > Archie_Item; Move all notes in selected midi items one octave up.lua
+   *              [main] . > Archie_Item; Move all notes in selected midi items one semitone down.lua
+   *              [main] . > Archie_Item; Move all notes in selected midi items one semitone up.lua
    * Changelog:   
    *              v.1.0[27.07.19]
    *                  + initialе
@@ -48,10 +48,10 @@
     
     
     local ScrName = {
-                     "Archie_Item;  Move all notes in selected midi items one octave down.lua",
-                     "Archie_Item;  Move all notes in selected midi items one octave up.lua",
-                     "Archie_Item;  Move all notes in selected midi items one semitone down.lua",
-                     "Archie_Item;  Move all notes in selected midi items one semitone up.lua"
+                     "Archie_Item; Move all notes in selected midi items one octave down.lua",
+                     "Archie_Item; Move all notes in selected midi items one octave up.lua",
+                     "Archie_Item; Move all notes in selected midi items one semitone down.lua",
+                     "Archie_Item; Move all notes in selected midi items one semitone up.lua"
                     };
     
     

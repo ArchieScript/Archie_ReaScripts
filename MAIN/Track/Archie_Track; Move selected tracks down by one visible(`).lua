@@ -12,10 +12,10 @@
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Provides:    
-   *              [main] . > Archie_Track;  Move selected tracks down by one visible(`).lua
-   *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua
-   *              [main] . > Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua
-   *              [main] . > Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua
+   *              [main] . > Archie_Track; Move selected tracks down by one visible(`).lua
+   *              [main] . > Archie_Track; Move selected tracks down by one visible (skip folders)(`).lua
+   *              [main] . > Archie_Track; Move selected tracks down by one visible (request to skip folders)(`).lua
+   *              [main] . > Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua
    * Changelog:   
    *              v.1.09 [04.02.20]
    *                  no change
@@ -110,18 +110,18 @@
     
     
     --==== / dofile / ===============================================================================================
-    if Script_Name == 'Archie_Cont;  Move tracks down or items down depending on focus(skip minimized track).lua' then;
-        Script_Name = "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua";     
+    if Script_Name == 'Archie_Cont; Move tracks down or items down depending on focus(skip minimized track).lua' then;
+        Script_Name = "Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua";     
     end;
     --===============================================================================================================
     
     
     
     if not Arc.If_Equals(Script_Name,
-                         "Archie_Track;  Move selected tracks down by one visible(`).lua",
-                         "Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua",
-                         "Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua",
-                         "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua")then;
+                         "Archie_Track; Move selected tracks down by one visible(`).lua",
+                         "Archie_Track; Move selected tracks down by one visible (skip folders)(`).lua",
+                         "Archie_Track; Move selected tracks down by one visible (request to skip folders)(`).lua",
+                         "Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua")then;
         reaper.MB("Rus:\n\n"..
                   " * Неверное имя скрипта !\n * Имя скрипта должно быть одно из следующих \n"..
                   "    в зависимости от задачи. \n\n\n"..
@@ -130,10 +130,10 @@
                   "    depending on the task.\n"..
                   "-------\n\n\n"..
                   "Script Name: / Имя скрипта:\n\n"..
-                  "   Archie_Track;  Move selected tracks down by one visible(`).lua \n\n"..
-                  "   Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua \n\n"..
-                  "   Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua\n\n"..
-                  "   Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua",
+                  "   Archie_Track; Move selected tracks down by one visible(`).lua \n\n"..
+                  "   Archie_Track; Move selected tracks down by one visible (skip folders)(`).lua \n\n"..
+                  "   Archie_Track; Move selected tracks down by one visible (request to skip folders)(`).lua\n\n"..
+                  "   Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua",
                   "ERROR !",0);
         Arc.no_undo() return;
     end;

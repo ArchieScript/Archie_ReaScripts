@@ -16,23 +16,23 @@
    * Gave idea:   Nordum(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/
    * Provides:    
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to all channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 1 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 2 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 3 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 4 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 5 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 6 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 7 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 8 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 9 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 10 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 11 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 12 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 13 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 14 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 15 channels.lua
-   *              [main] . > Archie_Track;  Set selected tracks all MIDI input to 16 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to all channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 1 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 2 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 3 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 4 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 5 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 6 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 7 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 8 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 9 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 10 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 11 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 12 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 13 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 14 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 15 channels.lua
+   *              [main] . > Archie_Track; Set selected tracks all MIDI input to 16 channels.lua
    * Changelog:   v.1.0 [19.09.19]
    *                  + initialе
 --]]

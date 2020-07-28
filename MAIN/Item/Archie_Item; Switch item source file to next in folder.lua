@@ -20,14 +20,14 @@
    *              ReaPack v.1.2.2 +  http://reapack.com/repos
    *              Arc_Function_lua v.2.4.8+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Provides:    
-   *              [main] . > Archie_Item;  Switch item source file to next in folder.lua
-   *              [main] . > Archie_Item;  Switch item source file to next in folder(only RPP).lua  
-   *              [main] . > Archie_Item;  Switch item source file to next in folder(only Audio).lua
-   *              [main] . > Archie_Item;  Switch item source file to next in folder(only Video).lua
-   *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size.lua
-   *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only RPP).lua 
-   *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua
-   *              [main] . > Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder.lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder(only RPP).lua  
+   *              [main] . > Archie_Item; Switch item source file to next in folder(only Audio).lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder(only Video).lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder restore original size.lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder restore original size(only RPP).lua 
+   *              [main] . > Archie_Item; Switch item source file to next in folder restore original size(only Audio).lua
+   *              [main] . > Archie_Item; Switch item source file to next in folder restore original size(only Video).lua
    * Changelog:   
    *              v.1.03 [200320]
    *                  +RPP(.rpp-PROX)
@@ -95,14 +95,14 @@
     ---------------
     local
     ScrNameT = {
-                "Archie_Item;  Switch item source file to next in folder.lua",
-                "Archie_Item;  Switch item source file to next in folder(only RPP).lua",
-                "Archie_Item;  Switch item source file to next in folder(only Audio).lua",
-                "Archie_Item;  Switch item source file to next in folder(only Video).lua",
-                "Archie_Item;  Switch item source file to next in folder restore original size.lua",
-                "Archie_Item;  Switch item source file to next in folder restore original size(only RPP).lua",
-                "Archie_Item;  Switch item source file to next in folder restore original size(only Audio).lua",
-                "Archie_Item;  Switch item source file to next in folder restore original size(only Video).lua"
+                "Archie_Item; Switch item source file to next in folder.lua",
+                "Archie_Item; Switch item source file to next in folder(only RPP).lua",
+                "Archie_Item; Switch item source file to next in folder(only Audio).lua",
+                "Archie_Item; Switch item source file to next in folder(only Video).lua",
+                "Archie_Item; Switch item source file to next in folder restore original size.lua",
+                "Archie_Item; Switch item source file to next in folder restore original size(only RPP).lua",
+                "Archie_Item; Switch item source file to next in folder restore original size(only Audio).lua",
+                "Archie_Item; Switch item source file to next in folder restore original size(only Video).lua"
                };
     --local ScrName = ({reaper.get_action_context()})[2]:match(".+[/\\](.+)");
     local ScrName = debug.getinfo(1,'S').source:match(".+[/\\](.+)");

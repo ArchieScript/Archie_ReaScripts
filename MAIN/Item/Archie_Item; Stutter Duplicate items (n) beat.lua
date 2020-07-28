@@ -13,17 +13,17 @@
    * Customer:    ---(---)
    * Gave idea:   ---(---)
    * Provides:    
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.2 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.2T beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.4 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.4T beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.8 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.8T beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.16 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.16T beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.32 beat.lua
-   *              [main] . > Archie_Item;  Stutter Duplicate items 1.32T beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.2 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.2T beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.4 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.4T beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.8 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.8T beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.16 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.16T beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.32 beat.lua
+   *              [main] . > Archie_Item; Stutter Duplicate items 1.32T beat.lua
    * Changelog:   
    *              v.1.01 [02.10.19]
    *                  + copying automation
@@ -44,17 +44,17 @@
     
     
     local scrNameT = {
-                      "Archie_Item;  Stutter Duplicate items 1 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.2 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.2T beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.4 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.4T beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.8 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.8T beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.16 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.16T beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.32 beat.lua",
-                      "Archie_Item;  Stutter Duplicate items 1.32T beat.lua"
+                      "Archie_Item; Stutter Duplicate items 1 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.2 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.2T beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.4 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.4T beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.8 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.8T beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.16 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.16T beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.32 beat.lua",
+                      "Archie_Item; Stutter Duplicate items 1.32T beat.lua"
                      };
     
     

@@ -16,9 +16,9 @@
    * Gave idea:   YuriOl(Rmm)
    * Provides:
    *              [nomain] .
-   *              [main] . > Archie_FX;  Toggle Show UI of all FX in all send of selected tracks.lua
-   *              [main] . > Archie_FX;  Show UI of all FX in all send of selected tracks.lua
-   *              [main] . > Archie_FX;  Hide UI of all FX in all send of selected tracks.lua
+   *              [main] . > Archie_FX; Toggle Show UI of all FX in all send of selected tracks.lua
+   *              [main] . > Archie_FX; Show UI of all FX in all send of selected tracks.lua
+   *              [main] . > Archie_FX; Hide UI of all FX in all send of selected tracks.lua
    * Extension:   Reaper 6.09+ http://www.reaper.fm/
    * Changelog:   
    *              v.1.02 [110520]
