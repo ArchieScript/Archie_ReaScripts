@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8bc3c91d97616a5996becfbd4dd1e0e71efdb945">
+<index version="1" name="Archie-ReaScripts" commit="03b6cffa8b2b873d7f934585f2243a6e76991712">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6252,6 +6252,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.03 [310320]
     No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8bc3c91d97616a5996becfbd4dd1e0e71efdb945/MAIN/Various/Archie_Var;%20Hide%20Show%20add%20menu%20(popup%20menu).lua</source>
+      </version>
+      <version name="1.06" author="Archie" time="2020-07-30T17:53:51Z">
+        <changelog><![CDATA[v.1.03 [310320]
+    No change]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/03b6cffa8b2b873d7f934585f2243a6e76991712/MAIN/Various/Archie_Var;%20Hide%20Show%20add%20menu%20(popup%20menu).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Move cursor to next end-start of item, select item.lua" type="script" desc="Move cursor to next end-start of item, select item">
