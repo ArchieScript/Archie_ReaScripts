@@ -39,7 +39,7 @@
 
 
 
-    local sect = 'ARCHIE_POPUP_MENU_HIDE_ADD_MENU';
+    local sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU';
     --local HIDE_ADD = tonumber(reaper.GetExtState(sect,'State'))or 0;
     local HIDE_ADD = tonumber(Arc.iniFileReadLua(sect,'State',ArcFileIni))or 0;
 
