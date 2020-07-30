@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Hide Show add menu (popup menu).lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Скрыть показать 'меню добавления'
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
