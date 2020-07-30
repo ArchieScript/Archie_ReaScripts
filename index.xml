@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="db047099470a284f267d55d6fb40296ca03d1653">
+<index version="1" name="Archie-ReaScripts" commit="8bc3c91d97616a5996becfbd4dd1e0e71efdb945">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6241,17 +6241,17 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Various/Archie_Var;%20Fade%20in-out%20auto%20both%20edges(Ctrl+fade,Shift+fade,+Alt+fade).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Var; Hide Show add menu (popup menu single-level).lua" type="script" desc="Var; Hide Show add menu (popup menu single-level).lua">
+    <reapack name="Archie_Var; Hide Show add menu (popup menu).lua" type="script" desc="Var; Hide Show add menu (popup menu).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628/1500</link>
       </metadata>
-      <version name="1.05" author="Archie" time="2020-07-28T02:39:11Z">
+      <version name="1.05" author="Archie" time="2020-07-30T17:32:09Z">
         <changelog><![CDATA[v.1.03 [310320]
     No change]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Various/Archie_Var;%20Hide%20Show%20add%20menu%20(popup%20menu%20single-level).lua</source>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8bc3c91d97616a5996becfbd4dd1e0e71efdb945/MAIN/Various/Archie_Var;%20Hide%20Show%20add%20menu%20(popup%20menu).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Move cursor to next end-start of item, select item.lua" type="script" desc="Move cursor to next end-start of item, select item">
@@ -6332,6 +6332,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.20/1.21 [270720]
     + Fixed bug (demo)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Various/Archie_Var;%20Popup%20menu%20single-level(n).lua</source>
+      </version>
+      <version name="1.22" author="Archie" time="2020-07-30T17:32:09Z">
+        <changelog><![CDATA[v.1.20/1.21 [270720]
+    + Fixed bug (demo)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8bc3c91d97616a5996becfbd4dd1e0e71efdb945/MAIN/Various/Archie_Var;%20Popup%20menu%20single-level(n).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Pre-reverb(`).lua" type="script" desc="Var; Pre-reverb(`).lua">
