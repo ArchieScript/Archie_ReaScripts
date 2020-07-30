@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.21
+   * Version:     1.22
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -15,18 +15,18 @@
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
-   * Extension:
+   * Extension:   
    *              Reaper 6.05+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.8.2+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:
+   * Changelog:   
    *              v.1.20/1.21 [270720]
    *                  + Fixed bug (demo)
-
+   
    *              v.1.17 [060620]
    *                  + Fixed a bug reopen, if ctrl let go before what completed action
-   *                  + Saving the list when updating the script (just create a new script using
+   *                  + Saving the list when updating the script (just create a new script using 
    *                    "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
    *                    Only relevant if the list was created in version 1.15+
    *              v.1.16 [040620]
@@ -44,37 +44,37 @@
    *              v.1.09 [120420]
    *                  + Automatically creating copies with the desired label in the script name
    *              v.1.08 [310320]
-   *                  No change
+   *                  No change  
    *              v.1.05 [260320]
    *                  ! Fixed bug
    *              v.1.04 [260320]
    *                  + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
    *              v.1.03 [170320]
    *                  ! Fixed bug
-   *                  + Protection from spec characters
+   *                  + Protection from spec characters 
    *              v.1.02 [160320]
    *                  + Redesigned 'Add Menu'
    *              v.1.0 [150320]
    *                  + initialе
 --]]
-    Version = 1.21;
+    Version = 1.22;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-
-    local ADD_UP_DOWN = 1; -- 0/1
+    
+    local ADD_UP_DOWN = 1; -- 0/1  
                    -- = 0 | Меню добавления вверху
                    -- = 1 | Меню добавления внизу
                    ------------------------------
-
-
+    
+    
     local HIDE_ADD = nil;
             -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var;  Hide Show add menu (popup menu single-level).lua"
             -- = 0   | Показать 'add menu'
             -- = 1   | Скрыть 'add menu'
             ------------------------------
-
-
+    
+    
     local OPEN_AGAIN = true;
                   -- = true  повторно открыться  (ctrl+click)
                   -- = false повторно неоткрываться
@@ -83,17 +83,17 @@
             -- = true  повтор через (ctrl+click)
             -- = false повтор без (ctrl+click)
             ---------------------------------
-
-
+    
+    
     local SHIFT_X = -50;
     local SHIFT_Y = 15;
-
-
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
-    --======================================================================================
-
-
+    --======================================================================================  
+    
+    
     local function MODULE(file); local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end; if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return
     A; end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/')); if not Arc then return end; local ArcFileIni = reaper.GetResourcePath():gsub('\\','/')..'/reaper-Archie.ini'; local function GetStrFile(scrFile); local scriptFile = scrFile
     or (debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/')); local file = io.open(scriptFile,'r'); if not file then; io.open(scriptFile,'w'):close(); file = io.open(scriptFile,'r'); end; local str = file:read('a'); file:close(); return str,scriptFile; end; local function GetList(key,scrFile); key=tostring(key);
@@ -138,10 +138,10 @@
     val = '{&&'..id..'='..act..'&&}'; end; strT[#strT+1] = val; end; SetList('LIST',table.concat(strT)); end; end; gfx.quit(); no_undo(); elseif showMenu == numbUpDown+5 then; if #nameTRem > 1 then; local x,y = reaper.GetMousePosition(); local x,y = gfx.screentoclient(x,y); gfx.x,gfx.y = x-50,y-20; local
     showMenu = gfx.showmenu('#What to Move||'..table.concat(nameTRem,'|')); if showMenu > 0 then; table.remove(nameTRem,showMenu-1); local x = 1; local strT = {}; local moveX; for val in string.gmatch(ExtState,"{&&.-&&}") do; x=x+1; if x == showMenu then moveX = val; val = nil end; strT[#strT+1] = val;
     end; local showMenu = gfx.showmenu('#Where to Move. Over||'..table.concat(nameTRem,'|')..'|+'); if showMenu == 0 then no_undo() return end; for i = 1,#strT +1 do; if showMenu-1 == i then strT[i] = moveX..(strT[i]or'') end; end; SetList('LIST',table.concat(strT)); end; gfx.quit(); no_undo(); end; elseif
-    showMenu == numbUpDown+6 then; local MB = reaper.MB('Eng:\n'.. 'Hide the add Menu ? - Ok\n'.. 'You can restore the menu using a script\n'.. 'Archie_Var; Hide Show add menu (popup menu single-level).lua\n\n'.. 'Rus:\n'.. 'Скрыть Меню добавления ? - Ok\n'.. 'Восстановить меню можно будет с помощью скрипта\n'..
-    'Archie_Var; Hide Show add menu (popup menu single-level).lua' ,'Help',1); if MB == 1 then; Arc.iniFileWriteLua(H.sect,'State',1,ArcFileIni); end; gfx.quit(); no_undo(); elseif showMenu == numbUpDown+9 then; OWS('https://forum.cockos.com/showthread.php?t=240279'); elseif showMenu > 0 and (showMenu <=
-    #idT and ADD_UP_DOWN == 1) or (showMenu > AddListCount and ADD_UP_DOWN == 0) then; local function Action(); reaper.defer(function(); gfx.quit(); local id = idT[showMenu-AddListCount]; if CTRL == true then; if reaper.APIExists('JS_Mouse_GetState')then; local Mouse_GetState = reaper.JS_Mouse_GetState(127);
-    if Mouse_GetState ~= 4 and Mouse_GetState ~= 5 then; OPEN_AGAIN = nil; reaper.DeleteExtState(section,'Ext_x_y',false); end; end; end; if tonumber(id) then; if secID == 0 then; reaper.Main_OnCommand(id,0); else; reaper.MIDIEditor_OnCommand(MIDIEditor,id); end; else; if secID == 0 then; reaper.Main_OnCommand(reaper.NamedCommandLookup(id),0);
+    showMenu == numbUpDown+6 then; local MB = reaper.MB('Eng:\n'.. 'Hide the add Menu ? - Ok\n'.. 'You can restore the menu using a script\n'.. 'Archie_Var; Hide Show add menu (popup menu).lua\n\n'.. 'Rus:\n'.. 'Скрыть Меню добавления ? - Ok\n'.. 'Восстановить меню можно будет с помощью скрипта\n'..
+    'Archie_Var; Hide Show add menu (popup menu).lua' ,'Help',1); if MB == 1 then; Arc.iniFileWriteLua(H.sect,'State',1,ArcFileIni); end; gfx.quit(); no_undo(); elseif showMenu == numbUpDown+9 then; OWS('https://forum.cockos.com/showthread.php?t=240279'); elseif showMenu > 0 and (showMenu <= #idT and ADD_UP_DOWN
+    == 1) or (showMenu > AddListCount and ADD_UP_DOWN == 0) then; local function Action(); reaper.defer(function(); gfx.quit(); local id = idT[showMenu-AddListCount]; if CTRL == true then; if reaper.APIExists('JS_Mouse_GetState')then; local Mouse_GetState = reaper.JS_Mouse_GetState(127); if Mouse_GetState
+    ~= 4 and Mouse_GetState ~= 5 then; OPEN_AGAIN = nil; reaper.DeleteExtState(section,'Ext_x_y',false); end; end; end; if tonumber(id) then; if secID == 0 then; reaper.Main_OnCommand(id,0); else; reaper.MIDIEditor_OnCommand(MIDIEditor,id); end; else; if secID == 0 then; reaper.Main_OnCommand(reaper.NamedCommandLookup(id),0);
     else; reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(id)); end; end; if OPEN_AGAIN == true then; reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false); reaper.defer(function(); if secID == 0 then; reaper.Main_OnCommand(reaper.NamedCommandLookup(cmdID),0); else; reaper.MIDIEditor_OnCommand(MIDIEditor,reaper.NamedCommandLookup(cmdID));
     end; end); end; end); end; Action(); end; reaper.defer(function(); local ScrPath,ScrName = debug.getinfo(1,'S').source:match('^[@](.+)[/\\](.+)'); Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,ScrPath,ScrName)end); end; local function x1()end;--[[main(run);]] local scriptFile = debug.getinfo(1,'S').source:gsub("^@",''):gsub("\\",'/');
     local file = io.open(scriptFile,'r'); local str; if file then; str = file:read('*a'); file:close(); end; if str then; str = str:match('^.-%-%-%[%[%s-main%s-%(%s-run%s-%).-%]%]') str = str:gsub('%-%-%[%[%s-main%s-%(%s-run%s-%).-%]%]','main(run);'); local path = scriptFile:match('(.+)[/\\]'); ::resSec::;
@@ -155,3 +155,4 @@
     reaper.AddRemoveReaScript(false,Section_csv,FileX,true); os.remove(FileX); end; local file = io.open(newFile,'w'); local wr = file:write(str); file:close(); if MB_W == 6 then; SetList('LIST',LIST,newFile); end; if type(wr)=='userdata'then; reaper.AddRemoveReaScript(true,Section_csv,newFile,true); local
     SecAct; if Section_csv == 0 then SecAct = 'Main:' else SecAct = 'MIDI Editor:' end; local msg = SecAct..'\nСкрипт:\n'..newScript..'\nСоздан успешно.\n\n'.. SecAct..'\nScript:\n'..newScript..'\nwas Created successfully.'; reaper.ClearConsole(); reaper.ShowConsoleMsg(msg); if reaper.APIExists('JS_Window_Find')then;
     local winHWND = reaper.JS_Window_Find("ReaScript console output",true); if winHWND then; reaper.JS_Window_SetPosition(winHWND,50,50,500,250); reaper.JS_Window_SetForeground(winHWND); end; end; end; end; no_undo();
+    

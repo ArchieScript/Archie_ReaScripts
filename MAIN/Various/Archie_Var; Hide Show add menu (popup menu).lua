@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Various
-   * Description: Var; Hide Show add menu (popup menu single-level).lua
+   * Description: Var; Hide Show add menu (popup menu).lua
    * Author:      Archie
    * Version:     1.05
    * Описание:    Скрыть показать 'меню добавления'
@@ -39,7 +39,7 @@
 
 
 
-    local sect = 'ARCHIE_POPUP MENU SINGLE-LEVEL__HIDE ADD MENU';
+    local sect = 'ARCHIE_POPUP_MENU_HIDE_ADD_MENU';
     --local HIDE_ADD = tonumber(reaper.GetExtState(sect,'State'))or 0;
     local HIDE_ADD = tonumber(Arc.iniFileReadLua(sect,'State',ArcFileIni))or 0;
 
