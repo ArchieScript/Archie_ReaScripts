@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -94,7 +94,7 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
+  
 
 
 
@@ -109,8 +109,8 @@
 
 
     --==== / dofile / ===============================================================================================
-    if Script_Name == 'Archie_Cont;  Move tracks up or items up depending on focus(skip minimized track).lua' then;
-        Script_Name = "Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua";
+    if Script_Name == 'Archie_Cont; Move tracks up or items up depending on focus(skip minimized track).lua' then;
+        Script_Name = "Archie_Track; Move selected tracks up by one visible (skip minimized folders)(`).lua";
     end;
     --===============================================================================================================
 
@@ -479,7 +479,7 @@
     ---
 
     if Undo then;
-        reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ","",1):gsub(".lua","",1),-1);
+        reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ","",1):gsub(".lua","",1),-1);
     else;
         Arc.no_undo();
     end;

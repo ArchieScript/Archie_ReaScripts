@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -95,7 +95,7 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
+  
 
 
 
@@ -539,7 +539,7 @@
 
 
     if Undo then;
-        reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ","",1):gsub(".lua","",1),-1);
+        reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ","",1):gsub(".lua","",1),-1);
     else;
         Arc.no_undo();
     end;

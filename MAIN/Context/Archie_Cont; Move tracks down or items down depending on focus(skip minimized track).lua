@@ -6,7 +6,7 @@
    * Category:    Context
    * Description: Move tracks down or items down depending on focus(skip minimized track)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Переместить дорожки вниз или элементы вниз в зависимости от фокуса (пропустить свернутую дорожку)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -24,8 +24,8 @@
 
 
     local Grp = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/MAIN';
-    local TrackScr = Grp..'/Track/Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua';
-    local Item_Scr = Grp..'/Item/Archie_Item;  Move selected items down by one visible track(skip minimized track).lua';
+    local TrackScr = Grp..'/Track/Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua';
+    local Item_Scr = Grp..'/Item/Archie_Item; Move selected items down by one visible track(skip minimized track).lua';
 
 
     local CursorContext = reaper.GetCursorContext2(true);
