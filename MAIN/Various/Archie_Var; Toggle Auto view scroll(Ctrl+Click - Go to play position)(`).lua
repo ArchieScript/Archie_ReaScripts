@@ -2,7 +2,7 @@
    * Category:    Various
    * Description: Toggle auto view scroll(ctrl+click go to play position)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Toggle auto view scroll(ctrl+click go to play position)
    * О скрипте:   Переключения автоматической прокрутки(Ctrl+щелчок перейти к позиции воспроизведения)
    * GIF:         ---
@@ -13,7 +13,7 @@
    * Gave idea:   YuriOl(RMM)
    * Provides:
    *              [main] .
-   *              [main=midi_editor] . > Archie_MidiEditor;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua
+   *              [main=midi_editor] . > Archie_MidiEditor; Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua
    * Changelog:   +  initialе / v.1.0 [21.05.19]
 
    --=======================================================================================
