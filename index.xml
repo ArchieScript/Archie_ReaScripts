@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ced56a149c26619a66d3c7a4334fbfca0e8e5395">
+<index version="1" name="Archie-ReaScripts" commit="d234918f675c447d58c12401a3bab429bf255013">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6786,420 +6786,174 @@ LUA_Lib
     </reapack>
   </category>
   <category name="MIDI Editor">
-    <reapack name="Archie_MidiEditor;  Close Midi Editor(return the window in Docker).lua" type="script" desc="Close Midi Editor(return the window in Docker)">
+    <reapack name="Archie_MidiEditor; Close Midi Editor(return the window in Docker).lua" type="script" desc="Close Midi Editor(return the window in Docker)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MIDI%20Editor/Archie_MidiEditor;%20%20Close%20Midi%20Editor(return%20the%20window%20in%20Docker).lua</source>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Close%20Midi%20Editor(return%20the%20window%20in%20Docker).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Close Midi Editor.lua" type="script" desc="Close Midi Editor">
+    <reapack name="Archie_MidiEditor; Close Midi Editor.lua" type="script" desc="Close Midi Editor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MIDI%20Editor/Archie_MidiEditor;%20%20Close%20Midi%20Editor.lua</source>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Close%20Midi%20Editor.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Delete note(s) nearest to edit cursor(`).lua" type="script" desc="Delete note(s) nearest to edit cursor">
+    <reapack name="Archie_MidiEditor; Delete note(s) nearest to edit cursor(`).lua" type="script" desc="Delete note(s) nearest to edit cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Delete%20note(s)%20nearest%20to%20edit%20cursor(%60).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse cursor(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
+    <reapack name="Archie_MidiEditor; Duplicate selected events to mouse cursor(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-09-02T17:41:27Z">
-        <changelog><![CDATA[v.1.0 [01.09.19]
-    + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/e797cf1037bdc807e6b67e8dc964eb999a6e056e/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.02 [16.09.19]
 Performance: Script completely rewritten]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Duplicate%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Duplicate selected events to mouse position(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
+    <reapack name="Archie_MidiEditor; Duplicate selected events to mouse position(snap relative).lua" type="script" desc="Duplicate selected events to mouse position(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-09-01T12:01:40Z">
-        <changelog><![CDATA[v.1.0 [01.09.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d0ccaa7c2febbc63d6d4a683a2d2cd30166768a/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-02T13:48:35Z">
-        <changelog><![CDATA[v.1.01 [02.09.19]
-Bug fixed: Incorrect duplication when item not at beginning; / Undo action; ]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/88068ff65c04ebde45740ae9e50a1bd8563653be/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.02 [16.09.19]
 Performance: Script completely rewritten]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Duplicate%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Move chords to grid while keeping lively(unevenness interval is 1-16).lua" type="script" desc="MidiEditor;  Move chords to grid while keeping lively(unevenness interval is 1/16).lua">
+    <reapack name="Archie_MidiEditor; Move chords to grid while keeping lively(unevenness interval is 1-16).lua" type="script" desc="MidiEditor; Move chords to grid while keeping lively(unevenness interval is 1/16).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-06-06T18:40:01Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.0 [060620]
     + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec19a69864e3715b002c385f23930d3492ec63e7/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20chords%20to%20grid%20while%20keeping%20lively(unevenness%20interval%20is%201-16).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Move%20chords%20to%20grid%20while%20keeping%20lively(unevenness%20interval%20is%201-16).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Move selected events to mouse cursor(snap relative).lua" type="script" desc="Move selected events to mouse cursor(snap relative)">
+    <reapack name="Archie_MidiEditor; Move selected events to mouse cursor(snap relative).lua" type="script" desc="Move selected events to mouse cursor(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.02 [16.09.19]
 Performance: Script completely rewritten]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Move%20selected%20events%20to%20mouse%20cursor(snap%20relative).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Move selected events to mouse position(snap relative).lua" type="script" desc="Move selected events to mouse position(snap relative)">
+    <reapack name="Archie_MidiEditor; Move selected events to mouse position(snap relative).lua" type="script" desc="Move selected events to mouse position(snap relative)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-09-01T12:01:40Z">
-        <changelog><![CDATA[v.1.0 [01.09.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2d0ccaa7c2febbc63d6d4a683a2d2cd30166768a/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-09-02T13:48:35Z">
-        <changelog><![CDATA[v.1.01 [02.09.19]
-Bug fixed: Incorrect duplication when item not at beginning; / Undo action; ]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/88068ff65c04ebde45740ae9e50a1bd8563653be/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-09-16T15:23:33Z">
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.02 [16.09.19]
 Performance: Script completely rewritten]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ece0fb07f1ef5fd95ba249d7ffb775b7eaf0ffa4/MIDI%20Editor/Archie_MidiEditor;%20%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Move%20selected%20events%20to%20mouse%20position(snap%20relative).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Mute note under mouse cursor.lua" type="script" desc="Mute note under mouse cursor">
+    <reapack name="Archie_MidiEditor; Mute note under mouse cursor.lua" type="script" desc="Mute note under mouse cursor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
-        <changelog><![CDATA[v.1.0 [14.08.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse%20cursor.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
+      <version name="1.01" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.01 [14.08.19]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Mute%20note%20under%20mouse%20cursor.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Mute%20note%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Open a floating instrument, appropriate MIDI editor.lua" type="script" desc="Open a floating instrument, appropriate MIDI editor">
+    <reapack name="Archie_MidiEditor; Open a floating instrument, appropriate MIDI editor.lua" type="script" desc="Open a floating instrument, appropriate MIDI editor">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-13T11:55:51Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9e530e62ecf2e654206266df1b7dd96a04496e50/MIDI%20Editor/Archie_MidiEditor;%20%20Open%20a%20floating%20instrument,%20appropriate%20MIDI%20editor.lua</source>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Open%20a%20floating%20instrument,%20appropriate%20MIDI%20editor.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Open-close Notes window.lua" type="script" desc="Open-close Notes window">
+    <reapack name="Archie_MidiEditor; Open-close Notes window.lua" type="script" desc="Open-close Notes window">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2018-11-25T15:30:29Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[+  initialе / v.1.0]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/2664a6d6722dccdfe70a92690e0c6ecb796a9772/MIDI%20Editor/Archie_MidiEditor;%20%20Open-close%20Notes%20window.lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Open-close%20Notes%20window.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Scroll vertically (MIDI relativemousewheel)(3x).lua" type="script" desc="MidiEditor;  Scroll vertically (MIDI relative/mousewheel)(3x).lua">
+    <reapack name="Archie_MidiEditor; Scroll vertically (MIDI relativemousewheel)(3x).lua" type="script" desc="MidiEditor; Scroll vertically (MIDI relative/mousewheel)(3x).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-06-25T12:10:56Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.0 [250620]
     + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/21f6b4bf46a6d44cf2ff7a654f8719318d2130c3/MIDI%20Editor/Archie_MidiEditor;%20%20Scroll%20vertically%20(MIDI%20relativemousewheel)(3x).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Scroll%20vertically%20(MIDI%20relativemousewheel)(3x).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Select only chords (unevenness interval is 1-16).lua" type="script" desc="MidiEditor;  Select only chords (unevenness interval is 1/16).lua">
+    <reapack name="Archie_MidiEditor; Select only chords (unevenness interval is 1-16).lua" type="script" desc="MidiEditor; Select only chords (unevenness interval is 1/16).lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="website">http://vk.com/reaarchie</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-06-06T18:40:01Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.0 [060620]
     + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec19a69864e3715b002c385f23930d3492ec63e7/MIDI%20Editor/Archie_MidiEditor;%20%20Select%20only%20chords%20(unevenness%20interval%20is%201-16).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Select%20only%20chords%20(unevenness%20interval%20is%201-16).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
+    <reapack name="Archie_MidiEditor; Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-01-13T09:24:30Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.0 [13.01.2020]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/863b17787b65b78b9bf3aa9f47c587b9f93a7e5b/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20length%20all%20notes%20to%20(Show%20popup%20menu).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20length%20all%20notes%20to%20(Show%20popup%20menu).lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_MidiEditor;  Set length selected notes to (Show popup menu).lua" type="script" desc="Set length selected notes to (Show popup menu)">
+    <reapack name="Archie_MidiEditor; Set length selected notes to (Show popup menu).lua" type="script" desc="Set length selected notes to (Show popup menu)">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
         <link rel="website">http://rmmedia.ru/threads/134701/</link>
         <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
       </metadata>
-      <version name="1.0" author="Archie" time="2020-01-13T09:24:30Z">
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
         <changelog><![CDATA[v.1.0 [13.01.2020]
 + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/863b17787b65b78b9bf3aa9f47c587b9f93a7e5b/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20length%20selected%20notes%20to%20(Show%20popup%20menu).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Set selected notes velocity to(n).lua" type="script" desc="MidiEditor;  Set selected notes velocity to(n).lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-04-03T06:59:51Z">
-        <changelog><![CDATA[v.1.0 [030420]
-    + initialе]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 0.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 10.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 20.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 30.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 40.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 50.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 60.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 70.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 80.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 90.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 100.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 110.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 120.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Set selected notes velocity to 127.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/8d0580d564b6d8e19eab9f3c65e89aeab0f106b4/MIDI%20Editor/Archie_MidiEditor;%20%20Set%20selected%20notes%20velocity%20to(n).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Show Instrument.lua" type="script" desc="Show Instrument">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-01-08T17:33:19Z">
-        <changelog><![CDATA[v.1.0 [09.01.2020]
-    + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/8a105b66ef78b35017b536035d409cd40fcc7deb/MIDI%20Editor/Archie_MidiEditor;%20%20Show%20Instrument.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-03-04T12:30:01Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/6d5493514cbdd5fe356aeb0350add9d7b8eca2cd/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-03-04T12:33:38Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 01).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 02).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 03).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 04).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 05).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 06).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 07).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 08).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 09).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/96303d12cb7a234e54495c659e9ffc3957a23120/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2019-03-04T12:43:57Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 01).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 02).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 03).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 04).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 05).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 06).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 07).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 08).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 09).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/617ecb0fa75d8e10c7c47547f177e17bc788c6ba/MIDI%20Editor/Archie_MidiEditor;%20%20Smart%20Multi%20script(Button%20n).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Swing grid disable and reset(MIDI editor)(`).lua" type="script" desc="swing grid disable and reset(MIDI editor)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Swing%20grid%20disable%20and%20reset(MIDI%20editor)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Swing grid minus one percent(MIDI editor)(`).lua" type="script" desc="Swing grid minus one percent(MIDI editor)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Swing%20grid%20minus%20one%20percent(MIDI%20editor)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Swing grid plus one percent(MIDI editor)(`).lua" type="script" desc="Swing grid plus one percent(MIDI editor)">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-01-24T13:32:36Z">
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/670010ceb68f2bea8d75b742e90ca294007394cc/MIDI%20Editor/Archie_MidiEditor;%20%20Swing%20grid%20plus%20one%20percent(MIDI%20editor)(%60).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Toggle Auto Mute-Unmute note under mouse cursor.lua" type="script" desc="Toggle Auto Mute-Unmute note under mouse cursor">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
-        <changelog><![CDATA[v.1.0 [14.08.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
-        <changelog><![CDATA[v.1.01 [14.08.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Toggle Loop source item.lua" type="script" desc="Toggle Loop source item">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-01-11T14:04:25Z">
-        <changelog><![CDATA[v.1.0 [11.01.2020]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/883847902ea01989ef8d05dea9c5588ea460ae51/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Loop%20source%20item.lua</source>
-      </version>
-      <version name="1.02" author="Archie" time="2020-01-13T09:24:30Z">
-        <changelog><![CDATA[v.1.02 [13.01.2020]
-    + Button Backlight Monitoring]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/863b17787b65b78b9bf3aa9f47c587b9f93a7e5b/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20Loop%20source%20item.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Toggle metronome.lua" type="script" desc="Toggle metronome">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-01-26T16:41:10Z">
-        <changelog><![CDATA[v.1.0 [27.01.20]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/1a0d510b520c376a6c9203c3377895d3d0be13a6/MIDI%20Editor/Archie_MidiEditor;%20%20Toggle%20metronome.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-08-14T11:14:27Z">
-        <changelog><![CDATA[v.1.0 [14.08.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/0490effd8b07f83af96d8fffee18b2b50a1cacf4/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse%20cursor.lua</source>
-      </version>
-      <version name="1.01" author="Archie" time="2019-08-15T09:04:39Z">
-        <changelog><![CDATA[v.1.01 [14.08.19]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/9b4f9a6fbbbae78d39a9ffcfeaf4afad4fc4ae32/MIDI%20Editor/Archie_MidiEditor;%20%20Unmute%20note%20under%20mouse%20cursor.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Unselect (left - right) wing events.lua" type="script" desc="Unselect (left-right*) wing events">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2019-04-12T16:14:34Z">
-        <changelog><![CDATA[+  initialе / v.1.0 [12042019]]]></changelog>
-        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Unselect left wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
-        <source main="midi_editor" file="Archie_MidiEditor;  Unselect right wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab0b4c4f0d4e4762e2987d254f2fc906120a45de/MIDI%20Editor/Archie_MidiEditor;%20%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Velocity for note(mousewheel).lua" type="script" desc="MidiEditor;  Velocity for note(mousewheel).lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-05-20T18:31:32Z">
-        <changelog><![CDATA[v.1.0 [180520]
-    + initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/57daed1ca7c5a7b483058c103269310bf37f6977/MIDI%20Editor/Archie_MidiEditor;%20%20Velocity%20for%20note(mousewheel).lua</source>
-      </version>
-    </reapack>
-    <reapack name="Archie_MidiEditor;  Velocity note under mouse cursor (mouse wheel).lua" type="script" desc="MIDI Editor;  Velocity note under mouse cursor (mouse wheel).lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-04-04T08:43:04Z">
-        <changelog><![CDATA[v.1.0 [040420]
-+ initialе]]></changelog>
-        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/a2ee790d74aa24cbfa42d437713fbb1c4b93aa20/MIDI%20Editor/Archie_MidiEditor;%20%20Velocity%20note%20under%20mouse%20cursor%20(mouse%20wheel).lua</source>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20length%20selected%20notes%20to%20(Show%20popup%20menu).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Set note ends to start of next note (legato) - All notes.lua" type="script" desc="Set note ends to start of next note (legato) - All notes">
@@ -7212,6 +6966,184 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.0 [10.01.2020]
 + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/53504c29817dd06a301b62e5ad7d02a702ea827b/MIDI%20Editor/Archie_MidiEditor;%20Set%20note%20ends%20to%20start%20of%20next%20note%20(legato)%20-%20All%20notes.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Set selected notes velocity to(n).lua" type="script" desc="MidiEditor; Set selected notes velocity to(n).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.0 [030420]
+    + initialе]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 0.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 10.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 20.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 30.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 40.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 50.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 60.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 70.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 80.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 90.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 100.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 110.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 120.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 127.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Show Instrument.lua" type="script" desc="Show Instrument">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.0 [09.01.2020]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Show%20Instrument.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Smart Multi script(Button n).lua" type="script" desc="Smart Multi script(Button n)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [11.02.19]]]></changelog>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 01).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 02).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 03).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 04).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 05).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 06).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 07).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 08).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 09).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 10).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 11).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 12).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 13).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 14).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 15).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Smart Multi script(Button 16).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Smart%20Multi%20script(Button%20n).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Swing grid disable and reset(MIDI editor)(`).lua" type="script" desc="swing grid disable and reset(MIDI editor)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Swing%20grid%20disable%20and%20reset(MIDI%20editor)(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Swing grid minus one percent(MIDI editor)(`).lua" type="script" desc="Swing grid minus one percent(MIDI editor)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Swing%20grid%20minus%20one%20percent(MIDI%20editor)(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Swing grid plus one percent(MIDI editor)(`).lua" type="script" desc="Swing grid plus one percent(MIDI editor)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Swing%20grid%20plus%20one%20percent(MIDI%20editor)(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Toggle Auto Mute-Unmute note under mouse cursor.lua" type="script" desc="Toggle Auto Mute-Unmute note under mouse cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.01" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.01 [14.08.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Toggle%20Auto%20Mute-Unmute%20note%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Toggle Loop source item.lua" type="script" desc="Toggle Loop source item">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.02 [13.01.2020]
+    + Button Backlight Monitoring]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Toggle%20Loop%20source%20item.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Toggle metronome.lua" type="script" desc="Toggle metronome">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.0 [27.01.20]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Toggle%20metronome.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Unmute note under mouse cursor.lua" type="script" desc="Unmute note under mouse cursor">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.01" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.01 [14.08.19]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Unmute%20note%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Unselect (left - right) wing events.lua" type="script" desc="Unselect (left-right*) wing events">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [12042019]]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Unselect left wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Unselect right wing events.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Unselect%20(left%20-%20right)%20wing%20events.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Velocity for note(mousewheel).lua" type="script" desc="MidiEditor; Velocity for note(mousewheel).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.0 [180520]
+    + initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Velocity%20for%20note(mousewheel).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; Velocity note under mouse cursor (mouse wheel).lua" type="script" desc="MIDI Editor; Velocity note under mouse cursor (mouse wheel).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628/1000</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-01T07:47:59Z">
+        <changelog><![CDATA[v.1.0 [040420]
++ initialе]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Velocity%20note%20under%20mouse%20cursor%20(mouse%20wheel).lua</source>
       </version>
     </reapack>
   </category>
