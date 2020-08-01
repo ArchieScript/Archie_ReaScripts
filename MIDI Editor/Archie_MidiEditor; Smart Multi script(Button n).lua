@@ -14,22 +14,22 @@
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Supa75(Rmm/forum)
    * Provides:    
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 01).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 02).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 03).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 04).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 05).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 06).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 07).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 08).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 09).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 10).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 11).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 12).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 13).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 14).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 15).lua
-   *              [main] . > Archie_MidiEditor;  Smart Multi script(Button 16).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 01).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 02).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 03).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 04).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 05).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 06).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 07).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 08).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 09).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 10).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 11).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 12).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 13).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 14).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 15).lua
+   *              [main] . > Archie_MidiEditor; Smart Multi script(Button 16).lua
    * Changelog:   
    *              +  initialе / v.1.0 [11.02.19]
    ===========================================================================================|

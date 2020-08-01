@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    MidiEditor
-   * Description: MidiEditor;  Set selected notes velocity to(n).lua
+   * Description: MidiEditor; Set selected notes velocity to(n).lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -15,20 +15,20 @@
    * Gave idea:   Archie(---)
    * Provides:    
    *              [nomain] .
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 0.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 10.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 20.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 30.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 40.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 50.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 60.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 70.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 80.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 90.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 100.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 110.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 120.lua
-   *              [main] . > Archie_MidiEditor;  Set selected notes velocity to 127.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 0.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 10.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 20.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 30.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 40.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 50.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 60.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 70.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 80.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 90.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 100.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 110.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 120.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 127.lua
    * Extension:   
    *              Reaper 6.07+ http://www.reaper.fm/
    *              ReaPack v.1.2.2 +  http://reapack.com/repos

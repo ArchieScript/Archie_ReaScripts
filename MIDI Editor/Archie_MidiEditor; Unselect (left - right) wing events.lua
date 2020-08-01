@@ -13,8 +13,8 @@
    * Gave idea:   Antibio[RMM]
    * Provides:    
    *              [nomain] .
-   *              [main=midi_editor] . > Archie_MidiEditor;  Unselect left wing events.lua
-   *              [main=midi_editor] . > Archie_MidiEditor;  Unselect right wing events.lua
+   *              [main=midi_editor] . > Archie_MidiEditor; Unselect left wing events.lua
+   *              [main=midi_editor] . > Archie_MidiEditor; Unselect right wing events.lua
    * Changelog:   
    *              +  initialе / v.1.0 [12042019]
    
@@ -50,8 +50,8 @@
     
 
     local ScriptName   = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-    local ScriptName_1 = "Archie_MidiEditor;  Unselect left wing events.lua";
-    local ScriptName_2 = "Archie_MidiEditor;  Unselect right wing events.lua";
+    local ScriptName_1 = "Archie_MidiEditor; Unselect left wing events.lua";
+    local ScriptName_2 = "Archie_MidiEditor; Unselect right wing events.lua";
     
     
     if ScriptName ~= ScriptName_1 and ScriptName ~= ScriptName_2 then;
