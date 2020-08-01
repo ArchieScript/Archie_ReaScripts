@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d234918f675c447d58c12401a3bab429bf255013">
+<index version="1" name="Archie-ReaScripts" commit="5b6d001550f8de64ee6da92e80ebad5303fdea0f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6501,6 +6501,11 @@ LUA_Lib
         <changelog><![CDATA[+  initialе / v.1.0 [21.05.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Various/Archie_Var;%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
         <source main="midi_editor" file="Archie_MidiEditor;  Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Various/Archie_Var;%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-08-01T08:22:47Z">
+        <changelog><![CDATA[+  initialе / v.1.0 [21.05.19]]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b6d001550f8de64ee6da92e80ebad5303fdea0f/MAIN/Various/Archie_Var;%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Toggle Auto view scroll(Ctrl+Click - Go to play position)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/5b6d001550f8de64ee6da92e80ebad5303fdea0f/MAIN/Various/Archie_Var;%20Toggle%20Auto%20view%20scroll(Ctrl+Click%20-%20Go%20to%20play%20position)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Toggle Select all items tracks envelope points (depending on focus)(Save previous).lua" type="script" desc="Toggle Select all items tracks envelope points (depending on focus)(Save previous)">
