@@ -4,16 +4,16 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Take
-   * Description: Take; Paste take in active take.lua
+   * Description: Take; Paste take in active take(x).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
-   * Provides:
+   * Provides:    
    *              [nomain] .
    *              [main] . > Archie_Take; Paste take in active take.lua
    *              [main] . > Archie_Take; Paste take in active take (user request).lua
