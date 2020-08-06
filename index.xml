@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="14b55185ac803c22d1c16c23609558c781a74c4f">
+<index version="1" name="Archie-ReaScripts" commit="c6203977b684a975f8174d423229e973292a5c26">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4294,6 +4294,11 @@ LUA_Lib
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/14b55185ac803c22d1c16c23609558c781a74c4f/MAIN/Take/Archie_Take;%20Copy%20Active%20take.lua</source>
       </version>
+      <version name="1.01" author="Archie" time="2020-08-06T18:33:00Z">
+        <changelog><![CDATA[v.1.0 [070820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6203977b684a975f8174d423229e973292a5c26/MAIN/Take/Archie_Take;%20Copy%20Active%20take.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Take; Copy color item active take.lua" type="script" desc="Copy color item active take">
       <metadata>
@@ -4326,6 +4331,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [070820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/14b55185ac803c22d1c16c23609558c781a74c4f/MAIN/Take/Archie_Take;%20Copy%20source%20Active%20take.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2020-08-06T18:33:00Z">
+        <changelog><![CDATA[v.1.0 [070820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6203977b684a975f8174d423229e973292a5c26/MAIN/Take/Archie_Take;%20Copy%20source%20Active%20take.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take; Crop to active take - ignore lock items.lua" type="script" desc="Take; Crop to active take - ignore lock items.lua">
@@ -4405,6 +4415,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [070820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/14b55185ac803c22d1c16c23609558c781a74c4f/MAIN/Take/Archie_Take;%20Paste%20source%20in%20active%20take.lua</source>
+      </version>
+      <version name="1.01" author="Archie" time="2020-08-06T18:33:00Z">
+        <changelog><![CDATA[v.1.0 [070820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c6203977b684a975f8174d423229e973292a5c26/MAIN/Take/Archie_Take;%20Paste%20source%20in%20active%20take.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take; Render active takes, into new items in place.lua" type="script" desc="Render active takes, into new items in place">
