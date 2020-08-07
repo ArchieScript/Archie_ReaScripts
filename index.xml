@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c34cfd7a9595082410470f10a0f974754e1baed6">
+<index version="1" name="Archie-ReaScripts" commit="b8f0fc8761e23f3ddfabb3f07ab95749349bff6f">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4436,6 +4436,14 @@ LUA_Lib
         <source main="main" file="Archie_Take; Paste take in active take.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c34cfd7a9595082410470f10a0f974754e1baed6/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
         <source main="main" file="Archie_Take; Paste take in active take (user request).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c34cfd7a9595082410470f10a0f974754e1baed6/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
         <source main="main" file="Archie_Take; Paste take in active take (copy length).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c34cfd7a9595082410470f10a0f974754e1baed6/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-08-07T10:40:16Z">
+        <changelog><![CDATA[v.1.0 [070820]
+    + initialе]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/b8f0fc8761e23f3ddfabb3f07ab95749349bff6f/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
+        <source main="main" file="Archie_Take; Paste take in active take.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/b8f0fc8761e23f3ddfabb3f07ab95749349bff6f/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
+        <source main="main" file="Archie_Take; Paste take in active take (user request).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/b8f0fc8761e23f3ddfabb3f07ab95749349bff6f/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
+        <source main="main" file="Archie_Take; Paste take in active take (copy length).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/b8f0fc8761e23f3ddfabb3f07ab95749349bff6f/MAIN/Take/Archie_Take;%20Paste%20take%20in%20active%20take(x).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Take; Render active takes, into new items in place.lua" type="script" desc="Render active takes, into new items in place">
