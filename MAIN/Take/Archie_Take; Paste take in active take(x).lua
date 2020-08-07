@@ -6,7 +6,7 @@
    * Category:    Take
    * Description: Take; Paste take in active take(x).lua
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -48,7 +48,7 @@
     
     
     --=========================================
-    --local scrPath,scrName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
+    local scrPath,scrName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     if scrName:match('take%s-%.%s-lua')then;
         COPY_LENGTH = false;
         REQUEST = false;
