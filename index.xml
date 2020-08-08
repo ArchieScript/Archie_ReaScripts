@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="b8f0fc8761e23f3ddfabb3f07ab95749349bff6f">
+<index version="1" name="Archie-ReaScripts" commit="ad8a35d6db134f3e1e8ef00d9270933c595ba0ef">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3406,6 +3406,19 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Markers/Archie_Markers;%20Delete%20region%20in%20time%20selection.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Markers; Go to random marker.lua" type="script" desc="Markers; Go to random marker.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-08T11:02:36Z">
+        <changelog><![CDATA[v.1.0 [080820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ad8a35d6db134f3e1e8ef00d9270933c595ba0ef/MAIN/Markers/Archie_Markers;%20Go%20to%20random%20marker.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Markers; Insert markers by time selection.lua" type="script" desc="Markers; Insert markers by time selection">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3416,6 +3429,19 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [19.02.20]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Markers/Archie_Markers;%20Insert%20markers%20by%20time%20selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers; Insert-Delete marker in cursor position.lua" type="script" desc="Markers; Insert-Delete marker in cursor position.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-08T11:02:36Z">
+        <changelog><![CDATA[v.1.0 [080820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ad8a35d6db134f3e1e8ef00d9270933c595ba0ef/MAIN/Markers/Archie_Markers;%20Insert-Delete%20marker%20in%20cursor%20position.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Markers; Save - Insert regions template.lua" type="script" desc="Markers; Save - Insert regions template.lua">
