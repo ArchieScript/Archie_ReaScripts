@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Markers
-   * Description: Markers; Insert-Delete marker in cursor position.lua
+   * Description: Markers; Toggle Insert-Delete marker in cursor position.lua
    * Author:      Archie
    * Version:     1.0
    * Website:     http://forum.cockos.com/showthread.php?t=212819
