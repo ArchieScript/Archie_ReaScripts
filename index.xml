@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ad8a35d6db134f3e1e8ef00d9270933c595ba0ef">
+<index version="1" name="Archie-ReaScripts" commit="10ea48a799ba961dd90c0f22cccc683448b27524">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3431,19 +3431,6 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Markers/Archie_Markers;%20Insert%20markers%20by%20time%20selection.lua</source>
       </version>
     </reapack>
-    <reapack name="Archie_Markers; Insert-Delete marker in cursor position.lua" type="script" desc="Markers; Insert-Delete marker in cursor position.lua">
-      <metadata>
-        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
-        <link rel="website">http://rmmedia.ru/threads/134701/</link>
-        <link rel="website">http://vk.com/reaarchie</link>
-        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
-      </metadata>
-      <version name="1.0" author="Archie" time="2020-08-08T11:02:36Z">
-        <changelog><![CDATA[v.1.0 [080820]
-    + initialе]]></changelog>
-        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ad8a35d6db134f3e1e8ef00d9270933c595ba0ef/MAIN/Markers/Archie_Markers;%20Insert-Delete%20marker%20in%20cursor%20position.lua</source>
-      </version>
-    </reapack>
     <reapack name="Archie_Markers; Save - Insert regions template.lua" type="script" desc="Markers; Save - Insert regions template.lua">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -3491,6 +3478,19 @@ LUA_Lib
         <changelog><![CDATA[+  Fixed paths for Mac/ v.1.02 [29.01.19]
 +  Исправлены пути для Mac/ v.1.02 [29.01.19]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Markers/Archie_Markers;%20Split%20selected%20items%20at%20stretch%20markers.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Markers; Toggle Insert-Delete marker in cursor position.lua" type="script" desc="Markers; Toggle Insert-Delete marker in cursor position.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-08T11:05:26Z">
+        <changelog><![CDATA[v.1.0 [080820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/10ea48a799ba961dd90c0f22cccc683448b27524/MAIN/Markers/Archie_Markers;%20Toggle%20Insert-Delete%20marker%20in%20cursor%20position.lua</source>
       </version>
     </reapack>
   </category>
