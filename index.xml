@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="504c316043b991381a91e24c439b4a877491cafa">
+<index version="1" name="Archie-ReaScripts" commit="d3f0651733867f0a835dd9d7e5a2903ec3ccc1bd">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3300,6 +3300,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.03 [08.02.20]
     + Fix bug]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/086111415f515a3a968dc5f9c78585eaf585f244/MAIN/Item/Archie_Item;%20Switch%20item%20source%20file%20on%20previous%20in%20directory%20on%20throughout%20project.lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-08-11T18:22:27Z">
+        <changelog><![CDATA[v.1.03 [08.02.20]
+    + Fix bug]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/d3f0651733867f0a835dd9d7e5a2903ec3ccc1bd/MAIN/Item/Archie_Item;%20Switch%20item%20source%20file%20on%20previous%20in%20directory%20on%20throughout%20project.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; Switch item source file to next in folder.lua" type="script" desc="Switch item source file to next in folder">
