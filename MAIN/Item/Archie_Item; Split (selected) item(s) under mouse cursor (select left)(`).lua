@@ -2,7 +2,7 @@
    * Category:    Item 
    * Description: Split (selected) item(s) under mouse cursor (select left) 
    * Author:      Archie 
-   * Version:     1.10 
+   * Version:     1.11
    * AboutScript: Split selected item(s) under mouse cursor and all selected items  
                             in this position or item under mouse cursor(select left) 
                             PLEASE NOTE THE SETTINGS BELOW 
@@ -206,9 +206,9 @@
  
     local Length_Item,Val_Fade_In_Out,splitauto; 
                   
-    if Overlap_Cross_Fade >= 0 then;     
+    if Overlap_Cross_Fade >= 0 then; 
         Val_Fade_In_Out = Overlap_Cross_Fade; 
-        Length_Item = Overlap_Cross_Fade;   
+        Length_Item = Overlap_Cross_Fade; 
         Fade_In_Fade_Out = -1 
     else; 
         Val_Fade_In_Out = Fade_In_Fade_Out; 
@@ -223,29 +223,29 @@
                 local Length = reaper.GetMediaItemInfo_Value(item, "D_LENGTH"); 
                 reaper.SetMediaItemLength(item, (Length + Length_Item), true); 
             end 
-            reaper.SetMediaItemInfo_Value(item, parmname, Val_Fade_In_Out);  
+            reaper.SetMediaItemInfo_Value(item, parmname, Val_Fade_In_Out); 
         end; 
-    end;   
+    end; 
     --====================================================================; 
  
  
  
  
  
-    local function Split_item_sel_left(item,Pos,Val_Fade_In_Out, Length_Item,Unselected_rest);   
+    local function Split_item_sel_left(item,Pos,Val_Fade_In_Out, Length_Item,Unselected_rest); 
         local tr,Split = reaper.GetMediaItemTrack(item); 
         local TrackNumber = reaper.GetMediaTrackInfo_Value(tr, "IP_TRACKNUMBER"); 
         local pos = reaper.GetMediaItemInfo_Value(item, "D_POSITION"); 
         local len = reaper.GetMediaItemInfo_Value(item, "D_LENGTH"); 
-        if pos < Pos and len + pos >= Pos then;    
+        if pos < Pos and len + pos >= Pos then; 
             Split = reaper.SplitMediaItem(item, Pos); 
-            if Split then;   
+            if Split then; 
                 if Unselected_rest == 1 then; 
                     for i = reaper.CountTrackMediaItems(tr)-1,0,-1 do; 
                         local it = reaper.GetTrackMediaItem(tr, i); 
                         reaper.SetMediaItemInfo_Value(it, "B_UISEL",0); 
                     end; 
-                end;     
+                end; 
                 reaper.SetMediaItemInfo_Value(item, "B_UISEL",1); 
                 reaper.SetMediaItemInfo_Value(Split, "B_UISEL",0); 
                 Set_fadeInOut_OverlapCrossFade(Split, "D_FADEINLEN" , Val_Fade_In_Out, 0); 
@@ -318,13 +318,13 @@
  
     local name_script = "Split selected item under mouse cursor and" 
                .."all selected items in this position(select left)" 
-    reaper.Undo_BeginBlock();  
+    reaper.Undo_BeginBlock(); 
     --======================; 
  
  
  
     local Pos = reaper.BR_PositionAtMouseCursor(true); 
-    if SnapGrid > 0 then;  
+    if SnapGrid > 0 then; 
         Pos = reaper.SnapToGrid(0,Pos); 
     elseif SnapGrid == -1  then; 
         reaper.PreventUIRefresh(1); 

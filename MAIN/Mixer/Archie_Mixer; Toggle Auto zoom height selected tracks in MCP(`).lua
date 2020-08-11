@@ -5,7 +5,7 @@
    * Category:    Mixer
    * Description: Toggle Auto zoom height selected tracks in MCP
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Toggle Auto zoom height selected tracks in MCP
    *              CTRL + CLICK:         SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
    *              SHIFT + CLICK:        SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
@@ -224,15 +224,15 @@
         local Path = ({reaper.get_action_context()})[2]:match(".+[\\/]");
         local ret,err,name;
         if GetState == 4 then;--Ctrl
-            name = "Archie_Mixer;  Set height of selected tracks MCP to height master track.lua";
+            name = "Archie_Mixer; Set height of selected tracks MCP to height master track.lua";
             ret,err = pcall(dofile,Path..name);
             if ret then Arc.no_undo() return end;
         elseif GetState == 8 then;--Shift
-            name = "Archie_Mixer;  Set height of all unselected tracks MCP to height master track.lua";
+            name = "Archie_Mixer; Set height of all unselected tracks MCP to height master track.lua";
             ret,err = pcall(dofile,Path..name);
             if ret then Arc.no_undo() return end;
         elseif GetState == 12 then;--Ctrl+Shift
-            name = "Archie_Mixer;  Set height of all tracks MCP to height master track.lua";
+            name = "Archie_Mixer; Set height of all tracks MCP to height master track.lua";
             ret,err = pcall(dofile,Path..name);
             if ret then Arc.no_undo() return end;
         end;
@@ -250,7 +250,7 @@
     if Toggle == 0 then;
         reaper.SetExtState(section,"toggle",1,false);
         ---
-        local IdByName = Arc.GetIDByScriptName("Archie_Mixer;  Toggle Auto zoom height tracks rec-armed in MCP(`).lua");
+        local IdByName = Arc.GetIDByScriptName("Archie_Mixer; Toggle Auto zoom height tracks rec-armed in MCP(`).lua");
         local Toggle2 = reaper.GetToggleCommandState(reaper.NamedCommandLookup(IdByName));
         if Toggle2 == 1 then;
             reaper.Main_OnCommand(reaper.NamedCommandLookup(IdByName),0);

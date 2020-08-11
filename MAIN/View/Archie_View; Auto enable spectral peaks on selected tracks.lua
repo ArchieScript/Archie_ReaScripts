@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Auto enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * AboutScript: Auto enable spectral peaks on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -105,7 +105,7 @@
          else;
              reaper.SNM_SetIntConfigVar("showpeaks",67);
          end;
-     end;  -- Default ini "showpeaks = 3"
+     end; -- Default ini "showpeaks = 3"
     -----------------------------------------------------------------------------------------------------
 
 
@@ -312,7 +312,7 @@
             ProjectChange_2 = ProjectChange_1;
         end;
 
-        --#3------Stop < Archie_View;  Enable spectral peaks on selected tracks.lua------------------------------------------
+        --#3------Stop < Archie_View; Enable spectral peaks on selected tracks.lua------------------------------------------
         local Stop = reaper.HasExtState("StopScriptAutoSpectralPeaks_EnableSpectralPeaks","key_StopScriptAutoSpectralPeaks");
         if not Stop then
             Arc.no_undo() return;
@@ -325,7 +325,7 @@
 
 
 
-    --#3------Stop < Archie_View;  Enable spectral peaks on selected tracks.lua-------------------------------------
+    --#3------Stop < Archie_View; Enable spectral peaks on selected tracks.lua-------------------------------------
     reaper.SetExtState("StopScriptAutoSpectralPeaks_EnableSpectralPeaks","key_StopScriptAutoSpectralPeaks",1,false);
     ----------------------------------------------------------------------------------------------------------------
 

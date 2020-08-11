@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks up by one visible*
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * AboutScript: Move selected tracks up by one visible*
    * О скрипте:   Переместить выбранные треки вверх на один видимый*
    * GIF:         ---
@@ -294,7 +294,7 @@
                             if not Concurrence_Guid then;-->-3
                             ----------------------------------------------
     
-                                if Script_Name == "Archie_Track;  Move selected tracks up by one visible (request to skip folders)(`).lua" then;-->-3.21
+                                if Script_Name == "Archie_Track; Move selected tracks up by one visible (request to skip folders)(`).lua" then;-->-3.21
     
                                     --[--// Один запрос для всех треков перед папками //----
                                     local NumbTr_w = {};
@@ -342,13 +342,13 @@
                                 --]]-- << Запрос << ---////----////--------
     
     
-                                if Script_Name == "Archie_Track;  Move selected tracks up by one visible(`).lua" then;
+                                if Script_Name == "Archie_Track; Move selected tracks up by one visible(`).lua" then;
                                     PreDepth = Depth;
                                 end;
     
     
                                 ------
-                                if Script_Name == "Archie_Track;  Move selected tracks up by one visible (skip minimized folders)(`).lua" then;
+                                if Script_Name == "Archie_Track; Move selected tracks up by one visible (skip minimized folders)(`).lua" then;
                                     if PreDepth > Depth then;
                                         for i2 = NumbPre-1,0,-1 do;
                                             local PreTrack_C = reaper.GetTrack(0,i2);

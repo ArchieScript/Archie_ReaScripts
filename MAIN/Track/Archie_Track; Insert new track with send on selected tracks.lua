@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Insert new track with send on selected tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Insert new track with send on selected tracks
    * GIF:         Вставка нового трека с отправкой на выбранные треки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -25,8 +25,8 @@
     --======================================================================================
 
 
-    local MIDI_Bus =  nil --|  0-16 / = 0 all; = nil default;  MIDI Bus
-    local MIDI_Chan = nil --|  0-16 / = 0 all; = nil default;  MIDI Chan
+    local MIDI_Bus =  nil --|  0-16 / = 0 all; = nil default; MIDI Bus
+    local MIDI_Chan = nil --|  0-16 / = 0 all; = nil default; MIDI Chan
 
 
     --======================================================================================

@@ -2,7 +2,7 @@
    * Category:    Fx
    * Description: Smart template - Add Fx chain by name for selected tracks
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Smart template - Add Fx chain by name for selected tracks
    * О скрипте:   Умный шаблон - добавить цепочку Fx по имени для выбранных треков
    * GIF:         ---
@@ -252,13 +252,13 @@ ScriptBeginning = [[
             " * Не существует цепочки FX с именем - \n"..
             "    "..Name_FXChains.."\n\n"..
             " * Создайте новый скрипт с помощью\n"..
-            "    Archie_FX;  Smart template - Add Fx chain by name for selected tracks.lua\n"..
+            "    Archie_FX; Smart template - Add Fx chain by name for selected tracks.lua\n"..
             "   И существующей цепочки Fx! \n\n\n"..
             "Eng:\n"..
             " * There is no FX chain with a name - \n"..
             "    "..Name_FXChains.."\n\n"..
             " * Create a new script using\n"..
-            "    Archie_FX;  Smart template - Add Fx chain by name for selected tracks.lua\n"..
+            "    Archie_FX; Smart template - Add Fx chain by name for selected tracks.lua\n"..
             "   And existing Fx chain! \n\n"..
             "-----------------\n\n"..
             " * УДАЛИТЬ ДАННЫЙ СКРИПТ ? - OK\n\n"..

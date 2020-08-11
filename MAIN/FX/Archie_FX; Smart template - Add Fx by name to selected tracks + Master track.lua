@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx by name to selected tracks + Master track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Smart template - Add Fx by name to selected tracks + Master track
    * О скрипте:   Умный шаблон - Добавить Fx по имени в выбранные треки + Мастер трек
    * GIF:         ---
@@ -376,12 +376,12 @@
         --------------
         local StrRus =
         'Удалите данный скрипт и создайте новый с помощь\n\n'..
-        '"Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua"\n\n'..
+        '"Archie_FX; Smart template - Add Fx by name to selected tracks + Master track.lua"\n\n'..
         'И введите корректное имя Эффекта.\n------------------\n'
 
         local StrEng =
         'Delete this script and create a new one using\n\n'..
-        '"Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua"\n\n'..
+        '"Archie_FX; Smart template - Add Fx by name to selected tracks + Master track.lua"\n\n'..
         'And enter the correct Fx name.\n------------------\n'
 
         local StrRem =
@@ -412,15 +412,15 @@
             os.remove(filename);
             if Arc.js_ReaScriptAPI(false) then;
                 if reaper.MB('Rus:\n\nОткрыть Экшен лист с фильтром \n'..
-                            'Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua ?\n\n\n'..
+                            'Archie_FX; Smart template - Add Fx by name to selected tracks + Master track.lua ?\n\n\n'..
                             'Eng:\n\nOpen an Action sheet with a filter ?\n'..
-                            'Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua ?\n\n\n'
+                            'Archie_FX; Smart template - Add Fx by name to selected tracks + Master track.lua ?\n\n\n'
                             ,"Add Fx by Name",1) == 1 then;
                     reaper.ShowActionList();
                     local winHWND = reaper.JS_Window_Find("Actions",true);
                     if winHWND then;
                         local filter_Act = reaper.JS_Window_FindChildByID(winHWND,1324);
-                        reaper.JS_Window_SetTitle(filter_Act,'Archie_FX;  Smart template - Add Fx by name to selected tracks + Master track.lua');
+                        reaper.JS_Window_SetTitle(filter_Act,'Archie_FX; Smart template - Add Fx by name to selected tracks + Master track.lua');
                     end;
                 end;
             end;

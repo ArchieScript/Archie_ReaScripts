@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Remove last selected item in tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.01
    * Описание:    Удалить последний выбранный элемент в треках
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -25,7 +25,7 @@
 
 
     local TIME_SELECTION = false;
-                     --  = true;  | Учитывать выбор времени
+                     --  = true; | Учитывать выбор времени
                      --  = false; | Игнорировать выбор времени
 
 

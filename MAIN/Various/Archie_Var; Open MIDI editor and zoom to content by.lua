@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Open MIDI editor and zoom to content by
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Откройте MIDI-редактор и увеличьте масштаб содержимого
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -42,7 +42,7 @@
     --======================================================================================
 
 
-    local Indent = 0.10;  -- Отступ
+    local Indent = 0.10; -- Отступ
 
     local Vertically_Zoom = false -- true/false
 

@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Switch item source file on next in directory on throughout project
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Переключить исходный файл элемента на следующий в каталоге на протяжении всего проекта
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -55,7 +55,7 @@
 
 
     local NEXT_PATH = reaper.GetResourcePath()..[[/Scripts/Archie-ReaScripts/MAIN/Item/]]..
-    'Archie_Item;  Switch item source file to next in folder.lua';
+    'Archie_Item; Switch item source file to next in folder.lua';
 
 
     local UNDO = 'Next file dir. All project';

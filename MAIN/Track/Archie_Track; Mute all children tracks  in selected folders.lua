@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Mute all children tracks in selected folders.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -23,9 +23,9 @@
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
 
-    local MUTE_CHILD_FOLD = false;  -- true / false
+    local MUTE_CHILD_FOLD = false; -- true / false
 
-    local PARENT_FOLDER_MUTE = false;  -- true / false
+    local PARENT_FOLDER_MUTE = false; -- true / false
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\

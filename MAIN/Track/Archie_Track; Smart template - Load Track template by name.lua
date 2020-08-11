@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
@@ -99,7 +99,7 @@ ScriptBeginning = [[
     local
     Name_Track_Template = Path_Track_Template:match('^.+[/\\](.+).RTrackTemplate$');
     local
-    Name_Script_NEW = "Archie_Track;  Load Track template with name - "..Name_Track_Template;
+    Name_Script_NEW = "Archie_Track; Load Track template with name - "..Name_Track_Template;
 
 
 
@@ -208,7 +208,7 @@ ScriptBeginning = [[
                 reaper.ReorderSelectedTracks(numbX,0);
             end;
 
-            local Undo = Name_Script_NEW:gsub("Archie_Track;  ","");
+            local Undo = Name_Script_NEW:gsub("Archie_Track; ","");
             reaper.PreventUIRefresh(-1);
             reaper.Undo_EndBlock(Undo,-1);
         end;
@@ -224,13 +224,13 @@ ScriptBeginning = [[
             " * Не существует шаблона дорожки с именем - \n"..
             "    "..Name_Script_NEW..".lua\n\n"..
             " * Создайте новый скрипт с помощью\n"..
-            "    Archie_Track;  Smart template - Load Track template by name.lua\n"..
+            "    Archie_Track; Smart template - Load Track template by name.lua\n"..
             "    И существующего шаблона дорожек! \n\n\n"..
             "Eng:\n"..
             " * There is no track template named - \n"..
             "    "..Name_Script_NEW..".lua\n\n"..
             " * Create a new script using\n"..
-            "    Archie_Track;  Smart template - Load Track template by name.lua\n"..
+            "    Archie_Track; Smart template - Load Track template by name.lua\n"..
             "    And existing track template! \n\n"..
             "-----------------\n\n"..
             " * УДАЛИТЬ ДАННЫЙ СКРИПТ ? - OK\n\n"..

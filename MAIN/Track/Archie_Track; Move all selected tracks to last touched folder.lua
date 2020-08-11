@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move all selected tracks to last touched folder
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Move all selected tracks to last touched folder
    * О скрипте:   Переместить все выбранные треки в последнюю коснувшуюся папку
    * GIF:         ---
@@ -117,7 +117,7 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
                 end;
             end;
         end;
-    else;  --/ Start /--
+    else; --/ Start /--
          numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
     end;
 

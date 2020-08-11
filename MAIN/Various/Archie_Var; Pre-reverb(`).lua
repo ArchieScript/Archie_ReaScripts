@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.19
+   * Version:     1.20
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
@@ -151,7 +151,7 @@
     -------------------------------------------------------------------
     -- В шаблоне (Archie_Var; Pre-reverb(`).lua) этот параметр не менять
     -- Do not change this parameter in the template (Archie_Var; Pre-reverb(`).lua)
-    local NameTemplates = [[$ArchiePreVerb$]];  -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
+    local NameTemplates = [[$ArchiePreVerb$]]; -- Имя шаблона(Необходимо при дублировании скрипта для другого ревера)
     -------------------------------------------------------------------
 
 

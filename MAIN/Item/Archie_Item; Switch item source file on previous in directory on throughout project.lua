@@ -54,7 +54,7 @@
 
 
     local NEXT_PATH = reaper.GetResourcePath()..[[/Scripts/Archie-ReaScripts/MAIN/Item/]]..
-    'Archie_Item;  Switch item source file to previous in folder.lua';
+    'Archie_Item; Switch item source file to previous in folder.lua';
 
 
     local UNDO = 'Previous file dir. All project';

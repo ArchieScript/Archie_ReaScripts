@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render track to a Mono track in certain channels
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Рендер трек в моно трек на определенных каналах
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -35,7 +35,7 @@
 
 
     local Chanell = -1 -- Установить канал для рендера
-                                -- 1 = 1;  2 = 2; 3 = 3; 5 = 5 etc.
+                                -- 1 = 1; 2 = 2; 3 = 3; 5 = 5 etc.
                                 -- -1 показать окно для ввода
 
 

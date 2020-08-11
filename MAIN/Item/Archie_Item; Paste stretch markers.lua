@@ -5,9 +5,9 @@
    *
    * Category:    Item
    * Description: Paste stretch markers
-   * >>>          >>>                  Archie_Item;  Copy stretch markers.lua
+   * >>>          >>>                  Archie_Item; Copy stretch markers.lua
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Вставить маркеры растяжки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

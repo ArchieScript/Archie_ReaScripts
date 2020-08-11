@@ -6,7 +6,7 @@
    * Category:    FX
    * Description: FX; Offline all FX selected tracks - Save previous.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -106,7 +106,7 @@
             local function zxc();
                 reaper.SetExtState(ProjExtState,'State',1,false);
                 local scrPath,scrName = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
-                dofile(scrPath..'/Archie_FX;  Offline all FX selected tracks - Restore previous.lua');
+                dofile(scrPath..'/Archie_FX; Offline all FX selected tracks - Restore previous.lua');
             end;
             pcall(zxc);
         end);

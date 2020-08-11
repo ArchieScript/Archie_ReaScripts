@@ -6,8 +6,8 @@
    * Category:    Track
    * Description: Track; Hide child tracks of selected folders in TCP.lua
    * Author:      Archie
-   * Version:     1.0
-   * Описание:    Трек;  Скрыть дочерние треки выбранных папок в TCP
+   * Version:     1.02
+   * Описание:    Трек; Скрыть дочерние треки выбранных папок в TCP
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie

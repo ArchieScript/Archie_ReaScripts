@@ -5,10 +5,10 @@
    *
    * Category:    Track
    * Description: Track; Toggle Lock selected tracks and them items - Unlock tracks restore them items
-   * @                           (Archie_Track;  Unlock selected tracks and restore them items.lua)
-   * @                           (Archie_Track;  Lock selected tracks and them items.lua)
+   * @                           (Archie_Track; Unlock selected tracks and restore them items.lua)
+   * @                           (Archie_Track; Lock selected tracks and them items.lua)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переключатель - блокировать выбранные треки и их элементы - разблокировать треки, восстановить их элементы
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -28,8 +28,8 @@
 
 
     local Path = reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/MAIN/Track/';
-    local LOCK = 'Archie_Track;  Lock selected tracks and them items.lua';
-    local UNLOCK = 'Archie_Track;  Unlock selected tracks and restore them items.lua';
+    local LOCK = 'Archie_Track; Lock selected tracks and them items.lua';
+    local UNLOCK = 'Archie_Track; Unlock selected tracks and restore them items.lua';
 
 
 

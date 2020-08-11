@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; UnMute all children tracks in selected folders.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -23,7 +23,7 @@
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
 
-    local PARENT_FOLDER_UNMUTE = true;  -- true / false
+    local PARENT_FOLDER_UNMUTE = true; -- true / false
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\

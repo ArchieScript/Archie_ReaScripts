@@ -2,8 +2,8 @@
    * Category:    Track
    * Description: Copy track icon
    * Author:      Archie
-   * Version:     1.0
-   * AboutScript: Copy track icon  /  Archie_Track;  Paste icon selected tracks.lua
+   * Version:     1.02
+   * AboutScript: Copy track icon  /  Archie_Track; Paste icon selected tracks.lua
    * О скрипте:   Копировать иконку дорожки
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819

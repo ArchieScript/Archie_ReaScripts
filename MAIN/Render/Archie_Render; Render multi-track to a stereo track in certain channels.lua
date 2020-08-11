@@ -6,7 +6,7 @@
    * Category:    Render
    * Description: Render multi-track to a stereo track in certain channels
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Рендер мульти-трека в стерео-трек на определенных каналах
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -34,7 +34,7 @@
 
 
     local Chanell = -1 -- Установить каналы для рендера
-                                -- 1 = 1-2;  2 = 2-3; 3 = 3-4; 5 = 5-6 etc.
+                                -- 1 = 1-2; 2 = 2-3; 3 = 3-4; 5 = 5-6 etc.
                                 -- -1 показать окно для ввода
 
 

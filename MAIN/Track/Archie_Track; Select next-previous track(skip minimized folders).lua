@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -341,7 +341,7 @@
     end;
     ----------------------------------------------------
 
-    reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track;  ",""):gsub("%.lua",""),-1);
+    reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ",""):gsub("%.lua",""),-1);
     reaper.PreventUIRefresh(-1);
     reaper.UpdateArrange();
     no_undo();

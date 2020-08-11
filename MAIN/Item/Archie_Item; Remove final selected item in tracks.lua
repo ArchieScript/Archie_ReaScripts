@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Remove final selected item in tracks
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Удалить завершающий выбранный элемент в треках
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -30,7 +30,7 @@
 
 
     local TIME_SELECTION = false;
-                     --  = true;  | Учитывать выбор времени
+                     --  = true; | Учитывать выбор времени
                      --  = false; | Игнорировать выбор времени
 
 

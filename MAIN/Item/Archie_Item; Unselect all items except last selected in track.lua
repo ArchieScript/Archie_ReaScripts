@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Unselect all items except last selected in track
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Отменить выбор всех элементов, кроме последнего выбранного в треке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -25,7 +25,7 @@
 
 
     local TIME_SELECTION = false;
-                     --  = true;  | Учитывать выбор времени
+                     --  = true; | Учитывать выбор времени
                      --  = false; | Игнорировать выбор времени
 
 

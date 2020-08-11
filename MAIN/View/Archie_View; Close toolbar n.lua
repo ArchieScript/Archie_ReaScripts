@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Close toolbar n
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Закрыть панель инструментов n
    * GIF:         ---
@@ -72,8 +72,8 @@
                   "ENG:\n\nInvalid script name.\n"..
                   "The script name must be one of the following ***.\n"..
                   "n = Number from 1 to 16\n\n\n***\n"..
-                  "Archie_View;  Close toolbar main.lua\n Или / Or\n"..
-                  "Archie_View;  Close toolbar n.lua","Error",0)
+                  "Archie_View; Close toolbar main.lua\n Или / Or\n"..
+                  "Archie_View; Close toolbar n.lua","Error",0)
         no_undo() return;
     end;
 

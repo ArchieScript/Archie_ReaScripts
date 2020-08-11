@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Track; UnMute all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.13
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -37,7 +37,7 @@
     -- DIFFERENCES-LOCK TRACKS / ОТЛИЧИЯ-БЛОКИРОВКА ТРЕКОВ *** (НЕТ ОТЛИЧИЙ)
 
 
-    local STARTUP = 1;  -- 0/1  -- (Not recommended change)
+    local STARTUP = 1; -- 0/1  -- (Not recommended change)
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;

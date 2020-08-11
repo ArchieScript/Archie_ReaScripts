@@ -5,9 +5,9 @@
    *
    * Category:    Info
    * Features:    Startup
-   * Description: Info;  Counter time project(AutoRun)
+   * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.22
+   * Version:     1.23
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -124,7 +124,7 @@
     local function TextByCenterAndResize(string,x,y,w,h,ZoomInOn,flags);
         local gfx_w = gfx.w/100*w;
         local gfx_h = gfx.h/100*h;
-        local Fnt = 'Verdana';  --Tahoma  Verdana Georgia
+        local Fnt = 'Verdana'; --Tahoma  Verdana Georgia
         gfx.setfont(1,Fnt,10000);
         local lengthFontW,heightFontH = gfx.measurestr(string);
 
@@ -1389,7 +1389,7 @@
     --[[
     --Time_clearing-------------------
     reaper.defer(function()
-        scriptName = 'Archie_Info;  Counter time project.lua'
+        scriptName = 'Archie_Info; Counter time project.lua'
         local id = Arc.GetIDByScriptName(scriptName,scriptPath);
         if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
         local check_Id, check_Fun = Arc.GetStartupScript(id);

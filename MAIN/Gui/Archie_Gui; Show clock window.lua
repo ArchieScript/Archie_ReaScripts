@@ -2,7 +2,7 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.09
+   * Version:     1.10
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
@@ -607,7 +607,7 @@
 
     function MainTextSize();
 
-        local ScriptNameMain = "Archie_Gui;  Show clock window.lua";
+        local ScriptNameMain = "Archie_Gui; Show clock window.lua";
 
         function GetIDByScriptName(scriptName);
             if type(scriptName)~="string"then error("expects a 'string', got "..type(scriptName),2) end;
@@ -701,9 +701,9 @@
             gfx.gradrect(0,0,gfx.w,gfx.h,0.55,0.55,0.55,1);
 
             gfx.set(.9,.9,.9);
-            TextByCenterAndResize("-",0,0,20,100,0,nil);      gfx.drawstr("-");
+            TextByCenterAndResize("-",0,0,20,100,0,nil); gfx.drawstr("-");
             TextByCenterAndResize("Reset",25,0,50,100,0,nil); gfx.drawstr("Reset");
-            TextByCenterAndResize("+",80,0,20,100,0,nil);     gfx.drawstr("+");
+            TextByCenterAndResize("+",80,0,20,100,0,nil); gfx.drawstr("+");
 
             gfx.set(.65,.65,.65);
             gfx.line(gfx.w/100*20, 0, gfx.w/100*20, gfx.h);

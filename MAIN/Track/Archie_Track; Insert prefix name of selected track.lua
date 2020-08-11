@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Insert prefix name of selected track.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -35,7 +35,7 @@
                    -- = true   -- Показать окно для вводи имени
 
 
-    local No_REGIST = true;  -- Чувствительность к Регистру true/false
+    local No_REGIST = true; -- Чувствительность к Регистру true/false
 
 
     --======================================================================================

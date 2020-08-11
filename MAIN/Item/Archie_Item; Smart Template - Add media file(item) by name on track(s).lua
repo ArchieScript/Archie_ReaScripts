@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Smart Template - Add media file(item) by name on track(s)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Умный шаблон - добавить медиа-файл(элемент) по имени на трек(и)
    * GIF:         ---
@@ -61,7 +61,7 @@
 
     local PATH_N       = filename_N
     local titleUndo_N  = "Add media file(item) by name ("..filename_N:match(".+[/\\](.+)%..-$")..") on track(s)";
-    local nameScript_N = "Archie_Item;  "..titleUndo_N..".lua"
+    local nameScript_N = "Archie_Item; "..titleUndo_N..".lua"
     -----
 
 
@@ -205,7 +205,7 @@
 				  'TO REMOVE THE SCRIPT ?\n\n\n'..
 				  'Rus:\nОтсутствует файл по данному пути !\n'..
 				  'Удалите скрипт и создайте новый с помощью\n'..
-				  '"Archie_Item;  Smart Template Add item by name to selected tracks.lua"\n\n'..
+				  '"Archie_Item; Smart Template Add item by name to selected tracks.lua"\n\n'..
 				  'УДАЛИТЬ СКРИПТ ?'
 				  ,"Woops",1);
 		  if MB == 2 then no_undo() return end;

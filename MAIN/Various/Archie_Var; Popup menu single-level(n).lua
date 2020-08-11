@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.22
+   * Version:     1.23
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -27,7 +27,7 @@
    *              v.1.17 [060620]
    *                  + Fixed a bug reopen, if ctrl let go before what completed action
    *                  + Saving the list when updating the script (just create a new script using 
-   *                    "Archie_Var;  Popup menu single-level(n).lua" with the same name and select save list
+   *                    "Archie_Var; Popup menu single-level(n).lua" with the same name and select save list
    *                    Only relevant if the list was created in version 1.15+
    *              v.1.16 [040620]
    *                  + Fixed bug when opening plugin windows
@@ -48,7 +48,7 @@
    *              v.1.05 [260320]
    *                  ! Fixed bug
    *              v.1.04 [260320]
-   *                  + Add 'hide add menu': Archie_Var;  Hide Show add menu (popup menu single-level).lua
+   *                  + Add 'hide add menu': Archie_Var; Hide Show add menu (popup menu single-level).lua
    *              v.1.03 [170320]
    *                  ! Fixed bug
    *                  + Protection from spec characters 
@@ -69,7 +69,7 @@
     
     
     local HIDE_ADD = nil;
-            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var;  Hide Show add menu (popup menu single-level).lua"
+            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var; Hide Show add menu (popup menu single-level).lua"
             -- = 0   | Показать 'add menu'
             -- = 1   | Скрыть 'add menu'
             ------------------------------

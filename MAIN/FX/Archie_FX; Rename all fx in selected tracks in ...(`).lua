@@ -6,7 +6,7 @@
    * Category:    Fx
    * Description: Fx; Rename all fx in selected tracks in ...(`).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Переименовать все fx в выбранных треках  в ...
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -25,7 +25,7 @@
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
 
-    local Request = true;  -- Окно для ввода имени true/false
+    local Request = true; -- Окно для ввода имени true/false
 
     local new_name = 'Fx_'; -- Имя эффекта, если отключен Request
 

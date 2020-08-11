@@ -6,7 +6,7 @@
    * Category:    Envelope
    * Description: Insert four points in time selection and omit by -1 dB (Envelope track volume)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Вставьте четыре точки в выбор времени и опустите на -1 дБ (огибающая громкости трека)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -32,23 +32,23 @@
 
 
 
-     local value_DB      =    -1;  --      | значения дб для изменения
-     local Envelope      =     0;  --      | 0 = volume  / 1 = volumePreFX
-     local ret_Point_1   =     0;  --      | отступ точка 1
-     local ret_Point_2   =     0;  --      | отступ точка 2
-     local ret_Point_3   =     0;  --      | отступ точка 3
-     local ret_Point_4   =     0;  --      | отступ точка 4
-     local SHAPE_1       =     0;  -- 0..5 | Point Shape точка 1
-     local SHAPE_2       =     0;  -- 0..5 | Point Shape точка 2
-     local SHAPE_3       =     0;  -- 0..5 | Point Shape точка 3
-     local SHAPE_4       =     0;  -- 0..5 | Point Shape точка 4
-     local SELECTED_1    =     0;  -- 1/0  | выделение точки 1
-     local SELECTED_2    =     1;  -- 1/0  | выделение точки 2
-     local SELECTED_3    =     1;  -- 1/0  | выделение точки 3
-     local SELECTED_4    =     0;  -- 1/0  | выделение точки 4
-     local UnLoop        = false;  --      | true/false
-     local ENV_SEl_F_TR  =  true;  --      | true/false Выделить первый созданный трек автоматизации  / оставить выделения на предыдущем треке автоматизации
-     local SaveTimeSel   = false;  --      | true/false  работает только при UnLoop = true (v.1.02+)
+     local value_DB      =    -1; --      | значения дб для изменения
+     local Envelope      =     0; --      | 0 = volume  / 1 = volumePreFX
+     local ret_Point_1   =     0; --      | отступ точка 1
+     local ret_Point_2   =     0; --      | отступ точка 2
+     local ret_Point_3   =     0; --      | отступ точка 3
+     local ret_Point_4   =     0; --      | отступ точка 4
+     local SHAPE_1       =     0; -- 0..5 | Point Shape точка 1
+     local SHAPE_2       =     0; -- 0..5 | Point Shape точка 2
+     local SHAPE_3       =     0; -- 0..5 | Point Shape точка 3
+     local SHAPE_4       =     0; -- 0..5 | Point Shape точка 4
+     local SELECTED_1    =     0; -- 1/0  | выделение точки 1
+     local SELECTED_2    =     1; -- 1/0  | выделение точки 2
+     local SELECTED_3    =     1; -- 1/0  | выделение точки 3
+     local SELECTED_4    =     0; -- 1/0  | выделение точки 4
+     local UnLoop        = false; --      | true/false
+     local ENV_SEl_F_TR  =  true; --      | true/false Выделить первый созданный трек автоматизации  / оставить выделения на предыдущем треке автоматизации
+     local SaveTimeSel   = false; --      | true/false  работает только при UnLoop = true (v.1.02+)
 
 
 

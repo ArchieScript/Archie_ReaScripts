@@ -2,7 +2,7 @@
    * Category:    Monitoring
    * Description: Smart template monitoring Toggle Open Fx in float
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Smart template monitoring Toggle Open Fx in float
    * О скрипте:   Умный шаблон мониторинга переключатель открыть плавающий Fx
    * GIF:         ---
@@ -146,7 +146,7 @@
     local
     pathScr,NameScr = ({reaper.get_action_context()})[2]:match("(.+)[/\\](.+)");
     local
-    NameScrNEXT = "Archie_MonitorFx;  Toggle Open and activate float Fx - Close Fx "..
+    NameScrNEXT = "Archie_MonitorFx; Toggle Open and activate float Fx - Close Fx "..
                          And..bypass..offline.."'Fx-"..table.concat(Num_Fx,"' ")..".lua";
 
 

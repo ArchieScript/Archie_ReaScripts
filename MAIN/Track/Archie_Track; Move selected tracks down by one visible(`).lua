@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
@@ -316,7 +316,7 @@
                             ------------------------------------------------------
     
     
-                            if Script_Name == "Archie_Track;  Move selected tracks down by one visible (request to skip folders)(`).lua" then;-->-3.21
+                            if Script_Name == "Archie_Track; Move selected tracks down by one visible (request to skip folders)(`).lua" then;-->-3.21
     
                                 -->>--// Один запрос для всех треков перед папками //-->>--
                                 local NumbTr_w = {};
@@ -387,16 +387,16 @@
     
     
     
-                            if Script_Name == "Archie_Track;  Move selected tracks down by one visible (skip folders)(`).lua" then;
+                            if Script_Name == "Archie_Track; Move selected tracks down by one visible (skip folders)(`).lua" then;
                                 if NextDepth > Depth then Fold = 1 end;
                             end;
     
-                            if Script_Name == "Archie_Track;  Move selected tracks down by one visible(`).lua" then;
+                            if Script_Name == "Archie_Track; Move selected tracks down by one visible(`).lua" then;
                                 if Fold == 1 then Fold = 0 end;
                             end;
     
                             ---
-                            if Script_Name == "Archie_Track;  Move selected tracks down by one visible (skip minimized folders)(`).lua" then;
+                            if Script_Name == "Archie_Track; Move selected tracks down by one visible (skip minimized folders)(`).lua" then;
                                 if Fold == 1 then;
                                     local colapse = reaper.GetMediaTrackInfo_Value(NextTrack,"I_FOLDERCOMPACT");
                                     if colapse ~= 2 then;

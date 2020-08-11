@@ -2,8 +2,8 @@
    * Category:    Track
    * Description: Track; Cut track icon
    * Author:      Archie
-   * Version:     1.0
-   * AboutScript: Cut track icon  /  Archie_Track;  Paste icon selected tracks.lua
+   * Version:     1.02
+   * AboutScript: Cut track icon  /  Archie_Track; Paste icon selected tracks.lua
    * О скрипте:   Вырезать иконку дорожки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

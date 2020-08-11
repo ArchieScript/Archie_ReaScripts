@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx chain by name for selected items or in time selection
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * AboutScript: Smart template - Add Fx chain by name for selected items or in time selection
    * О скрипте:   Умный шаблон - Добавить цепочку Fx по имени для выбранных элементов или в выборе времени
    * GIF:         ---
@@ -123,7 +123,7 @@
     :gsub("niahCxfR.","",1)
     :reverse();
     local
-    ScripnName = "Archie_FX;  Add Fx chain by Name - "..Name_FXChainsX.." - for selected items or in time selection(smart).lua";
+    ScripnName = "Archie_FX; Add Fx chain by Name - "..Name_FXChainsX.." - for selected items or in time selection(smart).lua";
     local
     ScripnNameX = "Add Fx chain by Name - "..Name_FXChainsX.." - for selected items or in time selection(smart)";
     -------------------------------------
@@ -785,13 +785,13 @@
             " * Не существует цепочки FX с именем - \n"..
             "    "..Name_FXChainsX.."\n\n"..
             " * Создайте новый скрипт с помощью\n"..
-            "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
+            "    Archie_FX; Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
             "   И существующей цепочки Fx! \n\n\n"..
             "Eng:\n\n"..
             " * There is no FX chain with a name - \n"..
             "    "..Name_FXChainsX.."\n\n"..
             " * Create a new script using\n"..
-            "    Archie_FX;  Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
+            "    Archie_FX; Smart template - Add Fx chain by name for selected items or in time selection.lua\n"..
             "   And existing Fx chain! \n\n"..
             "-----------------\n\n"..
             " * УДАЛИТЬ ДАННЫЙ СКРИПТ ? - OK\n\n"..

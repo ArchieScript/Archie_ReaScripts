@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Move all selected tracks to the first selected folder
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Move all selected tracks to the first selected folder
    * О скрипте:   Переместить все выделенные треки в первую выделенную папку
    * GIF:         http://clck.ru/EbWRT
@@ -95,7 +95,7 @@ SYSTEM  REQUIREMENTS:  Reaper v.5.96 |  SWS v.2.9.7  (and above)
                 end;
             end;
         end;
-    else;  --/ Start /--
+    else; --/ Start /--
          numb = reaper.GetMediaTrackInfo_Value(track,"IP_TRACKNUMBER");
     end;
 

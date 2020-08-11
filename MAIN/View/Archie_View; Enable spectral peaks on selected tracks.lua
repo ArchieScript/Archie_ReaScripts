@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * AboutScript: Enable spectral peaks only on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -98,7 +98,7 @@
          else;
              reaper.SNM_SetIntConfigVar("showpeaks",67);
          end;
-     end;  -- Default ini "showpeaks = 3"
+     end; -- Default ini "showpeaks = 3"
     -----------------------------------------------------------------------------------------------------
 
 

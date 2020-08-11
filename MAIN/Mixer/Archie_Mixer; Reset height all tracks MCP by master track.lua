@@ -5,8 +5,8 @@
    *
    * Description: Mixer; Reset height all tracks MCP by master track
    * Author:      Archie
-   * Version:     1.0
-   * Описание:    Микшер;  Сбросить высоту всех дорожек MCP по главной дорожке
+   * Version:     1.02
+   * Описание:    Микшер; Сбросить высоту всех дорожек MCP по главной дорожке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628

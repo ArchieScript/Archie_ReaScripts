@@ -5,9 +5,9 @@
    *
    * Category:    Track
    * Description: Track; Unlock selected tracks and restore them items
-   * @                             (Archie_Track;  Lock selected tracks and them items.lua)
+   * @                             (Archie_Track; Lock selected tracks and them items.lua)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Разблокировать выбранные треки и восстановить их элементы
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/

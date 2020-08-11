@@ -14,7 +14,7 @@
    * ЧЕРЕЗ ТРЕК МЕНЕДЖЕР ОТОБРАЗИТЬ ИХ ЛИБО ПРЕМЕНИТЬ ЭКШЕН
    * "SWS: Show all tracks in TCP"
    * ЛИБО ПРИМЕНИТЬ СКРИПТ
-   * "Script: Archie_Track;  Show child tracks of selected folders in TCP.lua"
+   * "Script: Archie_Track; Show child tracks of selected folders in TCP.lua"
    *
    * IMPORTANT:
    * WHEN USING UNDO, THE SCRIPT WORKS INCORRECTLY,
@@ -26,7 +26,7 @@
    * OR TO CHANGE THE ACTION
    * "SWS: Show all tracks in TCP"
    * OR TO APPLY THE SCRIPT
-   * "Script: Archie_Track;  Show child tracks of selected folders in TCP.lua"
+   * "Script: Archie_Track; Show child tracks of selected folders in TCP.lua"
    *
    *
    *
@@ -37,7 +37,7 @@
    * Features:    Startup
    * Description: Track; Toggle Hide super collapsed(AutoRun).lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Трек; скрыть супер свернутые
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
