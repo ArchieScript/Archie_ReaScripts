@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Switch item source file on previous in directory on throughout project
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Переключить исходный файл элемента на предыдущий в каталоге на протяжении всего проекта
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
