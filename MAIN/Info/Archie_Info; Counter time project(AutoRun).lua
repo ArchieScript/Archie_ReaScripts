@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.23
+   * Version:     1.24
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -18,10 +18,12 @@
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:
+   * Changelog:   
+   *              v.1.24 [240520]
+   *                  + Reset Afk when editing notes (notepad) -- Частично, т.к. нету доступа Апи
+   
    *              v.1.21 [240520]
    *                  + No change
-
    *              v.1.19 [220420]
    *                  + Current time
    *              v.1.18 [05.04.20]
@@ -45,7 +47,7 @@
    *              v.1.0  [15.02.20]
    *                  +   initialе
 --]]
-    local Version = ' - v.1.21';
+    local Version = ' - v.1.24';
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -90,7 +92,7 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
+  
 
 
     local TOOL_TIP_REAPER_E  = 'REAPER:\nTime since Reaper launch\n';
@@ -140,6 +142,69 @@
         gfx.drawstr(string);
     end;
     -----------------------------
+    
+    
+    
+    --(1.24---------------------------
+    local NT_Track2,NT_Item2,NT_Markers2,NT_notes2,NT_Skip = {},{},{},{},0;
+    local function NotesCheck(buf,Skip);
+        buf = buf or 1;
+        Skip = tonumber(Skip) or 1;
+        NT_Skip = NT_Skip+1;
+        if NT_Skip >= Skip then NT_Skip = 1 end;
+        if NT_Skip == 1 then;
+        ---- 
+            local command_id = reaper.NamedCommandLookup("_S&M_SHOW_NOTES_VIEW");
+            local nt = reaper.GetToggleCommandStateEx(0,command_id);
+            if nt >= 1 then;
+            ----
+                local notes = reaper.GetSetProjectNotes(0,0,'');
+                if notes ~= NT_notes2[buf] then;
+                    NT_notes2[buf] = notes;
+                    return true;
+                end;
+                ----
+                local NT_Track={};
+                local CountTrack = reaper.CountTracks(0);
+                if CountTrack > 0 then;
+                    for i = 1,CountTrack do;
+                        NT_Track[i] = reaper.NF_GetSWSTrackNotes(reaper.GetTrack(0,i-1));
+                    end;
+                    if NT_Track2[buf] ~= table.concat(NT_Track)then;
+                        NT_Track2[buf] = table.concat(NT_Track);
+                        return true;
+                    end;
+                end;
+                ----
+                local NT_Item = {};
+                local CountMediaItem = reaper.CountMediaItems(0);
+                if CountMediaItem > 0 then;
+                    for i = 1,CountMediaItem do;
+                        NT_Item[i] = reaper.ULT_GetMediaItemNote(reaper.GetMediaItem(0,i-1));
+                    end;
+                    if NT_Item2[buf] ~= table.concat(NT_Item)then;
+                        NT_Item2[buf] = table.concat(NT_Track);
+                        return true;
+                    end;
+                end;
+                ----
+                local NT_Markers={};
+                local retval,num_markers,num_regions = reaper.CountProjectMarkers(0);
+                if retval > 0 then;
+                    for i = 1,retval do;
+                        local _,_,_,_,name,_ = reaper.EnumProjectMarkers(i-1);
+                        NT_Markers[i] = name;
+                    end;
+                    if NT_Markers2[buf] ~= table.concat(NT_Markers)then;
+                        NT_Markers2[buf]  = table.concat(NT_Markers);
+                        return true;
+                    end;
+                end;
+            ----
+            end;
+        end;
+    end;
+    --1.24)---------------------------
 
 
 
@@ -536,8 +601,9 @@
             if TIME_SEC_akf == 0 then t.time1_akf = false TIME_SEC_akf = .1 end;---v1.10
             local ProjectState_akf = reaper.GetProjectStateChangeCount(0);
             local TranspoState_akf = GetTransportStateChange('akf');
+            local NTCheck = NotesCheck(1,10);--(1.24)
 
-            if ProjectState_akf == t.ProjectState2_akf and not TranspoState_akf then;
+            if ProjectState_akf == t.ProjectState2_akf and not TranspoState_akf and not NTCheck then;
                 if not t.tm_akf then t.tm_akf = os.time()end;
                 t.tm2_akf = (os.time()-t.tm_akf);
             else;
@@ -561,7 +627,7 @@
             else;
                 t.time1_akf = false;
             end;
-
+            ---
             local countB = AFK-(t.tm2_akf or 0);
             if countB <= 0 then;
                 t.countBack = ' (S)'
@@ -592,8 +658,9 @@
 
             local ProjectState_akf_ses = reaper.GetProjectStateChangeCount(0);
             local TranspoState_akf_ses = GetTransportStateChange('akf_ses');
+            --local NTCheck = NotesCheck(2,10);--(1.24)
 
-            if ProjectState_akf_ses == t.ProjectState2_akf_ses and not TranspoState_akf_ses then;
+            if ProjectState_akf_ses == t.ProjectState2_akf_ses and not TranspoState_akf_ses and not NTCheck then;
                 if not t.tm_akf_ses then t.tm_akf_ses = os.time()end;
                 t.tm2_akf_ses = (os.time()-t.tm_akf_ses);
             else;
@@ -1398,7 +1465,6 @@
     end;end);
     -----------------------------------
     --]]
-
 
 
 
