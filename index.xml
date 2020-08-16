@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="d3f0651733867f0a835dd9d7e5a2903ec3ccc1bd">
+<index version="1" name="Archie-ReaScripts" commit="6fa1cc798b5493c319bab573ffef1ea911bdea3c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1841,6 +1841,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.21 [240520]
     + No change]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/504c316043b991381a91e24c439b4a877491cafa/MAIN/Info/Archie_Info;%20Counter%20time%20project(AutoRun).lua</source>
+      </version>
+      <version name="1.24" author="Archie" time="2020-08-16T18:15:26Z">
+        <changelog><![CDATA[v.1.24 [240520]
+    + Reset Afk when editing notes (notepad) -- Частично, т.к. нету доступа Апи]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6fa1cc798b5493c319bab573ffef1ea911bdea3c/MAIN/Info/Archie_Info;%20Counter%20time%20project(AutoRun).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Info; Learn what script are used in custom actions and cycle action.lua" type="script" desc="Learn what script are used in custom actions and cycle action">
