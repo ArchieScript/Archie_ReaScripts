@@ -6,7 +6,7 @@
    * Category:    Take
    * Description: Take; Crop to active take all items in selected tracks.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,7 +16,10 @@
    * Extension:   Reaper 6.10+ http://www.reaper.fm/
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.1+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
-   * Changelog:
+   * Changelog:   
+   *              v.1.03 [020620]
+   *                  + fixed bug
+   
    *              v.1.0 [020620]
    *                  + initialе
 --]]
@@ -39,9 +42,9 @@
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
         if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
-    if not Arc then return end;
+    if not Arc then return end;local A = Arc;
     --=========================================
-	
+  
 
 
     local CountSelTracks = reaper.CountSelectedTracks(0);
@@ -108,6 +111,5 @@
     reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock('Crop to active take all items in selected tracks',-1);
     reaper.UpdateArrange();
-
 
 
