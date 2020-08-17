@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -16,10 +16,16 @@
    *              [main] . > Archie_Track; Select previous tracks(skip minimized folders)(`).lua
    *              [main] . > Archie_Track; Select next tracks(skip folders)(`).lua
    *              [main] . > Archie_Track; Select previous tracks(skip folders)(`).lua
+   *              [main] . > Archie_Track; Select next tracks(skip minimized folders)(leaving other selected)(`).lua
+   *              [main] . > Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua
+   *              [main] . > Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua
+   *              [main] . > Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua
    * Changelog:
+   *              v.1.09 [170820]
+   *                  + leaving other tracks selected (http://rmmedia.ru/threads/110165/post-2519923)
+   
    *              v.1.06 [22.05.19]
    *                  + Add script ...(skip folders)
-
    *              v.1.04 [22.05.19]
    *                  + SCROLLING WITH the INDENT
    *                  + ПРОКРУТКА С ОТСТУПОМ
@@ -27,8 +33,6 @@
    *                  +  Added a mixer scroll
    *              v.1.0 [09042019]
    *                  +  initialе
-
-
    --=======================================================================================
    --    SYSTEM REQUIREMENTS:           |  СИСТЕМНЫЕ ТРЕБОВАНИЯ:
    (+) - required for installation      | (+) - обязательно для установки
@@ -86,11 +90,10 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
-
-
-
-
+    
+    
+    
+    
     local SelectPrev  = "Archie_Track; Select previous tracks(skip minimized folders)(`).lua";
     local SelectNext  = "Archie_Track; Select next tracks(skip minimized folders)(`).lua";
     local SelectPrev2 = "Archie_Track; Select previous tracks(skip folders)(`).lua";
@@ -98,7 +101,14 @@
 
     local
     Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
-
+    
+    
+    local SaveSelPRev;
+    if Script_Name:match('%(leaving%s+other%s+selected%)')then SaveSelPRev = true end;
+    Script_Name = Script_Name:gsub('%(leaving%s+other%s+selected%)','');
+    
+     
+    
     if Script_Name ~= SelectPrev and Script_Name ~= SelectNext and Script_Name ~= SelectPrev2 and Script_Name ~= SelectNext2 then;
         reaper.MB("Rus:\n\n"..
                   " * Неверное имя скрипта !\n * Имя скрипта должно быть одно из следующих \n"..
@@ -165,6 +175,11 @@
 
     reaper.PreventUIRefresh(1);
     reaper.Undo_BeginBlock();
+    
+    
+    if SaveSelPRev == true then;
+        Arc.Save_Selected_Track_Slot(1); 
+    end;
 
 
     if Script_Name == SelectNext or Script_Name == SelectNext2 then;--Select>>
@@ -340,6 +355,12 @@
         reaper.SetMixerScroll(reaper.GetSelectedTrack(0,0));
     end;
     ----------------------------------------------------
+    
+    
+    if SaveSelPRev == true then;
+        Arc.Restore_Selected_Track_Slot(1,true,true);
+    end;
+    
 
     reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ",""):gsub("%.lua",""),-1);
     reaper.PreventUIRefresh(-1);
