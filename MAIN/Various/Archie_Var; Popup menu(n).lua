@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Popup menu(n).lua
    * Author:      Archie
-   * Version:     2.02
+   * Version:     2.03
    * Описание:    Всплывающее меню
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -21,13 +21,16 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.9.0+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.2.03 [020820]
+   *                  + Add Copy
+   *                  ! fixed bug Submenu (limit in 15 submenu)
+   
    *              v.2.02 [300720]
    *                  + +++
-   
    *              v.1.0 [240720]
    *                  + initialе
 --]]
-    Version = 2.02;
+    Version = 2.03;
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -35,14 +38,14 @@
     
     
     local HIDE_ADD = nil;
-            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var;  Hide Show add menu (popup menu single-level).lua"
+            -- = nil | Скрыть / Показать 'add menu' скриптом "Archie_Var; Hide Show add menu (popup menu single-level).lua"
             -- = 0   | Показать 'add menu'
             -- = 1   | Скрыть 'add menu'
             ------------------------------
     
     
     local OPEN_AGAIN = true;
-                  -- = true  повторно открыться  (ctrl+click)
+                  -- = true  повторно открыться (ctrl+click)
                   -- = false повторно неоткрываться
                   ---------------------------------
     local CTRL = true;
@@ -78,6 +81,7 @@
     local _,scriptPath,secID,cmdID,_,_,_ = reaper.get_action_context();
     local section = scriptPath:match('^.*[/\\](.+)$');
     ---------------------------------------------------
+    
     
     
     
@@ -240,6 +244,28 @@
         
         ----------------------------------------------------------
         local tbl = Arc.iniFileReadSectionLua(section,ArcFileIni);
+        -------------
+        -------------
+        local xPp = 0;
+        for i=1,#tbl do;
+            if tbl[i].key:match('^%s-%d*%s-[_]*submenu_open')then;
+                xPp = xPp+1;
+            end;
+            if xPp > 15 then;
+                tbl[i].REM = true;
+            end;
+            if tbl[i].key:match('^%s-%d*%s-[_]*submenu_close')then;
+                xPp = xPp-1;
+            end;
+        end;
+        ---
+        for i=#tbl,1,-1 do;
+            if tbl[i].REM then;
+                table.remove(tbl,i);
+            end;
+        end;
+        -------------
+        -------------
         local t1 = {};
         local sbm = {};
         ----
@@ -296,6 +322,7 @@
         ----------------------------------------------------------
         
         
+        
         ----------------------------------------------------------
         local
         addMenu = ''..
@@ -315,9 +342,15 @@
                   '|<|'..
                   '|Rename'..
                   '|Block / Label'..
-                  '||>Move'..
+                  '||>Move / Copy'..
+                  '|>Move'..
                   '|Move Action'..
                   '|Move SubMenu'..
+                  '|<'..
+                  '|>Copy'..
+                  '|Copy Action'..
+                  '|Copy SubMenu'..
+                  '|<'..
                   '|<'..
                   '||>• script|'..
                   ' Hide Add Menu'..
@@ -328,6 +361,7 @@
                   '|<'..
                   '|<';
         if Hide_AddMenu == true and #t1>0 then addMenu = '' end;
+        if #t1==0 then addMenu = addMenu:gsub('^[|]*','')end;
         ----------------------------------------------------------
         
         
@@ -574,6 +608,7 @@
             ----
             local X = 0;
             local x2 = 0;
+            local xPp = 0;
             ---
             tbl[#tbl+1]={};
             tbl[#tbl].key = 'action_LAST';
@@ -583,8 +618,24 @@
                 if tbl[i]then;
                     if tbl[i].key:match('^%s-action_') or
                        tbl[i].key:match('^%s-submenu_')then;
+                       ----
+                       ----
+                       if tbl[i].key:match('^%s-submenu_open')then;
+                           xPp = xPp+1;
+                       elseif tbl[i].key:match('^%s-submenu_close')then;
+                           xPp = xPp-1;
+                       end;
+                       ----
+                        ----
                         X = X+1;
                         if X == ADD_showmenu then;
+                            ----
+                            if xPp >= 15 then;
+                                reaper.MB('Eng:\nExceeded the limit of 15 submenu\n'..
+                                          '\nRus:\nПревышен лимит в 15 подменю','Woops',0);
+                                gfx.quit()no_undo()return;
+                            end;
+                            ----
                             local T = {key='submenu_open', val=name};
                             table.insert(tbl,i,T);
                             local T = {key='submenu_close', val=name};
@@ -1292,7 +1343,7 @@
             ----
             ----
             --===================================================================================================================
-        elseif showmenu == #t1+11 then;--Move Sub --=============================================================================
+        elseif showmenu == #t1+11 then;--Move Sub--==============================================================================
             --===================================================================================================================
             ----
             ----
@@ -1381,6 +1432,7 @@
                         ----
                         local X = 0;
                         local x2 = 0;
+                        local xPp = 0;
                         ---
                         tbl[#tbl+1]={};
                         tbl[#tbl].key = 'action_LAST';
@@ -1391,10 +1443,26 @@
                             if tbl[i]then;
                                 if tbl[i].key:match('^%s-action_') or
                                    tbl[i].key:match('^%s-submenu_')then;
+                                   ----
+                                   ----
+                                   if tbl[i].key:match('^%s-submenu_open')then;
+                                       xPp = xPp+1;
+                                   elseif tbl[i].key:match('^%s-submenu_close')then;
+                                       xPp = xPp-1;
+                                   end;
+                                   ----
+                                   ----
                                     X = X+1;
                                     if X == ADD_showmenu then;
                                         ----
                                         if i < xStart or i > xEnd then;
+                                            ----
+                                            if xPp >= 15 then;
+                                                reaper.MB('Eng:\nExceeded the limit of 15 submenu\n'..
+                                                          '\nRus:\nПревышен лимит в 15 подменю','Woops',0);
+                                                gfx.quit()no_undo()return;
+                                            end;
+                                            ----
                                             for ii = #t,1,-1 do;
                                                 table.insert(tbl,i,t[ii]);
                                             end;
@@ -1463,7 +1531,288 @@
             ----
             ----
             --===================================================================================================================
-        elseif showmenu == #t1+12 then;--  --====================================================================================
+        elseif showmenu == #t1+12 then;--Copy Action--===========================================================================
+            --===================================================================================================================
+            ----
+            ----
+            ----
+            local LIST_SV = LIST;
+            LIST = LIST:gsub('%#Empty%|','||||');
+            LIST = LIST:gsub('#','♯');
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            ----
+            local ADD_showmenu = gfx.showmenu('#Copy Action ||'..LIST:gsub('^%s-|',''));
+            ADD_showmenu = ADD_showmenu-1;
+            if ADD_showmenu <= 0 then gfx.quit()no_undo() return end;
+            ----
+            ----
+            local X = 0;
+            local x2 = 0;
+            local key;
+            local val;
+            ----
+            for i=1,#tbl do;
+                if tbl[i].key:match('^%s-action_')then;
+                    X = X+1;
+                    if X == ADD_showmenu then;
+                        key = tbl[i].key;
+                        val = tbl[i].val;
+                        break;
+                    end;
+                end;
+            end;
+            ----
+            ----
+            ----
+            LIST = LIST_SV;
+            if LIST:match('^%s->')then LIST = '|'..LIST end;
+            LIST = LIST:gsub('|>.-[^|]+','|+%0');
+            LIST = LIST:gsub('<|','+|%0');
+            LIST = LIST:gsub('%#Empty%|','|')..'+';
+            LIST = LIST:gsub('||','|'):gsub('||','|');
+            LIST = LIST:gsub('#','♯');
+            ----
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            ----
+            local ADD_showmenu = gfx.showmenu('#Copy Action||'..LIST:gsub('^%s-|',''));
+            ADD_showmenu = ADD_showmenu-1;
+            if ADD_showmenu <= 0 then gfx.quit()no_undo() return end;
+            ----
+            ----
+            local X = 0;
+            local x2 = 0;
+            ----
+            tbl[#tbl+1]={};
+            tbl[#tbl].key = 'action_LAST';
+            tbl[#tbl].val = 'action_LAST';
+            ----
+            for i=1,math.huge do;
+                if tbl[i]then;
+                    if tbl[i].key:match('^%s-action_') or
+                       tbl[i].key:match('^%s-submenu_')then;
+                        X = X+1;
+                        if X == ADD_showmenu then;
+                            ----
+                            local T = {key=key,val=val};
+                            table.insert(tbl,i,T);
+                            ---- 
+                            break;
+                        end;
+                    end;
+                else;
+                    break;
+                end;
+            end;
+            ----
+            table.remove(tbl,#tbl);
+            ----
+            ----
+            local x2 = 0;
+            for i=1,#tbl do;
+                if tbl[i].key:match('^%s-action_')or
+                   tbl[i].key:match('^%s-submenu_')or
+                   tbl[i].key:match('^%s-separator')then;
+                    x2 = x2 + 1;
+                    tbl[i].key = x2..'_'..(tbl[i].key):gsub('^%s*','');
+                end;
+            end;
+            ----
+            ----
+            --[[
+            Arc.iniFileRemoveSectionLua(section,ArcFileIni);
+            for i=1,#tbl do;
+                Arc.iniFileWriteLua(section,tbl[i].key,tbl[i].val,ArcFileIni);
+            end;
+            --]]
+            ----
+            iniFileWriteSectionLua(section,tbl,ArcFileIni,false,true);
+            ----
+            ----
+            gfx.quit();
+            no_undo();
+            ----
+            ----
+            ----
+            --===================================================================================================================
+        elseif showmenu == #t1+13 then;--Copy Submenu--==========================================================================
+            --===================================================================================================================
+            ----
+            ----
+            ----
+            local LIST_SV = LIST;
+            LIST = LIST2;
+            if LIST:match('^%s->')then LIST = '|'..LIST end;
+            LIST = LIST:gsub('|>.-[^|]+','%0| <<< Copy Submenu >>> ');
+            LIST = LIST:gsub('%#Empty%|','|');
+            LIST = LIST:gsub('>%s-#',function(v)return v:gsub('#','♯')end);
+            ----
+            ----
+            local x,y = reaper.GetMousePosition();
+            local x,y = gfx.screentoclient(x,y);
+            gfx.x,gfx.y = x-50,y-20;
+            ----
+            local ADD_showmenu = gfx.showmenu('#Copy Submenu ||'..LIST:gsub('^%s-|',''));
+            ADD_showmenu = ADD_showmenu-1;
+            if ADD_showmenu <= 0 then gfx.quit()no_undo() return end;
+            ----
+            ----
+            local X=0;
+            local x2;
+            ----
+            for i=1,#tbl do;
+                if tbl[i].key:match('^%s-action_') or
+                   tbl[i].key:match('^%s-submenu_open')then;
+                    X = X+1;
+                    if X == ADD_showmenu then;
+                        x2 = i;
+                        break;
+                    end;
+                end;
+            end;
+            ----
+            local xStart;
+            local xEnd;
+            local x3=0;
+            ----
+            if x2 and tbl[x2].key:match('^%s-submenu_open')then;
+                ----
+                xStart = x2;
+                for i=x2+1,#tbl do;
+                    if tbl[i].key:match('^%s-submenu_open')then;
+                        x3 = x3+1;
+                    elseif tbl[i].key:match('^%s-submenu_close')then;
+                        if x3 == 0 then;
+                            xEnd = i;
+                            break;
+                        end;
+                        x3 = x3-1;
+                    end;
+                end;
+                ----
+                ----
+                if tonumber(xStart) and tonumber(xEnd)then;
+                    ----
+                    local t={};
+                    for i = xStart,xEnd do;
+                        t[#t+1]=deepcopy(tbl[i]);
+                    end;
+                    ----
+                    if t[1].key:match('submenu_open')and
+                       t[#t].key:match('submenu_close')then;
+                        ----
+                        ---------------
+                        ----
+                        LIST = LIST_SV;
+                        if LIST:match('^%s->')then LIST = '|'..LIST end;
+                        LIST = LIST:gsub('|>.-[^|]+','|+%0');
+                        LIST = LIST:gsub('<|','+|%0');
+                        LIST = LIST:gsub('%#Empty%|','|')..'+';
+                        LIST = LIST:gsub('||','|'):gsub('||','|');
+                        LIST = LIST:gsub('#','♯');
+                        ----
+                        ----
+                        local x,y = reaper.GetMousePosition();
+                        local x,y = gfx.screentoclient(x,y);
+                        gfx.x,gfx.y = x-50,y-20;
+                        ----
+                        local ADD_showmenu = gfx.showmenu('#Copy Submenu ||'..LIST:gsub('^%s-|',''));
+                        ADD_showmenu = ADD_showmenu-1;
+                        if ADD_showmenu <= 0 then gfx.quit()no_undo() return end;
+                        ----
+                        ----
+                        local X = 0;
+                        local x2 = 0;
+                        local xPp = 0;
+                        ---
+                        tbl[#tbl+1]={};
+                        tbl[#tbl].key = 'action_LAST';
+                        tbl[#tbl].val = 'action_LAST';
+                        ----
+                        ----
+                        for i=1,math.huge do;
+                            if tbl[i]then;
+                                if tbl[i].key:match('^%s-action_') or
+                                   tbl[i].key:match('^%s-submenu_')then;
+                                    ----
+                                    ----
+                                    if tbl[i].key:match('^%s-submenu_open')then;
+                                        xPp = xPp+1;
+                                    elseif tbl[i].key:match('^%s-submenu_close')then;
+                                        xPp = xPp-1;
+                                    end;
+                                    ----
+                                    ----
+                                    X = X+1;
+                                    if X == ADD_showmenu then;
+                                      ----
+                                        ----
+                                        if xPp >= 15 then;
+                                            reaper.MB('Eng:\nExceeded the limit of 15 submenu\n'..
+                                                      '\nRus:\nПревышен лимит в 15 подменю','Woops',0);
+                                            gfx.quit()no_undo()return;
+                                        end;
+                                        ----
+                                        for ii = #t,1,-1 do;
+                                            table.insert(tbl,i,t[ii]);
+                                        end;
+                                        ----
+                                        break;
+                                    end;
+                                end;
+                            else;
+                                gfx.quit()no_undo()return;
+                            end;
+                        end;
+                        ----
+                        ----
+                        table.remove(tbl,#tbl);
+                        ----
+                        ----
+                        local x2 = 0;
+                        for i=1,#tbl do;
+                            if tbl[i].key:match('^%s-action_')or
+                               tbl[i].key:match('^%s-submenu_')or
+                               tbl[i].key:match('^%s-separator')then;
+                                x2 = x2 + 1;
+                                tbl[i].key = x2..'_'..(tbl[i].key):gsub('^%s*','');
+                            end;
+                        end;
+                        ----
+                        --[[
+                        Arc.iniFileRemoveSectionLua(section,ArcFileIni);
+                        for i=1,#tbl do;
+                            Arc.iniFileWriteLua(section,tbl[i].key,tbl[i].val,ArcFileIni);
+                        end;
+                        --]]
+                        ----
+                        iniFileWriteSectionLua(section,tbl,ArcFileIni,false,true);
+                        ----
+                        gfx.quit();
+                        no_undo();
+                        ----
+                    else;
+                        gfx.quit()no_undo()return;
+                    end;
+                else;
+                    gfx.quit()no_undo()return;
+                end;
+                ----
+            else;
+                gfx.quit()no_undo()return;
+            end;
+            ----
+            gfx.quit();
+            no_undo();
+            return;
+            ----
+            ----
+            ----
+            --===================================================================================================================
+        elseif showmenu == #t1+14 then;--  --====================================================================================
             --===================================================================================================================
             ----
             ----
