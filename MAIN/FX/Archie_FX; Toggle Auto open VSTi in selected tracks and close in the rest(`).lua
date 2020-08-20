@@ -11,8 +11,9 @@
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * customer:    elektrozz (Rmm/forum)
    * gave idea:   elektrozz (Rmm/forum)
 --====================================]]

@@ -6,11 +6,12 @@
    * Category:    Fx
    * Description: Toggle Bypass Fx by name in tracks by name(Template)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Байпас Fx по имени в треках по имени (Шаблон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик(Rmm)
    * Gave idea:   Дима Горелик(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

@@ -2,13 +2,14 @@
    * Category:    Fx
    * Description: Smart template - Add Fx chain by name for selected tracks
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Smart template - Add Fx chain by name for selected tracks
    * О скрипте:   Умный шаблон - добавить цепочку Fx по имени для выбранных треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
    * Changelog:

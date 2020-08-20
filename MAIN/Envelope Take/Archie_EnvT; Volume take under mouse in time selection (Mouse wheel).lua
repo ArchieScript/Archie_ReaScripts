@@ -5,13 +5,14 @@
    * Category:    Envelope Take
    * Description: Volume take under mouse in time selection (Mouse wheel)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AlexLazer($) / Maestro Sound - (Rmm)
    * Gave idea:   AlexLazer($) / Maestro Sound - (Rmm)
    * Changelog:

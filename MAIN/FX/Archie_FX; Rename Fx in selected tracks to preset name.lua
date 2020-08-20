@@ -2,12 +2,13 @@
    * Category:    Fx
    * Description: Rename Fx in selected tracks to preset name
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * О скрипте:   Переименовать Fx в выбранных треках в имя пресета
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
    * Extension:

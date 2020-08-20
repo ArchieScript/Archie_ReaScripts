@@ -6,13 +6,14 @@
    * Category:    Fade
    * Description: Save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
    *                  http://rmmedia.ru/threads/134701/post-2389975

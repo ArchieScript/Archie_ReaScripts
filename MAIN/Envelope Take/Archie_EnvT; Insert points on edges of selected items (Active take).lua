@@ -6,11 +6,12 @@
    * Category:    Envelope Take
    * Description: EnvT; Insert points on edges of selected items (Active take).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Martin111(Rmm)
    * Gave idea:   Martin111(Rmm)
    * Extension:   Reaper 6.12+ http://www.reaper.fm/

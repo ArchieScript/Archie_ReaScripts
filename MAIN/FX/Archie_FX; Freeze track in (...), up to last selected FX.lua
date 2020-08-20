@@ -2,13 +2,14 @@
    * Category:    Fx
    * Description: Freeze track in (...), up to last selected Fx
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Заморозить трек в (...), до последнего выбранного Fx
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(RMM)
    * Gave idea:   Maestro Sound(RMM)
    * Provides:

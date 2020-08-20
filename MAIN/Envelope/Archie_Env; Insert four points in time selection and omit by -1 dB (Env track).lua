@@ -6,11 +6,12 @@
    * Category:    Envelope
    * Description: Insert four points in time selection and omit by -1 dB (Env track)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Вставьте четыре точки в выбор времени и опустите на -1 дБ (огибающая трека)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM)
    * Gave idea:   HDVulcan(RMM)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

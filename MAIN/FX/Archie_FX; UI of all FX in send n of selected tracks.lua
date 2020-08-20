@@ -6,12 +6,13 @@
    * Category:    Fx
    * Description: UI of all FX in send n of selected tracks.lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Описание:    Показать пользовательский интерфейс всех FX в send 1 из выбранных треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(Rmm)
    * Gave idea:   YuriOl(Rmm)
    * Provides:

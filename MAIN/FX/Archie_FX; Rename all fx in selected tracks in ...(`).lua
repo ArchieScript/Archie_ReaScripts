@@ -6,12 +6,13 @@
    * Category:    Fx
    * Description: Fx; Rename all fx in selected tracks in ...(`).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Переименовать все fx в выбранных треках  в ...
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Snjuk(Cocos forum)http://rmmedia.ru/threads/134701/post-2503922
    * Gave idea:   Snjuk(Cocos forum)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

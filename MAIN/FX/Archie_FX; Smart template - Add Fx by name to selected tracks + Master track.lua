@@ -2,12 +2,13 @@
    * Category:    FX
    * Description: Smart template - Add Fx by name to selected tracks + Master track
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Smart template - Add Fx by name to selected tracks + Master track
    * О скрипте:   Умный шаблон - Добавить Fx по имени в выбранные треки + Мастер трек
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Maestro Sound(Rmm/forum)
    * Changelog:

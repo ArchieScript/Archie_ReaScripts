@@ -2,13 +2,14 @@
    * Category:    Envelope
    * Description: Show all envelopes for selected track containing points or auto items
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Show all envelopes for selected track containing points or auto items
    * О скрипте:   Показать все конверты для выбранных треков, содержащих точки или авто элементы
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   ---
    * Changelog:

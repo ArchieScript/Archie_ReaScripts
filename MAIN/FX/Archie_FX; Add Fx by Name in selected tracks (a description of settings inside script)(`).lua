@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Add Fx by Name in selected tracks (a description of settings inside script)
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Add Fx by Name in selected track(s)
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Добавить Fx по имени в выбранные трек(и)
@@ -10,6 +10,7 @@
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm/forum)
    * Gave idea:   Maestro Sound(Rmm/forum)
    * Changelog:

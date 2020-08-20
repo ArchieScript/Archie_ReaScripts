@@ -2,13 +2,14 @@
    * Category:    Envelope
    * Description: Show-hide track envelope last touched FX parameter(add point in start of time selection)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Show-hide track envelope last touched FX parameter(add point in start of time selection)
    * О скрипте:   Показать-Скрыть трек автоматизации последнего тронутого параметра FX
    *                                                         (добавить точку в начало выбора времени)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Martin111(Rmm/forum)
    * Gave idea:   Martin111(Rmm/forum)
    * Changelog:
