@@ -2,12 +2,13 @@
    * Category:    Item
    * Description: Remove all items, envelopes from project (including master track)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Remove all items, envelopes from project (including master track)
    * О скрипте:   Удалить все элементы, конверты из проекта (включая мастер-трек)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    BAYANBAYAN(Rmm/forum)
    * Gave idea:   BAYANBAYAN(Rmm/forum)
    * Changelog:   + initialе / v.1.0 [14.11.18]

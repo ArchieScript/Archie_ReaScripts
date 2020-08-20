@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Item; Remove last selected item in tracks
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * Описание:    Удалить последний выбранный элемент в треках
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maxim Kokarev(VK)
    * Gave idea:   Maxim Kokarev(VK)
    * Extension:   Reaper 6.04+ http://www.reaper.fm/

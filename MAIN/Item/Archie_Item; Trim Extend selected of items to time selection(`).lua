@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Trim Extend selected of items to time selection
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Trim Extend selected of items to time selection
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Обрезать, Удленить выбранные элементы по времени
@@ -11,6 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   Iskander M(Rmm/forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19]

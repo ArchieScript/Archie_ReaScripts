@@ -4,13 +4,14 @@
    * Category:    Mixer
    * Description: Set height of Selected tracks MCP to height master track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Set height of Selected tracks MCP to height master track
    * О скрипте:   Установить высоту выбранных треков MCP на высоту мастер-трека
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2062817/fc42a4b9-8fea-49f5-bdac-49fb4615a5a1/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:   +  initialе / v.1.0 [12.06.19]

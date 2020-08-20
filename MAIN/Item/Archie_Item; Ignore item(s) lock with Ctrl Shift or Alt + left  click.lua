@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Ignore item(s) lock with Ctrl Shift or Alt + left  click
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Ignore item(s) lock with Ctrl Shift or Alt + left  click
    * О скрипте:   Игнорировать блокировку элементов с помощью Ctrl Shift или Alt + левый клик
    * GIF:         http://archiescript.github.io/ReaScriptSiteGif/html/IgnoreItemLockWithCtrlShiftOrAltLeftClick.html
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---(---)
    * Gave idea:   Moyses(RMM)
    * Changelog:   +  initialе / v.1.0 [17022019]

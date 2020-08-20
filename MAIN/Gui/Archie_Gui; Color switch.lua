@@ -6,11 +6,12 @@
    * Category:    Gui
    * Description: Color switch
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Переключатель цвета
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---(---)
    * Gave idea:   ---(---)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

@@ -2,13 +2,14 @@
    * Category:    Group
    * Description: Toggle Solo Unsolo all tracks in group n
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Toggle Solo Unsolo all tracks in group n
    * О скрипте:   Переключить Соло Unsolo все треки в группе n
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(RMM Forum)
    * Gave idea:   Maestro Sound(RMM Forum)
    * Provides:

@@ -2,12 +2,13 @@
    * Category:    Item
    * Description: Stretch time and reduce the selected item(s) by 2 times
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Stretch time and reduce the selected item(s) by 2 times
    * О скрипте:   Растянуть время и уменьшить выбранные элемент(ы) в 2 раза
    * GIF:         http://clck.ru/EeHc3
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Snjuk(RMM Forum)
    * Gave idea:   Snjuk(RMM Forum)
    * Changelog:   + initialе / v.1.0

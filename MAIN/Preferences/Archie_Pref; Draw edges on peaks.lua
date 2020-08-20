@@ -4,11 +4,12 @@
    * Category:    Preferences
    * Description: Draw edges on peaks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Preferences -> Peaks/Waveforms -> Name Script
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Extension:   Reaper 6.01+ http://www.reaper.fm/

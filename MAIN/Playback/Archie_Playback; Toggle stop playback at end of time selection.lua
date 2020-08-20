@@ -6,12 +6,13 @@
    * Category:    Playback
    * Description: Playback; stop playback at the end of time selection.lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * О скрипте:   остановить воспроизведения в конце выбора времени
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75(RMM)
    * Gave idea:   Supa75(RMM)
    * Provides:

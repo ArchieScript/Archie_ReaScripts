@@ -5,13 +5,14 @@
    * Category:    Time selection
    * Description: Remove all contents of time selection
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Удалить все содержимое выбора времени
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
    * Changelog:   v.1.0 [17.07.2019]

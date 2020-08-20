@@ -2,13 +2,14 @@
    * Category:    View
    * Description: Toggle arrange in center relative to edit cursor when you change BPM
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Toggle arrange in center relative to edit cursor when you change BPM
    * О скрипте:   Переключение расположения по центру относительно курсора редактирования при изменении BPM
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Zit[RMM]
    * Gave idea:   Zit[RMM]
    * Changelog:

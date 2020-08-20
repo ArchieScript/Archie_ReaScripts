@@ -2,13 +2,14 @@
    * Category:    Options
    * Description: Open folder FX Chains
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Open folder FX Chains
    * О скрипте:   Открыть папку FX цепочки
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик[RMM]
    * Gave idea:   Дима Горелик[RMM]
    * Changelog:

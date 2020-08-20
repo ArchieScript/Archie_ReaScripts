@@ -6,10 +6,11 @@
    * Description: Zoom horizontally - snap to playback cursor (mousewheel)
    * Описание:    Увеличение по горизонтали - привязать к курсору воспроизведению (колесико мыши)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AndiVax(Rmm)
    * Gave idea:   AndiVax(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

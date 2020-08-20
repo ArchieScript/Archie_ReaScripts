@@ -6,12 +6,13 @@
    * Category:    Render
    * Description: Render stems Template(`)
    * Author:      Archie
-   * Version:     2.0
+   * Version:     2.01
    * Описание:    Шаблон Рендера треков
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик/Vax(Rmm)$$
    * Gave idea:   Дима Горелик/Vax(Rmm)$$
    * Extension:   Reaper 6.05+ http://www.reaper.fm/

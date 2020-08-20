@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Nudge right edge of selected items to left one grid unit
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Nudge right edge of selected items to left one grid unit
    *              Nudge right edge of selected items to right one grid unit*
    * О скрипте:   Сдвиг правого края выделенных элементов влево на одну единицу сетки
@@ -15,6 +15,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Ильмир Азгамов(vk)
    * Gave idea:   Ильмир Азгамов(vk)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

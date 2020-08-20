@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Pitch down one semitone all midi items(all midi take)
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Pitch down one semitone all midi items(all midi take)
    * О скрипте:   Шаг вниз один полутон все миди элементы (все миди тейки)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Ga_rY(Rmm/forum)
    * Gave idea:   Ga_rY(Rmm/forum)
    * Changelog:   !+ fix bug / v.1.01[23122018]

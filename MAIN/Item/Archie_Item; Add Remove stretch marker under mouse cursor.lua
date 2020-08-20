@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Add Remove stretch marks under mouse cursor
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Добавить удалить маркеры растяжки под курсором мыши
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AndiVax(Rmm)$
    * Gave idea:   AndiVax(Rmm)$
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

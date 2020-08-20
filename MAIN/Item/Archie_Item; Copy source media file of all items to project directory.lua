@@ -5,13 +5,14 @@
    * Category:    Item
    * Description: Copy source media file of all items to project directory (all take)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Скопировать исходный медиа файл у всех элементов в каталог проекта (все тейки)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
    * Changelog:   v.1.0 [04.08.19]

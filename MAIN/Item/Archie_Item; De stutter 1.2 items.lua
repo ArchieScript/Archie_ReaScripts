@@ -5,13 +5,14 @@
    * Category:    Item
    * Description: De stutter 1.2 items
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Use with Stutter 1.2 items
    * О скрипте:   Использовать с Stutter 1.2 items
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    borisuperful(Rmm)
    * Gave idea:   borisuperful(Rmm)
    * Changelog:   v.1.0 [16.08.19]

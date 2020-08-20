@@ -5,7 +5,7 @@
    * Category:    Gui
    * Description: Duplicate selected items to time selection relative given division
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: ---
    * О скрипте:   Дублировать выбранные элементы по выбору времени относительно заданного деления
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1940639/407b51a7-64ba-4013-93a4-a557e83afa5e/orig
@@ -15,6 +15,7 @@
    *              http://rmmedia.ru/threads/134701/
    *
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    *
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)

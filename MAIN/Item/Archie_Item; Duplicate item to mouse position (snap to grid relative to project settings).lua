@@ -5,13 +5,14 @@
    * Category:    Item
    * Description: Duplicate item to mouse position (snap to grid relative to project settings)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   Дублировать элемент в положение мыши (привязка к сетке относительно параметров проекта)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Antibio(Rmm)
    * Gave idea:   Antibio(Rmm)--[[
    * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)

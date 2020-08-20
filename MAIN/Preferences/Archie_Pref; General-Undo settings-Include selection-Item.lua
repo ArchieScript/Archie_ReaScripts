@@ -8,11 +8,12 @@
    * Category:    Preferences
    * Description: Pref; General-Undo settings-Include selection-Item.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Extension:   Reaper 6.11+ http://www.reaper.fm/

@@ -4,13 +4,14 @@
    * Category:    Mixer
    * Description: Set height of all tracks MCP to height master track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Set height of all tracks MCP to height master track
    * О скрипте:   Установить высоту всех треков MCP на высоту мастер-трека
    * GIF:         http://avatars.mds.yandex.net/get-pdb/1756436/11c9a643-5ed7-440a-9bcb-ae9617bdd740/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:   +  initialе / v.1.0 [12.06.19]

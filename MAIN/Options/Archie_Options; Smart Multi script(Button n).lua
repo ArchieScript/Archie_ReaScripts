@@ -2,7 +2,7 @@
    * Category:    Options
    * Description: Smart Multi script(Button n)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Run the script with the keyboard shortcut Ctrl + Shift + Alt + Click
    *              To display help, enter the word in the first field 'help'
    * О скрипте:   Запустите скрипт сочетанием клавиш  Ctrl + Shift + Alt + Click
@@ -11,6 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75(Rmm/forum)
    * Gave idea:   Supa75(Rmm/forum)
    * Provides:

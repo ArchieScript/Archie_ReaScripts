@@ -5,11 +5,12 @@
    *
    * Description: Mixer; Reset height selected tracks MCP by master track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Микшер; Сбросить высоту невыбранных дорожек MCP по главной дорожке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

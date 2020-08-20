@@ -5,7 +5,7 @@
    * Category:    Mixer
    * Description: Toggle Auto zoom height selected tracks in MCP
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Toggle Auto zoom height selected tracks in MCP
    *              CTRL + CLICK:         SET HEIGHT OF SELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
    *              SHIFT + CLICK:        SET HEIGHT OF ALL UNSELECTED TRACKS MCP TO HEIGHT MASTER TRACK*
@@ -21,6 +21,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM) / Алексей Левин(VK)
    * Gave idea:   YuriOl(RMM) / Алексей Левин(VK)
    * Changelog:

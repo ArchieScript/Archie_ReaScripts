@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: adjust item length by grid (mousewheel)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: adjust item length by grid (mousewheel)
    * О скрипте:   настроить длину элемента по сетке (колесико мыши)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Antibio[RMM]
    * Gave idea:   Antibio[RMM]
    * Changelog:

@@ -2,7 +2,7 @@
    * Category:    Markers
    * Description: Split selected items at stretch markers and remove markers, no save processed wave
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Split selected items at stretch markers and remove markers, no save processed wave
    * О скрипте:   Разделить выбранные элементы на маркеры растяжения и удалить маркеры,
    *                                                              без сохранения обработанной волны
@@ -10,6 +10,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    borisuperful(Rmm/forum)
    * Gave idea:   borisuperful(Rmm/forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19]

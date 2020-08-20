@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Item; Split items by time selection,unselect with items outside of time selection if there is selection inside.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Разделить элементы по выбору времени,снять выделения вне выбора времени если внутри есть выделения
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Kokarev Maxim(Rmm)
    * Changelog:

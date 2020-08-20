@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Add Remove stretch marker under mouse cursor and snap to nearest grid
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Добавить удалить маркер растяжения под курсором мыши и привязать к ближайшей сетке
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AndiVax(Rmm)$
    * Gave idea:   AndiVax(Rmm)$
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

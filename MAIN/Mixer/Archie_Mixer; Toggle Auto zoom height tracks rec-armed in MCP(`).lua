@@ -5,7 +5,7 @@
    * Category:    Mixer
    * Description: Toggle Auto zoom height tracks rec-armed in MCP
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Toggle Auto zoom height tracks rec-armed in MCP
    *              CTRL + CLICK:         SET HEIGHT OF REC-ARMED TRACKS MCP TO HEIGHT MASTER TRACK*
    *              SHIFT + CLICK:        SET HEIGHT OF NOT REC-ARMED TRACKS MCP TO HEIGHT MASTER TRACK*
@@ -20,6 +20,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:

@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Set source for all of selected items
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Установить источник для всех выбранных элементов
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

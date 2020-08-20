@@ -2,7 +2,7 @@
    * Category:    Markers
    * Description: Split selected items at stretch markers and remove markers, save processed wave(Render)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: NOTE THAT EACH FILE IS RENDERED, AND IF YOU CUT A LOT OF FILES, IT MAY
    *                                   SEEM THAT THE REAPER IS FROZEN:(,BUT DO NOT WORRY,
    *                                              IT IS NOT, JUST THE PROCESS OF RENDERING:)
@@ -13,6 +13,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    borisuperful(Rmm/forum)
    * Gave idea:   borisuperful(Rmm/forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19]

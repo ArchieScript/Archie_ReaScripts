@@ -6,10 +6,11 @@
    * Category:    Item
    * Description: Change playback rate selected items to (ctrl-custom value)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM)
    * Gave idea:   HDVulcan(RMM)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

@@ -6,12 +6,13 @@
    * Category:    Render
    * Description: Render multi-track to a stereo track in certain channels
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Рендер мульти-трека в стерео-трек на определенных каналах
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Дима Горелик(Rmm)$
    * Gave idea:   Дима Горелик(Rmm)$
    * Extension:   Reaper 6.0+ http://www.reaper.fm/

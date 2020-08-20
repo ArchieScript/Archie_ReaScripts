@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item; Grab item on edge arrange and trim by edge window(AutoRun).lua
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и обрезайте по краю окна
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2883421/8cf1c573-4267-4458-acf8-21b0050c7edb/orig
@@ -16,6 +16,7 @@
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(Rmm)
    * Gave idea:   YuriOl(Rmm)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

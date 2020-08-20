@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Item; Grab item on edge arrange and scroll to edge item(AutoRun).lua
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * AboutScript: ---
    * О скрипте:   Захватите элемент на краю аранжировке и прокрутите до края элемента
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2366552/ab6c873f-3402-4bd6-8d40-a63bcbc9ff5d/orig
@@ -15,6 +15,7 @@
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(Rmm)
    * Gave idea:   YuriOl(Rmm)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

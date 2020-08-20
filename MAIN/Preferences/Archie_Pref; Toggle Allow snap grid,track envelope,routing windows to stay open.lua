@@ -6,13 +6,14 @@
    * Category:    Preferences (Preferences > General > Advanced UI/system tweaks)
    * Description: Toggle Allow snap grid,track envelope,routing windows to stay open
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Allow snap grid/track envelope/routing windows to stay open
    * О скрипте:   Разрешить привязку сетки / конверта дорожки / окна маршрутизации, чтобы оставаться открытыми
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    denlozikevich(Rmm)
    * Gave idea:   denlozikevich(Rmm)
    * Extension:   SWS v.2.10.0  http://www.sws-extension.org/index.php

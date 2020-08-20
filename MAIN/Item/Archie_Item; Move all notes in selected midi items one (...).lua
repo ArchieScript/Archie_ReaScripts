@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Move all notes in selected midi items one (...)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   переместить все ноты в выбранных midi элементах на один (...)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(Rmm/forum)
    * Gave idea:   Krikets(Rmm/forum)
    * Provides:

@@ -2,12 +2,13 @@
    * Category:    Item
    * Description: Hide all visible envelopes in selected items
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Hide all visible envelopes in selected items
    * О скрипте:   Скрыть все видимые конверты в выбранных элементах
    * GIF:         http://clck.ru/Eevx9
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    mr.preacher(RMM Forum)
    * Gave idea:   mr.preacher(RMM Forum)
    * Changelog:   +! Fixed curve display when visibility is disabled / v.1.01

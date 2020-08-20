@@ -4,13 +4,14 @@
    * Category:    Mixer
    * Description: Set height of not rec-armed tracks MCP to height master track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Установить высоту треков с не подготовленной записью MCP на высоту мастер-трека
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:   +  initialе / v.1.0 [12.06.19]

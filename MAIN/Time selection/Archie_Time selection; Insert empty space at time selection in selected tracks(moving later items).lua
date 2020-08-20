@@ -2,13 +2,14 @@
    * Category:    Time selection
    * Description: Insert empty space at time selection in selected tracks(moving later items)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Вставить пустое пространство при выборе времени в выбранные треки(перемещение более поздних элементов)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1:[RMM];
    * Gave idea:   smrz1:[RMM];
    * Changelog:

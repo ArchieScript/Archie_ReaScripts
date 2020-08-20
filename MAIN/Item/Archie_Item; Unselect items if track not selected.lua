@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Unselect items if track not selected
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Отменить выбор элементов если трек не выбран
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    J T(Rmm)
    * Gave idea:   J T(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

@@ -6,11 +6,12 @@
    * Category:    Gui
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
    * Changelog:

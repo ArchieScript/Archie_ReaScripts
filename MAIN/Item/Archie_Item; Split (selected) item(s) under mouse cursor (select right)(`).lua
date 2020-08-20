@@ -2,7 +2,7 @@
    * Category:    Item
    * Description: Split (selected) item(s) under mouse cursor (select right)
    * Author:      Archie
-   * Version:     1.09
+   * Version:     1.10
    * AboutScript: Split selected item(s) under mouse cursor and all selected items
                             in this position or item under mouse cursor (select right)
                             PLEASE NOTE THE SETTINGS BELOW
@@ -12,6 +12,7 @@
    * GIF:         http://clck.ru/EexNc
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM Forum)
    * Gave idea:   Supa75  (RMM Forum)
    * Changelog:

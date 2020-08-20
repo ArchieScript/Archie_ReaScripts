@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Select Previous item in track only midi
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Выберите предыдущий элемент в треке, только midi
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(Rmm)
    * Gave idea:   borisuperful(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

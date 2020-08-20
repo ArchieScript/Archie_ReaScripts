@@ -7,12 +7,13 @@
    * Features:    Startup
    * Description: Zoom width full project - recovery back
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * Описание:    Масштабировать ширину под полный проект-Восстановление назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(RMM)
    * Gave idea:   Krikets(RMM)
    * Extension:   Reaper 5.983+ http://www.reaper.fm/

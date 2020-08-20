@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Change volume items in time selection on selected tracks(ctrl+script to set the value)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Изменение громкости элементов в выборе времени на выбранных дорожках (ctrl+script, чтобы установить значение)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Changelog:

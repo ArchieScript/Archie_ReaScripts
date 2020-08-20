@@ -2,13 +2,14 @@
    * Category:    Preferences
    * Description: Solo in front' dimming -1 dB from set value
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Preferences > Mute/solo > Solo in front dimming
    * О скрипте:   Соло спереди' затемнение -1 дБ от заданного значения
    * GIF:         http://clck.ru/FWux8
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75[RMM]
    * Gave idea:   Supa75[RMM]
    * Changelog:   +  initialе / v.1.0 [07042019]

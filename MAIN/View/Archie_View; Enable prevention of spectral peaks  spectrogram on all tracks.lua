@@ -2,12 +2,13 @@
    * Category:    View
    * Description: Enable prevention of spectral peaks / spectrogram on all tracks
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Enable prevention of spectral peaks / spectrogram on all tracks
    * О скрипте:   Включить предотвращение спектральных пиков / спектрограмм на всех треках
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.03 [29.01.19]

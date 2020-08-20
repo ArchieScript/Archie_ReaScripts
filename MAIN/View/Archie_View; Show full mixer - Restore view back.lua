@@ -6,12 +6,13 @@
    * Category:    View
    * Description: Show full mixer - Restore view back
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Показать полный микшер - восстановить вид назад
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1(Rmm Forum)$
    * Gave idea:   smrz1(Rmm Forum)
    * Extension:   Reaper 5.983+ http://www.reaper.fm/

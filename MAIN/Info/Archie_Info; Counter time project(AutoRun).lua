@@ -7,12 +7,13 @@
    * Features:    Startup
    * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.24
+   * Version:     1.25
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1500
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Alexey Razumov(Slick)http://www.youtube.com/user/cjslickmusic/videos
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

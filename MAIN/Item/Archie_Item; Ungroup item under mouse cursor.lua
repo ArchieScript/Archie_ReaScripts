@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Ungroup item under mouse cursor
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Ungroup item under mouse cursor (to assign to the mouse wheel)
    * О скрипте:   Разгруппировать элемент под курсором мыши (назначить на колесо мыши)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75 (RMM Forum)
    * Gave idea:   Supa75 (RMM Forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.03 [29.01.19]

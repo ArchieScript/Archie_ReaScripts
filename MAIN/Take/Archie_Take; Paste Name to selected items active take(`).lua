@@ -2,7 +2,7 @@
    * Category:    Take
    * Description: Paste Name to selected items active take
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: Paste Name to selected items active take
    * О скрипте:   Вставить имя в выбранных элементах в активные тейки
                   скопировать с помощью:
@@ -11,6 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:

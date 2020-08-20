@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Set note ends to start of next note - in selected items (legato)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Установите конец ноты в начало следующей ноты - в выбранных элементах (Легато)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AlexLazer/shuco(Rmm)$
    * Gave idea:   AlexLazer/shuco(Rmm)$
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

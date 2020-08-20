@@ -6,11 +6,12 @@
    * Category:    Take
    * Description: Take; Crop to active take all items in selected tracks.lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

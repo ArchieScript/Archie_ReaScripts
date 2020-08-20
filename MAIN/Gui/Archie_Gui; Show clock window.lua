@@ -2,13 +2,14 @@
    * Category:    Gui
    * Description: Show clock window
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: ---
    * О скрипте:   Показать окно часов
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1(Rmm)
    * Gave idea:   smrz1(Rmm)
    * Changelog:

@@ -6,13 +6,14 @@
    * Category:    Item
    * Description: Switch item source file to previous in folder
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Переключить исходный файл элемента на предыдущий в папке
    *              НЕ СПОТЫКАЕТСЯ(ЛОМАЕТСЯ) НА МИДИ ФАЙЛАХ КАК В SWS
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628/1500
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/

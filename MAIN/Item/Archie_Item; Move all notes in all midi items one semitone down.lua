@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Move all notes in all midi items one semitone down
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Move all notes in all midi items one semitone down
    * О скрипте:   Переместить все ноты во всех midi элементах на один полутон вниз
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Ga_rY(Rmm/forum)
    * Gave idea:   Ga_rY(Rmm/forum)
    * Changelog:   + initialе / v.1.0[23122018]

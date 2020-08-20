@@ -6,11 +6,12 @@
    * Category:    Gui
    * Description: Grid switch
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * Описание:    Переключатель сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

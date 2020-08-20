@@ -6,11 +6,12 @@
    * Category:    Item
    * Description: Duplicate selected area of items back
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Дублировать выделенную область элементов обратно
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Ильмир Азгамов(VK)
    * Gave idea:   Ильмир Азгамов(VK)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

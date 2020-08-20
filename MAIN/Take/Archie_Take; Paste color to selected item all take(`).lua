@@ -2,7 +2,7 @@
    * Category:    Take
    * Description: Paste color to selected item all take
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: Paste color to selected item all take
    * О скрипте:   Вставить цвет в выбранные элементы во все тейки
                       скопировать с помощью:
@@ -11,6 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl(RMM)
    * Gave idea:   YuriOl(RMM)
    * Changelog:

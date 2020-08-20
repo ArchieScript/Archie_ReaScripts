@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Delete selected items in time selection
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Delete selected items in time selection
    * О скрипте:   Удалить выбранные элементы во время выбора
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM)
    * Gave idea:   HDVulcan(RMM)
    * Changelog:   +  Fixed paths for Mac/ v.1.02 [29.01.19]

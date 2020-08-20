@@ -6,12 +6,13 @@
    * Category:    Item
    * Description: Item; invert select items on its tracks in time selection.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * О скрипте:   инвертировать выделенные элементы на своих дорожках во временном выделении
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Dragonetti(cocos Forum) http://forum.cockos.com/showpost.php?p=2303125&postcount=10
    * Gave idea:   Dragonetti(cocos Forum)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

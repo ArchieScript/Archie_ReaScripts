@@ -6,12 +6,13 @@
    * Category:    Item
    * Description: Item; Move selected items to each other.lua
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * О скрипте:   Переместить выбранные элементы друг к другу
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    daxliniere(cocos forum)
    * Gave idea:   daxliniere(cocos forum)http://forum.cockos.com/showpost.php?p=2310449&postcount=1
    * Provides:

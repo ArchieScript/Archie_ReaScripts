@@ -6,12 +6,13 @@
    * Category:    Item
    * Description: Move selected items up one track
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Переместить выбранные элементы на одну дорожку вверх
    * GIF:         http://clck.ru/Eddx2
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

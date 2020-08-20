@@ -2,7 +2,7 @@
    * Category:    View
    * Description: Enable spectral peaks on selected tracks
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * AboutScript: Enable spectral peaks only on selected tracks
    *                RUN THE SCRIPT WITH CTRL + SHIFT + CLICK
    *                  TO RESET ALL PEAK CACHE FILES
@@ -13,6 +13,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1(RMM Forum)
    * Gave idea:   smrz1(RMM Forum)
    * Changelog:
