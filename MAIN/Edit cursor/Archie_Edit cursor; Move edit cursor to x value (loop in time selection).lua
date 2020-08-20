@@ -2,12 +2,13 @@
    * Category:    Edit cursor
    * Description: Move edit cursor to x value (loop in time selection)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переместить курсор редактирования на значение x (цикл выбора времени)
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2039533/acb4305b-dde0-4933-b5b7-6f3c1ee78e89/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Arthur McArthur(forum Reaper)
    * Gave idea:   Arthur McArthur(forum Reaper)
    * Changelog:   v.1.0 [26.12.19]

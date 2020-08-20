@@ -2,11 +2,12 @@
    * Category:    Edit cursor
    * Description: Move edit cursor to nearest 1/1.3 grid line
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переместить курсор редактирования на ближайшую 1/1.3 линию сетки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Arthur McArthur(forum Reaper)
    * Gave idea:   Arthur McArthur(forum Reaper)
 --]]

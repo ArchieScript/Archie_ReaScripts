@@ -2,13 +2,14 @@
    * Category:    Edit cursor
    * Description: Move cursor for n milliseconds
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Move cursor for n milliseconds
    * О скрипте:   Переместить курсор на n миллисекунд
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan[RMM]
    * Gave idea:   HDVulcan[RMM]
    * Provides:

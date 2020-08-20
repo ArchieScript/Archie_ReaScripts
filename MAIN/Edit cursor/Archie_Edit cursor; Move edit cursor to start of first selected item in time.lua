@@ -2,13 +2,14 @@
    * Category:    Edit cursor
    * Description: Move edit cursor to start of first selected item in time
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Move edit cursor to start of first selected item in time
    * О скрипте:    Переместите курсор редактирования к началу первого выбранного элемента по времени
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   HDVulcan[RMM]
    * Changelog:
