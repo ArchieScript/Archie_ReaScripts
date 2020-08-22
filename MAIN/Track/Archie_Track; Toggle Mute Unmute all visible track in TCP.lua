@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Toggle Mute unmute all visible track in TCP
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Переключатель Отключить Включить звук на всех видимых дорожках в TCP
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Changelog:

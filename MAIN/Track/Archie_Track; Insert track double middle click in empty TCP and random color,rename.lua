@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Insert track double middle click in empty TCP and random color,rename
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Вставить трек двойным средним кликом в пустой TCP и случайным цветом, переименовать
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    shprot(Rmm)
    * Gave idea:   shprot(Rmm)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

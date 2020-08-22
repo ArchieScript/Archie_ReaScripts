@@ -6,12 +6,13 @@
    * Category:    Track
    * Description: Track; Insert track with folder (ctrl-up).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * О скрипте:   Вставить трек с папкой (ctrl вверх)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/

@@ -6,11 +6,12 @@
    * Category:    Various
    * Description: Open MIDI editor and zoom to content by
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Откройте MIDI-редактор и увеличьте масштаб содержимого
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Martin111/Archie(Rmm)
    * Gave idea:   Martin111/Archie(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/

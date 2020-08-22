@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Auto add icon to track depending on MIDI send
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Автоматическое добавление иконки на трек в зависимости от посыла миди
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Steven Berkovec(VK)
    * Gave idea:   Steven Berkovec(VK)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

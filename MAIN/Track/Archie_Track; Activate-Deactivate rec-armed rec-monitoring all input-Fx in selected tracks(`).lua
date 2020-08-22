@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.03
    * AboutScript: Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks
    * О скрипте:   ---
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound[RMM]
    * Gave idea:   Maestro Sound[RMM]
    * Changelog:

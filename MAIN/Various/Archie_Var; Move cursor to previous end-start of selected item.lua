@@ -2,10 +2,11 @@
    * Category:    Various
    * Description: Move cursor to previous end-start of selected item
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM)
    * Gave idea:   HDVulcan(RMM)
    * Changelog:

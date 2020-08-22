@@ -2,13 +2,14 @@
    * Category:    Item
    * Description: Delete all receive in selected tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   ---
    * Changelog:   +  initialе / v.1.0 [210219]

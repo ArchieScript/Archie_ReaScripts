@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Move selected tracks down by one visible*
    * Author:      Archie
-   * Version:     1.16
+   * Version:     1.17
    * AboutScript: Move selected tracks down by one visible*
    * О скрипте:   Переместить выбранные треки вниз на один видимый*
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1[RMM]
    * Gave idea:   smrz1[RMM]
    * Provides:

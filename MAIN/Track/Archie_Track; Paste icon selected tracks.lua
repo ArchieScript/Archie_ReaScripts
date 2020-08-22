@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Paste icon selected tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Paste icon selected tracks  /  Archie_Track; Copy track icon.lua
    * О скрипте:   Вставить иконку в выбранные дорожки
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    YuriOl[RMM]
    * Gave idea:   YuriOl[RMM]
    * Changelog:

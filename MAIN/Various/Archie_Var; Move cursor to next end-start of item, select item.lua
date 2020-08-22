@@ -2,11 +2,12 @@
    * Category:    Various
    * Description: Move cursor to next end-start of item, select item
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * О скрипте:   Переместить курсор на следующий конец-начало элемента, выбрать элемент
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan(RMM)
    * Gave idea:   HDVulcan(RMM)
    * Changelog:

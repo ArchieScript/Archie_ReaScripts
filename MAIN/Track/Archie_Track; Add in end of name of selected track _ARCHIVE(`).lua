@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Add in end of name of selected track _ARCHIVE
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Add in end of name of selected track _ARCHIVE
    *              NOTE THE SETTINGS BELOW
    * О скрипте:   Добавить в конец имени выбранного трека _ARCHIVE
@@ -11,6 +11,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75 (Rmm/forum)
    * Gave idea:   Supa75 (Rmm/forum)
    * Changelog:

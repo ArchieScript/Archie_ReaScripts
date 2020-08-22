@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Delete only selected tracks (show a request to delete child tracks)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Delete only selected tracks without children (show a request to delete child tracks)
    * О скрипте:   Удалить только выбранные треки без детей (показать запрос на удаление дочерних треков)
    * GIF:         http://clck.ru/Eg2DV
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * customer:    Maestro Sound [RMM Forum]
    * gave idea:   Maestro Sound [RMM Forum]
    * Changelog:   +! Fixed bug when deleting last track / v.1.02/[12.11.18]

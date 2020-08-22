@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Set selected folder(s) collapsed MCP.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie

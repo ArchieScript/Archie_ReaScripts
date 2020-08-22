@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Delete only selected track(s) without deleting children.
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Delete only selected track(s) without deleting children.
    * О скрипте:   Удалять только выбранную(ые) дорожку(и) без удаления детей.
    * GIF:         http://clck.ru/Efwy4
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * customer:    Maestro Sound [RMM Forum]
    * gave idea:   Maestro Sound [RMM Forum]
    * Changelog:   +! Fixed bug when deleting last track / v.1.02/[12.11.18]

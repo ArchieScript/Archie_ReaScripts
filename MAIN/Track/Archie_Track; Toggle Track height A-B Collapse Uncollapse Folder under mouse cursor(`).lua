@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Toggle Track height A-B Collapse Uncollapse Folder under mouse cursor
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Switch the height of track A-B;Collapse Uncollapse Folder under mouse cursor
    * О скрипте:   Переключить высоту дорожки A-B;Свернуть Развернуть Папку под курсором мыши
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75(RMM)
    * Gave idea:   Supa75(RMM)
    * Changelog:   +  Fixed paths for Mac/ v.1.01 [29.01.19]

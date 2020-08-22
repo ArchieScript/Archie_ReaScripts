@@ -6,12 +6,13 @@
    * Category:    Track
    * Description: Insert new track with send on selected tracks
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Insert new track with send on selected tracks
    * GIF:         Вставка нового трека с отправкой на выбранные треки
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Steven Berkovec(VK)
    * Gave idea:   Steven Berkovec(VK)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

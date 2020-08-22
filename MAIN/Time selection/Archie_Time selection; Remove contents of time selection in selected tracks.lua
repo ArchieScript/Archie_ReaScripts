@@ -151,12 +151,11 @@
            reaper.SetCursorContext(1,TrackEnv);
         end;
 
-
-        if RemoveTimeSel == true then;
-            reaper.GetSet_LoopTimeRange(1,0,0,0,0);
-        end;
-         reaper.SetEditCurPos(Cur,false,false);
-
+        reaper.SetEditCurPos(Cur,false,false);
+    end;
+  
+    if RemoveTimeSel == true then;
+        reaper.GetSet_LoopTimeRange(1,0,0,0,0);
     end;
 
 

@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Smart template - Load Track template by name
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * AboutScript: Smart template - Load Track template by name
    * О скрипте:   Умный шаблон - Загрузить шаблон трека по имени
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   Ahmed5599887744112233[RMM]
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

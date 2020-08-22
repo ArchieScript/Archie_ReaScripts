@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Move all selected tracks to the last selected folder
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: Move all selected tracks to the last selected folder
    * О скрипте:   Переместить все выбранные дорожки в последнюю выбранную папку
    * GIF:         http://clck.ru/EbWRT
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    smrz1(Rmm/forum)
    * Gave idea:   smrz1(Rmm/forum)
    * changelog:

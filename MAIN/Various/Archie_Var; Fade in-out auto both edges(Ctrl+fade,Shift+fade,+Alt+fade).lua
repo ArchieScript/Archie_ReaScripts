@@ -5,13 +5,14 @@
    * Category:    Various
    * Description: Fade in-out auto both edges(Ctrl+fade,Shift+fade,*+Alt+fade)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Fade in-out auto both edges(Ctrl+fade-evenly, Shift+fade-initial,Ctrl/Shift+Alt+fade- All sel items)
    * О скрипте:   Повышение затухание автоматически оба края (Ctrl+fade-равномерно,Shift+fade-исходный,Ctrl/Shift+Alt+fade все выделенные элементы)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Iskander,AlexLazer(RMM)
    * Gave idea:   Iskander,AlexLazer(RMM)
    * Changelog:   v.1.0 [03.07.19]

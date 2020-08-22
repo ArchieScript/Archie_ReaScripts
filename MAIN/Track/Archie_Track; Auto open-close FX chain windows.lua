@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Track; Auto open-close FX chain windows.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Snjuk(rmm)
    * Gave idea:   Snjuk(rmm)
    * Extension:   Reaper 6.12+ http://www.reaper.fm/

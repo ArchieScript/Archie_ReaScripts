@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Delete folder(s) not removing child tracks
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.05
    * AboutScript: Only delete the folder(folders), not removing the child(nested) tracks
    * О скрипте:   Удалить только папку(папки), не удаляя дочерние(вложенные) треки
    * GIF:         http://clck.ru/Efwy4
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * customer:    borisuperful[RMM Forum]
    * gave idea:   borisuperful[RMM Forum]
    * Changelog:   +! Fixed bug when deleting last track / v.1.03/[12.11.18]

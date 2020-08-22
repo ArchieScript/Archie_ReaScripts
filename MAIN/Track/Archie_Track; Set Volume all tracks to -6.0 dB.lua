@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Set Volume all tracks to -6.0 dB
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Set Volume all tracks to -6.0 dB
    * О скрипте:   Установите громкость всех дорожек на -6.0 dB
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   muzicgrand[RMM]
    * Changelog:

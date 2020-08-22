@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Track; Arm Selected track.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    AlexLazer(rmm)
    * Gave idea:   AlexLazer(rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

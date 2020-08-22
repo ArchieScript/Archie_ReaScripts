@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Show-Hide tracks receives (created by script - Insert track receive from all tracks)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Показать-скрыть треки приемы (созданные скриптом - вставить трек-прием со всех треков)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Snjuk(Rmm)
    * Gave idea:   Snjuk(Rmm)
    * Extension:   Reaper 5.984+ http://www.reaper.fm/

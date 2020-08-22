@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Move selected track up to nearest folder
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Переместить выбранный трек вверх в ближайшую папку
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    SKlogic(Rmm)
    * Gave idea:   SKlogic(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

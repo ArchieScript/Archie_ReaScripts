@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Copy selected track name
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: Copy selected track name
    * О скрипте:   копировать название выбранной дорожки
    * GIF:         http://clck.ru/Eey4e
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Supa75[RMM Forum]
    * Gave idea:   Supa75[RMM Forum]
    * Changelog:   + GIF      / v.1.01

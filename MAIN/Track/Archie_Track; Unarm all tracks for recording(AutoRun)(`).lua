@@ -7,13 +7,14 @@
    * Features:    Startup
    * Description: Track; Unarm all tracks for recording(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * AboutScript: ---
    * О скрипте:   Снять запись со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/

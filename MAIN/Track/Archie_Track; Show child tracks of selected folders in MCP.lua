@@ -6,12 +6,13 @@
    * Category:    Track
    * Description: Track; Show child tracks of selected folders in MCP.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Трек; Показывать дочерние треки выбранных папок в MCP
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/

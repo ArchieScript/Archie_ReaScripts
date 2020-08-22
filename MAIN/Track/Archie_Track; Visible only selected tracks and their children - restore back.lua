@@ -6,13 +6,14 @@
    * Category:    Track
    * Description: Track; Visible only selected tracks and their children - restore back.lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * О скрипте:   Видны только выделенные треки и их потомки-восстановить обратно
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2840305/805ce2b9-aa8c-40d0-afc3-970b7d59df56/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Shico(Rmm)
    * Gave idea:   Shico(Rmm)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

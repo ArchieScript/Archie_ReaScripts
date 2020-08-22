@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Set pan on selected tracks by inverting every second track
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * AboutScript: Set pan on selected tracks by inverting every second track
    * О скрипте:   Установите панораму на выбранные дорожки, инвертируя каждую вторую дорожку
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    borisuperful(Rmm/forum)
    * Gave idea:   borisuperful(Rmm/forum)
    * Changelog:   +  Fixed paths for Mac/ v.1.03 [29.01.19]

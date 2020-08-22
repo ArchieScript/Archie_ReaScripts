@@ -7,13 +7,14 @@
    * Features:    Startup
    * Description: Track; Toggle Off medium mode collapse folder(AutoRun).lua
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * Описание:    Переключатель  Выключите средний режим сворачивания папки(АвтоЗапуск).lua
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Alexander Yakuba(---)
    * Gave idea:   Alexander Yakuba(---)
    * Extension:   Reaper 6.08+ http://www.reaper.fm/

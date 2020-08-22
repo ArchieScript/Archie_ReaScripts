@@ -6,12 +6,13 @@
    * Category:    Track
    * Description: Set selected tracks virtual MIDI keyboard to n channels
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    ---
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2374077/fdf757be-16e4-415b-bc44-3c7a8e55b931/s1200
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Nordum(Rmm)
    * Gave idea:   Nordum(Rmm)
    * Extension:   Reaper 5.981+ http://www.reaper.fm/

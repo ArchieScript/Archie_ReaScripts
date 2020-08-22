@@ -7,12 +7,13 @@
    * Features:    Startup
    * Description: Insert track receive from all tracks
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Вставить трек - прием со всех треков
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Krikets(Rmm)
    * Gave idea:   Krikets(Rmm)
    * Extension:   Reaper 5.983+ http://www.reaper.fm/

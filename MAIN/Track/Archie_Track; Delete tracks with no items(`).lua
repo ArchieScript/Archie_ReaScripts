@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Delete tracks with no items
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: Delete tracks with no items
    * О скрипте:   Удаление треков без элементов
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Specifik[RMM]
    * Gave idea:   Specifik[RMM]
    * Changelog:

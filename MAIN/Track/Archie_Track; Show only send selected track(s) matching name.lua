@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Show only send selected track(s) matching name
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Описание:    Показать только отправленные выбранные треки с соответствующим названием
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Antibio(Rmm)
    * Gave idea:   Antibio(Rmm)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/

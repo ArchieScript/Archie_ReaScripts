@@ -2,12 +2,13 @@
    * Category:    Track
    * Description: Make folder from selected tracks
    * Author:      Archie
-   * Version:     1.01
+   * Version:     1.02
    * AboutScript: Make folder from selected tracks,scattered around project
    * О скрипте:   Создать папку из выбранных треков, разбросанных по проекту
    * GIF:         http://clck.ru/Eey8D
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    ---
    * Gave idea:   ---
    * Changelog:

@@ -7,10 +7,11 @@
    * Features:    Startup
    * Description: Track; UnSolo all track(AutoRun)(`).lua
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.14
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(Rmm)
    * Gave idea:   Archie(Rmm)
    * Extension:   Reaper 6.05+ http://www.reaper.fm/

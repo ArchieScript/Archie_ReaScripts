@@ -6,11 +6,12 @@
    * Category:    Track
    * Description: Show only send of selected track(s)
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Описание:    Показывать только отправку выбранных трека(ов)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Antibio(Rmm)
    * Gave idea:   Antibio(Rmm)
    * Extension:   Reaper 6.0+ http://www.reaper.fm/

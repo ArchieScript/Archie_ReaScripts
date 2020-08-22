@@ -2,13 +2,14 @@
    * Category:    Track
    * Description: Toggle height selected tracks in 24 pixel/revert to average values
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.09
    * AboutScript: Toggle height selected tracks in 24 pixel/revert to average values
    * О скрипте:   Переключить высоту выбранных треков в 24 пикселя / вернуться к средним значениям
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * Donation:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    borisuperful (RMM Forum)
    * Gave idea:   borisuperful (RMM Forum)
    * Changelog:

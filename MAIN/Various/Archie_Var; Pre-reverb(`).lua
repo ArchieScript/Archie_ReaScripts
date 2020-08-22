@@ -6,13 +6,14 @@
    * Category:    Various
    * Description: Var; Pre-reverb(`).lua
    * Author:      Archie
-   * Version:     1.20
+   * Version:     1.21
    * Описание:    Предварительная реверберация
    * GIF:         Пошаговое выполнение скрипта (как скрипт делает пре ревер)
    *              http://avatars.mds.yandex.net/get-pdb/2745165/83870370-824b-4932-a4c6-a4aa6fa4fc5e/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Archie(---)
    * Gave idea:   Archie(---)
    * Extension:   Reaper 6.10+ http://www.reaper.fm/

@@ -6,13 +6,14 @@
    * Category:    Various
    * Description: Var; Popup menu single-level(n).lua
    * Author:      Archie
-   * Version:     1.24
+   * Version:     1.25
    * Описание:    Всплывающее меню одноуровневое
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2884487/d239f177-9ceb-4af6-bcc1-e87dbd047400/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628/1000
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
    * Extension:   
