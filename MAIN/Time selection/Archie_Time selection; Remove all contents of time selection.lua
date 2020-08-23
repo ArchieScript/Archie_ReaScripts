@@ -5,7 +5,7 @@
    * Category:    Time selection
    * Description: Remove all contents of time selection
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Удалить все содержимое выбора времени
    * GIF:         ---
@@ -16,7 +16,7 @@
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
    * Changelog:   
-   *              v.1.02 [220820]
+   *              v.1.03 [220820]
    *                  + Completely redesigned
    
    *              v.1.0 [17.07.2019]
