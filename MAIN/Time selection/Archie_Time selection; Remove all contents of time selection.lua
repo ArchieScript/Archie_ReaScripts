@@ -5,7 +5,7 @@
    * Category:    Time selection
    * Description: Remove all contents of time selection
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   Удалить все содержимое выбора времени
    * GIF:         ---
@@ -16,9 +16,11 @@
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
    * Changelog:   
+   *              v.1.05 [230820]
+   *                  + fixed bug
+   
    *              v.1.03 [220820]
    *                  + Completely redesigned
-   
    *              v.1.0 [17.07.2019]
    *                  + initialе
 
@@ -55,6 +57,15 @@
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
+    
+    
+    
+    -------------------------------------------
+    local function compare(x,y);
+        local floatShare = 0.0000001;
+        return math.abs(x-y) < floatShare;
+    end;
+    -------------------------------------------
     
     
     
@@ -110,7 +121,7 @@
 
 
     local Start,End = reaper.GetSet_LoopTimeRange(0,0,0,0,0);
-    if Start == End then reaper.MB("No Time Selected","ERROR",0)no_undo()return end;
+    if compare(Start,End) then reaper.MB("No Time Selected","ERROR",0)no_undo()return end;
 
 
     local countTrack = reaper.CountTracks(0);
@@ -145,15 +156,18 @@
             local Item = reaper.GetTrackMediaItem(track,i);
             local positi = reaper.GetMediaItemInfo_Value(Item,"D_POSITION");
             local length = reaper.GetMediaItemInfo_Value(Item,"D_LENGTH");
-            if positi >= Start and positi+length <= End then;
+            
+            if (positi > Start or compare(positi,Start)) and
+               (((positi+length) < End) or compare((positi+length),End)) then;
                 reaper.DeleteTrackMediaItem(track,Item);
             end;
+            
             --- v1.03 ---
             if tonumber(FADE)and FADE >= 0 then;
-                if positi == End then;
+                if compare(positi,End) then;
                     reaper.SetMediaItemInfo_Value(Item,"D_FADEINLEN",FADE/1000);
                 end;
-                if positi+length == Start then;
+                if compare(positi+length,Start) then;
                     reaper.SetMediaItemInfo_Value(Item,"D_FADEOUTLEN",FADE/1000);
                 end;
             end;
@@ -182,7 +196,9 @@
            for i3 = 1,reaper.CountAutomationItems(TrackEnv) do;
                local posAutoIt = reaper.GetSetAutomationItemInfo(TrackEnv,i3-1,"D_POSITION",0,0);
                local lenAutoIt = reaper.GetSetAutomationItemInfo(TrackEnv,i3-1,"D_LENGTH",0,0);
-               if posAutoIt+lenAutoIt <= Start or posAutoIt >= End  then;
+               
+               if ((posAutoIt+lenAutoIt) < Start)or compare((posAutoIt+lenAutoIt),Start)or
+                   (posAutoIt > End) or compare(posAutoIt,End) then;   
                    reaper.GetSetAutomationItemInfo(TrackEnv,i3-1,"D_UISEL",0,1);
                end;
            end;
@@ -198,7 +214,6 @@
     end;
     reaper.SetEditCurPos(Cur,false,false);
      
-
     reaper.UpdateArrange();
     reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock("Remove all contents of time selection",-1);
