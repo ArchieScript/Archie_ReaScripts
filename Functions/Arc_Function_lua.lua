@@ -1,10 +1,10 @@
-local VersionMod = "v.2.9.5";
-local RemDonAll = true;
+local VersionMod = "v.2.9.6";
+local RemDonAllX = true;
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.9.5
+   * Version:     2.9.6
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -212,8 +212,9 @@ if not file then; file = io.open(iniFile,'w'); file:close(); file = io.open(iniF
 val = tostring(val):gsub('\n',''); table.insert(t,i2+s,lua..key..'='..val); s=s+1; end; break; else; t[i2] = '8YX0D7d46g88Mg873DryRyP7P58vE18NH34QW83T699q78457Yd'; end; end; break; end; end; table.remove(t,#t); if not section_found then; table.insert(t,lua..'['..section..']'); for i3 = 1,#tbl do; key
 = tbl[i3].key; val = tbl[i3].val; key = tostring(key):gsub('^[%s%;]*',''):gsub('\n',''):gsub('%=',''); val = tostring(val):gsub('\n',''); table.insert(t,lua..key..'='..val); end; end; local write = table.concat(t,'\n'); local write = write:gsub('8YX0D7d46g88Mg873DryRyP7P58vE18NH34QW83T699q78457Yd[\n]','')
 if write ~= table.concat(t2,'\n')then; if clean==true then write=write:gsub('^[\n%s]*',''):gsub('\n%s-\n','\n'):gsub('\n%s-\n','\n')end; file = io.open(iniFile,'w'); local wrt = file:write(write); file:close(); return type(wrt)=='userdata'; end; return false; end; iniFileWriteSectionLua = Arc_Module.iniFileWriteSectionLua
-iniFileWriteSection = Arc_Module.iniFileWriteSectionLua Arc_Module.iniFileWriteSection = iniFileWriteSectionLua local function RemindAboutDonat(x); x = tonumber(x)or 0; x = math.abs(x); local function OpenWebSite(path); local OS = reaper.GetOS(); if OS == "OSX32" or OS == "OSX64" then; os.execute('open "'..path..'"');
-else; os.execute('start "" '..path); end; end; local str = 'If you think that my scripts add something useful to your music workflow, ' .. 'I invite you to make a donation to continue development.\n -- Archie. -- \n\n'.. 'Если вы считаете, что мои скрипты добавляют что-то полезное в ваш музыкальный'..
-'рабочий процесс, я приглашаю вас сделать пожертвование для продолжения разработки.\n -- Archie. -- '; local ExState1 = tonumber(reaper.GetExtState('ArcDntAll1','All1'))or 0; if ExState1 == 0 then; reaper.SetExtState('ArcDntAll1','All1',1,false);
-local ExState2 = tonumber(reaper.GetExtState('ArcDntAll2','All2'))or 0; if ExState2 > x then ExState2 = 0 end; reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); if ExState2 == 0 then; local MB = reaper.MB(str,'Archie Rea Script',1); if MB == 1 then; local yandex = 'https://money.yandex.ru/to/410018003906628';
-local paypal = 'https://www.paypal.com/paypalme/ReaArchie?locale.x=ru_RU'; OpenWebSite(yandex); OpenWebSite(paypal); reaper.ShowConsoleMsg('\n'..'yandex - '..yandex..'\n'..'paypal - '..paypal..'\n'); end; end; end; end; if RemDonAll == true then RemindAboutDonat(9)end; return Arc_Module;
+iniFileWriteSection = Arc_Module.iniFileWriteSectionLua Arc_Module.iniFileWriteSection = iniFileWriteSectionLua local function RemindAboutDonat(); local function OpenWebSite(path); local OS = reaper.GetOS(); if OS == "OSX32" or OS == "OSX64" then; os.execute('open "'..path..'"'); else; os.execute('start "" '..path);
+end; end; local str = 'If you think that my scripts add something useful to your music workflow, ' .. 'I invite you to make a donation to continue development.\n -- Archie. -- \n\n'.. 'Если вы считаете, что мои скрипты добавляют что-то полезное в ваш музыкальный '..
+'рабочий процесс, я приглашаю вас сделать пожертвование для продолжения разработки.\n -- Archie. -- '; local ExState2 = tonumber(reaper.GetExtState('ArcDntAll2','All2'))or 0; if ExState2 >= 100 then; ExState2 = 0; local MB = reaper.MB(str,'Archie Rea Script',1);
+if MB == 1 then; local yandex = 'https://money.yandex.ru/to/410018003906628'; local paypal = 'https://www.paypal.com/paypalme/ReaArchie?locale.x=ru_RU'; OpenWebSite(yandex); OpenWebSite(paypal); reaper.ShowConsoleMsg('\n'..'yandex - '..yandex..'\n'..'paypal - '..paypal..'\n'); end; end; reaper.defer(function()
+reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); end); end; if RemDonAll == true then RemindAboutDonat()end; return Arc_Module;
+
