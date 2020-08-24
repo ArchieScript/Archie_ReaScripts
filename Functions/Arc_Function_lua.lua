@@ -1,10 +1,10 @@
-local VersionMod = "v.2.9.6";
-local RemDonAllX = true;
+local VersionMod = "v.2.9.7";
+local RemDonAll = true;
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.9.6
+   * Version:     2.9.7
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
