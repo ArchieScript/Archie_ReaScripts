@@ -6,7 +6,7 @@
    * Category:    Edit cursor
    * Description: Edit cursor; Auto edit cursor under mouse.lua
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -76,6 +76,6 @@
     reaper.RefreshToolbar2(sectionID,cmdID);
     reaper.atexit(exit);
     local ScrPath,ScrName = filename:match('(.+)[/\\](.+)');
-    reaper.defer(function()A.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,260,ScrPath,ScrName)end);
+    reaper.defer(function()Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,260,ScrPath,ScrName)end);
 
 
