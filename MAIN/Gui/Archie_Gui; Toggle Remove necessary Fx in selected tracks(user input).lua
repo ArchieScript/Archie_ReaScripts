@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Remove necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -23,8 +23,20 @@
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-
-
+    
+    
+    local RemoveFocus = false;  -- true / false
+    
+    local closeWindow = false;  -- true / false - Сохранить пресет и установить true чтобы окно не отображалось
+    
+    local closeWindowClickRemove = true -- true / false
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    
 
     --=========================================
     local function MODULE(file);
@@ -47,7 +59,7 @@
         "Переключатель - Удалить необходимые Fx в выбранных треках\n"..
         "(пользовательский ввод  через запятую или точка с запятой)\n"..
         "Нажмите на ввод имени и введите в появившемся окне имена Fx,\n"..
-        "которые нужно забайпасить/разбайпасить через запятую(,) или точку с запятой(;)\n"..
+        "которые нужно Удалить через запятую(,) или точку с запятой(;)\n"..
         "Например: Delay,name2;name3\n"..
         "Имена можно прописывать не полностью, а только часть имени\n"..
         "Например: Del,me2;me3\n"..
@@ -61,7 +73,7 @@
         "Toggle - Delete necessary Fx in selected tracks\n"..
         "(user input separated by a comma or semicolon)\n"..
         "Click on enter a name and enter the Fx names in The window that appears,\n"..
-        "that need to be pasted / unpacked with a comma (,) or semicolon(;)\n"..
+        "that need to be Delete with a comma (,) or semicolon(;)\n"..
         "For example: Delay, name2; name3\n"..
         "Names can be spelled out not completely, but only part of the name\n"..
         "For example: Del, me2;me3\n"..
@@ -268,7 +280,10 @@
 
     local wWinSize,hWinSize = 400,80;
     local nameWin = 'Toggle Remove fx in selected tracks by number or name';
-    gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
+    if closeWindow ~= true then;--v.1.05
+        gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
+    end;--v.1.05
+    
     --reaper.DeleteExtState(section,"SaveUserInput",true);
     --Arc.iniFileWriteLua(section,"SaveUserInput",'',ArcFileIni);
     --local SaveUserInput = reaper.GetExtState(section,"SaveUserInput");
@@ -357,14 +372,19 @@
 
         -- / click Button / ----------------------------------------------------------
         local ButtonRemove = LeftMouseButton(230,45,75,25,'ButtonRemove');
+        local getChar = gfx.getchar()==13;--v.1.05
+        if closeWindow == true then getChar = true end;--v.1.05
         if ButtonRemove == 0 then;
             gfx.set(1,1,1,.4);
             gfx.rect(230,45,75,25,0);
-        elseif ButtonRemove == 1 or ButtonRemove == 2 then;
+        else--if ButtonRemove == 1 or ButtonRemove == 2 or getChar then;--v.1.05
             gfx.set(.4,.7,0,1);
             gfx.rect(230+1,45+1,75-2,25-2,0);
-            if ButtonRemove == 2 then;
+            if ButtonRemove == 2 or getChar then;
                 ToggleDelete(SaveUserInput,true);
+                if closeWindowClickRemove == true then;--v.1.05
+                    reaper.atexit(exit)return;--v.1.05
+                end;--v.1.05
             end;
         end;
 
@@ -553,11 +573,13 @@
 
         -------------------------------------------------
         --- / Remove Focus / ----------------------------
-        local getchar = gfx.getchar(65536)&2;
-        if getchar == 2 and gfx.mouse_cap == 0 then;
-            local CurCont = reaper.GetCursorContext();
-            if CurCont ~= 0 then;
-                reaper.SetCursorContext(0,nil);
+        if RemoveFocus == true then;
+            local getchar = gfx.getchar(65536)&2;
+            if getchar == 2 and gfx.mouse_cap == 0 then;
+                local CurCont = reaper.GetCursorContext();
+                if CurCont ~= 0 then;
+                    reaper.SetCursorContext(0,nil);
+                end;
             end;
         end;
         -------------------------------------------------
@@ -572,10 +594,13 @@
         if wWin < wWinSize-1 or wWin > wWinSize+1 or
             hWin < hWinSize-1 or hWin > hWinSize+1  or dockWin ~= 0 then;
             gfx.quit();
-            gfx.init(nameWin,wWinSize,hWinSize,0,xWin,yWin);
-            AttachTopmostPin(nameWin);
+            if closeWindow ~= true then;--v.1.05
+                gfx.init(nameWin,wWinSize,hWinSize,0,xWin,yWin);
+                AttachTopmostPin(nameWin);
+            end;--v.1.05
         end;
         ----------------------
+        if closeWindow == true then reaper.atexit(exit)return;end;--v.1.05
         if gfx.getchar() >= 0 then reaper.defer(loop);else;reaper.atexit(exit)return;end;
     end;
     --===================================================================================
