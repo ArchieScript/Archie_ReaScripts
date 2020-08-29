@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Remove necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.07
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -280,9 +280,9 @@
 
     local wWinSize,hWinSize = 400,80;
     local nameWin = 'Toggle Remove fx in selected tracks by number or name';
-    if closeWindow ~= true then;--v.1.05
+    if closeWindow ~= true then;--v.1.07
         gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
-    end;--v.1.05
+    end;--v.1.07
     
     --reaper.DeleteExtState(section,"SaveUserInput",true);
     --Arc.iniFileWriteLua(section,"SaveUserInput",'',ArcFileIni);
@@ -372,19 +372,19 @@
 
         -- / click Button / ----------------------------------------------------------
         local ButtonRemove = LeftMouseButton(230,45,75,25,'ButtonRemove');
-        local getChar = gfx.getchar()==13;--v.1.05
-        if closeWindow == true then getChar = true end;--v.1.05
+        local getChar = gfx.getchar()==13;--v.1.07
+        if closeWindow == true then getChar = true end;--v.1.07
         if ButtonRemove == 0 then;
             gfx.set(1,1,1,.4);
             gfx.rect(230,45,75,25,0);
-        else--if ButtonRemove == 1 or ButtonRemove == 2 or getChar then;--v.1.05
+        else--if ButtonRemove == 1 or ButtonRemove == 2 or getChar then;--v.1.07
             gfx.set(.4,.7,0,1);
             gfx.rect(230+1,45+1,75-2,25-2,0);
             if ButtonRemove == 2 or getChar then;
                 ToggleDelete(SaveUserInput,true);
-                if closeWindowClickRemove == true then;--v.1.05
-                    reaper.atexit(exit)return;--v.1.05
-                end;--v.1.05
+                if closeWindowClickRemove == true then;--v.1.07
+                    reaper.atexit(exit)return;--v.1.07
+                end;--v.1.07
             end;
         end;
 
@@ -573,7 +573,7 @@
 
         -------------------------------------------------
         --- / Remove Focus / ----------------------------
-        if RemoveFocus == true then;
+        if RemoveFocus == true then;--v.1.07
             local getchar = gfx.getchar(65536)&2;
             if getchar == 2 and gfx.mouse_cap == 0 then;
                 local CurCont = reaper.GetCursorContext();
@@ -581,7 +581,7 @@
                     reaper.SetCursorContext(0,nil);
                 end;
             end;
-        end;
+        end;--v.1.07
         -------------------------------------------------
         -------------------------------------------------
 
@@ -594,13 +594,13 @@
         if wWin < wWinSize-1 or wWin > wWinSize+1 or
             hWin < hWinSize-1 or hWin > hWinSize+1  or dockWin ~= 0 then;
             gfx.quit();
-            if closeWindow ~= true then;--v.1.05
+            if closeWindow ~= true then;--v.1.07
                 gfx.init(nameWin,wWinSize,hWinSize,0,xWin,yWin);
                 AttachTopmostPin(nameWin);
-            end;--v.1.05
+            end;--v.1.07
         end;
         ----------------------
-        if closeWindow == true then reaper.atexit(exit)return;end;--v.1.05
+        if closeWindow == true then reaper.atexit(exit)return;end;--v.1.07
         if gfx.getchar() >= 0 then reaper.defer(loop);else;reaper.atexit(exit)return;end;
     end;
     --===================================================================================

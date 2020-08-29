@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Bypass necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.06
+   * Version:     1.07
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -22,9 +22,19 @@
    *              v.1.0 [19.01.20]
    *                  + initialе
 --]]
-
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    local RemoveFocus = false;  -- true / false
+    
+    local closeWindow = false;  -- true / false - Сохранить пресет и установить true чтобы окно не отображалось
+    
+    local closeWindowClickRemove = true -- true / false
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
 
 
@@ -70,7 +80,7 @@
         "Toggle-bypass required Fx in selected tracks\n"..
         "(user input separated by a comma or semicolon)\n"..
         "Click on enter a name and enter the Fx names in The window that appears,\n"..
-        "that need to be pasted / unpacked with a comma (,) or semicolon(;)\n"..
+        "that need to be bypass / unbypass with a comma (,) or semicolon(;)\n"..
         "For example: Delay, name2; name3\n"..
         "Names can be spelled out not completely, but only part of the name\n"..
         "For example: Del, me2;me3\n"..
@@ -319,7 +329,9 @@
 
     local wWinSize,hWinSize = 400,80;
     local nameWin = 'Toggle Bypass fx in selected tracks by number or name';
-    gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
+    if closeWindow ~= true then;--v.1.07
+        gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
+    end;--v.1.07
     --reaper.DeleteExtState(section,"SaveUserInput",true);
     --Arc.iniFileWriteLua(section,"SaveUserInput",'',ArcFileIni);
     --local SaveUserInput = reaper.GetExtState(section,"SaveUserInput");
@@ -424,14 +436,19 @@
 
         -- / click Button / ----------------------------------------------------------
         local ButtonBypass = LeftMouseButton(230,45,75,25,'ButtonBypass');
+        local getChar = gfx.getchar()==13;--v.1.07
+        if closeWindow == true then getChar = true end;--v.1.07
         if ButtonBypass == 0 then;
             gfx.set(1,1,1,.4);
             gfx.rect(230,45,75,25,0);
-        elseif ButtonBypass == 1 or ButtonBypass == 2 then;
+        else--if ButtonBypass == 1 or ButtonBypass == 2 then;
             gfx.set(.4,.7,0,1);
             gfx.rect(230+1,45+1,75-2,25-2,0);
-            if ButtonBypass == 2 then;
+            if ButtonBypass == 2 or getChar then;
                 ToggleBypass(SaveUserInput,true,ModeState);
+                if closeWindowClickRemove == true then;--v.1.07
+                    reaper.atexit(exit)return;--v.1.07
+                end;--v.1.07
             end;
         end;
 
@@ -642,13 +659,15 @@
 
         -------------------------------------------------
         --- / Remove Focus / ----------------------------
-        local getchar = gfx.getchar(65536)&2;
-        if getchar == 2 and gfx.mouse_cap == 0 then;
-            local CurCont = reaper.GetCursorContext();
-            if CurCont ~= 0 then;
-                reaper.SetCursorContext(0,nil);
+        if RemoveFocus == true then;--v.1.07
+            local getchar = gfx.getchar(65536)&2;
+            if getchar == 2 and gfx.mouse_cap == 0 then;
+                local CurCont = reaper.GetCursorContext();
+                if CurCont ~= 0 then;
+                    reaper.SetCursorContext(0,nil);
+                end;
             end;
-        end;
+        end;--v.1.07
         -------------------------------------------------
         -------------------------------------------------
 
@@ -659,10 +678,13 @@
         if wWin < wWinSize-1 or wWin > wWinSize+1 or
             hWin < hWinSize-1 or hWin > hWinSize+1  or dockWin ~= 0 then;
             gfx.quit();
-            gfx.init(nameWin,wWinSize,hWinSize,0,xWin,yWin);
-            AttachTopmostPin(nameWin);
+            if closeWindow ~= true then;--v.1.07
+                gfx.init(nameWin,wWinSize,hWinSize,0,xWin,yWin);
+                AttachTopmostPin(nameWin);
+            end;--v.1.07
         end;
         ----------------------
+        if closeWindow == true then reaper.atexit(exit)return;end;--v.1.07
         if gfx.getchar() >= 0 then reaper.defer(loop);else;reaper.atexit(exit)return;end;
     end;
     --===================================================================================

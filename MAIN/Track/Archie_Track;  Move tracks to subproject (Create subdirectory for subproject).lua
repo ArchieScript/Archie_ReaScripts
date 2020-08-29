@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track;  Move tracks to subproject (Create subdirectory for subproject).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * О скрипте:   переместить треки в подпроект (создать подкаталог для подпроекта)
    * GIF:         ---
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,6 +20,10 @@
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.9.7+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.0 [260820]
+   *                  +! special characters are replaced with '_'
+   *                  +! спецсимволы заменяются на '_'
+   
    *              v.1.0 [260820]
    *                  + initialе
 --]]
@@ -80,7 +84,7 @@
         if not ret then no_undo()return end;
     end;
     
-    name = name:gsub('[\\/:*?"<>|+]','');
+    name = name:gsub('[\\/:*?"<>|+]','_');
     if #name:gsub('%s','')==0 then;
         name = 'no name (track '..math.ceil(reaper.GetMediaTrackInfo_Value(FSelTrack,'IP_TRACKNUMBER'))..')';
     end;
