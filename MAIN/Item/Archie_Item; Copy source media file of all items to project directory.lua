@@ -5,7 +5,7 @@
    * Category:    Item
    * Description: Copy source media file of all items to project directory (all take)
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   Скопировать исходный медиа файл у всех элементов в каталог проекта (все тейки)
    * GIF:         ---
@@ -108,23 +108,25 @@
     local function slash();
         return ({reaper.get_action_context()})[2]:match("[\\/]");
     end;
-
-
+    
+    
     local function GetPathSourceMediaFile_TakeEx(take);
         if reaper.TakeIsMIDI(take)then return false,false end;
         local source = reaper.GetMediaItemTake_Source(take);
-        local filenamebuf = reaper.GetMediaSourceFileName(source,"");
-        if filenamebuf == "" then
-            source = reaper.GetMediaSourceParent(source);
-        end;
-        filenamebuf = reaper.GetMediaSourceFileName(source,"");
-        local Path,Name = filenamebuf:match("(.+)[/\\](.+)");
+        if source then;--v.1.03
+            local filenamebuf = reaper.GetMediaSourceFileName(source,"");
+            if filenamebuf == "" then
+                source = reaper.GetMediaSourceParent(source)or source;--v.1.03 (or source)
+            end;
+            filenamebuf = reaper.GetMediaSourceFileName(source,"");
+            local Path,Name = filenamebuf:match("(.+)[/\\](.+)");
+        end;--v.1.03
         return Path,Name;
     end;
-
-
-
-
+    
+    
+    
+    
     local CountItem = reaper.CountMediaItems(0);
     if CountItem == 0 then no_undo() return end;
 
