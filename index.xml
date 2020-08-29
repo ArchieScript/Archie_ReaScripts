@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="da4e54e16a446575c84ed1c1686206320aa91511">
+<index version="1" name="Archie-ReaScripts" commit="ae91386503999c46a8b6e96ce147ebe5efefa869">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2429,6 +2429,9 @@ LUA_Lib
       <version name="1.06" author="Archie" time="2020-08-20T18:52:47Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2401ea1636c6f8b8282c812489d0996de10e75ec/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
+      <version name="1.07" author="Archie" time="2020-08-29T06:40:54Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae91386503999c46a8b6e96ce147ebe5efefa869/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Gui; Toggle Remove necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Remove necessary Fx in selected tracks(user input)">
       <metadata>
@@ -2452,6 +2455,9 @@ LUA_Lib
       </version>
       <version name="1.05" author="Archie" time="2020-08-28T18:53:22Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/da4e54e16a446575c84ed1c1686206320aa91511/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+      <version name="1.07" author="Archie" time="2020-08-29T06:40:54Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae91386503999c46a8b6e96ce147ebe5efefa869/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
     </reapack>
   </category>
@@ -6546,6 +6552,12 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [260820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6b5e3995c980b4da6e3ec08af6dabc5db44e6463/MAIN/Track/Archie_Track;%20%20Move%20tracks%20to%20subproject%20(Create%20subdirectory%20for%20subproject).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-08-29T06:40:54Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    +! special characters are replaced with '_'
+    +! спецсимволы заменяются на '_']]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae91386503999c46a8b6e96ce147ebe5efefa869/MAIN/Track/Archie_Track;%20%20Move%20tracks%20to%20subproject%20(Create%20subdirectory%20for%20subproject).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks(`).lua" type="script" desc="Activate-Deactivate rec-armed rec-monitoring all input-Fx in selected tracks">
