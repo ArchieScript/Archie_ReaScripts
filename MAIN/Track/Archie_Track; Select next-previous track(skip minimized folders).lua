@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.10
+   * Version:     1.11
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -21,10 +21,12 @@
    *              [main] . > Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua
    *              [main] . > Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua
    *              [main] . > Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua
-   * Changelog:
+   * Changelog:   
+   *              v.1.11 [300820]
+   *                  + remove UpdateArrange (https://rmmedia.ru/threads/134701/post-2524502)
+   
    *              v.1.09 [170820]
    *                  + leaving other tracks selected (http://rmmedia.ru/threads/110165/post-2519923)
-   
    *              v.1.06 [22.05.19]
    *                  + Add script ...(skip folders)
    *              v.1.04 [22.05.19]
@@ -40,9 +42,9 @@
    (-) - not necessary for installation | (-) - не обязательно для установки
    -----------------------------------------------------------------------------------------
    (+) Reaper v.5.967 +           --| http://www.reaper.fm/download.php
-   (+) SWS v.2.10.0 +             --| http://www.sws-extension.org/index.php
+   (+) SWS v.2.12.0 +             --| http://www.sws-extension.org/index.php
    (-) ReaPack v.1.2.2 +          --| http://reapack.com/repos
-   (-) Arc_Function_lua v.2.3.2 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc
+   (+) Arc_Function_lua v.2.9.7 + --| Repository - Archie-ReaScripts  http://clck.ru/EjERc
    (+*) reaper_js_ReaScriptAPI    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    (-) Visual Studio С++ 2015     --|  http://clck.ru/Eq5o6
    =======================================================================================]]
@@ -87,7 +89,7 @@
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
+        if not A.VersArcFun("2.9.7",file,'')then;A=nil;return;end;return A;
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
@@ -365,5 +367,4 @@
 
     reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ",""):gsub("%.lua",""),-1);
     reaper.PreventUIRefresh(-1);
-    reaper.UpdateArrange();
     no_undo();
