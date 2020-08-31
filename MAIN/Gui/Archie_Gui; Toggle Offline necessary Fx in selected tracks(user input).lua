@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Gui
-   * Description: Toggle Bypass necessary Fx in selected tracks(user input)
+   * Description: Toggle Offline necessary Fx in selected tracks(user input)
    * Author:      Archie
    * Version:     1.08
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
@@ -17,10 +17,8 @@
    * Changelog:
    *              v.1.08 [310820]
    *                  + ---
-
-   *              v.1.0 [150420]
-   *                  + Bypass / Unbypass all effects
-   *              v.1.0 [19.01.20]
+   
+   *              v.1.0 [310820]
    *                  + initialе
 --]]
     --======================================================================================
@@ -32,14 +30,15 @@
     
     local closeWindow = false;  -- true / false - Сохранить пресет и установить true чтобы окно не отображалось
     
-    local closeWindowClickBypass = false -- true / false
+    local closeWindowClickOffline = false -- true / false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
 
 
-    local closeWindowClickRemove = closeWindowClickBypass;
+    local closeWindowClickRemove = closeWindowClickOffline;
+    
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
@@ -60,10 +59,10 @@
         "Rus:\n\n"..
         'v.1.03 - "*0" или "all" - вкл / выкл все эффекты\n\n'..
         "Скрипт: "..
-        "Переключатель - байпас необходимых Fx в выбранных треках\n"..
+        "Переключатель - Offline необходимых Fx в выбранных треках\n"..
         "(пользовательский ввод  через запятую или точка с запятой)\n"..
         "Нажмите на ввод имени и введите в появившемся окне имена Fx,\n"..
-        "которые нужно забайпасить/разбайпасить через запятую(,) или точку с запятой(;)\n"..
+        "которые нужно Offline/Online через запятую(,) или точку с запятой(;)\n"..
         "Например: Delay,name2;name3\n"..
         "Имена можно прописывать не полностью, а только часть имени\n"..
         "Например: Del,me2;me3\n"..
@@ -72,16 +71,16 @@
         "добавив *(звездочку) в начале\n"..
         "Например: *1, 3, 5\n"..
         "Правый клик или кнопка 'P' вызовет меню для сохранения пресетов.\n"..
-        "Mode: Mode 1 - байпас всех Fx в одно состояние, Mode 2 - переключать зеркально\n"..
+        "Mode: Mode 1 - Offline всех Fx в одно состояние, Mode 2 - переключать зеркально\n"..
         "т.е. если один fx включен, а второй выключен, то они поменяются местами.\n\n"..
         '\n\nTERMINATE INSTANCES\n\n\n'..
         "Eng:\n\n"..
         'V. 1. 03 - "*0 " or "all" - Bypass / Unbypass all effects\n\n'..
         "Script: "..
-        "Toggle-bypass required Fx in selected tracks\n"..
+        "Toggle-Offline required Fx in selected tracks\n"..
         "(user input separated by a comma or semicolon)\n"..
         "Click on enter a name and enter the Fx names in The window that appears,\n"..
-        "that need to be bypass / unbypass with a comma (,) or semicolon(;)\n"..
+        "that need to be Offline / Online with a comma (,) or semicolon(;)\n"..
         "For example: Delay, name2; name3\n"..
         "Names can be spelled out not completely, but only part of the name\n"..
         "For example: Del, me2;me3\n"..
@@ -90,7 +89,7 @@
         "adding *(asterisk) at the beginning\n"..
         "For example: *1, 3, 5\n"..
         "Right click or 'P' button will open the menu for saving presets.\n"..
-        "Mode: Mode 1-bypass all Fx in one state, Mode 2 - switch mirror\n"..
+        "Mode: Mode 1-Offline all Fx in one state, Mode 2 - switch mirror\n"..
         "that is, if one fx is enabled and the other is bypassed they will switch places."..
         '\n\nTERMINATE INSTANCES\n\n'
 
@@ -209,7 +208,8 @@
                                     if (nameFx:match(SC(strT[key])) and #strT[key]>=1)or ALL_B then;
 
                                         if not GetEnabled then;
-                                            GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
+                                            GetEnabled = reaper.TrackFX_GetOffline(SelTrack,ifx-1);
+                                           
                                             if GetEnabled then SetEnabled = false else SetEnabled = true end;
                                             if Mode == 2 then GetEnabled = nil else GetEnabled = true end;
                                         end;
@@ -220,12 +220,12 @@
                                             Undo = true;
                                         end;
 
-                                        reaper.TrackFX_SetEnabled(SelTrack,ifx-1,SetEnabled);
+                                        reaper.TrackFX_SetOffline(SelTrack,ifx-1,SetEnabled);
 
                                         if Mode == 2 then;
-                                            strU = "Toggle Bypass Fx by name (reflect)"
+                                            strU = "Toggle Offline Fx by name (reflect)"
                                         else;
-                                            if SetEnabled == true then strU = "Unbypass Fx by name" else strU = "Bypass Fx by name" end;
+                                            if SetEnabled == true then strU = "Offline Fx by name" else strU = "Online Fx by name" end;
                                         end;
 
                                         break;
@@ -240,7 +240,7 @@
                                 if numT[ifx] or (CountTable(numT)==1 and numT[0]==0) then;
 
                                     if not GetEnabled then;
-                                        GetEnabled = reaper.TrackFX_GetEnabled(SelTrack,ifx-1);
+                                        GetEnabled = reaper.TrackFX_GetOffline(SelTrack,ifx-1);
                                         if GetEnabled then SetEnabled = false else SetEnabled = true end;
                                         if Mode == 2 then GetEnabled = nil else GetEnabled = true end;
                                     end;
@@ -251,12 +251,12 @@
                                         Undo = true;
 
                                         if Mode == 2 then;
-                                            strU = "Toggle Bypass Fx by number (reflect)";
+                                            strU = "Toggle Offline Fx by number (reflect)";
                                         else;
-                                            if SetEnabled == true then strU = "Unbypass Fx by number" else strU = "Bypass Fx by number" end;
+                                            if SetEnabled == true then strU = "Offline Fx by number" else strU = "Online Fx by number" end;
                                         end;
                                     end;
-                                    reaper.TrackFX_SetEnabled(SelTrack,ifx-1,SetEnabled);
+                                    reaper.TrackFX_SetOffline(SelTrack,ifx-1,SetEnabled);
                                 end;
                                 ---------
                                 -----------
@@ -329,7 +329,7 @@
     end;
 
     local wWinSize,hWinSize = 400,80;
-    local nameWin = 'Toggle Bypass fx in selected tracks by number or name';
+    local nameWin = 'Toggle Offline fx in selected tracks by number or name';
     if closeWindow ~= true then;--v.1.07
         gfx.init(nameWin,wWinSize,hWinSize,0,xWinPos,yWinPos);
     end;--v.1.07
@@ -369,14 +369,14 @@
         gfx.gradrect(230,45,75,25,  .4,.4,.4,1);
         gfx.x = 230;
         gfx.y = 48;
-        gfx.drawstr("   Bypass");
+        gfx.drawstr((' '):rep(4).."Offline");
 
 
 
         gfx.gradrect(315,45,75,25,  .4,.4,.4,1);
         gfx.x = 315;
         gfx.y = 48;
-        gfx.drawstr("     Exit");
+        gfx.drawstr((' '):rep(5).."Exit");
 
 
 

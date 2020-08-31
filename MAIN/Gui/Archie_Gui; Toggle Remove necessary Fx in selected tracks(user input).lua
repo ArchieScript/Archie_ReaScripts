@@ -6,7 +6,7 @@
    * Category:    Gui
    * Description: Toggle Remove necessary Fx in selected tracks(user input)
    * Author:      Archie
-   * Version:     1.07
+   * Version:     1.08
    * VIDEO:       http://youtu.be/H1m9PMSRfVg?t=1486 (Предыдущяя версия)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -15,7 +15,9 @@
    * Customer:    vax(Rmm)
    * Gave idea:   vax(Rmm)
    * Changelog:
-
+   *              v.1.08 [310820]
+   *                  + ---
+   
    *              v.1.0 [22.01.20]
    *                  + initialе
 --]]
@@ -29,7 +31,7 @@
     
     local closeWindow = false;  -- true / false - Сохранить пресет и установить true чтобы окно не отображалось
     
-    local closeWindowClickRemove = true -- true / false
+    local closeWindowClickRemove = false -- true / false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\

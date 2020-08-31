@@ -1,0 +1,95 @@
+--[[     NEW INSTANCES;
+   * Тест только на windows  /  Test only on windows.
+   * Отчет об ошибке: Если обнаружите какие либо ошибки, то сообщите по одной из указанных ссылок ниже (*Website)
+   * Bug Reports: If you find any errors, please report one of the links below (*Website)
+   *
+   * Category:    FX
+   * Description: FX; Online all FX all track.lua
+   * Author:      Archie
+   * Version:     1.0
+   * Website:     http://forum.cockos.com/showthread.php?t=212819
+   *              http://rmmedia.ru/threads/134701/
+   * DONATION:    http://money.yandex.ru/to/410018003906628
+   * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
+   * Customer:    Archie(---)
+   * Gave idea:   Archie(---)
+   * Extension:   Reaper 6.0+ http://www.reaper.fm/
+   * Changelog:
+   *              v.1.0 [310820]
+   *                  + initialе
+--]]
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    local MASTER = true;
+    
+    --======================================================================================
+    --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
+    --======================================================================================
+    
+    
+    
+    --=========================================
+    local function MODULE(file);
+        local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
+        if not A.VersArcFun("2.8.6",file,'')then;A=nil;return;end;return A;
+    end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
+    if not Arc then return end;
+    --=========================================
+    
+    
+    MASTER=MASTER==true;
+    
+    
+    ------------------------------------------
+    local function CountTracks2(proj,MASTER);
+        local CountTrack = reaper.CountTracks(proj);
+        if MASTER == true then CountTrack = CountTrack+1 end;
+        return CountTrack;
+    end;
+    
+    
+    local function GetTracks2(proj,idx,MASTER);
+        if MASTER == true then;
+            if idx == 0 then;
+                return reaper.GetMasterTrack(proj);
+            else;
+                return reaper.GetTrack(proj,idx-1);
+            end;
+        else;
+            return reaper.GetTrack(proj,idx);
+        end;
+    end;
+    ------------------------------------------
+    
+    
+    
+    local CountTrack2 = CountTracks2(0,MASTER);
+    if CountTrack2 == 0 then no_undo()return end;
+    
+    
+    for i = 1,CountTrack2 do;
+        local Track = GetTracks2(0,i-1,MASTER);
+        for ifx = 1,reaper.TrackFX_GetCount(Track) do;
+            local Offline = reaper.TrackFX_GetOffline(Track,ifx-1);
+            if Offline then;
+                if not UNDO then;
+                    reaper.Undo_BeginBlock();
+                    reaper.PreventUIRefresh(1);
+                    UNDO = true;
+                end;
+                reaper.TrackFX_SetOffline(Track,ifx-1,false);
+            end;
+        end;
+    end;
+    
+    if UNDO then;
+        reaper.PreventUIRefresh(-1);
+        reaper.Undo_EndBlock('Online all FX all track',-1);
+    else;
+        no_undo();
+    end;
+    
+    
+    
