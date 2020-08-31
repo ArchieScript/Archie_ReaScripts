@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="85f72a9556a73b5f653a3df37915a02c8d2d8878">
+<index version="1" name="Archie-ReaScripts" commit="105d4a498e372599e1182519567a888aef5431a4">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1518,6 +1518,42 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Move%20last%20FX%20in%20selected%20tracks%20to%20first%20position(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_FX; Offline all FX all track.lua" type="script" desc="FX; Offline all FX all track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Offline%20all%20FX%20all%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Offline all FX all tracks - Restore previous.lua" type="script" desc="FX; Offline all FX all tracks - Restore previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Offline%20all%20FX%20all%20tracks%20-%20Restore%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Offline all FX all tracks - Save previous.lua" type="script" desc="FX; Offline all FX all tracks - Save previous.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.02" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Offline%20all%20FX%20all%20tracks%20-%20Save%20previous.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_FX; Offline all Fx in project with delay (PDC) over 256 samples(`).lua" type="script" desc="Offline all Fx in project with delay (PDC) over x samples">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1533,6 +1569,18 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [03.12.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Offline%20all%20Fx%20in%20project%20with%20delay%20(PDC)%20over%20256%20samples(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Offline all FX selected track.lua" type="script" desc="FX; Offline all FX selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Offline%20all%20FX%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Offline all FX selected tracks - Restore previous.lua" type="script" desc="FX; Offline all FX selected tracks - Restore previous.lua">
@@ -1572,6 +1620,30 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [300620]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Offline%20all%20FX%20selected%20tracks%20-%20Save%20previous.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Online all FX all track.lua" type="script" desc="FX; Online all FX all track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Online%20all%20FX%20all%20track.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Online all FX selected track.lua" type="script" desc="FX; Online all FX selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.0 [310820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/FX/Archie_FX;%20Online%20all%20FX%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Open all VSTi in Selected tracks.lua" type="script" desc="Open all VSTi in Selected tracks">
@@ -2432,6 +2504,23 @@ LUA_Lib
       <version name="1.07" author="Archie" time="2020-08-29T06:40:54Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae91386503999c46a8b6e96ce147ebe5efefa869/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
+      <version name="1.08" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.08 [310820]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/Gui/Archie_Gui;%20Toggle%20Bypass%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Gui; Toggle Offline necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Offline necessary Fx in selected tracks(user input)">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.08" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.08 [310820]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/Gui/Archie_Gui;%20Toggle%20Offline%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Gui; Toggle Remove necessary Fx in selected tracks(user input).lua" type="script" desc="Toggle Remove necessary Fx in selected tracks(user input)">
       <metadata>
@@ -2458,6 +2547,11 @@ LUA_Lib
       </version>
       <version name="1.07" author="Archie" time="2020-08-29T06:40:54Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ae91386503999c46a8b6e96ce147ebe5efefa869/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
+      </version>
+      <version name="1.08" author="Archie" time="2020-08-31T10:05:53Z">
+        <changelog><![CDATA[v.1.08 [310820]
+    + ---]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/105d4a498e372599e1182519567a888aef5431a4/MAIN/Gui/Archie_Gui;%20Toggle%20Remove%20necessary%20Fx%20in%20selected%20tracks(user%20input).lua</source>
       </version>
     </reapack>
   </category>
