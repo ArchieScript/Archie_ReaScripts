@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="105d4a498e372599e1182519567a888aef5431a4">
+<index version="1" name="Archie-ReaScripts" commit="57553714d9bac28d3222002adc9eb5cbcee15b51">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1726,6 +1726,19 @@ LUA_Lib
         <changelog><![CDATA[v.1.01 [28.09.19]
     +  initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Rename%20Fx%20in%20selected%20tracks%20to%20preset%20name.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Fx; Rename last FX in selected tracks name n.lua" type="script" desc="Fx; Rename last FX in selected tracks name n.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-01T16:43:18Z">
+        <changelog><![CDATA[v.1.0 [010920]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/57553714d9bac28d3222002adc9eb5cbcee15b51/MAIN/FX/Archie_Fx;%20Rename%20last%20FX%20in%20selected%20tracks%20name%20n.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Rename last selected FX in chain in selected tracks to preset name.lua" type="script" desc="Rename last selected FX in chain in selected tracks to preset name">
