@@ -5,7 +5,7 @@
    * Category:    Item
    * Description: Copy source media file of all items to project directory (all take)
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.04
    * AboutScript: ---
    * О скрипте:   Скопировать исходный медиа файл у всех элементов в каталог проекта (все тейки)
    * GIF:         ---
@@ -15,7 +15,11 @@
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    Maestro Sound(Rmm)
    * Gave idea:   Maestro Sound(Rmm)
-   * Changelog:   v.1.0 [04.08.19]
+   * Changelog:   
+   *              v.1.04 [020919]
+   *                  + fixed bug
+   
+   *              v.1.0 [04.08.19]
    *                  + initialе
 
     -- Тест только на windows  /  Test only on windows.
@@ -24,10 +28,10 @@
     (+) - required for installation      | (+) - обязательно для установки
     (-) - not necessary for installation | (-) - не обязательно для установки
     -----------------------------------------------------------------------------------------
-    (+) Reaper v.5.981 +            --| http://www.reaper.fm/download.php
-    (-) SWS v.2.10.0 +              --| http://www.sws-extension.org/index.php
+    (+) Reaper v.6.12 +            --| http://www.reaper.fm/download.php
+    (-) SWS v.2.12.0 +              --| http://www.sws-extension.org/index.php
     (-) ReaPack v.1.2.2 +           --| http://reapack.com/repos
-    (-) Arc_Function_lua v.2.4.4 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc
+    (-) Arc_Function_lua v.2.9.4 +  --| Repository - Archie-ReaScripts  http://clck.ru/EjERc
     (-) reaper_js_ReaScriptAPI64    --| Repository - ReaTeam Extensions http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
     (-) Visual Studio С++ 2015      --|  http://clck.ru/Eq5o6
     =======================================================================================]]
@@ -113,13 +117,14 @@
     local function GetPathSourceMediaFile_TakeEx(take);
         if reaper.TakeIsMIDI(take)then return false,false end;
         local source = reaper.GetMediaItemTake_Source(take);
+        local Path,Name;
         if source then;--v.1.03
             local filenamebuf = reaper.GetMediaSourceFileName(source,"");
-            if filenamebuf == "" then
+            if filenamebuf == "" then;
                 source = reaper.GetMediaSourceParent(source)or source;--v.1.03 (or source)
             end;
             filenamebuf = reaper.GetMediaSourceFileName(source,"");
-            local Path,Name = filenamebuf:match("(.+)[/\\](.+)");
+            Path,Name = filenamebuf:match("(.+)[/\\](.+)");
         end;--v.1.03
         return Path,Name;
     end;
