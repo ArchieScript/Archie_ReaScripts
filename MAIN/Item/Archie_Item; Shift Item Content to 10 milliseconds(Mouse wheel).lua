@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Shift Item Content to 10 milliseconds(Mouse wheel).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -20,6 +20,9 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.9.9+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.02 [050920]
+   *                  + fixed bug
+   
    *              v.1.0 [050920]
    *                  + initialе
 --]]
@@ -32,6 +35,10 @@
             -- = 2 samples
     
     local ShiftValue = 10; -- milliseconds or samples depending on 'Mode'
+    
+    local AllSelItems = false; -- true/false
+     
+    local InvertMouse = false; -- true/false
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -48,6 +55,12 @@
     --=========================================
     
     
+    Mode = math.abs(tonumber(Mode)or 1);
+    ShiftValue = math.abs(tonumber(ShiftValue)or 10);
+    if InvertMouse == true then;
+        ShiftValue = ShiftValue-ShiftValue*2;
+    end;
+    
     
     --------------------------------------------------
     local function ShiftContentItemSec(item,take,sec);
@@ -57,12 +70,20 @@
         ---
         local offsNew = (offs-(sec*rate));
         if offsNew < 0 then;
-            local len = reaper.GetMediaItemInfo_Value(item,"D_LENGTH");
-            offsNew = (len*rate-offs)-(sec*rate);
+            local source = reaper.GetMediaItemTake_Source(take);
+            local source = reaper.GetMediaSourceParent(source) or source;
+            if source then;
+                local Tm,lengthIsQN = reaper.GetMediaSourceLength(source);
+                if lengthIsQN then;
+                    Tm = reaper.TimeMap_QNToTime(Tm);
+                end;
+                offsNew = (Tm*rate-offs)-(sec*rate);
+            end;
         end;
         reaper.SetMediaItemTakeInfo_Value(take,'D_STARTOFFS',offsNew);
     end;
     --------------------------------------------------
+    
     
     
     local x,y = reaper.GetMousePosition();
@@ -81,11 +102,27 @@
     
     
     local _, _, _, _, _, _, val = reaper.get_action_context();
-    if val > 0 then;
-        ShiftContentItemSec(item,take,ShiftValue);
-    else;
-        ShiftContentItemSec(item,take,-ShiftValue);
+    if val <= 0 then;
+        ShiftValue = (ShiftValue-ShiftValue*2);
     end;
+    
+    ShiftContentItemSec(item,take,ShiftValue);
+     
+    
+    -----------
+    if AllSelItems == true then;
+        local CountSelItem = reaper.CountSelectedMediaItems(0);
+        for i = 1,CountSelItem do;
+            local itemSel = reaper.GetSelectedMediaItem(0,i-1);
+            if itemSel ~= item then;
+                local take = reaper.GetActiveTake(itemSel);
+                if take then;
+                    ShiftContentItemSec(itemSel,take,ShiftValue);
+                end;
+            end;
+        end;
+    end;
+    -----------
     
     reaper.Undo_EndBlock('Shift Item Content to 10 milliseconds(mouse wheel)',-1);
     
