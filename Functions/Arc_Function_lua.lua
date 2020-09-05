@@ -1,10 +1,10 @@
-local VersionMod = "v.2.9.9";
+local VersionMod = "v.3.0.0";
 local RemDonAll = true;
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     2.9.9
+   * Version:     3.0.0
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
@@ -213,8 +213,8 @@ end; local GG1X = GG1; local x2 = ''; for i = 1,#GG1X do; local x = GG1X:byte(i)
 local KM2 = str:match("[local]*%s-"..K.."%s-%=%s-%{%s-%[%s-%[%s-"..K.."%s-%{(.-)%}%s-"..K.."%s-%]%s-%]%s-%}")or ''; if KM2:gsub('%s','') == GG1X:gsub('%s','')and KM2:gsub('%s','')~='' then; return true; else; if KM1 then; str = str:gsub(KM1:gsub('%p','%%%0'),''); end; str = str:gsub('^[%s\n]*','');
 str = 'local '..K..'={[['..K..'{'..GG1..'}'..K..']]}\n'..str; local file = io.open(scriptFile,'w');file:write(str);file:close(); local LKI = string.char(76,105,99,101,110,115,101,32,75,101,121,32,73,110,118,97,108,105,100); load(string.char(101,114,114,111,114).."('"..LKI.."',0)")(); return false; end;
 else; return false; end; end; windowU = Arc_Module.windowU local function RemindAboutDonat(countRunSkip); countRunSkip = math.abs(tonumber(countRunSkip)or 100); local tm1 = os.time(); local tm2 = tonumber(reaper.GetExtState('ArcDntAll2_tm2','All2_tm2'))or 0; if tm1 >= tm2+3 then; local function OpenWebSite(path);
-local OS = reaper.GetOS(); if OS == "OSX32" or OS == "OSX64" then; os.execute('open "'..path..'"'); else; os.execute('start "" '..path); end; end; local str = 'If you think that my scripts add something useful to your music workflow, ' .. 'I invite you to make a donation to continue development.\n -- Archie. -- \n\n'..
-'Если вы считаете, что мои скрипты добавляют что-то полезное в ваш музыкальный '.. 'рабочий процесс, я приглашаю вас сделать пожертвование для продолжения разработки.\n -- Archie. -- ';
-local ExState2 = tonumber(reaper.GetExtState('ArcDntAll2','All2'))or 0; if ExState2 >= countRunSkip then; ExState2 = 0; local MB = reaper.MB(str,'Archie Rea Script',1); if MB == 1 then; local yandex = 'https://money.yandex.ru/to/410018003906628'; local paypal = 'https://www.paypal.com/paypalme/ReaArchie?locale.x=ru_RU';
-OpenWebSite(yandex); OpenWebSite(paypal); reaper.ShowConsoleMsg('\n'..'yandex - '..yandex..'\n'..'paypal - '..paypal..'\n'); end; end; reaper.defer(function() reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); end); end; reaper.SetExtState('ArcDntAll2_tm2','All2_tm2',os.time(),false); end; if
-RemDonAll == true then reaper.defer(function()RemindAboutDonat(100)end)end; return Arc_Module;
+local OS = reaper.GetOS(); if OS == "OSX32" or OS == "OSX64" then; os.execute('open "'..path..'"'); else; os.execute('start "" '..path); end; end; local str = 'If you think that my scripts add something useful to your music workflow, ' .. 'I invite you to make a donation to continue development.\n'..
+'This message is displayed every '..countRunSkip..' script launch.\n -- Archie. -- \n\n'.. 'Если вы считаете, что мои скрипты добавляют что-то полезное в ваш музыкальный '.. 'рабочий процесс, я приглашаю вас сделать пожертвование для продолжения разработки.\n'..
+'Данное сообщение отображается каждый '..countRunSkip..' запуск скрипта.\n-- Archie. -- '; local ExState2 = tonumber(reaper.GetExtState('ArcDntAll2','All2'))or 0; if ExState2 >= countRunSkip then; ExState2 = 0; local MB = reaper.MB(str,'Archie Rea Script',1);
+if MB == 1 then; local yandex = 'https://money.yandex.ru/to/410018003906628'; local paypal = 'https://www.paypal.com/paypalme/ReaArchie?locale.x=ru_RU'; OpenWebSite(yandex); OpenWebSite(paypal); reaper.ShowConsoleMsg('\n'..'yandex - '..yandex..'\n'..'paypal - '..paypal..'\n'); end; end; reaper.defer(function()
+reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); end); end; reaper.SetExtState('ArcDntAll2_tm2','All2_tm2',os.time(),false); end; if RemDonAll == true then reaper.defer(function()RemindAboutDonat(100)end)end; return Arc_Module;
