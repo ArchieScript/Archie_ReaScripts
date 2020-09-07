@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.25
+   * Version:     1.26
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.26 [080920]
+   *                  + Add (count Selected items)
+   
    *              v.1.24 [240520]
    *                  + Reset Afk when editing notes (notepad) -- Частично, т.к. нету доступа Апи
-   
    *              v.1.21 [240520]
    *                  + No change
    *              v.1.19 [220420]
@@ -48,7 +50,7 @@
    *              v.1.0  [15.02.20]
    *                  +   initialе
 --]]
-    local Version = ' - v.1.24';
+    local Version = ' - v.1.26';
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -721,6 +723,7 @@
             if t.TIME_rst then t.TIME_ttlInfo = t.TIME_ttlInfo..'|#Time Reset: '..sectotime(t.TIME_rst)..'  (D:H:M:S)' end;
 
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'||#Item Count:  '.. reaper.CountMediaItems(0);
+            t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Selected Item Count:  '.. reaper.CountSelectedMediaItems(0);
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count:  '.. reaper.CountTracks(0);
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Track Count Fx:  '.. CountFXAllTrack();
             t.TIME_ttlInfo = (t.TIME_ttlInfo or '')..'|#Master Track Count Fx:  '.. CountFXMasterTrack();
@@ -1141,22 +1144,30 @@
 
                         gfx.x = 5
                         gfx.y = gfx.y+HHH;
-                        gfx.drawstr('Item count');
+                        gfx.drawstr('Items count');
+                        
                         gfx.x = 5
                         gfx.y = gfx.y+HHH;
-                        gfx.drawstr('Track count');
+                        gfx.drawstr('Items Selected count');
+                        
+                        gfx.x = 5
+                        gfx.y = gfx.y+HHH;
+                        gfx.drawstr('Tracks count');
+                        
                         gfx.x = 5
                         gfx.y = gfx.y+HHH;
                         gfx.drawstr('Track count Fx');
+                        
                         gfx.x = 5
                         gfx.y = gfx.y+HHH;
-                        gfx.drawstr('Master Track count Fx');
+                        gfx.drawstr('Master Track count Fx:');
+                        ----
                         local lengthFont,heightFont = gfx.measurestr('Master Track count Fx:');
                         ------
                         ------
 
                         local str = '- : - ';
-                        for i = 1,7 do;
+                        for i = 1,8 do;
                             gfx.x = lengthFont+10;
                             gfx.y = HHH*(#timeT+i+1);
                             gfx.drawstr(str);
@@ -1183,6 +1194,10 @@
                         gfx.x = X;
                         gfx.y = gfx.y+HHH;
                         gfx.drawstr(reaper.CountMediaItems(0));
+                        
+                        gfx.x = X;
+                        gfx.y = gfx.y+HHH;
+                        gfx.drawstr(reaper.CountSelectedMediaItems(0));
 
                         gfx.x = X;
                         gfx.y = gfx.y+HHH;
@@ -1466,7 +1481,6 @@
     end;end);
     -----------------------------------
     --]]
-
 
 
 
