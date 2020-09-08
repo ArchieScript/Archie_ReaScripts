@@ -1,17 +1,16 @@
-local VersionMod = "v.3.0.0";
-local RemDonAll = true;
+local VersionMod = "v.3.0.1";
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     3.0.0
+   * Version:     3.0.1
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
    * Function:    http://arc-website.github.io/Library_Function/Arc_Function_lua/index.html
    * -----------------------]]
 
-local Arc_Module = {}; function Arc_Module.VersionArc_Function_lua(version,file,URL); if URL and #URL:gsub('%s','') < 1 then URL = nil end; local URL = (URL or 'https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'.. 'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua');
+local RemDonAll = true; local Arc_Module = {}; function Arc_Module.VersionArc_Function_lua(version,file,URL); if URL and #URL:gsub('%s','') < 1 then URL = nil end; local URL = (URL or 'https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/'.. 'ArchieScript/Archie_ReaScripts/blob/master/Functions/Arc_Function_lua.lua');
 if not VersionMod then VersionMod = "0" else VersionMod = tostring(VersionMod);end; VersionMod = tonumber((VersionMod:gsub("%D","")))or 0; version = tonumber((tostring(version):gsub("%D","")))or(999^999); if version > VersionMod then; reaper.ClearConsole(); reaper.ShowConsoleMsg('ENG:\n\n'.. 'The file\n'..(file
 or "???")..'\nNOT RELEVANT, OBSOLETE.\n'.. 'Download this file at this URL:\n\n'.. URL..'\n\n'.. 'And put it along the way:\n\n'..(file or "???")..'\n\n\n\n'.. 'RUS:\n\n'.. 'Файл \n'..(file or "???")..'\nНЕ АКТУАЛЕН, УСТАРЕЛ.\n'.. 'Скачайте данный файл по этому URL:\n\n'..
 URL..'\n\n'.. 'И положите его по пути:\n\n'..(file or "???")); return false; end; return true; end; VersionArc_Function_lua = Arc_Module.VersionArc_Function_lua; Arc_Module.VersArcFun = Arc_Module.VersionArc_Function_lua; VersArcFun = Arc_Module.VersionArc_Function_lua; function Arc_Module.no_undo()reaper.defer(function()end)end;
@@ -217,4 +216,4 @@ local OS = reaper.GetOS(); if OS == "OSX32" or OS == "OSX64" then; os.execute('o
 'This message is displayed every '..countRunSkip..' script launch.\n -- Archie. -- \n\n'.. 'Если вы считаете, что мои скрипты добавляют что-то полезное в ваш музыкальный '.. 'рабочий процесс, я приглашаю вас сделать пожертвование для продолжения разработки.\n'..
 'Данное сообщение отображается каждый '..countRunSkip..' запуск скрипта.\n-- Archie. -- '; local ExState2 = tonumber(reaper.GetExtState('ArcDntAll2','All2'))or 0; if ExState2 >= countRunSkip then; ExState2 = 0; local MB = reaper.MB(str,'Archie Rea Script',1);
 if MB == 1 then; local yandex = 'https://money.yandex.ru/to/410018003906628'; local paypal = 'https://www.paypal.com/paypalme/ReaArchie?locale.x=ru_RU'; OpenWebSite(yandex); OpenWebSite(paypal); reaper.ShowConsoleMsg('\n'..'yandex - '..yandex..'\n'..'paypal - '..paypal..'\n'); end; end; reaper.defer(function()
-reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); end); end; reaper.SetExtState('ArcDntAll2_tm2','All2_tm2',os.time(),false); end; if RemDonAll == true then reaper.defer(function()RemindAboutDonat(100)end)end; return Arc_Module;
+reaper.SetExtState('ArcDntAll2','All2',ExState2+1,true); end); end; reaper.SetExtState('ArcDntAll2_tm2','All2_tm2',os.time(),false); end; if RemDonAll == true then reaper.defer(function()RemindAboutDonat(250)end)end; return Arc_Module;
