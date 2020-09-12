@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="376cdc61dc0bc2f7b4e45d13fd1cc4173083478f">
+<index version="1" name="Archie-ReaScripts" commit="6771e16b07c01d0488fce5238fccb62c6fd6dab1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8129,6 +8129,32 @@ LUA_Lib
       </version>
       <version name="1.02" author="Archie" time="2020-08-22T12:01:52Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Select%20a%20track%20by%20name(abbreviated%20input)(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; Select all sent and parent tracks from selected tracks(whole chain).lua" type="script" desc="Track; Select all sent and parent tracks from selected tracks(whole chain).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-12T18:29:06Z">
+        <changelog><![CDATA[v.1.0 [120920]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6771e16b07c01d0488fce5238fccb62c6fd6dab1/MAIN/Track/Archie_Track;%20Select%20all%20sent%20and%20parent%20tracks%20from%20selected%20tracks(whole%20chain).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; Select all sent and parent tracks from the selected tracks.lua" type="script" desc="Track; Select all sent and parent tracks from the selected tracks.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-12T18:29:06Z">
+        <changelog><![CDATA[v.1.0 [120920]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6771e16b07c01d0488fce5238fccb62c6fd6dab1/MAIN/Track/Archie_Track;%20Select%20all%20sent%20and%20parent%20tracks%20from%20the%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Select next-previous track(skip minimized folders).lua" type="script" desc="Select next-previous track(skip minimized folders)(skip folders)*">
