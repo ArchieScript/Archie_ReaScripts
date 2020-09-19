@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="ab484146966274b5b5b17d6952b2eab7ed2927bc">
+<index version="1" name="Archie-ReaScripts" commit="3c67b19f16b3d3a813df33d611e8da453e286b24">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -10459,6 +10459,25 @@ Performance: Script completely rewritten]]></changelog>
         <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 120.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
         <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 127.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-09-19T16:26:15Z">
+        <changelog><![CDATA[v.1.0 [030420]
+    + initialе]]></changelog>
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 1.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 10.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 20.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 30.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 40.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 50.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 60.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 70.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 80.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 90.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 100.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 110.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 120.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+        <source main="midi_editor" file="Archie_MidiEditor; Set selected notes velocity to 127.lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20selected%20notes%20velocity%20to(n).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Set velocity selected notes(User Input).lua" type="script" desc="MidiEditor; Set velocity selected notes(User Input).lua">
       <metadata>
@@ -10476,6 +10495,11 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.02 [190820]
     + set focus midi editor]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab484146966274b5b5b17d6952b2eab7ed2927bc/MIDI%20Editor/Archie_MidiEditor;%20Set%20velocity%20selected%20notes(User%20Input).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-09-19T16:26:15Z">
+        <changelog><![CDATA[v.1.02/1.03 [190820]
+    + set focus midi editor]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/3c67b19f16b3d3a813df33d611e8da453e286b24/MIDI%20Editor/Archie_MidiEditor;%20Set%20velocity%20selected%20notes(User%20Input).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Show Instrument.lua" type="script" desc="Show Instrument">
