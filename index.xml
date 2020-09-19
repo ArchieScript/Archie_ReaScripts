@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e933a7d0b87578ab2357af42a5f0bce377d953c0">
+<index version="1" name="Archie-ReaScripts" commit="ab484146966274b5b5b17d6952b2eab7ed2927bc">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -10471,6 +10471,11 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.0 [190820]
     + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/e933a7d0b87578ab2357af42a5f0bce377d953c0/MIDI%20Editor/Archie_MidiEditor;%20Set%20velocity%20selected%20notes(User%20Input).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-09-19T16:08:39Z">
+        <changelog><![CDATA[v.1.02 [190820]
+    + set focus midi editor]]></changelog>
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/ab484146966274b5b5b17d6952b2eab7ed2927bc/MIDI%20Editor/Archie_MidiEditor;%20Set%20velocity%20selected%20notes(User%20Input).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Show Instrument.lua" type="script" desc="Show Instrument">
