@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor; Set velocity selected notes(User Input).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -16,7 +16,7 @@
    * Extension:   
    *              Reaper 6.14+ http://www.reaper.fm/
    * Changelog:   
-   *              v.1.02 [190820]
+   *              v.1.02/1.03 [190820]
    *                  + set focus midi editor
    
    *              v.1.0 [190820]
@@ -68,7 +68,7 @@
     
     if not prevVel then no_undo()return end;
      
-    local retval,retvals_csv = reaper.GetUserInputs('Set velocity selected notes',1,'New velocity (0 - 127):',prevVel);
+    local retval,retvals_csv = reaper.GetUserInputs('Set velocity selected notes',1,'New velocity (1 - 127):',prevVel);
     
     if not retval then no_undo()return end;
     

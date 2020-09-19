@@ -6,7 +6,7 @@
    * Category:    MidiEditor
    * Description: MidiEditor; Set selected notes velocity to(n).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -15,7 +15,7 @@
    * Gave idea:   Archie(---)
    * Provides:    
    *              [nomain] .
-   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 0.lua
+   *              [main] . > Archie_MidiEditor; Set selected notes velocity to 1.lua
    *              [main] . > Archie_MidiEditor; Set selected notes velocity to 10.lua
    *              [main] . > Archie_MidiEditor; Set selected notes velocity to 20.lua
    *              [main] . > Archie_MidiEditor; Set selected notes velocity to 30.lua
@@ -81,3 +81,5 @@
     end;
     
     reaper.UpdateArrange();
+    
+    reaper.SN_FocusMIDIEditor();
