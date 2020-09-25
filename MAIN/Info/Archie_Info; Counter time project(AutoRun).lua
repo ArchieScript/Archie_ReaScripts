@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.26
+   * Version:     1.28
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.28 [250820]
+   *                  + Add: Reset time when renamed project
+   
    *              v.1.26 [080920]
    *                  + Add (count Selected items)
-   
    *              v.1.24 [240520]
    *                  + Reset Afk when editing notes (notepad) -- Частично, т.к. нету доступа Апи
    *              v.1.21 [240520]
@@ -50,7 +52,7 @@
    *              v.1.0  [15.02.20]
    *                  +   initialе
 --]]
-    local Version = ' - v.1.26';
+    local Version = ' - v.1.28';
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -412,6 +414,9 @@
             reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','PREFIX'          , true );
             reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TOOLTIP'         , true );
             reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"RemFocusWin"     , true );
+            ----
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"TIME_D"          , true );
+            reaper.DeleteExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"ResTIME_RenProj" , true );
         end;
         if Timer == true or Timer == 1 then;
             reaper.SetProjExtState(0,'ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_SEC_TOTAL'      ,'');
@@ -473,7 +478,9 @@
             end;
         end;
 
-
+        
+        local t128 = {};
+        
         ---------------------------
         local function loop();
 
@@ -487,6 +494,22 @@
             local stopDoubleScr2 = tonumber(reaper.GetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN',"stopDoubleScr"));
             if stopDoubleScr2 > t.stopDoubleScr then return end;
             --------------------------------
+            
+            
+            
+            
+            --<v128---
+            if t.ResTIME_RenProj and t.ResTIME_RenProj == 1 then;
+                t128.projUserData,t128.projPath = reaper.EnumProjects(-1,'');
+                if t128.projUserData == t128.projUserData2 then;
+                    if t128.projPath ~= t128.projPath2 then;
+                        ResetExtState(false,true,false);
+                    end;
+                end;
+                t128.projUserData2 = t128.projUserData;
+                t128.projPath2     = t128.projPath;
+            end
+            --v128>---
 
 
 
@@ -786,8 +809,10 @@
                         t.THEME_1         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_1'        ,0);
                         t.THEME_2         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','THEME_2'        ,1);
                         --
-                        t.TIME_D         = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D'          ,1);
+                        t.TIME_D          = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D'         ,1);
                         ---
+                        t.ResTIME_RenProj = GetExtStateArc('ARC_COUNTER_TIMER_IN_PROJ_WIN','ResTIME_RenProj',0);
+                        ----
                     end;
 
                     if t.THEME_1 == 0 and t.THEME_2 == 0 then t.THEME_2 = 1 end;
@@ -1250,6 +1275,8 @@
                     if RemFocusWin       == 1 then rmvF   = '!' else rmvF   = ''end;
 
                     if t.TIME_D          == 1 then tmD    = '!' else tmD    = ''end;
+                    if t.ResTIME_RenProj == 1 then tmRTRP = '!' else tmRTRP = ''end;
+                    
 
                     local
                     showmenu = gfx.showmenu('>View|'..
@@ -1274,7 +1301,9 @@
                                 --[[17]]    'Reset all project timers ||'..
                                 --[[18]]    '#Reset timer Reaper started |'..
                                             '<|'..
-                                --[[19]]    tmD..'Time (d:)'..
+                                --[[19]]    tmD..'Time (d:)|'..
+                                --[[20]]    tmRTRP..'Reset time when renamed project '..
+                                
 
                                             '||#INFO PROJECT:|'..
                                             '#Project created:  '..t.PROJ_STARTED..
@@ -1350,6 +1379,11 @@
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D',t.TIME_D,true);
 
                     elseif showmenu == 20 then;
+                        t.ResTIME_RenProj = math.abs(t.ResTIME_RenProj-1);
+                        reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','ResTIME_RenProj',t.ResTIME_RenProj,true);
+                    elseif showmenu == 21 then;
+                    
+                    elseif showmenu == 22 then;
 
                     end;
                 end;
@@ -1481,6 +1515,5 @@
     end;end);
     -----------------------------------
     --]]
-
 
 
