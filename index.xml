@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="84b794fa2bb757dd126c48982febb5f92b600b37">
+<index version="1" name="Archie-ReaScripts" commit="cdf9ea171db39bd675daeec7514538b9daceecfa">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -492,6 +492,32 @@ LUA_Lib
         <changelog><![CDATA[v.1.02 [030620]
     + ---]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/6b5e3995c980b4da6e3ec08af6dabc5db44e6463/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Auto%20edit%20cursor%20under%20mouse.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Edit cursor; Go To Time(beats).lua" type="script" desc="Edit cursor; Go To Time(beats).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-26T08:46:20Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdf9ea171db39bd675daeec7514538b9daceecfa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(beats).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Edit cursor; Go To Time(time).lua" type="script" desc="Edit cursor; Go To Time(time).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-26T08:46:20Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdf9ea171db39bd675daeec7514538b9daceecfa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(time).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor; Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
