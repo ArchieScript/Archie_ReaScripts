@@ -6,7 +6,7 @@
    * Category:    Edit cursor
    * Description: Edit cursor; Go To Time(time).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -21,6 +21,15 @@
    *                  + initialе
 --]]
     --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+    
+    local
+    Previous_input = false;
+                -- = false | В окне ввода показать текущее положение курсора
+                -- = true  | В окне ввода показать предыдущее введенное значение
+    
+    --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
@@ -31,9 +40,20 @@
     -------------------------------------------------------
     
     
-    local CurPos = reaper.GetCursorPosition();
-    local buf = reaper.format_timestr_pos(CurPos,'',0);
     local title = 'Go To Time (time)';
+    
+    local _,filename,buf;
+    
+    if Previous_input == true then;
+        _,filename,_,_,_,_,_ = reaper.get_action_context();
+        buf = reaper.GetExtState(filename,title);
+    end;
+    
+    if not buf or buf == '' then;
+        local CurPos = reaper.GetCursorPosition();
+        buf = reaper.format_timestr_pos(CurPos,'',0);
+    end;
+    
     local retval,retvals_csv = reaper.GetUserInputs(title,1,'Sec:,extrawidth=25',buf);
     if not retval then no_undo()return end;
     
@@ -44,5 +64,10 @@
     
     local time = reaper.parse_timestr_pos(Hour..':'..Min..':'..Sec..'.'..MSec,0);
     reaper.SetEditCurPos(time,true,false);
+    
+    
+    if Previous_input == true then;
+        reaper.SetExtState(filename,title,retvals_csv,false);
+    end;
     
     no_undo();
