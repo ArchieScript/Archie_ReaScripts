@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="0e38fc2ad6c54e51b27af4f7ee26c3cdec84d5e9">
+<index version="1" name="Archie-ReaScripts" commit="f1cd5003e7873bc6650f2762ae9a635789e936cc">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -864,6 +864,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [260820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/0e38fc2ad6c54e51b27af4f7ee26c3cdec84d5e9/MAIN/Envelope/Archie_Env;%20Set%20value%20from%20under%20mouse%20to%20selected%20points%20active%20envelope.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-09-26T18:09:56Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f1cd5003e7873bc6650f2762ae9a635789e936cc/MAIN/Envelope/Archie_Env;%20Set%20value%20from%20under%20mouse%20to%20selected%20points%20active%20envelope.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env; Show all envelopes for all track containing points or auto items.lua" type="script" desc="Show all envelopes for all track containing points or auto items">
