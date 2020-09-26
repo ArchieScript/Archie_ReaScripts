@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="cdf9ea171db39bd675daeec7514538b9daceecfa">
+<index version="1" name="Archie-ReaScripts" commit="5675ac57f38779f253ae96cec237e02ae1b0fb7a">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -506,6 +506,11 @@ LUA_Lib
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdf9ea171db39bd675daeec7514538b9daceecfa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(beats).lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-09-26T11:40:47Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5675ac57f38779f253ae96cec237e02ae1b0fb7a/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(beats).lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Edit cursor; Go To Time(time).lua" type="script" desc="Edit cursor; Go To Time(time).lua">
       <metadata>
@@ -518,6 +523,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [260820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/cdf9ea171db39bd675daeec7514538b9daceecfa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(time).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-09-26T11:40:47Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5675ac57f38779f253ae96cec237e02ae1b0fb7a/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(time).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor; Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
