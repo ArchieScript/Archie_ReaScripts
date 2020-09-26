@@ -6,7 +6,7 @@
    * Category:    Envelope
    * Description: Env; Set value from under mouse to selected points active envelope.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2492526/85240391-ecd7-497a-82e2-27bad9b82b0b/orig
@@ -31,7 +31,7 @@
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
-    
+    -- BUG http://forum.cockos.com/showthread.php?t=242735
     
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
