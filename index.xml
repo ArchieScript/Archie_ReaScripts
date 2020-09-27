@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f1cd5003e7873bc6650f2762ae9a635789e936cc">
+<index version="1" name="Archie-ReaScripts" commit="166553fa522f76caca141946d7ffc9bc8d31214b">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -528,6 +528,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [260820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/5675ac57f38779f253ae96cec237e02ae1b0fb7a/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(time).lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-09-27T06:21:29Z">
+        <changelog><![CDATA[v.1.0 [260820]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/166553fa522f76caca141946d7ffc9bc8d31214b/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Go%20To%20Time(time).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor; Move cursor for n milliseconds(`).lua" type="script" desc="Move cursor for n milliseconds">
