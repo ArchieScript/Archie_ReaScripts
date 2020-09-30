@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="166553fa522f76caca141946d7ffc9bc8d31214b">
+<index version="1" name="Archie-ReaScripts" commit="8fb13e78aafc6c97c294cae7d97c6b54887e39d1">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -874,6 +874,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [260820]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f1cd5003e7873bc6650f2762ae9a635789e936cc/MAIN/Envelope/Archie_Env;%20Set%20value%20from%20under%20mouse%20to%20selected%20points%20active%20envelope.lua</source>
+      </version>
+      <version name="1.03" author="Archie" time="2020-09-30T10:29:43Z">
+        <changelog><![CDATA[v.1.03 [280820]
+    + Scale Envelope]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8fb13e78aafc6c97c294cae7d97c6b54887e39d1/MAIN/Envelope/Archie_Env;%20Set%20value%20from%20under%20mouse%20to%20selected%20points%20active%20envelope.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Env; Show all envelopes for all track containing points or auto items.lua" type="script" desc="Show all envelopes for all track containing points or auto items">
@@ -2033,6 +2038,15 @@ LUA_Lib
       </version>
       <version name="1.02" author="Archie" time="2020-08-20T07:03:30Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Toggle%20FX%209%20online,offline%20for%20selected%20tracks(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_FX; Toggle Open Close all VSTi in Selected tracks.lua" type="script" desc="FX; Toggle Open Close all VSTi in Selected tracks.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-09-30T10:29:43Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8fb13e78aafc6c97c294cae7d97c6b54887e39d1/MAIN/FX/Archie_FX;%20Toggle%20Open%20Close%20all%20VSTi%20in%20Selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Toggle Show Hide all active floating FX windows for selected tracks.lua" type="script" desc="Toggle Show Hide all active floating FX windows for selected tracks">
