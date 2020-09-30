@@ -6,7 +6,7 @@
    * Category:    Envelope
    * Description: Env; Set value from under mouse to selected points active envelope.lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2492526/85240391-ecd7-497a-82e2-27bad9b82b0b/orig
@@ -20,18 +20,21 @@
    * Extension:   Reaper 6.14+ http://www.reaper.fm/
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    * Changelog:   
+   *              v.1.03 [280820]
+   *                  + Scale Envelope
+   
    *              v.1.0 [260820]
    *                  + initialе
 --]] 
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    
+    -- BUG http://forum.cockos.com/showthread.php?t=242735
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
-    -- BUG http://forum.cockos.com/showthread.php?t=242735
+    
     
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
@@ -76,6 +79,9 @@
     
     local retval,value,_,_,_ = reaper.Envelope_Evaluate(EnvUnderMouse,CurCont_Pos,0,0);
     
+    local ScalingM = reaper.GetEnvelopeScalingMode(EnvUnderMouse);
+    value = reaper.ScaleFromEnvelopeMode(ScalingM,value);
+    
     local ValueInValue = Convert_Env_ValueInValueAndInPercent_SWS(EnvUnderMouse,value,0);
     
     --reaper.TrackCtl_SetToolTip('Copy Envelope Value',x,y-30,false);
@@ -92,6 +98,8 @@
     end;
     
     local ValueInValue2 = Convert_Env_ValueInValueAndInPercent_SWS(Env,ValueInValue,1);
+    ScalingM = reaper.GetEnvelopeScalingMode(Env);
+    ValueInValue2 = reaper.ScaleToEnvelopeMode(ScalingM,ValueInValue2);
     
     
     reaper.PreventUIRefresh(1);
@@ -120,8 +128,6 @@
     
     reaper.TrackCtl_SetToolTip('-----\nDone\n-----',x,y-30,false);
     -------------------------------------------------------
-    
-    
     
     
     
