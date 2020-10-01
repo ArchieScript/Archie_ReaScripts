@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.15
+   * Version:     1.16
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
