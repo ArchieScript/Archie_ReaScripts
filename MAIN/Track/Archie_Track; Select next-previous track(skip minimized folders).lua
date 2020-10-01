@@ -112,8 +112,9 @@
     local SelectPrev2 = "Archie_Track; Select previous tracks(skip folders)(`).lua";
     local SelectNext2 = "Archie_Track; Select next tracks(skip folders)(`).lua";
 
-    local
-    Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
+
+    --local Script_Name = ({reaper.get_action_context()})[2]:match(".+[\\/](.+)");
+    local scriptPath,Script_Name = debug.getinfo(1,'S').source:match("^@(.+)[/\\](.+)");
     
     
     local SaveSelPRev;
