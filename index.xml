@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="8fb13e78aafc6c97c294cae7d97c6b54887e39d1">
+<index version="1" name="Archie-ReaScripts" commit="7ce6a342353bd8c90f16ab158a2045e928e0809c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -6989,6 +6989,18 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Copy%20selected%20track%20name.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track; Copy solo mute state selected track.lua" type="script" desc="Track; Copy solo mute state selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-01T06:38:19Z">
+        <changelog><![CDATA[v.1.0 [011020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7ce6a342353bd8c90f16ab158a2045e928e0809c/MAIN/Track/Archie_Track;%20Copy%20solo%20mute%20state%20selected%20track.lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track; Copy track color.lua" type="script" desc="Track; Copy track color">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -7038,6 +7050,18 @@ LUA_Lib
       <version name="1.03" author="Archie" time="2020-08-22T12:01:52Z">
         <changelog><![CDATA[+  initialе / v.1.0 [07062019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Copy%20track%20icon.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; Cut solo mute state selected track.lua" type="script" desc="Track; Cut solo mute state selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-01T06:38:19Z">
+        <changelog><![CDATA[v.1.0 [011020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7ce6a342353bd8c90f16ab158a2045e928e0809c/MAIN/Track/Archie_Track;%20Cut%20solo%20mute%20state%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Cut track icon.lua" type="script" desc="Track; Cut track icon">
@@ -8039,6 +8063,18 @@ LUA_Lib
       <version name="1.03" author="Archie" time="2020-08-22T12:01:52Z">
         <changelog><![CDATA[+ GIF      / v.1.01]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Paste%20selected%20track%20name%20%20%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; Paste solo mute state selected track.lua" type="script" desc="Track; Paste solo mute state selected track.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-01T06:38:19Z">
+        <changelog><![CDATA[v.1.0 [011020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7ce6a342353bd8c90f16ab158a2045e928e0809c/MAIN/Track/Archie_Track;%20Paste%20solo%20mute%20state%20selected%20track.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Paste track color.lua" type="script" desc="Track; Paste track color">
