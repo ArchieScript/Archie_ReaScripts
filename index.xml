@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="04f8319253ffaa3420e9baabd8660e5443258173">
+<index version="1" name="Archie-ReaScripts" commit="33bfdfef2fd709dfab322e2fcaba933626f255be">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7240,6 +7240,18 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Delete%20tracks%20with%20no%20items(%60).lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Track; Go to next track - track solo in solo exclusive(skip minimized folders).lua" type="script" desc="Track; Go to next track - track solo in solo exclusive(skip minimized folders).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-01T13:50:48Z">
+        <changelog><![CDATA[v.1.0 [011020]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/33bfdfef2fd709dfab322e2fcaba933626f255be/MAIN/Track/Archie_Track;%20Go%20to%20next%20track%20-%20track%20solo%20in%20solo%20exclusive(skip%20minimized%20folders).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Track; Go to next track - track solo in solo exclusive.lua" type="script" desc="Go to next track - track solo in solo exclusive">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -7255,6 +7267,18 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [04.12.19]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Go%20to%20next%20track%20-%20track%20solo%20in%20solo%20exclusive.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; Go to previous track - track solo in solo exclusive(skip minimized folders).lua" type="script" desc="Track; Go to previous track - track solo in solo exclusive(skip minimized folders).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-01T13:50:48Z">
+        <changelog><![CDATA[v.1.0 [011020]
++ initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/33bfdfef2fd709dfab322e2fcaba933626f255be/MAIN/Track/Archie_Track;%20Go%20to%20previous%20track%20-%20track%20solo%20in%20solo%20exclusive(skip%20minimized%20folders).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Go to previous track - track solo in solo exclusive.lua" type="script" desc="Go to previous track - track solo in solo exclusive">
