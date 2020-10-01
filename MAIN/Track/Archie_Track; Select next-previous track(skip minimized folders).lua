@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.12
+   * Version:     1.15
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -22,10 +22,12 @@
    *              [main] . > Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua
    *              [main] . > Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua
    * Changelog:   
+   *              v.1.15 [010920]
+   *                  + Фокус на трек
+   
    *              v.1.12 [010920]
    *                  + select the last touched track (http://rmmedia.ru/threads/110165/post-2535296)
    *                  + выделить последний тронутый трек
-   
    *              v.1.11 [300820]
    *                  + remove UpdateArrange (https://rmmedia.ru/threads/134701/post-2524502)
    *              v.1.09 [170820]
@@ -386,6 +388,13 @@
     if SaveSelPRev == true then;
         Arc.Restore_Selected_Track_Slot(1,true,true);
     end;
+  
+    -----(v.1.15---
+    local Context = reaper.GetCursorContext();
+    if Context ~= 0 then;
+        reaper.SetCursorContext(0,nil);
+    end;
+    -----v.1.15)---
     
 
     reaper.Undo_EndBlock(Script_Name:gsub("Archie_Track; ",""):gsub("%.lua",""),-1);
