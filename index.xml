@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="573aee945928824ceff2449c69382a02c1ab7286">
+<index version="1" name="Archie-ReaScripts" commit="04f8319253ffaa3420e9baabd8660e5443258173">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8341,6 +8341,18 @@ LUA_Lib
         <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/573aee945928824ceff2449c69382a02c1ab7286/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/573aee945928824ceff2449c69382a02c1ab7286/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/573aee945928824ceff2449c69382a02c1ab7286/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2020-10-01T11:31:55Z">
+        <changelog><![CDATA[v.1.15 [010920]
+    + Фокус на трек]]></changelog>
+        <source main="main" file="Archie_Track; Select next tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/04f8319253ffaa3420e9baabd8660e5443258173/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Select track with prefix name.lua" type="script" desc="Track; Select track with prefix name.lua">
