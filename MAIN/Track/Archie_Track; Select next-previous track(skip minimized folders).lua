@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.11
+   * Version:     1.12
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -22,9 +22,12 @@
    *              [main] . > Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua
    *              [main] . > Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua
    * Changelog:   
+   *              v.1.12 [010920]
+   *                  + select the last touched track (http://rmmedia.ru/threads/110165/post-2535296)
+   *                  + выделить последний тронутый трек
+   
    *              v.1.11 [300820]
    *                  + remove UpdateArrange (https://rmmedia.ru/threads/134701/post-2524502)
-   
    *              v.1.09 [170820]
    *                  + leaving other tracks selected (http://rmmedia.ru/threads/110165/post-2519923)
    *              v.1.06 [22.05.19]
@@ -76,9 +79,14 @@
                 -- | ОТСТУП ПРИ ПРОКРУТКЕ,(В ТРЕКАХ); Работает только при "SCROLL = 2"
                 -- | INDENT WHEN SCROLLING,(IN TRACKS); Works only when "SCROLL = 2"
                 -------------------------------------------------------------------
-
-
-
+    
+    
+    local
+    LastTouchedTrackIfThereNoSelTracks = true;
+                                    -- = true  (Если нет выделенных дорожек, то выделить последний тронутый трек)
+                                    -- = false (Если нет выделенных дорожек, то ничего не делать)
+    
+    
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -129,6 +137,21 @@
 
 
     local CountSelTrack = reaper.CountSelectedTracks(0);
+    --------------
+    ----(v.1.12---
+    if LastTouchedTrackIfThereNoSelTracks then;
+        if CountSelTrack == 0 then;
+            local LastTouchedTrack = reaper.GetLastTouchedTrack();
+            if not LastTouchedTrack then;
+                LastTouchedTrack = reaper.GetTrack(0,reaper.CountTracks(0)-1);
+            end;
+            if LastTouchedTrack then;
+                reaper.SetMediaTrackInfo_Value(LastTouchedTrack,"I_SELECTED",1);
+            end;
+        end;
+    end;
+    ----v.1.12)---
+    --------------
     if CountSelTrack == 0 then no_undo() return end;
 
 
