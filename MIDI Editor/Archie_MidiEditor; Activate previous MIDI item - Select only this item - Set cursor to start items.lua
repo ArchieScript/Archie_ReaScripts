@@ -5,7 +5,7 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * customer:    BRG(rmm)
    * gave idea:   BRG(rmm)
 --====================================]]
@@ -15,6 +15,9 @@
     -------------------------------------------------------
     local midieditor = reaper.MIDIEditor_GetActive();
     if not midieditor then no_undo()return end;
+    
+    reaper.Undo_BeginBlock();
+    
     reaper.MIDIEditor_OnCommand(midieditor,40834);--Activate previous MIDI item
     local take = reaper.MIDIEditor_GetTake(midieditor);
     local item = reaper.GetMediaItemTake_Item(take);
@@ -22,9 +25,10 @@
     local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION');
     reaper.SetEditCurPos(pos,true,false);
     reaper.SetMediaItemInfo_Value(item,'B_UISEL',1);
-    reaper.UpdateArrange();
     reaper.Main_OnCommand(40153,0)--Item: Open in built-in MIDI editor (set default behavior in preferences)
     -- reaper.MIDIEditor_OnCommand(midieditor,40466);--View: Zoom to content
-    no_undo();
-   
+    
+    local title = 'Activate previous MIDI item - Select only this item - Set cursor to start items.lua'
+    reaper.Undo_EndBlock(title,-1);
+    reaper.UpdateArrange();
    
