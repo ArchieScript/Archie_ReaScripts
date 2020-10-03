@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c843f46531f0637b9beba9401743c76b143406f6">
+<index version="1" name="Archie-ReaScripts" commit="f0db14628150cf4cbface43e56d1c7e0190f6d29">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -10458,6 +10458,9 @@ LUA_Lib
       <version name="1.0" author="Archie" time="2020-10-03T14:07:00Z">
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/c843f46531f0637b9beba9401743c76b143406f6/MIDI%20Editor/Archie_MidiEditor;%20Activate%20next%20MIDI%20item%20-%20Select%20only%20this%20item%20-%20Set%20cursor%20to%20start%20items.lua</source>
       </version>
+      <version name="1.02" author="Archie" time="2020-10-03T14:15:03Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/f0db14628150cf4cbface43e56d1c7e0190f6d29/MIDI%20Editor/Archie_MidiEditor;%20Activate%20next%20MIDI%20item%20-%20Select%20only%20this%20item%20-%20Set%20cursor%20to%20start%20items.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Activate previous MIDI item - Select only this item - Set cursor to start items.lua" type="script" desc="MidiEditor; Activate previous MIDI item - Select only this item - Set cursor to start items.lua">
       <metadata>
@@ -10466,6 +10469,9 @@ LUA_Lib
       </metadata>
       <version name="1.0" author="Archie" time="2020-10-03T14:07:00Z">
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/c843f46531f0637b9beba9401743c76b143406f6/MIDI%20Editor/Archie_MidiEditor;%20Activate%20previous%20MIDI%20item%20-%20Select%20only%20this%20item%20-%20Set%20cursor%20to%20start%20items.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-10-03T14:15:03Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/f0db14628150cf4cbface43e56d1c7e0190f6d29/MIDI%20Editor/Archie_MidiEditor;%20Activate%20previous%20MIDI%20item%20-%20Select%20only%20this%20item%20-%20Set%20cursor%20to%20start%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Close Midi Editor(return the window in Docker).lua" type="script" desc="Close Midi Editor(return the window in Docker)">
