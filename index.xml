@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="f0db14628150cf4cbface43e56d1c7e0190f6d29">
+<index version="1" name="Archie-ReaScripts" commit="7ff2e98ffae0c8615425cafcbb1c9faacb0a74ab">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -3314,6 +3314,19 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [060420]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2401ea1636c6f8b8282c812489d0996de10e75ec/MAIN/Item/Archie_Item;%20Glue%20selected%20items%20each%20individually.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item; Glue selected items to separate track - Midi in midi - Audio in audio.lua" type="script" desc="Item; Glue selected items to separate track - Midi in midi - Audio in audio.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-04T06:05:24Z">
+        <changelog><![CDATA[v.1.0 [031120]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/7ff2e98ffae0c8615425cafcbb1c9faacb0a74ab/MAIN/Item/Archie_Item;%20Glue%20selected%20items%20to%20separate%20track%20-%20Midi%20in%20midi%20-%20Audio%20in%20audio.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; Grab item on edge arrange and scroll to edge item one side(AutoRun).lua" type="script" desc="Item; Grab item on edge arrange and scroll to edge item one side(AutoRun).lua">
