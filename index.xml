@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="33ec32cf878554c22b7fb4827ec233c3e39fe76c">
+<index version="1" name="Archie-ReaScripts" commit="06d2c5c3dee5aba65080d82e05e0534de9899e64">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -387,6 +387,9 @@ LUA_Lib
       </version>
       <version name="3.0.2" author="Archie" time="2020-09-11T12:51:33Z">
         <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/c554ba1dcc288fdbe6201657c0e7fcab678ffcfc/Functions/Arc_Function_lua.lua</source>
+      </version>
+      <version name="3.0.3" author="Archie" time="2020-10-05T12:51:37Z">
+        <source>https://github.com/ArchieScript/Archie_ReaScripts/raw/06d2c5c3dee5aba65080d82e05e0534de9899e64/Functions/Arc_Function_lua.lua</source>
       </version>
     </reapack>
   </category>
@@ -1128,6 +1131,18 @@ LUA_Lib
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/Fade/Archie_Fade;%20Reduce%20fade%20by%20100%20ms.lua</source>
       </version>
     </reapack>
+    <reapack name="Archie_Fade; Save crossfade when move item when trim is on (AutoRun).lua" type="script" desc="Fade; Save crossfade when move item when trim is on (AutoRun).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.15" author="Archie" time="2020-10-05T12:51:37Z">
+        <changelog><![CDATA[v.1.15 [051020]
+    +  AutoRun]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06d2c5c3dee5aba65080d82e05e0534de9899e64/MAIN/Fade/Archie_Fade;%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on%20(AutoRun).lua</source>
+      </version>
+    </reapack>
     <reapack name="Archie_Fade; Save crossfade when move item when trim is on.lua" type="script" desc="Save crossfade when move item when trim is on">
       <metadata>
         <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
@@ -1153,6 +1168,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.06 [19.06.20]
     +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/33ec32cf878554c22b7fb4827ec233c3e39fe76c/MAIN/Fade/Archie_Fade;%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2020-10-05T12:51:37Z">
+        <changelog><![CDATA[v.1.06 [19.06.20]
+    +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/06d2c5c3dee5aba65080d82e05e0534de9899e64/MAIN/Fade/Archie_Fade;%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
       </version>
     </reapack>
   </category>
