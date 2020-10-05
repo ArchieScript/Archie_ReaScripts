@@ -2734,7 +2734,7 @@ local VersionMod = "v.3.0.2";
         ----
         reaper.SetExtState('ArcDntAll2_tm2','All2_tm2',os.time(),false);
     end;
-    if RemDonAll == true then reaper.defer(function()RemindAboutDonat(250)end)end;
+    if RemDonAll == true then reaper.defer(function()RemindAboutDonat(500)end)end;
     --====End===============End===============End===============End===============End====
     
     

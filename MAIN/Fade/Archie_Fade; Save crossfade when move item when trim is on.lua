@@ -6,7 +6,7 @@
    * Category:    Fade
    * Description: Save crossfade when move item when trim is on
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.10
    * AboutScript: ---
    * О скрипте:   Сохранить кроссфейд при перемещении элемента при включенной обрезке
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2078597/ce072a98-1978-4dc5-bf92-0416fc46b167/orig
@@ -17,7 +17,7 @@
    * Customer:    AlexLazer(Rmm)
    * Gave idea:   AlexLazer(Rmm)
    *                  http://rmmedia.ru/threads/134701/post-2389975
-   * Extension:   SWS v.2.10.0 http://www.sws-extension.org/index.php
+   * Extension:   SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:
@@ -44,6 +44,9 @@
     local WIND_HELP = false;
                  -- = true; Показать окна с подсказками
                  -- = false; Непоказыть окна с подсказками
+
+    
+    local CTRL = true; -- ("Измените размер кроссфейдера");
 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -289,8 +292,9 @@
         local item,take = reaper.GetItemFromPoint(x,y,false);
 
         if item then;
-            local Mouse_GetState = reaper.JS_Mouse_GetState(1);
-            if Mouse_GetState == 1 then;
+            local Mouse_GetState = reaper.JS_Mouse_GetState(127);--(1)--v.1.10 (127);
+            if CTRL ~= true and Mouse_GetState&1 == 1 then Mouse_GetState = 1 end; --v.1.10
+            if Mouse_GetState&1 == 1 and Mouse_GetState&4 ~= 4  then;--v.1.10--and Mouse_GetState&4~=4
                 if not checking then;
                     checking = true;
                     local fadeIn = reaper.GetMediaItemInfo_Value(item, "D_FADEINLEN_AUTO");
