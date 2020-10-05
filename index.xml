@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="7ff2e98ffae0c8615425cafcbb1c9faacb0a74ab">
+<index version="1" name="Archie-ReaScripts" commit="33ec32cf878554c22b7fb4827ec233c3e39fe76c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1148,6 +1148,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.06 [19.06.20]
     +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/Fade/Archie_Fade;%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
+      </version>
+      <version name="1.10" author="Archie" time="2020-10-05T10:18:25Z">
+        <changelog><![CDATA[v.1.06 [19.06.20]
+    +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/33ec32cf878554c22b7fb4827ec233c3e39fe76c/MAIN/Fade/Archie_Fade;%20Save%20crossfade%20when%20move%20item%20when%20trim%20is%20on.lua</source>
       </version>
     </reapack>
   </category>
