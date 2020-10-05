@@ -4,7 +4,7 @@
    * Bug Reports: If you find any errors, please report one of the links below (*Website)
    *
    * Category:    Fade
-   * Description: Save crossfade when move item when trim is on
+   * Description: Fade; Save crossfade when move item when trim is on (AutoRun).lua
    * Author:      Archie
    * Version:     1.15
    * AboutScript: ---
@@ -21,9 +21,11 @@
    *              reaper_js_ReaScriptAPI64 Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    *              Arc_Function_lua v.2.4.8 +  Repository - (Archie-ReaScripts)  http://clck.ru/EjERc
    * Changelog:
+   *              v.1.15 [051020]
+   *                  +  AutoRun
+   
    *              v.1.06 [19.06.20]
    *                  +  fix (http://forum.cockos.com/showpost.php?p=2306173&postcount=22)
-
    *              v.1.05 [19.06.20]
    *                  +  fixed bug (http://forum.cockos.com/showpost.php?p=2306049&postcount=20)
    *              v.1.04 [28.08.19]
@@ -52,34 +54,34 @@
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
 
-reaper.MB(
-          'Rus:\n\n'..
-          'Скрипт устарел.\n'..
-          'Используйте вместо него\n'..
-          'Archie_Fade; Save crossfade when move item when trim is on (AutoRun).lua\n\n\n\n'..
-          'Eng:\n\n'..
-          'The script is outdated.\n'..
-          'Use it instead\n'..
-          'Archie_Fade; Save crossfade when move item when trim is on (AutoRun).lua'
-          ,'Woops',0)
-do return end;
+
 
 
     --=========================================
     local function MODULE(file);
         local E,A=pcall(dofile,file);if not(E)then;reaper.ShowConsoleMsg("\n\nError - "..debug.getinfo(1,'S').source:match('.*[/\\](.+)')..'\nMISSING FILE / ОТСУТСТВУЕТ ФАЙЛ!\n'..file:gsub('\\','/'))return;end;
-        if not A.VersArcFun("2.8.5",file,'')then;A=nil;return;end;return A;
+        if not A.VersArcFun("3.0.3",file,'')then;A=nil;return;end;return A;
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
 
-
+    
 
     local Api_js,version = Arc.js_ReaScriptAPI(true,0.99);
     local Api_sws = Arc.SWS_API(true);
      --Arc.HelpWindowWhenReRunning(1,"Arc_Function_lua",false);--T_I
+    
+    
+    local _,extName,sectionID,cmdID,_,_,_ = reaper.get_action_context();
+    local scriptPath,scriptName = extName:match('(.+)[/\\](.+)');
+    local extname = scriptName;
 
 
+local STARTUP = 1;--0/1 (Не рекомендуется менять)--Если автозапуск отключен, то перед закрытием рипера рекомендуется отключать скрипт
+local function main(exitM);
+
+if not exitM then;
+--do return end-----
     --[[
     local OverlapAndCrossfadeX = reaper.SNM_GetIntConfigVar("splitautoxfade",0);
     local OverlapAndCrossfade = OverlapAndCrossfadeX&1;
@@ -116,7 +118,7 @@ do return end;
         if MB == 2 then Arc.no_undo() return end;
         if MB == 1 then;
             reaper.Main_OnCommand(41120,0);--Enable trim
-            reaper.SetExtState("SaveCrossFade","Toggle trim behind items",0,false);--v.1.06
+            reaper.SetExtState(extname,"Toggle trim behind items",0,true);--v.1.06
             --reaper.ShowConsoleMsg("Toggle trim behind items\n")-------------------------
         end;
     end;
@@ -137,9 +139,9 @@ do return end;
             MB = 1;--v.1.06
         end;--v.1.06
         if MB == 2 then;
-            local Tgl_trim_b1 = tonumber(reaper.GetExtState("SaveCrossFade","Toggle trim behind items"));
+            local Tgl_trim_b1 = tonumber(reaper.GetExtState(extname,"Toggle trim behind items"));
             if Tgl_trim_b1 then;
-                reaper.DeleteExtState("SaveCrossFade","Toggle trim behind items",false);
+                reaper.DeleteExtState(extname,"Toggle trim behind items",true);
             end;
             if ToggleTrimBehind ~= 1 then;
                 local ToggleTrimBehind = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
@@ -151,40 +153,40 @@ do return end;
         end;
         if MB == 1 then;
             reaper.Main_OnCommand(41118,0);--Enable auto-crossfades
-            reaper.SetExtState("SaveCrossFade","Auto-crossfade media items",0,false);--v.1.06
+            reaper.SetExtState(extname,"Auto-crossfade media items",0,true);--v.1.06
             --reaper.ShowConsoleMsg("Auto-crossfade media items\n")-------------------------
         end;
     end;
 
 
-    reaper.DeleteExtState("SaveCrossFade","SaveCrossFadeX",false);
+    reaper.DeleteExtState(extname,"SaveCrossFadeX",true);
     local ShowOverMediaI = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
     if ShowOverMediaI == 1 then;
         reaper.Main_OnCommand(40507,0);
-        reaper.SetExtState("SaveCrossFade","SaveCrossFadeX",1,false);
+        reaper.SetExtState(extname,"SaveCrossFadeX",1,true);
     end;
+end;
 
 
 
-
-    local function exit();
+    function exit();
         local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
         reaper.SetToggleCommandState(sectionID,cmdID,0);
         reaper.RefreshToolbar2(sectionID,cmdID);
         pcall(loop,true);
         --(v.1.06
-        local Toggle_trim_behind1 = tonumber(reaper.GetExtState("SaveCrossFade","Toggle trim behind items"));
+        local Toggle_trim_behind1 = tonumber(reaper.GetExtState(extname,"Toggle trim behind items"));
         if Toggle_trim_behind1 then;
-            reaper.DeleteExtState("SaveCrossFade","Toggle trim behind items",false);
+            reaper.DeleteExtState(extname,"Toggle trim behind items",true);
             local ToggleTrimBehind2 = reaper.GetToggleCommandStateEx(0,41117);--Toggle trim behind items when editing
             if ToggleTrimBehind2 == 1 then;
                 reaper.Main_OnCommand(41121,0);--Disable trim
             end;
         end;
 
-        local Auto_crossfad_item1 = tonumber(reaper.GetExtState("SaveCrossFade","Auto-crossfade media items"));
+        local Auto_crossfad_item1 = tonumber(reaper.GetExtState(extname,"Auto-crossfade media items"));
         if Auto_crossfad_item1 then;
-            reaper.DeleteExtState("SaveCrossFade","Auto-crossfade media items",false);
+            reaper.DeleteExtState(extname,"Auto-crossfade media items",true);
             local ToggleAutoCrossfade2 = reaper.GetToggleCommandStateEx(0,40041)--Toggle auto-crossfade on/off
             if ToggleAutoCrossfade2 == 1 then;
                 reaper.Main_OnCommand(41119,0);--Disable auto-crossfades
@@ -193,7 +195,7 @@ do return end;
         --v.1.06)
 
 
-        local GetExtState = tonumber(reaper.GetExtState("SaveCrossFade","SaveCrossFadeX"))or 0;
+        local GetExtState = tonumber(reaper.GetExtState(extname,"SaveCrossFadeX"))or 0;
         local ShowOverMed = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
         if GetExtState == 1 then;
             if ShowOverMed ~= 1 then; reaper.Main_OnCommand(40507,0); end;
@@ -213,23 +215,33 @@ do return end;
         end;
     end;
 
-
-
-
+ 
+if not exitM then;
 
     local MousItActive,checking,DisableAutoCros,Tr,Ac,ShowOverMediaIX;
+    local ActiveDoubleScr,stopDoubleScr;
 
     local function loop(stop)
         --T=(T or 0)+1
+        ----- stop Double Script -------
+        if not ActiveDoubleScr then;
+            stopDoubleScr = (tonumber(reaper.GetExtState(extname,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(extname,"stopDoubleScr",stopDoubleScr,false);
+            ActiveDoubleScr = true;
+        end;
+        local stopDoubleScr2 = tonumber(reaper.GetExtState(extname,"stopDoubleScr"));
+        if stopDoubleScr2 > stopDoubleScr then exit() return end;
+        --------------------------------
+        
         if stop then return -1 end;
 
         local ShowOverMediaI_2 = reaper.GetToggleCommandStateEx(0,40507)--Show overlapping media items in lanes
         if ShowOverMediaI_2 == 1 then;
             reaper.Main_OnCommand(40507,0);
             if not ShowOverMediaIX then;
-                local GetExtState = tonumber(reaper.GetExtState("SaveCrossFade","SaveCrossFadeX"))or 0;
+                local GetExtState = tonumber(reaper.GetExtState(extname,"SaveCrossFadeX"))or 0;
                 if GetExtState == 1 then;
-                    reaper.SetExtState("SaveCrossFade","SaveCrossFadeX", 2,false);
+                    reaper.SetExtState(extname,"SaveCrossFadeX", 2,true);
                     ShowOverMediaIX = true;
                 end;
             end;
@@ -371,12 +383,89 @@ do return end;
         ----------------------
         reaper.defer(loop);
     end;
-
-
-    local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
-    reaper.SetToggleCommandState(sectionID,cmdID,1);
-    reaper.RefreshToolbar2(sectionID,cmdID);
-    loop(false);
-    reaper.atexit(exit);
-
-    reaper.defer(function();local ScrPath,ScrName = debug.getinfo(1,'S').source:match('^[@](.+)[/\\](.+)');Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,260,ScrPath,ScrName)end);
+    
+    
+    function run();
+        --local _,_,sectionID,cmdID,_,_,_ = reaper.get_action_context();
+        reaper.SetToggleCommandState(sectionID,cmdID,1);
+        reaper.RefreshToolbar2(sectionID,cmdID);
+        loop(false);
+        reaper.SetExtState(extname,"TOGGLE_STATE",1,true);
+    end;
+end; 
+end;
+    
+    
+    
+    
+    
+    
+    
+    ---___-----------------------------------------------
+    local FirstRun;
+    if STARTUP == 1 then;
+        --reaper.DeleteExtState(extname,"FirstRun",false);
+        FirstRun = reaper.GetExtState(extname,"FirstRun")=="";
+        if FirstRun then;
+            reaper.SetExtState(extname,"FirstRun",1,false);
+        end;
+    end;
+    -----------------------------------------------------
+    
+    
+    local TOGGLE_STATE = tonumber(reaper.GetExtState(extname,"TOGGLE_STATE"))or 0;
+    
+    if not FirstRun then;
+        if TOGGLE_STATE == 1 then;
+            local stopDoubleScr = (tonumber(reaper.GetExtState(extname,"stopDoubleScr"))or 0)+1;
+            reaper.SetExtState(extname,"stopDoubleScr",stopDoubleScr,false);
+            reaper.SetExtState(extname,"TOGGLE_STATE",0,true);
+        else;
+            --main(true);
+            --exit();
+            main();
+            run();
+        end;
+    elseif FirstRun then;
+        if TOGGLE_STATE == 1 then;
+            main(true);
+            exit();
+            main();
+            run();
+        end;
+    end;
+    
+    
+    ---___-----------------------------------------------
+    local function SetStartupScriptWrite();
+        local id = Arc.GetIDByScriptName(scriptName,scriptPath);
+        if id == -1 or type(id) ~= "string" then Arc.no_undo()return end;
+        local check_Id, check_Fun = Arc.GetStartupScript(id);
+        if STARTUP == 1 then;
+            if not check_Id then;
+                Arc.SetStartupScript(scriptName,id);
+            end;
+        elseif STARTUP ~= 1 then;
+            if check_Id then;
+                Arc.SetStartupScript(scriptName,id,nil,"ONE");
+            end;
+        end;
+        reaper.defer(function();
+        local _,KB_ini=Arc.GetSetTerminateAllInstancesOrStartNewOneKB_ini(1,516,scriptPath,scriptName)
+        if KB_ini ~= 516 then reaper.MB('For script to work correctly, restart Reaper\n\nДля корректной работы скрипта перезагрузите Рипер','Restart',0)end;                end);
+    end;
+    reaper.defer(SetStartupScriptWrite);
+    -----------------------------------------------------
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

@@ -1,9 +1,9 @@
-local VersionMod = "v.3.0.2";
+local VersionMod = "v.3.0.3";
 --[[
    * Category:    Function
    * Description: Arc_Function_lua
    * Author:      Archie
-   * Version:     3.0.2
+   * Version:     3.0.3
    * AboutScript: Functions for use with some scripts Archie
    * О скрипте:   Функции для использования с некоторыми скриптами Archie
    * Provides:    [nomain].
