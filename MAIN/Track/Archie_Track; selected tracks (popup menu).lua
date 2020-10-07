@@ -11,9 +11,10 @@
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
-   * Provides:    
-   *              [main] .
-   *              [midi_editor] .
+   * Provides:       
+   *              [nomain] .
+   *              [main] . > Archie_Track; selected tracks (popup menu).lua
+   *              [midi_editor] . > Archie_Track; selected tracks (popup menu).lua
    * Customer:    BRG(Rmm)
    * Gave idea:   BRG(Rmm)
    * Extension:   Reaper 6.14+ http://www.reaper.fm/
