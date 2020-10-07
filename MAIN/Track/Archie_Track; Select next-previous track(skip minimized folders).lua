@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.17
+   * Version:     1.18
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -63,7 +63,7 @@
 
 
 
-    local SCROLL = 0
+    local SCROLL = 2
              --  = 0 | OFF | ВЫКЛЮЧИТЬ ПРОКРУТКУ
              --  = 1 | ПРОКРУТКА НА МЕСТЕ *
              --  = 2 | ПРОКРУТКА С ОТСТУПОМ В ТРЕКАХ(необходимо установать indent)
@@ -77,7 +77,7 @@
 
 
 
-    local indent = 2  -- кол-во треков; number of tracks;
+    local indent = 0  -- кол-во треков; number of tracks;
                 -- | ОТСТУП ПРИ ПРОКРУТКЕ,(В ТРЕКАХ); Работает только при "SCROLL = 2"
                 -- | INDENT WHEN SCROLLING,(IN TRACKS); Works only when "SCROLL = 2"
                 -------------------------------------------------------------------
