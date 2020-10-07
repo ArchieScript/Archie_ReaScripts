@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Go to previous track - track solo in solo exclusive(skip minimized folders).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -23,12 +23,12 @@
 
 
 
-    reaper.PreventUIRefresh(1);
-    reaper.Undo_BeginBlock();
-
 
     local LastTouchedTrack = reaper.GetLastTouchedTrack()or reaper.GetTrack(0,reaper.CountTracks(0)-1);
     if LastTouchedTrack then;
+        
+        reaper.PreventUIRefresh(1);
+        reaper.Undo_BeginBlock();
 
         --reaper.Main_OnCommand(40286,0);
         -----------------
@@ -55,18 +55,19 @@
                 end;
             end;
         end;
+        
+        -----(---
+        local Context = reaper.GetCursorContext();
+        if Context ~= 0 then;
+            reaper.SetCursorContext(0,nil);
+        end;
+        -----)---
+        
+        local title = 'Go to previous track - track solo in solo exclusive(skip minimized folders)';
+        reaper.Undo_EndBlock('Go to next track - track solo in solo exclusive',-1);
+        reaper.PreventUIRefresh(-1);
     end;
     
-    -----(---
-    local Context = reaper.GetCursorContext();
-    if Context ~= 0 then;
-        reaper.SetCursorContext(0,nil);
-    end;
-    -----)---
-    
-    local title = 'Go to previous track - track solo in solo exclusive(skip minimized folders)';
-    reaper.Undo_EndBlock('Go to next track - track solo in solo exclusive',-1);
-    reaper.PreventUIRefresh(-1);
     
     
     
