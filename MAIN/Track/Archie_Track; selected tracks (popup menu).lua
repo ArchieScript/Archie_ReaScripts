@@ -11,10 +11,7 @@
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
-   * Provides:
-   *              [nomain] .
-   *              [main=main] . > Archie_Track; selected tracks (popup menu).lua
-   *              [main=midi_editor]  . > Archie_Track; selected tracks (popup menu).lua
+   * Provides:    [main=main,midi_editor] .
    * Customer:    BRG(Rmm)
    * Gave idea:   BRG(Rmm)
    * Extension:   Reaper 6.14+ http://www.reaper.fm/
@@ -25,7 +22,7 @@
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
-    [main=main,midi_editor] 
+    
     
     local SHIFT_X = -50; -- Отступ X
     local SHIFT_Y = 15; -- Отступ Y
