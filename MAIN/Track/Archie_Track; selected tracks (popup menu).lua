@@ -14,7 +14,7 @@
    * Provides:
    *              [nomain] .
    *              [main] . > Archie_Track; selected tracks (popup menu).lua
-   *              [midi editor] . > Archie_Track; selected tracks (popup menu).lua
+   *              [midi_editor] . > Archie_Track; selected tracks (popup menu).lua
    * Customer:    BRG(Rmm)
    * Gave idea:   BRG(Rmm)
    * Extension:   Reaper 6.14+ http://www.reaper.fm/

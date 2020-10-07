@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="9c1e0f5a2030f82cad38324b9f8a83673a91e9bf">
+<index version="1" name="Archie-ReaScripts" commit="40ae16c87eed0b91b0baa48d3b75a05145a86528">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -10700,6 +10700,15 @@ Performance: Script completely rewritten]]></changelog>
         <changelog><![CDATA[v.1.0 [060620]
     + initialе]]></changelog>
         <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/d234918f675c447d58c12401a3bab429bf255013/MIDI%20Editor/Archie_MidiEditor;%20Select%20only%20chords%20(unevenness%20interval%20is%201-16).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_MidiEditor; select track of active midi editor.lua" type="script" desc="MidiEditor; select track of active midi editor.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="donation">http://money.yandex.ru/to/410018003906628</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-07T18:48:23Z">
+        <source main="midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/40ae16c87eed0b91b0baa48d3b75a05145a86528/MIDI%20Editor/Archie_MidiEditor;%20select%20track%20of%20active%20midi%20editor.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_MidiEditor; Set length all notes to (Show popup menu).lua" type="script" desc="Set length all notes to (Show popup menu)">
