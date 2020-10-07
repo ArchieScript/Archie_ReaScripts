@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="40ae16c87eed0b91b0baa48d3b75a05145a86528">
+<index version="1" name="Archie-ReaScripts" commit="3a40abd3601552617161d39e7c70ff67e4e494e0">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -8529,6 +8529,18 @@ LUA_Lib
         <changelog><![CDATA[v.1.0[18.06.19]
     + initialе / v.1.0]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Track/Archie_Track;%20Select%20tracks%20that%20have%20at%20end%20of%20name%20_ARCHIVE(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Track; selected tracks (popup menu).lua" type="script" desc="Track; selected tracks (popup menu).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-07T18:55:56Z">
+        <changelog><![CDATA[v.1.0 [071020]
++ initialе]]></changelog>
+        <source main="main midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/3a40abd3601552617161d39e7c70ff67e4e494e0/MAIN/Track/Archie_Track;%20selected%20tracks%20(popup%20menu).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Set pan on selected tracks by inverting every second track .lua" type="script" desc="Set pan on selected tracks by inverting every second track">

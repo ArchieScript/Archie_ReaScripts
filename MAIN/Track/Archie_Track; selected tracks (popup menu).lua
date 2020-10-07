@@ -11,7 +11,9 @@
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
-   * Provides:    [main=main,midi_editor] .
+   * Provides:    
+   *              [main=main,midi_editor] .
+   *              [midi_editor=midi_editor] .
    * Customer:    BRG(Rmm)
    * Gave idea:   BRG(Rmm)
    * Extension:   Reaper 6.14+ http://www.reaper.fm/
