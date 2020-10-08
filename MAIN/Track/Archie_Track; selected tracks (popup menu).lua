@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; selected tracks (popup menu).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -33,6 +33,9 @@
     -- SHIFT - Снять выделения со всех треков 
     
     local OPEN_AGAIN = true;
+    
+    
+    local SHOW = true; -- true/false - Показать трек при выделении, если он скрыт
     
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
@@ -191,6 +194,15 @@
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',0);
                 else;
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',1);
+                    ---
+                    if SHOW == true then;
+                        local hideTcp = reaper.GetMediaTrackInfo_Value(Track,'B_SHOWINTCP');
+                        if hideTcp == 0 then;
+                            reaper.SetMediaTrackInfo_Value(Track,'B_SHOWINTCP',1);
+                            reaper.TrackList_AdjustWindows(false);
+                        end;
+                    end;
+                    ---
                     reaper.SetMixerScroll(Track);
                 end;
             end;
@@ -211,6 +223,15 @@
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',0);
                 else;
                     reaper.SetOnlyTrackSelected(Track);
+                    ---
+                    if SHOW == true then;
+                        local hideTcp = reaper.GetMediaTrackInfo_Value(Track,'B_SHOWINTCP');
+                        if hideTcp == 0 then;
+                            reaper.SetMediaTrackInfo_Value(Track,'B_SHOWINTCP',1);
+                            reaper.TrackList_AdjustWindows(false);
+                        end;
+                    end;
+                    ---
                     reaper.SetMixerScroll(Track);
                 end;
             end;
