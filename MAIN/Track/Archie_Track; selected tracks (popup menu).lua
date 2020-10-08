@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; selected tracks (popup menu).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -122,7 +122,7 @@
     if MGetS&8 == 8 or MGetS&9 == 9 then;
         showmenu = 0;
         reaper.Main_OnCommand(40297,0);--Track: Unselect all tracks
-        reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_TOGSELMASTER'),0);--SWS: Unselect master track
+        reaper.Main_OnCommand(reaper.NamedCommandLookup('_SWS_UNSELMASTER'),0);--SWS: Unselect master track
         if MGetS&4 == 4 or MGetS&5 == 5 then;
             ----
             if OPEN_AGAIN == true then;
@@ -191,6 +191,7 @@
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',0);
                 else;
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',1);
+                    reaper.SetMixerScroll(Track);
                 end;
             end;
         else;
@@ -210,6 +211,7 @@
                     reaper.SetMediaTrackInfo_Value(Track,'I_SELECTED',0);
                 else;
                     reaper.SetOnlyTrackSelected(Track);
+                    reaper.SetMixerScroll(Track);
                 end;
             end;
         end;

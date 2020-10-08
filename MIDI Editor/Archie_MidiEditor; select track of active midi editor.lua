@@ -6,9 +6,9 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.0
-   * customer:    ---
-   * gave idea:   ---
+   * Version:     1.02
+   * Customer:    BRG(Rmm)
+   * Gave idea:   BRG(Rmm)
 --====================================]]
 
 
@@ -30,6 +30,7 @@
     if take then;
 	   track = reaper.GetMediaItemTake_Track(take);
 	   reaper.SetOnlyTrackSelected(track);
+	   reaper.defer(function()reaper.SetMixerScroll(track)end);
     end;
     
     reaper.Main_OnCommand(40913,0);--Vertical scroll selected tracks into view
