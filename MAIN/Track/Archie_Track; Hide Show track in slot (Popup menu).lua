@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Hide Show track in slot (Popup menu).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -35,6 +35,66 @@
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
+    
+    
+    -------------------------------------------------------
+    local function HideAllTracksInTCP();
+        local CountTracks = reaper.CountTracks(0);
+        if CountTracks == 0 then no_undo()return end;
+        for i = 1,CountTracks do;
+            local track = reaper.GetTrack(0,i-1);
+            local Visib = reaper.IsTrackVisible(track,false);
+            if Visib then;
+                if not UNDO then;
+                    reaper.Undo_BeginBlock();
+                    reaper.PreventUIRefresh(1);
+                    UNDO = true;
+                end;
+                reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',0);
+            end;
+        end;
+        if UNDO then;
+            reaper.TrackList_AdjustWindows(true);
+            reaper.PreventUIRefresh(-1);
+            reaper.Undo_EndBlock('Hide all tracks in TCP',-1);
+        else;
+            no_undo();
+        end;
+    end;
+    ---------------------------------------------------
+    
+    
+    -------------------------------------------------------
+    local function ShowAllTracksInTCP();
+    
+        local CountTracks = reaper.CountTracks(0);
+        if CountTracks == 0 then no_undo()return end;
+    
+    
+        for i = 1,CountTracks do;
+            local track = reaper.GetTrack(0,i-1);
+            local Visib = reaper.IsTrackVisible(track,false);
+            if not Visib then;
+                if not UNDO then;
+                    reaper.Undo_BeginBlock();
+                    reaper.PreventUIRefresh(1);
+                    UNDO = true;
+                end;
+                reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',1);
+            end;
+        end;
+    
+    
+        if UNDO then;
+            reaper.TrackList_AdjustWindows(true);
+            reaper.PreventUIRefresh(-1);
+            reaper.Undo_EndBlock('Show all tracks in TCP',-1);
+        else;
+            no_undo();
+        end;
+    end;
+    ---------------------------------------------------
+    
     
     ---------------------------------------------------
     local _,scriptPath,secID,cmdID,_,_,_ = reaper.get_action_context();
@@ -94,7 +154,9 @@
     
     LIST = {'Hide only selected tracks (slot)',
             'Hide only selected tracks and child (slot)',
-            'Hide all unselect tracks (slot)'};
+            'Hide all unselect tracks (slot)|',
+            'Hide all Track',
+            'Show all Track'};
             
     ----------
     if #LIST2X > 0 then table.insert(LIST,'|#Show-(Ctrl+click-Open again)-(Shift+click-Remove slot)||')end;
@@ -106,7 +168,7 @@
     ----------
     local retval,retvals_csv;
     ----------
-    if showmenu > 0 and showmenu <= #LIST then;
+    if showmenu > 0 and showmenu <= #LIST and showmenu~=4 and showmenu~=5 then;
         ::res1::
         retval,retvals_csv = reaper.GetUserInputs('Create slot',1,'Inter Name Slot:,extrawidth=200','');
         if not retval then gfx.quit() no_undo()return end;
@@ -178,11 +240,13 @@
         gfx.quit();
         reaper.Undo_EndBlock('Hide all unselect tracks ',-1);
         ----------------------------------
-    --elseif showmenu == 4 then;
+    elseif showmenu == 4 then;
         ----------------------------------
+        HideAllTracksInTCP();
         ----------------------------------
-    --elseif showmenu == 5 then;
+    elseif showmenu == 5 then;
         ----------------------------------
+        ShowAllTracksInTCP();
         ----------------------------------
     --elseif showmenu == 6 then;
         ----------------------------------
