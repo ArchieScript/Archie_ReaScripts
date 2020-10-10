@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Hide Show track in slot (Popup menu).lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -106,7 +106,7 @@
     ----------
     local retval,retvals_csv;
     ----------
-    if showmenu > 0 and showmenu < #LIST then;
+    if showmenu > 0 and showmenu <= #LIST then;
         ::res1::
         retval,retvals_csv = reaper.GetUserInputs('Create slot',1,'Inter Name Slot:,extrawidth=200','');
         if not retval then gfx.quit() no_undo()return end;
