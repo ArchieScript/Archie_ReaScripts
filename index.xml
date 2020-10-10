@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="bf6484fd95d74ce7fd9871ca2c2c399bebcea2c0">
+<index version="1" name="Archie-ReaScripts" commit="ec0162a32bcd15f08b50b8f18dfa06bc9cbade4a">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -7545,6 +7545,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [101020]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/bf6484fd95d74ce7fd9871ca2c2c399bebcea2c0/MAIN/Track/Archie_Track;%20Hide%20Show%20track%20in%20slot%20(Popup%20menu).lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-10-10T10:35:52Z">
+        <changelog><![CDATA[v.1.0 [101020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/ec0162a32bcd15f08b50b8f18dfa06bc9cbade4a/MAIN/Track/Archie_Track;%20Hide%20Show%20track%20in%20slot%20(Popup%20menu).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Hide unselected tracks in MCP.lua" type="script" desc="Track; Hide unselected tracks in MCP.lua">
