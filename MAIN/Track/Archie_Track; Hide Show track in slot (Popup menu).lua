@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Hide Show track in slot (Popup menu).lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.05
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -21,6 +21,11 @@
    *              SWS v.2.12.0 http://www.sws-extension.org/index.php
    *              reaper_js_ReaScriptAPI Repository - (ReaTeam Extensions) http://clck.ru/Eo5Nr or http://clck.ru/Eo5Lw
    * Changelog:   
+   *              v.1.04 [111020]
+   *                  + mprovements (Улучшения)
+   
+   *              v.1.04 [111020]
+   *                  + MODE
    *              v.1.0 [101020]
    *                  + initialе
 --]] 
@@ -31,14 +36,19 @@
     local SHIFT_X = -80;
     local SHIFT_Y = -10;
     
+    local MODE = 0;
+            -- = 0 -- Показать/скрыть слот (режим по умолчанию)
+            -- = 1 -- Показать только слот
     
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
     
+     
     
     -------------------------------------------------------
     local function HideAllTracksInTCP();
+        local UNDO;
         local CountTracks = reaper.CountTracks(0);
         if CountTracks == 0 then no_undo()return end;
         for i = 1,CountTracks do;
@@ -66,11 +76,10 @@
     
     -------------------------------------------------------
     local function ShowAllTracksInTCP();
-    
+        local UNDO;
         local CountTracks = reaper.CountTracks(0);
         if CountTracks == 0 then no_undo()return end;
-    
-    
+        ---- 
         for i = 1,CountTracks do;
             local track = reaper.GetTrack(0,i-1);
             local Visib = reaper.IsTrackVisible(track,false);
@@ -83,8 +92,7 @@
                 reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',1);
             end;
         end;
-    
-    
+        ---- 
         if UNDO then;
             reaper.TrackList_AdjustWindows(true);
             reaper.PreventUIRefresh(-1);
@@ -92,6 +100,26 @@
         else;
             no_undo();
         end;
+    end;
+    ---------------------------------------------------
+    
+    
+    ---------------------------------------------------
+    local function count_Visible_Unsel_Sel_Track();
+        local countVisibleUnselTrack=0;
+        local countVisibleSelTrack=0;
+        for i = 1,reaper.CountTracks(0)do;
+            local Track = reaper.GetTrack(0,i-1);
+            local sel = reaper.GetMediaTrackInfo_Value(Track,'I_SELECTED');
+            local show = reaper.GetMediaTrackInfo_Value(Track,'B_SHOWINTCP');
+            if sel == 0 and show == 1 then;
+                countVisibleUnselTrack=countVisibleUnselTrack+1;
+            end;
+            if sel == 1 and show == 1 then;
+                countVisibleSelTrack=countVisibleSelTrack+1;
+            end;
+        end;
+        return countVisibleUnselTrack,countVisibleSelTrack;
     end;
     ---------------------------------------------------
     
@@ -169,6 +197,8 @@
     local retval,retvals_csv;
     ----------
     if showmenu > 0 and showmenu <= #LIST and showmenu~=4 and showmenu~=5 then;
+        if (showmenu==1 or showmenu==2) and reaper.CountSelectedTracks(0)==0 then reaper.TrackCtl_SetToolTip('No Selected Track',x,y-20,false)gfx.quit()no_undo()return end;
+        if (showmenu==3)and({count_Visible_Unsel_Sel_Track()})[1]==0 then reaper.TrackCtl_SetToolTip('No UnSelected Visible Track',x,y-20,false) gfx.quit()no_undo()return end;
         ::res1::
         retval,retvals_csv = reaper.GetUserInputs('Create slot',1,'Inter Name Slot:,extrawidth=200','');
         if not retval then gfx.quit() no_undo()return end;
@@ -177,9 +207,25 @@
         ---- 
         local x1 = 1;
         local x2 = '';
+        local MB;
         ::res2::
         for i = 1,#LIST2X do;
             if LIST2X[i]==retvals_csv:upper()..x2 then;
+            -------
+            if not MB then;
+                MB = reaper.MB(--(ДА6)(НЕТ7)(отмена2)
+                               'Слот с таким Именем уже существует\n'..
+                             'ДА  - Переписать данный слот\n'..
+                           'НЕТ - Создать новый слот с добавлением числа\n\n'..
+                       'A slot with this name already exists\n'..
+                     '(YES) - Rewrite this slot\n'..
+                   '(NO) - Create a new slot with a number added'
+                 ,'',3);
+                if MB == 2 then gfx.quit() no_undo()return end;
+                if MB == 6 then break end;
+            end;
+            ---------
+   
                 x1 = x1+1;
                 x2 = '('..x1..')';
                 goto res2;
@@ -240,15 +286,39 @@
         gfx.quit();
         reaper.Undo_EndBlock('Hide all unselect tracks ',-1);
         ----------------------------------
-    elseif showmenu == 4 then;
+    elseif showmenu == 4 or showmenu == 5 then;
         ----------------------------------
-        HideAllTracksInTCP();
-        ----------------------------------
-    elseif showmenu == 5 then;
-        ----------------------------------
-        ShowAllTracksInTCP();
+        ---
+        local MouseState = reaper.JS_Mouse_GetState(127);
+        local MouseStateCTRL  = MouseState&4==4;
+        ---
+        if showmenu == 4 then;
+            ----------------------
+            HideAllTracksInTCP();
+            ----------------------
+        elseif showmenu == 5 then;
+            ----------------------
+            ShowAllTracksInTCP();
+            ----------------------
+        end;
+        ---
+        if MouseStateCTRL then;
+            reaper.SetExtState(section,'Ext_x_y',Ext_x ..' '.. Ext_y,false);
+            gfx.quit();
+            dofile(({reaper.get_action_context()})[2]);
+            no_undo();
+        else;
+            reaper.DeleteExtState(section,'Ext_x_y',false);
+        end;
+        --- 
         ----------------------------------
     --elseif showmenu == 6 then;
+        ----------------------------------
+        ----------------------------------
+    --elseif showmenu == 7 then;
+        ----------------------------------
+        ----------------------------------
+    --elseif showmenu == 8 then;
         ----------------------------------
         ----------------------------------
     elseif showmenu > #LIST then;
@@ -256,7 +326,7 @@
         local MouseState = reaper.JS_Mouse_GetState(127);
         local MouseStateCTRL  = MouseState&4==4;
         local MouseStateSHIFT = MouseState&8==8;
-         
+        
         local retval,val = reaper.GetProjExtState(0,section,LIST2[showmenu-#LIST].key);
         if retval > 0 then;
             local t = {};
@@ -283,14 +353,30 @@
                     ---
                     if MouseStateSHIFT then SHOW = 1 end;
                     ---
+                    if MODE == 1 then SHOW = 1 end;--MODE
+                    ---
                     if SHOW > 0 then;
                         reaper.Main_OnCommand(40297,0);--Unselect all tracks
                     end;
                     
+                    local t2 = {};--MODE
                     for i = 1,#tTrack do;
                         reaper.SetMediaTrackInfo_Value(tTrack[i],'B_SHOWINTCP',SHOW);
                         reaper.SetMediaTrackInfo_Value(tTrack[i],'I_SELECTED' ,SHOW);
+                        t2[tostring(tTrack[i])]=tTrack[i];--MODE
                     end;
+                    
+                    ----
+                    if MODE == 1 then;--MODE
+                        for i = 1,reaper.CountTracks(0) do;
+                            local track = reaper.GetTrack(0,i-1);
+                            local show = reaper.GetMediaTrackInfo_Value(track,'B_SHOWINTCP');
+                            if show > 0 and not t2[tostring(track)]then;
+                                reaper.SetMediaTrackInfo_Value(track,'B_SHOWINTCP',0);
+                            end;
+                        end;
+                    end;
+                    ----
                     reaper.TrackList_AdjustWindows(0);
                 end;
             end;
