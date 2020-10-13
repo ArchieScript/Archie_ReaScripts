@@ -5,13 +5,13 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * customer:    BRG(rmm)
    * gave idea:   BRG(rmm)
 --====================================]]
     
     
-    --[[
+    
     --(1.03-------------------------------------------------------------------
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
@@ -65,12 +65,12 @@
     reaper.Undo_EndBlock(title,-1);
     reaper.UpdateArrange(); 
     --1.03)-------------------------------------------------------------------
-    --]]
     
     
     
     
-    -------------------------------------------------------------------------
+    
+    --[[-----------------------------------------------------------------------
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
@@ -93,4 +93,4 @@
     local title = 'Activate next MIDI item - Select only this item - Set cursor to start items.lua'
     reaper.Undo_EndBlock(title,-1);
     reaper.UpdateArrange();
-    -------------------------------------------------------------------------
+    --]]-----------------------------------------------------------------------
