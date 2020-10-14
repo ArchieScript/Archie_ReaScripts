@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="c5b20cf38253cf9f086a398772346235c055e873">
+<index version="1" name="Archie-ReaScripts" commit="757e0c4a5f805748e395895447dd9ac540835ef7">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2072,6 +2072,9 @@ LUA_Lib
       </metadata>
       <version name="1.0" author="Archie" time="2020-09-30T10:29:43Z">
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/8fb13e78aafc6c97c294cae7d97c6b54887e39d1/MAIN/FX/Archie_FX;%20Toggle%20Open%20Close%20all%20VSTi%20in%20Selected%20tracks.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-10-14T09:52:56Z">
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/757e0c4a5f805748e395895447dd9ac540835ef7/MAIN/FX/Archie_FX;%20Toggle%20Open%20Close%20all%20VSTi%20in%20Selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Toggle Show Hide all active floating FX windows for selected tracks.lua" type="script" desc="Toggle Show Hide all active floating FX windows for selected tracks">
