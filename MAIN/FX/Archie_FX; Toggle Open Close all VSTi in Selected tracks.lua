@@ -7,12 +7,13 @@
    * Donation:    http://money.yandex.ru/to/410018003906628
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * customer:    ---
    * gave idea:   YuriOl(Rmm/forum)
 --==========================================]]
-
-
+    
+    
+    local FocusOnTrack = true; --true/false
 
     --===========================================================================
     --//////////////////////////////   SCRIPT   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
@@ -81,5 +82,9 @@
     end
     ----
     
+    if FocusOnTrack == true then;
+        reaper.SetCursorContext(0,nil);
+    end;
+    
     reaper.Undo_EndBlock(title..' '..'all Vsti in selected track',1)
-
+    
