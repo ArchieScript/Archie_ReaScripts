@@ -5,14 +5,14 @@
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    * Donation:    http://money.yandex.ru/to/410018003906628
    * Author:      Archie
-   * Version:     1.05
+   * Version:     1.06
    * customer:    BRG(rmm)
    * gave idea:   BRG(rmm)
 --====================================]]
     
     
     
-    --(1.03-------------------------------------------------------------------
+    --[[<-------------------------------------------------------------------
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
@@ -64,13 +64,13 @@
     local title = 'Activate next MIDI item - Select only this item - Set cursor to start items.lua'
     reaper.Undo_EndBlock(title,-1);
     reaper.UpdateArrange(); 
-    --1.03)-------------------------------------------------------------------
+    -->]]-------------------------------------------------------------------
     
     
     
     
     
-    --[[-----------------------------------------------------------------------
+    --[<-----------------------------------------------------------------------
     -------------------------------------------------------
     local function no_undo()reaper.defer(function()end)end;
     -------------------------------------------------------
@@ -78,19 +78,27 @@
     if not midieditor then no_undo()return end;
     
     reaper.Undo_BeginBlock();
+    reaper.PreventUIRefresh(1);
     
     reaper.MIDIEditor_OnCommand(midieditor,40833);--Activate next MIDI item
-    local take = reaper.MIDIEditor_GetTake(midieditor);
-    if take then;
-        local item = reaper.GetMediaItemTake_Item(take);
-        reaper.SelectAllMediaItems(0,0);
-        local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION');
-        reaper.SetEditCurPos(pos,true,false);
-        reaper.SetMediaItemInfo_Value(item,'B_UISEL',1);
-        reaper.Main_OnCommand(40153,0)--Item: Open in built-in MIDI editor (set default behavior in preferences)
-        -- reaper.MIDIEditor_OnCommand(midieditor,40466);--View: Zoom to content
+    
+    local midieditor = reaper.MIDIEditor_GetActive();
+    if midieditor then;
+        local take = reaper.MIDIEditor_GetTake(midieditor);
+        if take then;
+            local item = reaper.GetMediaItemTake_Item(take);
+            if item then;
+                reaper.SelectAllMediaItems(0,0);
+                local pos = reaper.GetMediaItemInfo_Value(item,'D_POSITION');
+                reaper.SetEditCurPos(pos,true,false);
+                reaper.SetMediaItemInfo_Value(item,'B_UISEL',1);
+                reaper.Main_OnCommand(40153,0)--Item: Open in built-in MIDI editor (set default behavior in preferences)
+                -- reaper.MIDIEditor_OnCommand(midieditor,40466);--View: Zoom to content
+            end;
+        end;
     end;
     local title = 'Activate next MIDI item - Select only this item - Set cursor to start items.lua'
+    reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock(title,-1);
     reaper.UpdateArrange();
-    --]]-----------------------------------------------------------------------
+    -->]]-----------------------------------------------------------------------
