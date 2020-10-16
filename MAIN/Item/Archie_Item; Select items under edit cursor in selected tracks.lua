@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Select items under edit cursor in selected tracks.lua
    * Author:      Archie
-   * Version:     1.0
+   * Version:     1.02
    * AboutScript: ---
    * О скрипте:   ---
    * GIF:         ---
@@ -15,6 +15,7 @@
    *              http://vk.com/reaarchie
    * DONATION:    http://money.yandex.ru/to/410018003906628
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
+   * Provides:    [main=main,midi_editor] .
    * Customer:    BRG(Rmm)
    * Gave idea:   BRG(Rmm)
    * Provides:
