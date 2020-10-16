@@ -6,7 +6,7 @@
    * Category:    Track
    * Description: Track; Go to next track - track solo in solo exclusive(skip minimized folders).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.03
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    * DONATION:    http://money.yandex.ru/to/410018003906628
@@ -14,13 +14,25 @@
    * Customer:    Vax(Rmm)
    * Gave idea:   Vax(Rmm)
    * Extension:   Reaper 6.14+ http://www.reaper.fm/
-   * Changelog:   v.1.0 [011020]
+   * Changelog:   
+   *              v.1.03 [171120]
+   *                  + solo lock track (vax)
+   
+   *              v.1.0 [011020]
    *                  + initialе
 --]]
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
     
+    
+    local function SetSoloTrack(track,val);
+        local retval,str = reaper.GetTrackStateChunk(track,'',false);
+        local str2 = str:gsub('MUTESOLO%s+%d+%s+%d+',function(s)return(s:match('MUTESOLO%s+%d+')..' '..val)end);
+        if str~=str2 then;
+            reaper.SetTrackStateChunk(track,str2,false);
+        end;
+    end;
 
 
     local LastTouchedTrack = reaper.GetLastTouchedTrack()or reaper.GetTrack(0,reaper.CountTracks(0)-1);
@@ -44,13 +56,15 @@
 
         local Solo = reaper.GetMediaTrackInfo_Value(LastTouchedTrack,"I_SOLO");
         if Solo ~= 0 then;
-            reaper.SetMediaTrackInfo_Value(NewTrack,"I_SOLO",1);
+            --reaper.SetMediaTrackInfo_Value(NewTrack,"I_SOLO",1);
+            SetSoloTrack(NewTrack,1);
             for i = 1, reaper.CountTracks(0) do;
                 local Track = reaper.GetTrack(0,i-1);
                 if Track ~= NewTrack then;
                     local Solo = reaper.GetMediaTrackInfo_Value(Track,"I_SOLO");
                     if Solo ~= 0 then;
-                        reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",0);
+                        --reaper.SetMediaTrackInfo_Value(Track,"I_SOLO",0);
+                        SetSoloTrack(Track,0);
                     end;
                 end;
             end;
