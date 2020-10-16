@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="43c0edd32e8620a3d2a59030eba9fca9c933e531">
+<index version="1" name="Archie-ReaScripts" commit="e88101afadaddf6c92259b31d0165f7c7fc449f9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4238,6 +4238,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [161020]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/43c0edd32e8620a3d2a59030eba9fca9c933e531/MAIN/Item/Archie_Item;%20Select%20items%20under%20edit%20cursor%20in%20selected%20tracks.lua</source>
+      </version>
+      <version name="1.02" author="Archie" time="2020-10-16T07:12:12Z">
+        <changelog><![CDATA[v.1.0 [161020]
+    + initialе]]></changelog>
+        <source main="main midi_editor">https://github.com/ArchieScript/Archie_ReaScripts/raw/e88101afadaddf6c92259b31d0165f7c7fc449f9/MAIN/Item/Archie_Item;%20Select%20items%20under%20edit%20cursor%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; Select Next item in track excluding midi.lua" type="script" desc="Select Next item in track excluding midi">
