@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="757e0c4a5f805748e395895447dd9ac540835ef7">
+<index version="1" name="Archie-ReaScripts" commit="43c0edd32e8620a3d2a59030eba9fca9c933e531">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -4225,6 +4225,19 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [011020]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/c36f3aeac0a9e2bb9226e4939bf4665fa74099d5/MAIN/Item/Archie_Item;%20Select%20items%20in%20selected%20tracks%20from%20cursor%20to%20end%20of%20project.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Item; Select items under edit cursor in selected tracks.lua" type="script" desc="Item; Select items under edit cursor in selected tracks.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-16T05:35:52Z">
+        <changelog><![CDATA[v.1.0 [161020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/43c0edd32e8620a3d2a59030eba9fca9c933e531/MAIN/Item/Archie_Item;%20Select%20items%20under%20edit%20cursor%20in%20selected%20tracks.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; Select Next item in track excluding midi.lua" type="script" desc="Select Next item in track excluding midi">
