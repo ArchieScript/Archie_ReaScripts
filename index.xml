@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="2b9a5640829a28e3c47d03e0749439d996410426">
+<index version="1" name="Archie-ReaScripts" commit="971ec1deb93f54fa69f3462b6031c5a857523fce">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -591,6 +591,19 @@ LUA_Lib
         <source main="main" file="Archie_Edit cursor; Move cursor right for 800 milliseconds(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c501a15db9fb222736e1b517a41eb3c701bd72fa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
         <source main="main" file="Archie_Edit cursor; Move cursor right for 900 milliseconds(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c501a15db9fb222736e1b517a41eb3c701bd72fa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
         <source main="main" file="Archie_Edit cursor; Move cursor right for 1000 milliseconds(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/c501a15db9fb222736e1b517a41eb3c701bd72fa/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Move%20cursor%20for%20n%20milliseconds(%60).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_Edit cursor; Move cursor to center of selected items.lua" type="script" desc="Edit cursor; Move cursor to center of selected items.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2020-10-30T13:37:48Z">
+        <changelog><![CDATA[v.1.0 [301020]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/971ec1deb93f54fa69f3462b6031c5a857523fce/MAIN/Edit%20cursor/Archie_Edit%20cursor;%20Move%20cursor%20to%20center%20of%20selected%20items.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Edit cursor; Move edit cursor to last start of play cursor.lua" type="script" desc="Move edit cursor to last start of play cursor">
