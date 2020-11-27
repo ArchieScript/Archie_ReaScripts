@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="971ec1deb93f54fa69f3462b6031c5a857523fce">
+<index version="1" name="Archie-ReaScripts" commit="785e140e94d6decabc0a61412d24080cb25824f9">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2047,6 +2047,11 @@ LUA_Lib
         <changelog><![CDATA[v.1.02/1.03 [020620]
     + MASTER TRACK]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
+      </version>
+      <version name="1.05" author="Archie" time="2020-11-27T11:54:14Z">
+        <changelog><![CDATA[v.1.05 [031020]
+    + OPEN_FX (http://rmmedia.ru/threads/134701/post-2546746)]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/FX/Archie_FX;%20Toggle%20Bypass%20Fx%20by%20name%20in%20tracks%20by%20name(Template)(%60).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Toggle Bypass instrument all tracks - Save restore previous.lua" type="script" desc="FX; Toggle Bypass instrument all tracks - Save restore previous.lua">
@@ -8593,6 +8598,18 @@ LUA_Lib
         <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/9c1e0f5a2030f82cad38324b9f8a83673a91e9bf/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/9c1e0f5a2030f82cad38324b9f8a83673a91e9bf/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
         <source main="main" file="Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/9c1e0f5a2030f82cad38324b9f8a83673a91e9bf/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+      </version>
+      <version name="1.19" author="Archie" time="2020-11-27T11:54:14Z">
+        <changelog><![CDATA[v.1.19 [271120]
+    + Fixed bug]]></changelog>
+        <source main="main" file="Archie_Track; Select next tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip folders)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip minimized folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
+        <source main="main" file="Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua">https://github.com/ArchieScript/Archie_ReaScripts/raw/785e140e94d6decabc0a61412d24080cb25824f9/MAIN/Track/Archie_Track;%20Select%20next-previous%20track(skip%20minimized%20folders).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Track; Select track with prefix name.lua" type="script" desc="Track; Select track with prefix name.lua">
