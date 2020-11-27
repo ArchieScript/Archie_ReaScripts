@@ -6,7 +6,7 @@
    * Category:    Fx
    * Description: Toggle Bypass Fx by name in tracks by name(Template)
    * Author:      Archie
-   * Version:     1.04
+   * Version:     1.05
    * Описание:    Байпас Fx по имени в треках по имени (Шаблон)
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -16,10 +16,12 @@
    * Gave idea:   Дима Горелик(Rmm)
    * Extension:   Reaper 6.03+ http://www.reaper.fm/
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
-   * Changelog:
+   * Changelog:   
+   *              v.1.05 [031020]
+   *                  + OPEN_FX (http://rmmedia.ru/threads/134701/post-2546746)
+   
    *              v.1.02/1.03 [020620]
    *                  + MASTER TRACK
-
    *              v.1.0 [07.02.20]
    *                  + initialе
 --]]
@@ -45,7 +47,13 @@
                     -- = true  включить мастер трек
                     -- = false выключить мастер трек
                     -- Если нужен только мастер трек,то установить NAME_TRACK = nil
-
+    
+    local OPEN_FX = 0
+               -- = 0 Не открывать Эффекты
+               -- = 1 Всегда открыть Эффекты плавающими
+               -- = 2 Открыть Эффекты только при (Unbypass) плавающими
+               -- = 3 Открыть Эффекты только при (Bypass) плавающими
+               
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -106,6 +114,21 @@
                     reaper.TrackFX_SetEnabled(masterTrack,ifx-1,SetEnabled);
 
                     if SetEnabled == true then strU = "Unbypass Fx" else strU = "Bypass Fx" end;
+                    
+                    ---(v.1.05------
+                    if OPEN_FX == 1 then;
+                        reaper.TrackFX_Show(Track,ifx-1,3);
+                    elseif OPEN_FX == 2 then;
+                        if SetEnabled == true then;
+                            reaper.TrackFX_Show(Track,ifx-1,3);
+                        end;
+                    elseif OPEN_FX == 3 then;
+                        if SetEnabled ~= true then;
+                            reaper.TrackFX_Show(Track,ifx-1,3);
+                        end;
+                    end;
+                    ----v.1.05)-----------
+                    
                     break;
                 end;
             end;
@@ -147,6 +170,22 @@
                                 reaper.TrackFX_SetEnabled(Track,ifx-1,SetEnabled);
 
                                 if SetEnabled == true then strU = "Unbypass Fx" else strU = "Bypass Fx" end;
+                                
+                                
+                                ---(v.1.05------
+                                if OPEN_FX == 1 then;
+                                    reaper.TrackFX_Show(Track,ifx-1,3);
+                                elseif OPEN_FX == 2 then;
+                                    if SetEnabled == true then;
+                                        reaper.TrackFX_Show(Track,ifx-1,3);
+                                    end;
+                                elseif OPEN_FX == 3 then;
+                                    if SetEnabled ~= true then;
+                                        reaper.TrackFX_Show(Track,ifx-1,3);
+                                    end;
+                                end;
+                                ----v.1.05)-----------
+                                
                                 break;
                             end;
                         end;

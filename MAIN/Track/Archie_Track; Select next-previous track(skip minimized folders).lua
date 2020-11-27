@@ -2,7 +2,7 @@
    * Category:    Track
    * Description: Select next-previous track(skip minimized folders)(skip folders)*
    * Author:      Archie
-   * Version:     1.18
+   * Version:     1.19
    * AboutScript: Select next-previous track(skip minimized folders)(skip folders)*
    * О скрипте:   Выберите следующий/предыдущий трек(пропустить свернутые папки)(пропустить папки)
    * GIF:         ---
@@ -22,9 +22,11 @@
    *              [main] . > Archie_Track; Select next tracks(skip folders)(leaving other selected)(`).lua
    *              [main] . > Archie_Track; Select previous tracks(skip folders)(leaving other selected)(`).lua
    * Changelog:   
+   *              v.1.19 [271120]
+   *                  + Fixed bug
+   
    *              v.1.15 [010920]
    *                  + Фокус на трек
-   
    *              v.1.12 [010920]
    *                  + select the last touched track (http://rmmedia.ru/threads/110165/post-2535296)
    *                  + выделить последний тронутый трек
@@ -336,7 +338,8 @@
                             indent = indent +1;
                         end;
                         stop = (stop or 0)+1;
-                        if stop == indent then break end;
+                        --if stop == indent then break end;
+                        if stop >= indent then break end;--1.19
                     end;
                 end;
             end;
@@ -361,7 +364,8 @@
                             indent = indent +1;
                         end;
                         stop = (stop or 0)+1;
-                        if stop == indent then break end;
+                        --if stop == indent then break end;
+                        if stop >= indent then break end;--1.19
                     end;
                 end;
             end;
