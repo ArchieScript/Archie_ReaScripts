@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="785e140e94d6decabc0a61412d24080cb25824f9">
+<index version="1" name="Archie-ReaScripts" commit="e10d15323879c99e28620d9c0b491b211e1c127c">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -2916,6 +2916,12 @@ LUA_Lib
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2401ea1636c6f8b8282c812489d0996de10e75ec/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20act%20take)Bypass%20all%20fx%20track.lua</source>
       </version>
+      <version name="1.10" author="Archie" time="2020-12-03T09:32:51Z">
+        <changelog><![CDATA[v.1.10 [031220]
+    Consider item volume
+    Учитывать громкость айтема]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e10d15323879c99e28620d9c0b491b211e1c127c/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20act%20take)Bypass%20all%20fx%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item; Apply track-take FX to items as new take(lock act take)Offline all fx track.lua" type="script" desc="Item; Apply track-take FX to items as new take(lock act take)Offline all fx track.lua">
       <metadata>
@@ -2934,6 +2940,12 @@ LUA_Lib
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2401ea1636c6f8b8282c812489d0996de10e75ec/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20act%20take)Offline%20all%20fx%20track.lua</source>
       </version>
+      <version name="1.10" author="Archie" time="2020-12-03T09:32:51Z">
+        <changelog><![CDATA[v.1.10 [031220]
+    Consider item volume
+    Учитывать громкость айтема]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e10d15323879c99e28620d9c0b491b211e1c127c/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20act%20take)Offline%20all%20fx%20track.lua</source>
+      </version>
     </reapack>
     <reapack name="Archie_Item; Apply track-take FX to items as new take(lock active take).lua" type="script" desc="Item; Apply track-take FX to items as new take(lock active take).lua">
       <metadata>
@@ -2951,6 +2963,12 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [300620]
     + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/2401ea1636c6f8b8282c812489d0996de10e75ec/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20active%20take).lua</source>
+      </version>
+      <version name="1.10" author="Archie" time="2020-12-03T09:32:51Z">
+        <changelog><![CDATA[v.1.10 [031220]
+    Consider item volume
+    Учитывать громкость айтема]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e10d15323879c99e28620d9c0b491b211e1c127c/MAIN/Item/Archie_Item;%20Apply%20track-take%20FX%20to%20items%20as%20new%20take(lock%20active%20take).lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Item; By frame move item,under mouse cursor.move cursor the to offset(mousewheel).lua" type="script" desc="by frame move item &lt;&gt;,under mouse cursor,move cursor the to offset">
@@ -9823,6 +9841,12 @@ LUA_Lib
         <changelog><![CDATA[v.1.02 [090520]
     ! fixed - Delete on cancellation]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Various/Archie_Var;%20Apply%20track-take%20FX%20to%20active%20take.lua</source>
+      </version>
+      <version name="1.10" author="Archie" time="2020-12-03T09:32:51Z">
+        <changelog><![CDATA[v.1.10 [031220]
+    Consider item volume
+    Учитывать громкость айтема]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/e10d15323879c99e28620d9c0b491b211e1c127c/MAIN/Various/Archie_Var;%20Apply%20track-take%20FX%20to%20active%20take.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_Var; Copy selected files from media explorer to project subdirectory.lua" type="script" desc="Copy selected files from media explorer to project subdirectory">
