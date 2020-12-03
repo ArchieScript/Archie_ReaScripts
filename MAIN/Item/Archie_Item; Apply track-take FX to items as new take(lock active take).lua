@@ -6,7 +6,7 @@
    * Category:    Item
    * Description: Item; Apply track-take FX to items as new take(lock active take).lua
    * Author:      Archie
-   * Version:     1.02
+   * Version:     1.10
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
    *              http://vk.com/reaarchie
@@ -18,9 +18,21 @@
    *              SWS v.2.10.0 http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.8.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:
+   *              v.1.10 [031220]
+   *                  Consider item volume
+   *                  Учитывать громкость айтема
+   
    *              v.1.0 [300620]
    *                  + initialе
 --]]
+    --======================================================================================
+    --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
+    --======================================================================================
+ 
+    local VOL_ITEM = 1 --1.10
+                 -- 0 = не Учитывать громкость айтема
+                 -- 1 = Учесть громкость айтема
+                 
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -83,9 +95,31 @@
         t[#t].item = item;
         t[#t].take = take;
     end;
-
+    
+    ---(1.10---
+	local vol_item = {};
+    if VOL_ITEM == 1 then;
+        for i = 1,reaper.CountSelectedMediaItems(0)do;
+            local item = reaper.GetSelectedMediaItem(0,i-1);
+            vol_item[#vol_item+1] = {};
+            vol = reaper.GetMediaItemInfo_Value(item,'D_VOL');
+            vol_item[#vol_item].item = item
+            vol_item[#vol_item].vol = vol
+            reaper.SetMediaItemInfo_Value(item,'D_VOL',1);
+        end;
+    end;
+    ---1.10)---
+    
     Arc.Action(40209);--Item: Apply track/take FX to items
-
+    
+    ---(1.10---
+    if VOL_ITEM == 1 then;
+        for i = 1,#vol_item do;
+            reaper.SetMediaItemInfo_Value(vol_item[i].item,'D_VOL',vol_item[i].vol);
+        end;
+    end;
+    ---1.10)---
+    
     local STOP_Script;
     for i = 1,#t do;
         local take = reaper.GetActiveTake(t[i].item);
@@ -111,5 +145,4 @@
     reaper.Undo_EndBlock('Apply track/take FX to items(lock active take)',-1);
     reaper.PreventUIRefresh(-1);
     if ConfigUndo then reaper.SNM_SetIntConfigVar('undomask',ConfigUndo)end;
-
 

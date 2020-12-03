@@ -6,7 +6,7 @@
    * Category:    Various
    * Description: Var; Apply track-take FX to active take.lua
    * Author:      Archie
-   * Version:     1.03
+   * Version:     1.10
    * Описание:    Примените track-take FX к активному take
    * Website:     http://forum.cockos.com/showthread.php?t=212819
    *              http://rmmedia.ru/threads/134701/
@@ -17,9 +17,12 @@
    * Gave idea:   smrz1(Rmm)
    * Extension:   Reaper 6.09+ http://www.reaper.fm/
    * Changelog:
+   *              v.1.10 [031220]
+   *                  Consider item volume
+   *                  Учитывать громкость айтема
+   
    *              v.1.02 [090520]
    *                  ! fixed - Delete on cancellation
-
    *              v.1.0 [090520]
    *                  + initialе
 --]]
@@ -28,7 +31,11 @@
     --======================================================================================
 
     local CHAN = 0; -- 0 auto, 1 mono, 2 stereo,3 multichannel;
-
+    
+    local VOL_ITEM = 1 --1.10
+              -- 0 = не Учитывать громкость айтема
+              -- 1 = Учесть громкость айтема
+              
     --======================================================================================
     --////////////// SCRIPT \\\\\\\\\\\\\\  SCRIPT  //////////////  SCRIPT  \\\\\\\\\\\\\\\\
     --======================================================================================
@@ -46,6 +53,7 @@
     local t1 = {};
     local t2 = {};
     local chanX,chan;
+    local vol_item = {};
 
     for i = 1,CountSelItem do;
 
@@ -83,9 +91,34 @@
     ----
     reaper.Undo_BeginBlock();
     reaper.PreventUIRefresh(1);
-
+    
+    
+    ---(1.10---
+    if VOL_ITEM == 1 then;
+        for i = 1,reaper.CountSelectedMediaItems(0)do;
+            local item = reaper.GetSelectedMediaItem(0,i-1);
+            vol_item[#vol_item+1] = {};
+            vol = reaper.GetMediaItemInfo_Value(item,'D_VOL');
+            vol_item[#vol_item].item = item
+            vol_item[#vol_item].vol = vol
+            reaper.SetMediaItemInfo_Value(item,'D_VOL',1);
+        end;
+    end;
+    ---1.10)---
+    
+    
     reaper.Main_OnCommand(ActId,0);--Apply
-
+    
+    
+    ---(1.10---
+    if VOL_ITEM == 1 then;
+        for i = 1,#vol_item do;
+            reaper.SetMediaItemInfo_Value(vol_item[i].item,'D_VOL',vol_item[i].vol);
+        end;
+    end;
+    ---1.10)---
+    
+    
     for i = 1,reaper.CountSelectedMediaItems(0)do;
         local item = reaper.GetSelectedMediaItem(0,i-1);
         local take = reaper.GetActiveTake(item);
@@ -118,6 +151,5 @@
 
     reaper.PreventUIRefresh(-1);
     reaper.Undo_EndBlock('Apply track-take FX to active take',-1);
-
 
 
