@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="e10d15323879c99e28620d9c0b491b211e1c127c">
+<index version="1" name="Archie-ReaScripts" commit="f5a8664603715941262a3074d1681fcfa845d408">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -1944,6 +1944,10 @@ LUA_Lib
       <version name="1.08" author="Archie" time="2020-08-20T07:03:30Z">
         <changelog><![CDATA[+  Add support for formats DDP,FLAC,MP3,OGG VORBIS,OGG OPUS,WV / v.1.05 [25112019]]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/afd5d0b3726eb229a22494ee35b71574bfcf2d4a/MAIN/FX/Archie_FX;%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
+      </version>
+      <version name="1.15" author="Archie" time="2020-12-05T14:32:05Z">
+        <changelog><![CDATA[!  Fixed bug when adding to reverse items]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f5a8664603715941262a3074d1681fcfa845d408/MAIN/FX/Archie_FX;%20Smart%20template%20-%20Add%20Fx%20chain%20by%20name%20for%20selected%20items%20or%20in%20time%20selection.lua</source>
       </version>
     </reapack>
     <reapack name="Archie_FX; Smart template - Add Fx chain by name for selected tracks.lua" type="script" desc="Smart template - Add Fx chain by name for selected tracks">
