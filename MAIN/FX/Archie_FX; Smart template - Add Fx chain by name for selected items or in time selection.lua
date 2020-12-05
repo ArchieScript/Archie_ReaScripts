@@ -2,7 +2,7 @@
    * Category:    FX
    * Description: Smart template - Add Fx chain by name for selected items or in time selection
    * Author:      Archie
-   * Version:     1.08
+   * Version:     1.15
    * AboutScript: Smart template - Add Fx chain by name for selected items or in time selection
    * О скрипте:   Умный шаблон - Добавить цепочку Fx по имени для выбранных элементов или в выборе времени
    * GIF:         ---
@@ -12,9 +12,10 @@
    * DONATION:    http://paypal.me/ReaArchie?locale.x=ru_RU
    * Customer:    HDVulcan[RMM]
    * Gave idea:   HDVulcan[RMM]
-   * Changelog:
+   * Changelog:   
+   *              !  Fixed bug when adding to reverse items
+                  
    *              +  Add support for formats DDP,FLAC,MP3,OGG VORBIS,OGG OPUS,WV / v.1.05 [25112019]
-
    *              +  Added selection FadeOut Shape / v.1.04 [27032019]
    *              !+ Fixed bug with midi / v.1.03 [23032019]
    *              !+ Optimization / v.1.02 [22032019]
@@ -58,7 +59,7 @@
     end; local Arc = MODULE((reaper.GetResourcePath()..'/Scripts/Archie-ReaScripts/Functions/Arc_Function_lua.lua'):gsub('\\','/'));
     if not Arc then return end;
     --=========================================
-	
+  
 
 
 
@@ -550,7 +551,14 @@
             ---CHUNK---v.1.02--------------------------------------
             --------------------------------------------------
             local function AddFxChainToItemInActiveTake(Item,textChain);
-
+                ---(1.15---
+                local take = reaper.GetActiveTake(Item);
+                local _,section,start,len,fd,rev_rev = reaper.BR_GetMediaSourceProperties(take);
+                if rev_rev then;
+                    reaper.BR_SetMediaSourceProperties(take,section,start,len,fd,false);
+                end;
+                ---
+            
                 local GUIDTake, varX, TakeChunk, str2, lock_1
                 local str = ({reaper.GetItemStateChunk(Item,"",false)})[2];
                 ----------------------------
@@ -564,15 +572,17 @@
                 str = str2;
                 str2 = nil;
                 -----------
-
+            
                 local
                 CountFXTake = reaper.TakeFX_GetCount(reaper.GetActiveTake(Item));
-
+            
                 for var in string.gmatch(str, ".-\n\n\n") do;
-
+            
                     if TakeChunk then;
+                    
                         local Take_Sel = string.match(var, "TAKE SEL\n");
                         if Take_Sel then;
+                           
                             ----
                             local Take_Fx  = string.match(var, "TAKEFX\n");
                             if Take_Fx then;
@@ -615,6 +625,7 @@
                         end;
                     else;
                         ---------
+                        
                         if not lock_1 then;
                             local Take_Fx  = string.match(var, "TAKEFX\n");
                             if Take_Fx then;
@@ -635,12 +646,14 @@
                                 varX = string.gsub(varX,"LASTSEL %d","LASTSEL "..CountFXTake);
                                 GUIDTake = string.match(varX,"\nGUID ({.-})");
                             else
+                            
                                 for var2 in string.gmatch(var,".-\n") do;
                                     ----
                                     if Arc.If_Equals(var2,"<SOURCE WAVE\n","<SOURCE MIDI\n",
                                               "<SOURCE DDP\n","<SOURCE FLAC\n","<SOURCE MP3\n",
                                           "<SOURCE VORBIS\n","<SOURCE OPUS\n","<SOURCE WAVPACK\n")then;
                                        S=1;
+                                       AAA = 5
                                     end;
                                     --
                                     --if var2 == "<SOURCE WAVE\n" or var2 == "<SOURCE MIDI\n" then S=1 end;
@@ -666,7 +679,13 @@
                 str2 = string.gsub(str2,"\n\n\n\n","\n"):gsub("\n\n","\n");
                 --reaper.ShowConsoleMsg(str2)-------------
                 reaper.SetItemStateChunk(Item,str2,false);
-                return GUIDTake, CountFXTake;
+                ---(1.15---
+                if rev_rev then;
+                    reaper.BR_SetMediaSourceProperties(take,section,start,len,fd,rev_rev);
+                    reaper.UpdateItemInProject(Item);
+                end;
+                ---1.15)---
+                return GUIDTake,CountFXTake;
             end;
             ---------------------------------
             ---------------------------------
