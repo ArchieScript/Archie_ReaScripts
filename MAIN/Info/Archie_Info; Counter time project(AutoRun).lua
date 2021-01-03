@@ -7,7 +7,7 @@
    * Features:    Startup
    * Description: Info; Counter time project(AutoRun)
    * Author:      Archie
-   * Version:     1.28
+   * Version:     1.29
    * Описание:    Счетчик времени проекта
    * GIF:         http://avatars.mds.yandex.net/get-pdb/2837066/8ec4e155-7209-41f5-866e-28f749637c6d/orig
    * Website:     http://forum.cockos.com/showthread.php?t=212819
@@ -20,9 +20,11 @@
    *              SWS v.2.10.0+ http://www.sws-extension.org/index.php
    *              Arc_Function_lua v.2.7.6+  (Repository: Archie-ReaScripts) http://clck.ru/EjERc
    * Changelog:   
+   *              v.1.29 [030121]
+   *                  + Reset All
+   
    *              v.1.28 [250820]
    *                  + Add: Reset time when renamed project
-   
    *              v.1.26 [080920]
    *                  + Add (count Selected items)
    *              v.1.24 [240520]
@@ -52,7 +54,7 @@
    *              v.1.0  [15.02.20]
    *                  +   initialе
 --]]
-    local Version = ' - v.1.28';
+    local Version = ' - v.1.29';
     --======================================================================================
     --////////////  НАСТРОЙКИ  \\\\\\\\\\\\  SETTINGS  ////////////  НАСТРОЙКИ  \\\\\\\\\\\\
     --======================================================================================
@@ -339,7 +341,7 @@
                 ToolTip.x_tip, ToolTip.y_tip = gfx.mouse_x, gfx.mouse_y;
                 if ToolTip.tip == ToolTip.timeToShow then;
                     local x,y = gfx.clienttoscreen(gfx.mouse_x,gfx.mouse_y);
-                    reaper.TrackCtl_SetToolTip(Str,x+20,y+10,true);
+                    reaper.TrackCtl_SetToolTip(Str,x+20,y+10,false);
                     ToolTip.tipClean = {};
                     ToolTip.tipClean[buf] = true;
                 elseif ToolTip.tip < ToolTip.timeToShow then;
@@ -1302,7 +1304,10 @@
                                 --[[18]]    '#Reset timer Reaper started |'..
                                             '<|'..
                                 --[[19]]    tmD..'Time (d:)|'..
-                                --[[20]]    tmRTRP..'Reset time when renamed project '..
+                                --[[20]]    tmRTRP..'Reset time when renamed project ||'..
+                                --[[--]]    '>Reset All|'..
+                                --[[21]]    'RESET ALL |'..
+                                --[[--]]    '<'..
                                 
 
                                             '||#INFO PROJECT:|'..
@@ -1374,17 +1379,36 @@
                         if MB == 1 then;
                             ResetExtState(nil,nil,true);
                         end;
-                    elseif showmenu == 19 then;
+                    elseif showmenu == 19 then; 
+                        -----------------------
                         t.TIME_D = math.abs(t.TIME_D-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','TIME_D',t.TIME_D,true);
-
+                        -----------------------
                     elseif showmenu == 20 then;
+                        -----------------------
                         t.ResTIME_RenProj = math.abs(t.ResTIME_RenProj-1);
                         reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','ResTIME_RenProj',t.ResTIME_RenProj,true);
+                        -----------------------
                     elseif showmenu == 21 then;
-                    
+                        -----------------------
+                        local mes = 'Reset all the settings of the script\n\n'..
+                                    'Сбросить все параметры скрипта';
+                        local MB = reaper.MB(mes,'Reset all',1);
+                        
+                        if MB == 1 then;
+                            ResetExtState(true,true,true);
+                            reaper.SetExtState('ARC_COUNTER_TIMER_IN_PROJ_WIN','SHOW_WINDOW',0,true);
+                            gfx.quit();
+                        end;
+                        -----------------------
                     elseif showmenu == 22 then;
-
+                        -----------------------
+                        
+                        -----------------------
+                    elseif showmenu == 23 then;
+                        -----------------------
+                    
+                        -----------------------
                     end;
                 end;
                 ----------------------------
@@ -1515,5 +1539,4 @@
     end;end);
     -----------------------------------
     --]]
-
 
