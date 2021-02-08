@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="Archie-ReaScripts" commit="abd9364c47cc65283828e65d25bd3598ad60b957">
+<index version="1" name="Archie-ReaScripts" commit="746aa83f2c3bd4e89335f1b9b9fb01dda764a734">
   <category name="Functions">
     <reapack name="Arc_Function_lua.lua" type="script" desc="Arc_Function_lua">
       <version name="1.0" author="Archie" time="2018-11-15T09:18:18Z">
@@ -10288,6 +10288,45 @@ LUA_Lib
         <changelog><![CDATA[v.1.0 [23.01.20]
 + initialе]]></changelog>
         <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/f61197268fee51aa27c31d1c0dd45c2b814307d5/MAIN/Various/Archie_Var;%20Toggle%20Select%20Unselect%20all%20items%20tracks%20envelope%20points%20(depending%20on%20focus).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_var; Volume change on tracks or items by 1 dB (mouse wheel).lua" type="script" desc="Archie_var; Volume change on tracks or items by 1 dB (mouse wheel).lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2021-02-08T07:08:33Z">
+        <changelog><![CDATA[v.1.0 [050221]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/746aa83f2c3bd4e89335f1b9b9fb01dda764a734/MAIN/Various/Archie_var;%20Volume%20change%20on%20tracks%20or%20items%20by%201%20dB%20(mouse%20wheel).lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_var; Volume down on tracks or items by 1 dB.lua" type="script" desc="Archie_var; Volume down on tracks or items by 1 dB.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2021-02-08T07:08:33Z">
+        <changelog><![CDATA[v.1.0 [050221]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/746aa83f2c3bd4e89335f1b9b9fb01dda764a734/MAIN/Various/Archie_var;%20Volume%20down%20on%20tracks%20or%20items%20by%201%20dB.lua</source>
+      </version>
+    </reapack>
+    <reapack name="Archie_var; Volume up on tracks or items by 1 dB.lua" type="script" desc="Archie_var; Volume up on tracks or items by 1 dB.lua">
+      <metadata>
+        <link rel="website">http://forum.cockos.com/showthread.php?t=212819</link>
+        <link rel="website">http://rmmedia.ru/threads/134701/</link>
+        <link rel="website">http://vk.com/reaarchie</link>
+        <link rel="donation">http://paypal.me/ReaArchie?locale.x=ru_RU</link>
+      </metadata>
+      <version name="1.0" author="Archie" time="2021-02-08T07:08:33Z">
+        <changelog><![CDATA[v.1.0 [050221]
+    + initialе]]></changelog>
+        <source main="main">https://github.com/ArchieScript/Archie_ReaScripts/raw/746aa83f2c3bd4e89335f1b9b9fb01dda764a734/MAIN/Various/Archie_var;%20Volume%20up%20on%20tracks%20or%20items%20by%201%20dB.lua</source>
       </version>
     </reapack>
   </category>
